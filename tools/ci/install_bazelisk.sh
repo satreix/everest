@@ -43,4 +43,4 @@ install_bazelisk() {
 version="$1"
 platform="$2"
 install_bazelisk "$version" "$platform"
-cp tools/ci/bazel.rc $HOME/.bazelrc
+cp tools/ci/bazel.rc "$HOME/.bazelrc"

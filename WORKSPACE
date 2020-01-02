@@ -118,6 +118,39 @@ git_repository(
     shallow_since = "1574844018 -0800",
 )
 
+git_repository(
+    name = "build_bazel_rules_apple",
+    commit = "f6a95e8d0c2bd6fa9f0a6280ef3c4d34c9594513",
+    remote = "https://github.com/bazelbuild/rules_apple.git",
+    shallow_since = "1574206203 -0800",
+)
+
+git_repository(
+    name = "build_bazel_rules_swift",
+    commit = "e7ce2d13936a1fe234317f228ef7194f27f8520a",
+    remote = "https://github.com/bazelbuild/rules_swift.git",
+    shallow_since = "1574447681 -0800",
+)
+
+git_repository(
+    name = "build_bazel_apple_support",
+    commit = "9605c3da1c5bcdddc20d1704b52415a6f3a5f422",
+    remote = "https://github.com/bazelbuild/apple_support.git",
+    shallow_since = "1570831694 -0700",
+)
+
+load("@build_bazel_rules_apple//apple:repositories.bzl", "apple_rules_dependencies")
+
+apple_rules_dependencies()
+
+load("@build_bazel_rules_swift//swift:repositories.bzl", "swift_rules_dependencies")
+
+swift_rules_dependencies()
+
+load("@build_bazel_apple_support//lib:repositories.bzl", "apple_support_dependencies")
+
+apple_support_dependencies()
+
 http_archive(
     name = "rules_jvm_external",
     sha256 = "1bbf2e48d07686707dd85357e9a94da775e1dbd7c464272b3664283c9c716d26",
