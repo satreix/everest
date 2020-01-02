@@ -1,0 +1,57 @@
+load("@bazel_gazelle//:deps.bzl", "go_repository")
+
+def dependencies():
+    go_repository(
+        name = "com_github_keybase_go_keychain",
+        importpath = "github.com/keybase/go-keychain",
+        sum = "h1:M88A1cGUWZRErgbiGFZ6OFOXCCeCKdVRFoSa+t+vgfY=",
+        version = "v0.0.0-20191114153608-ccd67945d59e",
+    )
+    go_repository(
+        name = "com_github_gosuri_uilive",
+        importpath = "github.com/gosuri/uilive",
+        sum = "h1:kvo6aB3pez9Wbudij8srWo4iY6SFTTxTKOkb+uRCE8I=",
+        version = "v0.0.3",
+    )
+    go_repository(
+        name = "com_github_mattn_go_isatty",
+        importpath = "github.com/mattn/go-isatty",
+        sum = "h1:qxFzApOv4WsAL965uUPIsXzAKCZxN2p9UqdhFS4ZW10=",
+        version = "v0.0.10",
+    )
+    go_repository(
+        name = "org_golang_x_sys",
+        importpath = "golang.org/x/sys",
+        sum = "h1:QAcqgptGM8IQBC9K/RC4o+O9YmqEm0diQn9QmZw/0mU=",
+        version = "v0.0.0-20191008105621-543471e840be",
+    )
+    go_repository(
+        name = "com_github_gosuri_uiprogress",
+        importpath = "github.com/gosuri/uiprogress",
+        sum = "h1:0kpv/XY/qTmFWl/SkaJykZXrBBzwwadmW8fRb7RJSxw=",
+        version = "v0.0.1",
+    )
+    go_repository(
+        name = "com_github_pkg_browser",
+        importpath = "github.com/pkg/browser",
+        sum = "h1:49lOXmGaUpV9Fz3gd7TFZY106KVlPVa5jcYD1gaQf98=",
+        version = "v0.0.0-20180916011732-0a3d74bf9ce4",
+    )
+    go_repository(
+        name = "com_github_mndrix_tap_go",
+        importpath = "github.com/mndrix/tap-go",
+        sum = "h1:Ga1nclDSe8gOw37MVLMhfu2QKWtD6gvtQ298zsKVh8g=",
+        version = "v0.0.0-20171203230836-629fa407e90b",
+    )
+    go_repository(
+        name = "in_gopkg_check_v1",
+        importpath = "gopkg.in/check.v1",
+        sum = "h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=",
+        version = "v0.0.0-20161208181325-20d25e280405",
+    )
+    go_repository(
+        name = "in_gopkg_yaml_v2",
+        importpath = "gopkg.in/yaml.v2",
+        sum = "h1:VUgggvou5XRW9mHwD/yXxIYSMtY0zoKQf/v226p2nyo=",
+        version = "v2.2.7",
+    )

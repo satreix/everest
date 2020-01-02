@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["hello_world_tester.go"],
+    importpath = "github.com/satreix/everest/tools/test/binary/cmd/hello_world_tester",
+    visibility = ["//visibility:private"],
+    deps = ["@com_github_mndrix_tap_go//:go_default_library"],
+)
+
+go_binary(
+    name = "hello_world_tester",
+    embed = [":go_default_library"],
+    visibility = ["//visibility:public"],
+)

@@ -1,0 +1,17 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+
+java_binary(
+    name = "hello_world",
+    srcs = ["HelloWorld.java"],
+    main_class = "HelloWorld",
+    visibility = ["//visibility:public"],
+    deps = [artifact("commons_cli:commons_cli")],
+)
+
+load("//tools/test/binary:binary.bzl", "binary_test")
+
+binary_test(
+    name = "hello_world_test",
+    binary = ":hello_world",
+    opt_style = "short",
+)

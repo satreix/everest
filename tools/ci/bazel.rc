@@ -1,0 +1,15 @@
+# Avoid blowing up the RAM usage.
+startup --host_jvm_args=-Xmx2500m
+startup --host_jvm_args=-Xms2500m
+test --ram_utilization_factor=10
+
+# Don't OOM with parallel builds
+build --local_resources 2048,.5,1.0
+
+# Understand failures better
+build --verbose_failures
+test --verbose_failures
+
+build --action_env=CC=clang
+build --announce_rc=yes
+build --curses=no
