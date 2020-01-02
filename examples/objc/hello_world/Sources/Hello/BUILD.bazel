@@ -1,0 +1,9 @@
+load("@build_bazel_rules_apple//apple:macos.bzl", "macos_command_line_application")
+
+objc_library(
+    name = "Hello",
+    srcs = ["hello.m"],
+    hdrs = ["hello.h"],
+    module_name = "Hello",
+    visibility = ["//visibility:public"],
+)

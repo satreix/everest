@@ -1,5 +1,6 @@
 load("@rules_python//python:defs.bzl", "py_binary")
 load("@pypi//:requirements.bzl", "requirement")
+load("//tools/test/binary:binary.bzl", "binary_test")
 
 py_binary(
     name = "hello_world",
@@ -11,8 +12,6 @@ py_binary(
         requirement("markupsafe"),
     ],
 )
-
-load("//tools/test/binary:binary.bzl", "binary_test")
 
 binary_test(
     name = "hello_world_test",

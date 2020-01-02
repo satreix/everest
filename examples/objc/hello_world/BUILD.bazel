@@ -1,0 +1,24 @@
+load("@build_bazel_rules_apple//apple:macos.bzl", "macos_command_line_application")
+load("//tools/test/binary:binary.bzl", "binary_test")
+
+# Copied from https://github.com/bazelbuild/rules_apple/tree/master/examples/macos/CommandLine
+
+objc_library(
+    name = "Sources",
+    srcs = ["Sources/hello_world.m"],
+    deps = ["//examples/objc/hello_world/Sources/Hello"],
+)
+
+macos_command_line_application(
+    name = "hello_world",
+    bundle_id = "com.example.helloworld",
+    minimum_os_version = "10.11",
+    visibility = ["//visibility:public"],
+    deps = [":Sources"],
+)
+
+binary_test(
+    name = "hello_world_test",
+    binary = ":hello_world",
+    opt_style = "short",
+)
