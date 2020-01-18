@@ -1,9 +1,12 @@
 package main
 
 import (
+	"encoding/json"
 	"flag"
 	"log"
 	"net"
+
+	"github.com/satreix/everest/src/echo_server/transmission_object"
 )
 
 func main() {
@@ -29,17 +32,19 @@ func main() {
 	log.Println("Receiving on a new connection")
 	defer log.Println("Connection now closed.")
 
-	buffer := make([]byte, 2048)
-	size, err := conn.Read(buffer)
+	var o transmission_object.TransmissionObject
+	err = json.NewDecoder(conn).Decode(&o)
 	if err != nil {
-		log.Fatalf("Cannot read from the buffer: %s", err)
+		log.Fatalf("Cannot unmarshal the buffer: %s", err)
 	}
 
-	data := string(buffer[:size])
-	log.Printf("Received data: %s", data)
+	log.Printf("Received data: %#v", o)
 
-	_, err = conn.Write([]byte("Echoed from Go: " + data))
+	err = json.NewEncoder(conn).Encode(&transmission_object.TransmissionObject{
+		Message: "Echoed from Go: " + o.Message,
+		Value:   o.Value,
+	})
 	if err != nil {
-		log.Fatalf("Failed to send data: %s", err)
+		log.Fatalf("Failed to marshall data: %s", err)
 	}
 }

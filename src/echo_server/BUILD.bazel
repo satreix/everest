@@ -5,6 +5,7 @@ go_library(
     srcs = ["echo_server.go"],
     importpath = "github.com/satreix/everest/src/echo_server",
     visibility = ["//visibility:private"],
+    deps = ["//src/echo_server/transmission_object:go_default_library"],
 )
 
 go_binary(

@@ -131,8 +131,9 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 # bazel query @maven//:all --output=build
 maven_install(
     artifacts = [
-        "commons-cli:commons-cli:1.4",
+        "com.google.code.gson:gson:2.8.5",
         "com.google.googlejavaformat:google-java-format:1.7",
+        "commons-cli:commons-cli:1.4",
     ],
     repositories = [
         "https://jcenter.bintray.com/",
