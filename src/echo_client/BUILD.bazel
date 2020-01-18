@@ -1,0 +1,5 @@
+java_binary(
+    name = "echo_client",
+    srcs = ["EchoClient.java"],
+    main_class = "EchoClient",
+)
