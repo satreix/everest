@@ -1,0 +1,28 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+load("@rules_antlr//antlr:antlr4.bzl", "antlr")
+
+antlr(
+    name = "morsecode_go",
+    srcs = ["@com_github_antlr_grammars_v4//:morsecode/morsecode.g4"],
+    language = "Go",
+    package = "morsecode",
+)
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "morsecode.go",
+        ":morsecode_go",  # keep
+    ],
+    importpath = "github.com/satreix/everest/src/parsers/morsecode",
+    visibility = ["//visibility:public"],
+    deps = ["@com_github_antlr_antlr4//runtime/Go/antlr:go_default_library"],
+)
+
+go_test(
+    name = "go_default_test",
+    size = "small",
+    srcs = ["morsecode_test.go"],
+    embed = [":go_default_library"],
+    deps = ["@com_github_google_go_cmp//cmp:go_default_library"],
+)

@@ -4,6 +4,21 @@ load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
+    name = "rules_antlr",
+    sha256 = "26e6a83c665cf6c1093b628b3a749071322f0f70305d12ede30909695ed85591",
+    strip_prefix = "rules_antlr-0.5.0",
+    urls = ["https://github.com/marcohu/rules_antlr/archive/0.5.0.tar.gz"],
+)
+
+http_archive(
+    name = "com_github_antlr_grammars_v4",
+    build_file_content = """exports_files(glob(["**/*.g4"]), visibility = ["//visibility:public"])""",
+    sha256 = "eedb0e521bc39f086ef3b094b4de0b3e88b41a56525e367347b35d565b44c31b",
+    strip_prefix = "grammars-v4-2ebc7a7d7eb019694ec73cabf017f80f87f47e67",
+    urls = ["https://github.com/antlr/grammars-v4/archive/2ebc7a7d7eb019694ec73cabf017f80f87f47e67.tar.gz"],  # 2020-11-10
+)
+
+http_archive(
     name = "bazel_skylib",
     sha256 = "e5d90f0ec952883d56747b7604e2a15ee36e288bb556c3d0ed33e818a4d971f2",
     strip_prefix = "bazel-skylib-1.0.2",
@@ -186,3 +201,7 @@ java_format(
 load("//:deps.bzl", "dependencies")
 
 dependencies()
+
+load("@rules_antlr//antlr:repositories.bzl", "rules_antlr_dependencies")
+
+rules_antlr_dependencies("4.8")

@@ -3,6 +3,8 @@ module github.com/satreix/everest
 go 1.13
 
 require (
+	github.com/antlr/antlr4 v0.0.0-20201029161626-9a95f0cc3d7c
+	github.com/google/go-cmp v0.5.2
 	github.com/gosuri/uilive v0.0.3 // indirect
 	github.com/gosuri/uiprogress v0.0.1
 	github.com/keybase/go-keychain v0.0.0-20191114153608-ccd67945d59e
