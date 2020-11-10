@@ -21,4 +21,5 @@ if grep "\[dev-packages\]" Pipfile > /dev/null; then
 fi
 
 pipenv update
+pipenv clean
 pipenv lock -r > "$DIR"/requirements.txt
