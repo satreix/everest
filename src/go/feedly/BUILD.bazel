@@ -9,7 +9,7 @@ go_library(
         "feedly_linux.go",
         "feedly_windows.go",
     ],
-    importpath = "github.com/satreix/everest/src/feedly",
+    importpath = "github.com/satreix/everest/src/go/feedly",
     visibility = ["//visibility:private"],
     deps = [
         "@com_github_gosuri_uiprogress//:go_default_library",
