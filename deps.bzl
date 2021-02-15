@@ -8,6 +8,12 @@ def dependencies():
         version = "v0.0.0-20201029161626-9a95f0cc3d7c",
     )
     go_repository(
+        name = "com_github_bazelbuild_rules_go",
+        importpath = "github.com/bazelbuild/rules_go",
+        sum = "h1:kFMT+OgT62SY3tBTRYFJBTphOHHoCfyn5wbRFNauKUQ=",
+        version = "v0.25.1",
+    )
+    go_repository(
         name = "com_github_google_go_cmp",
         importpath = "github.com/google/go-cmp",
         sum = "h1:X2ev0eStA3AbceY54o37/0PQ/UWqKEiiO2dKL5OPaFM=",

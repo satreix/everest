@@ -1,0 +1,20 @@
+load("@rules_python//python:defs.bzl", "py_binary")
+load("@pypi//:requirements.bzl", "requirement")
+
+py_binary(
+    name = "hello_world",
+    srcs = ["hello_world.py"],
+    data = ["//src/python/hello_world/templates:hello"],
+    visibility = ["//visibility:public"],
+    deps = [
+        requirement("jinja2"),
+        requirement("markupsafe"),
+    ],
+)
+
+load("//tools/test/binary:binary.bzl", "binary_test")
+
+binary_test(
+    name = "hello_world_test",
+    binary = ":hello_world",
+)

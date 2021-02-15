@@ -157,7 +157,7 @@ load("@maven//:defs.bzl", "pinned_maven_install")
 
 pinned_maven_install()
 
-load("//examples/rust/hello_world:crates.bzl", "raze_fetch_remote_crates")
+load("//src/rust/hello_world:crates.bzl", "raze_fetch_remote_crates")
 
 raze_fetch_remote_crates()
 
@@ -174,6 +174,7 @@ java_format(
     jar_url = "https://github.com/google/google-java-format/releases/download/google-java-format-1.7/google-java-format-1.7-all-deps.jar",
 )
 
+# gazelle:repository go_repository name=io_bazel_rules_go importpath=github.com/bazelbuild/rules_go
 # gazelle:repository_macro deps.bzl%dependencies
 load("//:deps.bzl", "dependencies")
 

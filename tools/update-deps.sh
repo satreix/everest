@@ -17,4 +17,4 @@ section "Python"
 ./tools/python/update-deps.sh
 
 section "Rust"
-echo "Read how to update rust dependencies in examples/rust/hello_world/README.md"
+echo "Read how to update rust dependencies in src/rust/hello_world/README.md"
