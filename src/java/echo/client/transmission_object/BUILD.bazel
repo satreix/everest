@@ -1,5 +1,0 @@
-java_library(
-    name = "transmission_object",
-    srcs = ["TransmissionObject.java"],
-    visibility = ["//visibility:public"],
-)

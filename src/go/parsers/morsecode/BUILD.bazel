@@ -9,20 +9,20 @@ antlr(
 )
 
 go_library(
-    name = "go_default_library",
+    name = "morsecode",
     srcs = [
         "morsecode.go",
         ":morsecode_go",  # keep
     ],
     importpath = "github.com/satreix/everest/src/go/parsers/morsecode",
     visibility = ["//visibility:public"],
-    deps = ["@com_github_antlr_antlr4//runtime/Go/antlr:go_default_library"],
+    deps = ["@com_github_antlr_antlr4//runtime/Go/antlr"],
 )
 
 go_test(
-    name = "go_default_test",
+    name = "morsecode_test",
     size = "small",
     srcs = ["morsecode_test.go"],
-    embed = [":go_default_library"],
-    deps = ["@com_github_google_go_cmp//cmp:go_default_library"],
+    embed = [":morsecode"],
+    deps = ["@com_github_google_go_cmp//cmp"],
 )

@@ -1,28 +1,27 @@
-import org.apache.commons.cli.*;
+package src.java.hello_world;
+
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.DefaultParser;
+import org.apache.commons.cli.HelpFormatter;
+import org.apache.commons.cli.Option;
+import org.apache.commons.cli.Options;
+import org.apache.commons.cli.ParseException;
 
 public class HelloWorld {
-    public static void main(String[] args) {
-        CommandLine cmd = parseArgs(args);
-
-        String n = cmd.getOptionValue("name", "World");
-        System.out.println("Hello, " + n + "!");
-    }
-
     private static CommandLine parseArgs(String[] args) {
-        Option name =
-                OptionBuilder.withArgName("name")
-                        .hasArg()
-                        .withDescription("name to great")
-                        .create("name");
-
         Options options = new Options();
-        options.addOption(name);
+        options.addOption(
+                Option.builder()
+                        .longOpt("name")
+                        .argName("NAME")
+                        .desc("name to great")
+                        .hasArg()
+                        .build());
 
         CommandLineParser parser = new DefaultParser();
-
         try {
-            CommandLine cmd = parser.parse(options, args);
-            return cmd;
+            return parser.parse(options, args);
         } catch (ParseException e) {
             System.out.println(e.getMessage());
             HelpFormatter formatter = new HelpFormatter();
@@ -31,5 +30,11 @@ public class HelloWorld {
         }
 
         return null;
+    }
+
+    public static void main(String[] args) {
+        CommandLine cmd = parseArgs(args);
+        String n = cmd.getOptionValue("name", "World");
+        System.out.println("Hello, " + n + "!");
     }
 }

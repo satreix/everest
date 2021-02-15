@@ -1,51 +1,41 @@
 package main
 
 import (
-	"encoding/json"
+	"context"
 	"flag"
 	"log"
 	"net"
 
-	"github.com/satreix/everest/src/go/echo/server/transmission_object"
+	"google.golang.org/grpc"
+	pb "google.golang.org/grpc/examples/helloworld/helloworld"
 )
+
+type server struct {
+	pb.UnimplementedGreeterServer
+}
+
+func (s *server) SayHello(_ context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
+	log.Printf("Received data: %#v", in)
+	return &pb.HelloReply{Message: "Hello " + in.Name}, nil
+}
 
 func main() {
 	addr := flag.String("addr", "127.0.0.1:1234", "address")
 	flag.Parse()
 
-	log.Print("Spinning up the Echo Server in Go...")
+	srv := new(server)
+
+	s := grpc.NewServer()
+	pb.RegisterGreeterServer(s, srv)
 
 	ln, err := net.Listen("tcp", *addr)
 	if err != nil {
-		log.Fatalf("Unable to ln: %s", err)
+		log.Fatalf("listen error: %s", err)
 	}
 	defer ln.Close()
 
 	log.Printf("Listenning on %s ...", *addr)
-
-	for {
-		conn, err := ln.Accept()
-		if err != nil {
-			log.Fatalf("Cannot accept a connection: %s", err)
-		}
-		defer conn.Close()
-
-		log.Println("Receiving on a new connection")
-		defer log.Println("Connection now closed.")
-
-		var o transmission_object.TransmissionObject
-		err = json.NewDecoder(conn).Decode(&o)
-		if err != nil {
-			log.Fatalf("Cannot unmarshal the buffer: %s", err)
-		}
-
-		log.Printf("Received data: %#v", o)
-
-		err = json.NewEncoder(conn).Encode(&transmission_object.TransmissionObject{
-			Message: "Echoed from Go: " + o.Message,
-		})
-		if err != nil {
-			log.Fatalf("Failed to marshall data: %s", err)
-		}
+	if err := s.Serve(ln); err != nil {
+		log.Fatalf("gRPC server error: %s", err)
 	}
 }

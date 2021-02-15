@@ -2,7 +2,6 @@ package echo_test
 
 import (
 	"bytes"
-	"encoding/json"
 	"fmt"
 	"log"
 	"net"
@@ -15,7 +14,6 @@ import (
 	"testing"
 
 	"github.com/bazelbuild/rules_go/go/tools/bazel"
-	"github.com/satreix/everest/src/go/echo/server/transmission_object"
 )
 
 func TestEnd2End(t *testing.T) {
@@ -46,7 +44,7 @@ func TestEnd2End(t *testing.T) {
 	t.Log("client: " + clientBin)
 
 	var stdout, stderr bytes.Buffer
-	clientCmd := exec.Command(clientBin, fmt.Sprintf("%d", port), "client message")
+	clientCmd := exec.Command(clientBin, fmt.Sprintf("127.0.0.1:%d", port), "Java")
 	clientCmd.Stdout = &stdout
 	clientCmd.Stderr = &stderr
 
@@ -56,14 +54,9 @@ func TestEnd2End(t *testing.T) {
 		t.Fatalf("error running client: %s", err)
 	}
 
-	var actual transmission_object.TransmissionObject
-	if err := json.NewDecoder(&stdout).Decode(&actual); err != nil {
-		t.Fatalf("error decoding client output: %s", err)
-	}
+	actual := strings.TrimSpace(stdout.String())
 
-	expected := transmission_object.TransmissionObject{
-		Message: "Echoed from Go: client message",
-	}
+	expected := "Hello Java"
 
 	if !reflect.DeepEqual(actual, expected) {
 		t.Fatalf("client error: expected=%#v, actual=%#v", expected, actual)

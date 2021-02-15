@@ -1,0 +1,19 @@
+diff --git a/examples/BUILD.bazel b/examples/BUILD.bazel
+index e7f00381a..15937e4cf 100644
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -9,12 +9,14 @@ proto_library(
+ java_proto_library(
+     name = "helloworld_java_proto",
+     deps = [":helloworld_proto"],
++    visibility = ["//visibility:public"],
+ )
+ 
+ java_grpc_library(
+     name = "helloworld_java_grpc",
+     srcs = [":helloworld_proto"],
+     deps = [":helloworld_java_proto"],
++    visibility = ["//visibility:public"],
+ )
+ 
+ proto_library(

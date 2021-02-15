@@ -1,7 +1,7 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
 
 go_library(
-    name = "go_default_library",
+    name = "hello_world_lib",
     srcs = ["hello_world.go"],
     importpath = "github.com/satreix/everest/src/go/hello_world",
     visibility = ["//visibility:private"],
@@ -9,7 +9,7 @@ go_library(
 
 go_binary(
     name = "hello_world",
-    embed = [":go_default_library"],
+    embed = [":hello_world_lib"],
     visibility = ["//visibility:public"],
 )
 

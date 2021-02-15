@@ -1,53 +1,54 @@
 package src.java.echo.client;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.Socket;
-import src.java.echo.client.transmission_object.TransmissionObject;
+import io.grpc.Channel;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+import io.grpc.examples.helloworld.GreeterGrpc;
+import io.grpc.examples.helloworld.HelloRequest;
+import java.util.concurrent.TimeUnit;
 
 public class Client {
-    public static void main(String[] args) {
+    private final GreeterGrpc.GreeterBlockingStub blockingStub;
+
+    public Client(Channel channel) {
+        blockingStub = GreeterGrpc.newBlockingStub(channel);
+    }
+
+    public void greet(String name) {
+        HelloRequest req = HelloRequest.newBuilder().setName(name).build();
+        System.out.println(blockingStub.sayHello(req).getMessage());
+    }
+
+    static void usage() {
+        System.err.println("Usage: client TARGET NAME");
+    }
+
+    public static void main(String[] args) throws Exception {
         if (args.length != 2) {
             usage();
             System.exit(1);
         }
 
-        String host = "localhost";
-        int port = Integer.parseInt(args[0]);
-        String inputFromUser = args[1];
-        System.err.println("Received by Java: " + inputFromUser);
+        String target = args[0];
+        String name = args[1];
 
-        if (inputFromUser.equals("")) {
-            System.err.println("error: empty message");
+        if (name.equals("")) {
+            System.err.println("error: empty name");
             usage();
             System.exit(1);
         }
 
-        System.err.println("Spinning up the Echo Client in Java...");
+        ManagedChannel channel = ManagedChannelBuilder.forTarget(target).usePlaintext().build();
         try {
-            final Socket socketToServer = new Socket(host, port);
-            TransmissionObject to = new TransmissionObject();
-            to.message = inputFromUser;
-            GsonBuilder builder = new GsonBuilder();
-            Gson gson = builder.create();
-
-            final PrintWriter o = new PrintWriter(socketToServer.getOutputStream(), true);
-            o.println(gson.toJson(to));
-
-            final BufferedReader i =
-                    new BufferedReader(new InputStreamReader(socketToServer.getInputStream()));
-            System.out.println(i.readLine());
-            socketToServer.close();
-        } catch (Exception e) {
-            System.err.println("Error: " + e);
-            System.exit(1);
+            Client client = new Client(channel);
+            client.greet(name);
+        } finally {
+            // ManagedChannels use resources like threads and TCP connections. To prevent leaking
+            // these
+            // resources the channel should be shut down when it will no longer be used. If it may
+            // be used
+            // again leave it running.
+            channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
         }
-    }
-
-    static void usage() {
-        System.err.println("Usage: client PORT MESSAGE");
     }
 }

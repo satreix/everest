@@ -1,7 +1,7 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
 
 go_library(
-    name = "go_default_library",
+    name = "feedly_lib",
     srcs = [
         "api.go",
         "feedly.go",
@@ -12,14 +12,14 @@ go_library(
     importpath = "github.com/satreix/everest/src/go/feedly",
     visibility = ["//visibility:private"],
     deps = [
-        "@com_github_gosuri_uiprogress//:go_default_library",
-        "@com_github_pkg_browser//:go_default_library",
+        "@com_github_gosuri_uiprogress//:uiprogress",
+        "@com_github_pkg_browser//:browser",
     ] + select({
         "@io_bazel_rules_go//go/platform:darwin": [
-            "@com_github_keybase_go_keychain//:go_default_library",
+            "@com_github_keybase_go_keychain//:go-keychain",
         ],
         "@io_bazel_rules_go//go/platform:ios": [
-            "@com_github_keybase_go_keychain//:go_default_library",
+            "@com_github_keybase_go_keychain//:go-keychain",
         ],
         "//conditions:default": [],
     }),
@@ -27,6 +27,6 @@ go_library(
 
 go_binary(
     name = "feedly",
-    embed = [":go_default_library"],
+    embed = [":feedly_lib"],
     visibility = ["//visibility:public"],
 )
