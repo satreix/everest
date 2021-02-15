@@ -1,6 +1,5 @@
 workspace(name = "everest")
 
-load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
@@ -13,43 +12,17 @@ http_archive(
 http_archive(
     name = "com_github_antlr_grammars_v4",
     build_file_content = """exports_files(glob(["**/*.g4"]), visibility = ["//visibility:public"])""",
-    sha256 = "eedb0e521bc39f086ef3b094b4de0b3e88b41a56525e367347b35d565b44c31b",
-    strip_prefix = "grammars-v4-2ebc7a7d7eb019694ec73cabf017f80f87f47e67",
-    urls = ["https://github.com/antlr/grammars-v4/archive/2ebc7a7d7eb019694ec73cabf017f80f87f47e67.tar.gz"],  # 2020-11-10
+    sha256 = "e82c80ca34d4e08f3fdbb62d845f72ace14db74c33a04093c933434d9160d702",
+    strip_prefix = "grammars-v4-ca9bd3bde2371646f8c1084fa94d2f042ead8105",
+    urls = ["https://github.com/antlr/grammars-v4/archive/ca9bd3bde2371646f8c1084fa94d2f042ead8105.tar.gz"],  # Latest @ 2021-02-15
 )
 
 http_archive(
-    name = "bazel_skylib",
-    sha256 = "e5d90f0ec952883d56747b7604e2a15ee36e288bb556c3d0ed33e818a4d971f2",
-    strip_prefix = "bazel-skylib-1.0.2",
-    url = "https://github.com/bazelbuild/bazel-skylib/archive/1.0.2.tar.gz",
-)
-
-git_repository(
     name = "rules_python",
-    commit = "94677401bc56ed5d756f50b441a6a5c7f735a6d4",
-    remote = "https://github.com/bazelbuild/rules_python.git",
-    shallow_since = "1573842889 -0500",
+    sha256 = "8cc0ad31c8fc699a49ad31628273529ef8929ded0a0859a3d841ce711a9a90d5",
+    strip_prefix = "rules_python-c7e068d38e2fec1d899e1c150e372f205c220e27",
+    urls = ["https://github.com/bazelbuild/rules_python/archive/c7e068d38e2fec1d899e1c150e372f205c220e27.tar.gz"],  # Latest @ 2021-02-15
 )
-
-load("@rules_python//python:repositories.bzl", "py_repositories")
-
-py_repositories()
-
-load("@rules_python//python:pip.bzl", "pip_repositories")
-
-pip_repositories()
-
-load("@rules_python//python:pip.bzl", "pip3_import")
-
-pip3_import(
-    name = "pypi",
-    requirements = "//tools/python:requirements.txt",
-)
-
-load("@pypi//:requirements.bzl", "pip_install")
-
-pip_install()
 
 http_archive(
     name = "jq",
@@ -77,6 +50,73 @@ http_archive(
     ],
 )
 
+http_archive(
+    name = "rules_rust",
+    sha256 = "1d3c950e7ffbe289e409b38030bf84c079d93d93262ba515cd389f9d0c7cb805",
+    strip_prefix = "rules_rust-38cba053a8bdaa570c52d5952c3398877d2a92e9",
+    urls = ["https://github.com/bazelbuild/rules_rust/archive/38cba053a8bdaa570c52d5952c3398877d2a92e9.tar.gz"],  # Latest @ 2021-02-15
+)
+
+http_archive(
+    name = "com_google_protobuf",
+    sha256 = "d0f5f605d0d656007ce6c8b5a82df3037e1d8fe8b121ed42e536f569dec16113",
+    strip_prefix = "protobuf-3.14.0",
+    urls = [
+        "https://storage.googleapis.com/bazel-mirror/github.com/protocolbuffers/protobuf/archive/v3.14.0.tar.gz",
+        "https://github.com/protocolbuffers/protobuf/archive/v3.14.0.tar.gz",
+    ],
+)
+
+http_archive(
+    name = "com_github_bazelbuild_buildtools",
+    sha256 = "f3ef44916e6be705ae862c0520bac6834dd2ff1d4ac7e5abc61fe9f12ce7a865",
+    strip_prefix = "buildtools-0.29.0",
+    urls = ["https://github.com/bazelbuild/buildtools/archive/0.29.0.tar.gz"],
+)
+
+http_archive(
+    name = "rules_cc",
+    sha256 = "cb8ce8a25464b2a8536450971ad1b45ee309491c1f5e052a611b9e249cfdd35d",
+    strip_prefix = "rules_cc-40548a2974f1aea06215272d9c2b47a14a24e556",
+    urls = ["https://github.com/bazelbuild/rules_cc/archive/40548a2974f1aea06215272d9c2b47a14a24e556.tar.gz"],  # Latest @ 2021-02-15
+)
+
+http_archive(
+    name = "rules_jvm_external",
+    sha256 = "31d226a6b3f5362b59d261abf9601116094ea4ae2aa9f28789b6c105e4cada68",
+    strip_prefix = "rules_jvm_external-4.0",
+    urls = ["https://github.com/bazelbuild/rules_jvm_external/archive/4.0.tar.gz"],
+)
+
+http_archive(
+    name = "rules_foreign_cc",
+    sha256 = "e7446144277c9578141821fc91c55a61df7ae01bda890902f7286f5fd2f6ae46",
+    strip_prefix = "rules_foreign_cc-d54c78ab86b40770ee19f0949db9d74a831ab9f0",
+    urls = ["https://github.com/bazelbuild/rules_foreign_cc/archive/d54c78ab86b40770ee19f0949db9d74a831ab9f0.tar.gz"],  # 2020-11-10
+)
+
+http_archive(
+    name = "uncrustify",
+    build_file_content = """filegroup(name = "all", srcs = glob(["**"]), visibility = ["//visibility:public"])""",
+    sha256 = "ad0a7b1f68aa3527d1b89d177d192385fe41b830d46167bde3c3b578e9b0ed06",
+    strip_prefix = "uncrustify-uncrustify-0.70.1",
+    urls = ["https://github.com/uncrustify/uncrustify/archive/uncrustify-0.70.1.tar.gz"],
+)
+
+http_archive(
+    name = "com_google_google_java_format_source",
+    sha256 = "0579aeff9f1127a9f18eb8167488de231c9a51279ec877ae8e047c56ac8b59b6",
+    strip_prefix = "google-java-format-9701afbdf2b29acb0660d6af1ea478842ffe40bc",
+    urls = ["https://github.com/abergmeier-dsfishlabs/google-java-format/archive/9701afbdf2b29acb0660d6af1ea478842ffe40bc.tar.gz"],
+)
+
+load("@rules_python//python:pip.bzl", "pip_install")
+
+pip_install(
+    name = "pypi",
+    requirements = "//tools/python:requirements.txt",
+)
+
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
 go_rules_dependencies()
@@ -87,58 +127,13 @@ load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 
 gazelle_dependencies()
 
-http_archive(
-    name = "io_bazel_rules_rust",
-    sha256 = "b6da34e057a31b8a85e343c732de4af92a762f804fc36b0baa6c001423a70ebc",
-    strip_prefix = "rules_rust-55f77017a7f5b08e525ebeab6e11d8896a4499d2",
-    urls = [
-        # Master branch as of 2019-10-07
-        "https://github.com/bazelbuild/rules_rust/archive/55f77017a7f5b08e525ebeab6e11d8896a4499d2.tar.gz",
-    ],
-)
-
-load("@io_bazel_rules_rust//rust:repositories.bzl", "rust_repositories")
+load("@rules_rust//rust:repositories.bzl", "rust_repositories")
 
 rust_repositories()
-
-load("@io_bazel_rules_rust//:workspace.bzl", "bazel_version")
-
-bazel_version(name = "bazel_version")
-
-http_archive(
-    name = "com_google_protobuf",
-    sha256 = "758249b537abba2f21ebc2d02555bf080917f0f2f88f4cbe2903e0e28c4187ed",
-    strip_prefix = "protobuf-3.10.0",
-    urls = [
-        "https://storage.googleapis.com/bazel-mirror/github.com/protocolbuffers/protobuf/archive/v3.10.0.tar.gz",
-        "https://github.com/protocolbuffers/protobuf/archive/v3.10.0.tar.gz",
-    ],
-)
 
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 
 protobuf_deps()
-
-http_archive(
-    name = "com_github_bazelbuild_buildtools",
-    sha256 = "f3ef44916e6be705ae862c0520bac6834dd2ff1d4ac7e5abc61fe9f12ce7a865",
-    strip_prefix = "buildtools-0.29.0",
-    urls = ["https://github.com/bazelbuild/buildtools/archive/0.29.0.tar.gz"],
-)
-
-git_repository(
-    name = "rules_cc",
-    commit = "1f87a00b388c29337553581ec94a17985f121031",
-    remote = "https://github.com/bazelbuild/rules_cc.git",
-    shallow_since = "1574844018 -0800",
-)
-
-http_archive(
-    name = "rules_jvm_external",
-    sha256 = "1bbf2e48d07686707dd85357e9a94da775e1dbd7c464272b3664283c9c716d26",
-    strip_prefix = "rules_jvm_external-2.10",
-    url = "https://github.com/bazelbuild/rules_jvm_external/archive/2.10.zip",
-)
 
 load("@rules_jvm_external//:defs.bzl", "maven_install")
 
@@ -150,6 +145,7 @@ maven_install(
         "com.google.googlejavaformat:google-java-format:1.7",
         "commons-cli:commons-cli:1.4",
     ],
+    maven_install_json = "@everest//:maven_install.json",
     repositories = [
         "https://jcenter.bintray.com/",
         "https://maven.google.com",
@@ -157,35 +153,17 @@ maven_install(
     ],
 )
 
+load("@maven//:defs.bzl", "pinned_maven_install")
+
+pinned_maven_install()
+
 load("//examples/rust/hello_world:crates.bzl", "raze_fetch_remote_crates")
 
 raze_fetch_remote_crates()
 
-http_archive(
-    name = "rules_foreign_cc",
-    sha256 = "e7446144277c9578141821fc91c55a61df7ae01bda890902f7286f5fd2f6ae46",
-    strip_prefix = "rules_foreign_cc-d54c78ab86b40770ee19f0949db9d74a831ab9f0",
-    urls = ["https://github.com/bazelbuild/rules_foreign_cc/archive/d54c78ab86b40770ee19f0949db9d74a831ab9f0.tar.gz"],  # 2020-11-10
-)
-
 load("@rules_foreign_cc//:workspace_definitions.bzl", "rules_foreign_cc_dependencies")
 
 rules_foreign_cc_dependencies()
-
-http_archive(
-    name = "uncrustify",
-    build_file_content = """filegroup(name = "all", srcs = glob(["**"]), visibility = ["//visibility:public"])""",
-    sha256 = "ad0a7b1f68aa3527d1b89d177d192385fe41b830d46167bde3c3b578e9b0ed06",
-    strip_prefix = "uncrustify-uncrustify-0.70.1",
-    urls = ["https://github.com/uncrustify/uncrustify/archive/uncrustify-0.70.1.tar.gz"],
-)
-
-git_repository(
-    name = "com_google_google_java_format_source",
-    commit = "9701afbdf2b29acb0660d6af1ea478842ffe40bc",
-    remote = "https://github.com/abergmeier-dsfishlabs/google-java-format.git",
-    shallow_since = "1508756910 +0200",
-)
 
 load("@com_google_google_java_format_source//tools/bazel:def.bzl", "java_format")
 
@@ -197,7 +175,6 @@ java_format(
 )
 
 # gazelle:repository_macro deps.bzl%dependencies
-
 load("//:deps.bzl", "dependencies")
 
 dependencies()
