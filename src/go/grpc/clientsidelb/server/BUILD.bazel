@@ -1,0 +1,25 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "server_lib",
+    srcs = [
+        "discovery.go",
+        "server.go",
+        "signal.go",
+    ],
+    importpath = "github.com/satreix/everest/src/go/grpc/clientsidelb/server",
+    visibility = ["//visibility:private"],
+    deps = [
+        "@com_github_hashicorp_consul_api//:api",
+        "@com_github_oklog_run//:run",
+        "@org_golang_google_grpc//:go_default_library",
+        "@org_golang_google_grpc//reflection",
+        "@org_golang_google_grpc_examples//helloworld/helloworld",
+    ],
+)
+
+go_binary(
+    name = "server",
+    embed = [":server_lib"],
+    visibility = ["//visibility:public"],
+)

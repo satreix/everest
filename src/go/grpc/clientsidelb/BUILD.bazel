@@ -1,0 +1,9 @@
+load("@bazel_skylib//rules:build_test.bzl", "build_test")
+
+build_test(
+    name = "clientsidelb_build_test",
+    targets = [
+        "//src/go/grpc/clientsidelb/client",
+        "//src/go/grpc/clientsidelb/server",
+    ],
+)
