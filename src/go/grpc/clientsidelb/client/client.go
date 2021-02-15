@@ -18,7 +18,6 @@ func main() {
 	conn, err := grpc.Dial(
 		*addr,
 		grpc.WithInsecure(),
-		grpc.WithDisableServiceConfig(),
 		grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy":"round_robin"}`),
 	)
 	if err != nil {
