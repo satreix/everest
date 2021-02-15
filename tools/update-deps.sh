@@ -11,6 +11,7 @@ bazel run //:gazelle -- update-repos -from_file=go.mod -prune -to_macro deps.bzl
 
 section "Java"
 echo "Manually update maven_install in WORKSPACE"
+bazel run @unpinned_maven//:pin
 
 section "Python"
 ./tools/python/update-deps.sh
