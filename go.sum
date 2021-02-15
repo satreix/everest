@@ -1,5 +1,7 @@
 github.com/antlr/antlr4 v0.0.0-20201029161626-9a95f0cc3d7c h1:j/C2kxPfyE0d87/ggAjIsCV5Cdkqmjb+O0W8W+1J+IY=
 github.com/antlr/antlr4 v0.0.0-20201029161626-9a95f0cc3d7c/go.mod h1:T7PbCXFs94rrTttyxjbyT5+/1V8T2TYDejxUfHJjw1Y=
+github.com/bazelbuild/rules_go v0.25.1 h1:kFMT+OgT62SY3tBTRYFJBTphOHHoCfyn5wbRFNauKUQ=
+github.com/bazelbuild/rules_go v0.25.1/go.mod h1:MC23Dc/wkXEyk3Wpq6lCqz0ZAYOZDw2DR5y3N1q2i7M=
 github.com/google/go-cmp v0.5.2 h1:X2ev0eStA3AbceY54o37/0PQ/UWqKEiiO2dKL5OPaFM=
 github.com/google/go-cmp v0.5.2/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/gosuri/uilive v0.0.3 h1:kvo6aB3pez9Wbudij8srWo4iY6SFTTxTKOkb+uRCE8I=
