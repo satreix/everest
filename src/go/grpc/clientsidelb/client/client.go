@@ -7,6 +7,7 @@ import (
 	"time"
 
 	_ "github.com/mbobakov/grpc-consul-resolver"
+	"github.com/satreix/everest/src/go/grpc/clientsidelb/server/service_config"
 	"google.golang.org/grpc"
 	pb "google.golang.org/grpc/examples/helloworld/helloworld"
 )
@@ -18,7 +19,7 @@ func main() {
 	conn, err := grpc.Dial(
 		*addr,
 		grpc.WithInsecure(),
-		grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy":"round_robin"}`),
+		grpc.WithDefaultServiceConfig(service_config.ServiceConfigJSON()),
 	)
 	if err != nil {
 		log.Fatal(err)

@@ -24,7 +24,7 @@ bazel-bin/src/go/grpc/clientsidelb/server/server_/server --addr 127.0.0.1:50053 
 Start the client:
 
 ```bash
-bazel run //src/go/grpc/clientsidelb/client -- --addr consul://127.0.0.1:8500/helloworld.Greeter?healthy=true
+bazel run //src/go/grpc/clientsidelb/client -- --addr 'consul://127.0.0.1:8500/helloworld.Greeter?healthy=true'
 ```
 
 The client will loop forever. The RPCs will be load balanced to the healthy

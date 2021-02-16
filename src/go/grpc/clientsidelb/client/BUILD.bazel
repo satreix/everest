@@ -6,6 +6,7 @@ go_library(
     importpath = "github.com/satreix/everest/src/go/grpc/clientsidelb/client",
     visibility = ["//visibility:private"],
     deps = [
+        "//src/go/grpc/clientsidelb/server/service_config",
         "@com_github_mbobakov_grpc_consul_resolver//:grpc-consul-resolver",
         "@org_golang_google_grpc//:go_default_library",
         "@org_golang_google_grpc_examples//helloworld/helloworld",
