@@ -42,7 +42,8 @@ func callOnce(client pb.GreeterClient) {
 
 	resp, err := client.SayHello(ctx, &pb.HelloRequest{Name: "everest"})
 	if err != nil {
-		log.Fatal(err)
+		log.Printf("error: %s", err)
+		return
 	}
 
 	log.Printf("resp: %#v", resp.Message)

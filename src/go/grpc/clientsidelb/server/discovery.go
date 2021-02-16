@@ -37,6 +37,16 @@ func discoverService(serviceName, addr string) (execute func() error, interrupt 
 			Tags:    nil,
 			Port:    port,
 			Address: host,
+			Check: &consulapi.AgentServiceCheck{
+				Name:                           "gRPC Health Status",
+				Interval:                       "5s",
+				Timeout:                        "1s",
+				GRPC:                           fmt.Sprintf("%s:%d/%s", host, port, serviceName),
+				GRPCUseTLS:                     false,
+				SuccessBeforePassing:           1,
+				FailuresBeforeCritical:         1,
+				DeregisterCriticalServiceAfter: "1m",
+			},
 		})
 	}
 

@@ -1,5 +1,6 @@
 load("@bazel_skylib//rules:build_test.bzl", "build_test")
 
+# FIXME there is no automated test yet that would run the demo.
 build_test(
     name = "clientsidelb_build_test",
     targets = [
