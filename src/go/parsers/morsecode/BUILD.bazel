@@ -14,7 +14,7 @@ go_library(
         "morsecode.go",
         ":morsecode_go",  # keep
     ],
-    importpath = "github.com/satreix/everest/src/parsers/morsecode",
+    importpath = "github.com/satreix/everest/src/go/parsers/morsecode",
     visibility = ["//visibility:public"],
     deps = ["@com_github_antlr_antlr4//runtime/Go/antlr:go_default_library"],
 )
