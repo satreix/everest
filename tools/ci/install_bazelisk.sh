@@ -34,7 +34,7 @@ install_bazelisk() {
   bazel_path_dir="$(dirname "$bazel_path")"
 
   set -x
-  curl -LO "$link"
+  curl -sLO "$link"
   mkdir -p "$bazel_path_dir"
   mv "${file}" "$bazel_path"
   chmod +x "$bazel_path"
