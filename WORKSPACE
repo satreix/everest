@@ -34,19 +34,19 @@ http_archive(
 
 http_archive(
     name = "io_bazel_rules_go",
-    sha256 = "b9aa86ec08a292b97ec4591cf578e020b35f98e12173bbd4a921f84f583aebd9",
+    sha256 = "7904dbecbaffd068651916dce77ff3437679f9d20e1a7956bff43826e7645fcc",
     urls = [
-        "https://storage.googleapis.com/bazel-mirror/github.com/bazelbuild/rules_go/releases/download/v0.20.2/rules_go-v0.20.2.tar.gz",
-        "https://github.com/bazelbuild/rules_go/releases/download/v0.20.2/rules_go-v0.20.2.tar.gz",
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_go/releases/download/v0.25.1/rules_go-v0.25.1.tar.gz",
+        "https://github.com/bazelbuild/rules_go/releases/download/v0.25.1/rules_go-v0.25.1.tar.gz",
     ],
 )
 
 http_archive(
     name = "bazel_gazelle",
-    sha256 = "86c6d481b3f7aedc1d60c1c211c6f76da282ae197c3b3160f54bd3a8f847896f",
+    sha256 = "222e49f034ca7a1d1231422cdb67066b885819885c356673cb1f72f748a3c9d4",
     urls = [
-        "https://storage.googleapis.com/bazel-mirror/github.com/bazelbuild/bazel-gazelle/releases/download/v0.19.1/bazel-gazelle-v0.19.1.tar.gz",
-        "https://github.com/bazelbuild/bazel-gazelle/releases/download/v0.19.1/bazel-gazelle-v0.19.1.tar.gz",
+        "https://mirror.bazel.build/github.com/bazelbuild/bazel-gazelle/releases/download/v0.22.3/bazel-gazelle-v0.22.3.tar.gz",
+        "https://github.com/bazelbuild/bazel-gazelle/releases/download/v0.22.3/bazel-gazelle-v0.22.3.tar.gz",
     ],
 )
 
@@ -69,9 +69,9 @@ http_archive(
 
 http_archive(
     name = "com_github_bazelbuild_buildtools",
-    sha256 = "f3ef44916e6be705ae862c0520bac6834dd2ff1d4ac7e5abc61fe9f12ce7a865",
-    strip_prefix = "buildtools-0.29.0",
-    urls = ["https://github.com/bazelbuild/buildtools/archive/0.29.0.tar.gz"],
+    sha256 = "0d3ca4ed434958dda241fb129f77bd5ef0ce246250feed2d5a5470c6f29a77fa",
+    strip_prefix = "buildtools-4.0.0",
+    urls = ["https://github.com/bazelbuild/buildtools/archive/4.0.0.tar.gz"],
 )
 
 http_archive(
@@ -110,22 +110,40 @@ http_archive(
     urls = ["https://github.com/abergmeier-dsfishlabs/google-java-format/archive/9701afbdf2b29acb0660d6af1ea478842ffe40bc.tar.gz"],
 )
 
-load("@rules_python//python:pip.bzl", "pip_install")
+http_archive(
+    name = "io_grpc_grpc_java",
+    sha256 = "537d01bdc5ae2bdb267853a75578d671db3075b33e3a00a93f5a572191d3a7b3",
+    strip_prefix = "grpc-java-1.35.0",
+    urls = ["https://github.com/grpc/grpc-java/archive/v1.35.0.tar.gz"],
+)
 
-pip_install(
-    name = "pypi",
-    requirements = "//tools/python:requirements.txt",
+# Import examples in its own repo as its ignored in the main repository.
+# Patch to hack visibility.
+http_archive(
+    name = "io_grpc_grpc_java_examples",
+    patch_args = ["-p1"],
+    patches = ["@everest//third_party:io_grpc_grpc_java_examples.patch"],
+    sha256 = "537d01bdc5ae2bdb267853a75578d671db3075b33e3a00a93f5a572191d3a7b3",
+    strip_prefix = "grpc-java-1.35.0/examples",
+    urls = ["https://github.com/grpc/grpc-java/archive/v1.35.0.tar.gz"],
 )
 
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
 go_rules_dependencies()
 
-go_register_toolchains()
+go_register_toolchains(version = "1.16")
 
 load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 
 gazelle_dependencies()
+
+load("@rules_python//python:pip.bzl", "pip_install")
+
+pip_install(
+    name = "pypi",
+    requirements = "//tools/python:requirements.txt",
+)
 
 load("@rules_rust//rust:repositories.bzl", "rust_repositories")
 
@@ -136,22 +154,28 @@ load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 protobuf_deps()
 
 load("@rules_jvm_external//:defs.bzl", "maven_install")
+load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS", "IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS")
 
 # View installed things:
 # bazel query @maven//:all --output=build
 maven_install(
     artifacts = [
-        "com.google.code.gson:gson:2.8.5",
         "com.google.googlejavaformat:google-java-format:1.7",
         "commons-cli:commons-cli:1.4",
-    ],
+    ] + IO_GRPC_GRPC_JAVA_ARTIFACTS,
+    generate_compat_repositories = True,
     maven_install_json = "@everest//:maven_install.json",
+    override_targets = IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS,
     repositories = [
         "https://jcenter.bintray.com/",
         "https://maven.google.com",
         "https://repo1.maven.org/maven2",
     ],
 )
+
+load("@maven//:compat.bzl", "compat_repositories")
+
+compat_repositories()
 
 load("@maven//:defs.bzl", "pinned_maven_install")
 
@@ -183,3 +207,7 @@ dependencies()
 load("@rules_antlr//antlr:repositories.bzl", "rules_antlr_dependencies")
 
 rules_antlr_dependencies("4.8")
+
+load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
+
+grpc_java_repositories()

@@ -1,15 +1,12 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_test")
 
 go_test(
-    name = "go_default_test",
+    name = "echo_test",
     size = "small",
     srcs = ["echo_e2e_test.go"],
     data = [
         "//src/go/echo/server",
         "//src/java/echo/client",
     ],
-    deps = [
-        "//src/go/echo/server/transmission_object:go_default_library",
-        "@io_bazel_rules_go//go/tools/bazel:go_default_library",
-    ],
+    deps = ["@io_bazel_rules_go//go/tools/bazel:go_default_library"],
 )

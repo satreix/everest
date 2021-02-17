@@ -5,8 +5,12 @@ java_binary(
     srcs = ["Client.java"],
     main_class = "src.java.echo.client.Client",
     visibility = ["//src/go/echo:__pkg__"],
+    runtime_deps = [
+        "@io_grpc_grpc_java//netty",
+    ],
     deps = [
-        "//src/java/echo/client/transmission_object",
-        artifact("com.google.code.gson:gson"),
+        "@io_grpc_grpc_java//api",
+        "@io_grpc_grpc_java_examples//:helloworld_java_grpc",
+        "@io_grpc_grpc_java_examples//:helloworld_java_proto",
     ],
 )
