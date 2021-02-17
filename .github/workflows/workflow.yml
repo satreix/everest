@@ -20,14 +20,20 @@ jobs:
     name: check - (${{ matrix.platform }})
     runs-on: ${{ matrix.platform }}
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v1
+
+      - name: Mount bazel cache
+        uses: actions/cache@v1
+        with:
+          path: "/home/runner/.cache/bazel"
+          key: bazel
 
       # Python rules use host install still.
       - uses: actions/setup-python@v1
       - run: python --version
 
       - name: Install bazelisk
-        run: ./tools/ci/install_bazelisk.sh v1.2.1 ${{ matrix.platform }}
+        run: ./tools/ci/install_bazelisk.sh v1.7.5 ${{ matrix.platform }}
 
       - name: Test
         run: ./bin/bazel test //...
