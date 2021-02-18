@@ -17,4 +17,7 @@ section "Python"
 ./tools/python/update-deps.sh
 
 section "Rust"
-echo "Read how to update rust dependencies in src/rust/hello_world/README.md"
+if ! cargo raze; then
+  echo "Install cargo-raze from https://github.com/google/cargo-raze" >&2
+  exit 1
+fi
