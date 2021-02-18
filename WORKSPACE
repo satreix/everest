@@ -52,9 +52,9 @@ http_archive(
 
 http_archive(
     name = "rules_rust",
-    sha256 = "1d3c950e7ffbe289e409b38030bf84c079d93d93262ba515cd389f9d0c7cb805",
-    strip_prefix = "rules_rust-38cba053a8bdaa570c52d5952c3398877d2a92e9",
-    urls = ["https://github.com/bazelbuild/rules_rust/archive/38cba053a8bdaa570c52d5952c3398877d2a92e9.tar.gz"],  # Latest @ 2021-02-15
+    urls = ["https://github.com/bazelbuild/rules_rust/archive/fee3b3c658c3d2f49c20c1b12e55063bf7a7f693.tar.gz"],  # Latest @ 2021-02-18
+    strip_prefix = "rules_rust-fee3b3c658c3d2f49c20c1b12e55063bf7a7f693",
+    sha256 = "0f55b4b69fd9bc1dbcc038e75ec54bd97fa00ddc6cfbc6278fc288dafc98b7f8",
 )
 
 http_archive(
@@ -181,7 +181,7 @@ load("@maven//:defs.bzl", "pinned_maven_install")
 
 pinned_maven_install()
 
-load("//src/rust/hello_world:crates.bzl", "raze_fetch_remote_crates")
+load("//third_party/cargo:crates.bzl", "raze_fetch_remote_crates")
 
 raze_fetch_remote_crates()
 

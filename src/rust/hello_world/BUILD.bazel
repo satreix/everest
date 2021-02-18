@@ -1,16 +1,11 @@
 load("@rules_rust//rust:rust.bzl", "rust_binary")
 
-alias(
-    name = "clap",
-    actual = "@raze__clap__2_33_0//:clap",
-)
-
 rust_binary(
     name = "hello_world",
-    srcs = ["hello_world.rs"],
+    srcs = ["src/main.rs"],
     visibility = ["//visibility:public"],
     deps = [
-        "clap",
+        "//src/rust/hello_world/cargo:clap",
     ],
 )
 

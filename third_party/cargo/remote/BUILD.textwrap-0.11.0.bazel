@@ -1,21 +1,11 @@
 """
+@generated
 cargo-raze crate build file.
 
 DO NOT EDIT! Replaced on runs of cargo-raze
 """
 
-package(default_visibility = [
-    # Public for visibility by "@raze__crate__version//" targets.
-    #
-    # Prefer access through "//src/rust/hello_world", which limits external
-    # visibility to explicit Cargo.toml dependencies.
-    "//visibility:public",
-])
-
-licenses([
-    "notice",  # "MIT"
-])
-
+# buildifier: disable=load
 load(
     "@rules_rust//rust:rust.bzl",
     "rust_binary",
@@ -23,8 +13,27 @@ load(
     "rust_test",
 )
 
-# Unsupported target "layout" with type "example" omitted
+# buildifier: disable=load
+load("@bazel_skylib//lib:selects.bzl", "selects")
+
+package(default_visibility = [
+    # Public for visibility by "@raze__crate__version//" targets.
+    #
+    # Prefer access through "//third_party/cargo", which limits external
+    # visibility to explicit Cargo.toml dependencies.
+    "//visibility:public",
+])
+
+licenses([
+    "notice",  # MIT from expression "MIT"
+])
+
+# Generated Targets
+
 # Unsupported target "linear" with type "bench" omitted
+
+# Unsupported target "layout" with type "example" omitted
+
 # Unsupported target "termwidth" with type "example" omitted
 
 rust_library(
@@ -34,11 +43,17 @@ rust_library(
     ],
     crate_root = "src/lib.rs",
     crate_type = "lib",
+    data = [],
     edition = "2015",
     rustc_flags = [
         "--cap-lints=allow",
     ],
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
     version = "0.11.0",
+    # buildifier: leave-alone
     deps = [
         "@raze__unicode_width__0_1_6//:unicode_width",
     ],
