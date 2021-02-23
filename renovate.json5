@@ -1,0 +1,12 @@
+{
+  extends: ["config:base"],
+  ignorePaths: ["third_party/**"],
+  labels: ["dependencies"],
+  postUpgradeTasks: {
+    commands: [
+      "./tools/update-deps.sh",
+      "./tools/format.sh",
+    ],
+  },
+  schedule: ["every weekend"],
+}
