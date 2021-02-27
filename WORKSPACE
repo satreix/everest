@@ -123,9 +123,9 @@ http_archive(
     name = "io_grpc_grpc_java_examples",
     patch_args = ["-p1"],
     patches = ["@everest//third_party:io_grpc_grpc_java_examples.patch"],
-    sha256 = "537d01bdc5ae2bdb267853a75578d671db3075b33e3a00a93f5a572191d3a7b3",
-    strip_prefix = "grpc-java-1.35.0/examples",
-    urls = ["https://github.com/grpc/grpc-java/archive/v1.35.0.tar.gz"],
+    sha256 = "ab28b5b5729aff73d3907eaf5c79fa46fb82db09754c279f6833f93c03afec65",
+    strip_prefix = "grpc-java-1.36.0/examples",
+    urls = ["https://github.com/grpc/grpc-java/archive/v1.36.0.tar.gz"],
 )
 
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
