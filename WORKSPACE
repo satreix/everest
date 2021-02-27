@@ -105,9 +105,9 @@ http_archive(
 
 http_archive(
     name = "com_google_google_java_format_source",
-    sha256 = "0579aeff9f1127a9f18eb8167488de231c9a51279ec877ae8e047c56ac8b59b6",
-    strip_prefix = "google-java-format-9701afbdf2b29acb0660d6af1ea478842ffe40bc",
-    urls = ["https://github.com/abergmeier-dsfishlabs/google-java-format/archive/9701afbdf2b29acb0660d6af1ea478842ffe40bc.tar.gz"],
+    sha256 = "1214b53a37bd39af33fbd283921c94096244a3612fc95aee38568da39fb639c6",
+    strip_prefix = "google-java-format-830daeeb7c042fd42a26c305d712f53ed0703a53",
+    urls = ["https://github.com/abergmeier-dsfishlabs/google-java-format/archive/830daeeb7c042fd42a26c305d712f53ed0703a53.tar.gz"],
 )
 
 http_archive(
