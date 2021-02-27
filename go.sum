@@ -5,6 +5,8 @@ github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/antlr/antlr4 v0.0.0-20201029161626-9a95f0cc3d7c h1:j/C2kxPfyE0d87/ggAjIsCV5Cdkqmjb+O0W8W+1J+IY=
 github.com/antlr/antlr4 v0.0.0-20201029161626-9a95f0cc3d7c/go.mod h1:T7PbCXFs94rrTttyxjbyT5+/1V8T2TYDejxUfHJjw1Y=
+github.com/antlr/antlr4 v0.0.0-20210221031308-60fd27ff93a8 h1:U9u8WXsKqHa6T2QJpatkePkDKqesefzIQCMXGWIDTD8=
+github.com/antlr/antlr4 v0.0.0-20210221031308-60fd27ff93a8/go.mod h1:T7PbCXFs94rrTttyxjbyT5+/1V8T2TYDejxUfHJjw1Y=
 github.com/bazelbuild/rules_go v0.25.1 h1:kFMT+OgT62SY3tBTRYFJBTphOHHoCfyn5wbRFNauKUQ=
 github.com/bazelbuild/rules_go v0.25.1/go.mod h1:MC23Dc/wkXEyk3Wpq6lCqz0ZAYOZDw2DR5y3N1q2i7M=
 github.com/census-instrumentation/opencensus-proto v0.2.1 h1:glEXhBS5PSLLv4IXzLA5yPRVX4bilULVyxxbrfOtDAk=
