@@ -92,7 +92,7 @@ http_archive(
     name = "rules_foreign_cc",
     sha256 = "b71efb5b2dae197352604ecc928bd470c1030a89f1306e2da37e94915470f9ee",
     strip_prefix = "rules_foreign_cc-e285764b78cc91e97cfead87f48d06b9c4d83a81",
-    urls = ["https://github.com/bazelbuild/rules_foreign_cc/archive/e285764b78cc91e97cfead87f48d06b9c4d83a81.tar.gz"],  # 2020-11-10
+    urls = ["https://github.com/bazelbuild/rules_foreign_cc/archive/e285764b78cc91e97cfead87f48d06b9c4d83a81.tar.gz"],
 )
 
 http_archive(
