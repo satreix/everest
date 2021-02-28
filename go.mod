@@ -12,7 +12,7 @@ require (
 	github.com/mattn/go-isatty v0.0.10 // indirect
 	github.com/mndrix/tap-go v0.0.0-20171203230836-629fa407e90b
 	github.com/pkg/browser v0.0.0-20210115035449-ce105d075bb4
-	google.golang.org/grpc v1.35.0
+	google.golang.org/grpc v1.36.0
 	google.golang.org/grpc/examples v0.0.0-20210212222430-425d405f3928
 	gopkg.in/yaml.v2 v2.2.7 // indirect
 )
