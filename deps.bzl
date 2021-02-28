@@ -131,8 +131,8 @@ def dependencies():
     go_repository(
         name = "com_github_pkg_browser",
         importpath = "github.com/pkg/browser",
-        sum = "h1:49lOXmGaUpV9Fz3gd7TFZY106KVlPVa5jcYD1gaQf98=",
-        version = "v0.0.0-20180916011732-0a3d74bf9ce4",
+        sum = "h1:Qj1ukM4GlMWXNdMBuXcXfz/Kw9s1qm0CLY32QxuSImI=",
+        version = "v0.0.0-20210115035449-ce105d075bb4",
     )
     go_repository(
         name = "com_github_pkg_errors",
@@ -140,7 +140,6 @@ def dependencies():
         sum = "h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=",
         version = "v0.9.1",
     )
-
     go_repository(
         name = "com_github_pmezard_go_difflib",
         importpath = "github.com/pmezard/go-difflib",
