@@ -55,7 +55,7 @@ rust_library(
         "cargo-raze",
         "manual",
     ],
-    version = "2.33.0",
+    version = "2.33.3",
     # buildifier: leave-alone
     deps = [
         "@raze__atty__0_2_13//:atty",

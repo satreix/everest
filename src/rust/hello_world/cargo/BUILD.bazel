@@ -14,7 +14,7 @@ licenses([
 # Aliased targets
 alias(
     name = "clap",
-    actual = "@raze__clap__2_33_0//:clap",
+    actual = "@raze__clap__2_33_3//:clap",
     tags = [
         "cargo-raze",
         "manual",
