@@ -104,10 +104,17 @@ def dependencies():
         version = "v0.0.1",
     )
     go_repository(
+        name = "com_github_keybase_go_dbus",
+        importpath = "github.com/keybase/go.dbus",
+        sum = "h1:k9rCqucCsPpBKDh9gDwk3U46TcNd7jpKahed9JGICGY=",
+        version = "v0.0.0-20200324223359-a94be52c0b03",
+    )
+
+    go_repository(
         name = "com_github_keybase_go_keychain",
         importpath = "github.com/keybase/go-keychain",
-        sum = "h1:M88A1cGUWZRErgbiGFZ6OFOXCCeCKdVRFoSa+t+vgfY=",
-        version = "v0.0.0-20191114153608-ccd67945d59e",
+        sum = "h1:Mj0fhP9dzHKPijsmli/XbXMDKe1/KWy5xKci8e3nmBg=",
+        version = "v0.0.0-20201121013009-976c83ec27a6",
     )
     go_repository(
         name = "com_github_mattn_go_isatty",
@@ -127,6 +134,13 @@ def dependencies():
         sum = "h1:49lOXmGaUpV9Fz3gd7TFZY106KVlPVa5jcYD1gaQf98=",
         version = "v0.0.0-20180916011732-0a3d74bf9ce4",
     )
+    go_repository(
+        name = "com_github_pkg_errors",
+        importpath = "github.com/pkg/errors",
+        sum = "h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=",
+        version = "v0.9.1",
+    )
+
     go_repository(
         name = "com_github_pmezard_go_difflib",
         importpath = "github.com/pmezard/go-difflib",
@@ -202,8 +216,8 @@ def dependencies():
     go_repository(
         name = "org_golang_x_crypto",
         importpath = "golang.org/x/crypto",
-        sum = "h1:VklqNMn3ovrHsnt90PveolxSbWFaJdECFbxSq0Mqo2M=",
-        version = "v0.0.0-20190308221718-c2843e01d9a2",
+        sum = "h1:3zb4D3T4G8jdExgVU/95+vQXfpEPiMdCaZgmGVxjNHM=",
+        version = "v0.0.0-20200323165209-0ec3e9974c59",
     )
     go_repository(
         name = "org_golang_x_exp",
@@ -220,8 +234,8 @@ def dependencies():
     go_repository(
         name = "org_golang_x_net",
         importpath = "golang.org/x/net",
-        sum = "h1:oWX7TPOiFAMXLq8o0ikBYfCJVlRHBcsciT5bXOrH628=",
-        version = "v0.0.0-20190311183353-d8887717615a",
+        sum = "h1:0GoQqolDA55aaLxZyTzK/Y2ePZzZTUrRacwib7cNsYQ=",
+        version = "v0.0.0-20190404232315-eb5bcb51f2a3",
     )
     go_repository(
         name = "org_golang_x_oauth2",
