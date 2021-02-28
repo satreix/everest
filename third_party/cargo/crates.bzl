@@ -43,12 +43,12 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
-        name = "raze__clap__2_33_0",
-        url = "https://crates.io/api/v1/crates/clap/2.33.0/download",
+        name = "raze__clap__2_33_3",
+        url = "https://crates.io/api/v1/crates/clap/2.33.3/download",
         type = "tar.gz",
-        sha256 = "5067f5bb2d80ef5d68b4c87db81601f0b75bca627bc2ef76b141d7b846a3c6d9",
-        strip_prefix = "clap-2.33.0",
-        build_file = Label("//third_party/cargo/remote:BUILD.clap-2.33.0.bazel"),
+        sha256 = "37e58ac78573c40708d45522f0d80fa2f01cc4f9b4e2bf749807255454312002",
+        strip_prefix = "clap-2.33.3",
+        build_file = Label("//third_party/cargo/remote:BUILD.clap-2.33.3.bazel"),
     )
 
     maybe(
