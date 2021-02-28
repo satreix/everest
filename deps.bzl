@@ -10,8 +10,8 @@ def dependencies():
     go_repository(
         name = "com_github_antlr_antlr4",
         importpath = "github.com/antlr/antlr4",
-        sum = "h1:j/C2kxPfyE0d87/ggAjIsCV5Cdkqmjb+O0W8W+1J+IY=",
-        version = "v0.0.0-20201029161626-9a95f0cc3d7c",
+        sum = "h1:U9u8WXsKqHa6T2QJpatkePkDKqesefzIQCMXGWIDTD8=",
+        version = "v0.0.0-20210221031308-60fd27ff93a8",
     )
     go_repository(
         name = "com_github_bazelbuild_rules_go",
