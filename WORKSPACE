@@ -78,7 +78,7 @@ http_archive(
     name = "rules_cc",
     sha256 = "5d05d6b7571944ff7a981730f0b1828869e8056a99ac026ecff1f3ade11dc164",
     strip_prefix = "rules_cc-d5d830baafdf0c6f95d7af1577dbaa610fa76a92",
-    urls = ["https://github.com/bazelbuild/rules_cc/archive/d5d830baafdf0c6f95d7af1577dbaa610fa76a92.tar.gz"],  # Latest @ 2021-02-15
+    urls = ["https://github.com/bazelbuild/rules_cc/archive/d5d830baafdf0c6f95d7af1577dbaa610fa76a92.tar.gz"],
 )
 
 http_archive(
