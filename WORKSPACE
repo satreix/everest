@@ -90,9 +90,9 @@ http_archive(
 
 http_archive(
     name = "rules_foreign_cc",
-    sha256 = "b71efb5b2dae197352604ecc928bd470c1030a89f1306e2da37e94915470f9ee",
-    strip_prefix = "rules_foreign_cc-e285764b78cc91e97cfead87f48d06b9c4d83a81",
-    urls = ["https://github.com/bazelbuild/rules_foreign_cc/archive/e285764b78cc91e97cfead87f48d06b9c4d83a81.tar.gz"],
+    sha256 = "55ab92660def486f3ca9fc0a8150a86f46cfc742730d4ab5a6d486c288b42102",
+    strip_prefix = "rules_foreign_cc-175b29c6f78cf3c78516836587c268f3d0690526",
+    urls = ["https://github.com/bazelbuild/rules_foreign_cc/archive/175b29c6f78cf3c78516836587c268f3d0690526.tar.gz"],
 )
 
 http_archive(
