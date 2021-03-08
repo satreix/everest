@@ -110,11 +110,15 @@ http_archive(
     urls = ["https://github.com/abergmeier-dsfishlabs/google-java-format/archive/9701afbdf2b29acb0660d6af1ea478842ffe40bc.tar.gz"],
 )
 
+GRPC_JAVA_VERSION = "1.36.0"
+
+GRPC_JAVA_SHA256 = "ab28b5b5729aff73d3907eaf5c79fa46fb82db09754c279f6833f93c03afec65"
+
 http_archive(
     name = "io_grpc_grpc_java",
-    sha256 = "537d01bdc5ae2bdb267853a75578d671db3075b33e3a00a93f5a572191d3a7b3",
-    strip_prefix = "grpc-java-1.35.0",
-    urls = ["https://github.com/grpc/grpc-java/archive/v1.35.0.tar.gz"],
+    sha256 = GRPC_JAVA_SHA256,
+    strip_prefix = "grpc-java-%s" % GRPC_JAVA_VERSION,
+    urls = ["https://github.com/grpc/grpc-java/archive/v%s.tar.gz" % GRPC_JAVA_VERSION],
 )
 
 # Import examples in its own repo as its ignored in the main repository.
@@ -123,9 +127,9 @@ http_archive(
     name = "io_grpc_grpc_java_examples",
     patch_args = ["-p1"],
     patches = ["@everest//third_party:io_grpc_grpc_java_examples.patch"],
-    sha256 = "537d01bdc5ae2bdb267853a75578d671db3075b33e3a00a93f5a572191d3a7b3",
-    strip_prefix = "grpc-java-1.35.0/examples",
-    urls = ["https://github.com/grpc/grpc-java/archive/v1.35.0.tar.gz"],
+    sha256 = GRPC_JAVA_SHA256,
+    strip_prefix = "grpc-java-%s/examples" % GRPC_JAVA_VERSION,
+    urls = ["https://github.com/grpc/grpc-java/archive/v%s.tar.gz" % GRPC_JAVA_VERSION],
 )
 
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
