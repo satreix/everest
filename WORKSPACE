@@ -146,7 +146,7 @@ load("@rules_python//python:pip.bzl", "pip_install")
 
 pip_install(
     name = "pypi",
-    requirements = "//tools/python:requirements.txt",
+    requirements = "//third_party/python:requirements.txt",
 )
 
 load("@rules_rust//rust:repositories.bzl", "rust_repositories")

@@ -10,8 +10,6 @@
 # - https://github.com/bazelbuild/rules_python/issues/171
 set -euo pipefail
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-
 # FIXME merge and deduplicate the output of the following commands to allow uing dev dependencies:
 # - pipenv lock -r
 # - pipenv lock -r --dev
@@ -22,4 +20,4 @@ fi
 
 pipenv update
 pipenv clean
-pipenv lock -r > "$DIR"/requirements.txt
+pipenv lock -r > third_party/python/requirements.txt
