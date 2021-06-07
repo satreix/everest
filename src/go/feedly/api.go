@@ -151,30 +151,29 @@ func (c *FeedlyClient) GetItems(userID string) (chan StreamContentResponseItem, 
 
 			u, err := c.ContentStreamURL(streamID, options)
 			if err != nil {
-				log.Printf("Error: %s", err)
+				log.Printf("contentStreamURL error: %s", err)
 				break
 			}
 			log.Printf("url: %#v", u)
 
 			req, err := http.NewRequest("GET", u, nil)
 			if err != nil {
-				log.Printf("Error: %s", err)
+				log.Printf("request error: %s", err)
 				break
 			}
 
-			res, err := c.Do(req)
+			resp, err := c.Do(req)
 			if err != nil {
-				log.Printf("Error: %s", err)
+				log.Printf("response error: %s", err)
 				break
 			}
 
 			var r StreamContentResponse
-			err = json.NewDecoder(res.Body).Decode(&r)
-			if err != nil {
+			if err := json.NewDecoder(resp.Body).Decode(&r); err != nil {
 				log.Printf("Error: %s", r.ErrorMessage)
 				break
 			}
-			res.Body.Close()
+			resp.Body.Close()
 
 			if r.ErrorCode != 0 {
 				log.Printf("Error: %s", r.ErrorMessage)

@@ -11,16 +11,18 @@ import (
 )
 
 func main() {
-	log.Printf("getting config from keychain...")
+	log.SetFlags(log.Lshortfile)
 
+	count := flag.Int("c", 30, "How many items to open.")
+	countOnly := flag.Bool("count", false, "Get new count and return.")
+	flag.Parse()
+
+	log.Printf("getting config from keychain...")
 	// TODO move to github.com/zalando/go-keyring
 	userID, oauthToken, err := getConfig()
 	if err != nil {
 		panic(err)
 	}
-
-	countOnly := flag.Bool("count", false, "Get new count and return.")
-	flag.Parse()
 
 	f, err := NewFeedlyClient()
 	if err != nil {
@@ -43,10 +45,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	const count = 30
-
 	uiprogress.Start()
-	bar := uiprogress.AddBar(count)
+	bar := uiprogress.AddBar(*count)
 
 	var d []string
 	i := 0
@@ -62,7 +62,7 @@ func main() {
 
 		bar.Incr()
 
-		if i >= count {
+		if i >= *count {
 			break
 		}
 	}
@@ -70,6 +70,7 @@ func main() {
 	uiprogress.Stop()
 
 	if err := f.UntagEntries([]string{url.QueryEscape(fmt.Sprintf("user/%s/tag/global.saved", userID))}, d); err != nil {
-		log.Fatal(err)
+		log.Print("do you need to update your token? See https://feedly.com/v3/auth/dev")
+		log.Fatalf("untag entries error: %s", err)
 	}
 }
