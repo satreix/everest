@@ -131,8 +131,8 @@ def dependencies():
     go_repository(
         name = "com_github_pkg_browser",
         importpath = "github.com/pkg/browser",
-        sum = "h1:Qj1ukM4GlMWXNdMBuXcXfz/Kw9s1qm0CLY32QxuSImI=",
-        version = "v0.0.0-20210115035449-ce105d075bb4",
+        sum = "h1:acNfDZXmm28D2Yg/c3ALnZStzNaZMSagpbr96vY6Zjc=",
+        version = "v0.0.0-20210706143420-7d21f8c997e2",
     )
     go_repository(
         name = "com_github_pkg_errors",
@@ -251,8 +251,8 @@ def dependencies():
     go_repository(
         name = "org_golang_x_sys",
         importpath = "golang.org/x/sys",
-        sum = "h1:QAcqgptGM8IQBC9K/RC4o+O9YmqEm0diQn9QmZw/0mU=",
-        version = "v0.0.0-20191008105621-543471e840be",
+        sum = "h1:X/2sJAybVknnUnV7AD2HdT6rm2p5BP6eH2j+igduWgk=",
+        version = "v0.0.0-20210616045830-e2b7044e8c71",
     )
     go_repository(
         name = "org_golang_x_text",
