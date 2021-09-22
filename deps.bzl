@@ -131,8 +131,8 @@ def dependencies():
     go_repository(
         name = "com_github_pkg_browser",
         importpath = "github.com/pkg/browser",
-        sum = "h1:acNfDZXmm28D2Yg/c3ALnZStzNaZMSagpbr96vY6Zjc=",
-        version = "v0.0.0-20210706143420-7d21f8c997e2",
+        sum = "h1:KoWmjvw+nsYOo29YJK9vDA65RGE3NrOnUtO7a+RF9HU=",
+        version = "v0.0.0-20210911075715-681adbf594b8",
     )
     go_repository(
         name = "com_github_pkg_errors",
