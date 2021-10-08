@@ -18,13 +18,6 @@ http_archive(
 )
 
 http_archive(
-    name = "rules_python",
-    sha256 = "9df3a651b2f7aed4516cbe1de0d70ed57d1c1d48cd50308b64defe7192a751ab",
-    strip_prefix = "rules_python-c303849892a2c716a2582172be43ba525feac23d",
-    urls = ["https://github.com/bazelbuild/rules_python/archive/c303849892a2c716a2582172be43ba525feac23d.tar.gz"],
-)
-
-http_archive(
     name = "jq",
     build_file = "//tools/jq:jq.BUILD.bazel",
     sha256 = "998c41babeb57b4304e65b4eb73094279b3ab1e63801b6b4bddd487ce009b39d",
@@ -77,6 +70,13 @@ http_archive(
     sha256 = "31d226a6b3f5362b59d261abf9601116094ea4ae2aa9f28789b6c105e4cada68",
     strip_prefix = "rules_jvm_external-4.0",
     urls = ["https://github.com/bazelbuild/rules_jvm_external/archive/4.0.tar.gz"],
+)
+
+http_archive(
+    name = "rules_python",
+    sha256 = "45f22030b4c3475d5beb74ee9a9b86df6e83d5e18c6f23c7ec1a43cea7a31b93",
+    strip_prefix = "rules_python-0.4.0",
+    url = "https://github.com/bazelbuild/rules_python/archive/0.4.0.tar.gz",
 )
 
 http_archive(
