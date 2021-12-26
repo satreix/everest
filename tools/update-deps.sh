@@ -7,7 +7,7 @@ section() {
 
 section "Go"
 go mod tidy
-bazel run //:gazelle -- update-repos -from_file=go.mod -prune -to_macro deps.bzl%dependencies
+bazel run //:gazelle -- update-repos -from_file=go.mod -prune -to_macro third_party/go/deps.bzl%go_dependencies
 
 section "Java"
 echo >&2 "Manually update maven_install in WORKSPACE"
@@ -18,3 +18,5 @@ section "Python"
 
 section "Rust"
 bazel run @cargo_raze//:raze -- --manifest-path=$(pwd)/Cargo.toml
+
+./tools/format.sh

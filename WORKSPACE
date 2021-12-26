@@ -214,10 +214,10 @@ java_format(
 )
 
 # gazelle:repository go_repository name=io_bazel_rules_go importpath=github.com/bazelbuild/rules_go
-# gazelle:repository_macro deps.bzl%dependencies
-load("//:deps.bzl", "dependencies")
+# gazelle:repository_macro third_party/go/deps.bzl%go_dependencies
+load("//third_party/go:deps.bzl", "go_dependencies")
 
-dependencies()
+go_dependencies()
 
 load("@rules_antlr//antlr:repositories.bzl", "rules_antlr_dependencies")
 

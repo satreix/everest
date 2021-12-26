@@ -2,7 +2,6 @@ load("@rules_foreign_cc//foreign_cc:cmake.bzl", "cmake")
 
 cmake(
     name = "uncrustify",
-    out_binaries = ["uncrustify"],
-    # install_prefix = "foo",  # Required to make it work.
     lib_source = "@uncrustify//:all",
+    out_binaries = ["uncrustify"],
 )
