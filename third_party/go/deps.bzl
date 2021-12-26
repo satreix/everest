@@ -13,7 +13,6 @@ def go_dependencies():
         sum = "h1:xK2lYat7ZLaVVcIuj82J8kIro4V6kDe0AUDFboUCwcg=",
         version = "v1.0.0",
     )
-
     go_repository(
         name = "com_github_antlr_antlr4",
         importpath = "github.com/antlr/antlr4",
@@ -44,7 +43,6 @@ def go_dependencies():
         sum = "h1:6MnRN8NT7+YBpUIWxHtefFZOKTAPgGjpQSxqLNn0+qY=",
         version = "v2.1.1",
     )
-
     go_repository(
         name = "com_github_client9_misspell",
         importpath = "github.com/client9/misspell",
@@ -63,7 +61,6 @@ def go_dependencies():
         sum = "h1:zH8ljVhhq7yC0MIeUL/IviMtY8hx2mK8cN9wEYb8ggw=",
         version = "v0.0.0-20211011173535-cb28da3451f1",
     )
-
     go_repository(
         name = "com_github_davecgh_go_spew",
         importpath = "github.com/davecgh/go-spew",
@@ -88,7 +85,6 @@ def go_dependencies():
         sum = "h1:wQHKEahhL6wmXdzwWG11gIVCkOv05bNOh+Rxn0yngAk=",
         version = "v1.0.0",
     )
-
     go_repository(
         name = "com_github_golang_glog",
         importpath = "github.com/golang/glog",
@@ -137,14 +133,12 @@ def go_dependencies():
         sum = "h1:gmcG1KaJ57LophUzW0Hy8NmPhnMZb4M0+kPpLofRdBo=",
         version = "v1.16.0",
     )
-
     go_repository(
         name = "com_github_keybase_go_dbus",
         importpath = "github.com/keybase/go.dbus",
         sum = "h1:k9rCqucCsPpBKDh9gDwk3U46TcNd7jpKahed9JGICGY=",
         version = "v0.0.0-20200324223359-a94be52c0b03",
     )
-
     go_repository(
         name = "com_github_keybase_go_keychain",
         importpath = "github.com/keybase/go-keychain",
@@ -193,7 +187,6 @@ def go_dependencies():
         sum = "h1:Ppwyp6VYCF1nvBTXL3trRso7mXMlRrw9ooo375wvi2s=",
         version = "v1.2.0",
     )
-
     go_repository(
         name = "com_github_stretchr_objx",
         importpath = "github.com/stretchr/objx",
@@ -236,7 +229,6 @@ def go_dependencies():
         sum = "h1:rwOQPCuKAKmwGKq2aVNnYIibI6wnV7EvzgfTCzcdGg8=",
         version = "v0.7.0",
     )
-
     go_repository(
         name = "org_golang_google_appengine",
         importpath = "google.golang.org/appengine",
