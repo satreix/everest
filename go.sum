@@ -7,8 +7,8 @@ github.com/antihax/optional v1.0.0 h1:xK2lYat7ZLaVVcIuj82J8kIro4V6kDe0AUDFboUCwc
 github.com/antihax/optional v1.0.0/go.mod h1:uupD/76wgC+ih3iEmQUL+0Ugr19nfwCT1kdvxnR2qWY=
 github.com/antlr/antlr4 v0.0.0-20210304020514-0f8bddcbc14b h1:8MsgPS/CrG3huIsmrNUDtc+33SWjTfYcRUw3CljEayU=
 github.com/antlr/antlr4 v0.0.0-20210304020514-0f8bddcbc14b/go.mod h1:T7PbCXFs94rrTttyxjbyT5+/1V8T2TYDejxUfHJjw1Y=
-github.com/bazelbuild/rules_go v0.25.1 h1:kFMT+OgT62SY3tBTRYFJBTphOHHoCfyn5wbRFNauKUQ=
-github.com/bazelbuild/rules_go v0.25.1/go.mod h1:MC23Dc/wkXEyk3Wpq6lCqz0ZAYOZDw2DR5y3N1q2i7M=
+github.com/bazelbuild/rules_go v0.29.0 h1:SfxjyO/V68rVnzOHop92fB0gv/Aa75KNLAN0PMqXbIw=
+github.com/bazelbuild/rules_go v0.29.0/go.mod h1:MC23Dc/wkXEyk3Wpq6lCqz0ZAYOZDw2DR5y3N1q2i7M=
 github.com/census-instrumentation/opencensus-proto v0.2.1 h1:glEXhBS5PSLLv4IXzLA5yPRVX4bilULVyxxbrfOtDAk=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
 github.com/cespare/xxhash/v2 v2.1.1 h1:6MnRN8NT7+YBpUIWxHtefFZOKTAPgGjpQSxqLNn0+qY=
