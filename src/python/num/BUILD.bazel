@@ -1,0 +1,18 @@
+load("@rules_python//python:defs.bzl", "py_binary", "py_test")
+
+py_binary(
+    name = "num_benchmark",
+    srcs = ["num_benchmark.py"],
+    deps = [
+        "//src/rust/num",
+    ],
+)
+
+py_test(
+    name = "num_test",
+    size = "small",
+    srcs = ["num_test.py"],
+    deps = [
+        "//src/rust/num",
+    ],
+)

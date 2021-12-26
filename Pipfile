@@ -3,11 +3,14 @@ name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
 
-[packages]
-autoflake = "*"
-isort = {extras = ["pipfile"],version = "*"}
-jinja2 = "*"
-yapf = "*"
-
 [requires]
 python_version = "3.9"
+
+[packages]
+jinja2 = "*"
+
+[dev-packages]
+autoflake = "*"
+isort = {extras = ["pipfile"],version = "*"}
+pip-tools = "*"
+yapf = "*"

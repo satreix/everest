@@ -74,16 +74,16 @@ http_archive(
 
 http_archive(
     name = "rules_python",
-    sha256 = "45f22030b4c3475d5beb74ee9a9b86df6e83d5e18c6f23c7ec1a43cea7a31b93",
-    strip_prefix = "rules_python-0.4.0",
-    url = "https://github.com/bazelbuild/rules_python/archive/0.4.0.tar.gz",
+    sha256 = "a2fd4c2a8bcf897b718e5643040b03d9528ac6179f6990774b7c19b2dc6cd96b",
+    strip_prefix = "rules_python-0.5.0",
+    urls = ["https://github.com/bazelbuild/rules_python/archive/0.5.0.tar.gz"],
 )
 
 http_archive(
     name = "rules_foreign_cc",
-    sha256 = "c86fc7df961b10fa61c551721d7d524f029af03638947f204afa855f14c0eb41",
-    strip_prefix = "rules_foreign_cc-18b491b61d1b31aa0461b9a457bb912567f3ab8c",
-    urls = ["https://github.com/bazelbuild/rules_foreign_cc/archive/18b491b61d1b31aa0461b9a457bb912567f3ab8c.tar.gz"],
+    sha256 = "1df78c7d7eed2dc21b8b325a2853c31933a81e7b780f9a59a5d078be9008b13a",
+    strip_prefix = "rules_foreign_cc-0.7.0",
+    urls = ["https://github.com/bazelbuild/rules_foreign_cc/archive/0.7.0.tar.gz"],
 )
 
 http_archive(
@@ -123,6 +123,22 @@ http_archive(
     urls = ["https://github.com/grpc/grpc-java/archive/v%s.tar.gz" % GRPC_JAVA_VERSION],
 )
 
+http_archive(
+    name = "rules_pyo3",
+    patch_args = ["-p1"],
+    patches = ["@everest//third_party:rules_pyo3.patch"],
+    sha256 = "4e03219ed0410e12de49485288f4c1af38beda416c6445c427c014f65686c516",
+    strip_prefix = "rules_pyo3-2822ffb8d3edca09f19f541f145e6a1491d4cb03",
+    urls = ["https://github.com/TheButlah/rules_pyo3/archive/2822ffb8d3edca09f19f541f145e6a1491d4cb03.tar.gz"],
+)
+
+http_archive(
+    name = "cargo_raze",
+    sha256 = "92a4116f82938027a19748580d2ec8d2d06801c868503b1b195bd312ad608d19",
+    strip_prefix = "cargo-raze-0.14.0",
+    url = "https://github.com/google/cargo-raze/archive/v0.14.0.tar.gz",
+)
+
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
 go_rules_dependencies()
@@ -133,12 +149,16 @@ load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 
 gazelle_dependencies()
 
-load("@rules_python//python:pip.bzl", "pip_install")
+load("@rules_python//python:pip.bzl", "pip_parse")
 
-pip_install(
+pip_parse(
     name = "pypi",
-    requirements = "//third_party/python:requirements.txt",
+    requirements_lock = "//third_party/python:requirements_lock.txt",
 )
+
+load("@pypi//:requirements.bzl", install_python_deps = "install_deps")
+
+install_python_deps()
 
 load("@rules_rust//rust:repositories.bzl", "rust_repositories")
 
@@ -159,7 +179,7 @@ maven_install(
         "commons-cli:commons-cli:1.4",
     ] + IO_GRPC_GRPC_JAVA_ARTIFACTS,
     generate_compat_repositories = True,
-    maven_install_json = "@everest//:maven_install.json",
+    maven_install_json = "@everest//third_party/java:maven_install.json",
     override_targets = IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS,
     repositories = [
         "https://jcenter.bintray.com/",
@@ -206,3 +226,15 @@ rules_antlr_dependencies("4.8")
 load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
 
 grpc_java_repositories()
+
+load("@rules_pyo3//cargo:crates.bzl", "rules_pyo3_fetch_remote_crates")
+
+rules_pyo3_fetch_remote_crates()
+
+load("@cargo_raze//:repositories.bzl", "cargo_raze_repositories")
+
+cargo_raze_repositories()
+
+load("@cargo_raze//:transitive_deps.bzl", "cargo_raze_transitive_deps")
+
+cargo_raze_transitive_deps()

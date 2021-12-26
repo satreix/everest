@@ -10,14 +10,13 @@
 # - https://github.com/bazelbuild/rules_python/issues/171
 set -euo pipefail
 
-# FIXME merge and deduplicate the output of the following commands to allow uing dev dependencies:
-# - pipenv lock -r
-# - pipenv lock -r --dev
-if grep "\[dev-packages\]" Pipfile > /dev/null; then
-    echo "Do not use [dev-packages] in Pipfile, use [packages] instead." 1>&2
-    exit 1
-fi
+PYTHON_REQ_DIR="third_party/python"
+REQS_FILE="${PYTHON_REQ_DIR}/requirements.txt"
+LOCK_FILE="${PYTHON_REQ_DIR}/requirements_lock.txt"
 
-pipenv update
+pipenv check
+pipenv install
 pipenv clean
-pipenv lock -r > third_party/python/requirements.txt
+pipenv lock --requirements --dev >"$REQS_FILE"
+pipenv run pip-compile --output-file "$LOCK_FILE" "$REQS_FILE" >/dev/null 2>&1
+rm "$REQS_FILE"

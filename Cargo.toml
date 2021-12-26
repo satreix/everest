@@ -1,6 +1,7 @@
 [workspace]
 members = [
     "src/rust/hello_world",
+    "src/rust/num",
 ]
 
 [workspace.metadata.raze]

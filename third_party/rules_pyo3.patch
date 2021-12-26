@@ -1,0 +1,12 @@
+diff --git a/cargo/remote/BUILD.parking_lot_core-0.8.3.bazel b/cargo/remote/BUILD.parking_lot_core-0.8.3.bazel
+index 479d5c5..9f9411b 100644
+--- a/cargo/remote/BUILD.parking_lot_core-0.8.3.bazel
++++ b/cargo/remote/BUILD.parking_lot_core-0.8.3.bazel
+@@ -58,6 +58,7 @@ rust_library(
+         # cfg(unix)
+         (
+             "@rules_rust//rust/platform:x86_64-unknown-linux-gnu",
++            "@rules_rust//rust/platform:x86_64-apple-darwin",
+         ): [
+             "@rules_pyo3__libc__0_2_91//:libc",
+         ],

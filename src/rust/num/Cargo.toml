@@ -1,0 +1,18 @@
+[package]
+name = "num"
+version = "0.1.0"
+authors = ["satreix <satreix@gmail.com>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[build-dependencies]
+pyo3-build-config = "*"
+
+[dependencies]
+rayon = "1.5.1"
+
+[dependencies.pyo3]
+version = "0.15.1"
+features = ["extension-module"]

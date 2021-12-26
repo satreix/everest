@@ -1,8 +1,8 @@
-load("@rules_foreign_cc//tools/build_defs:cmake.bzl", "cmake_external")
+load("@rules_foreign_cc//foreign_cc:cmake.bzl", "cmake")
 
-cmake_external(
+cmake(
     name = "uncrustify",
-    binaries = ["uncrustify"],
-    install_prefix = "foo",  # Required to make it work.
+    out_binaries = ["uncrustify"],
+    # install_prefix = "foo",  # Required to make it work.
     lib_source = "@uncrustify//:all",
 )
