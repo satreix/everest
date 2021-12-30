@@ -1,0 +1,91 @@
+"""
+@generated
+cargo-raze crate build file.
+
+DO NOT EDIT! Replaced on runs of cargo-raze
+"""
+
+# buildifier: disable=load
+load("@bazel_skylib//lib:selects.bzl", "selects")
+
+# buildifier: disable=load
+load(
+    "@rules_rust//rust:defs.bzl",
+    "rust_binary",
+    "rust_library",
+    "rust_proc_macro",
+    "rust_test",
+)
+
+package(default_visibility = [
+    # Public for visibility by "@raze__crate__version//" targets.
+    #
+    # Prefer access through "//third_party/cargo", which limits external
+    # visibility to explicit Cargo.toml dependencies.
+    "//visibility:public",
+])
+
+licenses([
+    "notice",  # MIT from expression "MIT"
+])
+
+# Generated Targets
+
+# Unsupported target "404" with type "example" omitted
+
+# Unsupported target "around" with type "example" omitted
+
+# Unsupported target "content_type" with type "example" omitted
+
+# Unsupported target "echo" with type "example" omitted
+
+# Unsupported target "error" with type "example" omitted
+
+# Unsupported target "error_recovery" with type "example" omitted
+
+# Unsupported target "get_set_headers" with type "example" omitted
+
+# Unsupported target "hello" with type "example" omitted
+
+# Unsupported target "hello_custom_config" with type "example" omitted
+
+# Unsupported target "helper_macros" with type "example" omitted
+
+# Unsupported target "https" with type "example" omitted
+
+# Unsupported target "redirect" with type "example" omitted
+
+# Unsupported target "simple_routing" with type "example" omitted
+
+# Unsupported target "time" with type "example" omitted
+
+rust_library(
+    name = "iron",
+    srcs = glob(["**/*.rs"]),
+    crate_features = [
+        "default",
+    ],
+    crate_root = "src/lib.rs",
+    data = [],
+    edition = "2015",
+    rustc_flags = [
+        "--cap-lints=allow",
+    ],
+    tags = [
+        "cargo-raze",
+        "manual",
+        "crate-name=iron"
+    ],
+    version = "0.6.1",
+    # buildifier: leave-alone
+    deps = [
+        "@raze__hyper__0_10_16//:hyper",
+        "@raze__log__0_3_9//:log",
+        "@raze__mime_guess__1_8_8//:mime_guess",
+        "@raze__modifier__0_1_0//:modifier",
+        "@raze__num_cpus__1_13_1//:num_cpus",
+        "@raze__plugin__0_2_6//:plugin",
+        "@raze__typemap__0_3_3//:typemap",
+        "@raze__url__1_7_2//:url",
+    ],
+)

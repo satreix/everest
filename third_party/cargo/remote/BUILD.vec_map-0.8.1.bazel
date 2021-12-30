@@ -44,8 +44,8 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=vec_map",
         "manual",
+        "crate-name=vec_map"
     ],
     version = "0.8.1",
     # buildifier: leave-alone

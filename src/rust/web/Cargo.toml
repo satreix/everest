@@ -1,0 +1,16 @@
+[package]
+name = "web"
+version = "0.1.0"
+authors = ["satreix <satreix@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+askama = "0.11.0"
+iron = "0.6.1"
+iron-slog = "0.0.2"
+router = "0.6.0"
+slog = "2.7.0"
+slog-async = "2.7.0"
+slog-term = "2.8.0"
