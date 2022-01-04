@@ -14,10 +14,10 @@ def go_dependencies():
         version = "v1.0.0",
     )
     go_repository(
-        name = "com_github_antlr_antlr4",
-        importpath = "github.com/antlr/antlr4",
-        sum = "h1:8MsgPS/CrG3huIsmrNUDtc+33SWjTfYcRUw3CljEayU=",
-        version = "v0.0.0-20210304020514-0f8bddcbc14b",
+        name = "com_github_antlr_antlr4_runtime_go_antlr",
+        importpath = "github.com/antlr/antlr4/runtime/Go/antlr",
+        sum = "h1:y9nZ3HubbgHiXOCjx/ZjLO+UBPcggz6X3tOQPsLQiCU=",
+        version = "v0.0.0-20220104013430-7d3fb7b4dc33",
     )
     go_repository(
         name = "com_github_bazelbuild_rules_go",
@@ -142,8 +142,8 @@ def go_dependencies():
     go_repository(
         name = "com_github_keybase_go_keychain",
         importpath = "github.com/keybase/go-keychain",
-        sum = "h1:Mj0fhP9dzHKPijsmli/XbXMDKe1/KWy5xKci8e3nmBg=",
-        version = "v0.0.0-20201121013009-976c83ec27a6",
+        sum = "h1:aMQ7pA4f06yOVXSulygyGvy4xA94fyzjUGs0iqQdMOI=",
+        version = "v0.0.0-20211119201326-e02f34051621",
     )
     go_repository(
         name = "com_github_mattn_go_isatty",
