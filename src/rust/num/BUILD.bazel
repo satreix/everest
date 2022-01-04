@@ -1,10 +1,9 @@
-load("@rules_rust//rust:rust.bzl", "rust_library")
+load("@rules_rust//rust:defs.bzl", "rust_shared_library")
 load("@rules_python//python:defs.bzl", "py_library")
 
-rust_library(
+rust_shared_library(
     name = "num_rs",
     srcs = ["src/lib.rs"],
-    crate_type = "cdylib",
     rustc_flags = [
         "-C",
         "link-arg=-undefined",
