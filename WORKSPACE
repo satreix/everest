@@ -124,15 +124,6 @@ http_archive(
 )
 
 http_archive(
-    name = "rules_pyo3",
-    patch_args = ["-p1"],
-    patches = ["@everest//third_party:rules_pyo3.patch"],
-    sha256 = "4e03219ed0410e12de49485288f4c1af38beda416c6445c427c014f65686c516",
-    strip_prefix = "rules_pyo3-2822ffb8d3edca09f19f541f145e6a1491d4cb03",
-    urls = ["https://github.com/TheButlah/rules_pyo3/archive/2822ffb8d3edca09f19f541f145e6a1491d4cb03.tar.gz"],
-)
-
-http_archive(
     name = "cargo_raze",
     sha256 = "92a4116f82938027a19748580d2ec8d2d06801c868503b1b195bd312ad608d19",
     strip_prefix = "cargo-raze-0.14.0",
@@ -226,10 +217,6 @@ rules_antlr_dependencies("4.8")
 load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
 
 grpc_java_repositories()
-
-load("@rules_pyo3//cargo:crates.bzl", "rules_pyo3_fetch_remote_crates")
-
-rules_pyo3_fetch_remote_crates()
 
 load("@cargo_raze//:repositories.bzl", "cargo_raze_repositories")
 
