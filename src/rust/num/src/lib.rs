@@ -86,7 +86,7 @@ impl Array {
     }
 
     fn mean(&self) -> f64 {
-        if self.0.len() == 0 {
+        if self.0.is_empty() {
             return 0.0;
         }
         self.0.par_iter().sum::<f64>() / self.0.len() as f64
@@ -99,9 +99,9 @@ impl Array {
             // Empty array
             0 => 0.0,
             // Even number of elements
-            len @ _ if len % 2 == 0 => (sorted[len / 2] + sorted[len / 2 - 1]) / 2.0,
+            len if len % 2 == 0 => (sorted[len / 2] + sorted[len / 2 - 1]) / 2.0,
             // Odd number of elements
-            len @ _ => sorted[len / 2],
+            len => sorted[len / 2],
         }
     }
 }

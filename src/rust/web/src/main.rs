@@ -1,6 +1,5 @@
 extern crate iron;
 extern crate iron_slog;
-extern crate iron_test;
 extern crate router;
 #[macro_use]
 extern crate slog;
@@ -59,6 +58,9 @@ fn main() {
 
     Iron::new(handler).http(addr).unwrap();
 }
+
+#[cfg(test)]
+extern crate iron_test;
 
 #[cfg(test)]
 mod tests {
