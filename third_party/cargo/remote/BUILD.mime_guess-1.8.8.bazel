@@ -26,7 +26,7 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # MIT from expression "MIT OR Apache-2.0"
+    "notice",  # MIT from expression "MIT"
 ])
 
 # Generated Targets
@@ -38,32 +38,11 @@ load(
 )
 
 cargo_build_script(
-    name = "winapi_build_script",
+    name = "mime_guess_build_script",
     srcs = glob(["**/*.rs"]),
     build_script_env = {
     },
     crate_features = [
-        "consoleapi",
-        "errhandlingapi",
-        "fileapi",
-        "handleapi",
-        "knownfolders",
-        "minwinbase",
-        "minwindef",
-        "ntdef",
-        "ntsecapi",
-        "ntstatus",
-        "objbase",
-        "processenv",
-        "profileapi",
-        "shlobj",
-        "std",
-        "sysinfoapi",
-        "timezoneapi",
-        "winbase",
-        "wincon",
-        "winerror",
-        "winnt",
     ],
     crate_root = "build.rs",
     data = glob(["**"]),
@@ -75,37 +54,21 @@ cargo_build_script(
         "cargo-raze",
         "manual",
     ],
-    version = "0.3.9",
+    version = "1.8.8",
     visibility = ["//visibility:private"],
     deps = [
+        "@raze__phf__0_7_24//:phf",
+        "@raze__phf_codegen__0_7_24//:phf_codegen",
+        "@raze__unicase__1_4_2//:unicase",
     ],
 )
 
+# Unsupported target "rev_map" with type "example" omitted
+
 rust_library(
-    name = "winapi",
+    name = "mime_guess",
     srcs = glob(["**/*.rs"]),
     crate_features = [
-        "consoleapi",
-        "errhandlingapi",
-        "fileapi",
-        "handleapi",
-        "knownfolders",
-        "minwinbase",
-        "minwindef",
-        "ntdef",
-        "ntsecapi",
-        "ntstatus",
-        "objbase",
-        "processenv",
-        "profileapi",
-        "shlobj",
-        "std",
-        "sysinfoapi",
-        "timezoneapi",
-        "winbase",
-        "wincon",
-        "winerror",
-        "winnt",
     ],
     crate_root = "src/lib.rs",
     data = [],
@@ -115,12 +78,15 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=winapi",
+        "crate-name=mime_guess",
         "manual",
     ],
-    version = "0.3.9",
+    version = "1.8.8",
     # buildifier: leave-alone
     deps = [
-        ":winapi_build_script",
+        ":mime_guess_build_script",
+        "@raze__mime__0_2_6//:mime",
+        "@raze__phf__0_7_24//:phf",
+        "@raze__unicase__1_4_2//:unicase",
     ],
 )

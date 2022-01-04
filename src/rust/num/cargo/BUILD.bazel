@@ -13,8 +13,44 @@ licenses([
 
 # Aliased targets
 alias(
+    name = "askama",
+    actual = "@raze__askama__0_11_0//:askama",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
     name = "clap",
     actual = "@raze__clap__2_33_3//:clap",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "iron",
+    actual = "@raze__iron__0_6_1//:iron",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "iron_slog",
+    actual = "@raze__iron_slog__0_0_2//:iron_slog",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "iron_test",
+    actual = "@raze__iron_test__0_6_0//:iron_test",
     tags = [
         "cargo-raze",
         "manual",
@@ -42,6 +78,42 @@ alias(
 alias(
     name = "rayon",
     actual = "@raze__rayon__1_5_1//:rayon",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "router",
+    actual = "@raze__router__0_6_0//:router",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "slog",
+    actual = "@raze__slog__2_7_0//:slog",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "slog_async",
+    actual = "@raze__slog_async__2_7_0//:slog_async",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "slog_term",
+    actual = "@raze__slog_term__2_8_0//:slog_term",
     tags = [
         "cargo-raze",
         "manual",

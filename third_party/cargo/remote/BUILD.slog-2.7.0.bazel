@@ -26,7 +26,7 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # MIT from expression "MIT OR Apache-2.0"
+    "notice",  # MIT from expression "MPL-2.0 OR (MIT OR Apache-2.0)"
 ])
 
 # Generated Targets
@@ -38,32 +38,13 @@ load(
 )
 
 cargo_build_script(
-    name = "winapi_build_script",
+    name = "slog_build_script",
     srcs = glob(["**/*.rs"]),
     build_script_env = {
     },
     crate_features = [
-        "consoleapi",
-        "errhandlingapi",
-        "fileapi",
-        "handleapi",
-        "knownfolders",
-        "minwinbase",
-        "minwindef",
-        "ntdef",
-        "ntsecapi",
-        "ntstatus",
-        "objbase",
-        "processenv",
-        "profileapi",
-        "shlobj",
+        "default",
         "std",
-        "sysinfoapi",
-        "timezoneapi",
-        "winbase",
-        "wincon",
-        "winerror",
-        "winnt",
     ],
     crate_root = "build.rs",
     data = glob(["**"]),
@@ -75,37 +56,24 @@ cargo_build_script(
         "cargo-raze",
         "manual",
     ],
-    version = "0.3.9",
+    version = "2.7.0",
     visibility = ["//visibility:private"],
     deps = [
     ],
 )
 
+# Unsupported target "named" with type "example" omitted
+
+# Unsupported target "singlethread" with type "example" omitted
+
+# Unsupported target "struct-log-self" with type "example" omitted
+
 rust_library(
-    name = "winapi",
+    name = "slog",
     srcs = glob(["**/*.rs"]),
     crate_features = [
-        "consoleapi",
-        "errhandlingapi",
-        "fileapi",
-        "handleapi",
-        "knownfolders",
-        "minwinbase",
-        "minwindef",
-        "ntdef",
-        "ntsecapi",
-        "ntstatus",
-        "objbase",
-        "processenv",
-        "profileapi",
-        "shlobj",
+        "default",
         "std",
-        "sysinfoapi",
-        "timezoneapi",
-        "winbase",
-        "wincon",
-        "winerror",
-        "winnt",
     ],
     crate_root = "src/lib.rs",
     data = [],
@@ -115,12 +83,12 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=winapi",
+        "crate-name=slog",
         "manual",
     ],
-    version = "0.3.9",
+    version = "2.7.0",
     # buildifier: leave-alone
     deps = [
-        ":winapi_build_script",
+        ":slog_build_script",
     ],
 )

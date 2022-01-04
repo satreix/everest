@@ -38,32 +38,11 @@ load(
 )
 
 cargo_build_script(
-    name = "winapi_build_script",
+    name = "num_integer_build_script",
     srcs = glob(["**/*.rs"]),
     build_script_env = {
     },
     crate_features = [
-        "consoleapi",
-        "errhandlingapi",
-        "fileapi",
-        "handleapi",
-        "knownfolders",
-        "minwinbase",
-        "minwindef",
-        "ntdef",
-        "ntsecapi",
-        "ntstatus",
-        "objbase",
-        "processenv",
-        "profileapi",
-        "shlobj",
-        "std",
-        "sysinfoapi",
-        "timezoneapi",
-        "winbase",
-        "wincon",
-        "winerror",
-        "winnt",
     ],
     crate_root = "build.rs",
     data = glob(["**"]),
@@ -75,37 +54,23 @@ cargo_build_script(
         "cargo-raze",
         "manual",
     ],
-    version = "0.3.9",
+    version = "0.1.44",
     visibility = ["//visibility:private"],
     deps = [
+        "@raze__autocfg__1_0_1//:autocfg",
     ],
 )
 
+# Unsupported target "average" with type "bench" omitted
+
+# Unsupported target "gcd" with type "bench" omitted
+
+# Unsupported target "roots" with type "bench" omitted
+
 rust_library(
-    name = "winapi",
+    name = "num_integer",
     srcs = glob(["**/*.rs"]),
     crate_features = [
-        "consoleapi",
-        "errhandlingapi",
-        "fileapi",
-        "handleapi",
-        "knownfolders",
-        "minwinbase",
-        "minwindef",
-        "ntdef",
-        "ntsecapi",
-        "ntstatus",
-        "objbase",
-        "processenv",
-        "profileapi",
-        "shlobj",
-        "std",
-        "sysinfoapi",
-        "timezoneapi",
-        "winbase",
-        "wincon",
-        "winerror",
-        "winnt",
     ],
     crate_root = "src/lib.rs",
     data = [],
@@ -115,12 +80,17 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=winapi",
+        "crate-name=num-integer",
         "manual",
     ],
-    version = "0.3.9",
+    version = "0.1.44",
     # buildifier: leave-alone
     deps = [
-        ":winapi_build_script",
+        ":num_integer_build_script",
+        "@raze__num_traits__0_2_14//:num_traits",
     ],
 )
+
+# Unsupported target "average" with type "test" omitted
+
+# Unsupported target "roots" with type "test" omitted
