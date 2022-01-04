@@ -9,7 +9,6 @@ rust_binary(
         "//src/rust/web/cargo:askama",
         "//src/rust/web/cargo:iron",
         "//src/rust/web/cargo:iron_slog",
-        "//src/rust/web/cargo:iron_test",
         "//src/rust/web/cargo:router",
         "//src/rust/web/cargo:slog",
         "//src/rust/web/cargo:slog_async",

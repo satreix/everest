@@ -23,7 +23,7 @@ alias(
 
 alias(
     name = "clap",
-    actual = "@raze__clap__2_33_3//:clap",
+    actual = "@raze__clap__3_0_1//:clap",
     tags = [
         "cargo-raze",
         "manual",

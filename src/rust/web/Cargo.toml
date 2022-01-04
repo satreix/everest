@@ -10,8 +10,10 @@ edition = "2018"
 askama = "0.11.0"
 iron = "0.6.1"
 iron-slog = "0.0.2"
-iron-test = "0.6.0"
 router = "0.6.0"
 slog = "2.7.0"
 slog-async = "2.7.0"
 slog-term = "2.8.0"
+
+[dev-dependencies]
+iron-test = "0.6.0"
