@@ -1,4 +1,4 @@
-build:remote --bes_backend=grpcs://cloud.buildbuddy.io
-build:remote --bes_results_url=https://app.buildbuddy.io/invocation/
-build:remote --remote_cache=grpcs://cloud.buildbuddy.io
-build:remote --remote_timeout=3600
+build:ci --bes_backend=grpcs://cloud.buildbuddy.io
+build:ci --bes_results_url=https://app.buildbuddy.io/invocation/
+build:ci --remote_cache=grpcs://cloud.buildbuddy.io
+build:ci --remote_timeout=3600
