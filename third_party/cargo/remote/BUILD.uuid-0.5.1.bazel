@@ -31,27 +31,29 @@ licenses([
 
 # Generated Targets
 
-rust_proc_macro(
-    name = "paste_impl",
+# Unsupported target "parse_str" with type "bench" omitted
+
+rust_library(
+    name = "uuid",
     srcs = glob(["**/*.rs"]),
     crate_features = [
+        "rand",
+        "v4",
     ],
     crate_root = "src/lib.rs",
     data = [],
-    edition = "2018",
-    proc_macro_deps = [
-        "@raze__proc_macro_hack__0_5_19//:proc_macro_hack",
-    ],
+    edition = "2015",
     rustc_flags = [
         "--cap-lints=allow",
     ],
     tags = [
         "cargo-raze",
-        "crate-name=paste-impl",
+        "crate-name=uuid",
         "manual",
     ],
-    version = "0.1.18",
+    version = "0.5.1",
     # buildifier: leave-alone
     deps = [
+        "@raze__rand__0_3_23//:rand",
     ],
 )

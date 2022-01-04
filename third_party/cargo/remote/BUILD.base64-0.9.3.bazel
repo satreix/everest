@@ -48,8 +48,8 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
+        "crate-name=base64",
         "manual",
-        "crate-name=base64"
     ],
     version = "0.9.3",
     # buildifier: leave-alone

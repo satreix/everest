@@ -49,6 +49,15 @@ alias(
 )
 
 alias(
+    name = "iron_test",
+    actual = "@raze__iron_test__0_6_0//:iron_test",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
     name = "pyo3",
     actual = "@raze__pyo3__0_15_1//:pyo3",
     tags = [

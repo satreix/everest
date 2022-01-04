@@ -52,8 +52,8 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
+        "crate-name=askama",
         "manual",
-        "crate-name=askama"
     ],
     version = "0.11.0",
     # buildifier: leave-alone

@@ -45,8 +45,8 @@ rust_proc_macro(
     ],
     tags = [
         "cargo-raze",
+        "crate-name=askama_derive",
         "manual",
-        "crate-name=askama_derive"
     ],
     version = "0.11.0",
     # buildifier: leave-alone

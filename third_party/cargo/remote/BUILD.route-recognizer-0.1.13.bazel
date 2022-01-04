@@ -44,8 +44,8 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
+        "crate-name=route-recognizer",
         "manual",
-        "crate-name=route-recognizer"
     ],
     version = "0.1.13",
     # buildifier: leave-alone

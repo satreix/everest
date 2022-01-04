@@ -49,8 +49,8 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
+        "crate-name=rand_jitter",
         "manual",
-        "crate-name=rand_jitter"
     ],
     version = "0.1.4",
     # buildifier: leave-alone

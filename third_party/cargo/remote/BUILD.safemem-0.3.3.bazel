@@ -46,8 +46,8 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
+        "crate-name=safemem",
         "manual",
-        "crate-name=safemem"
     ],
     version = "0.3.3",
     # buildifier: leave-alone

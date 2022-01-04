@@ -44,8 +44,8 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
+        "crate-name=typemap",
         "manual",
-        "crate-name=typemap"
     ],
     version = "0.3.3",
     # buildifier: leave-alone
