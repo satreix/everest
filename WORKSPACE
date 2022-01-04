@@ -39,9 +39,9 @@ http_archive(
 
 http_archive(
     name = "rules_rust",
-    sha256 = "82b30cbb46c61a9014de0a8d0443a45e6eb6bd9add35ab421cfb1943dc3271f5",
-    strip_prefix = "rules_rust-e589105b4e8181dd1d0d8ccaa0cf3267efb06e86",
-    urls = ["https://github.com/bazelbuild/rules_rust/archive/e589105b4e8181dd1d0d8ccaa0cf3267efb06e86.tar.gz"],
+    sha256 = "e0bc3abf2051918d6b777c0ecdb7aa5e8ae7d4548dfdf439336d506df05f5b95",
+    strip_prefix = "rules_rust-8cb9059c90858224cc017cb6449a4ea631e54a5f",
+    urls = ["https://github.com/bazelbuild/rules_rust/archive/8cb9059c90858224cc017cb6449a4ea631e54a5f.tar.gz"],
 )
 
 http_archive(
@@ -121,15 +121,6 @@ http_archive(
     sha256 = GRPC_JAVA_SHA256,
     strip_prefix = "grpc-java-%s/examples" % GRPC_JAVA_VERSION,
     urls = ["https://github.com/grpc/grpc-java/archive/v%s.tar.gz" % GRPC_JAVA_VERSION],
-)
-
-http_archive(
-    name = "rules_pyo3",
-    patch_args = ["-p1"],
-    patches = ["@everest//third_party:rules_pyo3.patch"],
-    sha256 = "4e03219ed0410e12de49485288f4c1af38beda416c6445c427c014f65686c516",
-    strip_prefix = "rules_pyo3-2822ffb8d3edca09f19f541f145e6a1491d4cb03",
-    urls = ["https://github.com/TheButlah/rules_pyo3/archive/2822ffb8d3edca09f19f541f145e6a1491d4cb03.tar.gz"],
 )
 
 http_archive(
@@ -226,10 +217,6 @@ rules_antlr_dependencies("4.8")
 load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
 
 grpc_java_repositories()
-
-load("@rules_pyo3//cargo:crates.bzl", "rules_pyo3_fetch_remote_crates")
-
-rules_pyo3_fetch_remote_crates()
 
 load("@cargo_raze//:repositories.bzl", "cargo_raze_repositories")
 

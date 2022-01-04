@@ -1,10 +1,9 @@
-load("@rules_rust//rust:rust.bzl", "rust_library")
+load("@rules_rust//rust:defs.bzl", "rust_shared_library")
 load("@rules_python//python:defs.bzl", "py_library")
 
-rust_library(
+rust_shared_library(
     name = "num_rs",
     srcs = ["src/lib.rs"],
-    crate_type = "cdylib",
     rustc_flags = [
         "-C",
         "link-arg=-undefined",
@@ -29,26 +28,3 @@ py_library(
     data = [":num_so"],
     visibility = ["//visibility:public"],
 )
-
-# load("@rules_pyo3//:build_defs.bzl", "pyo3_extension")
-
-# pyo3_extension(
-#     name = "num",
-#     srcs = ["src/lib.rs"],
-#     deps = [
-#         "//src/rust/num/cargo:rayon",
-#     ],
-#     visibility = ["//src/python/num:__pkg__"],
-# )
-
-# # # load("@rules_python//python:defs.bzl", "py_test")
-# load("@rules_pyo3//:build_defs.bzl", "pyo3_extension")
-
-# pyo3_extension(
-#     name = "num",
-#     srcs = ["src/lib.rs"],
-#     visibility = ["//src/python/num:__pkg__"],
-#     deps = [
-#         "//src/rust/num/cargo:rayon",
-#     ],
-# )
