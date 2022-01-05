@@ -8,4 +8,9 @@ test --verbose_failures
 
 build --action_env=CC=clang
 build --announce_rc=yes
+build --bes_backend=grpcs://cloud.buildbuddy.io
+build --bes_results_url=https://app.buildbuddy.io/invocation/
+build --build_metadata=ROLE=CI
 build --curses=no
+build --remote_cache=grpcs://cloud.buildbuddy.io
+build --remote_timeout=3600
