@@ -1,0 +1,7 @@
+load("@bazelruby_rules_ruby//ruby:defs.bzl", "ruby_library")
+
+ruby_library(
+    name = "hello",
+    srcs = ["hello.rb"],
+    visibility = ["//src/ruby/hello_world:__subpackages__"],
+)

@@ -9,6 +9,18 @@ http_archive(
 )
 
 http_archive(
+    name = "bazelruby_rules_ruby",
+    patch_args = ["-p1"],
+    patches = [
+        # A fix for https://github.com/bazelruby/rules_ruby/issues/79
+        "//third_party:bazelruby_rules_ruby.patch",
+    ],
+    sha256 = "43e1dc0b747d51617dcbc02c15c4a1383cb572d58bef3accc10b9c8bd1e06b62",
+    strip_prefix = "rules_ruby-2caa1f20d5ba22080af653470037c72bf219af45",
+    urls = ["https://github.com/bazelruby/rules_ruby/archive/2caa1f20d5ba22080af653470037c72bf219af45.tar.gz"],
+)
+
+http_archive(
     name = "cargo_raze",
     sha256 = "58ecdbae2680b71edc19a0f563cdb73e66c8914689b6edab258c8b90a93b13c7",
     strip_prefix = "cargo-raze-0.15.0",
@@ -93,6 +105,13 @@ http_archive(
     sha256 = GRPC_JAVA_SHA256,
     strip_prefix = "grpc-java-%s/examples" % GRPC_JAVA_VERSION,
     urls = ["https://github.com/grpc/grpc-java/archive/v%s.tar.gz" % GRPC_JAVA_VERSION],
+)
+
+http_archive(
+    name = "rules_rust",
+    sha256 = "3cf493f845837b9c0c44311992a8e387b508a267cb8f261ef97b94c915f292cc",
+    strip_prefix = "rules_rust-55790492aca01b389d208cd1335b9d8c05e28329",
+    urls = ["https://github.com/bazelbuild/rules_rust/archive/55790492aca01b389d208cd1335b9d8c05e28329.tar.gz"],
 )
 
 http_archive(
@@ -283,4 +302,23 @@ load("@openapi_tools_generator_bazel//:defs.bzl", "openapi_tools_generator_bazel
 openapi_tools_generator_bazel_repositories(
     openapi_generator_cli_version = "5.4.0",
     sha256 = "f3ed312310e390324b33ba2ffff290ce812935207a1493ec5c098d0a441be51c",
+)
+
+load("@bazelruby_rules_ruby//ruby:deps.bzl", "rules_ruby_dependencies", "rules_ruby_select_sdk")
+
+rules_ruby_dependencies()
+
+load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
+
+bazel_skylib_workspace()
+
+rules_ruby_select_sdk(version = "3.0.2")
+
+load("@bazelruby_rules_ruby//ruby:defs.bzl", "ruby_bundle")
+
+ruby_bundle(
+    name = "bundle",
+    bundler_version = "2.1.4",
+    gemfile = "//:Gemfile",
+    gemfile_lock = "//:Gemfile.lock",
 )
