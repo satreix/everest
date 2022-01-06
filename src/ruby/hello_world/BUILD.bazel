@@ -11,7 +11,6 @@ ruby_binary(
     main = "hello.rb",
     deps = [
         "//src/ruby/hello_world/lib:hello",
-        "@bundle//:awesome_print",
     ],
 )
 

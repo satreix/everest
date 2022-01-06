@@ -2,6 +2,5 @@
 
 source 'https://rubygems.org'
 
-gem 'awesome_print'
 gem 'rspec', '~> 3.7.0'
 gem 'rspec-its'
