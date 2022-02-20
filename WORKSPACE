@@ -125,9 +125,9 @@ http_archive(
 
 http_archive(
     name = "cargo_raze",
-    sha256 = "92a4116f82938027a19748580d2ec8d2d06801c868503b1b195bd312ad608d19",
-    strip_prefix = "cargo-raze-0.14.0",
-    url = "https://github.com/google/cargo-raze/archive/v0.14.0.tar.gz",
+    sha256 = "58ecdbae2680b71edc19a0f563cdb73e66c8914689b6edab258c8b90a93b13c7",
+    strip_prefix = "cargo-raze-0.15.0",
+    url = "https://github.com/google/cargo-raze/archive/v0.15.0.tar.gz",
 )
 
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
