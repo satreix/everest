@@ -1033,12 +1033,12 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
-        name = "raze__slog_term__2_8_0",
-        url = "https://crates.io/api/v1/crates/slog-term/2.8.0/download",
+        name = "raze__slog_term__2_8_1",
+        url = "https://crates.io/api/v1/crates/slog-term/2.8.1/download",
         type = "tar.gz",
-        sha256 = "95c1e7e5aab61ced6006149ea772770b84a0d16ce0f7885def313e4829946d76",
-        strip_prefix = "slog-term-2.8.0",
-        build_file = Label("//third_party/cargo/remote:BUILD.slog-term-2.8.0.bazel"),
+        sha256 = "f3668dd2252f4381d64de0c79e6c8dc6bd509d1cab3535b35a3fc9bafd1241d5",
+        strip_prefix = "slog-term-2.8.1",
+        build_file = Label("//third_party/cargo/remote:BUILD.slog-term-2.8.1.bazel"),
     )
 
     maybe(

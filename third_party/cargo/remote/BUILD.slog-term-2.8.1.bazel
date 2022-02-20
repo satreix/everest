@@ -59,7 +59,7 @@ rust_library(
         "crate-name=slog-term",
         "manual",
     ],
-    version = "2.8.0",
+    version = "2.8.1",
     # buildifier: leave-alone
     deps = [
         "@raze__atty__0_2_13//:atty",

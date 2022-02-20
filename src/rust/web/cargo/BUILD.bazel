@@ -113,7 +113,7 @@ alias(
 
 alias(
     name = "slog_term",
-    actual = "@raze__slog_term__2_8_0//:slog_term",
+    actual = "@raze__slog_term__2_8_1//:slog_term",
     tags = [
         "cargo-raze",
         "manual",
