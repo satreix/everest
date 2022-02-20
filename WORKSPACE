@@ -15,9 +15,9 @@ http_archive(
         # A fix for https://github.com/bazelruby/rules_ruby/issues/79
         "//third_party:bazelruby_rules_ruby.patch",
     ],
-    sha256 = "43e1dc0b747d51617dcbc02c15c4a1383cb572d58bef3accc10b9c8bd1e06b62",
-    strip_prefix = "rules_ruby-2caa1f20d5ba22080af653470037c72bf219af45",
-    urls = ["https://github.com/bazelruby/rules_ruby/archive/2caa1f20d5ba22080af653470037c72bf219af45.tar.gz"],
+    sha256 = "a598fadf23c0d8376813ca4a1b4a45f778544d83bf650b24dcfc2210f6db7d5f",
+    strip_prefix = "rules_ruby-65d828b204ec32a49458c9b770f8db20774ac450",
+    urls = ["https://github.com/bazelruby/rules_ruby/archive/65d828b204ec32a49458c9b770f8db20774ac450.tar.gz"],
 )
 
 http_archive(
@@ -105,13 +105,6 @@ http_archive(
     sha256 = GRPC_JAVA_SHA256,
     strip_prefix = "grpc-java-%s/examples" % GRPC_JAVA_VERSION,
     urls = ["https://github.com/grpc/grpc-java/archive/v%s.tar.gz" % GRPC_JAVA_VERSION],
-)
-
-http_archive(
-    name = "rules_rust",
-    sha256 = "3cf493f845837b9c0c44311992a8e387b508a267cb8f261ef97b94c915f292cc",
-    strip_prefix = "rules_rust-55790492aca01b389d208cd1335b9d8c05e28329",
-    urls = ["https://github.com/bazelbuild/rules_rust/archive/55790492aca01b389d208cd1335b9d8c05e28329.tar.gz"],
 )
 
 http_archive(
@@ -312,7 +305,7 @@ load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
 
 bazel_skylib_workspace()
 
-rules_ruby_select_sdk(version = "3.0.2")
+rules_ruby_select_sdk(version = "host")
 
 load("@bazelruby_rules_ruby//ruby:defs.bzl", "ruby_bundle")
 
