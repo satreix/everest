@@ -1,0 +1,6 @@
+# ERROR: .../external/io_grpc_grpc_java_examples/BUILD.bazel:15:18: in _java_grpc_library rule @io_grpc_grpc_java_examples//:helloworld_java_grpc: 
+# Traceback (most recent call last):
+# File ".../external/io_grpc_grpc_java/java_grpc_library.bzl", line 106, column 36, in _java_rpc_library_impl
+# java_info = java_common.compile(
+# Error in compile: in call to compile(), parameter 'host_javabase' is deprecated and will be removed soon.
+build --incompatible_java_common_parameters=false
