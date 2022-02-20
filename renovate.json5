@@ -1,5 +1,5 @@
 {
-  extends: ["config:base"],
+  extends: ["config:base", ":disableDependencyDashboard"],
   ignorePaths: ["third_party/**"],
   labels: ["dependencies"],
   schedule: ["every weekend"],
