@@ -31,34 +31,26 @@ licenses([
 
 # Generated Targets
 
+# Unsupported target "all" with type "bench" omitted
+
 rust_library(
-    name = "askama",
+    name = "askama_escape",
     srcs = glob(["**/*.rs"]),
     crate_features = [
-        "config",
-        "default",
-        "humansize",
-        "num-traits",
-        "urlencode",
     ],
     crate_root = "src/lib.rs",
     data = [],
     edition = "2018",
-    proc_macro_deps = [
-        "@raze__askama_derive__0_11_0//:askama_derive",
-    ],
     rustc_flags = [
         "--cap-lints=allow",
     ],
     tags = [
         "cargo-raze",
-        "crate-name=askama",
+        "crate-name=askama_escape",
         "manual",
     ],
-    version = "0.11.0",
+    version = "0.10.3",
     # buildifier: leave-alone
     deps = [
-        "@raze__askama_escape__0_10_2//:askama_escape",
-        "@raze__askama_shared__0_12_0//:askama_shared",
     ],
 )
