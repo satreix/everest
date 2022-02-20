@@ -32,39 +32,33 @@ licenses([
 # Generated Targets
 
 rust_library(
-    name = "askama_shared",
+    name = "askama",
     srcs = glob(["**/*.rs"]),
     crate_features = [
         "config",
+        "default",
         "humansize",
         "num-traits",
-        "percent-encoding",
-        "serde",
-        "toml",
+        "urlencode",
     ],
     crate_root = "src/lib.rs",
     data = [],
     edition = "2018",
+    proc_macro_deps = [
+        "@raze__askama_derive__0_11_2//:askama_derive",
+    ],
     rustc_flags = [
         "--cap-lints=allow",
     ],
     tags = [
         "cargo-raze",
-        "crate-name=askama_shared",
+        "crate-name=askama",
         "manual",
     ],
-    version = "0.12.0",
+    version = "0.11.1",
     # buildifier: leave-alone
     deps = [
-        "@raze__askama_escape__0_10_2//:askama_escape",
-        "@raze__humansize__1_1_1//:humansize",
-        "@raze__nom__7_1_0//:nom",
-        "@raze__num_traits__0_2_14//:num_traits",
-        "@raze__percent_encoding__2_1_0//:percent_encoding",
-        "@raze__proc_macro2__1_0_34//:proc_macro2",
-        "@raze__quote__1_0_10//:quote",
-        "@raze__serde__1_0_132//:serde",
-        "@raze__syn__1_0_82//:syn",
-        "@raze__toml__0_5_8//:toml",
+        "@raze__askama_escape__0_10_3//:askama_escape",
+        "@raze__askama_shared__0_12_1//:askama_shared",
     ],
 )

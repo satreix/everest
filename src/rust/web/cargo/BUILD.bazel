@@ -14,7 +14,7 @@ licenses([
 # Aliased targets
 alias(
     name = "askama",
-    actual = "@raze__askama__0_11_0//:askama",
+    actual = "@raze__askama__0_11_1//:askama",
     tags = [
         "cargo-raze",
         "manual",

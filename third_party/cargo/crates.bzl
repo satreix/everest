@@ -13,42 +13,42 @@ def raze_fetch_remote_crates():
     """This function defines a collection of repos and should be called in a WORKSPACE file"""
     maybe(
         http_archive,
-        name = "raze__askama__0_11_0",
-        url = "https://crates.io/api/v1/crates/askama/0.11.0/download",
+        name = "raze__askama__0_11_1",
+        url = "https://crates.io/api/v1/crates/askama/0.11.1/download",
         type = "tar.gz",
-        sha256 = "4d8f355701c672c2ba3d718acbd213f740beea577cc4eae66accdffe15be1882",
-        strip_prefix = "askama-0.11.0",
-        build_file = Label("//third_party/cargo/remote:BUILD.askama-0.11.0.bazel"),
+        sha256 = "fb98f10f371286b177db5eeb9a6e5396609555686a35e1d4f7b9a9c6d8af0139",
+        strip_prefix = "askama-0.11.1",
+        build_file = Label("//third_party/cargo/remote:BUILD.askama-0.11.1.bazel"),
     )
 
     maybe(
         http_archive,
-        name = "raze__askama_derive__0_11_0",
-        url = "https://crates.io/api/v1/crates/askama_derive/0.11.0/download",
+        name = "raze__askama_derive__0_11_2",
+        url = "https://crates.io/api/v1/crates/askama_derive/0.11.2/download",
         type = "tar.gz",
-        sha256 = "84704cab5b7ae0fd3a9f78ee5eb7b27f3749df445f04623db6633459ae283267",
-        strip_prefix = "askama_derive-0.11.0",
-        build_file = Label("//third_party/cargo/remote:BUILD.askama_derive-0.11.0.bazel"),
+        sha256 = "87bf87e6e8b47264efa9bde63d6225c6276a52e05e91bf37eaa8afd0032d6b71",
+        strip_prefix = "askama_derive-0.11.2",
+        build_file = Label("//third_party/cargo/remote:BUILD.askama_derive-0.11.2.bazel"),
     )
 
     maybe(
         http_archive,
-        name = "raze__askama_escape__0_10_2",
-        url = "https://crates.io/api/v1/crates/askama_escape/0.10.2/download",
+        name = "raze__askama_escape__0_10_3",
+        url = "https://crates.io/api/v1/crates/askama_escape/0.10.3/download",
         type = "tar.gz",
-        sha256 = "9a1bb320f97e6edf9f756bf015900038e43c7700e059688e5724a928c8f3b8d5",
-        strip_prefix = "askama_escape-0.10.2",
-        build_file = Label("//third_party/cargo/remote:BUILD.askama_escape-0.10.2.bazel"),
+        sha256 = "619743e34b5ba4e9703bba34deac3427c72507c7159f5fd030aea8cac0cfe341",
+        strip_prefix = "askama_escape-0.10.3",
+        build_file = Label("//third_party/cargo/remote:BUILD.askama_escape-0.10.3.bazel"),
     )
 
     maybe(
         http_archive,
-        name = "raze__askama_shared__0_12_0",
-        url = "https://crates.io/api/v1/crates/askama_shared/0.12.0/download",
+        name = "raze__askama_shared__0_12_1",
+        url = "https://crates.io/api/v1/crates/askama_shared/0.12.1/download",
         type = "tar.gz",
-        sha256 = "dae03eebba55a2697a376e58b573a29fe36893157173ac8df312ad85f3c0e012",
-        strip_prefix = "askama_shared-0.12.0",
-        build_file = Label("//third_party/cargo/remote:BUILD.askama_shared-0.12.0.bazel"),
+        sha256 = "e3d372b233d121e841b4cc5dc716538755e338ca902b3e12ac131ffb6b9d5fbf",
+        strip_prefix = "askama_shared-0.12.1",
+        build_file = Label("//third_party/cargo/remote:BUILD.askama_shared-0.12.1.bazel"),
     )
 
     maybe(
@@ -473,12 +473,32 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
+        name = "raze__mime__0_3_16",
+        url = "https://crates.io/api/v1/crates/mime/0.3.16/download",
+        type = "tar.gz",
+        sha256 = "2a60c7ce501c71e03a9c9c0d35b861413ae925bd979cc7a4e30d060069aaac8d",
+        strip_prefix = "mime-0.3.16",
+        build_file = Label("//third_party/cargo/remote:BUILD.mime-0.3.16.bazel"),
+    )
+
+    maybe(
+        http_archive,
         name = "raze__mime_guess__1_8_8",
         url = "https://crates.io/api/v1/crates/mime_guess/1.8.8/download",
         type = "tar.gz",
         sha256 = "216929a5ee4dd316b1702eedf5e74548c123d370f47841ceaac38ca154690ca3",
         strip_prefix = "mime_guess-1.8.8",
         build_file = Label("//third_party/cargo/remote:BUILD.mime_guess-1.8.8.bazel"),
+    )
+
+    maybe(
+        http_archive,
+        name = "raze__mime_guess__2_0_4",
+        url = "https://crates.io/api/v1/crates/mime_guess/2.0.4/download",
+        type = "tar.gz",
+        sha256 = "4192263c238a5f0d0c6bfd21f336a313a4ce1c450542449ca191bb657b4642ef",
+        strip_prefix = "mime_guess-2.0.4",
+        build_file = Label("//third_party/cargo/remote:BUILD.mime_guess-2.0.4.bazel"),
     )
 
     maybe(
@@ -1179,6 +1199,16 @@ def raze_fetch_remote_crates():
         sha256 = "7f4765f83163b74f957c797ad9253caf97f103fb064d3999aea9568d09fc8a33",
         strip_prefix = "unicase-1.4.2",
         build_file = Label("//third_party/cargo/remote:BUILD.unicase-1.4.2.bazel"),
+    )
+
+    maybe(
+        http_archive,
+        name = "raze__unicase__2_6_0",
+        url = "https://crates.io/api/v1/crates/unicase/2.6.0/download",
+        type = "tar.gz",
+        sha256 = "50f37be617794602aabbeee0be4f259dc1778fabe05e2d67ee8f79326d5cb4f6",
+        strip_prefix = "unicase-2.6.0",
+        build_file = Label("//third_party/cargo/remote:BUILD.unicase-2.6.0.bazel"),
     )
 
     maybe(

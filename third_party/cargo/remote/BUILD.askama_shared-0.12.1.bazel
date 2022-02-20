@@ -31,12 +31,16 @@ licenses([
 
 # Generated Targets
 
-# Unsupported target "all" with type "bench" omitted
-
 rust_library(
-    name = "askama_escape",
+    name = "askama_shared",
     srcs = glob(["**/*.rs"]),
     crate_features = [
+        "config",
+        "humansize",
+        "num-traits",
+        "percent-encoding",
+        "serde",
+        "toml",
     ],
     crate_root = "src/lib.rs",
     data = [],
@@ -46,11 +50,23 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=askama_escape",
+        "crate-name=askama_shared",
         "manual",
     ],
-    version = "0.10.2",
+    version = "0.12.1",
     # buildifier: leave-alone
     deps = [
+        "@raze__askama_escape__0_10_3//:askama_escape",
+        "@raze__humansize__1_1_1//:humansize",
+        "@raze__mime__0_3_16//:mime",
+        "@raze__mime_guess__2_0_4//:mime_guess",
+        "@raze__nom__7_1_0//:nom",
+        "@raze__num_traits__0_2_14//:num_traits",
+        "@raze__percent_encoding__2_1_0//:percent_encoding",
+        "@raze__proc_macro2__1_0_34//:proc_macro2",
+        "@raze__quote__1_0_10//:quote",
+        "@raze__serde__1_0_132//:serde",
+        "@raze__syn__1_0_82//:syn",
+        "@raze__toml__0_5_8//:toml",
     ],
 )
