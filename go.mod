@@ -4,7 +4,7 @@ go 1.13
 
 require (
 	github.com/antlr/antlr4/runtime/Go/antlr v0.0.0-20220104013430-7d3fb7b4dc33
-	github.com/bazelbuild/rules_go v0.29.0
+	github.com/bazelbuild/rules_go v0.30.0
 	github.com/google/go-cmp v0.5.7
 	github.com/gosuri/uilive v0.0.3 // indirect
 	github.com/gosuri/uiprogress v0.0.1
