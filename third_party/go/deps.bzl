@@ -118,8 +118,8 @@ def go_dependencies():
     go_repository(
         name = "com_github_gosuri_uilive",
         importpath = "github.com/gosuri/uilive",
-        sum = "h1:kvo6aB3pez9Wbudij8srWo4iY6SFTTxTKOkb+uRCE8I=",
-        version = "v0.0.3",
+        sum = "h1:hUEBpQDj8D8jXgtCdBu7sWsy5sbW/5GhuO8KBwJ2jyY=",
+        version = "v0.0.4",
     )
     go_repository(
         name = "com_github_gosuri_uiprogress",
@@ -148,8 +148,8 @@ def go_dependencies():
     go_repository(
         name = "com_github_mattn_go_isatty",
         importpath = "github.com/mattn/go-isatty",
-        sum = "h1:qxFzApOv4WsAL965uUPIsXzAKCZxN2p9UqdhFS4ZW10=",
-        version = "v0.0.10",
+        sum = "h1:yVuAays6BHfxijgZPzw+3Zlu5yQgKGP2/hcQbHb7S9Y=",
+        version = "v0.0.14",
     )
     go_repository(
         name = "com_github_mndrix_tap_go",
@@ -214,8 +214,8 @@ def go_dependencies():
     go_repository(
         name = "in_gopkg_yaml_v2",
         importpath = "gopkg.in/yaml.v2",
-        sum = "h1:D8xgwECY7CYvx+Y2n4sBz93Jn9JRvxdiyyo8CTfuKaY=",
-        version = "v2.4.0",
+        sum = "h1:fvjTMHxHEw/mxHbtzPi3JCcKXQRAnQTBRo6YCJSVHKI=",
+        version = "v2.2.3",
     )
     go_repository(
         name = "in_gopkg_yaml_v3",
@@ -298,8 +298,8 @@ def go_dependencies():
     go_repository(
         name = "org_golang_x_sys",
         importpath = "golang.org/x/sys",
-        sum = "h1:X/2sJAybVknnUnV7AD2HdT6rm2p5BP6eH2j+igduWgk=",
-        version = "v0.0.0-20210616045830-e2b7044e8c71",
+        sum = "h1:F1jZWGFhYfh0Ci55sIpILtKKK8p3i2/krTr0H1rg74I=",
+        version = "v0.0.0-20210630005230-0f9fa26af87c",
     )
     go_repository(
         name = "org_golang_x_text",
