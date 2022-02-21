@@ -39,9 +39,9 @@ http_archive(
 
 http_archive(
     name = "rules_rust",
-    sha256 = "e0bc3abf2051918d6b777c0ecdb7aa5e8ae7d4548dfdf439336d506df05f5b95",
-    strip_prefix = "rules_rust-8cb9059c90858224cc017cb6449a4ea631e54a5f",
-    urls = ["https://github.com/bazelbuild/rules_rust/archive/8cb9059c90858224cc017cb6449a4ea631e54a5f.tar.gz"],
+    sha256 = "826ef092c93cf19ad5f3eeda14fbe66b92f33a4d0ac48ec5f8e3a1476723bbf0",
+    strip_prefix = "rules_rust-14f48e7aa20094930b80bef5a0fdf26409d7461e",
+    urls = ["https://github.com/bazelbuild/rules_rust/archive/14f48e7aa20094930b80bef5a0fdf26409d7461e.tar.gz"],
 )
 
 http_archive(
@@ -151,9 +151,11 @@ load("@pypi//:requirements.bzl", install_python_deps = "install_deps")
 
 install_python_deps()
 
-load("@rules_rust//rust:repositories.bzl", "rust_repositories")
+load("@rules_rust//rust:repositories.bzl", "rules_rust_dependencies", "rust_register_toolchains")
 
-rust_repositories()
+rules_rust_dependencies()
+
+rust_register_toolchains()
 
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 
