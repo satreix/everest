@@ -151,9 +151,11 @@ load("@pypi//:requirements.bzl", install_python_deps = "install_deps")
 
 install_python_deps()
 
-load("@rules_rust//rust:repositories.bzl", "rust_repositories")
+load("@rules_rust//rust:repositories.bzl", "rules_rust_dependencies", "rust_register_toolchains")
 
-rust_repositories()
+rules_rust_dependencies()
+
+rust_register_toolchains()
 
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 
