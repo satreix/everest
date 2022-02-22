@@ -89,6 +89,10 @@ licenses([
 
 # Unsupported target "04_01_possible" with type "example" omitted
 
+# Unsupported target "04_02_parse" with type "example" omitted
+
+# Unsupported target "04_02_parse_derive" with type "example" omitted
+
 # Unsupported target "04_02_validate" with type "example" omitted
 
 # Unsupported target "04_02_validate_derive" with type "example" omitted
@@ -152,7 +156,7 @@ rust_library(
         "crate-name=clap",
         "manual",
     ],
-    version = "3.0.1",
+    version = "3.1.1",
     # buildifier: leave-alone
     deps = [
         "@raze__atty__0_2_13//:atty",
