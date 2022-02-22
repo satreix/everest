@@ -18,5 +18,5 @@ pipenv check
 pipenv install
 pipenv clean
 pipenv lock --requirements --dev >"$REQS_FILE"
-pipenv run pip-compile --output-file "$LOCK_FILE" "$REQS_FILE" >/dev/null 2>&1
+pipenv run pip-compile --quiet --output-file "$LOCK_FILE" "$REQS_FILE"
 rm "$REQS_FILE"
