@@ -11,6 +11,6 @@ jinja2 = "*"
 
 [dev-packages]
 autoflake = "*"
-isort = {extras = ["pipfile"],version = "*"}
+isort = "*"
 pip-tools = "*"
 yapf = "*"
