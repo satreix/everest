@@ -10,7 +10,7 @@ require (
 	github.com/keybase/go-keychain v0.0.0-20211119201326-e02f34051621
 	github.com/mndrix/tap-go v0.0.0-20171203230836-629fa407e90b
 	github.com/pkg/browser v0.0.0-20210911075715-681adbf594b8
-	google.golang.org/grpc v1.43.0
+	google.golang.org/grpc v1.44.0
 	google.golang.org/grpc/examples v0.0.0-20210212222430-425d405f3928
 )
 
