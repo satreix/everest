@@ -67,9 +67,9 @@ http_archive(
 
 http_archive(
     name = "rules_jvm_external",
-    sha256 = "31d226a6b3f5362b59d261abf9601116094ea4ae2aa9f28789b6c105e4cada68",
-    strip_prefix = "rules_jvm_external-4.0",
-    urls = ["https://github.com/bazelbuild/rules_jvm_external/archive/4.0.tar.gz"],
+    sha256 = "2cd77de091e5376afaf9cc391c15f093ebd0105192373b334f0a855d89092ad5",
+    strip_prefix = "rules_jvm_external-4.2",
+    urls = ["https://github.com/bazelbuild/rules_jvm_external/archive/4.2.tar.gz"],
 )
 
 http_archive(
@@ -101,9 +101,9 @@ http_archive(
     urls = ["https://github.com/abergmeier-dsfishlabs/google-java-format/archive/9701afbdf2b29acb0660d6af1ea478842ffe40bc.tar.gz"],
 )
 
-GRPC_JAVA_VERSION = "1.36.0"
+GRPC_JAVA_VERSION = "1.44.1"
 
-GRPC_JAVA_SHA256 = "ab28b5b5729aff73d3907eaf5c79fa46fb82db09754c279f6833f93c03afec65"
+GRPC_JAVA_SHA256 = "0e72de67dd47d564b9cb8badb5267c6763dc25f8c02feb6fc69a05c6ae21b7bd"
 
 http_archive(
     name = "io_grpc_grpc_java",
@@ -173,6 +173,7 @@ maven_install(
         "com.google.googlejavaformat:google-java-format:1.7",
         "commons-cli:commons-cli:1.4",
     ] + IO_GRPC_GRPC_JAVA_ARTIFACTS,
+    fail_if_repin_required = True,
     generate_compat_repositories = True,
     maven_install_json = "@everest//third_party/java:maven_install.json",
     override_targets = IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS,
