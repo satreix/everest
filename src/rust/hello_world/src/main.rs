@@ -1,7 +1,7 @@
 extern crate clap;
 
 fn main() {
-    let matches = clap::App::new("hello_world")
+    let matches = clap::Command::new("hello_world")
         .arg(
             clap::Arg::new("name")
                 .long("name")
