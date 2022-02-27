@@ -13,7 +13,7 @@ iron-slog = "0.0.2"
 router = "0.6.0"
 slog = "2.7.0"
 slog-async = "2.7.0"
-slog-term = "2.8.1"
+slog-term = "2.9.0"
 
 [dev-dependencies]
 iron-test = "0.6.0"
