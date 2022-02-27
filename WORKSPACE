@@ -159,6 +159,10 @@ rules_rust_dependencies()
 
 rust_register_toolchains()
 
+load("@rules_rust//util/import:deps.bzl", _rules_rust_util_import_deps="import_deps")
+
+_rules_rust_util_import_deps()
+
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 
 protobuf_deps()
