@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v2
 
       # Python rules use host install still.
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v3
       - run: python --version
 
       - name: Install bazelisk
