@@ -158,7 +158,7 @@ rust_library(
         "crate-name=clap",
         "manual",
     ],
-    version = "3.1.2",
+    version = "3.1.6",
     # buildifier: leave-alone
     deps = [
         "@raze__atty__0_2_13//:atty",
@@ -167,6 +167,6 @@ rust_library(
         "@raze__os_str_bytes__6_0_0//:os_str_bytes",
         "@raze__strsim__0_10_0//:strsim",
         "@raze__termcolor__1_1_2//:termcolor",
-        "@raze__textwrap__0_14_2//:textwrap",
+        "@raze__textwrap__0_15_0//:textwrap",
     ],
 )

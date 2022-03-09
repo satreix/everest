@@ -133,12 +133,12 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
-        name = "raze__clap__3_1_2",
-        url = "https://crates.io/api/v1/crates/clap/3.1.2/download",
+        name = "raze__clap__3_1_6",
+        url = "https://crates.io/api/v1/crates/clap/3.1.6/download",
         type = "tar.gz",
-        sha256 = "5177fac1ab67102d8989464efd043c6ff44191b1557ec1ddd489b4f7e1447e77",
-        strip_prefix = "clap-3.1.2",
-        build_file = Label("//third_party/cargo/remote:BUILD.clap-3.1.2.bazel"),
+        sha256 = "d8c93436c21e4698bacadf42917db28b23017027a4deccb35dbe47a7e7840123",
+        strip_prefix = "clap-3.1.6",
+        build_file = Label("//third_party/cargo/remote:BUILD.clap-3.1.6.bazel"),
     )
 
     maybe(
@@ -1103,12 +1103,12 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
-        name = "raze__textwrap__0_14_2",
-        url = "https://crates.io/api/v1/crates/textwrap/0.14.2/download",
+        name = "raze__textwrap__0_15_0",
+        url = "https://crates.io/api/v1/crates/textwrap/0.15.0/download",
         type = "tar.gz",
-        sha256 = "0066c8d12af8b5acd21e00547c3797fde4e8677254a7ee429176ccebbe93dd80",
-        strip_prefix = "textwrap-0.14.2",
-        build_file = Label("//third_party/cargo/remote:BUILD.textwrap-0.14.2.bazel"),
+        sha256 = "b1141d4d61095b28419e22cb0bbf02755f5e54e0526f97f1e3d1d160e60885fb",
+        strip_prefix = "textwrap-0.15.0",
+        build_file = Label("//third_party/cargo/remote:BUILD.textwrap-0.15.0.bazel"),
     )
 
     maybe(
