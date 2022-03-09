@@ -32,31 +32,23 @@ licenses([
 # Generated Targets
 
 rust_library(
-    name = "paste",
+    name = "unindent",
     srcs = glob(["**/*.rs"]),
     crate_features = [
     ],
     crate_root = "src/lib.rs",
     data = [],
     edition = "2018",
-    proc_macro_deps = [
-        "@raze__paste_impl__0_1_18//:paste_impl",
-        "@raze__proc_macro_hack__0_5_19//:proc_macro_hack",
-    ],
     rustc_flags = [
         "--cap-lints=allow",
     ],
     tags = [
         "cargo-raze",
-        "crate-name=paste",
+        "crate-name=unindent",
         "manual",
     ],
-    version = "0.1.18",
+    version = "0.1.8",
     # buildifier: leave-alone
     deps = [
     ],
 )
-
-# Unsupported target "compiletest" with type "test" omitted
-
-# Unsupported target "test" with type "test" omitted

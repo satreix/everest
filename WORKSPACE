@@ -3,6 +3,20 @@ workspace(name = "everest")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
+    name = "com_github_swagger_api_swagger_petstore",
+    build_file_content = """exports_files(["src/main/resources/openapi.yaml"])""",
+    sha256 = "ae350c7aff7b99465ad4f679613685a92a4350796ae9fcd8ef36952592fe5dfe",
+    strip_prefix = "swagger-petstore-swagger-petstore-v3-1.0.11",
+    urls = ["https://github.com/swagger-api/swagger-petstore/archive/refs/tags/swagger-petstore-v3-1.0.11.tar.gz"],
+)
+
+http_archive(
+    name = "openapi_tools_generator_bazel",
+    sha256 = "c6e4c253f1ae0fbe4d4ded8a719f6647273141d0dc3c0cd8bb074aa7fc3c8d1c",
+    urls = ["https://github.com/OpenAPITools/openapi-generator-bazel/releases/download/0.1.5/openapi-tools-generator-bazel-0.1.5.tar.gz"],
+)
+
+http_archive(
     name = "rules_antlr",
     sha256 = "26e6a83c665cf6c1093b628b3a749071322f0f70305d12ede30909695ed85591",
     strip_prefix = "rules_antlr-0.5.0",
@@ -159,7 +173,7 @@ rules_rust_dependencies()
 
 rust_register_toolchains()
 
-load("@rules_rust//util/import:deps.bzl", _rules_rust_util_import_deps="import_deps")
+load("@rules_rust//util/import:deps.bzl", _rules_rust_util_import_deps = "import_deps")
 
 _rules_rust_util_import_deps()
 
@@ -234,3 +248,10 @@ cargo_raze_repositories()
 load("@cargo_raze//:transitive_deps.bzl", "cargo_raze_transitive_deps")
 
 cargo_raze_transitive_deps()
+
+load("@openapi_tools_generator_bazel//:defs.bzl", "openapi_tools_generator_bazel_repositories")
+
+openapi_tools_generator_bazel_repositories(
+    openapi_generator_cli_version = "5.4.0",
+    sha256 = "f3ed312310e390324b33ba2ffff290ce812935207a1493ec5c098d0a441be51c",
+)

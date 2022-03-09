@@ -26,36 +26,34 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # MIT from expression "MIT OR Apache-2.0"
+    "notice",  # Apache-2.0 from expression "Apache-2.0"
 ])
 
 # Generated Targets
 
 rust_proc_macro(
-    name = "indoc_impl",
+    name = "pyo3_macros",
     srcs = glob(["**/*.rs"]),
     crate_features = [
+        "pyproto",
     ],
     crate_root = "src/lib.rs",
     data = [],
     edition = "2018",
-    proc_macro_deps = [
-        "@raze__proc_macro_hack__0_5_19//:proc_macro_hack",
-    ],
     rustc_flags = [
         "--cap-lints=allow",
     ],
     tags = [
         "cargo-raze",
-        "crate-name=indoc-impl",
+        "crate-name=pyo3-macros",
         "manual",
     ],
-    version = "0.3.6",
+    version = "0.16.1",
     # buildifier: leave-alone
     deps = [
         "@raze__proc_macro2__1_0_34//:proc_macro2",
+        "@raze__pyo3_macros_backend__0_16_1//:pyo3_macros_backend",
         "@raze__quote__1_0_10//:quote",
         "@raze__syn__1_0_82//:syn",
-        "@raze__unindent__0_1_7//:unindent",
     ],
 )
