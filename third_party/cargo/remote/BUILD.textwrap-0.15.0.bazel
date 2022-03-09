@@ -35,6 +35,10 @@ licenses([
 
 # Unsupported target "linear" with type "bench" omitted
 
+# Unsupported target "hyphenation" with type "example" omitted
+
+# Unsupported target "termwidth" with type "example" omitted
+
 rust_library(
     name = "textwrap",
     srcs = glob(["**/*.rs"]),
@@ -51,14 +55,12 @@ rust_library(
         "crate-name=textwrap",
         "manual",
     ],
-    version = "0.14.2",
+    version = "0.15.0",
     # buildifier: leave-alone
     deps = [
     ],
 )
 
 # Unsupported target "indent" with type "test" omitted
-
-# Unsupported target "traits" with type "test" omitted
 
 # Unsupported target "version-numbers" with type "test" omitted
