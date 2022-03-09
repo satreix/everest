@@ -47,8 +47,8 @@ cargo_build_script(
         "extension-module",
         "indoc",
         "macros",
-        "paste",
         "pyo3-macros",
+        "pyproto",
         "unindent",
     ],
     crate_root = "build.rs",
@@ -62,10 +62,10 @@ cargo_build_script(
         "cargo-raze",
         "manual",
     ],
-    version = "0.15.1",
+    version = "0.16.1",
     visibility = ["//visibility:private"],
     deps = [
-        "@raze__pyo3_build_config__0_15_1//:pyo3_build_config",
+        "@raze__pyo3_build_config__0_16_1//:pyo3_build_config",
     ],
 )
 
@@ -74,6 +74,8 @@ cargo_build_script(
 # Unsupported target "bench_dict" with type "bench" omitted
 
 # Unsupported target "bench_err" with type "bench" omitted
+
+# Unsupported target "bench_frompyobject" with type "bench" omitted
 
 # Unsupported target "bench_gil" with type "bench" omitted
 
@@ -95,15 +97,16 @@ rust_library(
         "extension-module",
         "indoc",
         "macros",
-        "paste",
         "pyo3-macros",
+        "pyproto",
         "unindent",
     ],
     crate_root = "src/lib.rs",
     data = [],
     edition = "2018",
     proc_macro_deps = [
-        "@raze__pyo3_macros__0_15_1//:pyo3_macros",
+        "@raze__indoc__1_0_4//:indoc",
+        "@raze__pyo3_macros__0_16_1//:pyo3_macros",
     ],
     rustc_flags = [
         "--cap-lints=allow",
@@ -113,16 +116,15 @@ rust_library(
         "crate-name=pyo3",
         "manual",
     ],
-    version = "0.15.1",
+    version = "0.16.1",
     # buildifier: leave-alone
     deps = [
         ":pyo3_build_script",
         "@raze__cfg_if__1_0_0//:cfg_if",
-        "@raze__indoc__0_3_6//:indoc",
         "@raze__libc__0_2_112//:libc",
         "@raze__parking_lot__0_11_2//:parking_lot",
-        "@raze__paste__0_1_18//:paste",
-        "@raze__unindent__0_1_7//:unindent",
+        "@raze__pyo3_ffi__0_16_1//:pyo3_ffi",
+        "@raze__unindent__0_1_8//:unindent",
     ],
 )
 
@@ -138,6 +140,8 @@ rust_library(
 
 # Unsupported target "test_buffer_protocol" with type "test" omitted
 
+# Unsupported target "test_buffer_protocol_pyproto" with type "test" omitted
+
 # Unsupported target "test_bytes" with type "test" omitted
 
 # Unsupported target "test_class_attributes" with type "test" omitted
@@ -152,7 +156,11 @@ rust_library(
 
 # Unsupported target "test_datetime" with type "test" omitted
 
+# Unsupported target "test_default_impls" with type "test" omitted
+
 # Unsupported target "test_dict_iter" with type "test" omitted
+
+# Unsupported target "test_enum" with type "test" omitted
 
 # Unsupported target "test_exceptions" with type "test" omitted
 
@@ -160,15 +168,17 @@ rust_library(
 
 # Unsupported target "test_gc" with type "test" omitted
 
-# Unsupported target "test_getter_setter" with type "test" omitted
+# Unsupported target "test_gc_pyproto" with type "test" omitted
 
-# Unsupported target "test_hygiene" with type "test" omitted
+# Unsupported target "test_getter_setter" with type "test" omitted
 
 # Unsupported target "test_inheritance" with type "test" omitted
 
 # Unsupported target "test_macros" with type "test" omitted
 
 # Unsupported target "test_mapping" with type "test" omitted
+
+# Unsupported target "test_mapping_pyproto" with type "test" omitted
 
 # Unsupported target "test_methods" with type "test" omitted
 
@@ -180,8 +190,6 @@ rust_library(
 
 # Unsupported target "test_proto_methods" with type "test" omitted
 
-# Unsupported target "test_py36_init" with type "test" omitted
-
 # Unsupported target "test_pyfunction" with type "test" omitted
 
 # Unsupported target "test_pyproto" with type "test" omitted
@@ -189,6 +197,8 @@ rust_library(
 # Unsupported target "test_pyself" with type "test" omitted
 
 # Unsupported target "test_sequence" with type "test" omitted
+
+# Unsupported target "test_sequence_pyproto" with type "test" omitted
 
 # Unsupported target "test_serde" with type "test" omitted
 

@@ -26,13 +26,13 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # Apache-2.0 from expression "Apache-2.0"
+    "notice",  # MIT from expression "MIT OR Apache-2.0"
 ])
 
 # Generated Targets
 
-rust_library(
-    name = "pyo3_macros_backend",
+rust_proc_macro(
+    name = "indoc",
     srcs = glob(["**/*.rs"]),
     crate_features = [
     ],
@@ -44,15 +44,22 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=pyo3-macros-backend",
+        "crate-name=indoc",
         "manual",
     ],
-    version = "0.15.1",
+    version = "1.0.4",
     # buildifier: leave-alone
     deps = [
-        "@raze__proc_macro2__1_0_34//:proc_macro2",
-        "@raze__pyo3_build_config__0_15_1//:pyo3_build_config",
-        "@raze__quote__1_0_10//:quote",
-        "@raze__syn__1_0_82//:syn",
+        "@raze__unindent__0_1_8//:unindent",
     ],
 )
+
+# Unsupported target "compiletest" with type "test" omitted
+
+# Unsupported target "test_formatdoc" with type "test" omitted
+
+# Unsupported target "test_indoc" with type "test" omitted
+
+# Unsupported target "test_unindent" with type "test" omitted
+
+# Unsupported target "test_writedoc" with type "test" omitted

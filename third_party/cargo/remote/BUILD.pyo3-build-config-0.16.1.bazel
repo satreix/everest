@@ -26,7 +26,7 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # MIT from expression "MIT OR Apache-2.0"
+    "notice",  # Apache-2.0 from expression "Apache-2.0"
 ])
 
 # Generated Targets
@@ -38,11 +38,13 @@ load(
 )
 
 cargo_build_script(
-    name = "proc_macro_hack_build_script",
+    name = "pyo3_build_config_build_script",
     srcs = glob(["**/*.rs"]),
     build_script_env = {
     },
     crate_features = [
+        "default",
+        "resolve-config",
     ],
     crate_root = "build.rs",
     data = glob(["**"]),
@@ -54,16 +56,18 @@ cargo_build_script(
         "cargo-raze",
         "manual",
     ],
-    version = "0.5.19",
+    version = "0.16.1",
     visibility = ["//visibility:private"],
     deps = [
     ],
 )
 
-rust_proc_macro(
-    name = "proc_macro_hack",
+rust_library(
+    name = "pyo3_build_config",
     srcs = glob(["**/*.rs"]),
     crate_features = [
+        "default",
+        "resolve-config",
     ],
     crate_root = "src/lib.rs",
     data = [],
@@ -73,14 +77,13 @@ rust_proc_macro(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=proc-macro-hack",
+        "crate-name=pyo3-build-config",
         "manual",
     ],
-    version = "0.5.19",
+    version = "0.16.1",
     # buildifier: leave-alone
     deps = [
-        ":proc_macro_hack_build_script",
+        ":pyo3_build_config_build_script",
+        "@raze__once_cell__1_9_0//:once_cell",
     ],
 )
-
-# Unsupported target "compiletest" with type "test" omitted
