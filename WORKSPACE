@@ -53,9 +53,9 @@ http_archive(
 
 http_archive(
     name = "rules_rust",
-    sha256 = "16bb7301a0c020cfbb0cfd7e4d15eba098de4edc610139e5b4ae3f3a5c8f6adb",
-    strip_prefix = "rules_rust-bf59038cac11798cbaef9f3bf965bad8182b97fa",
-    urls = ["https://github.com/bazelbuild/rules_rust/archive/bf59038cac11798cbaef9f3bf965bad8182b97fa.tar.gz"],
+    sha256 = "e33f0738bb9bdd63abd160e912d79abe1f1214e9eb49d91f05b390d83b6d2102",
+    strip_prefix = "rules_rust-de726a10c9b7a4ef2ec6fb5bab73a4634c601951",
+    urls = ["https://github.com/bazelbuild/rules_rust/archive/de726a10c9b7a4ef2ec6fb5bab73a4634c601951.tar.gz"],
 )
 
 http_archive(
