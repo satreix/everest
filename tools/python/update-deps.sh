@@ -15,7 +15,7 @@ REQS_FILE="${PYTHON_REQ_DIR}/requirements.txt"
 LOCK_FILE="${PYTHON_REQ_DIR}/requirements_lock.txt"
 
 pipenv check
-pipenv install
+pipenv install --dev
 pipenv clean
 pipenv lock --requirements --dev >"$REQS_FILE"
 pipenv run pip-compile --quiet --output-file "$LOCK_FILE" "$REQS_FILE"
