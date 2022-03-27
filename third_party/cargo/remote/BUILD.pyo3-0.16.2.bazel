@@ -54,7 +54,6 @@ cargo_build_script(
     crate_root = "build.rs",
     data = glob(["**"]),
     edition = "2018",
-    links = "python",
     rustc_flags = [
         "--cap-lints=allow",
     ],
@@ -62,10 +61,10 @@ cargo_build_script(
         "cargo-raze",
         "manual",
     ],
-    version = "0.16.1",
+    version = "0.16.2",
     visibility = ["//visibility:private"],
     deps = [
-        "@raze__pyo3_build_config__0_16_1//:pyo3_build_config",
+        "@raze__pyo3_build_config__0_16_2//:pyo3_build_config",
     ],
 )
 
@@ -106,7 +105,7 @@ rust_library(
     edition = "2018",
     proc_macro_deps = [
         "@raze__indoc__1_0_4//:indoc",
-        "@raze__pyo3_macros__0_16_1//:pyo3_macros",
+        "@raze__pyo3_macros__0_16_2//:pyo3_macros",
     ],
     rustc_flags = [
         "--cap-lints=allow",
@@ -116,14 +115,14 @@ rust_library(
         "crate-name=pyo3",
         "manual",
     ],
-    version = "0.16.1",
+    version = "0.16.2",
     # buildifier: leave-alone
     deps = [
         ":pyo3_build_script",
         "@raze__cfg_if__1_0_0//:cfg_if",
         "@raze__libc__0_2_112//:libc",
         "@raze__parking_lot__0_11_2//:parking_lot",
-        "@raze__pyo3_ffi__0_16_1//:pyo3_ffi",
+        "@raze__pyo3_ffi__0_16_2//:pyo3_ffi",
         "@raze__unindent__0_1_8//:unindent",
     ],
 )
