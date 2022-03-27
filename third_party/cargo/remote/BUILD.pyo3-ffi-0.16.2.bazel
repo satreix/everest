@@ -38,17 +38,18 @@ load(
 )
 
 cargo_build_script(
-    name = "pyo3_build_config_build_script",
+    name = "pyo3_ffi_build_script",
     srcs = glob(["**/*.rs"]),
     build_script_env = {
     },
     crate_features = [
         "default",
-        "resolve-config",
+        "extension-module",
     ],
     crate_root = "build.rs",
     data = glob(["**"]),
     edition = "2018",
+    links = "python",
     rustc_flags = [
         "--cap-lints=allow",
     ],
@@ -56,18 +57,19 @@ cargo_build_script(
         "cargo-raze",
         "manual",
     ],
-    version = "0.16.1",
+    version = "0.16.2",
     visibility = ["//visibility:private"],
     deps = [
+        "@raze__pyo3_build_config__0_16_2//:pyo3_build_config",
     ],
 )
 
 rust_library(
-    name = "pyo3_build_config",
+    name = "pyo3_ffi",
     srcs = glob(["**/*.rs"]),
     crate_features = [
         "default",
-        "resolve-config",
+        "extension-module",
     ],
     crate_root = "src/lib.rs",
     data = [],
@@ -77,13 +79,13 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=pyo3-build-config",
+        "crate-name=pyo3-ffi",
         "manual",
     ],
-    version = "0.16.1",
+    version = "0.16.2",
     # buildifier: leave-alone
     deps = [
-        ":pyo3_build_config_build_script",
-        "@raze__once_cell__1_9_0//:once_cell",
+        ":pyo3_ffi_build_script",
+        "@raze__libc__0_2_112//:libc",
     ],
 )
