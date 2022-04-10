@@ -68,7 +68,7 @@ alias(
 
 alias(
     name = "pyo3_build_config",
-    actual = "@raze__pyo3_build_config__0_16_2//:pyo3_build_config",
+    actual = "@raze__pyo3_build_config__0_16_3//:pyo3_build_config",
     tags = [
         "cargo-raze",
         "manual",

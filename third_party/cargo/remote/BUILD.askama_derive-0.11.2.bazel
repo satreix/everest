@@ -51,8 +51,8 @@ rust_proc_macro(
     version = "0.11.2",
     # buildifier: leave-alone
     deps = [
-        "@raze__askama_shared__0_12_1//:askama_shared",
-        "@raze__proc_macro2__1_0_34//:proc_macro2",
-        "@raze__syn__1_0_82//:syn",
+        "@raze__askama_shared__0_12_2//:askama_shared",
+        "@raze__proc_macro2__1_0_37//:proc_macro2",
+        "@raze__syn__1_0_91//:syn",
     ],
 )

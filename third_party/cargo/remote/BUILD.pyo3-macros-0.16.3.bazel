@@ -51,9 +51,9 @@ rust_proc_macro(
     version = "0.16.3",
     # buildifier: leave-alone
     deps = [
-        "@raze__proc_macro2__1_0_34//:proc_macro2",
+        "@raze__proc_macro2__1_0_37//:proc_macro2",
         "@raze__pyo3_macros_backend__0_16_3//:pyo3_macros_backend",
-        "@raze__quote__1_0_10//:quote",
-        "@raze__syn__1_0_82//:syn",
+        "@raze__quote__1_0_17//:quote",
+        "@raze__syn__1_0_91//:syn",
     ],
 )
