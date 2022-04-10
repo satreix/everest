@@ -131,9 +131,17 @@ licenses([
 
 # Unsupported target "hostname" with type "example" omitted
 
-# Unsupported target "keyvalue-derive" with type "example" omitted
+# Unsupported target "interop_augment_args" with type "example" omitted
+
+# Unsupported target "interop_augment_subcommands" with type "example" omitted
+
+# Unsupported target "interop_flatten_hand_args" with type "example" omitted
+
+# Unsupported target "interop_hand_subcommand" with type "example" omitted
 
 # Unsupported target "pacman" with type "example" omitted
+
+# Unsupported target "typed-derive" with type "example" omitted
 
 rust_library(
     name = "clap",
@@ -158,7 +166,7 @@ rust_library(
         "crate-name=clap",
         "manual",
     ],
-    version = "3.1.6",
+    version = "3.1.8",
     # buildifier: leave-alone
     deps = [
         "@raze__atty__0_2_13//:atty",

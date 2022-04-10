@@ -115,9 +115,9 @@ dependencies = [
 
 [[package]]
 name = "clap"
-version = "3.1.6"
+version = "3.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d8c93436c21e4698bacadf42917db28b23017027a4deccb35dbe47a7e7840123"
+checksum = "71c47df61d9e16dc010b55dba1952a57d8c215dbb533fd13cdd13369aac73b1c"
 dependencies = [
  "atty",
  "bitflags",
@@ -494,7 +494,7 @@ name = "num"
 version = "0.1.0"
 dependencies = [
  "pyo3",
- "pyo3-build-config 0.15.1",
+ "pyo3-build-config",
  "rayon",
 ]
 
@@ -655,19 +655,10 @@ dependencies = [
  "indoc",
  "libc",
  "parking_lot",
- "pyo3-build-config 0.16.2",
+ "pyo3-build-config",
  "pyo3-ffi",
  "pyo3-macros",
  "unindent",
-]
-
-[[package]]
-name = "pyo3-build-config"
-version = "0.15.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dbf9e4d128bfbddc898ad3409900080d8d5095c379632fbbfbb9c8cfb1fb852b"
-dependencies = [
- "once_cell",
 ]
 
 [[package]]
@@ -686,7 +677,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7b719fff844bcf3f911132112ec06527eb195f6a98e0c42cf97e1118929fd4ea"
 dependencies = [
  "libc",
- "pyo3-build-config 0.16.2",
+ "pyo3-build-config",
 ]
 
 [[package]]
@@ -708,7 +699,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "39e03aa57a3bb7b96982958088df38302a139df4eef54671bc595f26556cb75b"
 dependencies = [
  "proc-macro2",
- "pyo3-build-config 0.16.2",
+ "pyo3-build-config",
  "quote",
  "syn",
 ]
