@@ -61,10 +61,10 @@ cargo_build_script(
         "cargo-raze",
         "manual",
     ],
-    version = "0.16.2",
+    version = "0.16.3",
     visibility = ["//visibility:private"],
     deps = [
-        "@raze__pyo3_build_config__0_16_2//:pyo3_build_config",
+        "@raze__pyo3_build_config__0_16_3//:pyo3_build_config",
     ],
 )
 
@@ -77,6 +77,8 @@ cargo_build_script(
 # Unsupported target "bench_frompyobject" with type "bench" omitted
 
 # Unsupported target "bench_gil" with type "bench" omitted
+
+# Unsupported target "bench_intern" with type "bench" omitted
 
 # Unsupported target "bench_list" with type "bench" omitted
 
@@ -105,7 +107,7 @@ rust_library(
     edition = "2018",
     proc_macro_deps = [
         "@raze__indoc__1_0_4//:indoc",
-        "@raze__pyo3_macros__0_16_2//:pyo3_macros",
+        "@raze__pyo3_macros__0_16_3//:pyo3_macros",
     ],
     rustc_flags = [
         "--cap-lints=allow",
@@ -115,14 +117,14 @@ rust_library(
         "crate-name=pyo3",
         "manual",
     ],
-    version = "0.16.2",
+    version = "0.16.3",
     # buildifier: leave-alone
     deps = [
         ":pyo3_build_script",
         "@raze__cfg_if__1_0_0//:cfg_if",
         "@raze__libc__0_2_112//:libc",
         "@raze__parking_lot__0_11_2//:parking_lot",
-        "@raze__pyo3_ffi__0_16_2//:pyo3_ffi",
+        "@raze__pyo3_ffi__0_16_3//:pyo3_ffi",
         "@raze__unindent__0_1_8//:unindent",
     ],
 )
