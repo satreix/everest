@@ -59,6 +59,6 @@ rust_library(
     # buildifier: leave-alone
     deps = [
         "@raze__askama_escape__0_10_3//:askama_escape",
-        "@raze__askama_shared__0_12_1//:askama_shared",
+        "@raze__askama_shared__0_12_2//:askama_shared",
     ],
 )

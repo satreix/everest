@@ -51,12 +51,12 @@ rust_library(
     # buildifier: leave-alone
     deps = [
         "@raze__base64__0_9_3//:base64",
-        "@raze__httparse__1_5_1//:httparse",
+        "@raze__httparse__1_6_0//:httparse",
         "@raze__language_tags__0_2_2//:language_tags",
         "@raze__log__0_3_9//:log",
         "@raze__mime__0_2_6//:mime",
         "@raze__num_cpus__1_13_1//:num_cpus",
-        "@raze__time__0_1_44//:time",
+        "@raze__time__0_1_43//:time",
         "@raze__traitobject__0_1_0//:traitobject",
         "@raze__typeable__0_1_2//:typeable",
         "@raze__unicase__1_4_2//:unicase",

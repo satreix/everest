@@ -62,11 +62,11 @@ rust_library(
     version = "2.9.0",
     # buildifier: leave-alone
     deps = [
-        "@raze__atty__0_2_13//:atty",
+        "@raze__atty__0_2_14//:atty",
         "@raze__slog__2_7_0//:slog",
         "@raze__term__0_7_0//:term",
-        "@raze__thread_local__1_1_3//:thread_local",
-        "@raze__time__0_3_7//:time",
+        "@raze__thread_local__1_1_4//:thread_local",
+        "@raze__time__0_3_9//:time",
     ],
 )
 
