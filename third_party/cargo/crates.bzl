@@ -693,52 +693,62 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
-        name = "raze__pyo3__0_16_2",
-        url = "https://crates.io/api/v1/crates/pyo3/0.16.2/download",
+        name = "raze__pyo3__0_16_3",
+        url = "https://crates.io/api/v1/crates/pyo3/0.16.3/download",
         type = "tar.gz",
-        sha256 = "a378727d5fdcaafd15b5afe9842cff1c25fdc43f62a162ffda2263c57ad98703",
-        strip_prefix = "pyo3-0.16.2",
-        build_file = Label("//third_party/cargo/remote:BUILD.pyo3-0.16.2.bazel"),
+        sha256 = "6b3e99c4c3e790e4fc365b42b70c1f7801f42eadc4ea648fa327e6f5ca29f215",
+        strip_prefix = "pyo3-0.16.3",
+        build_file = Label("//third_party/cargo/remote:BUILD.pyo3-0.16.3.bazel"),
     )
 
     maybe(
         http_archive,
-        name = "raze__pyo3_build_config__0_16_2",
-        url = "https://crates.io/api/v1/crates/pyo3-build-config/0.16.2/download",
+        name = "raze__pyo3_build_config__0_15_1",
+        url = "https://crates.io/api/v1/crates/pyo3-build-config/0.15.1/download",
         type = "tar.gz",
-        sha256 = "4fbb27a3e96edd34c13d97d0feefccc90a79270c577c66e19d95af8323823dfc",
-        strip_prefix = "pyo3-build-config-0.16.2",
-        build_file = Label("//third_party/cargo/remote:BUILD.pyo3-build-config-0.16.2.bazel"),
+        sha256 = "dbf9e4d128bfbddc898ad3409900080d8d5095c379632fbbfbb9c8cfb1fb852b",
+        strip_prefix = "pyo3-build-config-0.15.1",
+        build_file = Label("//third_party/cargo/remote:BUILD.pyo3-build-config-0.15.1.bazel"),
     )
 
     maybe(
         http_archive,
-        name = "raze__pyo3_ffi__0_16_2",
-        url = "https://crates.io/api/v1/crates/pyo3-ffi/0.16.2/download",
+        name = "raze__pyo3_build_config__0_16_3",
+        url = "https://crates.io/api/v1/crates/pyo3-build-config/0.16.3/download",
         type = "tar.gz",
-        sha256 = "7b719fff844bcf3f911132112ec06527eb195f6a98e0c42cf97e1118929fd4ea",
-        strip_prefix = "pyo3-ffi-0.16.2",
-        build_file = Label("//third_party/cargo/remote:BUILD.pyo3-ffi-0.16.2.bazel"),
+        sha256 = "2486b96281859ff0a3929ba6467b13751627b974f7137362db38e2bed14b2094",
+        strip_prefix = "pyo3-build-config-0.16.3",
+        build_file = Label("//third_party/cargo/remote:BUILD.pyo3-build-config-0.16.3.bazel"),
     )
 
     maybe(
         http_archive,
-        name = "raze__pyo3_macros__0_16_2",
-        url = "https://crates.io/api/v1/crates/pyo3-macros/0.16.2/download",
+        name = "raze__pyo3_ffi__0_16_3",
+        url = "https://crates.io/api/v1/crates/pyo3-ffi/0.16.3/download",
         type = "tar.gz",
-        sha256 = "f795e52d3320abb349ca28b501a7112154a87f353fae1c811deecd58e99cfa9b",
-        strip_prefix = "pyo3-macros-0.16.2",
-        build_file = Label("//third_party/cargo/remote:BUILD.pyo3-macros-0.16.2.bazel"),
+        sha256 = "dd9de1d94557751599f8bd321f10e6c1ef2801067acb58c91138deef2ae83a17",
+        strip_prefix = "pyo3-ffi-0.16.3",
+        build_file = Label("//third_party/cargo/remote:BUILD.pyo3-ffi-0.16.3.bazel"),
     )
 
     maybe(
         http_archive,
-        name = "raze__pyo3_macros_backend__0_16_2",
-        url = "https://crates.io/api/v1/crates/pyo3-macros-backend/0.16.2/download",
+        name = "raze__pyo3_macros__0_16_3",
+        url = "https://crates.io/api/v1/crates/pyo3-macros/0.16.3/download",
         type = "tar.gz",
-        sha256 = "39e03aa57a3bb7b96982958088df38302a139df4eef54671bc595f26556cb75b",
-        strip_prefix = "pyo3-macros-backend-0.16.2",
-        build_file = Label("//third_party/cargo/remote:BUILD.pyo3-macros-backend-0.16.2.bazel"),
+        sha256 = "0b9584049129b1cfb615243391a6345c726690271ae195ffd6aa3766177296aa",
+        strip_prefix = "pyo3-macros-0.16.3",
+        build_file = Label("//third_party/cargo/remote:BUILD.pyo3-macros-0.16.3.bazel"),
+    )
+
+    maybe(
+        http_archive,
+        name = "raze__pyo3_macros_backend__0_16_3",
+        url = "https://crates.io/api/v1/crates/pyo3-macros-backend/0.16.3/download",
+        type = "tar.gz",
+        sha256 = "b6c4717e6a55c51a9958eda1f5481ff7f62cccd21f45309c10e4731cb7198dbc",
+        strip_prefix = "pyo3-macros-backend-0.16.3",
+        build_file = Label("//third_party/cargo/remote:BUILD.pyo3-macros-backend-0.16.3.bazel"),
     )
 
     maybe(
@@ -1069,6 +1079,16 @@ def raze_fetch_remote_crates():
         sha256 = "f764005d11ee5f36500a149ace24e00e3da98b0158b3e2d53a7495660d3f4d60",
         strip_prefix = "take_mut-0.2.2",
         build_file = Label("//third_party/cargo/remote:BUILD.take_mut-0.2.2.bazel"),
+    )
+
+    maybe(
+        http_archive,
+        name = "raze__target_lexicon__0_12_3",
+        url = "https://crates.io/api/v1/crates/target-lexicon/0.12.3/download",
+        type = "tar.gz",
+        sha256 = "d7fa7e55043acb85fca6b3c01485a2eeb6b69c5d21002e273c79e465f43b7ac1",
+        strip_prefix = "target-lexicon-0.12.3",
+        build_file = Label("//third_party/cargo/remote:BUILD.target-lexicon-0.12.3.bazel"),
     )
 
     maybe(
