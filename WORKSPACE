@@ -204,6 +204,13 @@ rules_proto_dependencies()
 
 rules_proto_toolchains()
 
+http_archive(
+    name = "io_kythe",
+    sha256 = "cf48b6425486ef2e038015b1c1aa12183f7a7e0f170ad14418dd3fc85a98b348",
+    strip_prefix = "kythe-v0.0.58",
+    url = "https://github.com/kythe/kythe/releases/download/v0.0.58/kythe-v0.0.58.tar.gz",
+)
+
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
 go_rules_dependencies()
