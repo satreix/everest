@@ -53,6 +53,21 @@ http_archive(
 )
 
 http_archive(
+    name = "com_google_googletest",
+    sha256 = "5cf189eb6847b4f8fc603a3ffff3b0771c08eec7dd4bd961bfd45477dd13eb73",
+    strip_prefix = "googletest-609281088cfefc76f9d0ce82e1ff6c30cc3591e5",
+    urls = ["https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip"],
+)
+
+http_archive(
+    name = "fmtlib",
+    build_file = "//third_party:cc/fmtlib/BUILD.external",
+    sha256 = "3d794d3cf67633b34b2771eb9f073bde87e846e0d395d254df7b211ef1ec7346",
+    strip_prefix = "fmt-8.1.1",
+    urls = ["https://github.com/fmtlib/fmt/archive/refs/tags/8.1.1.tar.gz"],
+)
+
+http_archive(
     name = "io_bazel_rules_go",
     sha256 = "f2dcd210c7095febe54b804bb1cd3a58fe8435a909db2ec04e31542631cf715c",
     urls = ["https://github.com/bazelbuild/rules_go/releases/download/v0.31.0/rules_go-v0.31.0.zip"],
