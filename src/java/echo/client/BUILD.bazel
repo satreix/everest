@@ -1,10 +1,8 @@
-load("@rules_jvm_external//:defs.bzl", "artifact")
+load("@rules_java//java:defs.bzl", "java_binary", "java_library")
 
-java_binary(
-    name = "client",
+java_library(
+    name = "client_lib",
     srcs = ["Client.java"],
-    main_class = "src.java.echo.client.Client",
-    visibility = ["//src/go/echo:__pkg__"],
     runtime_deps = [
         "@io_grpc_grpc_java//netty",
     ],
@@ -13,4 +11,11 @@ java_binary(
         "@io_grpc_grpc_java_examples//:helloworld_java_grpc",
         "@io_grpc_grpc_java_examples//:helloworld_java_proto",
     ],
+)
+
+java_binary(
+    name = "client",
+    main_class = "src.java.echo.client.Client",
+    visibility = ["//src/go/echo:__pkg__"],
+    runtime_deps = [":client_lib"],
 )

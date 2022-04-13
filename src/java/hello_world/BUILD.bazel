@@ -1,14 +1,19 @@
+load("@rules_java//java:defs.bzl", "java_binary", "java_library")
 load("@rules_jvm_external//:defs.bzl", "artifact")
+load("//tools/test/binary:binary.bzl", "binary_test")
 
-java_binary(
-    name = "hello_world",
+java_library(
+    name = "hello_world_lib",
     srcs = ["HelloWorld.java"],
-    main_class = "src.java.hello_world.HelloWorld",
-    visibility = ["//visibility:public"],
     deps = [artifact("commons_cli:commons_cli")],
 )
 
-load("//tools/test/binary:binary.bzl", "binary_test")
+java_binary(
+    name = "hello_world",
+    main_class = "src.java.hello_world.HelloWorld",
+    visibility = ["//src/go/echo:__pkg__"],
+    runtime_deps = [":hello_world_lib"],
+)
 
 binary_test(
     name = "hello_world_test",

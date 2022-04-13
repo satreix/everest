@@ -3,24 +3,16 @@ workspace(name = "everest")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
-    name = "com_github_swagger_api_swagger_petstore",
-    build_file_content = """exports_files(["src/main/resources/openapi.yaml"])""",
-    sha256 = "ae350c7aff7b99465ad4f679613685a92a4350796ae9fcd8ef36952592fe5dfe",
-    strip_prefix = "swagger-petstore-swagger-petstore-v3-1.0.11",
-    urls = ["https://github.com/swagger-api/swagger-petstore/archive/refs/tags/swagger-petstore-v3-1.0.11.tar.gz"],
+    name = "bazel_gazelle",
+    sha256 = "de69a09dc70417580aabf20a28619bb3ef60d038470c7cf8442fafcf627c21cb",
+    urls = ["https://github.com/bazelbuild/bazel-gazelle/releases/download/v0.24.0/bazel-gazelle-v0.24.0.tar.gz"],
 )
 
 http_archive(
-    name = "openapi_tools_generator_bazel",
-    sha256 = "c6e4c253f1ae0fbe4d4ded8a719f6647273141d0dc3c0cd8bb074aa7fc3c8d1c",
-    urls = ["https://github.com/OpenAPITools/openapi-generator-bazel/releases/download/0.1.5/openapi-tools-generator-bazel-0.1.5.tar.gz"],
-)
-
-http_archive(
-    name = "rules_antlr",
-    sha256 = "26e6a83c665cf6c1093b628b3a749071322f0f70305d12ede30909695ed85591",
-    strip_prefix = "rules_antlr-0.5.0",
-    urls = ["https://github.com/marcohu/rules_antlr/archive/0.5.0.tar.gz"],
+    name = "cargo_raze",
+    sha256 = "58ecdbae2680b71edc19a0f563cdb73e66c8914689b6edab258c8b90a93b13c7",
+    strip_prefix = "cargo-raze-0.15.0",
+    url = "https://github.com/google/cargo-raze/archive/v0.15.0.tar.gz",
 )
 
 http_archive(
@@ -32,30 +24,25 @@ http_archive(
 )
 
 http_archive(
-    name = "jq",
-    build_file = "//tools/jq:jq.BUILD.bazel",
-    sha256 = "998c41babeb57b4304e65b4eb73094279b3ab1e63801b6b4bddd487ce009b39d",
-    strip_prefix = "jq-1.4",
-    urls = ["https://github.com/stedolan/jq/releases/download/jq-1.4/jq-1.4.tar.gz"],
+    name = "com_github_bazelbuild_buildtools",
+    sha256 = "7f43df3cca7bb4ea443b4159edd7a204c8d771890a69a50a190dc9543760ca21",
+    strip_prefix = "buildtools-5.0.1",
+    urls = ["https://github.com/bazelbuild/buildtools/archive/5.0.1.tar.gz"],
 )
 
 http_archive(
-    name = "io_bazel_rules_go",
-    sha256 = "f2dcd210c7095febe54b804bb1cd3a58fe8435a909db2ec04e31542631cf715c",
-    urls = ["https://github.com/bazelbuild/rules_go/releases/download/v0.31.0/rules_go-v0.31.0.zip"],
+    name = "com_github_swagger_api_swagger_petstore",
+    build_file_content = """exports_files(["src/main/resources/openapi.yaml"])""",
+    sha256 = "ae350c7aff7b99465ad4f679613685a92a4350796ae9fcd8ef36952592fe5dfe",
+    strip_prefix = "swagger-petstore-swagger-petstore-v3-1.0.11",
+    urls = ["https://github.com/swagger-api/swagger-petstore/archive/refs/tags/swagger-petstore-v3-1.0.11.tar.gz"],
 )
 
 http_archive(
-    name = "bazel_gazelle",
-    sha256 = "de69a09dc70417580aabf20a28619bb3ef60d038470c7cf8442fafcf627c21cb",
-    urls = ["https://github.com/bazelbuild/bazel-gazelle/releases/download/v0.24.0/bazel-gazelle-v0.24.0.tar.gz"],
-)
-
-http_archive(
-    name = "rules_rust",
-    sha256 = "3cf493f845837b9c0c44311992a8e387b508a267cb8f261ef97b94c915f292cc",
-    strip_prefix = "rules_rust-55790492aca01b389d208cd1335b9d8c05e28329",
-    urls = ["https://github.com/bazelbuild/rules_rust/archive/55790492aca01b389d208cd1335b9d8c05e28329.tar.gz"],
+    name = "com_google_google_java_format_source",
+    sha256 = "0579aeff9f1127a9f18eb8167488de231c9a51279ec877ae8e047c56ac8b59b6",
+    strip_prefix = "google-java-format-9701afbdf2b29acb0660d6af1ea478842ffe40bc",
+    urls = ["https://github.com/abergmeier-dsfishlabs/google-java-format/archive/9701afbdf2b29acb0660d6af1ea478842ffe40bc.tar.gz"],
 )
 
 http_archive(
@@ -66,53 +53,9 @@ http_archive(
 )
 
 http_archive(
-    name = "com_github_bazelbuild_buildtools",
-    sha256 = "7f43df3cca7bb4ea443b4159edd7a204c8d771890a69a50a190dc9543760ca21",
-    strip_prefix = "buildtools-5.0.1",
-    urls = ["https://github.com/bazelbuild/buildtools/archive/5.0.1.tar.gz"],
-)
-
-http_archive(
-    name = "rules_cc",
-    sha256 = "935e2644125fccb36fa858495697301f7834d980d0e16419943b9618af2771a4",
-    strip_prefix = "rules_cc-0.0.1",
-    url = "https://github.com/bazelbuild/rules_cc/archive/0.0.1.tar.gz",
-)
-
-http_archive(
-    name = "rules_jvm_external",
-    sha256 = "2cd77de091e5376afaf9cc391c15f093ebd0105192373b334f0a855d89092ad5",
-    strip_prefix = "rules_jvm_external-4.2",
-    urls = ["https://github.com/bazelbuild/rules_jvm_external/archive/4.2.tar.gz"],
-)
-
-http_archive(
-    name = "rules_python",
-    sha256 = "9fcf91dbcc31fde6d1edb15f117246d912c33c36f44cf681976bd886538deba6",
-    strip_prefix = "rules_python-0.8.0",
-    urls = ["https://github.com/bazelbuild/rules_python/archive/0.8.0.tar.gz"],
-)
-
-http_archive(
-    name = "rules_foreign_cc",
-    sha256 = "bcd0c5f46a49b85b384906daae41d277b3dc0ff27c7c752cc51e43048a58ec83",
-    strip_prefix = "rules_foreign_cc-0.7.1",
-    urls = ["https://github.com/bazelbuild/rules_foreign_cc/archive/0.7.1.tar.gz"],
-)
-
-http_archive(
-    name = "uncrustify",
-    build_file_content = """filegroup(name = "all", srcs = glob(["**"]), visibility = ["//visibility:public"])""",
-    sha256 = "ad0a7b1f68aa3527d1b89d177d192385fe41b830d46167bde3c3b578e9b0ed06",
-    strip_prefix = "uncrustify-uncrustify-0.70.1",
-    urls = ["https://github.com/uncrustify/uncrustify/archive/uncrustify-0.70.1.tar.gz"],
-)
-
-http_archive(
-    name = "com_google_google_java_format_source",
-    sha256 = "0579aeff9f1127a9f18eb8167488de231c9a51279ec877ae8e047c56ac8b59b6",
-    strip_prefix = "google-java-format-9701afbdf2b29acb0660d6af1ea478842ffe40bc",
-    urls = ["https://github.com/abergmeier-dsfishlabs/google-java-format/archive/9701afbdf2b29acb0660d6af1ea478842ffe40bc.tar.gz"],
+    name = "io_bazel_rules_go",
+    sha256 = "f2dcd210c7095febe54b804bb1cd3a58fe8435a909db2ec04e31542631cf715c",
+    urls = ["https://github.com/bazelbuild/rules_go/releases/download/v0.31.0/rules_go-v0.31.0.zip"],
 )
 
 GRPC_JAVA_VERSION = "1.44.1"
@@ -138,10 +81,73 @@ http_archive(
 )
 
 http_archive(
-    name = "cargo_raze",
-    sha256 = "58ecdbae2680b71edc19a0f563cdb73e66c8914689b6edab258c8b90a93b13c7",
-    strip_prefix = "cargo-raze-0.15.0",
-    url = "https://github.com/google/cargo-raze/archive/v0.15.0.tar.gz",
+    name = "jq",
+    build_file = "//tools/jq:jq.BUILD.bazel",
+    sha256 = "998c41babeb57b4304e65b4eb73094279b3ab1e63801b6b4bddd487ce009b39d",
+    strip_prefix = "jq-1.4",
+    urls = ["https://github.com/stedolan/jq/releases/download/jq-1.4/jq-1.4.tar.gz"],
+)
+
+http_archive(
+    name = "openapi_tools_generator_bazel",
+    sha256 = "c6e4c253f1ae0fbe4d4ded8a719f6647273141d0dc3c0cd8bb074aa7fc3c8d1c",
+    urls = ["https://github.com/OpenAPITools/openapi-generator-bazel/releases/download/0.1.5/openapi-tools-generator-bazel-0.1.5.tar.gz"],
+)
+
+http_archive(
+    name = "rules_antlr",
+    sha256 = "26e6a83c665cf6c1093b628b3a749071322f0f70305d12ede30909695ed85591",
+    strip_prefix = "rules_antlr-0.5.0",
+    urls = ["https://github.com/marcohu/rules_antlr/archive/0.5.0.tar.gz"],
+)
+
+http_archive(
+    name = "rules_cc",
+    sha256 = "935e2644125fccb36fa858495697301f7834d980d0e16419943b9618af2771a4",
+    strip_prefix = "rules_cc-0.0.1",
+    url = "https://github.com/bazelbuild/rules_cc/archive/0.0.1.tar.gz",
+)
+
+http_archive(
+    name = "rules_foreign_cc",
+    sha256 = "bcd0c5f46a49b85b384906daae41d277b3dc0ff27c7c752cc51e43048a58ec83",
+    strip_prefix = "rules_foreign_cc-0.7.1",
+    urls = ["https://github.com/bazelbuild/rules_foreign_cc/archive/0.7.1.tar.gz"],
+)
+
+http_archive(
+    name = "rules_java",
+    sha256 = "8c376f1e4ab7d7d8b1880e4ef8fc170862be91b7c683af97ca2768df546bb073",
+    urls = ["https://github.com/bazelbuild/rules_java/releases/download/5.0.0/rules_java-5.0.0.1.tar.gz"],
+)
+
+http_archive(
+    name = "rules_jvm_external",
+    sha256 = "2cd77de091e5376afaf9cc391c15f093ebd0105192373b334f0a855d89092ad5",
+    strip_prefix = "rules_jvm_external-4.2",
+    urls = ["https://github.com/bazelbuild/rules_jvm_external/archive/4.2.tar.gz"],
+)
+
+http_archive(
+    name = "rules_python",
+    sha256 = "9fcf91dbcc31fde6d1edb15f117246d912c33c36f44cf681976bd886538deba6",
+    strip_prefix = "rules_python-0.8.0",
+    urls = ["https://github.com/bazelbuild/rules_python/archive/0.8.0.tar.gz"],
+)
+
+http_archive(
+    name = "rules_rust",
+    sha256 = "3cf493f845837b9c0c44311992a8e387b508a267cb8f261ef97b94c915f292cc",
+    strip_prefix = "rules_rust-55790492aca01b389d208cd1335b9d8c05e28329",
+    urls = ["https://github.com/bazelbuild/rules_rust/archive/55790492aca01b389d208cd1335b9d8c05e28329.tar.gz"],
+)
+
+http_archive(
+    name = "uncrustify",
+    build_file_content = """filegroup(name = "all", srcs = glob(["**"]), visibility = ["//visibility:public"])""",
+    sha256 = "ad0a7b1f68aa3527d1b89d177d192385fe41b830d46167bde3c3b578e9b0ed06",
+    strip_prefix = "uncrustify-uncrustify-0.70.1",
+    urls = ["https://github.com/uncrustify/uncrustify/archive/uncrustify-0.70.1.tar.gz"],
 )
 
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
@@ -154,7 +160,19 @@ go_register_toolchains(
 
 load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 
+# gazelle:repository go_repository name=io_bazel_rules_go importpath=github.com/bazelbuild/rules_go
+# gazelle:repository_macro third_party/go/deps.bzl%go_dependencies
+load("//third_party/go:deps.bzl", "go_dependencies")
+
+go_dependencies()
+
 gazelle_dependencies()
+
+load("@rules_java//java:repositories.bzl", "rules_java_dependencies", "rules_java_toolchains")
+
+rules_java_dependencies()
+
+rules_java_toolchains()
 
 load("@rules_python//python:pip.bzl", "pip_parse")
 
@@ -226,12 +244,6 @@ java_format(
     jar_sha256 = "0894ee02019ee8b4acd6df09fb50bac472e7199e1a5f041f8da58d08730694aa",
     jar_url = "https://github.com/google/google-java-format/releases/download/google-java-format-1.7/google-java-format-1.7-all-deps.jar",
 )
-
-# gazelle:repository go_repository name=io_bazel_rules_go importpath=github.com/bazelbuild/rules_go
-# gazelle:repository_macro third_party/go/deps.bzl%go_dependencies
-load("//third_party/go:deps.bzl", "go_dependencies")
-
-go_dependencies()
 
 load("@rules_antlr//antlr:repositories.bzl", "rules_antlr_dependencies")
 
