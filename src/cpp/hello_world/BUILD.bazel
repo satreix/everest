@@ -1,12 +1,12 @@
 load("@rules_cc//cc:defs.bzl", "cc_binary")
+load("//tools/test/binary:binary.bzl", "binary_test")
 
 cc_binary(
     name = "hello_world",
     srcs = ["hello_world.cc"],
     visibility = ["//visibility:public"],
+    deps = ["//src/cpp/hello_world/greet"],
 )
-
-load("//tools/test/binary:binary.bzl", "binary_test")
 
 binary_test(
     name = "hello_world_test",

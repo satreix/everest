@@ -1,5 +1,6 @@
 #include <getopt.h>
 #include <iostream>
+#include "src/cpp/hello_world/greet/greet.h"
 
 int
 main(int argc, char **argv)
@@ -51,5 +52,5 @@ main(int argc, char **argv)
     }
   }
 
-  std::cout << "Hello, " << name << "!" << std::endl;
+  std::cout << greet::greet(name) << std::endl;
 }
