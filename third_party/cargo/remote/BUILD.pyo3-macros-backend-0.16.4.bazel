@@ -26,22 +26,16 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # MIT from expression "MIT OR Apache-2.0"
+    "notice",  # Apache-2.0 from expression "Apache-2.0"
 ])
 
 # Generated Targets
 
-# Unsupported target "decode" with type "example" omitted
-
-# Unsupported target "enum_external" with type "example" omitted
-
-# Unsupported target "toml2json" with type "example" omitted
-
 rust_library(
-    name = "toml",
+    name = "pyo3_macros_backend",
     srcs = glob(["**/*.rs"]),
     crate_features = [
-        "default",
+        "pyproto",
     ],
     crate_root = "src/lib.rs",
     data = [],
@@ -51,14 +45,14 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=toml",
+        "crate-name=pyo3-macros-backend",
         "manual",
     ],
-    version = "0.5.8",
+    version = "0.16.4",
     # buildifier: leave-alone
     deps = [
-        "@raze__serde__1_0_136//:serde",
+        "@raze__proc_macro2__1_0_37//:proc_macro2",
+        "@raze__quote__1_0_18//:quote",
+        "@raze__syn__1_0_91//:syn",
     ],
 )
-
-# Unsupported target "enum_external_deserialize" with type "test" omitted

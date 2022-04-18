@@ -31,8 +31,8 @@ licenses([
 
 # Generated Targets
 
-rust_library(
-    name = "pyo3_macros_backend",
+rust_proc_macro(
+    name = "pyo3_macros",
     srcs = glob(["**/*.rs"]),
     crate_features = [
         "pyproto",
@@ -45,14 +45,15 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=pyo3-macros-backend",
+        "crate-name=pyo3-macros",
         "manual",
     ],
-    version = "0.16.3",
+    version = "0.16.4",
     # buildifier: leave-alone
     deps = [
         "@raze__proc_macro2__1_0_37//:proc_macro2",
-        "@raze__quote__1_0_17//:quote",
+        "@raze__pyo3_macros_backend__0_16_4//:pyo3_macros_backend",
+        "@raze__quote__1_0_18//:quote",
         "@raze__syn__1_0_91//:syn",
     ],
 )

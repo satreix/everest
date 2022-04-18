@@ -26,16 +26,17 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # Apache-2.0 from expression "Apache-2.0"
+    "notice",  # MIT from expression "MIT OR Apache-2.0"
 ])
 
 # Generated Targets
 
-rust_proc_macro(
-    name = "pyo3_macros",
+rust_library(
+    name = "quote",
     srcs = glob(["**/*.rs"]),
     crate_features = [
-        "pyproto",
+        "default",
+        "proc-macro",
     ],
     crate_root = "src/lib.rs",
     data = [],
@@ -45,15 +46,16 @@ rust_proc_macro(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=pyo3-macros",
+        "crate-name=quote",
         "manual",
     ],
-    version = "0.16.3",
+    version = "1.0.18",
     # buildifier: leave-alone
     deps = [
         "@raze__proc_macro2__1_0_37//:proc_macro2",
-        "@raze__pyo3_macros_backend__0_16_3//:pyo3_macros_backend",
-        "@raze__quote__1_0_17//:quote",
-        "@raze__syn__1_0_91//:syn",
     ],
 )
+
+# Unsupported target "compiletest" with type "test" omitted
+
+# Unsupported target "test" with type "test" omitted

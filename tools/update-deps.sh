@@ -19,6 +19,6 @@ section "Python"
 ./tools/python/update-deps.sh
 
 section "Rust"
-bazel run @cargo_raze//:raze -- --manifest-path=$(pwd)/Cargo.toml
+bazel run @cargo_raze//:raze -- --generate-lockfile --manifest-path=$(pwd)/Cargo.toml
 
 ./tools/format.sh

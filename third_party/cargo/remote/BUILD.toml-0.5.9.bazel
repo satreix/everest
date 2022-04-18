@@ -30,63 +30,35 @@ licenses([
 ])
 
 # Generated Targets
-# buildifier: disable=out-of-order-load
-# buildifier: disable=load-on-top
-load(
-    "@rules_rust//cargo:cargo_build_script.bzl",
-    "cargo_build_script",
-)
 
-cargo_build_script(
-    name = "httparse_build_script",
-    srcs = glob(["**/*.rs"]),
-    build_script_env = {
-    },
-    crate_features = [
-        "default",
-        "std",
-    ],
-    crate_root = "build.rs",
-    data = glob(["**"]),
-    edition = "2015",
-    rustc_flags = [
-        "--cap-lints=allow",
-    ],
-    tags = [
-        "cargo-raze",
-        "manual",
-    ],
-    version = "1.6.0",
-    visibility = ["//visibility:private"],
-    deps = [
-    ],
-)
+# Unsupported target "decode" with type "example" omitted
 
-# Unsupported target "parse" with type "bench" omitted
+# Unsupported target "enum_external" with type "example" omitted
+
+# Unsupported target "toml2json" with type "example" omitted
 
 rust_library(
-    name = "httparse",
+    name = "toml",
     srcs = glob(["**/*.rs"]),
     crate_features = [
         "default",
-        "std",
     ],
     crate_root = "src/lib.rs",
     data = [],
-    edition = "2015",
+    edition = "2018",
     rustc_flags = [
         "--cap-lints=allow",
     ],
     tags = [
         "cargo-raze",
-        "crate-name=httparse",
+        "crate-name=toml",
         "manual",
     ],
-    version = "1.6.0",
+    version = "0.5.9",
     # buildifier: leave-alone
     deps = [
-        ":httparse_build_script",
+        "@raze__serde__1_0_136//:serde",
     ],
 )
 
-# Unsupported target "uri" with type "test" omitted
+# Unsupported target "enum_external_deserialize" with type "test" omitted
