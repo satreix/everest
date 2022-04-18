@@ -863,22 +863,20 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
-        name = "raze__rayon__1_5_1",
-        url = "https://crates.io/api/v1/crates/rayon/1.5.1/download",
+        name = "raze__rayon__1_5_2",
+        url = "https://crates.io/api/v1/crates/rayon/1.5.2/download",
         type = "tar.gz",
-        sha256 = "c06aca804d41dbc8ba42dfd964f0d01334eceb64314b9ecf7c5fad5188a06d90",
-        strip_prefix = "rayon-1.5.1",
-        build_file = Label("//third_party/cargo/remote:BUILD.rayon-1.5.1.bazel"),
+        strip_prefix = "rayon-1.5.2",
+        build_file = Label("//third_party/cargo/remote:BUILD.rayon-1.5.2.bazel"),
     )
 
     maybe(
         http_archive,
-        name = "raze__rayon_core__1_9_1",
-        url = "https://crates.io/api/v1/crates/rayon-core/1.9.1/download",
+        name = "raze__rayon_core__1_9_2",
+        url = "https://crates.io/api/v1/crates/rayon-core/1.9.2/download",
         type = "tar.gz",
-        sha256 = "d78120e2c850279833f1dd3582f730c4ab53ed95aeaaaa862a2a5c71b1656d8e",
-        strip_prefix = "rayon-core-1.9.1",
-        build_file = Label("//third_party/cargo/remote:BUILD.rayon-core-1.9.1.bazel"),
+        strip_prefix = "rayon-core-1.9.2",
+        build_file = Label("//third_party/cargo/remote:BUILD.rayon-core-1.9.2.bazel"),
     )
 
     maybe(

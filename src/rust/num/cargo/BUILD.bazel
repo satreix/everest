@@ -77,7 +77,7 @@ alias(
 
 alias(
     name = "rayon",
-    actual = "@raze__rayon__1_5_1//:rayon",
+    actual = "@raze__rayon__1_5_2//:rayon",
     tags = [
         "cargo-raze",
         "manual",
