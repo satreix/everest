@@ -111,6 +111,8 @@ http_archive(
 
 http_archive(
     name = "rules_antlr",
+    patch_args = ["-p1"],
+    patches = ["//third_party:rules_antlr/add_antlr_4.10.1.patch"],
     sha256 = "26e6a83c665cf6c1093b628b3a749071322f0f70305d12ede30909695ed85591",
     strip_prefix = "rules_antlr-0.5.0",
     urls = ["https://github.com/marcohu/rules_antlr/archive/0.5.0.tar.gz"],
@@ -262,7 +264,7 @@ java_format(
 
 load("@rules_antlr//antlr:repositories.bzl", "rules_antlr_dependencies")
 
-rules_antlr_dependencies("4.8")
+rules_antlr_dependencies("4.10.1")
 
 load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
 
