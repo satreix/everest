@@ -210,10 +210,19 @@ rules_java_dependencies()
 
 rules_java_toolchains()
 
+load("@rules_python//python:repositories.bzl", "python_register_toolchains")
+
+python_register_toolchains(
+    name = "python3_10_2",
+    python_version = "3.10.2",
+)
+
+load("@python3_10_2//:defs.bzl", "interpreter")
 load("@rules_python//python:pip.bzl", "pip_parse")
 
 pip_parse(
     name = "pypi",
+    python_interpreter_target = interpreter,
     requirements_lock = "//third_party/python:requirements_lock.txt",
 )
 
