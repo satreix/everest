@@ -133,12 +133,12 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
-        name = "raze__clap__3_1_9",
-        url = "https://crates.io/api/v1/crates/clap/3.1.9/download",
+        name = "raze__clap__3_1_12",
+        url = "https://crates.io/api/v1/crates/clap/3.1.12/download",
         type = "tar.gz",
-        sha256 = "6aad2534fad53df1cc12519c5cda696dd3e20e6118a027e24054aea14a0bdcbe",
-        strip_prefix = "clap-3.1.9",
-        build_file = Label("//third_party/cargo/remote:BUILD.clap-3.1.9.bazel"),
+        sha256 = "7c167e37342afc5f33fd87bbc870cedd020d2a6dffa05d45ccd9241fbdd146db",
+        strip_prefix = "clap-3.1.12",
+        build_file = Label("//third_party/cargo/remote:BUILD.clap-3.1.12.bazel"),
     )
 
     maybe(
@@ -393,12 +393,12 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
-        name = "raze__libc__0_2_123",
-        url = "https://crates.io/api/v1/crates/libc/0.2.123/download",
+        name = "raze__libc__0_2_124",
+        url = "https://crates.io/api/v1/crates/libc/0.2.124/download",
         type = "tar.gz",
-        sha256 = "cb691a747a7ab48abc15c5b42066eaafde10dc427e3b6ee2a1cf43db04c763bd",
-        strip_prefix = "libc-0.2.123",
-        build_file = Label("//third_party/cargo/remote:BUILD.libc-0.2.123.bazel"),
+        sha256 = "21a41fed9d98f27ab1c6d161da622a4fa35e8a54a8adc24bbf3ddd0ef70b0e50",
+        strip_prefix = "libc-0.2.124",
+        build_file = Label("//third_party/cargo/remote:BUILD.libc-0.2.124.bazel"),
     )
 
     maybe(

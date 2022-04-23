@@ -86,6 +86,6 @@ rust_library(
     # buildifier: leave-alone
     deps = [
         ":pyo3_ffi_build_script",
-        "@raze__libc__0_2_123//:libc",
+        "@raze__libc__0_2_124//:libc",
     ],
 )
