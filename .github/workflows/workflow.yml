@@ -23,8 +23,13 @@ jobs:
       - uses: actions/checkout@v3
 
       # Python rules use host install still.
-      - uses: actions/setup-python@v3
+      - name: Setup Python
+        uses: actions/setup-python@v3
       - run: python --version
+
+      # Ruby rules use host install still: https://github.com/bazelruby/rules_ruby/issues/112
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1.102.0
 
       - name: Install bazelisk
         run: ./tools/ci/install_bazelisk.sh v1.11.0 ${{ matrix.platform }}

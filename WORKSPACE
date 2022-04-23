@@ -9,6 +9,18 @@ http_archive(
 )
 
 http_archive(
+    name = "bazelruby_rules_ruby",
+    patch_args = ["-p1"],
+    patches = [
+        # A fix for https://github.com/bazelruby/rules_ruby/issues/79
+        "//third_party:bazelruby_rules_ruby.patch",
+    ],
+    sha256 = "a598fadf23c0d8376813ca4a1b4a45f778544d83bf650b24dcfc2210f6db7d5f",
+    strip_prefix = "rules_ruby-65d828b204ec32a49458c9b770f8db20774ac450",
+    urls = ["https://github.com/bazelruby/rules_ruby/archive/65d828b204ec32a49458c9b770f8db20774ac450.tar.gz"],
+)
+
+http_archive(
     name = "cargo_raze",
     sha256 = "58ecdbae2680b71edc19a0f563cdb73e66c8914689b6edab258c8b90a93b13c7",
     strip_prefix = "cargo-raze-0.15.0",
@@ -290,4 +302,23 @@ load("@openapi_tools_generator_bazel//:defs.bzl", "openapi_tools_generator_bazel
 openapi_tools_generator_bazel_repositories(
     openapi_generator_cli_version = "5.4.0",
     sha256 = "f3ed312310e390324b33ba2ffff290ce812935207a1493ec5c098d0a441be51c",
+)
+
+load("@bazelruby_rules_ruby//ruby:deps.bzl", "rules_ruby_dependencies", "rules_ruby_select_sdk")
+
+rules_ruby_dependencies()
+
+load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
+
+bazel_skylib_workspace()
+
+rules_ruby_select_sdk()
+
+load("@bazelruby_rules_ruby//ruby:defs.bzl", "ruby_bundle")
+
+ruby_bundle(
+    name = "bundle",
+    bundler_version = "2.3.7",
+    gemfile = "//:Gemfile",
+    gemfile_lock = "//:Gemfile.lock",
 )

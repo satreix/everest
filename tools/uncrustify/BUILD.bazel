@@ -4,4 +4,5 @@ cmake(
     name = "uncrustify",
     lib_source = "@uncrustify//:all",
     out_binaries = ["uncrustify"],
+    tags = ["manual"],
 )

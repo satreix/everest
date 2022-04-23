@@ -1,0 +1,29 @@
+load(
+    "@bazelruby_rules_ruby//ruby:defs.bzl",
+    "ruby_binary",
+    "ruby_rspec",
+    "ruby_test",
+)
+
+ruby_binary(
+    name = "hello",
+    srcs = ["hello.rb"],
+    main = "hello.rb",
+    deps = [
+        "//src/ruby/hello_world/lib:hello",
+    ],
+)
+
+ruby_test(
+    name = "hello_test",
+    size = "small",
+    srcs = ["test/hello_test.rb"],
+    main = "test/hello_test.rb",
+    deps = ["//src/ruby/hello_world/lib:hello"],
+)
+
+ruby_rspec(
+    name = "hello_spec_test",
+    specs = ["//src/ruby/hello_world:spec/hello_spec.rb"],
+    deps = ["//src/ruby/hello_world/lib:hello"],
+)
