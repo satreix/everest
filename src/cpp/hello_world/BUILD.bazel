@@ -5,7 +5,10 @@ cc_binary(
     name = "hello_world",
     srcs = ["hello_world.cc"],
     visibility = ["//visibility:public"],
-    deps = ["//src/cpp/hello_world/greet"],
+    deps = [
+        "//src/cpp/hello_world/greet",
+        "@com_github_gflags_gflags//:gflags",
+    ],
 )
 
 binary_test(

@@ -31,6 +31,13 @@ http_archive(
 )
 
 http_archive(
+    name = "com_github_gflags_gflags",
+    sha256 = "34af2f15cf7367513b352bdcd2493ab14ce43692d2dcd9dfc499492966c64dcf",
+    strip_prefix = "gflags-2.2.2",
+    urls = ["https://github.com/gflags/gflags/archive/refs/tags/v2.2.2.tar.gz"],
+)
+
+http_archive(
     name = "com_github_swagger_api_swagger_petstore",
     build_file_content = """exports_files(["src/main/resources/openapi.yaml"])""",
     sha256 = "ae350c7aff7b99465ad4f679613685a92a4350796ae9fcd8ef36952592fe5dfe",
