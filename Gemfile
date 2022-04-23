@@ -2,5 +2,5 @@
 
 source 'https://rubygems.org'
 
-gem 'rspec', '~> 3.7.0'
+gem 'rspec', '~> 3.11.0'
 gem 'rspec-its'
