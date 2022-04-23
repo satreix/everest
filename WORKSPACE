@@ -305,13 +305,13 @@ load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
 
 bazel_skylib_workspace()
 
-rules_ruby_select_sdk(version = "host")
+rules_ruby_select_sdk()
 
 load("@bazelruby_rules_ruby//ruby:defs.bzl", "ruby_bundle")
 
 ruby_bundle(
     name = "bundle",
-    bundler_version = "2.1.4",
+    bundler_version = "2.3.7",
     gemfile = "//:Gemfile",
     gemfile_lock = "//:Gemfile.lock",
 )
