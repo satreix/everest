@@ -6,8 +6,8 @@ go_library(
     importpath = "github.com/satreix/everest/src/go/echo/server",
     visibility = ["//visibility:private"],
     deps = [
+        "//src/proto/helloworld",
         "@org_golang_google_grpc//:go_default_library",
-        "@org_golang_google_grpc_examples//helloworld/helloworld",
     ],
 )
 

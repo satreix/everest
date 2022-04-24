@@ -7,9 +7,9 @@ java_library(
         "@io_grpc_grpc_java//netty",
     ],
     deps = [
+        "//src/proto/helloworld:helloworld_java_grpc",
+        "//src/proto/helloworld:helloworld_java_proto",
         "@io_grpc_grpc_java//api",
-        "@io_grpc_grpc_java_examples//:helloworld_java_grpc",
-        "@io_grpc_grpc_java_examples//:helloworld_java_proto",
     ],
 )
 

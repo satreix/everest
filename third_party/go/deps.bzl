@@ -296,12 +296,6 @@ def go_dependencies():
         version = "v1.46.0",
     )
     go_repository(
-        name = "org_golang_google_grpc_examples",
-        importpath = "google.golang.org/grpc/examples",
-        sum = "h1:ThuIJBBh92aBnUbAUUTzU+3BnrHYl8zHLiY7ECwRErE=",
-        version = "v0.0.0-20210212222430-425d405f3928",
-    )
-    go_repository(
         name = "org_golang_google_protobuf",
         importpath = "google.golang.org/protobuf",
         sum = "h1:SnqbnDw1V7RiZcXPx5MEeqPv2s79L9i7BJUlG/+RurQ=",
