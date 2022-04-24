@@ -30,6 +30,12 @@ find . -type f -iname '*.py' -print0 | xargs -0 "$AUTOFLAKE" --in-place --remove
 find . -type f -iname '*.py' -print0 | xargs -0 "$ISORT"
 find . -type f -iname '*.py' -print0 | xargs -0 "$YAPF" -i --no-local-style -p
 
+# Ruby
+# FIXME rubocop does not work in Bazel yet
+pushd src/ruby
+bundle exec rubocop --auto-correct-all
+popd
+
 # Rust
 bazel run @rules_rust//:rustfmt
 
