@@ -12,7 +12,6 @@ require (
 	github.com/mvdan/sh v2.6.4+incompatible
 	github.com/pkg/browser v0.0.0-20210911075715-681adbf594b8
 	google.golang.org/grpc v1.46.0
-	google.golang.org/grpc/examples v0.0.0-20210212222430-425d405f3928
 )
 
 require (

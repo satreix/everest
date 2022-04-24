@@ -6,8 +6,8 @@ import (
 	"log"
 	"net"
 
+	pb "github.com/satreix/everest/src/proto/helloworld"
 	"google.golang.org/grpc"
-	pb "google.golang.org/grpc/examples/helloworld/helloworld"
 )
 
 type server struct {

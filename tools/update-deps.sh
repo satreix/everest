@@ -5,8 +5,17 @@ section() {
     echo >&2 "===> $1"
 }
 
+proto_directories=(
+    src/proto/helloworld
+)
+
 section "Go"
+for proto_dir in "${proto_directories[@]}"; do
+    echo "${proto_dir}"
+done
+touch src/proto/helloworld/empty.go
 go mod tidy
+rm src/proto/helloworld/empty.go
 GO_DEPS_FILE="third_party/go/deps.bzl"
 echo -e "def go_dependencies():\n    pass" >"$GO_DEPS_FILE"
 bazel run //:gazelle -- update-repos -from_file=go.mod -prune -to_macro "${GO_DEPS_FILE}%go_dependencies"
