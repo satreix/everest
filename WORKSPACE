@@ -92,26 +92,11 @@ http_archive(
     urls = ["https://github.com/bazelbuild/rules_go/releases/download/v0.31.0/rules_go-v0.31.0.zip"],
 )
 
-GRPC_JAVA_VERSION = "1.44.1"
-
-GRPC_JAVA_SHA256 = "0e72de67dd47d564b9cb8badb5267c6763dc25f8c02feb6fc69a05c6ae21b7bd"
-
 http_archive(
     name = "io_grpc_grpc_java",
-    sha256 = GRPC_JAVA_SHA256,
-    strip_prefix = "grpc-java-%s" % GRPC_JAVA_VERSION,
-    urls = ["https://github.com/grpc/grpc-java/archive/v%s.tar.gz" % GRPC_JAVA_VERSION],
-)
-
-# Import examples in its own repo as its ignored in the main repository.
-# Patch to hack visibility.
-http_archive(
-    name = "io_grpc_grpc_java_examples",
-    patch_args = ["-p1"],
-    patches = ["@everest//third_party:io_grpc_grpc_java_examples.patch"],
-    sha256 = GRPC_JAVA_SHA256,
-    strip_prefix = "grpc-java-%s/examples" % GRPC_JAVA_VERSION,
-    urls = ["https://github.com/grpc/grpc-java/archive/v%s.tar.gz" % GRPC_JAVA_VERSION],
+    sha256 = "0e72de67dd47d564b9cb8badb5267c6763dc25f8c02feb6fc69a05c6ae21b7bd",
+    strip_prefix = "grpc-java-1.44.1",
+    urls = ["https://github.com/grpc/grpc-java/archive/v1.44.1.tar.gz"],
 )
 
 http_archive(

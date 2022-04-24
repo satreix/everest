@@ -1,10 +1,10 @@
 package src.java.echo.client;
 
+import com.example.helloworld.GreeterGrpc;
+import com.example.helloworld.HelloRequest;
 import io.grpc.Channel;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import io.grpc.examples.helloworld.GreeterGrpc;
-import io.grpc.examples.helloworld.HelloRequest;
 import java.util.concurrent.TimeUnit;
 
 public class Client {
