@@ -4,6 +4,11 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
     name = "bazel_gazelle",
+    patch_args = ["-p1"],
+    patches = [
+        # A fix for https://github.com/bazelbuild/bazel-gazelle/issues/1217
+        "//:third_party/bazel_gazelle.patch",
+    ],
     sha256 = "5982e5463f171da99e3bdaeff8c0f48283a7a5f396ec5282910b9e8a49c0dd7e",
     urls = ["https://github.com/bazelbuild/bazel-gazelle/releases/download/v0.25.0/bazel-gazelle-v0.25.0.tar.gz"],
 )
