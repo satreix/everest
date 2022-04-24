@@ -5,14 +5,7 @@ section() {
     echo >&2 "===> $1"
 }
 
-proto_directories=(
-    src/proto/helloworld
-)
-
 section "Go"
-for proto_dir in "${proto_directories[@]}"; do
-    echo "${proto_dir}"
-done
 touch src/proto/helloworld/empty.go
 go mod tidy
 rm src/proto/helloworld/empty.go
