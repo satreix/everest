@@ -1,0 +1,24 @@
+load("@bazelruby_rules_ruby//ruby:defs.bzl", "ruby_binary", "ruby_library", "ruby_rspec")
+
+ruby_binary(
+    name = "template",
+    srcs = ["template.rb"],
+    data = glob(["templates/**"]),
+    deps = [
+        "@bundle//:erb",
+        "@bundle//:haml",
+        "@bundle//:slim",
+    ],
+)
+
+ruby_library(
+    name = "empty",
+    srcs = ["empty.rb"],
+)
+
+ruby_rspec(
+    name = "template_spec_test",
+    data = [":template"],
+    specs = ["//src/ruby/template:spec/template_spec.rb"],
+    deps = [":empty"],  # hack to make rspec happy, not used
+)

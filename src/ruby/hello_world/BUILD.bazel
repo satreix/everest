@@ -1,4 +1,4 @@
-load("@bazelruby_rules_ruby//ruby:defs.bzl", "ruby_binary", "ruby_rspec", "ruby_test")
+load("@bazelruby_rules_ruby//ruby:defs.bzl", "ruby_binary", "ruby_rspec")
 load("//tools/test/binary:binary.bzl", "binary_test")
 
 ruby_binary(
