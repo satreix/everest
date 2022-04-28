@@ -273,12 +273,12 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
-        name = "raze__httparse__1_7_0",
-        url = "https://crates.io/api/v1/crates/httparse/1.7.0/download",
+        name = "raze__httparse__1_7_1",
+        url = "https://crates.io/api/v1/crates/httparse/1.7.1/download",
         type = "tar.gz",
-        sha256 = "6330e8a36bd8c859f3fa6d9382911fbb7147ec39807f63b923933a247240b9ba",
-        strip_prefix = "httparse-1.7.0",
-        build_file = Label("//third_party/cargo/remote:BUILD.httparse-1.7.0.bazel"),
+        sha256 = "496ce29bb5a52785b44e0f7ca2847ae0bb839c9bd28f69acac9b99d461c0c04c",
+        strip_prefix = "httparse-1.7.1",
+        build_file = Label("//third_party/cargo/remote:BUILD.httparse-1.7.1.bazel"),
     )
 
     maybe(
@@ -1173,12 +1173,12 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
-        name = "raze__tinyvec__1_5_1",
-        url = "https://crates.io/api/v1/crates/tinyvec/1.5.1/download",
+        name = "raze__tinyvec__1_6_0",
+        url = "https://crates.io/api/v1/crates/tinyvec/1.6.0/download",
         type = "tar.gz",
-        sha256 = "2c1c1d5a42b6245520c249549ec267180beaffcc0615401ac8e31853d4b6d8d2",
-        strip_prefix = "tinyvec-1.5.1",
-        build_file = Label("//third_party/cargo/remote:BUILD.tinyvec-1.5.1.bazel"),
+        sha256 = "87cc5ceb3875bb20c2890005a4e226a4651264a5c75edb2421b52861a0a0cb50",
+        strip_prefix = "tinyvec-1.6.0",
+        build_file = Label("//third_party/cargo/remote:BUILD.tinyvec-1.6.0.bazel"),
     )
 
     maybe(
@@ -1253,12 +1253,12 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
-        name = "raze__unicode_bidi__0_3_7",
-        url = "https://crates.io/api/v1/crates/unicode-bidi/0.3.7/download",
+        name = "raze__unicode_bidi__0_3_8",
+        url = "https://crates.io/api/v1/crates/unicode-bidi/0.3.8/download",
         type = "tar.gz",
-        sha256 = "1a01404663e3db436ed2746d9fefef640d868edae3cceb81c3b8d5732fda678f",
-        strip_prefix = "unicode-bidi-0.3.7",
-        build_file = Label("//third_party/cargo/remote:BUILD.unicode-bidi-0.3.7.bazel"),
+        sha256 = "099b7128301d285f79ddd55b9a83d5e6b9e97c92e0ea0daebee7263e932de992",
+        strip_prefix = "unicode-bidi-0.3.8",
+        build_file = Label("//third_party/cargo/remote:BUILD.unicode-bidi-0.3.8.bazel"),
     )
 
     maybe(
