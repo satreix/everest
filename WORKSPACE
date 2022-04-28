@@ -210,17 +210,9 @@ python_register_toolchains(
 )
 
 load("@python3_10_2//:defs.bzl", "interpreter")
-load("@rules_python//python:pip.bzl", "pip_parse")
+load("//third_party/python:requirements.bzl", install_python_deps = "install_deps")
 
-pip_parse(
-    name = "pypi",
-    python_interpreter_target = interpreter,
-    requirements_lock = "//third_party/python:requirements_lock.txt",
-)
-
-load("@pypi//:requirements.bzl", install_python_deps = "install_deps")
-
-install_python_deps()
+install_python_deps(interpreter)
 
 load("@rules_rust//rust:repositories.bzl", "rules_rust_dependencies", "rust_register_toolchains")
 
@@ -236,8 +228,8 @@ load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 
 protobuf_deps()
 
-load("@rules_jvm_external//:defs.bzl", "maven_install")
 load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS", "IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS", "grpc_java_repositories")
+load("@rules_jvm_external//:defs.bzl", "maven_install")
 
 # View installed things:
 # bazel query @maven//:all --output=build
@@ -322,8 +314,8 @@ ruby_bundle(
     gemfile_lock = "//:Gemfile.lock",
 )
 
-load("@com_github_tnarg_rules_cue//cue:deps.bzl", "cue_register_toolchains")
 load("@com_github_tnarg_rules_cue//:go.bzl", cue_go_modules = "go_modules")
+load("@com_github_tnarg_rules_cue//cue:deps.bzl", "cue_register_toolchains")
 
 cue_go_modules()
 

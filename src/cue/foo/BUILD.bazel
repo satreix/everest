@@ -1,5 +1,5 @@
-load("@io_bazel_rules_go//go:def.bzl", "go_test")
 load("@com_github_tnarg_rules_cue//cue:cue.bzl", "cue_export", "cue_library")
+load("@io_bazel_rules_go//go:def.bzl", "go_test")
 
 cue_library(
     name = "foo",
