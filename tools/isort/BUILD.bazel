@@ -1,4 +1,4 @@
-load("@pypi//:requirements.bzl", "entry_point")
+load("//third_party/python:requirements.bzl", "entry_point")
 
 alias(
     name = "isort",

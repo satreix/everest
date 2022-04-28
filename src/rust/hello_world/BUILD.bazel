@@ -1,4 +1,5 @@
 load("@rules_rust//rust:defs.bzl", "rust_binary")
+load("//tools/test/binary:binary.bzl", "binary_test")
 
 rust_binary(
     name = "hello_world",
@@ -8,8 +9,6 @@ rust_binary(
         "//src/rust/hello_world/cargo:clap",
     ],
 )
-
-load("//tools/test/binary:binary.bzl", "binary_test")
 
 binary_test(
     name = "hello_world_test",

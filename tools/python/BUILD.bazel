@@ -1,0 +1,6 @@
+load("@rules_python//python:defs.bzl", "py_binary")
+
+py_binary(
+    name = "pipefile_lock_to_bzl",
+    srcs = ["pipefile_lock_to_bzl.py"],
+)

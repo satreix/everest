@@ -1,5 +1,5 @@
 load("@rules_python//python:defs.bzl", "py_binary")
-load("@pypi//:requirements.bzl", "requirement")
+load("//third_party/python:requirements.bzl", "requirement")
 load("//tools/test/binary:binary.bzl", "binary_test")
 
 py_binary(
