@@ -59,9 +59,9 @@ http_archive(
 
 http_archive(
     name = "com_github_tnarg_rules_cue",
-    url = "https://github.com/tnarg/rules_cue/archive/f85546145bab07a5cada175e74a736bee82ace68.zip",
-    strip_prefix = "rules_cue-f85546145bab07a5cada175e74a736bee82ace68",
     sha256 = "da3ddd504032d2776f9f1854bff9b1b9946d11dba243e96187f3b72604d69777",
+    strip_prefix = "rules_cue-f85546145bab07a5cada175e74a736bee82ace68",
+    url = "https://github.com/tnarg/rules_cue/archive/f85546145bab07a5cada175e74a736bee82ace68.zip",
 )
 
 http_archive(
