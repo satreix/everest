@@ -38,7 +38,7 @@ load(
 )
 
 cargo_build_script(
-    name = "parking_lot_core_build_script",
+    name = "num_integer_build_script",
     srcs = glob(["**/*.rs"]),
     build_script_env = {
     },
@@ -46,7 +46,7 @@ cargo_build_script(
     ],
     crate_root = "build.rs",
     data = glob(["**"]),
-    edition = "2018",
+    edition = "2015",
     rustc_flags = [
         "--cap-lints=allow",
     ],
@@ -54,68 +54,43 @@ cargo_build_script(
         "cargo-raze",
         "manual",
     ],
-    version = "0.9.2",
+    version = "0.1.45",
     visibility = ["//visibility:private"],
     deps = [
-    ] + selects.with_or({
-        # cfg(unix)
-        (
-            "@rules_rust//rust/platform:x86_64-apple-darwin",
-            "@rules_rust//rust/platform:x86_64-unknown-linux-gnu",
-        ): [
-        ],
-        "//conditions:default": [],
-    }) + selects.with_or({
-        # cfg(windows)
-        (
-            "@rules_rust//rust/platform:x86_64-pc-windows-msvc",
-        ): [
-            "@raze__windows_sys__0_34_0//:windows_sys",
-        ],
-        "//conditions:default": [],
-    }),
+        "@raze__autocfg__1_1_0//:autocfg",
+    ],
 )
 
+# Unsupported target "average" with type "bench" omitted
+
+# Unsupported target "gcd" with type "bench" omitted
+
+# Unsupported target "roots" with type "bench" omitted
+
 rust_library(
-    name = "parking_lot_core",
+    name = "num_integer",
     srcs = glob(["**/*.rs"]),
-    aliases = {
-    },
     crate_features = [
     ],
     crate_root = "src/lib.rs",
     data = [],
-    edition = "2018",
+    edition = "2015",
     rustc_flags = [
         "--cap-lints=allow",
     ],
     tags = [
         "cargo-raze",
-        "crate-name=parking_lot_core",
+        "crate-name=num-integer",
         "manual",
     ],
-    version = "0.9.2",
+    version = "0.1.45",
     # buildifier: leave-alone
     deps = [
-        ":parking_lot_core_build_script",
-        "@raze__cfg_if__1_0_0//:cfg_if",
-        "@raze__smallvec__1_8_0//:smallvec",
-    ] + selects.with_or({
-        # cfg(unix)
-        (
-            "@rules_rust//rust/platform:x86_64-apple-darwin",
-            "@rules_rust//rust/platform:x86_64-unknown-linux-gnu",
-        ): [
-            "@raze__libc__0_2_124//:libc",
-        ],
-        "//conditions:default": [],
-    }) + selects.with_or({
-        # cfg(windows)
-        (
-            "@rules_rust//rust/platform:x86_64-pc-windows-msvc",
-        ): [
-            "@raze__windows_sys__0_34_0//:windows_sys",
-        ],
-        "//conditions:default": [],
-    }),
+        ":num_integer_build_script",
+        "@raze__num_traits__0_2_14//:num_traits",
+    ],
 )
+
+# Unsupported target "average" with type "test" omitted
+
+# Unsupported target "roots" with type "test" omitted

@@ -47,7 +47,7 @@ rust_library(
         "crate-name=clap_lex",
         "manual",
     ],
-    version = "0.1.1",
+    version = "0.2.0",
     # buildifier: leave-alone
     deps = [
         "@raze__os_str_bytes__6_0_0//:os_str_bytes",

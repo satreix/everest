@@ -53,6 +53,6 @@ rust_proc_macro(
     deps = [
         "@raze__askama_shared__0_12_2//:askama_shared",
         "@raze__proc_macro2__1_0_37//:proc_macro2",
-        "@raze__syn__1_0_91//:syn",
+        "@raze__syn__1_0_92//:syn",
     ],
 )

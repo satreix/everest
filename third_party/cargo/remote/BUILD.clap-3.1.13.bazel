@@ -43,6 +43,45 @@ licenses([
 
 # Unsupported target "06_rustup" with type "bench" omitted
 
+rust_binary(
+    # Prefix bin name to disambiguate from (probable) collision with lib name
+    # N.B.: The exact form of this is subject to change.
+    name = "cargo_bin_stdio_fixture",
+    srcs = glob(["**/*.rs"]),
+    crate_features = [
+        "atty",
+        "color",
+        "default",
+        "std",
+        "strsim",
+        "suggestions",
+        "termcolor",
+    ],
+    crate_root = "src/bin/stdio-fixture.rs",
+    data = [],
+    edition = "2018",
+    rustc_flags = [
+        "--cap-lints=allow",
+    ],
+    tags = [
+        "cargo-raze",
+        "crate-name=stdio-fixture",
+        "manual",
+    ],
+    version = "3.1.13",
+    # buildifier: leave-alone
+    deps = [
+        ":clap",
+        "@raze__atty__0_2_14//:atty",
+        "@raze__bitflags__1_3_2//:bitflags",
+        "@raze__clap_lex__0_2_0//:clap_lex",
+        "@raze__indexmap__1_8_1//:indexmap",
+        "@raze__strsim__0_10_0//:strsim",
+        "@raze__termcolor__1_1_3//:termcolor",
+        "@raze__textwrap__0_15_0//:textwrap",
+    ],
+)
+
 # Unsupported target "01_quick" with type "example" omitted
 
 # Unsupported target "01_quick_derive" with type "example" omitted
@@ -166,12 +205,12 @@ rust_library(
         "crate-name=clap",
         "manual",
     ],
-    version = "3.1.12",
+    version = "3.1.13",
     # buildifier: leave-alone
     deps = [
         "@raze__atty__0_2_14//:atty",
         "@raze__bitflags__1_3_2//:bitflags",
-        "@raze__clap_lex__0_1_1//:clap_lex",
+        "@raze__clap_lex__0_2_0//:clap_lex",
         "@raze__indexmap__1_8_1//:indexmap",
         "@raze__strsim__0_10_0//:strsim",
         "@raze__termcolor__1_1_3//:termcolor",
