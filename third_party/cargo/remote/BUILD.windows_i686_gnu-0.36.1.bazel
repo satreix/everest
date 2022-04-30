@@ -54,7 +54,7 @@ cargo_build_script(
         "cargo-raze",
         "manual",
     ],
-    version = "0.34.0",
+    version = "0.36.1",
     visibility = ["//visibility:private"],
     deps = [
     ],
@@ -76,7 +76,7 @@ rust_library(
         "crate-name=windows_i686_gnu",
         "manual",
     ],
-    version = "0.34.0",
+    version = "0.36.1",
     # buildifier: leave-alone
     deps = [
         ":windows_i686_gnu_build_script",
