@@ -1,3 +1,4 @@
+load("@io_bazel_rules_docker//go:image.bzl", "go_image")
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
 
 go_library(
@@ -8,6 +9,7 @@ go_library(
     deps = [
         "//src/proto/helloworld",
         "@org_golang_google_grpc//:go_default_library",
+        "@org_golang_google_grpc//reflection",
     ],
 )
 
@@ -15,4 +17,10 @@ go_binary(
     name = "server",
     embed = [":server_lib"],
     visibility = ["//src/go/echo:__pkg__"],
+)
+
+go_image(
+    name = "container_image",
+    binary = ":server",
+    # importpath = "github.com/your/path/here",
 )

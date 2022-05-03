@@ -20,6 +20,12 @@ http_archive(
 )
 
 http_archive(
+    name = "bazel_skylib",
+    sha256 = "f7be3474d42aae265405a592bb7da8e171919d74c16f082a5457840f06054728",
+    url = "https://github.com/bazelbuild/bazel-skylib/releases/download/1.2.1/bazel-skylib-1.2.1.tar.gz",
+)
+
+http_archive(
     name = "bazelruby_rules_ruby",
     patch_args = ["-p1"],
     patches = [
@@ -88,6 +94,13 @@ http_archive(
     sha256 = "3d794d3cf67633b34b2771eb9f073bde87e846e0d395d254df7b211ef1ec7346",
     strip_prefix = "fmt-8.1.1",
     urls = ["https://github.com/fmtlib/fmt/archive/refs/tags/8.1.1.tar.gz"],
+)
+
+http_archive(
+    name = "io_bazel_rules_docker",
+    sha256 = "27d53c1d646fc9537a70427ad7b034734d08a9c38924cc6357cc973fed300820",
+    strip_prefix = "rules_docker-0.24.0",
+    urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.24.0/rules_docker-v0.24.0.tar.gz"],
 )
 
 http_archive(
@@ -183,6 +196,12 @@ http_archive(
     strip_prefix = "uncrustify-uncrustify-0.70.1",
     urls = ["https://github.com/uncrustify/uncrustify/archive/uncrustify-0.70.1.tar.gz"],
 )
+
+load("@rules_cc//cc:repositories.bzl", "rules_cc_dependencies", "rules_cc_toolchains")
+
+rules_cc_dependencies()
+
+rules_cc_toolchains()
 
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
@@ -362,3 +381,17 @@ npm_install(
     package_json = "//:package.json",
     package_lock_json = "//:package-lock.json",
 )
+
+load(
+    "@io_bazel_rules_docker//repositories:repositories.bzl",
+    container_repositories = "repositories",
+)
+
+container_repositories()
+
+load(
+    "@io_bazel_rules_docker//go:image.bzl",
+    _go_image_repos = "repositories",
+)
+
+_go_image_repos()

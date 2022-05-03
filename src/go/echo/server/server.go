@@ -8,6 +8,7 @@ import (
 
 	pb "github.com/satreix/everest/src/proto/helloworld"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
 
 type server struct {
@@ -20,21 +21,23 @@ func (s *server) SayHello(_ context.Context, in *pb.HelloRequest) (*pb.HelloRepl
 }
 
 func main() {
-	addr := flag.String("addr", "127.0.0.1:1234", "address")
+	var addr string
+	flag.StringVar(&addr, "addr", "127.0.0.1:1234", "address")
 	flag.Parse()
 
 	srv := new(server)
 
 	s := grpc.NewServer()
 	pb.RegisterGreeterServer(s, srv)
+	reflection.Register(s)
 
-	ln, err := net.Listen("tcp", *addr)
+	ln, err := net.Listen("tcp", addr)
 	if err != nil {
 		log.Fatalf("listen error: %s", err)
 	}
 	defer ln.Close()
 
-	log.Printf("Listenning on %s ...", *addr)
+	log.Printf("Listenning on %s ...", addr)
 	if err := s.Serve(ln); err != nil {
 		log.Fatalf("gRPC server error: %s", err)
 	}
