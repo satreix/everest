@@ -165,9 +165,9 @@ http_archive(
 
 http_archive(
     name = "rules_rust",
-    sha256 = "8ecdaa2ae6a1af4affe92f4bafd7e14aef35676e6cb97bda4bc7371af5480e7c",
-    strip_prefix = "rules_rust-207ee4fbcf4bac4b4c1da24097b453bb7cfcd011",
-    urls = ["https://github.com/bazelbuild/rules_rust/archive/207ee4fbcf4bac4b4c1da24097b453bb7cfcd011.tar.gz"],
+    sha256 = "deeb07506baf384d4d86db221fda88caa00eed6a655b0edebdb9303b2f3e2baf",
+    strip_prefix = "rules_rust-42f78f25e12017a99bae5de4ad21a6f44faa8d5e",
+    urls = ["https://github.com/bazelbuild/rules_rust/archive/42f78f25e12017a99bae5de4ad21a6f44faa8d5e.tar.gz"],
 )
 
 http_archive(
@@ -218,7 +218,10 @@ load("@rules_rust//rust:repositories.bzl", "rules_rust_dependencies", "rust_regi
 
 rules_rust_dependencies()
 
-rust_register_toolchains()
+rust_register_toolchains(
+    edition="2021",
+    version = "1.60.0"
+)
 
 load("@rules_rust//util/import:deps.bzl", _rules_rust_util_import_deps = "import_deps")
 

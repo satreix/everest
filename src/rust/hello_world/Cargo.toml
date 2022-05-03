@@ -2,7 +2,7 @@
 name = "hello_world"
 version = "0.1.0"
 authors = ["satreix <satreix@gmail.com>"]
-edition = "2018"
+edition = "2021"
 
 [dependencies]
 clap = "3.1.13"
