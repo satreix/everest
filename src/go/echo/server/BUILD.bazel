@@ -21,6 +21,8 @@ go_binary(
 
 go_image(
     name = "container_image",
-    binary = ":server",
-    # importpath = "github.com/your/path/here",
+    embed = [":server_lib"],
+    goarch = "amd64",
+    goos = "linux",
+    pure = "on",
 )
