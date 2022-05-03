@@ -68,7 +68,7 @@ rust_binary(
         "crate-name=stdio-fixture",
         "manual",
     ],
-    version = "3.1.13",
+    version = "3.1.15",
     # buildifier: leave-alone
     deps = [
         ":clap",
@@ -180,6 +180,8 @@ rust_binary(
 
 # Unsupported target "pacman" with type "example" omitted
 
+# Unsupported target "repl" with type "example" omitted
+
 # Unsupported target "typed-derive" with type "example" omitted
 
 rust_library(
@@ -205,7 +207,7 @@ rust_library(
         "crate-name=clap",
         "manual",
     ],
-    version = "3.1.13",
+    version = "3.1.15",
     # buildifier: leave-alone
     deps = [
         "@raze__atty__0_2_14//:atty",

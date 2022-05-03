@@ -87,7 +87,7 @@ rust_library(
     # buildifier: leave-alone
     deps = [
         ":num_integer_build_script",
-        "@raze__num_traits__0_2_14//:num_traits",
+        "@raze__num_traits__0_2_15//:num_traits",
     ],
 )
 
