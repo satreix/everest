@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-grpc-staging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-grpc-staging
+  template:
+    metadata:
+      labels:
+        app: hello-grpc-staging
+    spec:
+      containers:
+      - name: hello-grpc
+        image: registry.satreix.com/satreix/hello-grpc:dev
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 50051
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
+          limits:
+            cpu: 100m
+            memory: 200Mi
+      imagePullSecrets:
+        - name: private-registry

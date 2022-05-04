@@ -110,6 +110,13 @@ http_archive(
 )
 
 http_archive(
+    name = "io_bazel_rules_k8s",
+    sha256 = "51f0977294699cd547e139ceff2396c32588575588678d2054da167691a227ef",
+    strip_prefix = "rules_k8s-0.6",
+    urls = ["https://github.com/bazelbuild/rules_k8s/archive/v0.6.tar.gz"],
+)
+
+http_archive(
     name = "io_grpc_grpc_java",
     sha256 = "0f6cf8c1e97757333e08975c8637093b40540a54a201cfd3ce284c8d1d073fae",
     strip_prefix = "grpc-java-1.47.0",
@@ -395,3 +402,11 @@ load(
 )
 
 _go_image_repos()
+
+load("@io_bazel_rules_k8s//k8s:k8s.bzl", "k8s_repositories")
+
+k8s_repositories()
+
+load("@io_bazel_rules_k8s//k8s:k8s_go_deps.bzl", k8s_go_deps = "deps")
+
+k8s_go_deps()

@@ -16,13 +16,12 @@ type server struct {
 }
 
 func (s *server) SayHello(_ context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
-	log.Printf("Received data: %#v", in)
 	return &pb.HelloReply{Message: "Hello " + in.Name}, nil
 }
 
 func main() {
 	var addr string
-	flag.StringVar(&addr, "addr", "127.0.0.1:1234", "address")
+	flag.StringVar(&addr, "addr", "0.0.0.0:50051", "address")
 	flag.Parse()
 
 	srv := new(server)
@@ -33,12 +32,12 @@ func main() {
 
 	ln, err := net.Listen("tcp", addr)
 	if err != nil {
-		log.Fatalf("listen error: %s", err)
+		log.Fatalf("failed to listen: %v", err)
 	}
 	defer ln.Close()
 
-	log.Printf("Listenning on %s ...", addr)
+	log.Printf("server listening on %s ...", addr)
 	if err := s.Serve(ln); err != nil {
-		log.Fatalf("gRPC server error: %s", err)
+		log.Fatalf("failed to serve: %v", err)
 	}
 }

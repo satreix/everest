@@ -1,5 +1,6 @@
 load("@io_bazel_rules_docker//go:image.bzl", "go_image")
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+load("@io_bazel_rules_k8s//k8s:object.bzl", "k8s_object")
 
 go_library(
     name = "server_lib",
@@ -26,3 +27,16 @@ go_image(
     goos = "linux",
     pure = "on",
 )
+
+k8s_object(
+    name = "dev",
+    cluster = "satreix",
+    images = {
+        "registry.satreix.com/satreix/hello-grpc:dev": ":container_image",
+    },
+    kind = "deployment",
+    template = ":deployment.yaml",
+)
+
+# kubectl get pods -w
+# kubectl port-forward pod/hello-grpc-staging-XXX :50051
