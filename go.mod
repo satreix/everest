@@ -11,7 +11,7 @@ require (
 	github.com/mndrix/tap-go v0.0.0-20171203230836-629fa407e90b
 	github.com/mvdan/sh v2.6.4+incompatible
 	github.com/pkg/browser v0.0.0-20210911075715-681adbf594b8
-	google.golang.org/grpc v1.46.0
+	google.golang.org/grpc v1.46.2
 )
 
 require (
