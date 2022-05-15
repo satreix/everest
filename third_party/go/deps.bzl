@@ -146,16 +146,16 @@ def go_dependencies():
         version = "v1.16.0",
     )
     go_repository(
-        name = "com_github_keybase_go_dbus",
-        importpath = "github.com/keybase/go.dbus",
-        sum = "h1:k9rCqucCsPpBKDh9gDwk3U46TcNd7jpKahed9JGICGY=",
-        version = "v0.0.0-20200324223359-a94be52c0b03",
+        name = "com_github_keybase_dbus",
+        importpath = "github.com/keybase/dbus",
+        sum = "h1:K0EAzgzEQHW4Y5lxrmvPMltmlRDzlhLfGmots9EHUTI=",
+        version = "v0.0.0-20220506165403-5aa21ea2c23a",
     )
     go_repository(
         name = "com_github_keybase_go_keychain",
         importpath = "github.com/keybase/go-keychain",
-        sum = "h1:ttxQhWhqiYEOVLMhmhIRQnZDLmYaBJVP7goucV3FJxM=",
-        version = "v0.0.0-20220408132150-ad3b4a8fd4a7",
+        sum = "h1:Qh9gCBYNeGqpMv7SMVGgansYlZgnMkuPOQZpoZNxSJs=",
+        version = "v0.0.0-20220506172723-c18928ccd7f2",
     )
     go_repository(
         name = "com_github_kr_pretty",
