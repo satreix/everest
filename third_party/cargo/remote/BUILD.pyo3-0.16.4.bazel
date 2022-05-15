@@ -106,7 +106,7 @@ rust_library(
     data = [],
     edition = "2018",
     proc_macro_deps = [
-        "@raze__indoc__1_0_4//:indoc",
+        "@raze__indoc__1_0_6//:indoc",
         "@raze__pyo3_macros__0_16_4//:pyo3_macros",
     ],
     rustc_flags = [
@@ -125,7 +125,7 @@ rust_library(
         "@raze__libc__0_2_125//:libc",
         "@raze__parking_lot__0_12_0//:parking_lot",
         "@raze__pyo3_ffi__0_16_4//:pyo3_ffi",
-        "@raze__unindent__0_1_8//:unindent",
+        "@raze__unindent__0_1_9//:unindent",
     ],
 )
 

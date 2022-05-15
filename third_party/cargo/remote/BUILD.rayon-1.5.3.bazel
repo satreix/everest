@@ -54,7 +54,7 @@ cargo_build_script(
         "cargo-raze",
         "manual",
     ],
-    version = "1.5.2",
+    version = "1.5.3",
     visibility = ["//visibility:private"],
     deps = [
         "@raze__autocfg__1_1_0//:autocfg",
@@ -79,13 +79,13 @@ rust_library(
         "crate-name=rayon",
         "manual",
     ],
-    version = "1.5.2",
+    version = "1.5.3",
     # buildifier: leave-alone
     deps = [
         ":rayon_build_script",
         "@raze__crossbeam_deque__0_8_1//:crossbeam_deque",
         "@raze__either__1_6_1//:either",
-        "@raze__rayon_core__1_9_2//:rayon_core",
+        "@raze__rayon_core__1_9_3//:rayon_core",
     ],
 )
 

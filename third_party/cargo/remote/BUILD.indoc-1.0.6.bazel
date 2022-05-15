@@ -31,8 +31,8 @@ licenses([
 
 # Generated Targets
 
-rust_library(
-    name = "unindent",
+rust_proc_macro(
+    name = "indoc",
     srcs = glob(["**/*.rs"]),
     crate_features = [
     ],
@@ -44,11 +44,21 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=unindent",
+        "crate-name=indoc",
         "manual",
     ],
-    version = "0.1.8",
+    version = "1.0.6",
     # buildifier: leave-alone
     deps = [
     ],
 )
+
+# Unsupported target "compiletest" with type "test" omitted
+
+# Unsupported target "test_formatdoc" with type "test" omitted
+
+# Unsupported target "test_indoc" with type "test" omitted
+
+# Unsupported target "test_unindent" with type "test" omitted
+
+# Unsupported target "test_writedoc" with type "test" omitted
