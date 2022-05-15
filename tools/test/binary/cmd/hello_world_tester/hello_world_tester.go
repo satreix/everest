@@ -3,11 +3,12 @@ package main
 import (
 	"bytes"
 	"flag"
-	"github.com/mndrix/tap-go"
 	"log"
 	"math/rand"
 	"os/exec"
 	"time"
+
+	tap "github.com/mndrix/tap-go"
 )
 
 func main() {
