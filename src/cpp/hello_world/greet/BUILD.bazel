@@ -4,7 +4,10 @@ cc_library(
     name = "greet",
     srcs = ["greet.cc"],
     hdrs = ["greet.h"],
-    visibility = ["//src/cpp/hello_world:__pkg__"],
+    visibility = [
+        "//src/cpp/hello_world:__pkg__",
+        "//src/cpp/hello_world/server:__pkg__",
+    ],
     deps = ["@fmtlib//:fmt"],
 )
 

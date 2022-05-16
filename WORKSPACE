@@ -60,6 +60,13 @@ http_archive(
 )
 
 http_archive(
+    name = "com_github_grpc_grpc",
+    # sha256 = "34af2f15cf7367513b352bdcd2493ab14ce43692d2dcd9dfc499492966c64dcf",
+    strip_prefix = "grpc-1.46.2",
+    urls = ["https://github.com/grpc/grpc/archive/refs/tags/v1.46.2.tar.gz"],
+)
+
+http_archive(
     name = "com_github_swagger_api_swagger_petstore",
     build_file_content = """exports_files(["src/main/resources/openapi.yaml"])""",
     sha256 = "ae350c7aff7b99465ad4f679613685a92a4350796ae9fcd8ef36952592fe5dfe",
@@ -397,6 +404,13 @@ load(
 container_repositories()
 
 load(
+    "@io_bazel_rules_docker//cc:image.bzl",
+    _cc_image_repos = "repositories",
+)
+
+_cc_image_repos()
+
+load(
     "@io_bazel_rules_docker//go:image.bzl",
     _go_image_repos = "repositories",
 )
@@ -410,3 +424,26 @@ k8s_repositories()
 load("@io_bazel_rules_k8s//k8s:k8s_go_deps.bzl", k8s_go_deps = "deps")
 
 k8s_go_deps()
+
+load("@com_github_grpc_grpc//bazel:grpc_deps.bzl", "grpc_deps")
+
+grpc_deps()
+
+# FIXME https://github.com/grpc/grpc/issues/25337
+http_archive(
+    name = "build_bazel_rules_swift",
+    sha256 = "fa746a50f442ea4bcce78b747182107b4f0041f868b285714364ce4508d19979",
+    strip_prefix = "rules_swift-0.14.0",
+    urls = [
+        "https://github.com/bazelbuild/rules_swift/archive/0.14.0.tar.gz",
+    ],
+)
+
+load("@com_google_googleapis//:repository_rules.bzl", "switched_rules_by_language")
+
+switched_rules_by_language(
+    name = "com_google_googleapis_imports",
+    cc = True,
+    grpc = True,
+    python = True,
+)
