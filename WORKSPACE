@@ -9,6 +9,12 @@ http_archive(
 )
 
 http_archive(
+    name = "build_bazel_rules_nodejs",
+    sha256 = "0fad45a9bda7dc1990c47b002fd64f55041ea751fafc00cd34efb96107675778",
+    urls = ["https://github.com/bazelbuild/rules_nodejs/releases/download/5.5.0/rules_nodejs-5.5.0.tar.gz"],
+)
+
+http_archive(
     name = "bazelruby_rules_ruby",
     patch_args = ["-p1"],
     patches = [
@@ -323,3 +329,25 @@ load("@com_github_tnarg_rules_cue//cue:deps.bzl", "cue_register_toolchains")
 cue_go_modules()
 
 cue_register_toolchains()
+
+load("@build_bazel_rules_nodejs//:repositories.bzl", "build_bazel_rules_nodejs_dependencies")
+
+build_bazel_rules_nodejs_dependencies()
+
+load("@rules_nodejs//nodejs:repositories.bzl", "nodejs_register_toolchains")
+
+_NODE_REPO = "node16"
+
+nodejs_register_toolchains(
+    name = _NODE_REPO,
+    node_version = "16.0.0",
+)
+
+load("@build_bazel_rules_nodejs//:index.bzl", "npm_install")
+
+npm_install(
+    name = "npm",
+    node_repository = _NODE_REPO,
+    package_json = "//:package.json",
+    package_lock_json = "//:package-lock.json",
+)
