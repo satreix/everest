@@ -52,7 +52,7 @@ rust_proc_macro(
     # buildifier: leave-alone
     deps = [
         "@raze__askama_shared__0_12_2//:askama_shared",
-        "@raze__proc_macro2__1_0_38//:proc_macro2",
-        "@raze__syn__1_0_94//:syn",
+        "@raze__proc_macro2__1_0_39//:proc_macro2",
+        "@raze__syn__1_0_95//:syn",
     ],
 )

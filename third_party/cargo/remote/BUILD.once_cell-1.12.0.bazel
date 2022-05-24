@@ -65,7 +65,7 @@ rust_library(
         "crate-name=once_cell",
         "manual",
     ],
-    version = "1.10.0",
+    version = "1.12.0",
     # buildifier: leave-alone
     deps = [
     ],
