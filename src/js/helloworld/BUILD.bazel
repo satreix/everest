@@ -3,10 +3,10 @@ load("//tools/test/binary:binary.bzl", "binary_test")
 
 nodejs_binary(
     name = "helloworld",
-    entry_point = "main.js",
     data = [
         "@npm//commander",
     ],
+    entry_point = "main.js",
 )
 
 binary_test(

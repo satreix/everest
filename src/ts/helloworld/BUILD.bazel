@@ -1,5 +1,5 @@
-load("@npm//@bazel/typescript:index.bzl", "ts_project")
 load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
+load("@npm//@bazel/typescript:index.bzl", "ts_project")
 load("//tools/test/binary:binary.bzl", "binary_test")
 
 ts_project(
