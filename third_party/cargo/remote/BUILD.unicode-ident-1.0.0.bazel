@@ -31,10 +31,10 @@ licenses([
 
 # Generated Targets
 
-# Unsupported target "bench" with type "bench" omitted
+# Unsupported target "xid" with type "bench" omitted
 
 rust_library(
-    name = "itoa",
+    name = "unicode_ident",
     srcs = glob(["**/*.rs"]),
     crate_features = [
     ],
@@ -46,13 +46,15 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=itoa",
+        "crate-name=unicode-ident",
         "manual",
     ],
-    version = "1.0.1",
+    version = "1.0.0",
     # buildifier: leave-alone
     deps = [
     ],
 )
 
-# Unsupported target "test" with type "test" omitted
+# Unsupported target "compare" with type "test" omitted
+
+# Unsupported target "static_size" with type "test" omitted
