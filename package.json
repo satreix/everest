@@ -1,0 +1,11 @@
+{
+  "name": "everest",
+  "private": true,
+  "dependencies": {
+    "commander": "^9.2.0"
+  },
+  "devDependencies": {
+    "@bazel/typescript": "^5.5.0",
+    "typescript": "^4.6.4"
+  }
+}
