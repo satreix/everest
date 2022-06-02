@@ -83,13 +83,6 @@ http_archive(
 )
 
 http_archive(
-    name = "com_google_protobuf",
-    sha256 = "8b28fdd45bab62d15db232ec404248901842e5340299a57765e48abe8a80d930",
-    strip_prefix = "protobuf-3.20.1",
-    urls = ["https://github.com/protocolbuffers/protobuf/archive/v3.20.1.tar.gz"],
-)
-
-http_archive(
     name = "com_google_googletest",
     sha256 = "df6cad4bf17df72d8d86306628701c01a45b9e001c7f2a3b28971c7e24b1035b",
     strip_prefix = "googletest-0320f517fd920866d918e564105d68fd4362040a",
@@ -168,6 +161,13 @@ http_archive(
 )
 
 http_archive(
+    name = "rules_proto",
+    sha256 = "e017528fd1c91c5a33f15493e3a398181a9e821a804eb7ff5acdd1d2d6c2b18d",
+    strip_prefix = "rules_proto-4.0.0-3.20.0",
+    urls = ["https://github.com/bazelbuild/rules_proto/archive/refs/tags/4.0.0-3.20.0.tar.gz"],
+)
+
+http_archive(
     name = "rules_python",
     sha256 = "cdf6b84084aad8f10bf20b46b77cb48d83c319ebe6458a18e9d2cebf57807cdd",
     strip_prefix = "rules_python-0.8.1",
@@ -225,6 +225,12 @@ load("//third_party/python:requirements.bzl", install_python_deps = "install_dep
 
 install_python_deps(interpreter)
 
+load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
+
+rules_proto_dependencies()
+
+rules_proto_toolchains()
+
 load("@rules_rust//rust:repositories.bzl", "rules_rust_dependencies", "rust_register_toolchains")
 
 rules_rust_dependencies()
@@ -237,10 +243,6 @@ rust_register_toolchains(
 load("@rules_rust//util/import:deps.bzl", _rules_rust_util_import_deps = "import_deps")
 
 _rules_rust_util_import_deps()
-
-load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
-
-protobuf_deps()
 
 load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS", "IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS", "grpc_java_repositories")
 load("@rules_jvm_external//:defs.bzl", "maven_install")
