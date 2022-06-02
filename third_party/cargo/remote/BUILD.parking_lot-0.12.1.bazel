@@ -26,7 +26,7 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # Apache-2.0 from expression "Apache-2.0 OR MIT"
+    "notice",  # MIT from expression "MIT OR Apache-2.0"
 ])
 
 # Generated Targets
@@ -48,7 +48,7 @@ rust_library(
         "crate-name=parking_lot",
         "manual",
     ],
-    version = "0.12.0",
+    version = "0.12.1",
     # buildifier: leave-alone
     deps = [
         "@raze__lock_api__0_4_7//:lock_api",

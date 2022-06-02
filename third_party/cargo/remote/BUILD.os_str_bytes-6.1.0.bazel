@@ -48,7 +48,7 @@ rust_library(
         "crate-name=os_str_bytes",
         "manual",
     ],
-    version = "6.0.1",
+    version = "6.1.0",
     # buildifier: leave-alone
     deps = [
     ],
