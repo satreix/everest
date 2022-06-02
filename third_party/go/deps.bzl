@@ -189,6 +189,7 @@ def go_dependencies():
     )
     go_repository(
         name = "com_github_mvdan_sh",
+        build_external = "external",
         importpath = "github.com/mvdan/sh",
         sum = "h1:D4oEWW0J8cL7zeQkrXw76IAYXF0mJfDaBwjgzmKb6zs=",
         version = "v2.6.4+incompatible",
