@@ -55,7 +55,7 @@ cargo_build_script(
         "cargo-raze",
         "manual",
     ],
-    version = "1.8.1",
+    version = "1.8.2",
     visibility = ["//visibility:private"],
     deps = [
         "@raze__autocfg__1_1_0//:autocfg",
@@ -83,7 +83,7 @@ rust_library(
         "crate-name=indexmap",
         "manual",
     ],
-    version = "1.8.1",
+    version = "1.8.2",
     # buildifier: leave-alone
     deps = [
         ":indexmap_build_script",

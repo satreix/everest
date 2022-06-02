@@ -123,7 +123,7 @@ rust_library(
         ":pyo3_build_script",
         "@raze__cfg_if__1_0_0//:cfg_if",
         "@raze__libc__0_2_126//:libc",
-        "@raze__parking_lot__0_12_0//:parking_lot",
+        "@raze__parking_lot__0_12_1//:parking_lot",
         "@raze__pyo3_ffi__0_16_5//:pyo3_ffi",
         "@raze__unindent__0_1_9//:unindent",
     ],
