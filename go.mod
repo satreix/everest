@@ -3,7 +3,7 @@ module github.com/satreix/everest
 go 1.18
 
 require (
-	github.com/antlr/antlr4/runtime/Go/antlr v0.0.0-20220418222510-f25a4f6275ed
+	github.com/antlr/antlr4/runtime/Go/antlr v0.0.0-20220527190237-ee62e23da966
 	github.com/bazelbuild/rules_go v0.32.0
 	github.com/google/go-cmp v0.5.8
 	github.com/gosuri/uiprogress v0.0.1
