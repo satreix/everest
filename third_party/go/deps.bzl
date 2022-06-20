@@ -28,8 +28,8 @@ def go_dependencies():
     go_repository(
         name = "com_github_bazelbuild_rules_go",
         importpath = "github.com/bazelbuild/rules_go",
-        sum = "h1:2DmbGvRnmGUTIn9upKuly/8Wg3/HNKesliVPWKnrtZU=",
-        version = "v0.32.0",
+        sum = "h1:WW9CHmFxbE+Lm4qiLOFAPogmiAUzZtvQsWxUcm4wwaU=",
+        version = "v0.33.0",
     )
     go_repository(
         name = "com_github_burntsushi_toml",

@@ -26,40 +26,54 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # Apache-2.0 from expression "Apache-2.0 OR MIT"
+    "notice",  # MIT from expression "MIT OR Apache-2.0"
 ])
 
 # Generated Targets
 
-# Unsupported target "bench" with type "bench" omitted
+# Unsupported target "benchmarks" with type "bench" omitted
 
 rust_library(
-    name = "hashbrown",
+    name = "time",
     srcs = glob(["**/*.rs"]),
+    aliases = {
+    },
     crate_features = [
-        "raw",
+        "alloc",
+        "formatting",
+        "itoa",
+        "local-offset",
+        "macros",
+        "std",
+        "time-macros",
     ],
     crate_root = "src/lib.rs",
     data = [],
-    edition = "2018",
+    edition = "2021",
+    proc_macro_deps = [
+        "@raze__time_macros__0_2_4//:time_macros",
+    ],
     rustc_flags = [
         "--cap-lints=allow",
     ],
     tags = [
         "cargo-raze",
-        "crate-name=hashbrown",
+        "crate-name=time",
         "manual",
     ],
-    version = "0.11.2",
+    version = "0.3.10",
     # buildifier: leave-alone
     deps = [
-    ],
+        "@raze__itoa__1_0_2//:itoa",
+    ] + selects.with_or({
+        # cfg(target_family = "unix")
+        (
+            "@rules_rust//rust/platform:x86_64-apple-darwin",
+            "@rules_rust//rust/platform:x86_64-unknown-linux-gnu",
+        ): [
+            "@raze__libc__0_2_126//:libc",
+            "@raze__num_threads__0_1_6//:num_threads",
+        ],
+        "//conditions:default": [],
+    }),
 )
-
-# Unsupported target "hasher" with type "test" omitted
-
-# Unsupported target "rayon" with type "test" omitted
-
-# Unsupported target "serde" with type "test" omitted
-
-# Unsupported target "set" with type "test" omitted

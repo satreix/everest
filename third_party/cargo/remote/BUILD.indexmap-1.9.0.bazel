@@ -47,7 +47,7 @@ cargo_build_script(
     ],
     crate_root = "build.rs",
     data = glob(["**"]),
-    edition = "2018",
+    edition = "2021",
     rustc_flags = [
         "--cap-lints=allow",
     ],
@@ -55,7 +55,7 @@ cargo_build_script(
         "cargo-raze",
         "manual",
     ],
-    version = "1.8.2",
+    version = "1.9.0",
     visibility = ["//visibility:private"],
     deps = [
         "@raze__autocfg__1_1_0//:autocfg",
@@ -74,7 +74,7 @@ rust_library(
     ],
     crate_root = "src/lib.rs",
     data = [],
-    edition = "2018",
+    edition = "2021",
     rustc_flags = [
         "--cap-lints=allow",
     ],
@@ -83,11 +83,11 @@ rust_library(
         "crate-name=indexmap",
         "manual",
     ],
-    version = "1.8.2",
+    version = "1.9.0",
     # buildifier: leave-alone
     deps = [
         ":indexmap_build_script",
-        "@raze__hashbrown__0_11_2//:hashbrown",
+        "@raze__hashbrown__0_12_1//:hashbrown",
     ],
 )
 
