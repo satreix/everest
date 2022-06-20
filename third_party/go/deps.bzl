@@ -154,8 +154,8 @@ def go_dependencies():
     go_repository(
         name = "com_github_keybase_go_keychain",
         importpath = "github.com/keybase/go-keychain",
-        sum = "h1:Qh9gCBYNeGqpMv7SMVGgansYlZgnMkuPOQZpoZNxSJs=",
-        version = "v0.0.0-20220506172723-c18928ccd7f2",
+        sum = "h1:0uT5p980qZwIkSkOHuMgGLUMbz39d6cqQk7eaOE3uso=",
+        version = "v0.0.0-20220610143837-c2ce06069005",
     )
     go_repository(
         name = "com_github_kr_pretty",
