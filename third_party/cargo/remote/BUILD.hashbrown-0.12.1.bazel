@@ -31,25 +31,37 @@ licenses([
 
 # Generated Targets
 
+# Unsupported target "bench" with type "bench" omitted
+
+# Unsupported target "insert_unique_unchecked" with type "bench" omitted
+
 rust_library(
-    name = "clap_lex",
+    name = "hashbrown",
     srcs = glob(["**/*.rs"]),
     crate_features = [
+        "raw",
     ],
     crate_root = "src/lib.rs",
     data = [],
-    edition = "2018",
+    edition = "2021",
     rustc_flags = [
         "--cap-lints=allow",
     ],
     tags = [
         "cargo-raze",
-        "crate-name=clap_lex",
+        "crate-name=hashbrown",
         "manual",
     ],
-    version = "0.2.0",
+    version = "0.12.1",
     # buildifier: leave-alone
     deps = [
-        "@raze__os_str_bytes__6_1_0//:os_str_bytes",
     ],
 )
+
+# Unsupported target "hasher" with type "test" omitted
+
+# Unsupported target "rayon" with type "test" omitted
+
+# Unsupported target "serde" with type "test" omitted
+
+# Unsupported target "set" with type "test" omitted

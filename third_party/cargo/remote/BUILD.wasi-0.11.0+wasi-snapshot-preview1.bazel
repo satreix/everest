@@ -49,7 +49,7 @@ rust_library(
         "crate-name=wasi",
         "manual",
     ],
-    version = "0.10.2+wasi-snapshot-preview1",
+    version = "0.11.0+wasi-snapshot-preview1",
     # buildifier: leave-alone
     deps = [
     ],
