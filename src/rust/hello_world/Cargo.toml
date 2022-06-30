@@ -5,4 +5,4 @@ authors = ["satreix <satreix@gmail.com>"]
 edition = "2021"
 
 [dependencies]
-clap = "3.2.5"
+clap = "3.2.8"
