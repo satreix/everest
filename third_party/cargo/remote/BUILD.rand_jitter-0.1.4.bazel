@@ -57,7 +57,6 @@ rust_library(
     deps = [
         "@raze__rand_core__0_4_2//:rand_core",
     ] + selects.with_or({
-        # cfg(any(target_os = "macos", target_os = "ios"))
         (
             "@rules_rust//rust/platform:x86_64-apple-darwin",
         ): [
@@ -65,7 +64,6 @@ rust_library(
         ],
         "//conditions:default": [],
     }) + selects.with_or({
-        # cfg(target_os = "windows")
         (
             "@rules_rust//rust/platform:x86_64-pc-windows-msvc",
         ): [

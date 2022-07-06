@@ -65,7 +65,7 @@ rust_library(
         "@raze__percent_encoding__2_1_0//:percent_encoding",
         "@raze__proc_macro2__1_0_40//:proc_macro2",
         "@raze__quote__1_0_20//:quote",
-        "@raze__serde__1_0_137//:serde",
+        "@raze__serde__1_0_138//:serde",
         "@raze__syn__1_0_98//:syn",
         "@raze__toml__0_5_9//:toml",
     ],

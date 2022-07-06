@@ -36,8 +36,6 @@ licenses([
 rust_library(
     name = "thread_local",
     srcs = glob(["**/*.rs"]),
-    crate_features = [
-    ],
     crate_root = "src/lib.rs",
     data = [],
     edition = "2018",
@@ -52,6 +50,6 @@ rust_library(
     version = "1.1.4",
     # buildifier: leave-alone
     deps = [
-        "@raze__once_cell__1_12_0//:once_cell",
+        "@raze__once_cell__1_13_0//:once_cell",
     ],
 )
