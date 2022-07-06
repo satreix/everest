@@ -96,9 +96,9 @@ rust_library(
     deps = [
         ":crossbeam_epoch_build_script",
         "@raze__cfg_if__1_0_0//:cfg_if",
-        "@raze__crossbeam_utils__0_8_9//:crossbeam_utils",
+        "@raze__crossbeam_utils__0_8_10//:crossbeam_utils",
         "@raze__memoffset__0_6_5//:memoffset",
-        "@raze__once_cell__1_12_0//:once_cell",
+        "@raze__once_cell__1_13_0//:once_cell",
         "@raze__scopeguard__1_1_0//:scopeguard",
     ],
 )

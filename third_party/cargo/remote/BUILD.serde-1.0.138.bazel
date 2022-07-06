@@ -38,12 +38,15 @@ load(
 )
 
 cargo_build_script(
-    name = "serde_derive_build_script",
+    name = "serde_build_script",
     srcs = glob(["**/*.rs"]),
     build_script_env = {
     },
     crate_features = [
         "default",
+        "derive",
+        "serde_derive",
+        "std",
     ],
     crate_root = "build.rs",
     data = glob(["**"]),
@@ -55,35 +58,38 @@ cargo_build_script(
         "cargo-raze",
         "manual",
     ],
-    version = "1.0.137",
+    version = "1.0.138",
     visibility = ["//visibility:private"],
     deps = [
     ],
 )
 
-rust_proc_macro(
-    name = "serde_derive",
+rust_library(
+    name = "serde",
     srcs = glob(["**/*.rs"]),
     crate_features = [
         "default",
+        "derive",
+        "serde_derive",
+        "std",
     ],
     crate_root = "src/lib.rs",
     data = [],
     edition = "2015",
+    proc_macro_deps = [
+        "@raze__serde_derive__1_0_138//:serde_derive",
+    ],
     rustc_flags = [
         "--cap-lints=allow",
     ],
     tags = [
         "cargo-raze",
-        "crate-name=serde_derive",
+        "crate-name=serde",
         "manual",
     ],
-    version = "1.0.137",
+    version = "1.0.138",
     # buildifier: leave-alone
     deps = [
-        ":serde_derive_build_script",
-        "@raze__proc_macro2__1_0_40//:proc_macro2",
-        "@raze__quote__1_0_20//:quote",
-        "@raze__syn__1_0_98//:syn",
+        ":serde_build_script",
     ],
 )

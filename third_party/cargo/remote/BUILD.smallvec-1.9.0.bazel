@@ -36,8 +36,6 @@ licenses([
 rust_library(
     name = "smallvec",
     srcs = glob(["**/*.rs"]),
-    crate_features = [
-    ],
     crate_root = "src/lib.rs",
     data = [],
     edition = "2018",
@@ -49,7 +47,7 @@ rust_library(
         "crate-name=smallvec",
         "manual",
     ],
-    version = "1.8.0",
+    version = "1.9.0",
     # buildifier: leave-alone
     deps = [
     ],

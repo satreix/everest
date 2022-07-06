@@ -46,8 +46,6 @@ licenses([
 rust_library(
     name = "slog_term",
     srcs = glob(["**/*.rs"]),
-    crate_features = [
-    ],
     crate_root = "src/lib.rs",
     data = [],
     edition = "2018",
@@ -66,7 +64,7 @@ rust_library(
         "@raze__slog__2_7_0//:slog",
         "@raze__term__0_7_0//:term",
         "@raze__thread_local__1_1_4//:thread_local",
-        "@raze__time__0_3_10//:time",
+        "@raze__time__0_3_11//:time",
     ],
 )
 

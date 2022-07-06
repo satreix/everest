@@ -55,7 +55,6 @@ rust_library(
     deps = [
         "@raze__dirs_next__2_0_0//:dirs_next",
     ] + selects.with_or({
-        # cfg(windows)
         (
             "@rules_rust//rust/platform:x86_64-pc-windows-msvc",
         ): [

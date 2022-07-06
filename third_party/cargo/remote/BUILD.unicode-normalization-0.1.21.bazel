@@ -51,7 +51,7 @@ rust_library(
         "crate-name=unicode-normalization",
         "manual",
     ],
-    version = "0.1.19",
+    version = "0.1.21",
     # buildifier: leave-alone
     deps = [
         "@raze__tinyvec__1_6_0//:tinyvec",
