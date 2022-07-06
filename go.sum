@@ -55,8 +55,8 @@ github.com/gosuri/uilive v0.0.4/go.mod h1:V/epo5LjjlDE5RJUcqx8dbw+zc93y5Ya3yg8tf
 github.com/gosuri/uiprogress v0.0.1 h1:0kpv/XY/qTmFWl/SkaJykZXrBBzwwadmW8fRb7RJSxw=
 github.com/gosuri/uiprogress v0.0.1/go.mod h1:C1RTYn4Sc7iEyf6j8ft5dyoZ4212h8G1ol9QQluh5+0=
 github.com/grpc-ecosystem/grpc-gateway v1.16.0/go.mod h1:BDjrQk3hbvj6Nolgz8mAMFbcEtjT1g+wF4CSlocrBnw=
-github.com/keybase/go-keychain v0.0.0-20220506172723-c18928ccd7f2 h1:Qh9gCBYNeGqpMv7SMVGgansYlZgnMkuPOQZpoZNxSJs=
-github.com/keybase/go-keychain v0.0.0-20220506172723-c18928ccd7f2/go.mod h1:5p1xgRXY2da7ggc/67EZO7WlWAZ8TXftfCU6RtvWZJ0=
+github.com/keybase/go-keychain v0.0.0-20220610143837-c2ce06069005 h1:0uT5p980qZwIkSkOHuMgGLUMbz39d6cqQk7eaOE3uso=
+github.com/keybase/go-keychain v0.0.0-20220610143837-c2ce06069005/go.mod h1:5p1xgRXY2da7ggc/67EZO7WlWAZ8TXftfCU6RtvWZJ0=
 github.com/kr/pretty v0.1.0/go.mod h1:dAy3ld7l9f0ibDNOQOHHMYYIIbhfbHSm3C4ZsoJORNo=
 github.com/kr/pretty v0.3.0 h1:WgNl7dwNpEZ6jJ9k1snq4pZsg7DOEN8hP9Xw0Tsjwk0=
 github.com/kr/pretty v0.3.0/go.mod h1:640gp4NfQd8pI5XOwp5fnNeVWj67G7CFk/SaSQn7NBk=
