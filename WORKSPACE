@@ -247,6 +247,14 @@ rust_register_toolchains(
     version = _RUST_VERSION,
 )
 
+load("@rules_rust//proto:repositories.bzl", "rust_proto_repositories")
+
+rust_proto_repositories()
+
+load("@rules_rust//proto:transitive_repositories.bzl", "rust_proto_transitive_repositories")
+
+rust_proto_transitive_repositories()
+
 load("@rules_rust//crate_universe:repositories.bzl", "crate_universe_dependencies")
 
 crate_universe_dependencies()
@@ -259,6 +267,7 @@ crates_repository(
     lockfile = "//third_party/rust:lockfile.json",
     manifests = [
         "//:Cargo.toml",
+        "//src/rust/grpc_server:Cargo.toml",
         "//src/rust/hello_world:Cargo.toml",
         "//src/rust/num:Cargo.toml",
         "//src/rust/web:Cargo.toml",
