@@ -347,11 +347,11 @@ build_bazel_rules_nodejs_dependencies()
 
 load("@rules_nodejs//nodejs:repositories.bzl", "nodejs_register_toolchains")
 
-_NODE_REPO = "node16"
+_NODE_REPO = "nodejs"
 
 nodejs_register_toolchains(
     name = _NODE_REPO,
-    node_version = "16.0.0",
+    node_version = "16.16.0",
 )
 
 load("@build_bazel_rules_nodejs//:index.bzl", "npm_install")
