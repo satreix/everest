@@ -2,7 +2,7 @@
   "name": "everest",
   "private": true,
   "dependencies": {
-    "commander": "9.3.0"
+    "commander": "9.4.0"
   },
   "devDependencies": {
     "@bazel/typescript": "5.5.1",
