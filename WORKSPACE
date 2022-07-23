@@ -32,13 +32,6 @@ http_archive(
 )
 
 http_archive(
-    name = "cargo_raze",
-    sha256 = "fa16f00e6b4ad0452c21ebf30d6d36cf2d1ada1cbad76e5dfb33c161cad3e785",
-    strip_prefix = "cargo-raze-0.16.0",
-    url = "https://github.com/google/cargo-raze/archive/v0.16.0.tar.gz",
-)
-
-http_archive(
     name = "com_github_antlr_grammars_v4",
     build_file_content = """exports_files(glob(["**/*.g4"]), visibility = ["//visibility:public"])""",
     sha256 = "d677102b66ba339743bc0b2a1920541075831b004eb7c3930f690876081aa201",
@@ -176,9 +169,11 @@ http_archive(
 
 http_archive(
     name = "rules_rust",
-    sha256 = "46467958aaa8ff5a000ba221d10bd56e07306866e488edbd10cfd29fb7337eaf",
-    strip_prefix = "rules_rust-adf92b15341b0c4c5f5cbc8f32587d745205bbb2",
-    urls = ["https://github.com/bazelbuild/rules_rust/archive/adf92b15341b0c4c5f5cbc8f32587d745205bbb2.tar.gz"],
+    sha256 = "b534645f6025ea887e8be6f577832e2830dc058a2990e287ff7a3745c523a739",
+    urls = [
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_rust/releases/download/0.8.0/rules_rust-v0.8.0.tar.gz",
+        "https://github.com/bazelbuild/rules_rust/releases/download/0.8.0/rules_rust-v0.8.0.tar.gz",
+    ],
 )
 
 http_archive(
@@ -235,14 +230,35 @@ load("@rules_rust//rust:repositories.bzl", "rules_rust_dependencies", "rust_regi
 
 rules_rust_dependencies()
 
+_RUST_VERSION = "1.62.1"
+
 rust_register_toolchains(
     edition = "2021",
-    version = "1.60.0",
+    version = _RUST_VERSION,
 )
 
-load("@rules_rust//util/import:deps.bzl", _rules_rust_util_import_deps = "import_deps")
+load("@rules_rust//crate_universe:repositories.bzl", "crate_universe_dependencies")
 
-_rules_rust_util_import_deps()
+crate_universe_dependencies()
+
+load("@rules_rust//crate_universe:defs.bzl", "crates_repository")
+
+crates_repository(
+    name = "crate_index",
+    cargo_lockfile = "//:Cargo.lock",
+    lockfile = "//third_party/rust:lockfile.json",
+    manifests = [
+        "//:Cargo.toml",
+        "//src/rust/hello_world:Cargo.toml",
+        "//src/rust/num:Cargo.toml",
+        "//src/rust/web:Cargo.toml",
+    ],
+    rust_version = _RUST_VERSION,
+)
+
+load("@crate_index//:defs.bzl", "crate_repositories")
+
+crate_repositories()
 
 load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS", "IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS", "grpc_java_repositories")
 load("@rules_jvm_external//:defs.bzl", "maven_install")
@@ -273,10 +289,6 @@ load("@maven//:defs.bzl", "pinned_maven_install")
 
 pinned_maven_install()
 
-load("//third_party/cargo:crates.bzl", "raze_fetch_remote_crates")
-
-raze_fetch_remote_crates()
-
 load("@rules_foreign_cc//foreign_cc:repositories.bzl", "rules_foreign_cc_dependencies")
 
 rules_foreign_cc_dependencies()
@@ -295,14 +307,6 @@ load("@rules_antlr//antlr:repositories.bzl", "rules_antlr_dependencies")
 rules_antlr_dependencies("4.10.1")
 
 grpc_java_repositories()
-
-load("@cargo_raze//:repositories.bzl", "cargo_raze_repositories")
-
-cargo_raze_repositories()
-
-load("@cargo_raze//:transitive_deps.bzl", "cargo_raze_transitive_deps")
-
-cargo_raze_transitive_deps()
 
 load("@openapi_tools_generator_bazel//:defs.bzl", "openapi_tools_generator_bazel_repositories")
 

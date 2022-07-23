@@ -4,13 +4,3 @@ members = [
     "src/rust/num",
     "src/rust/web",
 ]
-
-[workspace.metadata.raze]
-workspace_path = "//third_party/cargo"
-genmode = "Remote"
-rust_rules_workspace_name = "rules_rust"
-targets = [
-    "x86_64-apple-darwin",
-    "x86_64-pc-windows-msvc",
-    "x86_64-unknown-linux-gnu",
-]
