@@ -1,19 +1,18 @@
+load("@crate_index//:defs.bzl", "aliases", "all_crate_deps")
 load("@rules_python//python:defs.bzl", "py_library")
 load("@rules_rust//rust:defs.bzl", "rust_shared_library")
 
 rust_shared_library(
     name = "num_rs",
     srcs = ["src/lib.rs"],
+    aliases = aliases(),
     rustc_flags = [
         "-C",
         "link-arg=-undefined",
         "-C",
         "link-arg=dynamic_lookup",
     ],
-    deps = [
-        "//src/rust/num/cargo:pyo3",
-        "//src/rust/num/cargo:rayon",
-    ],
+    deps = all_crate_deps(),
 )
 
 genrule(

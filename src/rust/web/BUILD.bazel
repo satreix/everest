@@ -1,26 +1,19 @@
+load("@crate_index//:defs.bzl", "aliases", "all_crate_deps")
 load("@rules_rust//rust:defs.bzl", "rust_binary", "rust_test")
 
 rust_binary(
     name = "web",
     srcs = ["src/main.rs"],
+    aliases = aliases(),
     compile_data = ["templates/hello.html"],
     visibility = ["//visibility:public"],
-    deps = [
-        "//src/rust/web/cargo:askama",
-        "//src/rust/web/cargo:iron",
-        "//src/rust/web/cargo:iron_slog",
-        "//src/rust/web/cargo:router",
-        "//src/rust/web/cargo:slog",
-        "//src/rust/web/cargo:slog_async",
-        "//src/rust/web/cargo:slog_term",
-    ],
+    deps = all_crate_deps(),
 )
 
 rust_test(
     name = "web_test",
     size = "small",
+    aliases = aliases(),
     crate = ":web",
-    deps = [
-        "//src/rust/web/cargo:iron_test",
-    ],
+    deps = all_crate_deps(normal_dev = True),
 )

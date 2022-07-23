@@ -24,6 +24,6 @@ section "Python"
 ./tools/python/update-deps.sh
 
 section "Rust"
-bazel run @cargo_raze//:raze -- --generate-lockfile --manifest-path=$(pwd)/Cargo.toml
+CARGO_BAZEL_REPIN=1 bazel sync --only=crate_index
 
 ./tools/format.sh

@@ -1,13 +1,13 @@
+load("@crate_index//:defs.bzl", "aliases", "all_crate_deps")
 load("@rules_rust//rust:defs.bzl", "rust_binary")
 load("//tools/test/binary:binary.bzl", "binary_test")
 
 rust_binary(
     name = "hello_world",
     srcs = ["src/main.rs"],
+    aliases = aliases(),
     visibility = ["//visibility:public"],
-    deps = [
-        "//src/rust/hello_world/cargo:clap",
-    ],
+    deps = all_crate_deps(),
 )
 
 binary_test(
