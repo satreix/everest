@@ -7,10 +7,12 @@ require (
 	github.com/bazelbuild/rules_go v0.33.0
 	github.com/google/go-cmp v0.5.8
 	github.com/gosuri/uiprogress v0.0.1
+	github.com/grpc-ecosystem/go-grpc-middleware v1.3.0
 	github.com/keybase/go-keychain v0.0.0-20220610143837-c2ce06069005
 	github.com/mndrix/tap-go v0.0.0-20171203230836-629fa407e90b
 	github.com/mvdan/sh v2.6.4+incompatible
 	github.com/pkg/browser v0.0.0-20210911075715-681adbf594b8
+	go.uber.org/zap v1.22.0
 	google.golang.org/grpc v1.47.0
 )
 
@@ -19,6 +21,8 @@ require (
 	github.com/gosuri/uilive v0.0.4 // indirect
 	github.com/kr/pretty v0.3.0 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
+	go.uber.org/atomic v1.7.0 // indirect
+	go.uber.org/multierr v1.6.0 // indirect
 	golang.org/x/net v0.0.0-20201021035429-f5854403a974 // indirect
 	golang.org/x/sys v0.0.0-20210630005230-0f9fa26af87c // indirect
 	golang.org/x/text v0.3.3 // indirect

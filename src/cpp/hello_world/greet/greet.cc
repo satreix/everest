@@ -1,5 +1,7 @@
 #include "greet.h"
+
 #include <string>
+
 #include <fmt/core.h>
 
 namespace greet {

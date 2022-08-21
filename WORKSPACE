@@ -20,6 +20,12 @@ http_archive(
 )
 
 http_archive(
+    name = "bazel_skylib",
+    sha256 = "f7be3474d42aae265405a592bb7da8e171919d74c16f082a5457840f06054728",
+    url = "https://github.com/bazelbuild/bazel-skylib/releases/download/1.2.1/bazel-skylib-1.2.1.tar.gz",
+)
+
+http_archive(
     name = "bazelruby_rules_ruby",
     patch_args = ["-p1"],
     patches = [
@@ -51,6 +57,13 @@ http_archive(
     sha256 = "34af2f15cf7367513b352bdcd2493ab14ce43692d2dcd9dfc499492966c64dcf",
     strip_prefix = "gflags-2.2.2",
     urls = ["https://github.com/gflags/gflags/archive/refs/tags/v2.2.2.tar.gz"],
+)
+
+http_archive(
+    name = "com_github_grpc_grpc",
+    # sha256 = "34af2f15cf7367513b352bdcd2493ab14ce43692d2dcd9dfc499492966c64dcf",
+    strip_prefix = "grpc-1.46.2",
+    urls = ["https://github.com/grpc/grpc/archive/refs/tags/v1.46.2.tar.gz"],
 )
 
 http_archive(
@@ -91,9 +104,23 @@ http_archive(
 )
 
 http_archive(
+    name = "io_bazel_rules_docker",
+    sha256 = "27d53c1d646fc9537a70427ad7b034734d08a9c38924cc6357cc973fed300820",
+    strip_prefix = "rules_docker-0.24.0",
+    urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.24.0/rules_docker-v0.24.0.tar.gz"],
+)
+
+http_archive(
     name = "io_bazel_rules_go",
     sha256 = "685052b498b6ddfe562ca7a97736741d87916fe536623afb7da2824c0211c369",
     urls = ["https://github.com/bazelbuild/rules_go/releases/download/v0.33.0/rules_go-v0.33.0.zip"],
+)
+
+http_archive(
+    name = "io_bazel_rules_k8s",
+    sha256 = "51f0977294699cd547e139ceff2396c32588575588678d2054da167691a227ef",
+    strip_prefix = "rules_k8s-0.6",
+    urls = ["https://github.com/bazelbuild/rules_k8s/archive/v0.6.tar.gz"],
 )
 
 http_archive(
@@ -183,6 +210,12 @@ http_archive(
     strip_prefix = "uncrustify-uncrustify-0.70.1",
     urls = ["https://github.com/uncrustify/uncrustify/archive/uncrustify-0.70.1.tar.gz"],
 )
+
+load("@rules_cc//cc:repositories.bzl", "rules_cc_dependencies", "rules_cc_toolchains")
+
+rules_cc_dependencies()
+
+rules_cc_toolchains()
 
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
@@ -361,4 +394,56 @@ npm_install(
     node_repository = _NODE_REPO,
     package_json = "//:package.json",
     package_lock_json = "//:package-lock.json",
+)
+
+load(
+    "@io_bazel_rules_docker//repositories:repositories.bzl",
+    container_repositories = "repositories",
+)
+
+container_repositories()
+
+load(
+    "@io_bazel_rules_docker//cc:image.bzl",
+    _cc_image_repos = "repositories",
+)
+
+_cc_image_repos()
+
+load(
+    "@io_bazel_rules_docker//go:image.bzl",
+    _go_image_repos = "repositories",
+)
+
+_go_image_repos()
+
+load("@io_bazel_rules_k8s//k8s:k8s.bzl", "k8s_repositories")
+
+k8s_repositories()
+
+load("@io_bazel_rules_k8s//k8s:k8s_go_deps.bzl", k8s_go_deps = "deps")
+
+k8s_go_deps()
+
+load("@com_github_grpc_grpc//bazel:grpc_deps.bzl", "grpc_deps")
+
+grpc_deps()
+
+# FIXME https://github.com/grpc/grpc/issues/25337
+http_archive(
+    name = "build_bazel_rules_swift",
+    sha256 = "fa746a50f442ea4bcce78b747182107b4f0041f868b285714364ce4508d19979",
+    strip_prefix = "rules_swift-0.14.0",
+    urls = [
+        "https://github.com/bazelbuild/rules_swift/archive/0.14.0.tar.gz",
+    ],
+)
+
+load("@com_google_googleapis//:repository_rules.bzl", "switched_rules_by_language")
+
+switched_rules_by_language(
+    name = "com_google_googleapis_imports",
+    cc = True,
+    grpc = True,
+    python = True,
 )

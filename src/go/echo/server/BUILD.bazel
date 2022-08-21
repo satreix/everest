@@ -1,4 +1,7 @@
+load("@bazel_skylib//rules:build_test.bzl", "build_test")
+load("@io_bazel_rules_docker//go:image.bzl", "go_image")
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+load("@io_bazel_rules_k8s//k8s:object.bzl", "k8s_object")
 
 go_library(
     name = "server_lib",
@@ -7,7 +10,10 @@ go_library(
     visibility = ["//visibility:private"],
     deps = [
         "//src/proto/helloworld",
+        "@com_github_grpc_ecosystem_go_grpc_middleware//logging/zap",
         "@org_golang_google_grpc//:go_default_library",
+        "@org_golang_google_grpc//reflection",
+        "@org_uber_go_zap//:zap",
     ],
 )
 
@@ -16,3 +22,29 @@ go_binary(
     embed = [":server_lib"],
     visibility = ["//src/go/echo:__pkg__"],
 )
+
+build_test(
+    name = "server_build_test",
+    targets = [":server"],
+)
+
+go_image(
+    name = "container_image",
+    embed = [":server_lib"],
+    goarch = "amd64",
+    goos = "linux",
+    pure = "on",
+)
+
+k8s_object(
+    name = "dev",
+    cluster = "satreix",
+    images = {
+        "registry.satreix.com/satreix/hello-grpc:dev": ":container_image",
+    },
+    kind = "deployment",
+    template = ":deployment.yaml",
+)
+
+# kubectl get pods -w
+# kubectl port-forward pod/hello-grpc-staging-XXX 50051:50051

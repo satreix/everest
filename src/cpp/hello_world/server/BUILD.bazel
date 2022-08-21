@@ -1,0 +1,24 @@
+load("@bazel_skylib//rules:build_test.bzl", "build_test")
+load("@io_bazel_rules_docker//cc:image.bzl", "cc_image")
+load("@rules_cc//cc:defs.bzl", "cc_binary")
+
+cc_binary(
+    name = "server",
+    srcs = ["server.cc"],
+    deps = [
+        "//src/cpp/hello_world/greet",
+        "//src/proto/helloworld:helloworld_cc_grpc",
+        "@com_github_grpc_grpc//:grpc++",
+        "@com_github_grpc_grpc//:grpc++_reflection",
+    ],
+)
+
+build_test(
+    name = "server_build_test",
+    targets = [":server"],
+)
+
+cc_image(
+    name = "image",
+    binary = ":server",
+)
