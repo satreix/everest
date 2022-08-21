@@ -1,9 +1,49 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/backend-protocol: GRPC
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  name: hello-grpc-staging
+  namespace: steve-default
+spec:
+  rules:
+  - host: hello-grpc-staging.satreix.com
+    http:
+      paths:
+      - backend:
+          serviceName: hello-grpc-staging
+          servicePort: 50051
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - hello-grpc-staging.satreix.com
+    secretName: hello-grpc-staging.satreix.com-tls
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-grpc-staging
+  labels:
+    app: hello-grpc-staging
+spec:
+  selector:
+    app: hello-grpc-staging
+  ports:
+    - protocol: TCP
+      port: 50051
+      targetPort: 50051
+  type: ClusterIP
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-grpc-staging
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: hello-grpc-staging
