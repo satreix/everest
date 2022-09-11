@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/antlr/antlr4/runtime/Go/antlr v0.0.0-20220527190237-ee62e23da966
-	github.com/bazelbuild/rules_go v0.33.0
+	github.com/bazelbuild/rules_go v0.35.0
 	github.com/google/go-cmp v0.5.9
 	github.com/gosuri/uiprogress v0.0.1
 	github.com/keybase/go-keychain v0.0.0-20221007210036-1ce7470f08a7
