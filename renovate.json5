@@ -1,6 +1,14 @@
 {
-  extends: ["config:base", ":disableDependencyDashboard"],
-  ignorePaths: ["third_party/**"],
-  labels: ["dependencies"],
-  schedule: ["every weekend"],
+  extends: ['config:base', ':disableDependencyDashboard'],
+  ignorePaths: ['third_party/**'],
+  labels: ['dependencies'],
+  schedule: ['every weekend'],
+  regexManagers: [
+    {
+      fileMatch: '\\.bazelversion',
+      matchStrings: ['(?<currentValue>[0-9]+.[0-9]+.[0-9]+)'],
+      depNameTemplate: 'bazelbuild/bazel',
+      datasourceTemplate: 'github-releases'
+    }
+  ]
 }
