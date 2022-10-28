@@ -14,7 +14,7 @@ func TestParse(t *testing.T) {
 	}{
 		"SOS": {
 			input: "... --- ...",
-			want:  "(morsecode (letter (s . . .))   (letter (o - - -))   (letter (s . . .)))",
+			want:  "(morsecode (letter (s . . .))   (letter (o - - -))   (letter (s . . .)) <EOF>)",
 		},
 		"Bad input": {
 			input:   "This is not morse",
