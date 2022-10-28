@@ -169,10 +169,10 @@ http_archive(
 
 http_archive(
     name = "rules_rust",
-    sha256 = "b534645f6025ea887e8be6f577832e2830dc058a2990e287ff7a3745c523a739",
+    sha256 = "696b01deea96a5e549f1b5ae18589e1bbd5a1d71a36a243b5cf76a9433487cf2",
     urls = [
-        "https://mirror.bazel.build/github.com/bazelbuild/rules_rust/releases/download/0.8.0/rules_rust-v0.8.0.tar.gz",
-        "https://github.com/bazelbuild/rules_rust/releases/download/0.8.0/rules_rust-v0.8.0.tar.gz",
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_rust/releases/download/0.11.0/rules_rust-v0.11.0.tar.gz",
+        "https://github.com/bazelbuild/rules_rust/releases/download/0.11.0/rules_rust-v0.11.0.tar.gz",
     ],
 )
 
