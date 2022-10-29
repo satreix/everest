@@ -7,7 +7,7 @@ require (
 	github.com/bazelbuild/rules_go v0.33.0
 	github.com/google/go-cmp v0.5.8
 	github.com/gosuri/uiprogress v0.0.1
-	github.com/keybase/go-keychain v0.0.0-20220610143837-c2ce06069005
+	github.com/keybase/go-keychain 1ce7470f08a7
 	github.com/mndrix/tap-go v0.0.0-20171203230836-629fa407e90b
 	github.com/mvdan/sh v2.6.4+incompatible
 	github.com/pkg/browser v0.0.0-20210911075715-681adbf594b8
