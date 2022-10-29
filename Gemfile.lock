@@ -2,10 +2,10 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
-    cgi (0.3.2)
+    cgi (0.3.3)
     diff-lcs (1.5.0)
-    erb (2.2.3)
-      cgi
+    erb (3.0.0)
+      cgi (>= 0.3.3)
     haml (5.2.2)
       temple (>= 0.8.0)
       tilt
@@ -56,7 +56,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  erb (~> 2.2)
+  erb (~> 3.0)
   haml (~> 5.2)
   rspec (~> 3.12.0)
   rspec-its
