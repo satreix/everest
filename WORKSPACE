@@ -128,9 +128,9 @@ http_archive(
 
 http_archive(
     name = "rules_cc",
-    sha256 = "0e5801b1834a51c1308044e9abaeb6aaf945e4a4274866ea84fbccc50a292368",
-    strip_prefix = "rules_cc-0.0.2",
-    url = "https://github.com/bazelbuild/rules_cc/archive/0.0.2.tar.gz",
+    sha256 = "af6cc82d87db94585bceeda2561cb8a9d55ad435318ccb4ddfee18a43580fb5d",
+    strip_prefix = "rules_cc-0.0.4",
+    url = "https://github.com/bazelbuild/rules_cc/archive/0.0.4.tar.gz",
 )
 
 http_archive(
