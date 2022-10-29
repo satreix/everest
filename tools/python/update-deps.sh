@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
-set -euo pipefail
-
-PL2B="$(bazel run --run_under=echo //tools/python:pipefile_lock_to_bzl)"
+set -eufo pipefail
 
 pipenv check
 pipenv install --dev
 pipenv clean
 pipenv lock
-"$PL2B" --namespace=pypi Pipfile.lock >"third_party/python/requirements.bzl"
+bazel run //tools/python:pipefile_lock_to_bzl -- \
+    --namespace=pypi \
+    --output=third_party/python/requirements.bzl \
+    Pipfile.lock

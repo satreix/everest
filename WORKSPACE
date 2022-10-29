@@ -218,7 +218,9 @@ python_register_toolchains(
 load("@python3_10_2//:defs.bzl", "interpreter")
 load("//third_party/python:requirements.bzl", install_python_deps = "install_deps")
 
-install_python_deps(interpreter)
+install_python_deps(
+    python_interpreter_target = interpreter,
+)
 
 load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
 
