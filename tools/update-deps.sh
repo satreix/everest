@@ -16,6 +16,9 @@ sed '/^$/d' "$GO_DEPS_FILE" >"${GO_DEPS_FILE}.new"
 mv "${GO_DEPS_FILE}.new" "$GO_DEPS_FILE"
 bazel run //:buildifier
 
+section "Haskell"
+bazel run @stackage-unpinned//:pin
+
 section "Java"
 bazel run @unpinned_maven//:pin
 

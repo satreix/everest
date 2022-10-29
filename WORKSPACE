@@ -141,6 +141,13 @@ http_archive(
 )
 
 http_archive(
+    name = "rules_haskell",
+    sha256 = "aba3c16015a2363b16e2f867bdc5c792fa71c68cb97d8fe95fddc41e409d6ba8",
+    strip_prefix = "rules_haskell-0.15",
+    urls = ["https://github.com/tweag/rules_haskell/archive/v0.15.tar.gz"],
+)
+
+http_archive(
     name = "rules_java",
     sha256 = "8c376f1e4ab7d7d8b1880e4ef8fc170862be91b7c683af97ca2768df546bb073",
     urls = ["https://github.com/bazelbuild/rules_java/releases/download/5.0.0/rules_java-5.0.0.1.tar.gz"],
@@ -364,4 +371,25 @@ npm_install(
     node_repository = _NODE_REPO,
     package_json = "//:package.json",
     package_lock_json = "//:package-lock.json",
+)
+
+load("@rules_haskell//haskell:repositories.bzl", "rules_haskell_dependencies")
+
+rules_haskell_dependencies()
+
+load("@rules_haskell//haskell:toolchain.bzl", "rules_haskell_toolchains")
+
+rules_haskell_toolchains(
+    version = "8.10.7",
+)
+
+load("@rules_haskell//haskell:cabal.bzl", "stack_snapshot")
+
+stack_snapshot(
+    name = "stackage",
+    packages = [
+        "optparse-applicative",
+    ],
+    snapshot = "lts-18.18",
+    stack_snapshot_json = "//third_party/haskell:stackage_snapshot.json",
 )
