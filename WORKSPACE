@@ -98,9 +98,9 @@ http_archive(
 
 http_archive(
     name = "io_grpc_grpc_java",
-    sha256 = "0f6cf8c1e97757333e08975c8637093b40540a54a201cfd3ce284c8d1d073fae",
-    strip_prefix = "grpc-java-1.47.0",
-    urls = ["https://github.com/grpc/grpc-java/archive/v1.47.0.tar.gz"],
+    sha256 = "992f757b022bb40d2db07a4924f169c0abacbbddcae8f32edb99921683fdffe9",
+    strip_prefix = "grpc-java-1.50.2",
+    urls = ["https://github.com/grpc/grpc-java/archive/v1.50.2.tar.gz"],
 )
 
 http_archive(
