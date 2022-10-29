@@ -24,7 +24,7 @@ jobs:
 
       # Ruby rules use host install still: https://github.com/bazelruby/rules_ruby/issues/112
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1.111.0
+        uses: ruby/setup-ruby@v1.120.0
 
       - name: Install bazelisk
         run: ./tools/ci/install_bazelisk.sh v1.14.0 ${{ matrix.platform }}
