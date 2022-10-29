@@ -189,16 +189,17 @@ load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_depe
 go_rules_dependencies()
 
 go_register_toolchains(
-    version = "1.18.2",
+    # Update in lockstep with go.mod
+    version = "1.19.2",
 )
-
-load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 
 # gazelle:repository go_repository name=io_bazel_rules_go importpath=github.com/bazelbuild/rules_go
 # gazelle:repository_macro third_party/go/deps.bzl%go_dependencies
 load("//third_party/go:deps.bzl", "go_dependencies")
 
 go_dependencies()
+
+load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 
 gazelle_dependencies()
 
