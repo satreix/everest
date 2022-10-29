@@ -1,5 +1,5 @@
 {
-  "checksum": "aef0f705e580081ad8f6a0e13b3e74ae2d1228772c00655fb00e3fffc69d5626",
+  "checksum": "944e9b8ae4a0794eb14e71264b40501e24b75b7823006834ef40a4cb69c84dfc",
   "crates": {
     "android_system_properties 0.1.5": {
       "name": "android_system_properties",
@@ -3522,7 +3522,7 @@
         "deps": {
           "common": [
             {
-              "id": "pyo3 0.16.6",
+              "id": "pyo3 0.17.2",
               "target": "pyo3"
             },
             {
@@ -4351,13 +4351,13 @@
       },
       "license": "MIT OR Apache-2.0"
     },
-    "pyo3 0.16.6": {
+    "pyo3 0.17.2": {
       "name": "pyo3",
-      "version": "0.16.6",
+      "version": "0.17.2",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/pyo3/0.16.6/download",
-          "sha256": "0220c44442c9b239dd4357aa856ac468a4f5e1f0df19ddb89b2522952eb4c6ca"
+          "url": "https://crates.io/api/v1/crates/pyo3/0.17.2/download",
+          "sha256": "201b6887e5576bf2f945fe65172c1fcbf3fcf285b23e4d71eb171d9736e38d32"
         }
       },
       "targets": [
@@ -4397,7 +4397,6 @@
           "indoc",
           "macros",
           "pyo3-macros",
-          "pyproto",
           "unindent"
         ],
         "deps": {
@@ -4411,15 +4410,19 @@
               "target": "libc"
             },
             {
+              "id": "memoffset 0.6.5",
+              "target": "memoffset"
+            },
+            {
               "id": "parking_lot 0.12.1",
               "target": "parking_lot"
             },
             {
-              "id": "pyo3 0.16.6",
+              "id": "pyo3 0.17.2",
               "target": "build_script_build"
             },
             {
-              "id": "pyo3-ffi 0.16.6",
+              "id": "pyo3-ffi 0.17.2",
               "target": "pyo3_ffi"
             },
             {
@@ -4437,13 +4440,13 @@
               "target": "indoc"
             },
             {
-              "id": "pyo3-macros 0.16.6",
+              "id": "pyo3-macros 0.17.2",
               "target": "pyo3_macros"
             }
           ],
           "selects": {}
         },
-        "version": "0.16.6"
+        "version": "0.17.2"
       },
       "build_script_attrs": {
         "data_glob": [
@@ -4452,89 +4455,8 @@
         "deps": {
           "common": [
             {
-              "id": "pyo3-build-config 0.16.6",
+              "id": "pyo3-build-config 0.17.2",
               "target": "pyo3_build_config"
-            }
-          ],
-          "selects": {}
-        }
-      },
-      "license": "Apache-2.0"
-    },
-    "pyo3-build-config 0.16.6": {
-      "name": "pyo3-build-config",
-      "version": "0.16.6",
-      "repository": {
-        "Http": {
-          "url": "https://crates.io/api/v1/crates/pyo3-build-config/0.16.6/download",
-          "sha256": "9c819d397859445928609d0ec5afc2da5204e0d0f73d6bf9e153b04e83c9cdc2"
-        }
-      },
-      "targets": [
-        {
-          "Library": {
-            "crate_name": "pyo3_build_config",
-            "crate_root": "src/lib.rs",
-            "srcs": {
-              "include": [
-                "**/*.rs"
-              ],
-              "exclude": []
-            }
-          }
-        },
-        {
-          "BuildScript": {
-            "crate_name": "build_script_build",
-            "crate_root": "build.rs",
-            "srcs": {
-              "include": [
-                "**/*.rs"
-              ],
-              "exclude": []
-            }
-          }
-        }
-      ],
-      "library_target_name": "pyo3_build_config",
-      "common_attrs": {
-        "compile_data_glob": [
-          "**"
-        ],
-        "crate_features": [
-          "default",
-          "extension-module",
-          "resolve-config"
-        ],
-        "deps": {
-          "common": [
-            {
-              "id": "once_cell 1.16.0",
-              "target": "once_cell"
-            },
-            {
-              "id": "pyo3-build-config 0.16.6",
-              "target": "build_script_build"
-            },
-            {
-              "id": "target-lexicon 0.12.4",
-              "target": "target_lexicon"
-            }
-          ],
-          "selects": {}
-        },
-        "edition": "2018",
-        "version": "0.16.6"
-      },
-      "build_script_attrs": {
-        "data_glob": [
-          "**"
-        ],
-        "deps": {
-          "common": [
-            {
-              "id": "target-lexicon 0.12.4",
-              "target": "target_lexicon"
             }
           ],
           "selects": {}
@@ -4583,7 +4505,9 @@
           "**"
         ],
         "crate_features": [
-          "default"
+          "default",
+          "extension-module",
+          "resolve-config"
         ],
         "deps": {
           "common": [
@@ -4621,13 +4545,13 @@
       },
       "license": "Apache-2.0"
     },
-    "pyo3-ffi 0.16.6": {
+    "pyo3-ffi 0.17.2": {
       "name": "pyo3-ffi",
-      "version": "0.16.6",
+      "version": "0.17.2",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/pyo3-ffi/0.16.6/download",
-          "sha256": "ca882703ab55f54702d7bfe1189b41b0af10272389f04cae38fe4cd56c65f75f"
+          "url": "https://crates.io/api/v1/crates/pyo3-ffi/0.17.2/download",
+          "sha256": "90352dea4f486932b72ddf776264d293f85b79a1d214de1d023927b41461132d"
         }
       },
       "targets": [
@@ -4672,14 +4596,14 @@
               "target": "libc"
             },
             {
-              "id": "pyo3-ffi 0.16.6",
+              "id": "pyo3-ffi 0.17.2",
               "target": "build_script_build"
             }
           ],
           "selects": {}
         },
         "edition": "2018",
-        "version": "0.16.6"
+        "version": "0.17.2"
       },
       "build_script_attrs": {
         "data_glob": [
@@ -4688,7 +4612,7 @@
         "deps": {
           "common": [
             {
-              "id": "pyo3-build-config 0.16.6",
+              "id": "pyo3-build-config 0.17.2",
               "target": "pyo3_build_config"
             }
           ],
@@ -4698,13 +4622,13 @@
       },
       "license": "Apache-2.0"
     },
-    "pyo3-macros 0.16.6": {
+    "pyo3-macros 0.17.2": {
       "name": "pyo3-macros",
-      "version": "0.16.6",
+      "version": "0.17.2",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/pyo3-macros/0.16.6/download",
-          "sha256": "568749402955ad7be7bad9a09b8593851cd36e549ac90bfd44079cea500f3f21"
+          "url": "https://crates.io/api/v1/crates/pyo3-macros/0.17.2/download",
+          "sha256": "7eb24b804a2d9e88bfcc480a5a6dd76f006c1e3edaf064e8250423336e2cd79d"
         }
       },
       "targets": [
@@ -4726,9 +4650,6 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "pyproto"
-        ],
         "deps": {
           "common": [
             {
@@ -4736,7 +4657,7 @@
               "target": "proc_macro2"
             },
             {
-              "id": "pyo3-macros-backend 0.16.6",
+              "id": "pyo3-macros-backend 0.17.2",
               "target": "pyo3_macros_backend"
             },
             {
@@ -4751,17 +4672,17 @@
           "selects": {}
         },
         "edition": "2018",
-        "version": "0.16.6"
+        "version": "0.17.2"
       },
       "license": "Apache-2.0"
     },
-    "pyo3-macros-backend 0.16.6": {
+    "pyo3-macros-backend 0.17.2": {
       "name": "pyo3-macros-backend",
-      "version": "0.16.6",
+      "version": "0.17.2",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/pyo3-macros-backend/0.16.6/download",
-          "sha256": "611f64e82d98f447787e82b8e7b0ebc681e1eb78fc1252668b2c605ffb4e1eb8"
+          "url": "https://crates.io/api/v1/crates/pyo3-macros-backend/0.17.2/download",
+          "sha256": "f22bb49f6a7348c253d7ac67a6875f2dc65f36c2ae64a82c381d528972bea6d6"
         }
       },
       "targets": [
@@ -4783,9 +4704,6 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "pyproto"
-        ],
         "deps": {
           "common": [
             {
@@ -4804,7 +4722,7 @@
           "selects": {}
         },
         "edition": "2018",
-        "version": "0.16.6"
+        "version": "0.17.2"
       },
       "license": "Apache-2.0"
     },
