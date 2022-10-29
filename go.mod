@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/antlr/antlr4/runtime/Go/antlr v0.0.0-20220527190237-ee62e23da966
-	github.com/bazelbuild/rules_go v0.33.0
+	github.com/bazelbuild/rules_go v0.35.0
 	github.com/google/go-cmp v0.5.9
 	github.com/gosuri/uiprogress v0.0.1
 	github.com/keybase/go-keychain v0.0.0-20221007210036-1ce7470f08a7
@@ -23,7 +23,7 @@ require (
 	golang.org/x/sys v0.0.0-20210630005230-0f9fa26af87c // indirect
 	golang.org/x/text v0.3.3 // indirect
 	google.golang.org/genproto v0.0.0-20200806141610-86f49bd18e98 // indirect
-	google.golang.org/protobuf v1.27.1 // indirect
+	google.golang.org/protobuf v1.28.0 // indirect
 	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	mvdan.cc/sh v2.6.4+incompatible // indirect
