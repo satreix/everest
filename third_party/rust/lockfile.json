@@ -1,5 +1,5 @@
 {
-  "checksum": "944e9b8ae4a0794eb14e71264b40501e24b75b7823006834ef40a4cb69c84dfc",
+  "checksum": "26d9a673ec6630f71bf6ff6b91446816a3c2c120cf962f3aa548e7e1e29ff009",
   "crates": {
     "android_system_properties 0.1.5": {
       "name": "android_system_properties",
@@ -1517,34 +1517,6 @@
       },
       "license": "MIT OR Apache-2.0"
     },
-    "direct-cargo-bazel-deps 0.0.1": {
-      "name": "direct-cargo-bazel-deps",
-      "version": "0.0.1",
-      "repository": null,
-      "targets": [
-        {
-          "Library": {
-            "crate_name": "direct_cargo_bazel_deps",
-            "crate_root": ".direct_cargo_bazel_deps.rs",
-            "srcs": {
-              "include": [
-                "**/*.rs"
-              ],
-              "exclude": []
-            }
-          }
-        }
-      ],
-      "library_target_name": "direct_cargo_bazel_deps",
-      "common_attrs": {
-        "compile_data_glob": [
-          "**"
-        ],
-        "edition": "2018",
-        "version": "0.0.1"
-      },
-      "license": null
-    },
     "dirs-next 2.0.0": {
       "name": "dirs-next",
       "version": "2.0.0",
@@ -2036,7 +2008,7 @@
               "target": "mime"
             },
             {
-              "id": "num_cpus 1.13.1",
+              "id": "num_cpus 1.14.0",
               "target": "num_cpus"
             },
             {
@@ -2422,7 +2394,7 @@
               "target": "modifier"
             },
             {
-              "id": "num_cpus 1.13.1",
+              "id": "num_cpus 1.14.0",
               "target": "num_cpus"
             },
             {
@@ -3522,7 +3494,7 @@
         "deps": {
           "common": [
             {
-              "id": "pyo3 0.17.2",
+              "id": "pyo3 0.17.3",
               "target": "pyo3"
             },
             {
@@ -3681,13 +3653,13 @@
       },
       "license": "MIT OR Apache-2.0"
     },
-    "num_cpus 1.13.1": {
+    "num_cpus 1.14.0": {
       "name": "num_cpus",
-      "version": "1.13.1",
+      "version": "1.14.0",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/num_cpus/1.13.1/download",
-          "sha256": "19e64526ebdee182341572e50e9ad03965aa510cd94427a4549448f285e957a1"
+          "url": "https://crates.io/api/v1/crates/num_cpus/1.14.0/download",
+          "sha256": "f6058e64324c71e02bc2b150e4f3bc8286db6c83092132ffa3f6b1eab0f9def5"
         }
       },
       "targets": [
@@ -3727,7 +3699,7 @@
           }
         },
         "edition": "2015",
-        "version": "1.13.1"
+        "version": "1.14.0"
       },
       "license": "MIT OR Apache-2.0"
     },
@@ -4351,13 +4323,13 @@
       },
       "license": "MIT OR Apache-2.0"
     },
-    "pyo3 0.17.2": {
+    "pyo3 0.17.3": {
       "name": "pyo3",
-      "version": "0.17.2",
+      "version": "0.17.3",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/pyo3/0.17.2/download",
-          "sha256": "201b6887e5576bf2f945fe65172c1fcbf3fcf285b23e4d71eb171d9736e38d32"
+          "url": "https://crates.io/api/v1/crates/pyo3/0.17.3/download",
+          "sha256": "268be0c73583c183f2b14052337465768c07726936a260f480f0857cb95ba543"
         }
       },
       "targets": [
@@ -4418,11 +4390,11 @@
               "target": "parking_lot"
             },
             {
-              "id": "pyo3 0.17.2",
+              "id": "pyo3 0.17.3",
               "target": "build_script_build"
             },
             {
-              "id": "pyo3-ffi 0.17.2",
+              "id": "pyo3-ffi 0.17.3",
               "target": "pyo3_ffi"
             },
             {
@@ -4440,13 +4412,13 @@
               "target": "indoc"
             },
             {
-              "id": "pyo3-macros 0.17.2",
+              "id": "pyo3-macros 0.17.3",
               "target": "pyo3_macros"
             }
           ],
           "selects": {}
         },
-        "version": "0.17.2"
+        "version": "0.17.3"
       },
       "build_script_attrs": {
         "data_glob": [
@@ -4455,7 +4427,7 @@
         "deps": {
           "common": [
             {
-              "id": "pyo3-build-config 0.17.2",
+              "id": "pyo3-build-config 0.17.3",
               "target": "pyo3_build_config"
             }
           ],
@@ -4464,13 +4436,13 @@
       },
       "license": "Apache-2.0"
     },
-    "pyo3-build-config 0.17.2": {
+    "pyo3-build-config 0.17.3": {
       "name": "pyo3-build-config",
-      "version": "0.17.2",
+      "version": "0.17.3",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/pyo3-build-config/0.17.2/download",
-          "sha256": "bf0708c9ed01692635cbf056e286008e5a2927ab1a5e48cdd3aeb1ba5a6fef47"
+          "url": "https://crates.io/api/v1/crates/pyo3-build-config/0.17.3/download",
+          "sha256": "28fcd1e73f06ec85bf3280c48c67e731d8290ad3d730f8be9dc07946923005c8"
         }
       },
       "targets": [
@@ -4516,18 +4488,18 @@
               "target": "once_cell"
             },
             {
-              "id": "pyo3-build-config 0.17.2",
+              "id": "pyo3-build-config 0.17.3",
               "target": "build_script_build"
             },
             {
-              "id": "target-lexicon 0.12.4",
+              "id": "target-lexicon 0.12.5",
               "target": "target_lexicon"
             }
           ],
           "selects": {}
         },
         "edition": "2018",
-        "version": "0.17.2"
+        "version": "0.17.3"
       },
       "build_script_attrs": {
         "data_glob": [
@@ -4536,7 +4508,7 @@
         "deps": {
           "common": [
             {
-              "id": "target-lexicon 0.12.4",
+              "id": "target-lexicon 0.12.5",
               "target": "target_lexicon"
             }
           ],
@@ -4545,13 +4517,13 @@
       },
       "license": "Apache-2.0"
     },
-    "pyo3-ffi 0.17.2": {
+    "pyo3-ffi 0.17.3": {
       "name": "pyo3-ffi",
-      "version": "0.17.2",
+      "version": "0.17.3",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/pyo3-ffi/0.17.2/download",
-          "sha256": "90352dea4f486932b72ddf776264d293f85b79a1d214de1d023927b41461132d"
+          "url": "https://crates.io/api/v1/crates/pyo3-ffi/0.17.3/download",
+          "sha256": "0f6cb136e222e49115b3c51c32792886defbfb0adead26a688142b346a0b9ffc"
         }
       },
       "targets": [
@@ -4596,14 +4568,14 @@
               "target": "libc"
             },
             {
-              "id": "pyo3-ffi 0.17.2",
+              "id": "pyo3-ffi 0.17.3",
               "target": "build_script_build"
             }
           ],
           "selects": {}
         },
         "edition": "2018",
-        "version": "0.17.2"
+        "version": "0.17.3"
       },
       "build_script_attrs": {
         "data_glob": [
@@ -4612,7 +4584,7 @@
         "deps": {
           "common": [
             {
-              "id": "pyo3-build-config 0.17.2",
+              "id": "pyo3-build-config 0.17.3",
               "target": "pyo3_build_config"
             }
           ],
@@ -4622,13 +4594,13 @@
       },
       "license": "Apache-2.0"
     },
-    "pyo3-macros 0.17.2": {
+    "pyo3-macros 0.17.3": {
       "name": "pyo3-macros",
-      "version": "0.17.2",
+      "version": "0.17.3",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/pyo3-macros/0.17.2/download",
-          "sha256": "7eb24b804a2d9e88bfcc480a5a6dd76f006c1e3edaf064e8250423336e2cd79d"
+          "url": "https://crates.io/api/v1/crates/pyo3-macros/0.17.3/download",
+          "sha256": "94144a1266e236b1c932682136dc35a9dee8d3589728f68130c7c3861ef96b28"
         }
       },
       "targets": [
@@ -4657,7 +4629,7 @@
               "target": "proc_macro2"
             },
             {
-              "id": "pyo3-macros-backend 0.17.2",
+              "id": "pyo3-macros-backend 0.17.3",
               "target": "pyo3_macros_backend"
             },
             {
@@ -4672,17 +4644,17 @@
           "selects": {}
         },
         "edition": "2018",
-        "version": "0.17.2"
+        "version": "0.17.3"
       },
       "license": "Apache-2.0"
     },
-    "pyo3-macros-backend 0.17.2": {
+    "pyo3-macros-backend 0.17.3": {
       "name": "pyo3-macros-backend",
-      "version": "0.17.2",
+      "version": "0.17.3",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/pyo3-macros-backend/0.17.2/download",
-          "sha256": "f22bb49f6a7348c253d7ac67a6875f2dc65f36c2ae64a82c381d528972bea6d6"
+          "url": "https://crates.io/api/v1/crates/pyo3-macros-backend/0.17.3/download",
+          "sha256": "c8df9be978a2d2f0cdebabb03206ed73b11314701a5bfe71b0d753b81997777f"
         }
       },
       "targets": [
@@ -4722,7 +4694,7 @@
           "selects": {}
         },
         "edition": "2018",
-        "version": "0.17.2"
+        "version": "0.17.3"
       },
       "license": "Apache-2.0"
     },
@@ -5644,7 +5616,7 @@
               "target": "crossbeam_utils"
             },
             {
-              "id": "num_cpus 1.13.1",
+              "id": "num_cpus 1.14.0",
               "target": "num_cpus"
             },
             {
@@ -6444,7 +6416,7 @@
               "target": "thread_local"
             },
             {
-              "id": "time 0.3.16",
+              "id": "time 0.3.17",
               "target": "time"
             }
           ],
@@ -6637,13 +6609,13 @@
       },
       "license": "MIT"
     },
-    "target-lexicon 0.12.4": {
+    "target-lexicon 0.12.5": {
       "name": "target-lexicon",
-      "version": "0.12.4",
+      "version": "0.12.5",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/target-lexicon/0.12.4/download",
-          "sha256": "c02424087780c9b71cc96799eaeddff35af2bc513278cda5c99fc1f5d026d3c1"
+          "url": "https://crates.io/api/v1/crates/target-lexicon/0.12.5/download",
+          "sha256": "9410d0f6853b1d94f0e519fb95df60f29d2c1eff2d921ffdf01a4c8a3b54f12d"
         }
       },
       "targets": [
@@ -6683,14 +6655,14 @@
         "deps": {
           "common": [
             {
-              "id": "target-lexicon 0.12.4",
+              "id": "target-lexicon 0.12.5",
               "target": "build_script_build"
             }
           ],
           "selects": {}
         },
         "edition": "2018",
-        "version": "0.12.4"
+        "version": "0.12.5"
       },
       "build_script_attrs": {
         "data_glob": [
@@ -7054,13 +7026,13 @@
       },
       "license": "MIT/Apache-2.0"
     },
-    "time 0.3.16": {
+    "time 0.3.17": {
       "name": "time",
-      "version": "0.3.16",
+      "version": "0.3.17",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/time/0.3.16/download",
-          "sha256": "0fab5c8b9980850e06d92ddbe3ab839c062c801f3927c0fb8abd6fc8e918fbca"
+          "url": "https://crates.io/api/v1/crates/time/0.3.17/download",
+          "sha256": "a561bf4617eebd33bca6434b988f39ed798e527f51a1e797d0ee4f61c0a38376"
         }
       },
       "targets": [
@@ -7121,13 +7093,13 @@
         "proc_macro_deps": {
           "common": [
             {
-              "id": "time-macros 0.2.5",
+              "id": "time-macros 0.2.6",
               "target": "time_macros"
             }
           ],
           "selects": {}
         },
-        "version": "0.3.16"
+        "version": "0.3.17"
       },
       "license": "MIT OR Apache-2.0"
     },
@@ -7164,13 +7136,13 @@
       },
       "license": "MIT OR Apache-2.0"
     },
-    "time-macros 0.2.5": {
+    "time-macros 0.2.6": {
       "name": "time-macros",
-      "version": "0.2.5",
+      "version": "0.2.6",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/time-macros/0.2.5/download",
-          "sha256": "65bb801831d812c562ae7d2bfb531f26e66e4e1f6b17307ba4149c5064710e5b"
+          "url": "https://crates.io/api/v1/crates/time-macros/0.2.6/download",
+          "sha256": "d967f99f534ca7e495c575c62638eebc2898a8c84c119b89e250477bc4ba16b2"
         }
       },
       "targets": [
@@ -7205,7 +7177,7 @@
           "selects": {}
         },
         "edition": "2021",
-        "version": "0.2.5"
+        "version": "0.2.6"
       },
       "license": "MIT OR Apache-2.0"
     },
@@ -9226,7 +9198,6 @@
     "clap 3.2.23"
   ],
   "workspace_members": {
-    "direct-cargo-bazel-deps 0.0.1": "",
     "hello_world 0.1.0": "src/rust/hello_world",
     "num 0.1.0": "src/rust/num",
     "web 0.1.0": "src/rust/web"
