@@ -1,15 +1,13 @@
-extern crate clap;
+use clap::Parser;
+
+#[derive(Parser)]
+struct Cli {
+    #[arg(long)]
+    name: Option<String>,
+}
 
 fn main() {
-    let matches = clap::Command::new("hello_world")
-        .arg(
-            clap::Arg::new("name")
-                .long("name")
-                .help("Name to great")
-                .takes_value(true),
-        )
-        .get_matches();
-
-    let name = matches.value_of("name").unwrap_or("World");
+    let cli = Cli::parse();
+    let name = cli.name.unwrap_or("World".to_string());
     println!("Hello, {}!", name);
 }
