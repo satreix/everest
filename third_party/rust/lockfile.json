@@ -1,5 +1,5 @@
 {
-  "checksum": "1d3dedc04ace76ddda5caa60d090fbd0359bab2d5c6fde1c16ce8cf3a1224abf",
+  "checksum": "b29353bad981d72a3601f85d1c81309c4c17e948bb60b61040a920e7a7188011",
   "crates": {
     "android_system_properties 0.1.5": {
       "name": "android_system_properties",
@@ -571,13 +571,13 @@
       },
       "license": "Unlicense OR MIT"
     },
-    "cc 1.0.74": {
+    "cc 1.0.75": {
       "name": "cc",
-      "version": "1.0.74",
+      "version": "1.0.75",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/cc/1.0.74/download",
-          "sha256": "581f5dba903aac52ea3feb5ec4810848460ee833876f1f9b0fdeab1f19091574"
+          "url": "https://crates.io/api/v1/crates/cc/1.0.75/download",
+          "sha256": "41ca34107f97baef6cfb231b32f36115781856b8f8208e8c580e0bcaea374842"
         }
       },
       "targets": [
@@ -612,7 +612,7 @@
           "**"
         ],
         "edition": "2018",
-        "version": "1.0.74"
+        "version": "1.0.75"
       },
       "license": "MIT OR Apache-2.0"
     },
@@ -1341,13 +1341,13 @@
       },
       "license": "MIT OR Apache-2.0"
     },
-    "cxx 1.0.80": {
+    "cxx 1.0.81": {
       "name": "cxx",
-      "version": "1.0.80",
+      "version": "1.0.81",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/cxx/1.0.80/download",
-          "sha256": "6b7d4e43b25d3c994662706a1d4fcfc32aaa6afd287502c111b237093bb23f3a"
+          "url": "https://crates.io/api/v1/crates/cxx/1.0.81/download",
+          "sha256": "97abf9f0eca9e52b7f81b945524e76710e6cb2366aead23b7d4fbf72e281f888"
         }
       },
       "targets": [
@@ -1389,7 +1389,7 @@
         "deps": {
           "common": [
             {
-              "id": "cxx 1.0.80",
+              "id": "cxx 1.0.81",
               "target": "build_script_build"
             },
             {
@@ -1403,13 +1403,13 @@
         "proc_macro_deps": {
           "common": [
             {
-              "id": "cxxbridge-macro 1.0.80",
+              "id": "cxxbridge-macro 1.0.81",
               "target": "cxxbridge_macro"
             }
           ],
           "selects": {}
         },
-        "version": "1.0.80"
+        "version": "1.0.81"
       },
       "build_script_attrs": {
         "data_glob": [
@@ -1418,11 +1418,11 @@
         "deps": {
           "common": [
             {
-              "id": "cc 1.0.74",
+              "id": "cc 1.0.75",
               "target": "cc"
             },
             {
-              "id": "cxxbridge-flags 1.0.80",
+              "id": "cxxbridge-flags 1.0.81",
               "target": "cxxbridge_flags"
             }
           ],
@@ -1432,13 +1432,13 @@
       },
       "license": "MIT OR Apache-2.0"
     },
-    "cxx-build 1.0.80": {
+    "cxx-build 1.0.81": {
       "name": "cxx-build",
-      "version": "1.0.80",
+      "version": "1.0.81",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/cxx-build/1.0.80/download",
-          "sha256": "84f8829ddc213e2c1368e51a2564c552b65a8cb6a28f31e576270ac81d5e5827"
+          "url": "https://crates.io/api/v1/crates/cxx-build/1.0.81/download",
+          "sha256": "7cc32cc5fea1d894b77d269ddb9f192110069a8a9c1f1d441195fba90553dea3"
         }
       },
       "targets": [
@@ -1463,7 +1463,7 @@
         "deps": {
           "common": [
             {
-              "id": "cc 1.0.74",
+              "id": "cc 1.0.75",
               "target": "cc"
             },
             {
@@ -1494,17 +1494,17 @@
           "selects": {}
         },
         "edition": "2018",
-        "version": "1.0.80"
+        "version": "1.0.81"
       },
       "license": "MIT OR Apache-2.0"
     },
-    "cxxbridge-flags 1.0.80": {
+    "cxxbridge-flags 1.0.81": {
       "name": "cxxbridge-flags",
-      "version": "1.0.80",
+      "version": "1.0.81",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/cxxbridge-flags/1.0.80/download",
-          "sha256": "e72537424b474af1460806647c41d4b6d35d09ef7fe031c5c2fa5766047cc56a"
+          "url": "https://crates.io/api/v1/crates/cxxbridge-flags/1.0.81/download",
+          "sha256": "8ca220e4794c934dc6b1207c3b42856ad4c302f2df1712e9f8d2eec5afaacf1f"
         }
       },
       "targets": [
@@ -1530,17 +1530,17 @@
           "default"
         ],
         "edition": "2018",
-        "version": "1.0.80"
+        "version": "1.0.81"
       },
       "license": "MIT OR Apache-2.0"
     },
-    "cxxbridge-macro 1.0.80": {
+    "cxxbridge-macro 1.0.81": {
       "name": "cxxbridge-macro",
-      "version": "1.0.80",
+      "version": "1.0.81",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/cxxbridge-macro/1.0.80/download",
-          "sha256": "309e4fb93eed90e1e14bea0da16b209f81813ba9fc7830c20ed151dd7bc0a4d7"
+          "url": "https://crates.io/api/v1/crates/cxxbridge-macro/1.0.81/download",
+          "sha256": "b846f081361125bfc8dc9d3940c84e1fd83ba54bbca7b17cd29483c828be0704"
         }
       },
       "targets": [
@@ -1580,7 +1580,7 @@
           "selects": {}
         },
         "edition": "2018",
-        "version": "1.0.80"
+        "version": "1.0.81"
       },
       "license": "MIT OR Apache-2.0"
     },
@@ -2224,7 +2224,7 @@
         "deps": {
           "common": [
             {
-              "id": "cxx 1.0.80",
+              "id": "cxx 1.0.81",
               "target": "cxx"
             },
             {
@@ -2244,7 +2244,7 @@
         "deps": {
           "common": [
             {
-              "id": "cxx-build 1.0.80",
+              "id": "cxx-build 1.0.81",
               "target": "cxx_build"
             }
           ],
@@ -2750,7 +2750,7 @@
         "deps": {
           "common": [
             {
-              "id": "cc 1.0.74",
+              "id": "cc 1.0.75",
               "target": "cc"
             }
           ],
@@ -9323,7 +9323,7 @@
     }
   },
   "binary_crates": [
-    "cc 1.0.74",
+    "cc 1.0.75",
     "clap 4.0.22"
   ],
   "workspace_members": {

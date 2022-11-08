@@ -151,11 +151,11 @@ _packages = {
     },
     "wheel": {
         "hashes": [
-            "sha256:4bdcd7d840138086126cd09254dc6195fb4fc6f01c050a1d7236f2630db1d22a",
-            "sha256:e9a504e793efbca1b8e0e9cb979a249cf4a0a7b5b8c9e8b65a5e39d49529c1c4",
+            "sha256:4066646ef77d0e56cc44004c100381ee1957955cfc3151345dda96886f9896a5",
+            "sha256:f3c99240da8d26989dca2d67a7a431015eb91fb301eecacc6e452133689d9d59",
         ],
-        "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
-        "version": "==0.37.1",
+        "markers": "python_version >= '3.7'",
+        "version": "==0.38.3",
     },
     "yapf": {
         "hashes": [

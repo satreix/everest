@@ -83,6 +83,13 @@ http_archive(
 )
 
 http_archive(
+    name = "com_google_protobuf",
+    sha256 = "9a301cf94a8ddcb380b901e7aac852780b826595075577bb967004050c835056",
+    strip_prefix = "protobuf-3.19.6",
+    urls = ["https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.19.6.tar.gz"],
+)
+
+http_archive(
     name = "fmtlib",
     build_file = "//third_party:cc/fmtlib/BUILD.external",
     sha256 = "5dea48d1fcddc3ec571ce2058e13910a0d4a6bab4cc09a809d8b1dd1c88ae6f2",
@@ -191,6 +198,12 @@ http_archive(
     urls = ["https://github.com/uncrustify/uncrustify/archive/uncrustify-0.70.1.tar.gz"],
 )
 
+load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
+
+rules_proto_dependencies()
+
+rules_proto_toolchains()
+
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
 go_rules_dependencies()
@@ -230,12 +243,6 @@ python_dependencies(
     python_interpreter_target = interpreter,
 )
 
-load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
-
-rules_proto_dependencies()
-
-rules_proto_toolchains()
-
 load("@rules_rust//rust:repositories.bzl", "rules_rust_dependencies", "rust_register_toolchains")
 
 rules_rust_dependencies()
@@ -270,26 +277,13 @@ load("@crate_index//:defs.bzl", "crate_repositories")
 
 crate_repositories()
 
-load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS", "IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS", "grpc_java_repositories")
-load("@rules_jvm_external//:defs.bzl", "maven_install")
+load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
 
-# View installed things:
-# bazel query @maven//:all --output=build
-maven_install(
-    artifacts = [
-        "com.google.googlejavaformat:google-java-format:1.7",
-        "commons-cli:commons-cli:1.4",
-    ] + IO_GRPC_GRPC_JAVA_ARTIFACTS,
-    fail_if_repin_required = True,
-    generate_compat_repositories = True,
-    maven_install_json = "@everest//third_party/java:maven_install.json",
-    override_targets = IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS,
-    repositories = [
-        "https://jcenter.bintray.com/",
-        "https://maven.google.com",
-        "https://repo1.maven.org/maven2",
-    ],
-)
+grpc_java_repositories()
+
+load("//third_party/java:maven_install.bzl", "maven_install")
+
+maven_install()
 
 load("@maven//:compat.bzl", "compat_repositories")
 
@@ -315,8 +309,6 @@ java_format(
 load("@rules_antlr//antlr:repositories.bzl", "rules_antlr_dependencies")
 
 rules_antlr_dependencies("4.10.1")
-
-grpc_java_repositories()
 
 load("@openapi_tools_generator_bazel//:defs.bzl", "openapi_tools_generator_bazel_repositories")
 
@@ -383,13 +375,6 @@ rules_haskell_toolchains(
     version = "8.10.7",
 )
 
-load("@rules_haskell//haskell:cabal.bzl", "stack_snapshot")
+load("//third_party/haskell:stack_snapshot.bzl", "stack_snapshot")
 
-stack_snapshot(
-    name = "stackage",
-    packages = [
-        "optparse-applicative",
-    ],
-    snapshot = "lts-18.18",
-    stack_snapshot_json = "//third_party/haskell:stackage_snapshot.json",
-)
+stack_snapshot()
