@@ -102,14 +102,14 @@ def main():
     out = _HEAD.format(ns=args.namespace, input_file=args.input)
     out += '\n_packages = {\n'
     for k, v in data(lock):
-        out += f"    '{_clean_name(k)}': {{\n"
-        out += f"        \"version\": \"{v['version']}\",\n"
+        out += f"    \"{_clean_name(k)}\": {{\n"
         out += "        \"hashes\": [\n"
         for hash in v['hashes']:
             out += f"            \"{hash}\",\n"
         out += "        ],\n"
         if 'markers' in v.keys():
             out += f"        \"markers\": \"{v['markers']}\",\n"
+        out += f"        \"version\": \"{v['version']}\",\n"
         out += "    },\n"
     out += '}\n\n'
     out += _STUB.format(ns=args.namespace)
