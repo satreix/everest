@@ -26,9 +26,9 @@ http_archive(
         # A fix for https://github.com/bazelruby/rules_ruby/issues/79
         "//third_party:bazelruby_rules_ruby.patch",
     ],
-    sha256 = "f095c2f5db5912728aab29c766329d427e7cf826933d4c07ac142d87a35cb99d",
-    strip_prefix = "rules_ruby-adbf24a9d16f5e1ef3f87216aa56eb0347f5b319",
-    urls = ["https://github.com/bazelruby/rules_ruby/archive/adbf24a9d16f5e1ef3f87216aa56eb0347f5b319.tar.gz"],
+    sha256 = "7c0da7ac6a89c980ad5fb9b815bb254bd06c153a774857bfc37bb4b90de769d8",
+    strip_prefix = "rules_ruby-0a3275b235dd4093a2a44e2f08d96a9f07ecbe0a",
+    urls = ["https://github.com/bazelruby/rules_ruby/archive/0a3275b235dd4093a2a44e2f08d96a9f07ecbe0a.tar.gz"],
 )
 
 http_archive(
