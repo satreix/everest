@@ -1,5 +1,5 @@
 {
-  "checksum": "b29353bad981d72a3601f85d1c81309c4c17e948bb60b61040a920e7a7188011",
+  "checksum": "711109da8afa00641f1ef37eb81824ac47f1bc6343ae069bda53f9177760c048",
   "crates": {
     "android_system_properties 0.1.5": {
       "name": "android_system_properties",
@@ -571,13 +571,13 @@
       },
       "license": "Unlicense OR MIT"
     },
-    "cc 1.0.75": {
+    "cc 1.0.76": {
       "name": "cc",
-      "version": "1.0.75",
+      "version": "1.0.76",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/cc/1.0.75/download",
-          "sha256": "41ca34107f97baef6cfb231b32f36115781856b8f8208e8c580e0bcaea374842"
+          "url": "https://crates.io/api/v1/crates/cc/1.0.76/download",
+          "sha256": "76a284da2e6fe2092f2353e51713435363112dfd60030e22add80be333fb928f"
         }
       },
       "targets": [
@@ -612,7 +612,7 @@
           "**"
         ],
         "edition": "2018",
-        "version": "1.0.75"
+        "version": "1.0.76"
       },
       "license": "MIT OR Apache-2.0"
     },
@@ -649,13 +649,13 @@
       },
       "license": "MIT/Apache-2.0"
     },
-    "chrono 0.4.22": {
+    "chrono 0.4.23": {
       "name": "chrono",
-      "version": "0.4.22",
+      "version": "0.4.23",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/chrono/0.4.22/download",
-          "sha256": "bfd4d1b31faaa3a89d7934dbded3111da0d2ef28e3ebccdb4f0179f5929d1ef1"
+          "url": "https://crates.io/api/v1/crates/chrono/0.4.23/download",
+          "sha256": "16b0a3d9ed01224b22057780a37bb8c5dbfe1be8ba48678e7bf57ec4b385411f"
         }
       },
       "targets": [
@@ -728,17 +728,17 @@
           }
         },
         "edition": "2018",
-        "version": "0.4.22"
+        "version": "0.4.23"
       },
       "license": "MIT/Apache-2.0"
     },
-    "clap 4.0.22": {
+    "clap 4.0.23": {
       "name": "clap",
-      "version": "4.0.22",
+      "version": "4.0.23",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/clap/4.0.22/download",
-          "sha256": "91b9970d7505127a162fdaa9b96428d28a479ba78c9ec7550a63a5d9863db682"
+          "url": "https://crates.io/api/v1/crates/clap/4.0.23/download",
+          "sha256": "0eb41c13df48950b20eb4cd0eefa618819469df1bffc49d11e8487c4ba0037e5"
         }
       },
       "targets": [
@@ -821,7 +821,7 @@
           ],
           "selects": {}
         },
-        "version": "4.0.22"
+        "version": "4.0.23"
       },
       "license": "MIT OR Apache-2.0"
     },
@@ -917,7 +917,7 @@
         "deps": {
           "common": [
             {
-              "id": "os_str_bytes 6.3.1",
+              "id": "os_str_bytes 6.4.0",
               "target": "os_str_bytes"
             }
           ],
@@ -1418,7 +1418,7 @@
         "deps": {
           "common": [
             {
-              "id": "cc 1.0.75",
+              "id": "cc 1.0.76",
               "target": "cc"
             },
             {
@@ -1463,7 +1463,7 @@
         "deps": {
           "common": [
             {
-              "id": "cc 1.0.75",
+              "id": "cc 1.0.76",
               "target": "cc"
             },
             {
@@ -1872,7 +1872,7 @@
         "deps": {
           "common": [
             {
-              "id": "clap 4.0.22",
+              "id": "clap 4.0.23",
               "target": "clap"
             }
           ],
@@ -2440,7 +2440,7 @@
         "deps": {
           "common": [
             {
-              "id": "chrono 0.4.22",
+              "id": "chrono 0.4.23",
               "target": "chrono"
             },
             {
@@ -2750,7 +2750,7 @@
         "deps": {
           "common": [
             {
-              "id": "cc 1.0.75",
+              "id": "cc 1.0.76",
               "target": "cc"
             }
           ],
@@ -3778,13 +3778,13 @@
       },
       "license": "MIT OR Apache-2.0"
     },
-    "os_str_bytes 6.3.1": {
+    "os_str_bytes 6.4.0": {
       "name": "os_str_bytes",
-      "version": "6.3.1",
+      "version": "6.4.0",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/os_str_bytes/6.3.1/download",
-          "sha256": "3baf96e39c5359d2eb0dd6ccb42c62b91d9678aa68160d261b9e0ccbf9e9dea9"
+          "url": "https://crates.io/api/v1/crates/os_str_bytes/6.4.0/download",
+          "sha256": "7b5bf27447411e9ee3ff51186bf7a08e16c341efdde93f4d823e8844429bed7e"
         }
       },
       "targets": [
@@ -3810,7 +3810,7 @@
           "raw_os_str"
         ],
         "edition": "2021",
-        "version": "6.3.1"
+        "version": "6.4.0"
       },
       "license": "MIT OR Apache-2.0"
     },
@@ -9323,8 +9323,8 @@
     }
   },
   "binary_crates": [
-    "cc 1.0.75",
-    "clap 4.0.22"
+    "cc 1.0.76",
+    "clap 4.0.23"
   ],
   "workspace_members": {
     "hello_world 0.1.0": "src/rust/hello_world",
