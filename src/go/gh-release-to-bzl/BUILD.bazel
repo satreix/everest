@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "gh-release-to-bzl_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/satreix/everest/src/go/gh-release-to-bzl",
+    visibility = ["//visibility:private"],
+    deps = ["@com_github_google_go_github_v48//github"],
+)
+
+go_binary(
+    name = "gh-release-to-bzl",
+    embed = [":gh-release-to-bzl_lib"],
+    visibility = ["//visibility:public"],
+)
