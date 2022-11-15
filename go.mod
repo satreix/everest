@@ -4,6 +4,8 @@ go 1.19
 
 require (
 	github.com/antlr/antlr4/runtime/Go/antlr v1.4.10
+	github.com/bazel-contrib/target-determinator v0.16.0
+	github.com/bazelbuild/bazel-gazelle v0.29.0
 	github.com/bazelbuild/rules_go v0.38.1
 	github.com/google/cel-go v0.13.0
 	github.com/google/go-cmp v0.5.9
@@ -27,6 +29,7 @@ require (
 
 require (
 	github.com/ProtonMail/go-crypto v0.0.0-20230217124315-7d5c6f04bbb8 // indirect
+	github.com/aristanetworks/goarista v0.0.0-20220211174905-526022c8b178 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/cloudflare/circl v1.1.0 // indirect
@@ -41,7 +44,12 @@ require (
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/prometheus/procfs v0.8.0 // indirect
 	github.com/stoewer/go-strcase v1.2.0 // indirect
+	github.com/tidwall/gjson v1.14.0 // indirect
+	github.com/tidwall/match v1.1.1 // indirect
+	github.com/tidwall/pretty v1.2.0 // indirect
+	github.com/wI2L/jsondiff v0.2.0 // indirect
 	golang.org/x/crypto v0.7.0 // indirect
+	golang.org/x/exp v0.0.0-20220328175248-053ad81199eb // indirect
 	golang.org/x/net v0.8.0 // indirect
 	golang.org/x/oauth2 v0.6.0 // indirect
 	golang.org/x/sys v0.6.0 // indirect

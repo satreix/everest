@@ -38,4 +38,6 @@ jobs:
         run: ./tools/ci/install_bazelisk.sh v1.16.0 ${{ matrix.os }}
 
       - name: Test
-        run: ./bin/bazel test --remote_header=x-buildbuddy-api-key=${{ secrets.BUILDBUDDY_API_KEY }} //...
+        env:
+          BUILDBUDDY_API_KEY: ${{ secrets.BUILDBUDDY_API_KEY }}
+        run: ./tools/ci/pr.sh

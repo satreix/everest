@@ -1,5 +1,8 @@
+# Genrules exist to support finding the binaries with:
+# bazel cquery --output=files //tools/target-determinator:driver_gen
+
 alias(
-    name = "driver",
+    name = "driver_alias",
     actual = select({
         "@bazel_tools//src/conditions:darwin_arm64": "@target_determinator_driver_darwin_arm64//file:downloaded",
         "@bazel_tools//src/conditions:darwin_x86_64": "@target_determinator_driver_darwin_x86_64//file:downloaded",
@@ -8,12 +11,26 @@ alias(
     }),
 )
 
+genrule(
+    name = "driver_gen",
+    srcs = [":driver_alias"],
+    outs = ["driver"],
+    cmd = "cp $(location :driver_alias) $@",
+)
+
 alias(
-    name = "target-determinator",
+    name = "target-determinator_alias",
     actual = select({
         "@bazel_tools//src/conditions:darwin_arm64": "@target_determinator_darwin_arm64//file:downloaded",
         "@bazel_tools//src/conditions:darwin_x86_64": "@target_determinator_darwin_x86_64//file:downloaded",
         "@bazel_tools//src/conditions:linux_aarch64": "@target_determinator_linux_aarch64//file:downloaded",
         "@bazel_tools//src/conditions:linux_x86_64": "@target_determinator_linux_x86_64//file:downloaded",
     }),
+)
+
+genrule(
+    name = "target-determinator_gen",
+    srcs = [":target-determinator_alias"],
+    outs = ["target-determinator"],
+    cmd = "cp $(location :target-determinator_alias) $@",
 )
