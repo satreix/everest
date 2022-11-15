@@ -462,6 +462,8 @@ load("@io_bazel_rules_docker//go:image.bzl", _go_image_repos = "repositories")
 
 _go_image_repos()
 
-load("//tools/target-determinator:td.bzl", "driver_deps")
+load("//tools/target-determinator:td.bzl", "driver_deps", "target_determinator_deps")
 
 driver_deps()
+
+target_determinator_deps()

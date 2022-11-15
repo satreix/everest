@@ -1,0 +1,19 @@
+alias(
+    name = "driver",
+    actual = select({
+        "@bazel_tools//src/conditions:darwin_arm64": "@target_determinator_driver_darwin_arm64//file:downloaded",
+        "@bazel_tools//src/conditions:darwin_x86_64": "@target_determinator_driver_darwin_x86_64//file:downloaded",
+        "@bazel_tools//src/conditions:linux_aarch64": "@target_determinator_driver_linux_aarch64//file:downloaded",
+        "@bazel_tools//src/conditions:linux_x86_64": "@target_determinator_driver_linux_x86_64//file:downloaded",
+    }),
+)
+
+alias(
+    name = "target-determinator",
+    actual = select({
+        "@bazel_tools//src/conditions:darwin_arm64": "@target_determinator_darwin_arm64//file:downloaded",
+        "@bazel_tools//src/conditions:darwin_x86_64": "@target_determinator_darwin_x86_64//file:downloaded",
+        "@bazel_tools//src/conditions:linux_aarch64": "@target_determinator_linux_aarch64//file:downloaded",
+        "@bazel_tools//src/conditions:linux_x86_64": "@target_determinator_linux_x86_64//file:downloaded",
+    }),
+)

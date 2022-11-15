@@ -233,12 +233,6 @@ def go_dependencies():
         version = "v0.5.9",
     )
     go_repository(
-        name = "com_github_google_go_github_v48",
-        importpath = "github.com/google/go-github/v48",
-        sum = "h1:68puzySE6WqUY9KWmpOsDEQfDZsso98rT6pZcz9HqcE=",
-        version = "v48.2.0",
-    )
-    go_repository(
         name = "com_github_google_go_github_v50",
         importpath = "github.com/google/go-github/v50",
         sum = "h1:j2FyongEHlO9nxXLc+LP3wuBSVU9mVxfpdYUexMpIfk=",
