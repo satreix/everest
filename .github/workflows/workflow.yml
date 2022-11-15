@@ -4,10 +4,9 @@ on:
   push:
     branches:
       - main
-      - release-*
-    tags:
-      - '*.*.*'
   pull_request:
+    branches:
+      - main
 
 jobs:
   check:
@@ -20,7 +19,14 @@ jobs:
     name: check - (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
+      - name: 'PR commits + 1'
+        run: echo "PR_FETCH_DEPTH=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "${GITHUB_ENV}"
+
+      - name: 'Checkout PR branch and PR commits'
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: ${{ env.PR_FETCH_DEPTH }}
 
       # https://github.com/tweag/rules_haskell/issues/704
       - name: "[Haskell] Install required packages"
