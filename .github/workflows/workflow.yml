@@ -39,5 +39,6 @@ jobs:
 
       - name: Test
         env:
+          BASE_REF: ${{ github.event.pull_request.base.sha }}
           BUILDBUDDY_API_KEY: ${{ secrets.BUILDBUDDY_API_KEY }}
         run: ./tools/ci/pr.sh
