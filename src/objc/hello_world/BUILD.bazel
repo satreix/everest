@@ -1,0 +1,14 @@
+load("@rules_cc//cc:defs.bzl", "cc_binary", "objc_library")
+
+objc_library(
+    name = "hello_world_lib",
+    srcs = ["main.m"],
+    sdk_frameworks = [
+        "Foundation",
+    ],
+)
+
+cc_binary(
+    name = "hello_world",
+    deps = [":hello_world_lib"],
+)
