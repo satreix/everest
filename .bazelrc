@@ -1,7 +1,7 @@
 build --cxxopt='-std=c++17'
 
 # Ensure rules_haskell picks up the correct toolchain on Mac.
-build --action_env=BAZEL_USE_CPP_ONLY_TOOLCHAIN=1
+#build --action_env=BAZEL_USE_CPP_ONLY_TOOLCHAIN=1
 
 build --java_language_version=17
 build --java_runtime_version=remotejdk_17

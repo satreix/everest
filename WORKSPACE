@@ -15,6 +15,12 @@ http_archive(
 )
 
 http_archive(
+    name = "build_bazel_rules_swift",
+    sha256 = "bf2861de6bf75115288468f340b0c4609cc99cc1ccc7668f0f71adfd853eedb3",
+    url = "https://github.com/bazelbuild/rules_swift/releases/download/1.7.1/rules_swift.1.7.1.tar.gz",
+)
+
+http_archive(
     name = "bazelruby_rules_ruby",
     patch_args = ["-p1"],
     patches = [
@@ -480,3 +486,11 @@ k8s_defaults(
     cluster = "satreix",
     kind = "deployment",
 )
+
+load("@build_bazel_rules_swift//swift:repositories.bzl", "swift_rules_dependencies")
+
+swift_rules_dependencies()
+
+load("@build_bazel_rules_swift//swift:extras.bzl", "swift_rules_extra_dependencies")
+
+swift_rules_extra_dependencies()
