@@ -83,13 +83,6 @@ http_archive(
 )
 
 http_archive(
-    name = "com_google_protobuf",
-    sha256 = "9a301cf94a8ddcb380b901e7aac852780b826595075577bb967004050c835056",
-    strip_prefix = "protobuf-3.19.6",
-    urls = ["https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.19.6.tar.gz"],
-)
-
-http_archive(
     name = "fmtlib",
     build_file = "//third_party:cc/fmtlib/BUILD.external",
     sha256 = "5dea48d1fcddc3ec571ce2058e13910a0d4a6bab4cc09a809d8b1dd1c88ae6f2",
