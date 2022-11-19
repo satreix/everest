@@ -1,5 +1,5 @@
 {
-  "checksum": "711109da8afa00641f1ef37eb81824ac47f1bc6343ae069bda53f9177760c048",
+  "checksum": "d5e97cc2d01207a97c3fd2536e9d819f190ee4995c65264702b9691eee65b9d7",
   "crates": {
     "android_system_properties 0.1.5": {
       "name": "android_system_properties",
@@ -732,13 +732,13 @@
       },
       "license": "MIT/Apache-2.0"
     },
-    "clap 4.0.23": {
+    "clap 4.0.26": {
       "name": "clap",
-      "version": "4.0.23",
+      "version": "4.0.26",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/clap/4.0.23/download",
-          "sha256": "0eb41c13df48950b20eb4cd0eefa618819469df1bffc49d11e8487c4ba0037e5"
+          "url": "https://crates.io/api/v1/crates/clap/4.0.26/download",
+          "sha256": "2148adefda54e14492fb9bddcc600b4344c5d1a3123bd666dcb939c6f0e0e57e"
         }
       },
       "targets": [
@@ -821,7 +821,7 @@
           ],
           "selects": {}
         },
-        "version": "4.0.23"
+        "version": "4.0.26"
       },
       "license": "MIT OR Apache-2.0"
     },
@@ -1341,13 +1341,13 @@
       },
       "license": "MIT OR Apache-2.0"
     },
-    "cxx 1.0.81": {
+    "cxx 1.0.82": {
       "name": "cxx",
-      "version": "1.0.81",
+      "version": "1.0.82",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/cxx/1.0.81/download",
-          "sha256": "97abf9f0eca9e52b7f81b945524e76710e6cb2366aead23b7d4fbf72e281f888"
+          "url": "https://crates.io/api/v1/crates/cxx/1.0.82/download",
+          "sha256": "d4a41a86530d0fe7f5d9ea779916b7cadd2d4f9add748b99c2c029cbbdfaf453"
         }
       },
       "targets": [
@@ -1389,7 +1389,7 @@
         "deps": {
           "common": [
             {
-              "id": "cxx 1.0.81",
+              "id": "cxx 1.0.82",
               "target": "build_script_build"
             },
             {
@@ -1403,13 +1403,13 @@
         "proc_macro_deps": {
           "common": [
             {
-              "id": "cxxbridge-macro 1.0.81",
+              "id": "cxxbridge-macro 1.0.82",
               "target": "cxxbridge_macro"
             }
           ],
           "selects": {}
         },
-        "version": "1.0.81"
+        "version": "1.0.82"
       },
       "build_script_attrs": {
         "data_glob": [
@@ -1422,7 +1422,7 @@
               "target": "cc"
             },
             {
-              "id": "cxxbridge-flags 1.0.81",
+              "id": "cxxbridge-flags 1.0.82",
               "target": "cxxbridge_flags"
             }
           ],
@@ -1432,13 +1432,13 @@
       },
       "license": "MIT OR Apache-2.0"
     },
-    "cxx-build 1.0.81": {
+    "cxx-build 1.0.82": {
       "name": "cxx-build",
-      "version": "1.0.81",
+      "version": "1.0.82",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/cxx-build/1.0.81/download",
-          "sha256": "7cc32cc5fea1d894b77d269ddb9f192110069a8a9c1f1d441195fba90553dea3"
+          "url": "https://crates.io/api/v1/crates/cxx-build/1.0.82/download",
+          "sha256": "06416d667ff3e3ad2df1cd8cd8afae5da26cf9cec4d0825040f88b5ca659a2f0"
         }
       },
       "targets": [
@@ -1494,17 +1494,17 @@
           "selects": {}
         },
         "edition": "2018",
-        "version": "1.0.81"
+        "version": "1.0.82"
       },
       "license": "MIT OR Apache-2.0"
     },
-    "cxxbridge-flags 1.0.81": {
+    "cxxbridge-flags 1.0.82": {
       "name": "cxxbridge-flags",
-      "version": "1.0.81",
+      "version": "1.0.82",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/cxxbridge-flags/1.0.81/download",
-          "sha256": "8ca220e4794c934dc6b1207c3b42856ad4c302f2df1712e9f8d2eec5afaacf1f"
+          "url": "https://crates.io/api/v1/crates/cxxbridge-flags/1.0.82/download",
+          "sha256": "820a9a2af1669deeef27cb271f476ffd196a2c4b6731336011e0ba63e2c7cf71"
         }
       },
       "targets": [
@@ -1530,17 +1530,17 @@
           "default"
         ],
         "edition": "2018",
-        "version": "1.0.81"
+        "version": "1.0.82"
       },
       "license": "MIT OR Apache-2.0"
     },
-    "cxxbridge-macro 1.0.81": {
+    "cxxbridge-macro 1.0.82": {
       "name": "cxxbridge-macro",
-      "version": "1.0.81",
+      "version": "1.0.82",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/cxxbridge-macro/1.0.81/download",
-          "sha256": "b846f081361125bfc8dc9d3940c84e1fd83ba54bbca7b17cd29483c828be0704"
+          "url": "https://crates.io/api/v1/crates/cxxbridge-macro/1.0.82/download",
+          "sha256": "a08a6e2fcc370a089ad3b4aaf54db3b1b4cee38ddabce5896b33eb693275f470"
         }
       },
       "targets": [
@@ -1580,7 +1580,7 @@
           "selects": {}
         },
         "edition": "2018",
-        "version": "1.0.81"
+        "version": "1.0.82"
       },
       "license": "MIT OR Apache-2.0"
     },
@@ -1872,7 +1872,7 @@
         "deps": {
           "common": [
             {
-              "id": "clap 4.0.23",
+              "id": "clap 4.0.26",
               "target": "clap"
             }
           ],
@@ -2224,7 +2224,7 @@
         "deps": {
           "common": [
             {
-              "id": "cxx 1.0.81",
+              "id": "cxx 1.0.82",
               "target": "cxx"
             },
             {
@@ -2244,7 +2244,7 @@
         "deps": {
           "common": [
             {
-              "id": "cxx-build 1.0.81",
+              "id": "cxx-build 1.0.82",
               "target": "cxx_build"
             }
           ],
@@ -3490,7 +3490,7 @@
               "target": "pyo3"
             },
             {
-              "id": "rayon 1.5.3",
+              "id": "rayon 1.6.0",
               "target": "rayon"
             }
           ],
@@ -5643,13 +5643,13 @@
       },
       "license": "MIT/Apache-2.0"
     },
-    "rayon 1.5.3": {
+    "rayon 1.6.0": {
       "name": "rayon",
-      "version": "1.5.3",
+      "version": "1.6.0",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/rayon/1.5.3/download",
-          "sha256": "bd99e5772ead8baa5215278c9b15bf92087709e9c1b2d1f97cdb5a183c933a7d"
+          "url": "https://crates.io/api/v1/crates/rayon/1.6.0/download",
+          "sha256": "1e060280438193c554f654141c9ea9417886713b7acd75974c85b18a69a88e0b"
         }
       },
       "targets": [
@@ -5657,18 +5657,6 @@
           "Library": {
             "crate_name": "rayon",
             "crate_root": "src/lib.rs",
-            "srcs": {
-              "include": [
-                "**/*.rs"
-              ],
-              "exclude": []
-            }
-          }
-        },
-        {
-          "BuildScript": {
-            "crate_name": "build_script_build",
-            "crate_root": "build.rs",
             "srcs": {
               "include": [
                 "**/*.rs"
@@ -5694,42 +5682,24 @@
               "target": "either"
             },
             {
-              "id": "rayon 1.5.3",
-              "target": "build_script_build"
-            },
-            {
-              "id": "rayon-core 1.9.3",
+              "id": "rayon-core 1.10.1",
               "target": "rayon_core"
             }
           ],
           "selects": {}
         },
-        "edition": "2018",
-        "version": "1.5.3"
-      },
-      "build_script_attrs": {
-        "data_glob": [
-          "**"
-        ],
-        "deps": {
-          "common": [
-            {
-              "id": "autocfg 1.1.0",
-              "target": "autocfg"
-            }
-          ],
-          "selects": {}
-        }
+        "edition": "2021",
+        "version": "1.6.0"
       },
       "license": "MIT OR Apache-2.0"
     },
-    "rayon-core 1.9.3": {
+    "rayon-core 1.10.1": {
       "name": "rayon-core",
-      "version": "1.9.3",
+      "version": "1.10.1",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/rayon-core/1.9.3/download",
-          "sha256": "258bcdb5ac6dad48491bb2992db6b7cf74878b0384908af124823d118c99683f"
+          "url": "https://crates.io/api/v1/crates/rayon-core/1.10.1/download",
+          "sha256": "cac410af5d00ab6884528b4ab69d1e8e146e8d471201800fa1b4524126de6ad3"
         }
       },
       "targets": [
@@ -5782,14 +5752,14 @@
               "target": "num_cpus"
             },
             {
-              "id": "rayon-core 1.9.3",
+              "id": "rayon-core 1.10.1",
               "target": "build_script_build"
             }
           ],
           "selects": {}
         },
-        "edition": "2018",
-        "version": "1.9.3"
+        "edition": "2021",
+        "version": "1.10.1"
       },
       "build_script_attrs": {
         "data_glob": [
@@ -9324,7 +9294,7 @@
   },
   "binary_crates": [
     "cc 1.0.76",
-    "clap 4.0.23"
+    "clap 4.0.26"
   ],
   "workspace_members": {
     "hello_world 0.1.0": "src/rust/hello_world",
