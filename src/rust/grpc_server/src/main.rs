@@ -2,8 +2,6 @@ extern crate grpc;
 
 extern crate helloworld_rust_grpc;
 
-// use std::env;
-// use std::str::FromStr;
 use std::thread;
 
 use helloworld_rust_grpc::*;

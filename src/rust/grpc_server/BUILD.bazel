@@ -1,7 +1,6 @@
-load("@rules_proto//proto:defs.bzl", "proto_library")
-load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
 load("@rules_rust//rust:defs.bzl", "rust_binary")
 load("@rules_rust//proto:toolchain.bzl", "GRPC_COMPILE_DEPS")
+load("@bazel_skylib//rules:build_test.bzl", "build_test")
 
 rust_binary(
     name = "grpc_server",
@@ -13,16 +12,7 @@ rust_binary(
     ],
 )
 
-proto_library(
-    name = "hello_proto",
-    srcs = ["hello.proto"],
-    visibility = ["//visibility:public"],
-)
-
-go_proto_library(
-    name = "hello_go_proto",
-    compilers = ["@io_bazel_rules_go//proto:go_grpc"],
-    importpath = "github.com/satreix/everest/src/rust/grpc_server",
-    proto = ":hello_proto",
-    visibility = ["//visibility:public"],
+build_test(
+    name = "grpc_server_build_test",
+    targets = [":grpc_server"],
 )
