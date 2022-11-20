@@ -1,0 +1,18 @@
+load("@rules_rust//rust:defs.bzl", "rust_binary")
+load("@rules_rust//proto:toolchain.bzl", "GRPC_COMPILE_DEPS")
+load("@bazel_skylib//rules:build_test.bzl", "build_test")
+
+rust_binary(
+    name = "grpc_server",
+    srcs = ["src/main.rs"],
+    # We use the grpc crate from rules_rust instead of cargo to use the same
+    # version as the code which generated the rust code from protobuf.
+    deps = GRPC_COMPILE_DEPS + [
+        "//src/proto/helloworld:helloworld_rust_grpc",
+    ],
+)
+
+build_test(
+    name = "grpc_server_build_test",
+    targets = [":grpc_server"],
+)
