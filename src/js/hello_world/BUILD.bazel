@@ -1,0 +1,13 @@
+load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
+load("//tools/test/binary:binary.bzl", "binary_test")
+
+nodejs_binary(
+    name = "hello_world",
+    data = ["@npm//commander"],
+    entry_point = "hello_world.js",
+)
+
+binary_test(
+    name = "hello_world_test",
+    binary = ":hello_world",
+)

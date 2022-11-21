@@ -3,8 +3,8 @@ load("@npm//@bazel/typescript:index.bzl", "ts_project")
 load("//tools/test/binary:binary.bzl", "binary_test")
 
 ts_project(
-    name = "helloworld_lib",
-    srcs = ["main.ts"],
+    name = "hello_world_lib",
+    srcs = ["hello_world.ts"],
     tsconfig = {
         "compilerOptions": {},
     },
@@ -14,12 +14,12 @@ ts_project(
 )
 
 nodejs_binary(
-    name = "helloworld",
-    data = [":helloworld_lib"],
-    entry_point = ":main.ts",
+    name = "hello_world",
+    data = [":hello_world_lib"],
+    entry_point = ":hello_world.ts",
 )
 
 binary_test(
-    name = "helloworld_test",
-    binary = ":helloworld",
+    name = "hello_world_test",
+    binary = ":hello_world",
 )
