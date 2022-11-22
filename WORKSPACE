@@ -161,6 +161,13 @@ http_archive(
 )
 
 http_archive(
+    name = "rules_perl",
+    sha256 = "7d4e17a5850446388ab74a3d884d80731d45931aa6ac93edb9efbd500628fdcb",
+    strip_prefix = "rules_perl-022b8daf2bb4836ac7a50e4a1d8ea056a3e1e403",
+    urls = ["https://github.com/bazelbuild/rules_perl/archive/022b8daf2bb4836ac7a50e4a1d8ea056a3e1e403.tar.gz"],
+)
+
+http_archive(
     name = "rules_proto",
     sha256 = "66bfdf8782796239d3875d37e7de19b1d94301e8972b3cbd2446b332429b4df1",
     strip_prefix = "rules_proto-4.0.0",
@@ -380,3 +387,9 @@ rules_haskell_toolchains(
 load("//third_party/haskell:stack_snapshot.bzl", "stack_snapshot")
 
 stack_snapshot()
+
+load("@rules_perl//perl:deps.bzl", "perl_register_toolchains", "perl_rules_dependencies")
+
+perl_rules_dependencies()
+
+perl_register_toolchains()
