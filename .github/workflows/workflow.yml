@@ -31,6 +31,3 @@ jobs:
 
       - name: Test
         run: ./bin/bazel test --remote_header=x-buildbuddy-api-key=${{ secrets.BUILDBUDDY_API_KEY }} //...
-
-      - name: Build
-        run: ./bin/bazel build --remote_header=x-buildbuddy-api-key=${{ secrets.BUILDBUDDY_API_KEY }} //...
