@@ -105,9 +105,11 @@ http_archive(
 
 http_archive(
     name = "io_kythe",
-    sha256 = "87d33be2bcb6c0b9de492bb31160dcbeabaf6d80ede405c850b2b8b3b70ea8dd",
-    strip_prefix = "kythe-0.0.60",
-    url = "https://github.com/kythe/kythe/archive/refs/tags/v0.0.60.tar.gz",
+    sha256 = "abeedcc20f66f55df321037b5b02f784866ba47615737fdd22a3aa2bc21dfdb9",
+    strip_prefix = "kythe-e0c175abd566ba956c935635b49f924333635cda",
+    url = "https://github.com/kythe/kythe/archive/e0c175abd566ba956c935635b49f924333635cda.tar.gz",
+    patches = ["//third_party:io_kythe.patch"],
+    patch_args = ["-p1"],
 )
 
 http_archive(
