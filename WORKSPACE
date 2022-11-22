@@ -104,6 +104,13 @@ http_archive(
 )
 
 http_archive(
+    name = "io_kythe",
+    sha256 = "87d33be2bcb6c0b9de492bb31160dcbeabaf6d80ede405c850b2b8b3b70ea8dd",
+    strip_prefix = "kythe-0.0.60",
+    url = "https://github.com/kythe/kythe/archive/refs/tags/v0.0.60.tar.gz",
+)
+
+http_archive(
     name = "jq",
     build_file = "//tools/jq:jq.BUILD.bazel",
     sha256 = "998c41babeb57b4304e65b4eb73094279b3ab1e63801b6b4bddd487ce009b39d",
@@ -203,13 +210,6 @@ load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_
 rules_proto_dependencies()
 
 rules_proto_toolchains()
-
-http_archive(
-    name = "io_kythe",
-    sha256 = "cf48b6425486ef2e038015b1c1aa12183f7a7e0f170ad14418dd3fc85a98b348",
-    strip_prefix = "kythe-v0.0.58",
-    url = "https://github.com/kythe/kythe/releases/download/v0.0.58/kythe-v0.0.58.tar.gz",
-)
 
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
@@ -400,3 +400,16 @@ load("@rules_perl//perl:deps.bzl", "perl_register_toolchains", "perl_rules_depen
 perl_rules_dependencies()
 
 perl_register_toolchains()
+
+load("@io_kythe//:setup.bzl", "kythe_rule_repositories")
+
+kythe_rule_repositories()
+
+load("@io_kythe//:external.bzl", "kythe_dependencies")
+
+kythe_dependencies()
+
+bind(
+    name = "vnames_config",
+    actual = "@io_kythe//kythe/data:vnames_config",
+)
