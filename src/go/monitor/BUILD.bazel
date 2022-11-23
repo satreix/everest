@@ -1,0 +1,29 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library", "go_test")
+
+go_library(
+    name = "monitor_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/satreix/everest/src/go/monitor",
+    visibility = ["//visibility:private"],
+    deps = [
+        "@com_github_prometheus_client_golang//prometheus",
+        "@com_github_prometheus_client_golang//prometheus/promauto",
+        "@com_github_prometheus_client_golang//prometheus/promhttp",
+    ],
+)
+
+go_binary(
+    name = "monitor",
+    embed = [":monitor_lib"],
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "monitor_test",
+    srcs = ["main_test.go"],
+    embed = [":monitor_lib"],
+    deps = [
+        "@com_github_prometheus_client_model//go",
+        "@com_github_prometheus_common//expfmt",
+    ],
+)
