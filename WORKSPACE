@@ -104,6 +104,15 @@ http_archive(
 )
 
 http_archive(
+    name = "io_kythe",
+    sha256 = "abeedcc20f66f55df321037b5b02f784866ba47615737fdd22a3aa2bc21dfdb9",
+    strip_prefix = "kythe-e0c175abd566ba956c935635b49f924333635cda",
+    url = "https://github.com/kythe/kythe/archive/e0c175abd566ba956c935635b49f924333635cda.tar.gz",
+    patches = ["//third_party:io_kythe.patch"],
+    patch_args = ["-p1"],
+)
+
+http_archive(
     name = "jq",
     build_file = "//tools/jq:jq.BUILD.bazel",
     sha256 = "998c41babeb57b4304e65b4eb73094279b3ab1e63801b6b4bddd487ce009b39d",
@@ -393,3 +402,16 @@ load("@rules_perl//perl:deps.bzl", "perl_register_toolchains", "perl_rules_depen
 perl_rules_dependencies()
 
 perl_register_toolchains()
+
+load("@io_kythe//:setup.bzl", "kythe_rule_repositories")
+
+kythe_rule_repositories()
+
+load("@io_kythe//:external.bzl", "kythe_dependencies")
+
+kythe_dependencies()
+
+bind(
+    name = "vnames_config",
+    actual = "@io_kythe//kythe/data:vnames_config",
+)
