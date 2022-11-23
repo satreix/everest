@@ -16,11 +16,14 @@ So far what we got to:
 ## Extraction
 
 [Extraction step](https://kythe.io/examples/#extracting-compilations-using-bazel).
-We are starting small with only the protobuf extractor.
+We are starting small with only the go extractor.
 
 ```console
-$ bazel build @io_kythe//kythe/extractors:extract_kzip_protobuf
-$ bazel build -k --experimental_action_listener=@io_kythe//kythe/extractors:extract_kzip_protobuf src/proto/helloworld
+$ bazel build @io_kythe//kythe/extractors:extract_kzip_go
+$ bazel build -k \
+    --experimental_action_listener=@io_kythe//kythe/extractors:extract_kzip_go \
+    --experimental_extra_action_top_level_only \
+    src/go/hello_world
 # Find the extracted .kzip files
 $ find -L bazel-out -name '*.kzip'
 ```
@@ -30,18 +33,22 @@ $ find -L bazel-out -name '*.kzip'
 [Indexing step](https://kythe.io/examples/#indexing-compilations).
 
 ```console
-$ bazel build @io_kythe//kythe/cxx/indexer/proto:indexer
-ERROR: WORKSPACE:212:25: no such target '@com_github_protocolbuffers_protobuf//:third_party/zlib.BUILD': target 'third_party/zlib.BUILD' not declared in package ''; however, a source file of this name exists.  (Perhaps add 'exports_files(["third_party/zlib.BUILD"])' to /BUILD?) defined by external/com_github_protocolbuffers_protobuf/BUILD and referenced by '//external:zlib'
-INFO: Repository org_libzip instantiated at:
-  WORKSPACE:412:19: in <toplevel>
-  external/io_kythe/external.bzl:1188:21: in kythe_dependencies
-  external/io_kythe/external.bzl:104:10: in _cc_dependencies
-  external/bazel_tools/tools/build_defs/repo/utils.bzl:233:18: in maybe
-Repository rule http_archive defined at:
-  external/bazel_tools/tools/build_defs/repo/http.bzl:355:31: in <toplevel>
-ERROR: Analysis of target '@io_kythe//kythe/cxx/indexer/proto:indexer' failed; build aborted:
-FAILED: Build did NOT complete successfully (28 packages loaded, 911 targets configured)
-    Fetching @boringssl; Cloning 3ef9a6b03503ae25f9267473073fea9c39d9cdac of https://github.com/google/boringssl
+$ bazel build @io_kythe//kythe/go/indexer/cmd/go_indexer
+$ bazel-bin/external/io_kythe/kythe/go/indexer/cmd/go_indexer/go_indexer (find -L bazel-out -name '*.kzip') > entries
+
+$ bazel build @io_kythe//kythe/go/platform/tools/entrystream
+$ bazel-bin/external/io_kythe/kythe/go/platform/tools/entrystream/entrystream --write_format=json < entries
+... json stream
+
+$ bazel build @io_kythe//kythe/go/storage/tools/write_entries
+$ bazel-bin/external/io_kythe/kythe/go/storage/tools/write_entries/write_entries --graphstore leveldb:/tmp/gs < entries
+write_entries: 2022/11/23 18:43:56 Wrote 581 entries
+
+$ bazel run @io_kythe//kythe/go/storage/tools/triples -- --graphstore /tmp/gs | gzip >kythe.nq.gz
+2022/11/23 18:45:40 Wrote 504 triples
+
+# cayley http --dbpath kythe.nq.gz
+
 ```
 
-This is where we are for now, I probably need to fix the way we setup protobuf, or its version.
+This is where we are for now.
