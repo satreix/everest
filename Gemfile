@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'erb', '~> 3.0'
+gem 'erb', '~> 4.0'
 gem 'haml', '~> 5.2'
 gem 'rspec-its'
 gem 'rspec', '~> 3.12.0'
