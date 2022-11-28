@@ -1,0 +1,35 @@
+load("@rules_java//java:defs.bzl", "java_binary")
+load("@io_bazel_rules_kotlin//kotlin:jvm.bzl", "kt_jvm_library")
+load("@io_bazel_rules_kotlin//kotlin:lint.bzl", "ktlint_fix", "ktlint_test")
+load("//tools/test/binary:binary.bzl", "binary_test")
+
+kt_jvm_library(
+    name = "hello_world_lib",
+    srcs = glob(["*.kt"]),
+)
+
+ktlint_test(
+    name = "lint_test",
+    srcs = glob(["*.kt"]),
+)
+
+ktlint_fix(
+    name = "lint_fix",
+    srcs = glob(["*.kt"]),
+)
+
+alias(
+    name = "hello_world",
+    actual = ":App",
+)
+
+java_binary(
+    name = "App",
+    main_class = "hello_world.App",
+    runtime_deps = [":hello_world_lib"],
+)
+
+binary_test(
+    name = "hello_world_test",
+    binary = ":hello_world",
+)

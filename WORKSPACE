@@ -97,6 +97,12 @@ http_archive(
 )
 
 http_archive(
+    name = "io_bazel_rules_kotlin",
+    urls = ["https://github.com/bazelbuild/rules_kotlin/releases/download/v1.6.0/rules_kotlin_release.tgz"],
+    sha256 = "a57591404423a52bd6b18ebba7979e8cd2243534736c5c94d35c89718ea38f94",
+)
+
+http_archive(
     name = "io_grpc_grpc_java",
     sha256 = "3762fd9a1045aa83d9a967840da142a1558565b76b470860282a1126e162799b",
     strip_prefix = "grpc-java-1.51.0",
@@ -393,3 +399,11 @@ load("@rules_perl//perl:deps.bzl", "perl_register_toolchains", "perl_rules_depen
 perl_rules_dependencies()
 
 perl_register_toolchains()
+
+load("@io_bazel_rules_kotlin//kotlin:repositories.bzl", "kotlin_repositories")
+
+kotlin_repositories()
+
+load("@io_bazel_rules_kotlin//kotlin:core.bzl", "kt_register_toolchains")
+
+kt_register_toolchains()
