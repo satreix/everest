@@ -19,12 +19,12 @@ func TestVisitTotal(t *testing.T) {
 		t.Fatal("creating request:", err)
 	}
 
-	expected := 1
+	const expected = 1
 
 	response := httptest.NewRecorder()
 	s.Handler().ServeHTTP(response, request)
 
-	actual, err := parseMetricCounter(response.Body, "myapp_visit_total")
+	actual, err := parseMetricCounter(response.Body, fmt.Sprintf("%v_visit_total", tag))
 	if err != nil {
 		t.Fatalf("parsing metrics: %v", err)
 	}

@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"log"
 	"net/http"
 
@@ -10,16 +11,18 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
+const tag = "myapp"
+
 // serviceMetrics holds metrics for a service
 type serviceMetrics struct {
 	VisitTotal prometheus.Counter
 }
 
 // newServiceMetrics registers metrics
-func newServiceMetrics() serviceMetrics {
+func newServiceMetrics(prefix string) serviceMetrics {
 	return serviceMetrics{
 		VisitTotal: promauto.NewCounter(prometheus.CounterOpts{
-			Name: "myapp_visit_total",
+			Name: fmt.Sprintf("%v_visit_total", prefix),
 			Help: "The total number of visits",
 		}),
 	}
@@ -33,13 +36,14 @@ type Service struct {
 // NewService returns a new service.
 func NewService() Service {
 	return Service{
-		metrics: newServiceMetrics(),
+		metrics: newServiceMetrics(tag),
 	}
 }
 
 // Handler return a HTTP handler for the service.
 func (s Service) Handler() http.Handler {
 	mux := http.NewServeMux()
+	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) { w.Write([]byte("ok")) })
 	mux.Handle("/metrics", promhttp.Handler())
 	return s.middleware(mux)
 }
@@ -47,7 +51,6 @@ func (s Service) Handler() http.Handler {
 // middleware to log and record metrics
 func (s Service) middleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		log.Println(r.Method, r.RequestURI)
 		s.metrics.VisitTotal.Inc()
 		next.ServeHTTP(w, r)
 	})
@@ -64,6 +67,6 @@ func main() {
 		Handler: service.Handler(),
 	}
 
-	log.Printf("Listenning on %s", *addr)
+	log.Printf("Listenning on http://%s", *addr)
 	log.Fatal(serv.ListenAndServe())
 }
