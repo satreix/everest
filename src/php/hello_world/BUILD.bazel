@@ -1,0 +1,6 @@
+load("@io_bazel_rules_php//php:php.bzl", "php_binary")
+
+php_binary(
+    name = "hello_world",
+    srcs = ["main.php"],
+)

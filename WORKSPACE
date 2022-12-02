@@ -97,6 +97,13 @@ http_archive(
 )
 
 http_archive(
+    name = "io_bazel_rules_php",
+   sha256 = "5396d5666ece31ca52a085d8c8387ea6c841b13bcc6031fbe22623497ab2f800",
+    strip_prefix = "rules_php-fdc3c70199bc9b0a7898c99c162de6a976044b2a",
+    urls = ["https://github.com/greggdonovan/rules_php/archive/fdc3c70199bc9b0a7898c99c162de6a976044b2a.tar.gz"],
+)
+
+http_archive(
     name = "io_grpc_grpc_java",
     sha256 = "3762fd9a1045aa83d9a967840da142a1558565b76b470860282a1126e162799b",
     strip_prefix = "grpc-java-1.51.0",
@@ -393,3 +400,7 @@ load("@rules_perl//perl:deps.bzl", "perl_register_toolchains", "perl_rules_depen
 perl_rules_dependencies()
 
 perl_register_toolchains()
+
+load("@io_bazel_rules_php//php:php.bzl", "php_repositories")
+
+php_repositories()
