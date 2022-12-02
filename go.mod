@@ -7,6 +7,8 @@ require (
 	github.com/bazelbuild/rules_go v0.35.0
 	github.com/google/go-cmp v0.5.9
 	github.com/gosuri/uiprogress v0.0.1
+	github.com/grpc-ecosystem/go-grpc-middleware/providers/zerolog/v2 v2.0.0-rc.3
+	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.0.0-rc.3
 	github.com/keybase/go-keychain v0.0.0-20221114143418-13d058a3d612
 	github.com/mndrix/tap-go v0.0.0-20171203230836-629fa407e90b
 	github.com/mvdan/sh v2.6.4+incompatible
@@ -14,7 +16,9 @@ require (
 	github.com/prometheus/client_golang v1.14.0
 	github.com/prometheus/client_model v0.3.0
 	github.com/prometheus/common v0.37.0
+	github.com/rs/zerolog v1.28.0
 	github.com/whilp/git-urls v1.0.0
+	github.com/zenazn/goji v1.0.1
 	google.golang.org/grpc v1.51.0
 )
 
@@ -24,6 +28,7 @@ require (
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/gosuri/uilive v0.0.4 // indirect
 	github.com/kr/pretty v0.3.0 // indirect
+	github.com/mattn/go-colorable v0.1.12 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect
 	github.com/prometheus/procfs v0.8.0 // indirect
