@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "git-clone_lib",
+    srcs = ["git-clone.go"],
+    importpath = "github.com/satreix/everest/src/go/git-clone",
+    visibility = ["//visibility:private"],
+    deps = ["@com_github_whilp_git_urls//:git-urls"],
+)
+
+go_binary(
+    name = "git-clone",
+    embed = [":git-clone_lib"],
+    visibility = ["//visibility:public"],
+)

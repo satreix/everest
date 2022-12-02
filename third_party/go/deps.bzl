@@ -453,6 +453,12 @@ def go_dependencies():
         version = "v1.8.0",
     )
     go_repository(
+        name = "com_github_whilp_git_urls",
+        importpath = "github.com/whilp/git-urls",
+        sum = "h1:95f6UMWN5FKW71ECsXRUd3FVYiXdrE7aX4NZKcPmIjU=",
+        version = "v1.0.0",
+    )
+    go_repository(
         name = "com_github_yuin_goldmark",
         importpath = "github.com/yuin/goldmark",
         sum = "h1:5tjfNdR2ki3yYQ842+eX2sQHeiwpKJ0RnHO4IYOc4V8=",
