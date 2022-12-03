@@ -34,9 +34,9 @@ http_archive(
 http_archive(
     name = "com_github_antlr_grammars_v4",
     build_file_content = """exports_files(glob(["**/*.g4"]), visibility = ["//visibility:public"])""",
-    sha256 = "9d62a4bb7686c30eac79f1a3d99db9d0cf6721e0df5de891fdaf036a573a4288",
-    strip_prefix = "grammars-v4-3291383cc1e03f3e3e60dacffdc84aca165f9990",
-    urls = ["https://github.com/antlr/grammars-v4/archive/3291383cc1e03f3e3e60dacffdc84aca165f9990.tar.gz"],
+    sha256 = "374f7b9b79e28e238d0ca8f242f34410722a40e5703fa4e17459057ed5171caa",
+    strip_prefix = "grammars-v4-8d0c7d448e7e40613a871b9e2f50ab7294a40be3",
+    urls = ["https://github.com/antlr/grammars-v4/archive/8d0c7d448e7e40613a871b9e2f50ab7294a40be3.tar.gz"],
 )
 
 http_archive(
