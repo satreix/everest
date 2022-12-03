@@ -12,7 +12,7 @@ import (
 )
 
 func TestVisitTotal(t *testing.T) {
-	s := NewService()
+	s := NewService("foobar")
 
 	request, err := http.NewRequest(http.MethodGet, "/metrics", nil)
 	if err != nil {
@@ -24,7 +24,7 @@ func TestVisitTotal(t *testing.T) {
 	response := httptest.NewRecorder()
 	s.Handler().ServeHTTP(response, request)
 
-	actual, err := parseMetricCounter(response.Body, fmt.Sprintf("%v_visit_total", tag))
+	actual, err := parseMetricCounter(response.Body, "foobar_visit_total")
 	if err != nil {
 		t.Fatalf("parsing metrics: %v", err)
 	}

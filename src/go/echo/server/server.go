@@ -3,11 +3,14 @@ package main
 import (
 	"context"
 	"flag"
-	"log"
+	"fmt"
 	"net"
 
+	"github.com/rs/zerolog/log"
+	"github.com/satreix/everest/src/go/logging"
 	pb "github.com/satreix/everest/src/proto/helloworld"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
 
 type server struct {
@@ -15,27 +18,42 @@ type server struct {
 }
 
 func (s *server) SayHello(_ context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
-	log.Printf("Received data: %#v", in)
+	log.Info().Str("params.in", fmt.Sprintf("%#v", in)).Msg("Received data")
 	return &pb.HelloReply{Message: "Hello " + in.Name}, nil
 }
 
 func main() {
 	addr := flag.String("addr", "127.0.0.1:1234", "address")
+	debug := flag.Bool("debug", false, "sets log level to debug")
 	flag.Parse()
 
-	srv := new(server)
+	logger, err := logging.SetupLogger(*debug)
+	if err != nil {
+		log.Fatal().
+			Err(err).
+			Msg("Logger setup error")
+	}
 
-	s := grpc.NewServer()
-	pb.RegisterGreeterServer(s, srv)
+	s := grpc.NewServer(
+		grpc.ChainUnaryInterceptor(
+			logging.UnaryServerInterceptor(logger),
+		),
+		grpc.ChainStreamInterceptor(
+			logging.StreamServerInterceptor(logger),
+		),
+	)
+
+	pb.RegisterGreeterServer(s, new(server))
+	reflection.Register(s)
 
 	ln, err := net.Listen("tcp", *addr)
 	if err != nil {
-		log.Fatalf("listen error: %s", err)
+		logger.Fatal().Err(err).Msg("Listen error")
 	}
 	defer ln.Close()
 
-	log.Printf("Listenning on %s ...", *addr)
+	logger.Info().Str("addr", *addr).Msg("Server listening")
 	if err := s.Serve(ln); err != nil {
-		log.Fatalf("gRPC server error: %s", err)
+		logger.Fatal().Err(err).Msg("Server error")
 	}
 }
