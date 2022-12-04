@@ -1,11 +1,41 @@
-load("@io_bazel_rules_go//go:def.bzl", "go_test")
+load("@io_bazel_rules_docker//go:image.bzl", "go_image")
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library", "go_test")
+
+go_library(
+    name = "echo_lib",
+    srcs = ["echo_server.go"],
+    importpath = "github.com/satreix/everest/src/go/echo",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//src/go/logging",
+        "//src/proto/helloworld",
+        "@com_github_rs_zerolog//log",
+        "@org_golang_google_grpc//:go_default_library",
+        "@org_golang_google_grpc//reflection",
+    ],
+)
+
+go_binary(
+    name = "echo",
+    embed = [":echo_lib"],
+    visibility = ["//src/go/echo:__pkg__"],
+)
+
+go_image(
+    name = "echo_image",
+    embed = [":echo_lib"],
+    goarch = "amd64",
+    goos = "linux",
+    pure = "on",
+)
 
 go_test(
     name = "echo_test",
-    size = "small",
+    size = "medium",
+    timeout = "short",
     srcs = ["echo_e2e_test.go"],
     data = [
-        "//src/go/echo/server",
+        ":echo",
         "//src/java/echo/client",
     ],
     deps = ["@io_bazel_rules_go//go/tools/bazel:go_default_library"],

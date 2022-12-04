@@ -25,7 +25,7 @@ func TestEnd2End(t *testing.T) {
 	}
 	t.Logf("port: %d", port)
 
-	serverBin, err := findBinary("//src/go/echo/server", "server")
+	serverBin, err := findBinary("//src/go/echo", "echo")
 	if err != nil {
 		t.Fatalf("error finding server: %s", err)
 	}
