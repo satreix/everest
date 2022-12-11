@@ -5,7 +5,6 @@ https://adventofcode.com/2022/day/7
 """
 
 import os
-from pprint import pprint
 
 
 def data_path(filename: str) -> str:
