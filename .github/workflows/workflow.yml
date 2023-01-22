@@ -14,20 +14,28 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform:
+        os:
           - macos-latest
           - ubuntu-latest
-    name: check - (${{ matrix.platform }})
-    runs-on: ${{ matrix.platform }}
+    name: check - (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
 
+      # https://github.com/tweag/rules_haskell/issues/704
+      - name: "[Haskell] Install required packages"
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -yy libtinfo5
+          sudo apt-get clean
+        if: ${{ matrix.os == 'ubuntu-latest' }}
+
       # Ruby rules use host install still: https://github.com/bazelruby/rules_ruby/issues/112
-      - name: Setup Ruby
+      - name: "[Ruby] Install Ruby"
         uses: ruby/setup-ruby@v1.126.0
 
       - name: Install bazelisk
-        run: ./tools/ci/install_bazelisk.sh v1.14.0 ${{ matrix.platform }}
+        run: ./tools/ci/install_bazelisk.sh v1.14.0 ${{ matrix.os }}
 
       - name: Test
         run: ./bin/bazel test --remote_header=x-buildbuddy-api-key=${{ secrets.BUILDBUDDY_API_KEY }} //...
