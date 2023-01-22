@@ -1,10 +1,18 @@
-load("@rules_python//python:defs.bzl", "py_binary", "py_test")
+load("@rules_python//python:defs.bzl", "py_binary", "py_library", "py_test")
+
+py_library(
+    name = "num",
+    srcs = ["num.py"],
+    deps = [
+        "//src/rust/num",
+    ],
+)
 
 py_binary(
     name = "num_benchmark",
     srcs = ["num_benchmark.py"],
     deps = [
-        "//src/rust/num",
+        ":num",
     ],
 )
 
@@ -13,6 +21,6 @@ py_test(
     size = "small",
     srcs = ["num_test.py"],
     deps = [
-        "//src/rust/num",
+        ":num",
     ],
 )
