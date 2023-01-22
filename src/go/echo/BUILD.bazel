@@ -1,5 +1,5 @@
 load("@io_bazel_rules_docker//go:image.bzl", "go_image")
-load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library", "go_test")
 
 go_library(
     name = "echo_lib",
@@ -13,6 +13,12 @@ go_library(
         "@org_golang_google_grpc//:go_default_library",
         "@org_golang_google_grpc//reflection",
     ],
+)
+
+go_binary(
+    name = "echo",
+    embed = [":echo_lib"],
+    visibility = ["//visibility:public"],
 )
 
 go_image(

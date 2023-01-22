@@ -19,7 +19,7 @@ http_archive(
     patch_args = ["-p1"],
     patches = [
         # A fix for https://github.com/bazelruby/rules_ruby/issues/79
-        "//third_party:bazelruby_rules_ruby.patch",
+        "//third_party:bazelruby_rules_ruby/0001-fix-rspec.patch",
     ],
     sha256 = "7c0da7ac6a89c980ad5fb9b815bb254bd06c153a774857bfc37bb4b90de769d8",
     strip_prefix = "rules_ruby-0a3275b235dd4093a2a44e2f08d96a9f07ecbe0a",
