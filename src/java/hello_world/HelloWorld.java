@@ -1,4 +1,4 @@
-package src.java.hello_world;
+package hello_world;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -32,9 +32,13 @@ public class HelloWorld {
         return null;
     }
 
+    public static String greet(String name) {
+        return "Hello, " + name + "!";
+    }
+
     public static void main(String[] args) {
         CommandLine cmd = parseArgs(args);
         String n = cmd.getOptionValue("name", "World");
-        System.out.println("Hello, " + n + "!");
+        System.out.println(greet(n));
     }
 }

@@ -1,0 +1,28 @@
+load("@contrib_rules_jvm//java:defs.bzl", "JUNIT5_DEPS", "java_test_suite")
+load("@fmeum_rules_jni//jni:defs.bzl", "java_jni_library")
+
+java_jni_library(
+    name = "math",
+    srcs = [
+        "NativeMath.java",
+    ],
+    native_libs = [
+        "//src/cpp/math",
+    ],
+    visibility = [
+        "//src/cpp/math:__pkg__",
+    ],
+)
+
+java_test_suite(
+    name = "math_tests",
+    size = "small",
+    srcs = [
+        "NativeMathTest.java",
+    ],
+    package = "math",
+    runner = "junit5",
+    deps = [
+        ":math",
+    ] + JUNIT5_DEPS,
+)

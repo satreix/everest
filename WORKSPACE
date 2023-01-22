@@ -5,7 +5,10 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 http_archive(
     name = "bazel_gazelle",
     sha256 = "ecba0f04f96b4960a5b250c8e8eeec42281035970aa8852dda73098274d14a1d",
-    urls = ["https://github.com/bazelbuild/bazel-gazelle/releases/download/v0.29.0/bazel-gazelle-v0.29.0.tar.gz"],
+    urls = [
+        "https://mirror.bazel.build/github.com/bazelbuild/bazel-gazelle/releases/download/v0.29.0/bazel-gazelle-v0.29.0.tar.gz",
+        "https://github.com/bazelbuild/bazel-gazelle/releases/download/v0.29.0/bazel-gazelle-v0.29.0.tar.gz",
+    ],
 )
 
 http_archive(
@@ -83,11 +86,25 @@ http_archive(
 )
 
 http_archive(
+    name = "contrib_rules_jvm",
+    sha256 = "548f0583192ff79c317789b03b882a7be9b1325eb5d3da5d7fdcc4b7ca69d543",
+    strip_prefix = "rules_jvm-0.9.0",
+    url = "https://github.com/bazel-contrib/rules_jvm/archive/refs/tags/v0.9.0.tar.gz",
+)
+
+http_archive(
     name = "fmtlib",
     build_file = "//third_party:cc/fmtlib/BUILD.external",
     sha256 = "5dea48d1fcddc3ec571ce2058e13910a0d4a6bab4cc09a809d8b1dd1c88ae6f2",
     strip_prefix = "fmt-9.1.0",
     urls = ["https://github.com/fmtlib/fmt/archive/refs/tags/9.1.0.tar.gz"],
+)
+
+http_archive(
+    name = "fmeum_rules_jni",
+    sha256 = "9a387a066f683a8aac4d165917dc7fe15ec2a20931894a97e153a9caab6123ca",
+    strip_prefix = "rules_jni-0.4.0",
+    url = "https://github.com/fmeum/rules_jni/archive/refs/tags/v0.4.0.tar.gz",
 )
 
 http_archive(
@@ -99,7 +116,10 @@ http_archive(
 http_archive(
     name = "io_bazel_rules_go",
     sha256 = "56d8c5a5c91e1af73eca71a6fab2ced959b67c86d12ba37feedb0a2dfea441a6",
-    urls = ["https://github.com/bazelbuild/rules_go/releases/download/v0.37.0/rules_go-v0.37.0.zip"],
+    urls = [
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_go/releases/download/v0.37.0/rules_go-v0.37.0.zip",
+        "https://github.com/bazelbuild/rules_go/releases/download/v0.37.0/rules_go-v0.37.0.zip",
+    ],
 )
 
 http_archive(
@@ -127,6 +147,16 @@ http_archive(
     name = "openapi_tools_generator_bazel",
     sha256 = "c6e4c253f1ae0fbe4d4ded8a719f6647273141d0dc3c0cd8bb074aa7fc3c8d1c",
     urls = ["https://github.com/OpenAPITools/openapi-generator-bazel/releases/download/0.1.5/openapi-tools-generator-bazel-0.1.5.tar.gz"],
+)
+
+# Used by rules_rust
+http_archive(
+    name = "platforms",
+    sha256 = "5308fc1d8865406a49427ba24a9ab53087f17f5266a7aabbfc28823f3916e1ca",
+    urls = [
+        "https://mirror.bazel.build/github.com/bazelbuild/platforms/releases/download/0.0.6/platforms-0.0.6.tar.gz",
+        "https://github.com/bazelbuild/platforms/releases/download/0.0.6/platforms-0.0.6.tar.gz",
+    ],
 )
 
 http_archive(
@@ -241,6 +271,18 @@ load("@rules_java//java:repositories.bzl", "rules_java_dependencies", "rules_jav
 rules_java_dependencies()
 
 rules_java_toolchains()
+
+load("@contrib_rules_jvm//:repositories.bzl", "contrib_rules_jvm_deps")
+
+contrib_rules_jvm_deps()
+
+load("@contrib_rules_jvm//:setup.bzl", "contrib_rules_jvm_setup")
+
+contrib_rules_jvm_setup()
+
+load("@fmeum_rules_jni//jni:repositories.bzl", "rules_jni_dependencies")
+
+rules_jni_dependencies()
 
 load("@rules_python//python:repositories.bzl", "python_register_toolchains")
 

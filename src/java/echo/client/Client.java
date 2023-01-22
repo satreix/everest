@@ -1,4 +1,4 @@
-package src.java.echo.client;
+package echo.client;
 
 import com.example.helloworld.GreeterGrpc;
 import com.example.helloworld.HelloRequest;
