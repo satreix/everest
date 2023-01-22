@@ -306,7 +306,7 @@ _RUST_VERSION = "1.62.1"
 
 rust_register_toolchains(
     edition = "2021",
-    version = _RUST_VERSION,
+    versions = [_RUST_VERSION],
 )
 
 load("@rules_rust//proto:repositories.bzl", "rust_proto_repositories")
