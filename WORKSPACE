@@ -4,13 +4,8 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
     name = "bazel_gazelle",
-    patch_args = ["-p1"],
-    patches = [
-        # A fix for https://github.com/bazelbuild/bazel-gazelle/issues/1217
-        "//:third_party/bazel_gazelle.patch",
-    ],
-    sha256 = "5982e5463f171da99e3bdaeff8c0f48283a7a5f396ec5282910b9e8a49c0dd7e",
-    urls = ["https://github.com/bazelbuild/bazel-gazelle/releases/download/v0.25.0/bazel-gazelle-v0.25.0.tar.gz"],
+    sha256 = "ecba0f04f96b4960a5b250c8e8eeec42281035970aa8852dda73098274d14a1d",
+    urls = ["https://github.com/bazelbuild/bazel-gazelle/releases/download/v0.29.0/bazel-gazelle-v0.29.0.tar.gz"],
 )
 
 http_archive(
@@ -63,6 +58,11 @@ http_archive(
 
 http_archive(
     name = "com_github_tnarg_rules_cue",
+    patch_args = ["-p1"],
+    patches = [
+        # Following bazel-gazelle https://github.com/bazelbuild/bazel-gazelle/commit/3e83644bd8b1ed373d322b898cf7c05927b39201#diff-c1403c382e16f440e9d5e59ebc70a6beb7f68f5ccefbcb5dd73e5cb9352e85a0
+        "//third_party:com_github_tnarg_rules_cue/0001-fix-load-env_execute.patch",
+    ],
     sha256 = "da3ddd504032d2776f9f1854bff9b1b9946d11dba243e96187f3b72604d69777",
     strip_prefix = "rules_cue-f85546145bab07a5cada175e74a736bee82ace68",
     url = "https://github.com/tnarg/rules_cue/archive/f85546145bab07a5cada175e74a736bee82ace68.zip",
@@ -98,8 +98,8 @@ http_archive(
 
 http_archive(
     name = "io_bazel_rules_go",
-    sha256 = "ae013bf35bd23234d1dea46b079f1e05ba74ac0321423830119d3e787ec73483",
-    urls = ["https://github.com/bazelbuild/rules_go/releases/download/v0.36.0/rules_go-v0.36.0.zip"],
+    sha256 = "56d8c5a5c91e1af73eca71a6fab2ced959b67c86d12ba37feedb0a2dfea441a6",
+    urls = ["https://github.com/bazelbuild/rules_go/releases/download/v0.37.0/rules_go-v0.37.0.zip"],
 )
 
 http_archive(
@@ -210,20 +210,7 @@ http_archive(
     urls = ["https://github.com/uncrustify/uncrustify/archive/uncrustify-0.70.1.tar.gz"],
 )
 
-load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
-
-rules_proto_dependencies()
-
-rules_proto_toolchains()
-
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
-
-go_rules_dependencies()
-
-go_register_toolchains(
-    # Update in lockstep with go.mod
-    version = "1.19.2",
-)
 
 # gazelle:repository go_repository name=io_bazel_rules_go importpath=github.com/bazelbuild/rules_go
 # gazelle:repository_macro third_party/go/deps.bzl%go_dependencies
@@ -231,9 +218,23 @@ load("//third_party/go:deps.bzl", "go_dependencies")
 
 go_dependencies()
 
+go_rules_dependencies()
+
+go_register_toolchains(
+    # Update in lockstep with go.mod
+    version = "1.19.5",
+)
+
 load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 
+# Note: this needs to be defore proto rules: https://github.com/bazelbuild/bazel-gazelle/issues/1366
 gazelle_dependencies()
+
+load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
+
+rules_proto_dependencies()
+
+rules_proto_toolchains()
 
 load("@rules_java//java:repositories.bzl", "rules_java_dependencies", "rules_java_toolchains")
 
