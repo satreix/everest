@@ -18,7 +18,7 @@ go_library(
 go_binary(
     name = "echo",
     embed = [":echo_lib"],
-    visibility = ["//src/go/echo:__pkg__"],
+    visibility = ["//visibility:public"],
 )
 
 go_image(
