@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from timeit import timeit
 
-from src.rust.num.num import Array
+from src.python.num.num import Array
 
 
 def main():
@@ -15,8 +15,8 @@ def main():
         "list": timeit(add_lists, number=1000),
         "array": timeit(add_arrays, number=1000),
     }
-    print(times)
-    print(f"num is {times['list']/ times['array']} times faster!")
+    print(f"{times=}")
+    print(f"num is {times['list'] / times['array']} times faster!")
 
 
 if __name__ == "__main__":
