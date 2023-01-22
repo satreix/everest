@@ -9,7 +9,7 @@ require (
 	github.com/gosuri/uiprogress v0.0.1
 	github.com/grpc-ecosystem/go-grpc-middleware/providers/zerolog/v2 v2.0.0-rc.3
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.0.0-rc.3
-	github.com/keybase/go-keychain 9be78f6c498b
+	github.com/keybase/go-keychain v0.0.0-20221221221913-9be78f6c498b
 	github.com/mndrix/tap-go v0.0.0-20171203230836-629fa407e90b
 	github.com/mvdan/sh v2.6.4+incompatible
 	github.com/pkg/browser v0.0.0-20210911075715-681adbf594b8

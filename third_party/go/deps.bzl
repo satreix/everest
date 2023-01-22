@@ -334,8 +334,8 @@ def go_dependencies():
     go_repository(
         name = "com_github_keybase_go_keychain",
         importpath = "github.com/keybase/go-keychain",
-        sum = "h1:c6M2fx/enBAg5aAwmXUEEVMbGtDovv0XCwMHq9v1vtg=",
-        version = "v0.0.0-20221114143418-13d058a3d612",
+        sum = "h1:k2ZvAPXrDB1Q7fGRdUane+T08K+UaL96qH47Setr/7k=",
+        version = "v0.0.0-20221221221913-9be78f6c498b",
     )
     go_repository(
         name = "com_github_kisielk_errcheck",
