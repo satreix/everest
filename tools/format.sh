@@ -32,6 +32,7 @@ find . -type f -iname '*.py' -print0 | xargs -0 "$YAPF" -i --no-local-style -p
 
 # Ruby
 # FIXME rubocop does not work in Bazel yet
+bundle install
 pushd src/ruby
 bundle exec rubocop --auto-correct-all
 popd

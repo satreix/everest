@@ -15,7 +15,7 @@ java_library(
 
 java_binary(
     name = "client",
-    main_class = "src.java.echo.client.Client",
+    main_class = "echo.client.Client",
     visibility = ["//src/go/echo:__pkg__"],
     runtime_deps = [":client_lib"],
 )

@@ -83,11 +83,25 @@ http_archive(
 )
 
 http_archive(
+    name = "contrib_rules_jvm",
+    sha256 = "548f0583192ff79c317789b03b882a7be9b1325eb5d3da5d7fdcc4b7ca69d543",
+    strip_prefix = "rules_jvm-0.9.0",
+    url = "https://github.com/bazel-contrib/rules_jvm/archive/refs/tags/v0.9.0.tar.gz",
+)
+
+http_archive(
     name = "fmtlib",
     build_file = "//third_party:cc/fmtlib/BUILD.external",
     sha256 = "5dea48d1fcddc3ec571ce2058e13910a0d4a6bab4cc09a809d8b1dd1c88ae6f2",
     strip_prefix = "fmt-9.1.0",
     urls = ["https://github.com/fmtlib/fmt/archive/refs/tags/9.1.0.tar.gz"],
+)
+
+http_archive(
+    name = "fmeum_rules_jni",
+    sha256 = "9a387a066f683a8aac4d165917dc7fe15ec2a20931894a97e153a9caab6123ca",
+    strip_prefix = "rules_jni-0.4.0",
+    url = "https://github.com/fmeum/rules_jni/archive/refs/tags/v0.4.0.tar.gz",
 )
 
 http_archive(
@@ -241,6 +255,18 @@ load("@rules_java//java:repositories.bzl", "rules_java_dependencies", "rules_jav
 rules_java_dependencies()
 
 rules_java_toolchains()
+
+load("@contrib_rules_jvm//:repositories.bzl", "contrib_rules_jvm_deps")
+
+contrib_rules_jvm_deps()
+
+load("@contrib_rules_jvm//:setup.bzl", "contrib_rules_jvm_setup")
+
+contrib_rules_jvm_setup()
+
+load("@fmeum_rules_jni//jni:repositories.bzl", "rules_jni_dependencies")
+
+rules_jni_dependencies()
 
 load("@rules_python//python:repositories.bzl", "python_register_toolchains")
 
