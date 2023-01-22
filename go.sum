@@ -158,8 +158,8 @@ github.com/jstemmer/go-junit-report v0.0.0-20190106144839-af01ea7f8024/go.mod h1
 github.com/jstemmer/go-junit-report v0.9.1/go.mod h1:Brl9GWCQeLvo8nXZwPNNblvFj/XSXhF0NWZEnDohbsk=
 github.com/julienschmidt/httprouter v1.2.0/go.mod h1:SYymIcj16QtmaHHD7aYtjjsJG7VTCxuUUipMqKk8s4w=
 github.com/julienschmidt/httprouter v1.3.0/go.mod h1:JR6WtHb+2LUe8TCKY3cZOxFyyO8IZAc4RVcycCCAKdM=
-github.com/keybase/go-keychain v0.0.0-20221114143418-13d058a3d612 h1:c6M2fx/enBAg5aAwmXUEEVMbGtDovv0XCwMHq9v1vtg=
-github.com/keybase/go-keychain v0.0.0-20221114143418-13d058a3d612/go.mod h1:TXh6wFVZNh4iuqbymzy4r3obmj8hTPDlLNnoKNIbvJE=
+github.com/keybase/go-keychain v0.0.0-20221221221913-9be78f6c498b h1:k2ZvAPXrDB1Q7fGRdUane+T08K+UaL96qH47Setr/7k=
+github.com/keybase/go-keychain v0.0.0-20221221221913-9be78f6c498b/go.mod h1:TXh6wFVZNh4iuqbymzy4r3obmj8hTPDlLNnoKNIbvJE=
 github.com/kisielk/errcheck v1.1.0/go.mod h1:EZBBE59ingxPouuu3KfxchcWSUPOHkagtvWXihfKN4Q=
 github.com/kisielk/gotool v1.0.0/go.mod h1:XhKaO+MFFWcvkIS/tQcRk01m1F5IRFswLeQ+oQHNcck=
 github.com/konsorten/go-windows-terminal-sequences v1.0.1/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
