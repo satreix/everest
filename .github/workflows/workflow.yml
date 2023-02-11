@@ -32,7 +32,7 @@ jobs:
 
       # Ruby rules use host install still: https://github.com/bazelruby/rules_ruby/issues/112
       - name: "[Ruby] Install Ruby"
-        uses: ruby/setup-ruby@v1.126.0
+        uses: ruby/setup-ruby@v1.137.2
 
       - name: Install bazelisk
         run: ./tools/ci/install_bazelisk.sh v1.14.0 ${{ matrix.os }}
