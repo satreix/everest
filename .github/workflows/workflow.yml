@@ -35,7 +35,7 @@ jobs:
         uses: ruby/setup-ruby@v1.126.0
 
       - name: Install bazelisk
-        run: ./tools/ci/install_bazelisk.sh v1.14.0 ${{ matrix.os }}
+        run: ./tools/ci/install_bazelisk.sh v1.16.0 ${{ matrix.os }}
 
       - name: Test
         run: ./bin/bazel test --remote_header=x-buildbuddy-api-key=${{ secrets.BUILDBUDDY_API_KEY }} //...
