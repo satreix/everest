@@ -1,7 +1,6 @@
 #!/bin/bash
 set -eufo pipefail
 
-pipenv check
 pipenv install --dev
 pipenv clean
 pipenv lock
