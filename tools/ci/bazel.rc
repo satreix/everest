@@ -2,9 +2,8 @@
 startup --host_jvm_args=-Xmx2500m
 startup --host_jvm_args=-Xms2500m
 
-# Understand failures better
-build --verbose_failures
 test --verbose_failures
+test --test_output=errors
 
 build --action_env=CC=clang
 build --announce_rc=yes
