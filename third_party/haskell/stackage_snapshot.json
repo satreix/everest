@@ -1,6 +1,6 @@
 {
-  "__GENERATED_FILE_DO_NOT_MODIFY_MANUALLY": 1039156780,
-  "all-cabal-hashes": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-hashes/fcb227a1250a34f2c8522ddeffa60aaae2aa9a1b",
+  "__GENERATED_FILE_DO_NOT_MODIFY_MANUALLY": -2076844785,
+  "all-cabal-hashes": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-hashes/33ea0d2953ddefc7947159d8f33729267af20f0b",
   "resolved": {
     "ansi-terminal": {"dependencies":["base","colour"],"location":{"type":"hackage","url":"https://hackage.haskell.org/package/ansi-terminal-0.11/ansi-terminal-0.11.tar.gz"},"name":"ansi-terminal","pinned":{"url":["https://hackage.haskell.org/package/ansi-terminal-0.11/ansi-terminal-0.11.tar.gz","https://s3.amazonaws.com/hackage.fpcomplete.com/package/ansi-terminal-0.11.tar.gz"],"sha256":"c6611b9e51add41db3f79eac30066c06b33a6ca2a09e586b4b361d7f98303793","cabal-sha256":"97470250c92aae14c4c810d7f664c532995ba8910e2ad797b29f22ad0d2d0194"},"version":"0.11"},
     "ansi-wl-pprint": {"dependencies":["ansi-terminal","base"],"location":{"type":"hackage","url":"https://hackage.haskell.org/package/ansi-wl-pprint-0.6.9/ansi-wl-pprint-0.6.9.tar.gz"},"name":"ansi-wl-pprint","pinned":{"url":["https://hackage.haskell.org/package/ansi-wl-pprint-0.6.9/ansi-wl-pprint-0.6.9.tar.gz","https://s3.amazonaws.com/hackage.fpcomplete.com/package/ansi-wl-pprint-0.6.9.tar.gz"],"sha256":"a7b2e8e7cd3f02f2954e8b17dc60a0ccd889f49e2068ebb15abfa1d42f7a4eac","cabal-sha256":"212144ea0623b1170807a4162db05d87f26cf10b334aeadd0edb377aba06a1ce"},"version":"0.6.9"},
