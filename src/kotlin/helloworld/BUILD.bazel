@@ -4,7 +4,7 @@ load("@rules_java//java:defs.bzl", "java_binary")
 load("//tools/test/binary:binary.bzl", "binary_test")
 
 kt_jvm_library(
-    name = "hello_world_lib",
+    name = "helloworld_lib",
     srcs = glob(["*.kt"]),
 )
 
@@ -18,18 +18,13 @@ ktlint_fix(
     srcs = glob(["*.kt"]),
 )
 
-alias(
-    name = "hello_world",
-    actual = ":App",
-)
-
 java_binary(
     name = "App",
-    main_class = "hello_world.App",
-    runtime_deps = [":hello_world_lib"],
+    main_class = "helloworld.App",
+    runtime_deps = [":helloworld_lib"],
 )
 
 binary_test(
-    name = "hello_world_test",
-    binary = ":hello_world",
+    name = "helloworld_test",
+    binary = ":App",
 )
