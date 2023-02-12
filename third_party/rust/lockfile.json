@@ -1,5 +1,5 @@
 {
-  "checksum": "7fd83e73bcf1bf03d1df22051db8c7f6f6a59aa3fa9a1228ff9dc2892dd3bade",
+  "checksum": "4da915cf224d0595882778e4a8b5a74d0cc3a2c38b3a23734ef85ee73dd4679c",
   "crates": {
     "android_system_properties 0.1.5": {
       "name": "android_system_properties",
@@ -65,13 +65,16 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "config",
-          "default",
-          "humansize",
-          "num-traits",
-          "urlencode"
-        ],
+        "crate_features": {
+          "common": [
+            "config",
+            "default",
+            "humansize",
+            "num-traits",
+            "urlencode"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -124,9 +127,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "config"
-        ],
+        "crate_features": {
+          "common": [
+            "config"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -204,14 +210,17 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "config",
-          "humansize",
-          "num-traits",
-          "percent-encoding",
-          "serde",
-          "toml"
-        ],
+        "crate_features": {
+          "common": [
+            "config",
+            "humansize",
+            "num-traits",
+            "percent-encoding",
+            "serde",
+            "toml"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -460,9 +469,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default"
-        ],
+        "crate_features": {
+          "common": [
+            "default"
+          ],
+          "selects": {}
+        },
         "edition": "2018",
         "version": "1.3.2"
       },
@@ -493,9 +505,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default"
-        ],
+        "crate_features": {
+          "common": [
+            "default"
+          ],
+          "selects": {}
+        },
         "edition": "2021",
         "version": "3.12.0"
       },
@@ -526,10 +541,13 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "std"
+          ],
+          "selects": {}
+        },
         "edition": "2018",
         "version": "1.4.3"
       },
@@ -620,18 +638,21 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "clock",
-          "default",
-          "iana-time-zone",
-          "js-sys",
-          "oldtime",
-          "std",
-          "time",
-          "wasm-bindgen",
-          "wasmbind",
-          "winapi"
-        ],
+        "crate_features": {
+          "common": [
+            "clock",
+            "default",
+            "iana-time-zone",
+            "js-sys",
+            "oldtime",
+            "std",
+            "time",
+            "wasm-bindgen",
+            "wasmbind",
+            "winapi"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -700,16 +721,19 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "color",
-          "default",
-          "derive",
-          "error-context",
-          "help",
-          "std",
-          "suggestions",
-          "usage"
-        ],
+        "crate_features": {
+          "common": [
+            "color",
+            "default",
+            "derive",
+            "error-context",
+            "help",
+            "std",
+            "suggestions",
+            "usage"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -778,9 +802,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default"
-        ],
+        "crate_features": {
+          "common": [
+            "default"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -874,10 +901,6 @@
       "common_attrs": {
         "compile_data_glob": [
           "**"
-        ],
-        "crate_features": [
-          "bitflags",
-          "default"
         ],
         "deps": {
           "common": [
@@ -1014,11 +1037,14 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "crossbeam-utils",
-          "default",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "crossbeam-utils",
+            "default",
+            "std"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -1062,12 +1088,15 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "crossbeam-epoch",
-          "crossbeam-utils",
-          "default",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "crossbeam-epoch",
+            "crossbeam-utils",
+            "default",
+            "std"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -1124,10 +1153,13 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "alloc",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "alloc",
+            "std"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -1206,10 +1238,13 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "std"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -1266,11 +1301,6 @@
       "common_attrs": {
         "compile_data_glob": [
           "**"
-        ],
-        "crate_features": [
-          "alloc",
-          "default",
-          "std"
         ],
         "deps": {
           "common": [
@@ -1405,9 +1435,6 @@
       "common_attrs": {
         "compile_data_glob": [
           "**"
-        ],
-        "crate_features": [
-          "default"
         ],
         "edition": "2018",
         "version": "1.0.90"
@@ -1773,9 +1800,6 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "std"
-        ],
         "deps": {
           "common": [
             {
@@ -1843,9 +1867,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default"
-        ],
+        "crate_features": {
+          "common": [
+            "default"
+          ],
+          "selects": {}
+        },
         "edition": "2018",
         "version": "0.4.1"
       },
@@ -1900,9 +1927,6 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default"
-        ],
         "deps": {
           "common": [
             {
@@ -1941,9 +1965,6 @@
       "common_attrs": {
         "compile_data_glob": [
           "**"
-        ],
-        "crate_features": [
-          "default"
         ],
         "deps": {
           "common": [
@@ -1984,9 +2005,6 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default"
-        ],
         "edition": "2021",
         "version": "0.3.1"
       },
@@ -2026,10 +2044,13 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "std"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -2183,9 +2204,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "fallback"
-        ],
+        "crate_features": {
+          "common": [
+            "fallback"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [],
           "selects": {
@@ -2407,12 +2431,15 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "close",
-          "default",
-          "libc",
-          "windows-sys"
-        ],
+        "crate_features": {
+          "common": [
+            "close",
+            "default",
+            "libc",
+            "windows-sys"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -2470,9 +2497,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default"
-        ],
+        "crate_features": {
+          "common": [
+            "default"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -2808,11 +2838,14 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "extra_traits",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "extra_traits",
+            "std"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -2865,9 +2898,6 @@
       "common_attrs": {
         "compile_data_glob": [
           "**"
-        ],
-        "crate_features": [
-          "default"
         ],
         "deps": {
           "common": [
@@ -2923,12 +2953,15 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "errno",
-          "general",
-          "ioctl",
-          "no_std"
-        ],
+        "crate_features": {
+          "common": [
+            "errno",
+            "general",
+            "ioctl",
+            "no_std"
+          ],
+          "selects": {}
+        },
         "edition": "2018",
         "version": "0.1.4"
       },
@@ -3025,10 +3058,13 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "use_std"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "use_std"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -3077,9 +3113,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "std"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -3167,9 +3206,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "std"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -3223,9 +3265,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default"
-        ],
+        "crate_features": {
+          "common": [
+            "default"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -3288,9 +3333,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default"
-        ],
+        "crate_features": {
+          "common": [
+            "default"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -3504,10 +3552,13 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "rev-mappings"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "rev-mappings"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -3569,9 +3620,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "std"
+          ],
+          "selects": {}
+        },
         "edition": "2018",
         "version": "0.2.1"
       },
@@ -3632,11 +3686,14 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "alloc",
-          "default",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "alloc",
+            "default",
+            "std"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -3783,10 +3840,13 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "std"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -3928,12 +3988,15 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "alloc",
-          "default",
-          "race",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "alloc",
+            "default",
+            "race",
+            "std"
+          ],
+          "selects": {}
+        },
         "edition": "2021",
         "version": "1.17.0"
       },
@@ -3964,9 +4027,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "raw_os_str"
-        ],
+        "crate_features": {
+          "common": [
+            "raw_os_str"
+          ],
+          "selects": {}
+        },
         "edition": "2021",
         "version": "6.4.1"
       },
@@ -3997,9 +4063,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default"
-        ],
+        "crate_features": {
+          "common": [
+            "default"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -4153,10 +4222,13 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "alloc",
-          "default"
-        ],
+        "crate_features": {
+          "common": [
+            "alloc",
+            "default"
+          ],
+          "selects": {}
+        },
         "edition": "2018",
         "version": "2.2.0"
       },
@@ -4187,9 +4259,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "unicase"
-        ],
+        "crate_features": {
+          "common": [
+            "unicase"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -4315,9 +4390,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "unicase"
-        ],
+        "crate_features": {
+          "common": [
+            "unicase"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -4409,11 +4487,14 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "syn",
-          "syn-error"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "syn",
+            "syn-error"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -4567,11 +4648,14 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "proc-macro",
-          "span-locations"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "proc-macro",
+            "span-locations"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -4629,14 +4713,17 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "extension-module",
-          "indoc",
-          "macros",
-          "pyo3-macros",
-          "unindent"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "extension-module",
+            "indoc",
+            "macros",
+            "pyo3-macros",
+            "unindent"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -4736,11 +4823,14 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "extension-module",
-          "resolve-config"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "extension-module",
+            "resolve-config"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -4811,9 +4901,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default"
-        ],
+        "crate_features": {
+          "common": [
+            "default"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -4884,10 +4977,13 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "extension-module"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "extension-module"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -5053,10 +5149,13 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "proc-macro"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "proc-macro"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -5148,11 +5247,14 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "libc",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "libc",
+            "std"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [],
           "selects": {
@@ -5225,12 +5327,15 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "alloc",
-          "default",
-          "rand_os",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "alloc",
+            "default",
+            "rand_os",
+            "std"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -5434,10 +5539,13 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "alloc",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "alloc",
+            "std"
+          ],
+          "selects": {}
+        },
         "edition": "2015",
         "version": "0.4.2"
       },
@@ -5546,9 +5654,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "std"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -5889,10 +6000,6 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "std"
-        ],
         "deps": {
           "common": [
             {
@@ -6104,14 +6211,17 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "io-lifetimes",
-          "libc",
-          "std",
-          "termios",
-          "use-libc-auxv"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "io-lifetimes",
+            "libc",
+            "std",
+            "termios",
+            "use-libc-auxv"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -6251,10 +6361,13 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "std"
+          ],
+          "selects": {}
+        },
         "edition": "2015",
         "version": "0.3.3"
       },
@@ -6377,13 +6490,15 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "alloc",
-          "default",
-          "derive",
-          "serde_derive",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "derive",
+            "serde_derive",
+            "std"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -6446,9 +6561,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default"
-        ],
+        "crate_features": {
+          "common": [
+            "default"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -6544,10 +6662,13 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "std"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -6601,9 +6722,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default"
-        ],
+        "crate_features": {
+          "common": [
+            "default"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -6788,18 +6912,21 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "clone-impls",
-          "default",
-          "derive",
-          "extra-traits",
-          "full",
-          "parsing",
-          "printing",
-          "proc-macro",
-          "quote",
-          "visit"
-        ],
+        "crate_features": {
+          "common": [
+            "clone-impls",
+            "default",
+            "derive",
+            "extra-traits",
+            "full",
+            "parsing",
+            "printing",
+            "proc-macro",
+            "quote",
+            "visit"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -6895,9 +7022,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default"
-        ],
+        "crate_features": {
+          "common": [
+            "default"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -6942,9 +7072,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default"
-        ],
+        "crate_features": {
+          "common": [
+            "default"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -7243,13 +7376,16 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "alloc",
-          "formatting",
-          "local-offset",
-          "macros",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "alloc",
+            "formatting",
+            "local-offset",
+            "macros",
+            "std"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -7347,9 +7483,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "formatting"
-        ],
+        "crate_features": {
+          "common": [
+            "formatting"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -7389,11 +7528,14 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "alloc",
-          "default",
-          "tinyvec_macros"
-        ],
+        "crate_features": {
+          "common": [
+            "alloc",
+            "default",
+            "tinyvec_macros"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -7463,9 +7605,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default"
-        ],
+        "crate_features": {
+          "common": [
+            "default"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -7728,11 +7873,14 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "hardcoded-data",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "hardcoded-data",
+            "std"
+          ],
+          "selects": {}
+        },
         "edition": "2018",
         "version": "0.3.10"
       },
@@ -7793,10 +7941,13 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "std"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -7835,9 +7986,6 @@
       "common_attrs": {
         "compile_data_glob": [
           "**"
-        ],
-        "crate_features": [
-          "default"
         ],
         "edition": "2015",
         "version": "0.1.10"
@@ -7985,10 +8133,13 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "rand",
-          "v4"
-        ],
+        "crate_features": {
+          "common": [
+            "rand",
+            "v4"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -8088,10 +8239,13 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "std"
+          ],
+          "selects": {}
+        },
         "edition": "2018",
         "version": "0.10.0+wasi-snapshot-preview1"
       },
@@ -8121,10 +8275,6 @@
       "common_attrs": {
         "compile_data_glob": [
           "**"
-        ],
-        "crate_features": [
-          "default",
-          "std"
         ],
         "edition": "2018",
         "version": "0.11.0+wasi-snapshot-preview1"
@@ -8165,11 +8315,14 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "default",
-          "spans",
-          "std"
-        ],
+        "crate_features": {
+          "common": [
+            "default",
+            "spans",
+            "std"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -8227,9 +8380,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "spans"
-        ],
+        "crate_features": {
+          "common": [
+            "spans"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -8293,9 +8449,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "spans"
-        ],
+        "crate_features": {
+          "common": [
+            "spans"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -8339,9 +8498,12 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "spans"
-        ],
+        "crate_features": {
+          "common": [
+            "spans"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -8517,32 +8679,35 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "activation",
-          "combaseapi",
-          "consoleapi",
-          "errhandlingapi",
-          "fileapi",
-          "handleapi",
-          "knownfolders",
-          "minwinbase",
-          "minwindef",
-          "ntdef",
-          "ntsecapi",
-          "objbase",
-          "processenv",
-          "profileapi",
-          "roapi",
-          "shlobj",
-          "std",
-          "sysinfoapi",
-          "timezoneapi",
-          "winbase",
-          "wincon",
-          "winerror",
-          "winnt",
-          "winstring"
-        ],
+        "crate_features": {
+          "common": [
+            "activation",
+            "combaseapi",
+            "consoleapi",
+            "errhandlingapi",
+            "fileapi",
+            "handleapi",
+            "knownfolders",
+            "minwinbase",
+            "minwindef",
+            "ntdef",
+            "ntsecapi",
+            "objbase",
+            "processenv",
+            "profileapi",
+            "roapi",
+            "shlobj",
+            "std",
+            "sysinfoapi",
+            "timezoneapi",
+            "winbase",
+            "wincon",
+            "winerror",
+            "winnt",
+            "winstring"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [
             {
@@ -8747,25 +8912,28 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": [
-          "Win32",
-          "Win32_Foundation",
-          "Win32_NetworkManagement",
-          "Win32_NetworkManagement_IpHelper",
-          "Win32_Networking",
-          "Win32_Networking_WinSock",
-          "Win32_Security",
-          "Win32_Storage",
-          "Win32_Storage_FileSystem",
-          "Win32_System",
-          "Win32_System_Console",
-          "Win32_System_IO",
-          "Win32_System_LibraryLoader",
-          "Win32_System_SystemServices",
-          "Win32_System_Threading",
-          "Win32_System_WindowsProgramming",
-          "default"
-        ],
+        "crate_features": {
+          "common": [
+            "Win32",
+            "Win32_Foundation",
+            "Win32_NetworkManagement",
+            "Win32_NetworkManagement_IpHelper",
+            "Win32_Networking",
+            "Win32_Networking_WinSock",
+            "Win32_Security",
+            "Win32_Storage",
+            "Win32_Storage_FileSystem",
+            "Win32_System",
+            "Win32_System_Console",
+            "Win32_System_IO",
+            "Win32_System_LibraryLoader",
+            "Win32_System_SystemServices",
+            "Win32_System_Threading",
+            "Win32_System_WindowsProgramming",
+            "default"
+          ],
+          "selects": {}
+        },
         "deps": {
           "common": [],
           "selects": {
