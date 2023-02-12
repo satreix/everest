@@ -34,8 +34,8 @@ def go_dependencies():
     go_repository(
         name = "com_github_bazelbuild_rules_go",
         importpath = "github.com/bazelbuild/rules_go",
-        sum = "h1:vbnESGv/t2WgGEbXatwbXAS95dTx93Lv6Uh5QkVF13s=",
-        version = "v0.37.0",
+        sum = "h1:YGNsLhWe18Ielebav7cClP3GMwBxBE+xEArLHtmXDx8=",
+        version = "v0.38.1",
     )
     go_repository(
         name = "com_github_beorn7_perks",
