@@ -1,5 +1,5 @@
 {
-  "checksum": "e92cd883fc333001bcc2d66aeac034cfd7886b5d90b77398d718f4fd9cc9c3ce",
+  "checksum": "7fd83e73bcf1bf03d1df22051db8c7f6f6a59aa3fa9a1228ff9dc2892dd3bade",
   "crates": {
     "android_system_properties 0.1.5": {
       "name": "android_system_properties",
