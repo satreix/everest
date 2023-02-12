@@ -6,8 +6,9 @@ GEM
     diff-lcs (1.5.0)
     erb (2.2.3)
       cgi
-    haml (5.2.2)
-      temple (>= 0.8.0)
+    haml (6.1.1)
+      temple (>= 0.8.2)
+      thor
       tilt
     json (2.6.3)
     parallel (1.22.1)
@@ -54,6 +55,7 @@ GEM
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
     temple (0.8.2)
+    thor (1.2.1)
     tilt (2.0.11)
     unicode-display_width (2.4.2)
 
@@ -65,7 +67,7 @@ PLATFORMS
 
 DEPENDENCIES
   erb (~> 2.2)
-  haml (~> 5.2)
+  haml (~> 6.0)
   rspec (~> 3.12.0)
   rspec-its
   rubocop
