@@ -461,8 +461,8 @@ def go_dependencies():
     go_repository(
         name = "com_github_rs_zerolog",
         importpath = "github.com/rs/zerolog",
-        sum = "h1:MirSo27VyNi7RJYP3078AA1+Cyzd2GB66qy3aUHvsWY=",
-        version = "v1.28.0",
+        sum = "h1:Zes4hju04hjbvkVkOhdl2HpZa+0PmVwigmo8XoORE5w=",
+        version = "v1.29.0",
     )
     go_repository(
         name = "com_github_stretchr_objx",
