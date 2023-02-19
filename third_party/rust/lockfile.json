@@ -1,5 +1,5 @@
 {
-  "checksum": "4da915cf224d0595882778e4a8b5a74d0cc3a2c38b3a23734ef85ee73dd4679c",
+  "checksum": "4bff538af69b268121b617eb367cc27667cbb5dc9139526b13693ae84fe860ec",
   "crates": {
     "android_system_properties 0.1.5": {
       "name": "android_system_properties",
@@ -696,13 +696,13 @@
       },
       "license": "MIT/Apache-2.0"
     },
-    "clap 4.1.4": {
+    "clap 4.1.6": {
       "name": "clap",
-      "version": "4.1.4",
+      "version": "4.1.6",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/clap/4.1.4/download",
-          "sha256": "f13b9c79b5d1dd500d20ef541215a6423c75829ef43117e1b4d17fd8af0b5d76"
+          "url": "https://crates.io/api/v1/crates/clap/4.1.6/download",
+          "sha256": "ec0b0588d44d4d63a87dbd75c136c166bbfd9a86a31cb89e09906521c7d3f5e3"
         }
       },
       "targets": [
@@ -773,7 +773,7 @@
           ],
           "selects": {}
         },
-        "version": "4.1.4"
+        "version": "4.1.6"
       },
       "license": "MIT OR Apache-2.0"
     },
@@ -1891,7 +1891,7 @@
         "deps": {
           "common": [
             {
-              "id": "clap 4.1.4",
+              "id": "clap 4.1.6",
               "target": "clap"
             }
           ],
