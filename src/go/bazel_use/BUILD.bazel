@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "bazel_use_lib",
+    srcs = ["bazel_use.go"],
+    importpath = "github.com/satreix/everest/src/go/bazel_use",
+    visibility = ["//visibility:private"],
+    deps = ["@com_github_google_go_github_v50//github"],
+)
+
+go_binary(
+    name = "bazel_use",
+    embed = [":bazel_use_lib"],
+    visibility = ["//visibility:public"],
+)

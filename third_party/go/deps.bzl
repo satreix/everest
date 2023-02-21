@@ -219,6 +219,18 @@ def go_dependencies():
         version = "v0.5.9",
     )
     go_repository(
+        name = "com_github_google_go_github_v50",
+        importpath = "github.com/google/go-github/v50",
+        sum = "h1:hMUpkZjklC5GJ+c3GquSqOP/T4BNsB7XohaPhtMOzRk=",
+        version = "v50.1.0",
+    )
+    go_repository(
+        name = "com_github_google_go_querystring",
+        importpath = "github.com/google/go-querystring",
+        sum = "h1:AnCroh3fv4ZBgVIf1Iwtovgjaw/GiKJo8M8yD/fhyJ8=",
+        version = "v1.1.0",
+    )
+    go_repository(
         name = "com_github_google_martian",
         importpath = "github.com/google/martian",
         sum = "h1:/CP5g8u/VJHijgedC/Legn3BAbAaWPgecwXBIDzw5no=",
