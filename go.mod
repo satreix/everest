@@ -18,7 +18,7 @@ require (
 	github.com/prometheus/client_model v0.3.0
 	github.com/prometheus/common v0.39.0
 	github.com/rs/zerolog v1.29.0
-	github.com/stretchr/testify v1.8.0
+	github.com/stretchr/testify v1.8.2
 	github.com/whilp/git-urls v1.0.0
 	github.com/zenazn/goji v1.0.1
 	google.golang.org/grpc v1.53.0
