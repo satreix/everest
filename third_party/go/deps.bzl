@@ -28,8 +28,8 @@ def go_dependencies():
     go_repository(
         name = "com_github_antlr_antlr4_runtime_go_antlr",
         importpath = "github.com/antlr/antlr4/runtime/Go/antlr",
-        sum = "h1:mEzJ8SH4M5wDL8C4a17yX2YeD/FIXV5w8FJekByaBi0=",
-        version = "v0.0.0-20220527190237-ee62e23da966",
+        sum = "h1:yL7+Jz0jTC6yykIK/Wh74gnTJnrGr5AyrNMXuA0gves=",
+        version = "v1.4.10",
     )
     go_repository(
         name = "com_github_bazelbuild_rules_go",
@@ -204,6 +204,13 @@ def go_dependencies():
         importpath = "github.com/google/btree",
         sum = "h1:0udJVsspx3VBr5FwtLhQQtuAsVc79tTq0ocGIPAU6qo=",
         version = "v1.0.0",
+    )
+    go_repository(
+        name = "com_github_google_cel_go",
+        build_naming_convention = "go_default_library",
+        importpath = "github.com/google/cel-go",
+        sum = "h1:z+8OBOcmh7IeKyqwT/6IlnMvy621fYUqnTVPEdegGlU=",
+        version = "v0.13.0",
     )
     go_repository(
         name = "com_github_google_go_cmp",
@@ -465,10 +472,16 @@ def go_dependencies():
         version = "v1.29.0",
     )
     go_repository(
+        name = "com_github_stoewer_go_strcase",
+        importpath = "github.com/stoewer/go-strcase",
+        sum = "h1:Z2iHWqGXH00XYgqDmNgQbIBxf3wrNq0F3feEy0ainaU=",
+        version = "v1.2.0",
+    )
+    go_repository(
         name = "com_github_stretchr_objx",
         importpath = "github.com/stretchr/objx",
-        sum = "h1:4G4v2dO3VZwixGIRoQ5Lfboy6nUhCyYzaqnIAPPhYs4=",
-        version = "v0.1.0",
+        sum = "h1:M2gUjqZET1qApGOWNSnZ49BAIMX4F/1plDv3+l31EJ4=",
+        version = "v0.4.0",
     )
     go_repository(
         name = "com_github_stretchr_testify",
