@@ -1,4 +1,4 @@
-load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library", "go_test")
 
 go_library(
     name = "bazel_use_lib",
@@ -12,4 +12,14 @@ go_binary(
     name = "bazel_use",
     embed = [":bazel_use_lib"],
     visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "bazel_use_test",
+    srcs = ["bazel_use_test.go"],
+    embed = [":bazel_use_lib"],
+    deps = [
+        "@com_github_google_go_cmp//cmp",
+        "@com_github_stretchr_testify//require",
+    ],
 )
