@@ -7,7 +7,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-askama = "0.11.1"
+askama = "0.12.0"
 iron = "0.6.1"
 iron-slog = "0.0.2"
 router = "0.6.0"
