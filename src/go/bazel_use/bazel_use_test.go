@@ -11,44 +11,6 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func Test_parseWorkspaceName(t *testing.T) {
-	testCases := map[string]struct {
-		content string
-		want    string
-	}{
-		"one line": {
-			content: `workspace(name = "rules_cc")
-
-other rules
-`,
-			want: "rules_cc",
-		},
-		"multiple lines": {
-			content: `workspace(
-    name = "rules_cc",
-)
-
-other rules
-`,
-			want: "rules_cc",
-		},
-		"no name": {
-			content: `other rules
-`,
-			want: "",
-		},
-	}
-
-	for name, tc := range testCases {
-		t.Run(name, func(t *testing.T) {
-			got := parseWorkspaceName(tc.content)
-			if diff := cmp.Diff(tc.want, got); diff != "" {
-				t.Errorf("parseWorkspaceName() mismatch (-want +got):\n%s", diff)
-			}
-		})
-	}
-}
-
 func Test_getSHA256(t *testing.T) {
 	const want = "68e656b251e67e8358bef8483ab0d51c6619f3e7a1a9f0e75838d41ff368f728"
 

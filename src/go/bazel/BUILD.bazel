@@ -1,0 +1,21 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "bazel",
+    srcs = [
+        "http.go",
+        "workspace.go",
+    ],
+    importpath = "github.com/satreix/everest/src/go/bazel",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "bazel_test",
+    srcs = [
+        "http_test.go",
+        "workspace_test.go",
+    ],
+    embed = [":bazel"],
+    deps = ["@com_github_google_go_cmp//cmp"],
+)
