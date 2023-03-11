@@ -13,7 +13,6 @@ LANGUAGES=(
     rust
 )
 
-export CARGO_BAZEL_REPIN=1
 export REPIN=1
 
 for lang in "${LANGUAGES[@]}"; do
