@@ -124,6 +124,8 @@ http_archive(
 
 http_archive(
     name = "io_grpc_grpc_java",
+    patch_args = ["-p1"],
+    patches = ["//third_party:io_grpc_grpc_java/0001-update-junit-to-v4.13.2.patch"],
     sha256 = "fd0a649d03a8da06746814f414fb4d36c1b2f34af2aad4e19ae43f7c4bd6f15e",
     strip_prefix = "grpc-java-1.53.0",
     url = "https://github.com/grpc/grpc-java/archive/v1.53.0.tar.gz",
@@ -188,9 +190,9 @@ http_archive(
 
 http_archive(
     name = "rules_jvm_external",
-    sha256 = "6e9f2b94ecb6aa7e7ec4a0fbf882b226ff5257581163e88bf70ae521555ad271",
-    strip_prefix = "rules_jvm_external-4.5",
-    url = "https://github.com/bazelbuild/rules_jvm_external/archive/4.5.tar.gz",
+    sha256 = "1a5ebb66a52d490bd51e4fb12ce2746bdb9225d7b3188d64d4780c7cacf2decb",
+    strip_prefix = "rules_jvm_external-5.1",
+    url = "https://github.com/bazelbuild/rules_jvm_external/archive/5.1.tar.gz",
 )
 
 http_archive(
