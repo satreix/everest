@@ -2,6 +2,7 @@ load("@io_bazel_rules_go//go:def.bzl", "go_test")
 
 go_test(
     name = "cel_test",
+    size = "small",
     srcs = ["cel_test.go"],
     deps = [
         "@com_github_google_cel_go//cel:go_default_library",

@@ -19,6 +19,7 @@ go_binary(
 
 go_test(
     name = "bazel_use_test",
+    size = "small",
     srcs = ["bazel_use_test.go"],
     embed = [":bazel_use_lib"],
     deps = [
