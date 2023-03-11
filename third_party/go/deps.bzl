@@ -323,8 +323,8 @@ def go_dependencies():
     go_repository(
         name = "com_github_keybase_go_keychain",
         importpath = "github.com/keybase/go-keychain",
-        sum = "h1:k2ZvAPXrDB1Q7fGRdUane+T08K+UaL96qH47Setr/7k=",
-        version = "v0.0.0-20221221221913-9be78f6c498b",
+        sum = "h1:yi1W8qcFJ2plmaGJFN1npm0KQviWPMCtQOYuwDT6Swk=",
+        version = "v0.0.0-20230307172405-3e4884637dd1",
     )
     go_repository(
         name = "com_github_kisielk_errcheck",
@@ -1333,8 +1333,8 @@ def go_dependencies():
     go_repository(
         name = "org_golang_x_crypto",
         importpath = "golang.org/x/crypto",
-        sum = "h1:psW17arqaxU48Z5kZ0CQnkZWQJsqcURM6tKiBApRjXI=",
-        version = "v0.0.0-20200622213623-75b288015ac9",
+        sum = "h1:MDRAIl0xIo9Io2xV565hzXHw3zVseKrJKodhohM5CjU=",
+        version = "v0.1.0",
     )
     go_repository(
         name = "org_golang_x_exp",
