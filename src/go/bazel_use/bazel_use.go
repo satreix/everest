@@ -11,14 +11,11 @@ import (
 	"net/http"
 	"net/url"
 	"os"
-	"regexp"
 	"strings"
-	"text/template"
 
 	"github.com/google/go-github/v50/github"
+	"github.com/satreix/everest/src/go/bazel"
 )
-
-var workspaceRE = regexp.MustCompile(`(?m)workspace\(\s*name = "(.+)",?\s*\)`)
 
 func main() {
 	flag.Usage = func() {
@@ -41,69 +38,51 @@ func main() {
 	}
 
 	gh := github.NewClient(nil)
-
 	ctx := context.Background()
-
 	releases, _, err := gh.Repositories.ListReleases(ctx, repo.Org, repo.Name, &github.ListOptions{})
 	if err != nil {
 		log.Fatalf("github error: %s", err)
 	}
 
-	for _, release := range releases {
-		var name string
-		if cr, _, err := gh.Repositories.DownloadContents(ctx, repo.Org, repo.Name, "WORKSPACE", &github.RepositoryContentGetOptions{Ref: release.GetTagName()}); err == nil {
-			workspaceFile, err := io.ReadAll(cr)
-			if err != nil {
-				log.Fatal("workspace file read error")
-			}
-			name = parseWorkspaceName(string(workspaceFile))
-		}
-		if name == "" {
-			name = fmt.Sprintf("com_github_%s_%s", repo.Org, repo.Name)
-		}
+	if len(releases) == 0 {
+		log.Fatalf("no releases found")
+	}
 
-		downloadURL := fmt.Sprintf("https://%s/%s/%s/archive/%s.tar.gz", repo.Host, repo.Org, repo.Name, release.GetTagName())
-		stripPrefix := fmt.Sprintf("%s-%s", repo, strings.TrimPrefix(release.GetTagName(), "v"))
+	latestRelease := releases[0]
 
-		sha256, err := getSHA256(downloadURL)
+	name, err := computeName(ctx, gh, repo, latestRelease)
+	if err != nil {
+		log.Fatalf("error: %#v", err)
+	}
+
+	downloadURL := fmt.Sprintf("https://%s/%s/%s/archive/%s.tar.gz", repo.Host, repo.Org, repo.Name, latestRelease.GetTagName())
+	stripPrefix := fmt.Sprintf("%s-%s", repo.Name, strings.TrimPrefix(latestRelease.GetTagName(), "v"))
+	sha256, err := getSHA256(downloadURL)
+	if err != nil {
+		log.Fatalf("error: %#v", err)
+	}
+
+	fmt.Println(bazel.HTTPArchive{
+		Name:        name,
+		URL:         downloadURL,
+		Sha256:      sha256,
+		StripPrefix: stripPrefix,
+	}.String())
+}
+
+func computeName(ctx context.Context, gh *github.Client, repo *repository, release *github.RepositoryRelease) (string, error) {
+	var name string
+	if cr, _, err := gh.Repositories.DownloadContents(ctx, repo.Org, repo.Name, "WORKSPACE", &github.RepositoryContentGetOptions{Ref: release.GetTagName()}); err == nil {
+		workspaceFile, err := io.ReadAll(cr)
 		if err != nil {
-			log.Fatalf("error: %#v", err)
+			return "", fmt.Errorf("workspace file read error: %w", err)
 		}
-
-		if err := tpl.Execute(os.Stdout, &tplData{
-			Name:        name,
-			URL:         downloadURL,
-			Sha256:      sha256,
-			StripPrefix: stripPrefix,
-		}); err != nil {
-			log.Fatalf("template error: %s", err)
-		}
-		fmt.Fprintln(os.Stdout, "")
-		return
+		name = bazel.ParseWorkspaceName(string(workspaceFile))
 	}
-
-	log.Fatalf("could not find a release for the project")
-}
-
-var tpl = template.Must(template.New("").Parse(`http_archive(
-    name = "{{.Name}}",
-    sha256 = "{{.Sha256}}",
-    strip_prefix = "{{.StripPrefix}}",
-    url = "{{.URL}}",
-)`))
-
-type tplData struct {
-	Name        string
-	URL         string
-	Sha256      string
-	StripPrefix string
-}
-
-func parseWorkspaceName(content string) string {
-	for _, match := range workspaceRE.FindAllStringSubmatch(content, -1) {
-		return match[1]
+	if name == "" {
+		name = fmt.Sprintf("com_github_%s_%s", repo.Org, repo.Name)
 	}
-	return ""
+	return name, nil
 }
 
 func getSHA256(url string) (string, error) {
@@ -133,8 +112,6 @@ func parseRepository(s string) (*repository, error) {
 	if err != nil {
 		return nil, err
 	}
-
-	log.Printf("uri: %#v", uri)
 
 	if uri.Host == "" {
 		parts := strings.Split(s, "/")

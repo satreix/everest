@@ -5,7 +5,10 @@ go_library(
     srcs = ["bazel_use.go"],
     importpath = "github.com/satreix/everest/src/go/bazel_use",
     visibility = ["//visibility:private"],
-    deps = ["@com_github_google_go_github_v50//github"],
+    deps = [
+        "//src/go/bazel",
+        "@com_github_google_go_github_v50//github",
+    ],
 )
 
 go_binary(
