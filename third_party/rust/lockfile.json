@@ -1,5 +1,5 @@
 {
-  "checksum": "f8c1a87bde413985dffd9383f0ad7cfaca535eb891c90307a0d7a674ff0587d5",
+  "checksum": "cb73d07e863f6643a8d7ed79d4e290a78fd087ae8fcbe0347b989ead8999db83",
   "crates": {
     "android_system_properties 0.1.5": {
       "name": "android_system_properties",
@@ -3729,7 +3729,7 @@
               "target": "pyo3"
             },
             {
-              "id": "rayon 1.6.1",
+              "id": "rayon 1.7.0",
               "target": "rayon"
             }
           ],
@@ -5786,13 +5786,13 @@
       },
       "license": "MIT/Apache-2.0"
     },
-    "rayon 1.6.1": {
+    "rayon 1.7.0": {
       "name": "rayon",
-      "version": "1.6.1",
+      "version": "1.7.0",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/rayon/1.6.1/download",
-          "sha256": "6db3a213adf02b3bcfd2d3846bb41cb22857d131789e01df434fb7e7bc0759b7"
+          "url": "https://crates.io/api/v1/crates/rayon/1.7.0/download",
+          "sha256": "1d2df5196e37bcc87abebc0053e20787d73847bb33134a69841207dd0a47f03b"
         }
       },
       "targets": [
@@ -5818,24 +5818,24 @@
               "target": "either"
             },
             {
-              "id": "rayon-core 1.10.2",
+              "id": "rayon-core 1.11.0",
               "target": "rayon_core"
             }
           ],
           "selects": {}
         },
         "edition": "2021",
-        "version": "1.6.1"
+        "version": "1.7.0"
       },
       "license": "MIT OR Apache-2.0"
     },
-    "rayon-core 1.10.2": {
+    "rayon-core 1.11.0": {
       "name": "rayon-core",
-      "version": "1.10.2",
+      "version": "1.11.0",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/rayon-core/1.10.2/download",
-          "sha256": "356a0625f1954f730c0201cdab48611198dc6ce21f4acff55089b5a78e6e835b"
+          "url": "https://crates.io/api/v1/crates/rayon-core/1.11.0/download",
+          "sha256": "4b8f95bd6966f5c87776639160a66bd8ab9895d9d4ab01ddba9fc60661aebe8d"
         }
       },
       "targets": [
@@ -5882,14 +5882,14 @@
               "target": "num_cpus"
             },
             {
-              "id": "rayon-core 1.10.2",
+              "id": "rayon-core 1.11.0",
               "target": "build_script_build"
             }
           ],
           "selects": {}
         },
         "edition": "2021",
-        "version": "1.10.2"
+        "version": "1.11.0"
       },
       "build_script_attrs": {
         "data_glob": [
