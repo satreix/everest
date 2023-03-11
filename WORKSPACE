@@ -125,7 +125,10 @@ http_archive(
 http_archive(
     name = "io_grpc_grpc_java",
     patch_args = ["-p1"],
-    patches = ["//third_party:io_grpc_grpc_java/0001-update-junit-to-v4.13.2.patch"],
+    patches = [
+        "//third_party:io_grpc_grpc_java/0001-update-junit-to-v4.13.2.patch",
+        "//third_party:io_grpc_grpc_java/0002-suppress-jndi-warning.patch",
+    ],
     sha256 = "fd0a649d03a8da06746814f414fb4d36c1b2f34af2aad4e19ae43f7c4bd6f15e",
     strip_prefix = "grpc-java-1.53.0",
     url = "https://github.com/grpc/grpc-java/archive/v1.53.0.tar.gz",
@@ -184,8 +187,8 @@ http_archive(
 
 http_archive(
     name = "rules_java",
-    sha256 = "9b87757af5c77e9db5f7c000579309afae75cf6517da745de01ba0c6e4870951",
-    url = "https://github.com/bazelbuild/rules_java/releases/download/5.4.0/rules_java-5.4.0.tar.gz",
+    sha256 = "a1f82b730b9c6395d3653032bd7e3a660f9d5ddb1099f427c1e1fe768f92e395",
+    url = "https://github.com/bazelbuild/rules_java/releases/download/5.4.1/rules_java-5.4.1.tar.gz",
 )
 
 http_archive(
