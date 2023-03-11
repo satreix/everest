@@ -17,6 +17,7 @@ cue_export(
 
 go_test(
     name = "foo_test",
+    size = "small",
     srcs = ["foo_test.go"],
     data = [":foo_export"],
 )

@@ -3,6 +3,7 @@ load("//third_party/python:requirements.bzl", "requirement")
 
 py_test(
     name = "cel_test",
+    size = "small",
     srcs = ["cel_test.py"],
     deps = [
         requirement("cel-python"),

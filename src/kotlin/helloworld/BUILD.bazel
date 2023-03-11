@@ -10,6 +10,7 @@ kt_jvm_library(
 
 ktlint_test(
     name = "lint_test",
+    size = "small",
     srcs = glob(["*.kt"]),
 )
 
