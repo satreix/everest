@@ -50,11 +50,11 @@ GEM
       rubocop (~> 1.33)
       rubocop-capybara (~> 2.17)
     ruby-progressbar (1.13.0)
-    slim (5.0.0)
+    slim (5.1.0)
       temple (~> 0.10.0)
-      tilt (>= 2.0.6, < 2.1)
+      tilt (>= 2.0.6, < 2.2)
     temple (0.10.0)
-    tilt (2.0.11)
+    tilt (2.1.0)
     unicode-display_width (2.4.2)
 
 PLATFORMS
