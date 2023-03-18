@@ -1,5 +1,5 @@
 {
-  "checksum": "b30500e6ee75901f7846ce4dc98950a4e019782fe0e546b88959c34fc7a45045",
+  "checksum": "db0b87d4e4e43de10ddc5b9efcee63cefd4fe39114fc023f30be8bc62af9500a",
   "crates": {
     "android_system_properties 0.1.5": {
       "name": "android_system_properties",
@@ -679,13 +679,13 @@
       },
       "license": "MIT/Apache-2.0"
     },
-    "clap 4.1.8": {
+    "clap 4.1.10": {
       "name": "clap",
-      "version": "4.1.8",
+      "version": "4.1.10",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/clap/4.1.8/download",
-          "sha256": "c3d7ae14b20b94cb02149ed21a86c423859cbe18dc7ed69845cace50e52b40a5"
+          "url": "https://crates.io/api/v1/crates/clap/4.1.10/download",
+          "sha256": "ce38afc168d8665cfc75c7b1dd9672e50716a137f433f070991619744a67342a"
         }
       },
       "targets": [
@@ -750,23 +750,23 @@
         "proc_macro_deps": {
           "common": [
             {
-              "id": "clap_derive 4.1.8",
+              "id": "clap_derive 4.1.9",
               "target": "clap_derive"
             }
           ],
           "selects": {}
         },
-        "version": "4.1.8"
+        "version": "4.1.10"
       },
       "license": "MIT OR Apache-2.0"
     },
-    "clap_derive 4.1.8": {
+    "clap_derive 4.1.9": {
       "name": "clap_derive",
-      "version": "4.1.8",
+      "version": "4.1.9",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/clap_derive/4.1.8/download",
-          "sha256": "44bec8e5c9d09e439c4335b1af0abaab56dcf3b94999a936e1bb47b9134288f0"
+          "url": "https://crates.io/api/v1/crates/clap_derive/4.1.9/download",
+          "sha256": "fddf67631444a3a3e3e5ac51c36a5e01335302de677bd78759eaa90ab1f46644"
         }
       },
       "targets": [
@@ -817,7 +817,7 @@
           "selects": {}
         },
         "edition": "2021",
-        "version": "4.1.8"
+        "version": "4.1.9"
       },
       "license": "MIT OR Apache-2.0"
     },
@@ -1874,7 +1874,7 @@
         "deps": {
           "common": [
             {
-              "id": "clap 4.1.8",
+              "id": "clap 4.1.10",
               "target": "clap"
             }
           ],
