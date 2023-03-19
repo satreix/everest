@@ -1,0 +1,15 @@
+load("@rules_python//python:defs.bzl", "py_binary")
+load("//third_party/python:requirements.bzl", "requirement")
+
+py_binary(
+    name = "gh-release-to-bzl",
+    srcs = ["__main__.py"],
+    main = "__main__.py",
+    visibility = ["//visibility:public"],
+    deps = [
+        requirement("jinja2"),
+        requirement("markupsafe"),
+        requirement("PyGithub"),
+        requirement("requests"),
+    ],
+)
