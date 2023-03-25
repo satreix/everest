@@ -1,5 +1,5 @@
 {
-  "checksum": "53cf2ca96acee6829ade3bb6b3414f363eea5340e93ad2230fd75af09c2bded0",
+  "checksum": "aaae0b6a7260fb89b8b2750b8d5679250f9b5ea043ee4044312f47efb7ed4294",
   "crates": {
     "android_system_properties 0.1.5": {
       "name": "android_system_properties",
@@ -3772,7 +3772,7 @@
         "deps": {
           "common": [
             {
-              "id": "pyo3 0.18.1",
+              "id": "pyo3 0.18.2",
               "target": "pyo3"
             },
             {
@@ -4565,13 +4565,13 @@
       },
       "license": "MIT OR Apache-2.0"
     },
-    "pyo3 0.18.1": {
+    "pyo3 0.18.2": {
       "name": "pyo3",
-      "version": "0.18.1",
+      "version": "0.18.2",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/pyo3/0.18.1/download",
-          "sha256": "06a3d8e8a46ab2738109347433cb7b96dffda2e4a218b03ef27090238886b147"
+          "url": "https://crates.io/api/v1/crates/pyo3/0.18.2/download",
+          "sha256": "cfb848f80438f926a9ebddf0a539ed6065434fd7aae03a89312a9821f81b8501"
         }
       },
       "targets": [
@@ -4629,11 +4629,11 @@
               "target": "parking_lot"
             },
             {
-              "id": "pyo3 0.18.1",
+              "id": "pyo3 0.18.2",
               "target": "build_script_build"
             },
             {
-              "id": "pyo3-ffi 0.18.1",
+              "id": "pyo3-ffi 0.18.2",
               "target": "pyo3_ffi"
             },
             {
@@ -4651,13 +4651,13 @@
               "target": "indoc"
             },
             {
-              "id": "pyo3-macros 0.18.1",
+              "id": "pyo3-macros 0.18.2",
               "target": "pyo3_macros"
             }
           ],
           "selects": {}
         },
-        "version": "0.18.1"
+        "version": "0.18.2"
       },
       "build_script_attrs": {
         "data_glob": [
@@ -4666,7 +4666,7 @@
         "deps": {
           "common": [
             {
-              "id": "pyo3-build-config 0.18.1",
+              "id": "pyo3-build-config 0.18.2",
               "target": "pyo3_build_config"
             }
           ],
@@ -4675,13 +4675,13 @@
       },
       "license": "Apache-2.0"
     },
-    "pyo3-build-config 0.18.1": {
+    "pyo3-build-config 0.18.2": {
       "name": "pyo3-build-config",
-      "version": "0.18.1",
+      "version": "0.18.2",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/pyo3-build-config/0.18.1/download",
-          "sha256": "75439f995d07ddfad42b192dfcf3bc66a7ecfd8b4a1f5f6f046aa5c2c5d7677d"
+          "url": "https://crates.io/api/v1/crates/pyo3-build-config/0.18.2/download",
+          "sha256": "98a42e7f42e917ce6664c832d5eee481ad514c98250c49e0b03b20593e2c7ed0"
         }
       },
       "targets": [
@@ -4724,7 +4724,7 @@
               "target": "once_cell"
             },
             {
-              "id": "pyo3-build-config 0.18.1",
+              "id": "pyo3-build-config 0.18.2",
               "target": "build_script_build"
             },
             {
@@ -4735,7 +4735,7 @@
           "selects": {}
         },
         "edition": "2018",
-        "version": "0.18.1"
+        "version": "0.18.2"
       },
       "build_script_attrs": {
         "data_glob": [
@@ -4753,13 +4753,13 @@
       },
       "license": "Apache-2.0"
     },
-    "pyo3-ffi 0.18.1": {
+    "pyo3-ffi 0.18.2": {
       "name": "pyo3-ffi",
-      "version": "0.18.1",
+      "version": "0.18.2",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/pyo3-ffi/0.18.1/download",
-          "sha256": "839526a5c07a17ff44823679b68add4a58004de00512a95b6c1c98a6dcac0ee5"
+          "url": "https://crates.io/api/v1/crates/pyo3-ffi/0.18.2/download",
+          "sha256": "a0707f0ab26826fe4ccd59b69106e9df5e12d097457c7b8f9c0fd1d2743eec4d"
         }
       },
       "targets": [
@@ -4801,14 +4801,14 @@
               "target": "libc"
             },
             {
-              "id": "pyo3-ffi 0.18.1",
+              "id": "pyo3-ffi 0.18.2",
               "target": "build_script_build"
             }
           ],
           "selects": {}
         },
         "edition": "2018",
-        "version": "0.18.1"
+        "version": "0.18.2"
       },
       "build_script_attrs": {
         "data_glob": [
@@ -4817,7 +4817,7 @@
         "deps": {
           "common": [
             {
-              "id": "pyo3-build-config 0.18.1",
+              "id": "pyo3-build-config 0.18.2",
               "target": "pyo3_build_config"
             }
           ],
@@ -4827,13 +4827,13 @@
       },
       "license": "Apache-2.0"
     },
-    "pyo3-macros 0.18.1": {
+    "pyo3-macros 0.18.2": {
       "name": "pyo3-macros",
-      "version": "0.18.1",
+      "version": "0.18.2",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/pyo3-macros/0.18.1/download",
-          "sha256": "bd44cf207476c6a9760c4653559be4f206efafb924d3e4cbf2721475fc0d6cc5"
+          "url": "https://crates.io/api/v1/crates/pyo3-macros/0.18.2/download",
+          "sha256": "978d18e61465ecd389e1f235ff5a467146dc4e3c3968b90d274fe73a5dd4a438"
         }
       },
       "targets": [
@@ -4859,7 +4859,7 @@
               "target": "proc_macro2"
             },
             {
-              "id": "pyo3-macros-backend 0.18.1",
+              "id": "pyo3-macros-backend 0.18.2",
               "target": "pyo3_macros_backend"
             },
             {
@@ -4874,17 +4874,17 @@
           "selects": {}
         },
         "edition": "2018",
-        "version": "0.18.1"
+        "version": "0.18.2"
       },
       "license": "Apache-2.0"
     },
-    "pyo3-macros-backend 0.18.1": {
+    "pyo3-macros-backend 0.18.2": {
       "name": "pyo3-macros-backend",
-      "version": "0.18.1",
+      "version": "0.18.2",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/pyo3-macros-backend/0.18.1/download",
-          "sha256": "dc1f43d8e30460f36350d18631ccf85ded64c059829208fe680904c65bcd0a4c"
+          "url": "https://crates.io/api/v1/crates/pyo3-macros-backend/0.18.2/download",
+          "sha256": "8e0e1128f85ce3fca66e435e08aa2089a2689c1c48ce97803e13f63124058462"
         }
       },
       "targets": [
@@ -4921,7 +4921,7 @@
           "selects": {}
         },
         "edition": "2018",
-        "version": "0.18.1"
+        "version": "0.18.2"
       },
       "license": "Apache-2.0"
     },
