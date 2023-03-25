@@ -129,9 +129,9 @@ http_archive(
         "//third_party:io_grpc_grpc_java/0001-update-junit-to-v4.13.2.patch",
         "//third_party:io_grpc_grpc_java/0002-suppress-jndi-warning.patch",
     ],
-    sha256 = "fd0a649d03a8da06746814f414fb4d36c1b2f34af2aad4e19ae43f7c4bd6f15e",
-    strip_prefix = "grpc-java-1.53.0",
-    url = "https://github.com/grpc/grpc-java/archive/v1.53.0.tar.gz",
+    sha256 = "7c854b9e3e6f8925715b97cc0886cf37aca9618029ffee93b0b06ded875aa7b2",
+    strip_prefix = "grpc-java-1.54.0",
+    url = "https://github.com/grpc/grpc-java/archive/v1.54.0.tar.gz",
 )
 
 http_archive(
