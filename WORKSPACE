@@ -125,10 +125,7 @@ http_archive(
 http_archive(
     name = "io_grpc_grpc_java",
     patch_args = ["-p1"],
-    patches = [
-        "//third_party:io_grpc_grpc_java/0001-update-junit-to-v4.13.2.patch",
-        "//third_party:io_grpc_grpc_java/0002-suppress-jndi-warning.patch",
-    ],
+    patches = ["//third_party:io_grpc_grpc_java/0001-update-junit-to-v4.13.2.patch"],
     sha256 = "7c854b9e3e6f8925715b97cc0886cf37aca9618029ffee93b0b06ded875aa7b2",
     strip_prefix = "grpc-java-1.54.0",
     url = "https://github.com/grpc/grpc-java/archive/v1.54.0.tar.gz",
