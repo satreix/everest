@@ -1,0 +1,21 @@
+From 1f91c0df7f794f1936263dda0da11046a3b1cd97 Mon Sep 17 00:00:00 2001
+From: Boleyn Su <boleyn.su@gmail.com>
+Date: Sat, 25 Mar 2023 21:32:12 +0800
+Subject: [PATCH] Add remote_jdk19_repos to rules_java_dependencies
+
+---
+ java/repositories.bzl | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/java/repositories.bzl b/java/repositories.bzl
+index c5cea07..7a4d2c0 100644
+--- a/java/repositories.bzl
++++ b/java/repositories.bzl
+@@ -451,6 +451,7 @@ def rules_java_dependencies():
+     local_jdk_repo()
+     remote_jdk11_repos()
+     remote_jdk17_repos()
++    remote_jdk19_repos()
+     java_tools_repos()
+ 
+ def rules_java_toolchains(name = "toolchains"):
