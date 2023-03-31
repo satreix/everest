@@ -143,6 +143,7 @@ def go_dependencies():
     )
     go_repository(
         name = "com_github_google_cel_go",
+        build_file_proto_mode = "disable_global",
         build_naming_convention = "go_default_library",
         importpath = "github.com/google/cel-go",
         patch_args = ["-p1"],

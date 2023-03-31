@@ -3,13 +3,16 @@ package main
 import (
 	"context"
 	"flag"
+	"fmt"
 	"net"
 
 	"github.com/google/cel-go/cel"
+	"github.com/google/cel-go/common/operators"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"github.com/satreix/everest/src/go/logging"
 	pb "github.com/satreix/everest/src/proto/bookstore/v1"
+	exprpb "google.golang.org/genproto/googleapis/api/expr/v1alpha1"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/reflection"
@@ -76,50 +79,141 @@ func (s *bookstoreService) ListBooks(ctx context.Context, in *pb.ListBooksReques
 		Str("in.PageToken", in.PageToken).
 		Msg("ListBooksRequest")
 
+	var internalFilter func([]*pb.Book) []*pb.Book
+
 	if in.Filter != "" {
 		env, err := cel.NewEnv(
 			cel.Variable("book", cel.DynType),
 		)
 		if err != nil {
-			return nil, status.Errorf(codes.Internal, "NewEnv error: %s", err)
+			return nil, status.Errorf(codes.Internal, "cel env creation error: %s", err)
 		}
 
 		ast, issues := env.Compile(in.Filter)
 		if issues != nil && issues.Err() != nil {
-			return nil, status.Errorf(codes.Internal, "Compile error: %s", err)
-		}
-		prg, err := env.Program(ast)
-		if err != nil {
-			return nil, status.Errorf(codes.Internal, "program construction error: %s", err)
+			return nil, status.Errorf(codes.Internal, "compile error: %s", err)
 		}
 
-		val, _, err := prg.Eval(map[string]any{
-			"book": map[string]any{
-				"page_count": 600,
-			},
-		})
+		s.logger.Info().Msg("ast compiled ok")
+
+		checkedExpr, err := cel.AstToCheckedExpr(ast)
 		if err != nil {
-			return nil, status.Errorf(codes.Internal, "eval error: %s", err)
+			return nil, status.Errorf(codes.Internal, "convert to checkedExpr error: %s", err)
 		}
 
-		s.logger.Info().Msgf("filter eval output: %#v", val)
+		s.logger.Info().Msgf("checkedExpr: %#v", checkedExpr)
+
+		c := &converter{
+			logger: s.logger,
+		}
+		f, err := c.visit(checkedExpr.Expr)
+		if err != nil {
+			return nil, status.Errorf(codes.Internal, "convert to internal filter error: %s", err)
+		}
+
+		s.logger.Info().Msgf("internal filter: %#v", c)
+		internalFilter = func(books []*pb.Book) []*pb.Book {
+			var out []*pb.Book
+			for _, book := range books {
+				if f(book) {
+					out = append(out, book)
+				}
+			}
+			return out
+		}
 	}
 
-	switch in.PageToken {
-	case "":
-		s.logger.Info().Msg("returning first page")
-		return &pb.ListBooksResponse{
-			Books:         s.data[:3],
-			NextPageToken: "secondPage",
-		}, nil
+	output := s.data
+	s.logger.Info().Str("output", fmt.Sprintf("%#v", output)).Msg("unfiltered output")
 
-	case "secondPage":
-		s.logger.Info().Msg("returning second page")
-		return &pb.ListBooksResponse{
-			Books: s.data[3:],
-		}, nil
+	if internalFilter != nil {
+		output = internalFilter(output)
+	}
 
+	s.logger.Info().Str("output", fmt.Sprintf("%#v", output)).Msg("filtered output")
+
+	// FIXME handle pagination
+	return &pb.ListBooksResponse{Books: output}, nil
+}
+
+// converter convert an exprpb.Expression to a condition to apply on the returned book.
+//
+// WIP, inspired from cel2sql:
+// https://github.com/cockscomb/cel2sql/blob/c803dfd5c44ce5c5865ea98999164f5d54985d39/cel2sql.go#L33
+type converter struct {
+	logger zerolog.Logger
+}
+
+func (c *converter) visit(expr *exprpb.Expr) (func(*pb.Book) bool, error) {
+	switch t := expr.ExprKind.(type) {
+	case *exprpb.Expr_CallExpr:
+		return c.visitCall(expr)
 	default:
-		return nil, status.Error(codes.NotFound, "page not found")
+		return nil, fmt.Errorf("not implemented: %#v", t)
 	}
+}
+
+func (c *converter) visitCall(expr *exprpb.Expr) (func(*pb.Book) bool, error) {
+	callExpr := expr.GetCallExpr()
+	fun := callExpr.GetFunction()
+	switch fun {
+	//// ternary operator
+	//case operators.Conditional:
+	//	return c.visitCallConditional(expr)
+	//// index operator
+	//case operators.Index:
+	//	return c.visitCallIndex(expr)
+	//// unary operators
+	//case operators.LogicalNot, operators.Negate:
+	//	return c.visitCallUnary(expr)
+	// binary operators
+	case //operators.Add,
+		//operators.Divide,
+		//operators.Equals,
+		//operators.Greater,
+		//operators.GreaterEquals,
+		//operators.In,
+		//operators.Less,
+		//operators.LessEquals,
+		//operators.LogicalAnd,
+		//operators.LogicalOr,
+		//operators.Multiply,
+		//operators.NotEquals,
+		//operators.OldIn,
+		//operators.Subtract
+		operators.LessEquals:
+		return c.visitCallBinary(expr)
+	// standard function calls.
+	default:
+		return nil, fmt.Errorf("not implemented: %#v", fun)
+
+		//return c.visitCallFunc(expr)
+	}
+}
+
+func (c *converter) visitCallBinary(expr *exprpb.Expr) (func(*pb.Book) bool, error) {
+	callExpr := expr.GetCallExpr()
+	fun := callExpr.GetFunction()
+	args := callExpr.GetArgs()
+	lhs := args[0]
+	rhs := args[1]
+
+	c.logger.Info().
+		Str("fun", fun).
+		Str("lhs", fmt.Sprintf("%#v", lhs.ExprKind)).
+		Str("rhs", fmt.Sprintf("%#v", rhs)).
+		Msg("visitCallBinary")
+
+	// FIXME this is not generic at all, implement the rest
+	if _, ok := lhs.ExprKind.(*exprpb.Expr_SelectExpr); ok {
+		if lhs.GetSelectExpr().GetOperand().GetIdentExpr().Name == "book" && lhs.GetSelectExpr().GetField() == "page_count" {
+			return func(book *pb.Book) bool {
+				condLHS := int64(book.GetPageCount())
+				condRHS := rhs.GetConstExpr().GetInt64Value()
+				return condLHS <= condRHS
+			}, nil
+		}
+	}
+
+	return nil, fmt.Errorf("not implemented")
 }
