@@ -1,0 +1,47 @@
+// (-- api-linter: core::0191::java-multiple-files=disabled
+//     api-linter: core::0191::java-outer-classname=disabled
+//     api-linter: core::0191::java-package=disabled
+//     aip.dev/not-precedent: This is not a Java. --)
+syntax = "proto3";
+
+package bookstore.v1;
+
+// A bookstore service to demo CEL filter and authentication filter.
+service Bookstore {
+  // RPC to showcase list filtering and authentication filtering
+  //
+  // (-- api-linter: core::0127::http-annotation=disabled
+  //     aip.dev/not-precedent: This is not a demo about HTTP gateway --)
+  rpc ListBooks(ListBooksRequest) returns (ListBooksResponse) {}
+}
+
+// Request message for `ListBooks` rpc.
+//
+// (-- api-linter: core::0132::request-parent-required=disabled
+//     aip.dev/not-precedent: Books are root elements --)
+message ListBooksRequest {
+  // User filter on retrieving the books.
+  string filter = 1;
+  // Standard pagination field.
+  int32 page_size = 2;
+  // Standard pagination field.
+  string page_token = 3;
+}
+
+// Response message for `ListBooks` rpc.
+message ListBooksResponse {
+  // Returned books
+  repeated Book books = 1;
+  // Standard pagination field.
+  string next_page_token = 2;
+}
+
+// Book information.
+message Book {
+  // Title field.
+  string title = 1;
+  // Author field.
+  string author = 2;
+  // Number of pages.
+  int32 page_count = 3;
+}
