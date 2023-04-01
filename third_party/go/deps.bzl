@@ -137,6 +137,7 @@ def go_dependencies():
     )
     go_repository(
         name = "com_github_golang_protobuf",
+        build_file_proto_mode = "disable_global",
         importpath = "github.com/golang/protobuf",
         sum = "h1:ROPKBNFfQgOUMifHyP+KYbvpjbdoFNs+aK7DXlji0Tw=",
         version = "v1.5.2",
@@ -310,18 +311,21 @@ def go_dependencies():
     )
     go_repository(
         name = "com_github_prometheus_client_golang",
+        build_file_proto_mode = "disable_global",
         importpath = "github.com/prometheus/client_golang",
         sum = "h1:nJdhIvne2eSX/XRAFV9PcvFFRbrjbcTUj0VP62TMhnw=",
         version = "v1.14.0",
     )
     go_repository(
         name = "com_github_prometheus_client_model",
+        build_file_proto_mode = "disable_global",
         importpath = "github.com/prometheus/client_model",
         sum = "h1:UBgGFHqYdG/TPFD1B1ogZywDqEkwp3fBMvqdiQ7Xew4=",
         version = "v0.3.0",
     )
     go_repository(
         name = "com_github_prometheus_common",
+        build_file_proto_mode = "disable_global",
         importpath = "github.com/prometheus/common",
         sum = "h1:EKsfXEYo4JpWMHH5cg+KOUWeuJSov1Id8zGR8eeI1YM=",
         version = "v0.42.0",

@@ -44,4 +44,6 @@ message Book {
   string author = 2;
   // Number of pages.
   int32 page_count = 3;
+  // Is the bool archived.
+  bool archived = 4;
 }

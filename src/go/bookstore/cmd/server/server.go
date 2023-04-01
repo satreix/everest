@@ -64,7 +64,7 @@ func newBookstoreService(logger zerolog.Logger) *bookstoreService {
 	}
 }
 
-func (s *bookstoreService) ListBooks(ctx context.Context, in *pb.ListBooksRequest) (*pb.ListBooksResponse, error) {
+func (s *bookstoreService) ListBooks(_ context.Context, in *pb.ListBooksRequest) (*pb.ListBooksResponse, error) {
 	s.logger.Info().
 		Str("in.Filter", in.Filter).
 		Int("in.PageSize", int(in.PageSize)).
@@ -155,8 +155,8 @@ func (c *converter) visitCall(expr *exprpb.Expr) (func(*pb.Book) bool, error) {
 		//operators.In,
 		operators.Less,
 		operators.LessEquals,
-		//operators.LogicalAnd,
-		//operators.LogicalOr,
+		operators.LogicalAnd,
+		operators.LogicalOr,
 		//operators.Multiply,
 		operators.NotEquals:
 		//operators.OldIn,
@@ -170,6 +170,20 @@ func (c *converter) visitCall(expr *exprpb.Expr) (func(*pb.Book) bool, error) {
 	}
 }
 
+var boolOps = map[string]func(a, b bool) bool{
+	operators.Equals:    func(a, b bool) bool { return a == b },
+	operators.NotEquals: func(a, b bool) bool { return a != b },
+}
+
+var int64Ops = map[string]func(a, b int64) bool{
+	operators.Equals:        func(a, b int64) bool { return a == b },
+	operators.Greater:       func(a, b int64) bool { return a > b },
+	operators.GreaterEquals: func(a, b int64) bool { return a >= b },
+	operators.Less:          func(a, b int64) bool { return a < b },
+	operators.LessEquals:    func(a, b int64) bool { return a <= b },
+	operators.NotEquals:     func(a, b int64) bool { return a != b },
+}
+
 func (c *converter) visitCallBinary(expr *exprpb.Expr) (func(*pb.Book) bool, error) {
 	callExpr := expr.GetCallExpr()
 	fun := callExpr.GetFunction()
@@ -177,44 +191,82 @@ func (c *converter) visitCallBinary(expr *exprpb.Expr) (func(*pb.Book) bool, err
 	lhs := args[0]
 	rhs := args[1]
 
+	if fun == operators.LogicalAnd {
+		lhsFilter, err := c.visit(lhs)
+		if err != nil {
+			return nil, err
+		}
+		rhsFilter, err := c.visit(rhs)
+		if err != nil {
+			return nil, err
+		}
+		return func(book *pb.Book) bool { return lhsFilter(book) && rhsFilter(book) }, nil
+	} else if fun == operators.LogicalOr {
+		lhsFilter, err := c.visit(lhs)
+		if err != nil {
+			return nil, err
+		}
+		rhsFilter, err := c.visit(rhs)
+		if err != nil {
+			return nil, err
+		}
+		return func(book *pb.Book) bool { return lhsFilter(book) || rhsFilter(book) }, nil
+	}
+
 	// FIXME this is not generic at all, implement the rest
 
 	if _, ok := lhs.ExprKind.(*exprpb.Expr_SelectExpr); !ok {
 		return nil, fmt.Errorf("not implemented unless lhs is a SelectExpr")
 	}
-
 	if lhs.GetSelectExpr().GetOperand().GetIdentExpr().Name != "book" {
 		return nil, fmt.Errorf("not implemented unless lhs is a SelectExpr on book")
 	}
 
-	if lhs.GetSelectExpr().GetField() != "page_count" {
-		return nil, fmt.Errorf("not implemented unless lhs is a SelectExpr on book.page_count")
-	}
+	// FIXME support all fields of the book type:
+	// - [ ] string title
+	// - [ ] string author
+	// - [x] int32 page_count
+	// - [x] bool archived
+	switch lhs.GetSelectExpr().GetField() {
+	case "page_count":
+		op, ok := int64Ops[fun]
+		if !ok {
+			return nil, fmt.Errorf("not implemented unless func in in the supported ops")
+		}
 
-	ops := map[string]func(a, b int64) bool{
-		operators.Equals:        func(a, b int64) bool { return a == b },
-		operators.Greater:       func(a, b int64) bool { return a > b },
-		operators.GreaterEquals: func(a, b int64) bool { return a >= b },
-		operators.Less:          func(a, b int64) bool { return a < b },
-		operators.LessEquals:    func(a, b int64) bool { return a <= b },
-		operators.NotEquals:     func(a, b int64) bool { return a != b },
-	}
+		if _, ok := rhs.ExprKind.(*exprpb.Expr_ConstExpr); !ok {
+			return nil, fmt.Errorf("not implemented unless rhs is a ConstExpr")
+		}
+		if _, ok := rhs.GetConstExpr().ConstantKind.(*exprpb.Constant_Int64Value); !ok {
+			return nil, fmt.Errorf("not implemented unless rhs is a ConstExpr.Int64Value")
+		}
 
-	op, ok := ops[fun]
-	if !ok {
-		return nil, fmt.Errorf("not implemented unless func in in the supported ops")
-	}
+		return func(book *pb.Book) bool {
+			condLHS := int64(book.GetPageCount())
+			condRHS := rhs.GetConstExpr().GetInt64Value()
+			return op(condLHS, condRHS)
+		}, nil
 
-	if _, ok := rhs.ExprKind.(*exprpb.Expr_ConstExpr); !ok {
-		return nil, fmt.Errorf("not implemented unless rhs is a ConstExpr")
-	}
-	if _, ok := rhs.GetConstExpr().ConstantKind.(*exprpb.Constant_Int64Value); !ok {
-		return nil, fmt.Errorf("not implemented unless rhs is a ConstExpr.Int64Value")
-	}
+	case "archived":
+		op, ok := boolOps[fun]
+		if !ok {
+			return nil, fmt.Errorf("not implemented unless func in in the supported ops")
+		}
 
-	return func(book *pb.Book) bool {
-		condLHS := int64(book.GetPageCount())
-		condRHS := rhs.GetConstExpr().GetInt64Value()
-		return op(condLHS, condRHS)
-	}, nil
+		if _, ok := rhs.ExprKind.(*exprpb.Expr_ConstExpr); !ok {
+			return nil, fmt.Errorf("not implemented unless rhs is a ConstExpr")
+		}
+		if _, ok := rhs.GetConstExpr().ConstantKind.(*exprpb.Constant_BoolValue); !ok {
+			return nil, fmt.Errorf("not implemented unless rhs is a ConstExpr.BoolValue")
+		}
+
+		return func(book *pb.Book) bool {
+			condLHS := book.GetArchived()
+			condRHS := rhs.GetConstExpr().GetBoolValue()
+			return op(condLHS, condRHS)
+		}, nil
+
+	default:
+		return nil, fmt.Errorf("not implemented unless lhs is a SelectExpr on book.{page_count,archived}")
+	}
 }
