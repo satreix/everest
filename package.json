@@ -6,6 +6,6 @@
   },
   "devDependencies": {
     "@bazel/typescript": "5.8.1",
-    "typescript": "5.0.2"
+    "typescript": "5.0.3"
   }
 }
