@@ -7,6 +7,7 @@ import (
 	"net"
 
 	"github.com/google/cel-go/cel"
+	"github.com/google/cel-go/checker/decls"
 	"github.com/google/cel-go/common/operators"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
@@ -75,7 +76,12 @@ func (s *bookstoreService) ListBooks(_ context.Context, in *pb.ListBooksRequest)
 
 	if in.Filter != "" {
 		env, err := cel.NewEnv(
-			cel.Variable("book", cel.DynType),
+			cel.Types(
+				new(pb.Book),
+			),
+			cel.Declarations(
+				decls.NewConst("book", decls.NewObjectType("bookstore.v1.Book"), nil),
+			),
 		)
 		if err != nil {
 			return nil, status.Errorf(codes.Internal, "cel env creation error: %s", err)
@@ -83,7 +89,7 @@ func (s *bookstoreService) ListBooks(_ context.Context, in *pb.ListBooksRequest)
 
 		ast, issues := env.Compile(in.Filter)
 		if issues != nil && issues.Err() != nil {
-			return nil, status.Errorf(codes.Internal, "compile error: %s", err)
+			return nil, status.Errorf(codes.Internal, "compile error: %s", issues.Err())
 		}
 
 		checkedExpr, err := cel.AstToCheckedExpr(ast)
