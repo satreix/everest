@@ -256,6 +256,7 @@ def go_dependencies():
     )
     go_repository(
         name = "com_github_matttproud_golang_protobuf_extensions",
+        build_file_proto_mode = "disable_global",
         importpath = "github.com/matttproud/golang_protobuf_extensions",
         sum = "h1:mmDVorXM7PCGKw94cs5zkfA9PSy5pEvNWRP0ET0TIVo=",
         version = "v1.0.4",
@@ -1148,19 +1149,21 @@ def go_dependencies():
     )
     go_repository(
         name = "org_golang_google_genproto",
+        build_file_proto_mode = "disable_global",
         importpath = "google.golang.org/genproto",
         sum = "h1:BWUVssLB0HVOSY78gIdvk1dTVYtT1y8SBWtPYuTJ/6w=",
         version = "v0.0.0-20230110181048-76db0878b65f",
     )
     go_repository(
         name = "org_golang_google_grpc",
-        build_file_proto_mode = "disable",
+        build_file_proto_mode = "disable_global",
         importpath = "google.golang.org/grpc",
         sum = "h1:EhTqbhiYeixwWQtAEZAxmV9MGqcjEU2mFx52xCzNyag=",
         version = "v1.54.0",
     )
     go_repository(
         name = "org_golang_google_protobuf",
+        build_file_proto_mode = "disable_global",
         importpath = "google.golang.org/protobuf",
         sum = "h1:kPPoIgf3TsEvrm0PFe15JQ+570QVxYzEvvHqChK+cng=",
         version = "v1.30.0",

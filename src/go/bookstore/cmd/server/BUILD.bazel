@@ -11,6 +11,7 @@ go_library(
         "@com_github_google_cel_go//cel:go_default_library",
         "@com_github_google_cel_go//checker/decls:go_default_library",
         "@com_github_google_cel_go//common/operators:go_default_library",
+        "@com_github_google_cel_go//common/overloads:go_default_library",
         "@com_github_rs_zerolog//:zerolog",
         "@com_github_rs_zerolog//log",
         "@org_golang_google_genproto//googleapis/api/expr/v1alpha1:go_default_library",

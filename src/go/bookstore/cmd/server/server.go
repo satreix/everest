@@ -5,10 +5,12 @@ import (
 	"flag"
 	"fmt"
 	"net"
+	"strings"
 
 	"github.com/google/cel-go/cel"
 	"github.com/google/cel-go/checker/decls"
 	"github.com/google/cel-go/common/operators"
+	"github.com/google/cel-go/common/overloads"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"github.com/satreix/everest/src/go/logging"
@@ -170,9 +172,7 @@ func (c *converter) visitCall(expr *exprpb.Expr) (func(*pb.Book) bool, error) {
 		return c.visitCallBinary(expr)
 	// standard function calls.
 	default:
-		return nil, fmt.Errorf("not implemented: %#v", fun)
-
-		//return c.visitCallFunc(expr)
+		return c.visitCallFunc(expr)
 	}
 }
 
@@ -274,5 +274,49 @@ func (c *converter) visitCallBinary(expr *exprpb.Expr) (func(*pb.Book) bool, err
 
 	default:
 		return nil, fmt.Errorf("not implemented unless lhs is a SelectExpr on book.{page_count,archived}")
+	}
+}
+
+func (c *converter) visitCallFunc(expr *exprpb.Expr) (func(*pb.Book) bool, error) {
+	callExpr := expr.GetCallExpr()
+	fun := callExpr.GetFunction()
+	target := callExpr.GetTarget()
+	args := callExpr.GetArgs()
+
+	switch fun {
+	case overloads.Contains:
+		return c.callContains(target, args)
+
+	default:
+		log.Printf("fun=%#v", fun)
+		log.Printf("target=%#v", target)
+		log.Printf("args=%#v", args)
+		panic("visitCallFunc not implemented for those arguments")
+	}
+}
+
+func (c *converter) callContains(target *exprpb.Expr, args []*exprpb.Expr) (func(*pb.Book) bool, error) {
+	if _, ok := target.ExprKind.(*exprpb.Expr_SelectExpr); !ok {
+		return nil, fmt.Errorf("not implemented unless lhs is a SelectExpr")
+	}
+	if target.GetSelectExpr().GetOperand().GetIdentExpr().Name != "book" {
+		return nil, fmt.Errorf("not implemented unless lhs is a SelectExpr on book")
+	}
+
+	switch target.GetSelectExpr().GetField() {
+	case "title":
+		return func(book *pb.Book) bool {
+			return strings.Contains(book.GetTitle(), args[0].GetConstExpr().GetStringValue())
+		}, nil
+
+	case "author":
+		return func(book *pb.Book) bool {
+			return strings.Contains(book.GetAuthor(), args[0].GetConstExpr().GetStringValue())
+		}, nil
+
+	default:
+		log.Printf("target=%#v", target.GetSelectExpr())
+		log.Printf("args[0]=%#v", args[0].GetConstExpr().GetStringValue())
+		panic("not implemented")
 	}
 }
