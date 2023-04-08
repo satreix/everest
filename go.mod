@@ -7,7 +7,7 @@ require (
 	github.com/bazelbuild/rules_go v0.39.0
 	github.com/google/cel-go v0.13.0
 	github.com/google/go-cmp v0.5.9
-	github.com/google/go-github/v50 v50.2.0
+	github.com/google/go-github/v51 v51.0.0
 	github.com/gosuri/uiprogress v0.0.1
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.0.0-rc.5
 	github.com/keybase/go-keychain v0.0.0-20230307172405-3e4884637dd1
