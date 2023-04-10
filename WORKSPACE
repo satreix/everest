@@ -184,13 +184,13 @@ http_archive(
 
 http_archive(
     name = "rules_java",
-    sha256 = "bcfabfb407cb0c8820141310faa102f7fb92cc806b0f0e26a625196101b0b57e",
-    url = "https://github.com/bazelbuild/rules_java/releases/download/5.5.0/rules_java-5.5.0.tar.gz",
+    patch_args = ["-p1"],
     patches = [
         # https://github.com/bazelbuild/rules_java/pull/100
         "//third_party:rules_java/0001-add-remote_jdk19_repos-to-rules_java_dependencies.patch",
     ],
-    patch_args = ["-p1",]
+    sha256 = "bcfabfb407cb0c8820141310faa102f7fb92cc806b0f0e26a625196101b0b57e",
+    url = "https://github.com/bazelbuild/rules_java/releases/download/5.5.0/rules_java-5.5.0.tar.gz",
 )
 
 http_archive(
