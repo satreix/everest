@@ -20,10 +20,10 @@ def go_dependencies():
         version = "v0.0.0-20211218093645-b94a6e3cc137",
     )
     go_repository(
-        name = "com_github_antlr_antlr4_runtime_go_antlr",
-        importpath = "github.com/antlr/antlr4/runtime/Go/antlr",
-        sum = "h1:yL7+Jz0jTC6yykIK/Wh74gnTJnrGr5AyrNMXuA0gves=",
-        version = "v1.4.10",
+        name = "com_github_antlr_antlr4_runtime_go_antlr_v4",
+        importpath = "github.com/antlr/antlr4/runtime/Go/antlr/v4",
+        sum = "h1:7RFfzj4SSt6nnvCPbCqijJi1nWCd+TqAT3bYCStRC18=",
+        version = "v4.0.0-20230305170008-8188dc5388df",
     )
     go_repository(
         name = "com_github_bazelbuild_rules_go",
@@ -145,8 +145,10 @@ def go_dependencies():
         name = "com_github_google_cel_go",
         build_naming_convention = "go_default_library",
         importpath = "github.com/google/cel-go",
-        sum = "h1:z+8OBOcmh7IeKyqwT/6IlnMvy621fYUqnTVPEdegGlU=",
-        version = "v0.13.0",
+        patch_args = ["-p1"],
+        patches = ["//third_party/go:com_github_google_cel_go/0001-antlr-v4-name.patch"],
+        sum = "h1:LFobwuUDslWUHdQ48SXVXvQgPH2X1XVhsgOGNioAEZ4=",
+        version = "v0.14.0",
     )
     go_repository(
         name = "com_github_google_go_cmp",
@@ -1165,6 +1167,12 @@ def go_dependencies():
         version = "v0.7.0",
     )
     go_repository(
+        name = "org_golang_x_exp",
+        importpath = "golang.org/x/exp",
+        sum = "h1:+WEEuIdZHnUeJJmEUjyYC2gfUMj69yZXw17EnHg/otA=",
+        version = "v0.0.0-20220722155223-a9213eeb770e",
+    )
+    go_repository(
         name = "org_golang_x_mod",
         importpath = "golang.org/x/mod",
         sum = "h1:LUYupSeNrTNCGzR/hVBk2NHZO4hXcVaW1k4Qx7rjPx8=",
@@ -1215,6 +1223,6 @@ def go_dependencies():
     go_repository(
         name = "org_golang_x_xerrors",
         importpath = "golang.org/x/xerrors",
-        sum = "h1:E7g+9GITq07hpfrRu66IVDexMakfv52eLZ2CXBWiKr4=",
-        version = "v0.0.0-20191204190536-9bdfabe68543",
+        sum = "h1:go1bK/D/BFZV2I8cIQd1NKEZ+0owSTG1fDTci4IqFcE=",
+        version = "v0.0.0-20200804184101-5ec99f83aff1",
     )
