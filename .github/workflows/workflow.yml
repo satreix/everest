@@ -34,8 +34,16 @@ jobs:
       - name: "[Ruby] Install Ruby"
         uses: ruby/setup-ruby@v1.146.0
 
-      - name: Install bazelisk
-        run: ./tools/ci/install_bazelisk.sh v1.16.0 ${{ matrix.os }}
+      - uses: bazelbuild/setup-bazelisk@v2
+
+      - name: Copy .bazelrc
+        run: cp tools/ci/bazel.rc $HOME/.bazelrc
+
+      - name: Mount bazel cache  # Optional
+        uses: actions/cache@v3
+        with:
+          path: "~/.cache/bazel"
+          key: bazel
 
       - name: Test
-        run: ./bin/bazel test --remote_header=x-buildbuddy-api-key=${{ secrets.BUILDBUDDY_API_KEY }} //...
+        run: bazel test --remote_header=x-buildbuddy-api-key=${{ secrets.BUILDBUDDY_API_KEY }} //...
