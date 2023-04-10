@@ -247,7 +247,7 @@ go_rules_dependencies()
 
 go_register_toolchains(
     # Update in lockstep with go.mod
-    version = "1.19.5",
+    version = "1.20.3",
 )
 
 load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
