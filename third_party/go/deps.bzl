@@ -22,8 +22,8 @@ def go_dependencies():
     go_repository(
         name = "com_github_antlr_antlr4_runtime_go_antlr_v4",
         importpath = "github.com/antlr/antlr4/runtime/Go/antlr/v4",
-        sum = "h1:7RFfzj4SSt6nnvCPbCqijJi1nWCd+TqAT3bYCStRC18=",
-        version = "v4.0.0-20230305170008-8188dc5388df",
+        sum = "h1:X8MJ0fnN5FPdcGF5Ij2/OW+HgiJrRg3AfHAx1PJtIzM=",
+        version = "v4.0.0-20230321174746-8dcc6526cfb1",
     )
     go_repository(
         name = "com_github_bazelbuild_rules_go",
