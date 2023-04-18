@@ -78,8 +78,8 @@ def go_dependencies():
     go_repository(
         name = "com_github_coreos_go_systemd_v22",
         importpath = "github.com/coreos/go-systemd/v22",
-        sum = "h1:rtAn27wIbmOGUs7RIbVgPEjb31ehTVniDwPGXyMxm5U=",
-        version = "v22.3.3-0.20220203105225-a9a7ef127534",
+        sum = "h1:RrqgGjYQKalulkV8NGVIfkXQf6YYmOyiJKk8iXXhfZs=",
+        version = "v22.5.0",
     )
     go_repository(
         name = "com_github_creack_pty",
@@ -352,8 +352,8 @@ def go_dependencies():
     go_repository(
         name = "com_github_rs_zerolog",
         importpath = "github.com/rs/zerolog",
-        sum = "h1:Zes4hju04hjbvkVkOhdl2HpZa+0PmVwigmo8XoORE5w=",
-        version = "v1.29.0",
+        sum = "h1:cO+d60CHkknCbvzEWxP0S9K6KqyTjrCNUy1LdQLCGPc=",
+        version = "v1.29.1",
     )
     go_repository(
         name = "com_github_stoewer_go_strcase",
