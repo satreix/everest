@@ -147,10 +147,8 @@ def go_dependencies():
         build_file_proto_mode = "disable_global",
         build_naming_convention = "go_default_library",
         importpath = "github.com/google/cel-go",
-        patch_args = ["-p1"],
-        patches = ["//third_party/go:com_github_google_cel_go/0001-antlr-v4-name.patch"],
-        sum = "h1:LFobwuUDslWUHdQ48SXVXvQgPH2X1XVhsgOGNioAEZ4=",
-        version = "v0.14.0",
+        sum = "h1:nBqFLxQbL7gy5OMRkYYnSSv4ReXcTsUPWABKhPvBC/k=",
+        version = "v0.14.1-0.20230429032317-43bdc4a3aa2a",
     )
     go_repository(
         name = "com_github_google_go_cmp",
