@@ -14,5 +14,5 @@ pyo3-build-config = "*"
 rayon = "1.7.0"
 
 [dependencies.pyo3]
-version = "0.18.2"
+version = "0.18.3"
 features = ["extension-module"]
