@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: echo
+  name: echo
+  namespace: everest
+spec:
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 50051
+  selector:
+    app: echo
+  type: ClusterIP

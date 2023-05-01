@@ -117,6 +117,13 @@ http_archive(
 )
 
 http_archive(
+    name = "io_bazel_rules_k8s",
+    sha256 = "ce5b9bc0926681e2e7f2147b49096f143e6cbc783e71bc1d4f36ca76b00e6f4a",
+    strip_prefix = "rules_k8s-0.7",
+    urls = ["https://github.com/bazelbuild/rules_k8s/archive/refs/tags/v0.7.tar.gz"],
+)
+
+http_archive(
     name = "io_bazel_rules_kotlin",
     sha256 = "fd92a98bd8a8f0e1cdcb490b93f5acef1f1727ed992571232d33de42395ca9b3",
     url = "https://github.com/bazelbuild/rules_kotlin/releases/download/v1.7.1/rules_kotlin_release.tgz",
@@ -463,3 +470,13 @@ container_deps()
 load("@io_bazel_rules_docker//go:image.bzl", _go_image_repos = "repositories")
 
 _go_image_repos()
+
+load("@io_bazel_rules_k8s//k8s:k8s.bzl", "k8s_defaults", "k8s_repositories")
+
+k8s_repositories()
+
+k8s_defaults(
+    name = "k8s_deploy",
+    cluster = "satreix",
+    kind = "deployment",
+)
