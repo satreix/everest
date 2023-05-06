@@ -5,7 +5,7 @@ go 1.20
 require (
 	github.com/antlr/antlr4/runtime/Go/antlr/v4 v4.0.0-20230321174746-8dcc6526cfb1
 	github.com/bazelbuild/rules_go v0.39.1
-	github.com/google/cel-go v0.14.1-0.20230429032317-43bdc4a3aa2a
+	github.com/google/cel-go v0.15.1
 	github.com/google/go-cmp v0.5.9
 	github.com/google/go-github/v51 v51.0.0
 	github.com/gosuri/uiprogress v0.0.1
