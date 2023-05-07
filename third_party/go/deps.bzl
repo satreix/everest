@@ -306,11 +306,11 @@ def go_dependencies():
         version = "v0.5.9",
     )
     go_repository(
-        name = "com_github_google_go_github_v51",
+        name = "com_github_google_go_github_v52",
         build_file_proto_mode = "disable_global",
-        importpath = "github.com/google/go-github/v51",
-        sum = "h1:KCjsbgPV28VoRftdP+K2mQL16jniUsLAJknsOVKwHyU=",
-        version = "v51.0.0",
+        importpath = "github.com/google/go-github/v52",
+        sum = "h1:uyGWOY+jMQ8GVGSX8dkSwCzlehU3WfdxQ7GweO/JP7M=",
+        version = "v52.0.0",
     )
     go_repository(
         name = "com_github_google_go_querystring",
@@ -1913,8 +1913,8 @@ def go_dependencies():
         name = "org_golang_x_oauth2",
         build_file_proto_mode = "disable_global",
         importpath = "golang.org/x/oauth2",
-        sum = "h1:Lh8GPgSKBfWSwFvtuWOfeI3aAAnbXTSutYxJiOJFgIw=",
-        version = "v0.6.0",
+        sum = "h1:qe6s0zUXlPX80/dITx3440hWZ7GwMwgDDyrSGTPJG/g=",
+        version = "v0.7.0",
     )
     go_repository(
         name = "org_golang_x_sync",
