@@ -7,7 +7,7 @@ require (
 	github.com/bazelbuild/rules_go v0.39.1
 	github.com/google/cel-go v0.15.1
 	github.com/google/go-cmp v0.5.9
-	github.com/google/go-github/v51 v51.0.0
+	github.com/google/go-github/v52 v52.0.0
 	github.com/gosuri/uiprogress v0.0.1
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.0.0-rc.5
 	github.com/honeycombio/honeycomb-opentelemetry-go v0.5.4

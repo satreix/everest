@@ -306,11 +306,11 @@ def go_dependencies():
         version = "v0.5.9",
     )
     go_repository(
-        name = "com_github_google_go_github_v51",
+        name = "com_github_google_go_github_v52",
         build_file_proto_mode = "disable_global",
-        importpath = "github.com/google/go-github/v51",
-        sum = "h1:KCjsbgPV28VoRftdP+K2mQL16jniUsLAJknsOVKwHyU=",
-        version = "v51.0.0",
+        importpath = "github.com/google/go-github/v52",
+        sum = "h1:uyGWOY+jMQ8GVGSX8dkSwCzlehU3WfdxQ7GweO/JP7M=",
+        version = "v52.0.0",
     )
     go_repository(
         name = "com_github_google_go_querystring",
