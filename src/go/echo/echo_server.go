@@ -3,14 +3,20 @@ package main
 import (
 	"context"
 	"flag"
-	"fmt"
 	"net"
+	"strings"
+	"time"
 
+	honeycomb "github.com/honeycombio/honeycomb-opentelemetry-go"
+	"github.com/honeycombio/otel-config-go/otelconfig"
 	"github.com/rs/zerolog/log"
 	"github.com/satreix/everest/src/go/logging"
 	pb "github.com/satreix/everest/src/proto/helloworld"
+	"go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/reflection"
+	"google.golang.org/grpc/status"
 )
 
 type server struct {
@@ -18,7 +24,14 @@ type server struct {
 }
 
 func (s *server) SayHello(_ context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
-	log.Info().Str("params.in", fmt.Sprintf("%#v", in)).Msg("Received data")
+	if in.Name == "error" {
+		return nil, status.Error(codes.Internal, "internal error")
+	}
+
+	if strings.HasPrefix(in.Name, "slow") {
+		time.Sleep(time.Duration(strings.Count(in.Name, "w")) * 100 * time.Millisecond)
+	}
+
 	return &pb.HelloReply{Message: "Hello " + in.Name}, nil
 }
 
@@ -34,12 +47,22 @@ func main() {
 			Msg("Logger setup error")
 	}
 
+	otelShutdown, err := otelconfig.ConfigureOpenTelemetry(
+		otelconfig.WithSpanProcessor(honeycomb.NewBaggageSpanProcessor()),
+	)
+	if err != nil {
+		log.Fatal().Err(err).Msg("error setting up OTel SDK")
+	}
+	defer otelShutdown()
+
 	s := grpc.NewServer(
 		grpc.ChainUnaryInterceptor(
 			logging.UnaryServerInterceptor(logger),
+			otelgrpc.UnaryServerInterceptor(),
 		),
 		grpc.ChainStreamInterceptor(
 			logging.StreamServerInterceptor(logger),
+			otelgrpc.StreamServerInterceptor(),
 		),
 	)
 
