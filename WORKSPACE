@@ -18,8 +18,8 @@ http_archive(
     name = "bazelruby_rules_ruby",
     patch_args = ["-p1"],
     patches = [
-        "//third_party:bazelruby_rules_ruby/0001-fix-rspec.patch",  # A fix for https://github.com/bazelruby/rules_ruby/issues/79
-        "//third_party:bazelruby_rules_ruby/0002-add-sdk-versions.patch",  # Add more SDK versions
+        # A fix for https://github.com/bazelruby/rules_ruby/issues/79
+        "//third_party:bazelruby_rules_ruby/0001-fix-rspec.patch",
     ],
     sha256 = "cf3c7d3c1e032c804e7f85e1c38e7f16cf50cb1353736e4ef69e3b63059d305f",
     strip_prefix = "rules_ruby-cc2f5ce961f7fa34557264dd05c7597e634f31e1",
