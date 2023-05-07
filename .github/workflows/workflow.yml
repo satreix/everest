@@ -39,11 +39,5 @@ jobs:
       - name: Copy .bazelrc
         run: cp tools/ci/bazel.rc $HOME/.bazelrc
 
-      - name: Mount bazel cache  # Optional
-        uses: actions/cache@v3
-        with:
-          path: "~/.cache/bazel"
-          key: bazel
-
       - name: Test
         run: bazel test --remote_header=x-buildbuddy-api-key=${{ secrets.BUILDBUDDY_API_KEY }} //...
