@@ -133,9 +133,9 @@ http_archive(
     name = "io_grpc_grpc_java",
     patch_args = ["-p1"],
     patches = ["//third_party:io_grpc_grpc_java/0001-update-junit-to-v4.13.2.patch"],
-    sha256 = "98c32df8a878cbca5a6799922d28e9df93a4d5607316e0e3f8269a5886d9e429",
-    strip_prefix = "grpc-java-1.54.1",
-    url = "https://github.com/grpc/grpc-java/archive/v1.54.1.tar.gz",
+    sha256 = "d34c92534602d2fc7e23fdb8ee5001665d5f3bc03b0a4c977f52f60870557d53",
+    strip_prefix = "grpc-java-1.55.0",
+    url = "https://github.com/grpc/grpc-java/archive/v1.55.0.tar.gz",
 )
 
 http_archive(
