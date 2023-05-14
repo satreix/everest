@@ -75,8 +75,8 @@ def go_dependencies():
         name = "com_github_bwesterb_go_ristretto",
         build_file_proto_mode = "disable_global",
         importpath = "github.com/bwesterb/go-ristretto",
-        sum = "h1:xxWOVbN5m8NNKiSDZXE1jtZvZnC6JSJ9cYFADiZcWtw=",
-        version = "v1.2.0",
+        sum = "h1:1w53tCkGhCQ5djbat3+MH0BAQ5Kfgbt56UZQ/JMzngw=",
+        version = "v1.2.3",
     )
     go_repository(
         name = "com_github_cenkalti_backoff_v4",
@@ -140,8 +140,8 @@ def go_dependencies():
         importpath = "github.com/cloudflare/circl",
         patch_args = ["-p1"],
         patches = ["//third_party/go:com_github_cloudflare_circl/0001-fix-cgo.patch"],
-        sum = "h1:bZgT/A+cikZnKIwn7xL2OBj012Bmvho/o6RpRvv3GKY=",
-        version = "v1.1.0",
+        sum = "h1:fE/Qz0QdIGqeWfnwq0RE0R7MI51s0M2E4Ga9kq5AEMs=",
+        version = "v1.3.3",
     )
     go_repository(
         name = "com_github_cncf_udpa_go",
