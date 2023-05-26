@@ -27,7 +27,7 @@ dependencies in Pipenv, Cargo, go mod or other, run the following command to
 sync those bindings:
 
 ```console
-$ ./tools/update-deps.sh
+$ ./tools/update-dependencies.sh
 ```
 
 [bazel]: https://bazel.build
