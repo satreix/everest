@@ -12,7 +12,7 @@ require (
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.0.0-rc.5
 	github.com/honeycombio/honeycomb-opentelemetry-go v0.5.4
 	github.com/honeycombio/otel-config-go v1.8.0
-	github.com/keybase/go-keychain v0.0.0-20230307172405-3e4884637dd1
+	github.com/keybase/go-keychain v0.0.0-20230523030712-b5615109f100
 	github.com/mndrix/tap-go v0.0.0-20171203230836-629fa407e90b
 	github.com/mvdan/sh v2.6.4+incompatible
 	github.com/pkg/browser v0.0.0-20210911075715-681adbf594b8

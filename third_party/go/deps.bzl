@@ -463,8 +463,8 @@ def go_dependencies():
         name = "com_github_keybase_go_keychain",
         build_file_proto_mode = "disable_global",
         importpath = "github.com/keybase/go-keychain",
-        sum = "h1:yi1W8qcFJ2plmaGJFN1npm0KQviWPMCtQOYuwDT6Swk=",
-        version = "v0.0.0-20230307172405-3e4884637dd1",
+        sum = "h1:rG3VnJUnAWyiv7qYmmdOdSapzz6HM+zb9/uRFr0T5EM=",
+        version = "v0.0.0-20230523030712-b5615109f100",
     )
     go_repository(
         name = "com_github_kisielk_gotool",
