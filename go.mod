@@ -18,7 +18,7 @@ require (
 	github.com/pkg/browser v0.0.0-20210911075715-681adbf594b8
 	github.com/prometheus/client_golang v1.15.1
 	github.com/prometheus/client_model v0.4.0
-	github.com/prometheus/common v0.43.0
+	github.com/prometheus/common v0.44.0
 	github.com/rs/zerolog v1.29.1
 	github.com/stretchr/testify v1.8.3
 	github.com/whilp/git-urls v1.0.0
