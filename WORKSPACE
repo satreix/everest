@@ -191,11 +191,6 @@ http_archive(
 
 http_archive(
     name = "rules_java",
-    patch_args = ["-p1"],
-    patches = [
-        # https://github.com/bazelbuild/rules_java/pull/100
-        "//third_party:rules_java/0001-add-remote_jdk19_repos-to-rules_java_dependencies.patch",
-    ],
     sha256 = "469b7f3b580b4fcf8112f4d6d0d5a4ce8e1ad5e21fee67d8e8335d5f8b3debab",
     url = "https://github.com/bazelbuild/rules_java/releases/download/6.0.0/rules_java-6.0.0.tar.gz",
 )
