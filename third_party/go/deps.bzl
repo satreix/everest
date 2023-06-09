@@ -295,8 +295,8 @@ def go_dependencies():
         build_file_proto_mode = "disable_global",
         build_naming_convention = "go_default_library",
         importpath = "github.com/google/cel-go",
-        sum = "h1:W1wIeGuEs81+lBVU+cQRg1hkRT58Q6bNxvM5yn008S8=",
-        version = "v0.15.3",
+        sum = "h1:DG9YQ8nFCFXAs/FDDwBxmL1tpKNrdlGUM9U3537bX/Y=",
+        version = "v0.16.0",
     )
     go_repository(
         name = "com_github_google_go_cmp",
@@ -1838,6 +1838,20 @@ def go_dependencies():
         importpath = "google.golang.org/genproto",
         sum = "h1:KpwkzHKEF7B9Zxg18WzOa7djJ+Ha5DzthMyZYQfEn2A=",
         version = "v0.0.0-20230410155749-daa745c078e1",
+    )
+    go_repository(
+        name = "org_golang_google_genproto_googleapis_api",
+        build_file_proto_mode = "disable_global",
+        importpath = "google.golang.org/genproto/googleapis/api",
+        sum = "h1:m8v1xLLLzMe1m5P+gCTF8nJB9epwZQUBERm20Oy1poQ=",
+        version = "v0.0.0-20230525234035-dd9d682886f9",
+    )
+    go_repository(
+        name = "org_golang_google_genproto_googleapis_rpc",
+        build_file_proto_mode = "disable_global",
+        importpath = "google.golang.org/genproto/googleapis/rpc",
+        sum = "h1:0nDDozoAU19Qb2HwhXadU8OcsiO/09cnTqhUtq2MEOM=",
+        version = "v0.0.0-20230525234030-28d5490b6b19",
     )
     go_repository(
         name = "org_golang_google_grpc",
