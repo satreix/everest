@@ -10,7 +10,7 @@ require (
 	github.com/google/go-github/v53 v53.2.0
 	github.com/gosuri/uiprogress v0.0.1
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.0.0-rc.5
-	github.com/honeycombio/honeycomb-opentelemetry-go v0.6.0
+	github.com/honeycombio/honeycomb-opentelemetry-go v0.7.0
 	github.com/honeycombio/otel-config-go v1.10.0
 	github.com/keybase/go-keychain v0.0.0-20230523030712-b5615109f100
 	github.com/mndrix/tap-go v0.0.0-20171203230836-629fa407e90b
