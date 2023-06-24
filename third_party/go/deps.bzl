@@ -47,8 +47,8 @@ def go_dependencies():
         name = "com_github_bazelbuild_rules_go",
         build_file_proto_mode = "disable_global",
         importpath = "github.com/bazelbuild/rules_go",
-        sum = "h1:wkJLUDx59dntWMghuL8++GteoU1To6sRoKJXuyFtmf8=",
-        version = "v0.39.1",
+        sum = "h1:i2HspGKiHMAnq2xIsp7sGJ7CiIlLlEKBtL1aogLJhEo=",
+        version = "v0.40.0",
     )
     go_repository(
         name = "com_github_beorn7_perks",
