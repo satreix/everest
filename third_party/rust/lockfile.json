@@ -1,5 +1,5 @@
 {
-  "checksum": "8ef8f50a97b15a7438c5bc4bbc80837f0d5f0ec88c04228f4474eb5af6edea98",
+  "checksum": "a26367a5c205b4e8c4a01b21ef959548a7ccccf70bc45b14bea611312670a24d",
   "crates": {
     "android_system_properties 0.1.5": {
       "name": "android_system_properties",
@@ -923,13 +923,13 @@
       },
       "license": "MIT/Apache-2.0"
     },
-    "clap 4.3.2": {
+    "clap 4.3.5": {
       "name": "clap",
-      "version": "4.3.2",
+      "version": "4.3.5",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/clap/4.3.2/download",
-          "sha256": "401a4694d2bf92537b6867d94de48c4842089645fdcdf6c71865b175d836e9c2"
+          "url": "https://crates.io/api/v1/crates/clap/4.3.5/download",
+          "sha256": "2686c4115cb0810d9a984776e197823d08ec94f176549a89a9efded477c456dc"
         }
       },
       "targets": [
@@ -964,7 +964,7 @@
         "deps": {
           "common": [
             {
-              "id": "clap_builder 4.3.1",
+              "id": "clap_builder 4.3.5",
               "target": "clap_builder"
             },
             {
@@ -984,17 +984,17 @@
           ],
           "selects": {}
         },
-        "version": "4.3.2"
+        "version": "4.3.5"
       },
       "license": "MIT OR Apache-2.0"
     },
-    "clap_builder 4.3.1": {
+    "clap_builder 4.3.5": {
       "name": "clap_builder",
-      "version": "4.3.1",
+      "version": "4.3.5",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/clap_builder/4.3.1/download",
-          "sha256": "72394f3339a76daf211e57d4bcb374410f3965dcc606dd0e03738c7888766980"
+          "url": "https://crates.io/api/v1/crates/clap_builder/4.3.5/download",
+          "sha256": "2e53afce1efce6ed1f633cf0e57612fe51db54a1ee4fd8f8503d078fe02d69ae"
         }
       },
       "targets": [
@@ -1050,7 +1050,7 @@
           "selects": {}
         },
         "edition": "2021",
-        "version": "4.3.1"
+        "version": "4.3.5"
       },
       "license": "MIT OR Apache-2.0"
     },
@@ -2185,7 +2185,7 @@
         "deps": {
           "common": [
             {
-              "id": "clap 4.3.2",
+              "id": "clap 4.3.5",
               "target": "clap"
             }
           ],
