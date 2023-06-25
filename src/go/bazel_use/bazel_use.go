@@ -13,7 +13,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/google/go-github/v52/github"
+	"github.com/google/go-github/v53/github"
 	"github.com/satreix/everest/src/go/bazel"
 )
 
