@@ -15,5 +15,11 @@
       "external/": "third_party",
       "github.com/shirou/gopsutil/v3/process/process_darwin\\.go": "exclude all third_party code for all analyzers"
     }
+  },
+  "unreachable": {
+    "exclude_files": {
+      "external/": "third_party",
+      "src/go/parsers/morsecode/morsecode_go.go/morsecode/morsecode_parser.go": "antlr generated code"
+    }
   }
 }

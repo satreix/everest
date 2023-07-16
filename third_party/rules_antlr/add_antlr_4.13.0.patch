@@ -7,17 +7,17 @@ index e2525ab..875ed13 100644
  load(":lang.bzl", "C", "CPP", "GO", "JAVA", "OBJC", "PYTHON", "PYTHON2", "PYTHON3", supportedLanguages = "supported")
  
 -v4 = [4, "4.7.1", "4.7.2", "4.8"]
-+v4 = [4, "4.7.1", "4.7.2", "4.8", "4.10.1"]
++v4 = [4, "4.7.1", "4.7.2", "4.8", "4.13.0"]
  v4_opt = [4, "4.7.1", "4.7.2", "4.7.3", "4.7.4"]
  v3 = [3, "3.5.2"]
  v2 = [2, "2.7.7"]
  
  PACKAGES = {
      "antlr": {
-+        "4.10.1": {
-+            "url": "https://github.com/antlr/antlr4/archive/4.10.1.tar.gz",
-+            "prefix": "antlr4-4.10.1",
-+            "sha256": "992d52444b81ed75e52ea62f9f38ecb7652d5ce2a2130af143912b3042a6d742",
++        "4.13.0": {
++            "url": "https://github.com/antlr/antlr4/archive/4.13.0.tar.gz",
++            "prefix": "antlr4-4.13.0",
++            "sha256": "b7082b539256e6de5137a7d57afe89493dce234a3ce686dbae709ef6cf2d2c81",
 +        },
          "4.8": {
              "url": "https://github.com/antlr/antlr4/archive/4.8.tar.gz",
@@ -26,9 +26,9 @@ index e2525ab..875ed13 100644
          },
      },
      "antlr4_runtime": {
-+        "4.10.1": {
-+            "path": "org/antlr/antlr4-runtime/4.10.1/antlr4-runtime-4.10.1.jar",
-+            "sha256": "da66be0c98acfb29bc708300d05f1a3269c40f9984a4cb9251cf2ba1898d1334",
++        "4.13.0": {
++            "path": "org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar",
++            "sha256": "bd7f7b5d07bc0b047f10915b32ca4bb1de9e57d8049098882e4453c88c076a5d",
 +        },
          "4.8": {
              "path": "org/antlr/antlr4-runtime/4.8/antlr4-runtime-4.8.jar",
@@ -37,9 +37,9 @@ index e2525ab..875ed13 100644
          },
      },
      "antlr4_tool": {
-+        "4.10.1": {
-+            "path": "org/antlr/antlr4/4.10.1/antlr4-4.10.1.jar",
-+            "sha256": "6bef3dad65a1bd55533981d7ef694d27dcfb4e7a70f560dd026c8895b35a7468",
++        "4.13.0": {
++            "path": "org/antlr/antlr4/4.13.0/antlr4-4.13.0.jar",
++            "sha256": "1c0deb26992514922fb8b99619198f09c32f7984246dc6ad1c3bbc4983de1d35",
 +        },
          "4.8": {
              "path": "org/antlr/antlr4/4.8/antlr4-4.8.jar",
@@ -48,8 +48,8 @@ index e2525ab..875ed13 100644
              languages = [JAVA]
  
          for version in sorted(versions, key = _toString):
-+            if version == "4.10.1":
-+                _antlr4_10_1_dependencies(languages)
++            if version == "4.13.0":
++                _antlr4_13_0_dependencies(languages)
              if version == 4 or version == "4.8":
                  _antlr48_dependencies(languages)
              elif version == "4.7.2":
@@ -57,13 +57,13 @@ index e2525ab..875ed13 100644
      else:
          fail('Unsupported ANTLR version provided: "{0}". Currently supported are: {1}'.format(version, v4_opt), attr = "version")
  
-+def _antlr4_10_1_dependencies(languages):
++def _antlr4_13_0_dependencies(languages):
 +    _antlr4_dependencies(
-+        "4.10.1",
++        "4.13.0",
 +        languages,
 +        {
-+            "antlr4_runtime": "4.10.1",
-+            "antlr4_tool": "4.10.1",
++            "antlr4_runtime": "4.13.0",
++            "antlr4_tool": "4.13.0",
 +            "antlr3_runtime": "3.5.2",
 +            "stringtemplate4": "4.3",
 +            "javax_json": "1.0.4",
