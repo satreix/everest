@@ -401,7 +401,10 @@ def go_dependencies():
         build_file_proto_mode = "disable_global",
         importpath = "github.com/grpc-ecosystem/grpc-gateway/v2",
         patch_args = ["-p1"],
-        patches = ["//third_party:com_github_grpc_ecosystem_grpc_gateway_v2/0001-fix-googleapis-imports.patch"],
+        patches = [
+            # Patch inspired from https://github.com/grpc-ecosystem/grpc-gateway/issues/1847#issuecomment-740176323
+            "//third_party:com_github_grpc_ecosystem_grpc_gateway_v2/0001-fix-googleapis-imports.patch",
+        ],
         sum = "h1:gDLXvp5S9izjldquuoAhDzccbskOL6tDC5jMSyx3zxE=",
         version = "v2.15.2",
     )
