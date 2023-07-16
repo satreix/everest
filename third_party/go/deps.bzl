@@ -47,8 +47,8 @@ def go_dependencies():
         name = "com_github_bazelbuild_rules_go",
         build_file_proto_mode = "disable_global",
         importpath = "github.com/bazelbuild/rules_go",
-        sum = "h1:i2HspGKiHMAnq2xIsp7sGJ7CiIlLlEKBtL1aogLJhEo=",
-        version = "v0.40.0",
+        sum = "h1:JzlRxsFNhlX+g4drDRPhIaU5H5LnI978wdMJ0vK4I+k=",
+        version = "v0.41.0",
     )
     go_repository(
         name = "com_github_beorn7_perks",
@@ -139,7 +139,7 @@ def go_dependencies():
         build_file_proto_mode = "disable_global",
         importpath = "github.com/cloudflare/circl",
         patch_args = ["-p1"],
-        patches = ["//third_party/go:com_github_cloudflare_circl/0001-fix-cgo.patch"],
+        patches = ["//third_party:com_github_cloudflare_circl/0001-fix-cgo.patch"],
         sum = "h1:fE/Qz0QdIGqeWfnwq0RE0R7MI51s0M2E4Ga9kq5AEMs=",
         version = "v1.3.3",
     )
@@ -393,6 +393,8 @@ def go_dependencies():
         name = "com_github_grpc_ecosystem_grpc_gateway_v2",
         build_file_proto_mode = "disable_global",
         importpath = "github.com/grpc-ecosystem/grpc-gateway/v2",
+        patch_args = ["-p1"],
+        patches = ["//third_party:com_github_grpc_ecosystem_grpc_gateway_v2/0001-fix-googleapis-imports.patch"],
         sum = "h1:gDLXvp5S9izjldquuoAhDzccbskOL6tDC5jMSyx3zxE=",
         version = "v2.15.2",
     )

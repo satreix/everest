@@ -1,0 +1,177 @@
+diff --git a/examples/internal/gateway/BUILD.bazel b/examples/internal/gateway/BUILD.bazel
+index 13dba374..5f4f43c4 100644
+--- a/examples/internal/gateway/BUILD.bazel
++++ b/examples/internal/gateway/BUILD.bazel
+@@ -15,7 +15,7 @@ go_library(
+         "//examples/internal/proto/standalone",
+         "//runtime",
+         "@com_github_golang_glog//:glog",
+-        "@go_googleapis//google/rpc:errdetails_go_proto",
++        "@org_golang_google_genproto//googleapis/rpc/errdetails",
+         "@org_golang_google_grpc//:go_default_library",
+         "@org_golang_google_grpc//connectivity",
+         "@org_golang_google_grpc//credentials/insecure",
+diff --git a/examples/internal/helloworld/BUILD.bazel b/examples/internal/helloworld/BUILD.bazel
+index 2b1e974d..4cdb61c2 100644
+--- a/examples/internal/helloworld/BUILD.bazel
++++ b/examples/internal/helloworld/BUILD.bazel
+@@ -27,7 +27,7 @@ go_proto_library(
+     proto = ":helloworld_proto",
+     visibility = ["//visibility:public"],
+     deps = [
+-        "@go_googleapis//google/api:annotations_go_proto",
++        "@org_golang_google_genproto//googleapis/api/annotations",
+         "@org_golang_google_protobuf//proto:go_default_library",  #keep
+     ],
+ )
+diff --git a/examples/internal/integration/BUILD.bazel b/examples/internal/integration/BUILD.bazel
+index 8e234f7d..13afc453 100644
+--- a/examples/internal/integration/BUILD.bazel
++++ b/examples/internal/integration/BUILD.bazel
+@@ -20,7 +20,7 @@ go_test(
+         "@com_github_golang_glog//:glog",
+         "@com_github_google_go_cmp//cmp",
+         "@com_github_rogpeppe_fastuuid//:fastuuid",
+-        "@go_googleapis//google/rpc:status_go_proto",
++        "@org_golang_google_genproto//googleapis/rpc/status",
+         "@io_bazel_rules_go//proto/wkt:field_mask_go_proto",
+         "@org_golang_google_grpc//codes",
+         "@org_golang_google_protobuf//encoding/protojson",
+diff --git a/examples/internal/proto/examplepb/BUILD.bazel b/examples/internal/proto/examplepb/BUILD.bazel
+index fb887c73..b61da4f3 100644
+--- a/examples/internal/proto/examplepb/BUILD.bazel
++++ b/examples/internal/proto/examplepb/BUILD.bazel
+@@ -105,10 +105,10 @@ go_proto_library(
+         "//examples/internal/proto/sub2",
+         "//protoc-gen-openapiv2/options",
+         "@com_github_golang_protobuf//descriptor:go_default_library_gen",  # keep
+-        "@go_googleapis//google/api:annotations_go_proto",
+-        "@go_googleapis//google/api:httpbody_go_proto",
+-        "@go_googleapis//google/api:visibility_go_proto",
+-        "@go_googleapis//google/rpc:status_go_proto",
++        "@org_golang_google_genproto//googleapis/api/annotations",
++        "@org_golang_google_genproto//googleapis/api/httpbody",
++        "@org_golang_google_genproto//googleapis/api/visibility",
++        "@org_golang_google_genproto//googleapis/rpc/status",
+         "@org_golang_google_protobuf//proto:go_default_library",  # keep
+     ],
+ )
+@@ -128,7 +128,7 @@ go_library(
+     deps = [
+         "//runtime",
+         "//utilities",
+-        "@go_googleapis//google/api:annotations_go_proto",
++        "@org_golang_google_genproto//googleapis/api/annotations",
+         "@org_golang_google_grpc//:go_default_library",
+         "@org_golang_google_grpc//codes",
+         "@org_golang_google_grpc//grpclog",
+diff --git a/examples/internal/server/BUILD.bazel b/examples/internal/server/BUILD.bazel
+index cc54a6ae..54cfd32f 100644
+--- a/examples/internal/server/BUILD.bazel
++++ b/examples/internal/server/BUILD.bazel
+@@ -25,9 +25,9 @@ go_library(
+         "//runtime",
+         "@com_github_golang_glog//:glog",
+         "@com_github_rogpeppe_fastuuid//:fastuuid",
+-        "@go_googleapis//google/api:httpbody_go_proto",
+-        "@go_googleapis//google/rpc:errdetails_go_proto",
+-        "@go_googleapis//google/rpc:status_go_proto",
++        "@org_golang_google_genproto//googleapis/api/httpbody",
++        "@org_golang_google_genproto//googleapis/rpc/errdetails",
++        "@org_golang_google_genproto//googleapis/rpc/status",
+         "@io_bazel_rules_go//proto/wkt:field_mask_go_proto",
+         "@org_golang_google_grpc//:go_default_library",
+         "@org_golang_google_grpc//codes",
+diff --git a/internal/descriptor/BUILD.bazel b/internal/descriptor/BUILD.bazel
+index 04553bc1..c39cc033 100644
+--- a/internal/descriptor/BUILD.bazel
++++ b/internal/descriptor/BUILD.bazel
+@@ -20,7 +20,7 @@ go_library(
+         "//internal/httprule",
+         "//protoc-gen-openapiv2/options",
+         "@com_github_golang_glog//:glog",
+-        "@go_googleapis//google/api:annotations_go_proto",
++        "@org_golang_google_genproto//googleapis/api/annotations",
+         "@in_gopkg_yaml_v3//:yaml_v3",
+         "@org_golang_google_protobuf//compiler/protogen",
+         "@org_golang_google_protobuf//encoding/protojson",
+diff --git a/internal/descriptor/apiconfig/BUILD.bazel b/internal/descriptor/apiconfig/BUILD.bazel
+index 9fe7533c..f048c428 100644
+--- a/internal/descriptor/apiconfig/BUILD.bazel
++++ b/internal/descriptor/apiconfig/BUILD.bazel
+@@ -19,7 +19,7 @@ go_proto_library(
+     compilers = ["//:go_apiv2"],
+     importpath = "github.com/grpc-ecosystem/grpc-gateway/v2/internal/descriptor/apiconfig",
+     proto = ":apiconfig_proto",
+-    deps = ["@go_googleapis//google/api:annotations_go_proto"],
++    deps = ["@org_golang_google_genproto//googleapis/api/visibility"],
+ )
+ 
+ go_library(
+diff --git a/protoc-gen-openapiv2/internal/genopenapi/BUILD.bazel b/protoc-gen-openapiv2/internal/genopenapi/BUILD.bazel
+index 847990d5..91d86c38 100644
+--- a/protoc-gen-openapiv2/internal/genopenapi/BUILD.bazel
++++ b/protoc-gen-openapiv2/internal/genopenapi/BUILD.bazel
+@@ -22,9 +22,9 @@ go_library(
+         "//protoc-gen-openapiv2/options",
+         "@com_github_golang_glog//:glog",
+         "@com_github_golang_protobuf//descriptor:go_default_library_gen",
+-        "@go_googleapis//google/api:annotations_go_proto",
+-        "@go_googleapis//google/api:visibility_go_proto",
+-        "@go_googleapis//google/rpc:status_go_proto",
++        "@org_golang_google_genproto//googleapis/api/annotations",
++        "@org_golang_google_genproto//googleapis/api/visibility",
++        "@org_golang_google_genproto//googleapis/rpc/status",
+         "@in_gopkg_yaml_v3//:yaml_v3",
+         "@io_bazel_rules_go//proto/wkt:any_go_proto",
+         "@org_golang_google_protobuf//encoding/protojson",
+@@ -57,8 +57,8 @@ go_test(
+         "//protoc-gen-openapiv2/options",
+         "//runtime",
+         "@com_github_google_go_cmp//cmp",
+-        "@go_googleapis//google/api:annotations_go_proto",
+-        "@go_googleapis//google/api:visibility_go_proto",
++        "@org_golang_google_genproto//googleapis/api/annotations",
++        "@org_golang_google_genproto//googleapis/api/visibility",
+         "@in_gopkg_yaml_v3//:yaml_v3",
+         "@io_bazel_rules_go//proto/wkt:field_mask_go_proto",
+         "@org_golang_google_protobuf//encoding/protojson",
+diff --git a/runtime/BUILD.bazel b/runtime/BUILD.bazel
+index b5140a3c..cdeef475 100644
+--- a/runtime/BUILD.bazel
++++ b/runtime/BUILD.bazel
+@@ -26,7 +26,7 @@ go_library(
+     deps = [
+         "//internal/httprule",
+         "//utilities",
+-        "@go_googleapis//google/api:httpbody_go_proto",
++        "@org_golang_google_genproto//googleapis/api/httpbody",
+         "@io_bazel_rules_go//proto/wkt:field_mask_go_proto",
+         "@org_golang_google_grpc//codes",
+         "@org_golang_google_grpc//grpclog",
+@@ -70,9 +70,9 @@ go_test(
+         "//utilities",
+         "@com_github_google_go_cmp//cmp",
+         "@com_github_google_go_cmp//cmp/cmpopts",
+-        "@go_googleapis//google/api:httpbody_go_proto",
+-        "@go_googleapis//google/rpc:errdetails_go_proto",
+-        "@go_googleapis//google/rpc:status_go_proto",
++        "@org_golang_google_genproto//googleapis/api/httpbody",
++        "@org_golang_google_genproto//googleapis/rpc/errdetails",
++        "@org_golang_google_genproto//googleapis/rpc/status",
+         "@io_bazel_rules_go//proto/wkt:field_mask_go_proto",
+         "@org_golang_google_grpc//:go_default_library",
+         "@org_golang_google_grpc//codes",
+diff --git a/runtime/internal/examplepb/BUILD.bazel b/runtime/internal/examplepb/BUILD.bazel
+index cfed28fa..fe2cff8e 100644
+--- a/runtime/internal/examplepb/BUILD.bazel
++++ b/runtime/internal/examplepb/BUILD.bazel
+@@ -34,7 +34,7 @@ go_proto_library(
+     ],
+     importpath = "github.com/grpc-ecosystem/grpc-gateway/v2/runtime/internal/examplepb",
+     proto = ":examplepb_proto",
+-    deps = ["@go_googleapis//google/api:annotations_go_proto"],
++    deps = ["@org_golang_google_genproto//googleapis/api/annotations"],
+ )
+ 
+ go_library(
