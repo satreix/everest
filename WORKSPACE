@@ -84,9 +84,9 @@ http_archive(
 
 http_archive(
     name = "contrib_rules_jvm",
-    sha256 = "2b710518847279f655a18a51a1629b033e4406f29609e73eb07ecfb6f0138d25",
-    strip_prefix = "rules_jvm-0.13.0",
-    url = "https://github.com/bazel-contrib/rules_jvm/archive/refs/tags/v0.13.0.tar.gz",
+    sha256 = "75e9e6e1bc15ab960e2e2a652299a252b03315a77d14447ea996f665d7f923b8",
+    strip_prefix = "rules_jvm-0.15.0",
+    url = "https://github.com/bazel-contrib/rules_jvm/archive/refs/tags/v0.15.0.tar.gz",
 )
 
 http_archive(
