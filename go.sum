@@ -172,8 +172,13 @@ github.com/grpc-ecosystem/grpc-gateway/v2 v2.15.2 h1:gDLXvp5S9izjldquuoAhDzccbsk
 github.com/grpc-ecosystem/grpc-gateway/v2 v2.15.2/go.mod h1:7pdNwVWBBHGiCxa9lAszqCJMbfTISJ7oMftp8+UGV08=
 github.com/hashicorp/golang-lru v0.5.0/go.mod h1:/m3WP610KZHVQ1SGc6re/UDhFvYD7pJ4Ao+sR/qLZy8=
 github.com/hashicorp/golang-lru v0.5.1/go.mod h1:/m3WP610KZHVQ1SGc6re/UDhFvYD7pJ4Ao+sR/qLZy8=
+<<<<<<< HEAD
 github.com/honeycombio/honeycomb-opentelemetry-go v0.7.0 h1:3SMCzQ2l1UtZaA8qP3SHXZOeX3xCwXfZ503QFGAgXgc=
 github.com/honeycombio/honeycomb-opentelemetry-go v0.7.0/go.mod h1:jaKGNK8xacGawv550H5Br/iCLZ26g6QKODgVGMhVciQ=
+=======
+github.com/honeycombio/honeycomb-opentelemetry-go v0.6.0 h1:QkfvdD1fK9izwi8t2pLIz7saLoooaWDwt/utB3sGBnI=
+github.com/honeycombio/honeycomb-opentelemetry-go v0.6.0/go.mod h1:T9XMDkXlqn3g6Eeiaax2C1/aPuZp01mFDyiqKTWrwFU=
+>>>>>>> 5b004c8 (update)
 github.com/honeycombio/otel-config-go v1.10.0 h1:11Kz3NlN7LuJ8gx67UqFTZL9CwFnuF0e3Ou0zfnGYmI=
 github.com/honeycombio/otel-config-go v1.10.0/go.mod h1:zA68rZQsFCZuGK8tcpKzo00eGdcPYRr6rP2536OQLGw=
 github.com/ianlancetaylor/demangle v0.0.0-20181102032728-5e5cf60278f6/go.mod h1:aSSvb/t6k1mPoxDqO4vJh6VOCGPwU4O0C2/Eqndh1Sc=
@@ -293,8 +298,13 @@ go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc v1.16.0 h1:TVQp/
 go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc v1.16.0/go.mod h1:I33vtIe0sR96wfrUcilIzLoA3mLHhRmz9S9Te0S3gDo=
 go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp v1.16.0 h1:iqjq9LAB8aK++sKVcELezzn655JnBNdsDhghU4G/So8=
 go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp v1.16.0/go.mod h1:hGXzO5bhhSHZnKvrDaXB82Y9DRFour0Nz/KrBh7reWw=
+<<<<<<< HEAD
 go.opentelemetry.io/otel/exporters/stdout/stdouttrace v1.16.0 h1:+XWJd3jf75RXJq29mxbuXhCXFDG3S3R4vBUeSI2P7tE=
 go.opentelemetry.io/otel/exporters/stdout/stdouttrace v1.16.0/go.mod h1:hqgzBPTf4yONMFgdZvL/bK42R/iinTyVQtiWihs3SZc=
+=======
+go.opentelemetry.io/otel/exporters/stdout/stdouttrace v1.15.1 h1:2PunuO5SbkN5MhCbuHCd3tC6qrcaj+uDAkX/qBU5BAs=
+go.opentelemetry.io/otel/exporters/stdout/stdouttrace v1.15.1/go.mod h1:q8+Tha+5LThjeSU8BW93uUC5w5/+DnYHMKBMpRCsui0=
+>>>>>>> 5b004c8 (update)
 go.opentelemetry.io/otel/metric v1.16.0 h1:RbrpwVG1Hfv85LgnZ7+txXioPDoh6EdbZHo26Q3hqOo=
 go.opentelemetry.io/otel/metric v1.16.0/go.mod h1:QE47cpOmkwipPiefDwo2wDzwJrlfxxNYodqc4xnGCo4=
 go.opentelemetry.io/otel/sdk v1.16.0 h1:Z1Ok1YsijYL0CSJpHt4cS3wDDh7p572grzNrBMiMWgE=
