@@ -1,5 +1,5 @@
 {
-  "checksum": "1b98ff3bd7d1c408d4f9d59fd2931508f9a9d637393cf6cf95b89648b9677d68",
+  "checksum": "eb0188b2efb2fac538f5363510c38ef7a0a3cd9c8e37208d12a66c6d3dc4bb32",
   "crates": {
     "android_system_properties 0.1.5": {
       "name": "android_system_properties",
@@ -4083,7 +4083,7 @@
         "deps": {
           "common": [
             {
-              "id": "pyo3 0.19.0",
+              "id": "pyo3 0.19.1",
               "target": "pyo3"
             },
             {
@@ -4840,13 +4840,13 @@
       },
       "license": "MIT OR Apache-2.0"
     },
-    "pyo3 0.19.0": {
+    "pyo3 0.19.1": {
       "name": "pyo3",
-      "version": "0.19.0",
+      "version": "0.19.1",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/pyo3/0.19.0/download",
-          "sha256": "cffef52f74ec3b1a1baf295d9b8fcc3070327aefc39a6d00656b13c1d0b8885c"
+          "url": "https://crates.io/api/v1/crates/pyo3/0.19.1/download",
+          "sha256": "ffb88ae05f306b4bfcde40ac4a51dc0b05936a9207a4b75b798c7729c4258a59"
         }
       },
       "targets": [
@@ -4904,11 +4904,11 @@
               "target": "parking_lot"
             },
             {
-              "id": "pyo3 0.19.0",
+              "id": "pyo3 0.19.1",
               "target": "build_script_build"
             },
             {
-              "id": "pyo3-ffi 0.19.0",
+              "id": "pyo3-ffi 0.19.1",
               "target": "pyo3_ffi"
             },
             {
@@ -4926,13 +4926,13 @@
               "target": "indoc"
             },
             {
-              "id": "pyo3-macros 0.19.0",
+              "id": "pyo3-macros 0.19.1",
               "target": "pyo3_macros"
             }
           ],
           "selects": {}
         },
-        "version": "0.19.0"
+        "version": "0.19.1"
       },
       "build_script_attrs": {
         "data_glob": [
@@ -4941,7 +4941,7 @@
         "deps": {
           "common": [
             {
-              "id": "pyo3-build-config 0.19.0",
+              "id": "pyo3-build-config 0.19.1",
               "target": "pyo3_build_config"
             }
           ],
@@ -4950,13 +4950,13 @@
       },
       "license": "Apache-2.0"
     },
-    "pyo3-build-config 0.19.0": {
+    "pyo3-build-config 0.19.1": {
       "name": "pyo3-build-config",
-      "version": "0.19.0",
+      "version": "0.19.1",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/pyo3-build-config/0.19.0/download",
-          "sha256": "713eccf888fb05f1a96eb78c0dbc51907fee42b3377272dc902eb38985f418d5"
+          "url": "https://crates.io/api/v1/crates/pyo3-build-config/0.19.1/download",
+          "sha256": "554db24f0b3c180a9c0b1268f91287ab3f17c162e15b54caaae5a6b3773396b0"
         }
       },
       "targets": [
@@ -4999,7 +4999,7 @@
               "target": "once_cell"
             },
             {
-              "id": "pyo3-build-config 0.19.0",
+              "id": "pyo3-build-config 0.19.1",
               "target": "build_script_build"
             },
             {
@@ -5010,7 +5010,7 @@
           "selects": {}
         },
         "edition": "2018",
-        "version": "0.19.0"
+        "version": "0.19.1"
       },
       "build_script_attrs": {
         "data_glob": [
@@ -5028,13 +5028,13 @@
       },
       "license": "Apache-2.0"
     },
-    "pyo3-ffi 0.19.0": {
+    "pyo3-ffi 0.19.1": {
       "name": "pyo3-ffi",
-      "version": "0.19.0",
+      "version": "0.19.1",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/pyo3-ffi/0.19.0/download",
-          "sha256": "5b2ecbdcfb01cbbf56e179ce969a048fd7305a66d4cdf3303e0da09d69afe4c3"
+          "url": "https://crates.io/api/v1/crates/pyo3-ffi/0.19.1/download",
+          "sha256": "922ede8759e8600ad4da3195ae41259654b9c55da4f7eec84a0ccc7d067a70a4"
         }
       },
       "targets": [
@@ -5076,14 +5076,14 @@
               "target": "libc"
             },
             {
-              "id": "pyo3-ffi 0.19.0",
+              "id": "pyo3-ffi 0.19.1",
               "target": "build_script_build"
             }
           ],
           "selects": {}
         },
         "edition": "2018",
-        "version": "0.19.0"
+        "version": "0.19.1"
       },
       "build_script_attrs": {
         "data_glob": [
@@ -5092,7 +5092,7 @@
         "deps": {
           "common": [
             {
-              "id": "pyo3-build-config 0.19.0",
+              "id": "pyo3-build-config 0.19.1",
               "target": "pyo3_build_config"
             }
           ],
@@ -5102,13 +5102,13 @@
       },
       "license": "Apache-2.0"
     },
-    "pyo3-macros 0.19.0": {
+    "pyo3-macros 0.19.1": {
       "name": "pyo3-macros",
-      "version": "0.19.0",
+      "version": "0.19.1",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/pyo3-macros/0.19.0/download",
-          "sha256": "b78fdc0899f2ea781c463679b20cb08af9247febc8d052de941951024cd8aea0"
+          "url": "https://crates.io/api/v1/crates/pyo3-macros/0.19.1/download",
+          "sha256": "8a5caec6a1dd355964a841fcbeeb1b89fe4146c87295573f94228911af3cc5a2"
         }
       },
       "targets": [
@@ -5134,7 +5134,7 @@
               "target": "proc_macro2"
             },
             {
-              "id": "pyo3-macros-backend 0.19.0",
+              "id": "pyo3-macros-backend 0.19.1",
               "target": "pyo3_macros_backend"
             },
             {
@@ -5149,17 +5149,17 @@
           "selects": {}
         },
         "edition": "2018",
-        "version": "0.19.0"
+        "version": "0.19.1"
       },
       "license": "Apache-2.0"
     },
-    "pyo3-macros-backend 0.19.0": {
+    "pyo3-macros-backend 0.19.1": {
       "name": "pyo3-macros-backend",
-      "version": "0.19.0",
+      "version": "0.19.1",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/pyo3-macros-backend/0.19.0/download",
-          "sha256": "60da7b84f1227c3e2fe7593505de274dcf4c8928b4e0a1c23d551a14e4e80a0f"
+          "url": "https://crates.io/api/v1/crates/pyo3-macros-backend/0.19.1/download",
+          "sha256": "e0b78ccbb160db1556cdb6fd96c50334c5d4ec44dc5e0a968d0a1208fa0efa8b"
         }
       },
       "targets": [
@@ -5196,7 +5196,7 @@
           "selects": {}
         },
         "edition": "2018",
-        "version": "0.19.0"
+        "version": "0.19.1"
       },
       "license": "Apache-2.0"
     },
