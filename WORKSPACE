@@ -202,9 +202,9 @@ http_archive(
 
 http_archive(
     name = "rules_jvm_external",
-    sha256 = "1a5ebb66a52d490bd51e4fb12ce2746bdb9225d7b3188d64d4780c7cacf2decb",
-    strip_prefix = "rules_jvm_external-5.1",
-    url = "https://github.com/bazelbuild/rules_jvm_external/archive/5.1.tar.gz",
+    sha256 = "8ac1c5c2a8681c398883bb2cabc18f913337f165059f24e8c55714e05757761e",
+    strip_prefix = "rules_jvm_external-5.3",
+    url = "https://github.com/bazelbuild/rules_jvm_external/archive/5.3.tar.gz",
 )
 
 http_archive(
