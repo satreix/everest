@@ -419,8 +419,8 @@ def go_dependencies():
         name = "com_github_honeycombio_honeycomb_opentelemetry_go",
         build_file_proto_mode = "disable_global",
         importpath = "github.com/honeycombio/honeycomb-opentelemetry-go",
-        sum = "h1:QkfvdD1fK9izwi8t2pLIz7saLoooaWDwt/utB3sGBnI=",
-        version = "v0.6.0",
+        sum = "h1:3SMCzQ2l1UtZaA8qP3SHXZOeX3xCwXfZ503QFGAgXgc=",
+        version = "v0.7.0",
     )
     go_repository(
         name = "com_github_honeycombio_otel_config_go",
@@ -1743,8 +1743,8 @@ def go_dependencies():
         name = "io_opentelemetry_go_otel_exporters_stdout_stdouttrace",
         build_file_proto_mode = "disable_global",
         importpath = "go.opentelemetry.io/otel/exporters/stdout/stdouttrace",
-        sum = "h1:2PunuO5SbkN5MhCbuHCd3tC6qrcaj+uDAkX/qBU5BAs=",
-        version = "v1.15.1",
+        sum = "h1:+XWJd3jf75RXJq29mxbuXhCXFDG3S3R4vBUeSI2P7tE=",
+        version = "v1.16.0",
     )
     go_repository(
         name = "io_opentelemetry_go_otel_metric",
