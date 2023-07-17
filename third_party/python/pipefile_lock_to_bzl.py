@@ -5,10 +5,10 @@ import argparse
 import json
 import os
 
-BUILD_WORKSPACE_DIRECTORY = os.getenv('BUILD_WORKSPACE_DIRECTORY')
+BUILD_WORKSPACE_DIRECTORY = os.getenv("BUILD_WORKSPACE_DIRECTORY")
 
 # The following packages are considered to be unsafe in a requirements file
-_UNSAFE_PACKAGES = {'pip', 'setuptools'}
+_UNSAFE_PACKAGES = {"pip", "setuptools"}
 
 _HEAD = """\"\"\"Starlark representation of locked requirements.
 
@@ -80,7 +80,7 @@ def _clean_name(name):
 
 
 def data(lock):
-    for k, v in sorted((lock['default'] | lock['develop']).items()):
+    for k, v in sorted((lock["default"] | lock["develop"]).items()):
         if k in _UNSAFE_PACKAGES:
             continue
         yield k, v
@@ -100,25 +100,25 @@ def main():
         lock = json.load(f)
 
     out = _HEAD.format(ns=args.namespace, input_file=args.input)
-    out += '\n_packages = {\n'
+    out += "\n_packages = {\n"
     for k, v in data(lock):
-        out += f"    \"{_clean_name(k)}\": {{\n"
-        out += "        \"hashes\": [\n"
-        for hash in v['hashes']:
-            out += f"            \"{hash}\",\n"
+        out += f'    "{_clean_name(k)}": {{\n'
+        out += '        "hashes": [\n'
+        for hash in v["hashes"]:
+            out += f'            "{hash}",\n'
         out += "        ],\n"
-        if 'markers' in v.keys():
+        if "markers" in v.keys():
             out += f"        \"markers\": \"{v['markers']}\",\n"
         out += f"        \"version\": \"{v['version']}\",\n"
         out += "    },\n"
-    out += '}\n\n'
+    out += "}\n\n"
     out += _STUB.format(ns=args.namespace)
 
     if args.output:
-        with open(args.output, 'w') as f:
-            print(out, end='', file=f)
+        with open(args.output, "w") as f:
+            print(out, end="", file=f)
     else:
-        print(out, end='')
+        print(out, end="")
 
 
 if __name__ == "__main__":

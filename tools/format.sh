@@ -2,10 +2,10 @@
 set -euo pipefail
 
 AUTOFLAKE="$(bazel run --run_under='echo' //tools/autoflake)"
+BLACK="$(bazel run --run_under='echo' //tools/black)"
 GOFMT="$(bazel run --run_under=echo @go_sdk//:bin/gofmt)"
 ISORT="$(bazel run --run_under='echo' //tools/isort)"
 JAVAFORMAT="$(bazel run --run_under='echo' @com_google_google_java_format//:google-java-format)"
-YAPF="$(bazel run --run_under='echo' //tools/yapf)"
 SHFMT="$(bazel run --run_under=echo @com_github_mvdan_sh//cmd/shfmt)"
 
 # We cannot use run_under here because of https://github.com/bazelbuild/rules_foreign_cc/issues/582
@@ -28,7 +28,7 @@ find . -type f -name '*.java' -print0 | xargs -0 "$JAVAFORMAT" --aosp --replace
 # Python
 find . -type f -iname '*.py' -print0 | xargs -0 "$AUTOFLAKE" --in-place --remove-unused-variables
 find . -type f -iname '*.py' -print0 | xargs -0 "$ISORT"
-find . -type f -iname '*.py' -print0 | xargs -0 "$YAPF" -i --no-local-style -p
+find . -type f -iname '*.py' -print0 | xargs -0 "$BLACK"
 
 # Ruby
 # FIXME rubocop does not work in Bazel yet
