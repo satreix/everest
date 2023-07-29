@@ -12,6 +12,6 @@ jinja2 = "*"
 
 [dev-packages]
 autoflake = "*"
+black = "*"
 isort = "*"
 pip-tools = "*"
-yapf = "*"

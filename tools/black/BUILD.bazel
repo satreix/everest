@@ -1,6 +1,6 @@
 load("//third_party/python:requirements.bzl", "entry_point")
 
 alias(
-    name = "yapf",
-    actual = entry_point("yapf"),
+    name = "black",
+    actual = entry_point("black"),
 )
