@@ -17,6 +17,7 @@ jobs:
         os:
           - macos-latest
           - ubuntu-latest
+          - windows-latest
     name: check - (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     steps:
@@ -40,4 +41,9 @@ jobs:
         run: cp tools/ci/bazel.rc $HOME/.bazelrc
 
       - name: Test
+        run: bazel.exe test -k --remote_header=x-buildbuddy-api-key=${{ secrets.BUILDBUDDY_API_KEY }} //...
+        if: ${{ matrix.os == 'windows-latest' }}
+
+      - name: Test
         run: bazel test --remote_header=x-buildbuddy-api-key=${{ secrets.BUILDBUDDY_API_KEY }} //...
+        if: ${{ matrix.os != 'windows-latest' }}
