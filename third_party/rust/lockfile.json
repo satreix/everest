@@ -1,5 +1,5 @@
 {
-  "checksum": "eb0188b2efb2fac538f5363510c38ef7a0a3cd9c8e37208d12a66c6d3dc4bb32",
+  "checksum": "196df3f1cfbea56543d19105793b2c36a6c3798d1a99a5f75c1a008e8b508be5",
   "crates": {
     "android_system_properties 0.1.5": {
       "name": "android_system_properties",
@@ -923,13 +923,13 @@
       },
       "license": "MIT/Apache-2.0"
     },
-    "clap 4.3.12": {
+    "clap 4.3.19": {
       "name": "clap",
-      "version": "4.3.12",
+      "version": "4.3.19",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/clap/4.3.12/download",
-          "sha256": "3eab9e8ceb9afdade1ab3f0fd8dbce5b1b2f468ad653baf10e771781b2b67b73"
+          "url": "https://crates.io/api/v1/crates/clap/4.3.19/download",
+          "sha256": "5fd304a20bff958a57f04c4e96a2e7594cc4490a0e809cbd48bb6437edaa452d"
         }
       },
       "targets": [
@@ -964,7 +964,7 @@
         "deps": {
           "common": [
             {
-              "id": "clap_builder 4.3.12",
+              "id": "clap_builder 4.3.19",
               "target": "clap_builder"
             },
             {
@@ -984,17 +984,17 @@
           ],
           "selects": {}
         },
-        "version": "4.3.12"
+        "version": "4.3.19"
       },
       "license": "MIT OR Apache-2.0"
     },
-    "clap_builder 4.3.12": {
+    "clap_builder 4.3.19": {
       "name": "clap_builder",
-      "version": "4.3.12",
+      "version": "4.3.19",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/clap_builder/4.3.12/download",
-          "sha256": "9f2763db829349bf00cfc06251268865ed4363b93a943174f638daf3ecdba2cd"
+          "url": "https://crates.io/api/v1/crates/clap_builder/4.3.19/download",
+          "sha256": "01c6a3f08f1fe5662a35cfe393aec09c4df95f60ee93b7556505260f75eee9e1"
         }
       },
       "targets": [
@@ -1046,7 +1046,7 @@
           "selects": {}
         },
         "edition": "2021",
-        "version": "4.3.12"
+        "version": "4.3.19"
       },
       "license": "MIT OR Apache-2.0"
     },
@@ -2181,7 +2181,7 @@
         "deps": {
           "common": [
             {
-              "id": "clap 4.3.12",
+              "id": "clap 4.3.19",
               "target": "clap"
             }
           ],
