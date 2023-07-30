@@ -658,15 +658,15 @@ def go_dependencies():
         name = "com_github_rs_xid",
         build_file_proto_mode = "disable_global",
         importpath = "github.com/rs/xid",
-        sum = "h1:qd7wPTDkN6KQx2VmMBLrpHkiyQwgFXRnkOLacUiaSNY=",
-        version = "v1.4.0",
+        sum = "h1:mKX4bl4iPYJtEIxp6CYiUuLQ/8DYMoz0PUdtGgMFRVc=",
+        version = "v1.5.0",
     )
     go_repository(
         name = "com_github_rs_zerolog",
         build_file_proto_mode = "disable_global",
         importpath = "github.com/rs/zerolog",
-        sum = "h1:cO+d60CHkknCbvzEWxP0S9K6KqyTjrCNUy1LdQLCGPc=",
-        version = "v1.29.1",
+        sum = "h1:SymVODrcRsaRaSInD9yQtKbtWqwsfoPcRff/oRXLj4c=",
+        version = "v1.30.0",
     )
     go_repository(
         name = "com_github_sethvargo_go_envconfig",
