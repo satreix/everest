@@ -209,9 +209,9 @@ http_archive(
 
 http_archive(
     name = "rules_perl",
-    sha256 = "391edb08802860ba733d402c6376cfe1002b598b90d2240d9d302ecce2289a64",
-    strip_prefix = "rules_perl-7f10dada09fcba1dc79a6a91da2facc25e72bd7d",
-    url = "https://github.com/bazelbuild/rules_perl/archive/7f10dada09fcba1dc79a6a91da2facc25e72bd7d.tar.gz",
+    sha256 = "10bd54c981d79ea9c0fc6ccc4a5af87771e5a6a937facc2447bcad06bc161d64",
+    strip_prefix = "rules_perl-d458b41dd15a086721dcf663317f2c121bba8984",
+    url = "https://github.com/bazelbuild/rules_perl/archive/d458b41dd15a086721dcf663317f2c121bba8984.tar.gz",
 )
 
 http_archive(
