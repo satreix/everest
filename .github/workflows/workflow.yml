@@ -10,14 +10,44 @@ on:
   pull_request:
 
 jobs:
+  format:
+    name: format
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+
+      # Install poetry for third_party/python/update.sh
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+
+      # https://github.com/tweag/rules_haskell/issues/704
+      - name: "[Haskell] Install required packages"
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -yy libtinfo5
+          sudo apt-get clean
+
+      - uses: bazelbuild/setup-bazelisk@v2
+
+      - name: Sync dependencies
+        run: ./tools/update-dependencies.sh
+
+      - name: Stop bazel
+        run: bazel shutdown
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+
   check:
+    name: check - (${{ matrix.os }})
+    needs: format
     strategy:
       fail-fast: false
       matrix:
         os:
           - macos-latest
           - ubuntu-latest
-    name: check - (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -50,3 +80,6 @@ jobs:
 
       - name: Test
         run: bazel test --remote_header=x-buildbuddy-api-key=${{ secrets.BUILDBUDDY_API_KEY }} //...
+
+      - name: Stop bazel
+        run: bazel shutdown
