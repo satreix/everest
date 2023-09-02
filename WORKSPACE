@@ -21,9 +21,9 @@ http_archive(
         # A fix for https://github.com/bazelruby/rules_ruby/issues/79
         "//third_party:bazelruby_rules_ruby/0001-fix-rspec.patch",
     ],
-    sha256 = "cf3c7d3c1e032c804e7f85e1c38e7f16cf50cb1353736e4ef69e3b63059d305f",
-    strip_prefix = "rules_ruby-cc2f5ce961f7fa34557264dd05c7597e634f31e1",
-    url = "https://github.com/bazelruby/rules_ruby/archive/cc2f5ce961f7fa34557264dd05c7597e634f31e1.tar.gz",
+    sha256 = "e1886a644d68ad4936cc7ae0a31aab1b5028cb1f80a365a184b9a24a92bf355b",
+    strip_prefix = "rules_ruby-e60d0cd0f2100287a93557334c48117839fe4762",
+    url = "https://github.com/bazelruby/rules_ruby/archive/e60d0cd0f2100287a93557334c48117839fe4762.tar.gz",
 )
 
 http_archive(
