@@ -36,9 +36,9 @@ http_archive(
 
 http_archive(
     name = "com_github_bazelbuild_buildtools",
-    sha256 = "977a0bd4593c8d4c8f45e056d181c35e48aa01ad4f8090bdb84f78dca42f47dc",
-    strip_prefix = "buildtools-6.1.2",
-    url = "https://github.com/bazelbuild/buildtools/archive/v6.1.2.tar.gz",
+    sha256 = "42968f9134ba2c75c03bb271bd7bb062afb7da449f9b913c96e5be4ce890030a",
+    strip_prefix = "buildtools-6.3.3",
+    url = "https://github.com/bazelbuild/buildtools/archive/v6.3.3.tar.gz",
 )
 
 http_archive(
