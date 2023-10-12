@@ -1,5 +1,5 @@
 load("@bazel_skylib//rules:build_test.bzl", "build_test")
-load("@rules_rust//proto:toolchain.bzl", "GRPC_COMPILE_DEPS")
+load("@rules_rust//proto/protobuf:toolchain.bzl", "GRPC_COMPILE_DEPS")
 load("@rules_rust//rust:defs.bzl", "rust_binary")
 
 rust_binary(

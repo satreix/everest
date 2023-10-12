@@ -1,5 +1,5 @@
 {
-  "checksum": "c323cd608be44c7ea0efa23b8379eee5943a3881cf9e26f11b58577800edeba9",
+  "checksum": "e1e906e2c64d2b2c1ac129a9db43305bd58baf7f33cf70f552441a1990304b98",
   "crates": {
     "android_system_properties 0.1.5": {
       "name": "android_system_properties",
@@ -1634,6 +1634,15 @@
           ],
           "selects": {}
         },
+        "link_deps": {
+          "common": [
+            {
+              "id": "link-cplusplus 1.0.8",
+              "target": "link_cplusplus"
+            }
+          ],
+          "selects": {}
+        },
         "links": "cxxbridge1"
       },
       "license": "MIT OR Apache-2.0"
@@ -2612,6 +2621,15 @@
             {
               "id": "cxx-build 1.0.90",
               "target": "cxx_build"
+            }
+          ],
+          "selects": {}
+        },
+        "link_deps": {
+          "common": [
+            {
+              "id": "cxx 1.0.90",
+              "target": "cxx"
             }
           ],
           "selects": {}
@@ -4943,6 +4961,15 @@
             {
               "id": "pyo3-build-config 0.20.0",
               "target": "pyo3_build_config"
+            }
+          ],
+          "selects": {}
+        },
+        "link_deps": {
+          "common": [
+            {
+              "id": "pyo3-ffi 0.20.0",
+              "target": "pyo3_ffi"
             }
           ],
           "selects": {}

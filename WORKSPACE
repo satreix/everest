@@ -316,13 +316,15 @@ rust_register_toolchains(
     versions = [_RUST_VERSION],
 )
 
-load("@rules_rust//proto:repositories.bzl", "rust_proto_repositories")
+load("@rules_rust//proto/protobuf:repositories.bzl", "rust_proto_protobuf_dependencies", "rust_proto_protobuf_register_toolchains")
 
-rust_proto_repositories()
+rust_proto_protobuf_dependencies()
 
-load("@rules_rust//proto:transitive_repositories.bzl", "rust_proto_transitive_repositories")
+rust_proto_protobuf_register_toolchains()
 
-rust_proto_transitive_repositories()
+load("@rules_rust//proto/protobuf:transitive_repositories.bzl", "rust_proto_protobuf_transitive_repositories")
+
+rust_proto_protobuf_transitive_repositories()
 
 load("@rules_rust//crate_universe:repositories.bzl", "crate_universe_dependencies")
 
