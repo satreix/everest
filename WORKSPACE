@@ -90,18 +90,22 @@ http_archive(
 )
 
 http_archive(
-    name = "fmtlib",
-    build_file = "//third_party:cc/fmtlib/BUILD.external",
-    sha256 = "ede1b6b42188163a3f2e0f25ad5c0637eca564bd8df74d02e31a311dd6b37ad8",
-    strip_prefix = "fmt-10.0.0",
-    url = "https://github.com/fmtlib/fmt/archive/refs/tags/10.0.0.tar.gz",
-)
-
-http_archive(
     name = "fmeum_rules_jni",
     sha256 = "530a02c4d86f7bcfabd61e7de830f8c78fcb2ea70943eab8f2bfdad96620f1f5",
     strip_prefix = "rules_jni-0.7.0",
     url = "https://github.com/fmeum/rules_jni/archive/refs/tags/v0.7.0.tar.gz",
+)
+
+http_archive(
+    name = "fmtlib",
+    patch_cmds = [
+        "mv support/bazel/.bazelversion .bazelversion",
+        "mv support/bazel/BUILD.bazel BUILD.bazel",
+        "mv support/bazel/WORKSPACE.bazel WORKSPACE.bazel",
+    ],
+    sha256 = "78b8c0a72b1c35e4443a7e308df52498252d1cefc2b08c9a97bc9ee6cfe61f8b",
+    strip_prefix = "fmt-10.1.1",
+    url = "https://github.com/fmtlib/fmt/archive/refs/tags/10.1.1.tar.gz",
 )
 
 http_archive(
