@@ -4,6 +4,8 @@ def stack_snapshot():
     _stack_snapshot(
         name = "stackage",
         packages = [
+            "base",
+            "HUnit",
             "optparse-applicative",
         ],
         snapshot = "lts-18.18",
