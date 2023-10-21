@@ -338,6 +338,7 @@ crates_repository(
         "//:Cargo.toml",
         "//src/rust/grpc_server:Cargo.toml",
         "//src/rust/hello_world:Cargo.toml",
+        "//src/rust/luhn:Cargo.toml",
         "//src/rust/num:Cargo.toml",
         "//src/rust/web:Cargo.toml",
     ],
