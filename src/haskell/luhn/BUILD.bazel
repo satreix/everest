@@ -1,0 +1,18 @@
+load("@rules_haskell//haskell:defs.bzl", "haskell_library", "haskell_test")
+
+haskell_library(
+    name = "luhn",
+    srcs = ["src/Luhn.hs"],
+    deps = ["@stackage//:base"],
+)
+
+haskell_test(
+    name = "luhn_test",
+    size = "small",
+    srcs = ["test/Main.hs"],
+    deps = [
+        ":luhn",
+        "@stackage//:HUnit",
+        "@stackage//:base",
+    ],
+)
