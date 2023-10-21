@@ -1,17 +1,23 @@
+load("@contrib_rules_jvm//java:defs.bzl", "JUNIT5_DEPS")
 load("@rules_kotlin//kotlin:jvm.bzl", "kt_jvm_library", "kt_jvm_test")
 load("@rules_kotlin//kotlin:lint.bzl", "ktlint_fix", "ktlint_test")
-load("@contrib_rules_jvm//java:defs.bzl", "JUNIT5_DEPS")
 
 kt_jvm_library(
     name = "luhn",
-    srcs = glob(["*.kt"], exclude=["*Test.kt"]),
+    srcs = glob(
+        ["*.kt"],
+        exclude = ["*Test.kt"],
+    ),
 )
 
 kt_jvm_test(
     name = "LuhnTest",
     size = "small",
     srcs = ["LuhnTest.kt"],
-    deps = [":luhn", "@maven//:junit_junit"] + JUNIT5_DEPS,
+    deps = [
+        ":luhn",
+        "@maven//:junit_junit",
+    ] + JUNIT5_DEPS,
 )
 
 ktlint_test(
