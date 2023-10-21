@@ -1,0 +1,21 @@
+load("@contrib_rules_jvm//java:defs.bzl", "JUNIT5_DEPS", "java_library", "java_test_suite")
+
+java_library(
+    name = "luhn",
+    srcs = [
+        "LuhnAlgorithm.java",
+    ],
+)
+
+java_test_suite(
+    name = "luhn_tests",
+    size = "small",
+    srcs = [
+        "LuhnAlgorithmTest.java",
+    ],
+    package = "luhn",
+    runner = "junit5",
+    deps = [
+        ":luhn",
+    ] + JUNIT5_DEPS,
+)
