@@ -135,12 +135,6 @@ http_archive(
 )
 
 http_archive(
-    name = "io_bazel_rules_kotlin",
-    sha256 = "01293740a16e474669aba5b5a1fe3d368de5832442f164e4fbfc566815a8bc3a",
-    url = "https://github.com/bazelbuild/rules_kotlin/releases/download/v1.8/rules_kotlin_release.tgz",
-)
-
-http_archive(
     name = "io_grpc_grpc_java",
     sha256 = "6a3052dc29684f057641b97cd80521df1c5b43ed2c0038e22ccb23717cb2c72e",
     strip_prefix = "grpc-java-1.57.2",
@@ -209,6 +203,12 @@ http_archive(
     sha256 = "8ac1c5c2a8681c398883bb2cabc18f913337f165059f24e8c55714e05757761e",
     strip_prefix = "rules_jvm_external-5.3",
     url = "https://github.com/bazelbuild/rules_jvm_external/archive/5.3.tar.gz",
+)
+
+http_archive(
+    name = "rules_kotlin",
+    sha256 = "5766f1e599acf551aa56f49dab9ab9108269b03c557496c54acaf41f98e2b8d6",
+    url = "https://github.com/bazelbuild/rules_kotlin/releases/download/v1.9.0/rules_kotlin-v1.9.0.tar.gz",
 )
 
 http_archive(
@@ -457,11 +457,11 @@ perl_rules_dependencies()
 
 perl_register_toolchains()
 
-load("@io_bazel_rules_kotlin//kotlin:repositories.bzl", "kotlin_repositories")
+load("@rules_kotlin//kotlin:repositories.bzl", "kotlin_repositories")
 
 kotlin_repositories()
 
-load("@io_bazel_rules_kotlin//kotlin:core.bzl", "kt_register_toolchains")
+load("@rules_kotlin//kotlin:core.bzl", "kt_register_toolchains")
 
 kt_register_toolchains()
 
