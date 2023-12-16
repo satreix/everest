@@ -172,12 +172,6 @@ http_archive(
 )
 
 http_archive(
-    name = "rules_kotlin",
-    sha256 = "5766f1e599acf551aa56f49dab9ab9108269b03c557496c54acaf41f98e2b8d6",
-    url = "https://github.com/bazelbuild/rules_kotlin/releases/download/v1.9.0/rules_kotlin-v1.9.0.tar.gz",
-)
-
-http_archive(
     name = "rules_perl",
     sha256 = "1550b46e02e3a9ed340073541afad8ad5ff1c3e1d841bd3958da5b097d72fa70",
     strip_prefix = "rules_perl-366b6aa76b12056a9e0cc23364686f25dcc41702",
@@ -394,14 +388,6 @@ load("@rules_perl//perl:deps.bzl", "perl_register_toolchains", "perl_rules_depen
 perl_rules_dependencies()
 
 perl_register_toolchains()
-
-load("@rules_kotlin//kotlin:repositories.bzl", "kotlin_repositories")
-
-kotlin_repositories()
-
-load("@rules_kotlin//kotlin:core.bzl", "kt_register_toolchains")
-
-kt_register_toolchains()
 
 load("@io_bazel_rules_docker//repositories:repositories.bzl", container_repositories = "repositories")
 
