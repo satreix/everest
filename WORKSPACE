@@ -69,13 +69,6 @@ http_archive(
 )
 
 http_archive(
-    name = "com_google_googletest",
-    sha256 = "8ad598c73ad796e0d8280b082cebd82a630d73e73cd3c70057938a6501bba5d7",
-    strip_prefix = "googletest-1.14.0",
-    url = "https://github.com/google/googletest/archive/refs/tags/v1.14.0.tar.gz",
-)
-
-http_archive(
     name = "contrib_rules_jvm",
     sha256 = "4d62589dc6a55e74bbe33930b826d593367fc777449a410604b2ad7c6c625ef7",
     strip_prefix = "rules_jvm-0.19.0",

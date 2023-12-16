@@ -12,6 +12,6 @@ cc_test(
     srcs = ["luhn_test.cc"],
     deps = [
         ":luhn",
-        "@com_google_googletest//:gtest_main",
+        "@googletest//:gtest_main",
     ],
 )
