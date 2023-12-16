@@ -198,13 +198,6 @@ http_archive(
 )
 
 http_archive(
-    name = "rules_proto",
-    sha256 = "66bfdf8782796239d3875d37e7de19b1d94301e8972b3cbd2446b332429b4df1",
-    strip_prefix = "rules_proto-4.0.0",
-    url = "https://github.com/bazelbuild/rules_proto/archive/refs/tags/4.0.0.tar.gz",
-)
-
-http_archive(
     name = "rules_rust",
     sha256 = "6357de5982dd32526e02278221bb8d6aa45717ba9bbacf43686b130aa2c72e1e",
     url = "https://github.com/bazelbuild/rules_rust/releases/download/0.30.0/rules_rust-v0.30.0.tar.gz",
@@ -238,12 +231,6 @@ load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 
 # Note: this needs to be defore proto rules: https://github.com/bazelbuild/bazel-gazelle/issues/1366
 gazelle_dependencies()
-
-load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
-
-rules_proto_dependencies()
-
-rules_proto_toolchains()
 
 load("@rules_java//java:repositories.bzl", "rules_java_dependencies", "rules_java_toolchains")
 
