@@ -172,12 +172,6 @@ http_archive(
 )
 
 http_archive(
-    name = "rules_java",
-    sha256 = "7b0d9ba216c821ee8697dedc0f9d0a705959ace462a3885fe9ba0347ba950111",
-    url = "https://github.com/bazelbuild/rules_java/releases/download/6.5.1/rules_java-6.5.1.tar.gz",
-)
-
-http_archive(
     name = "rules_jvm_external",
     sha256 = "8ac1c5c2a8681c398883bb2cabc18f913337f165059f24e8c55714e05757761e",
     strip_prefix = "rules_jvm_external-5.3",
@@ -231,12 +225,6 @@ load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 
 # Note: this needs to be defore proto rules: https://github.com/bazelbuild/bazel-gazelle/issues/1366
 gazelle_dependencies()
-
-load("@rules_java//java:repositories.bzl", "rules_java_dependencies", "rules_java_toolchains")
-
-rules_java_dependencies()
-
-rules_java_toolchains()
 
 load("@contrib_rules_jvm//:repositories.bzl", "contrib_rules_jvm_deps")
 
