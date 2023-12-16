@@ -151,13 +151,6 @@ http_archive(
 )
 
 http_archive(
-    name = "rules_foreign_cc",
-    sha256 = "2a4d07cd64b0719b39a7c12218a3e507672b82a97b98c6a89d38565894cf7c51",
-    strip_prefix = "rules_foreign_cc-0.9.0",
-    url = "https://github.com/bazelbuild/rules_foreign_cc/archive/0.9.0.tar.gz",
-)
-
-http_archive(
     name = "rules_haskell",
     sha256 = "298f6f0db23391274b4eca215daa01797d05699469048ef94540d5829b466377",
     strip_prefix = "rules_haskell-0.17",
@@ -296,10 +289,6 @@ compat_repositories()
 load("@maven//:defs.bzl", "pinned_maven_install")
 
 pinned_maven_install()
-
-load("@rules_foreign_cc//foreign_cc:repositories.bzl", "rules_foreign_cc_dependencies")
-
-rules_foreign_cc_dependencies()
 
 load("@com_google_google_java_format_source//tools/bazel:def.bzl", "java_format")
 
