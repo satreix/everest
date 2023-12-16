@@ -76,13 +76,6 @@ http_archive(
 )
 
 http_archive(
-    name = "fmeum_rules_jni",
-    sha256 = "01cfe5b6878094afabfb0f9315d69fbc63dd0839a07f580f56d2305bb9fcbc0e",
-    strip_prefix = "rules_jni-0.9.1",
-    url = "https://github.com/fmeum/rules_jni/archive/refs/tags/v0.9.1.tar.gz",
-)
-
-http_archive(
     name = "fmtlib",
     patch_cmds = [
         "mv support/bazel/.bazelversion .bazelversion",
@@ -233,10 +226,6 @@ contrib_rules_jvm_deps()
 load("@contrib_rules_jvm//:setup.bzl", "contrib_rules_jvm_setup")
 
 contrib_rules_jvm_setup()
-
-load("@fmeum_rules_jni//jni:repositories.bzl", "rules_jni_dependencies")
-
-rules_jni_dependencies()
 
 load("@rules_python//python:repositories.bzl", "python_register_toolchains")
 
