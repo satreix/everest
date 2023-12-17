@@ -7,7 +7,7 @@ cc_binary(
     visibility = ["//visibility:public"],
     deps = [
         "//src/cpp/hello_world/greet",
-        "@com_github_gflags_gflags//:gflags",
+        "@gflags",
     ],
 )
 

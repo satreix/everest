@@ -42,13 +42,6 @@ http_archive(
 )
 
 http_archive(
-    name = "com_github_gflags_gflags",
-    sha256 = "34af2f15cf7367513b352bdcd2493ab14ce43692d2dcd9dfc499492966c64dcf",
-    strip_prefix = "gflags-2.2.2",
-    url = "https://github.com/gflags/gflags/archive/refs/tags/v2.2.2.tar.gz",
-)
-
-http_archive(
     name = "com_github_swagger_api_swagger_petstore",
     build_file_content = """exports_files(["src/main/resources/openapi.yaml"])""",
     sha256 = "ae350c7aff7b99465ad4f679613685a92a4350796ae9fcd8ef36952592fe5dfe",
@@ -76,24 +69,10 @@ http_archive(
 )
 
 http_archive(
-    name = "com_google_googletest",
-    sha256 = "8ad598c73ad796e0d8280b082cebd82a630d73e73cd3c70057938a6501bba5d7",
-    strip_prefix = "googletest-1.14.0",
-    url = "https://github.com/google/googletest/archive/refs/tags/v1.14.0.tar.gz",
-)
-
-http_archive(
     name = "contrib_rules_jvm",
     sha256 = "4d62589dc6a55e74bbe33930b826d593367fc777449a410604b2ad7c6c625ef7",
     strip_prefix = "rules_jvm-0.19.0",
     url = "https://github.com/bazel-contrib/rules_jvm/archive/refs/tags/v0.19.0.tar.gz",
-)
-
-http_archive(
-    name = "fmeum_rules_jni",
-    sha256 = "01cfe5b6878094afabfb0f9315d69fbc63dd0839a07f580f56d2305bb9fcbc0e",
-    strip_prefix = "rules_jni-0.9.1",
-    url = "https://github.com/fmeum/rules_jni/archive/refs/tags/v0.9.1.tar.gz",
 )
 
 http_archive(
@@ -172,30 +151,10 @@ http_archive(
 )
 
 http_archive(
-    name = "rules_cc",
-    sha256 = "2037875b9a4456dce4a79d112a8ae885bbc4aad968e6587dca6e64f3a0900cdf",
-    strip_prefix = "rules_cc-0.0.9",
-    url = "https://github.com/bazelbuild/rules_cc/archive/0.0.9.tar.gz",
-)
-
-http_archive(
-    name = "rules_foreign_cc",
-    sha256 = "2a4d07cd64b0719b39a7c12218a3e507672b82a97b98c6a89d38565894cf7c51",
-    strip_prefix = "rules_foreign_cc-0.9.0",
-    url = "https://github.com/bazelbuild/rules_foreign_cc/archive/0.9.0.tar.gz",
-)
-
-http_archive(
     name = "rules_haskell",
     sha256 = "298f6f0db23391274b4eca215daa01797d05699469048ef94540d5829b466377",
     strip_prefix = "rules_haskell-0.17",
     url = "https://github.com/tweag/rules_haskell/archive/refs/tags/v0.17.tar.gz",
-)
-
-http_archive(
-    name = "rules_java",
-    sha256 = "7b0d9ba216c821ee8697dedc0f9d0a705959ace462a3885fe9ba0347ba950111",
-    url = "https://github.com/bazelbuild/rules_java/releases/download/6.5.1/rules_java-6.5.1.tar.gz",
 )
 
 http_archive(
@@ -206,30 +165,10 @@ http_archive(
 )
 
 http_archive(
-    name = "rules_kotlin",
-    sha256 = "5766f1e599acf551aa56f49dab9ab9108269b03c557496c54acaf41f98e2b8d6",
-    url = "https://github.com/bazelbuild/rules_kotlin/releases/download/v1.9.0/rules_kotlin-v1.9.0.tar.gz",
-)
-
-http_archive(
     name = "rules_perl",
     sha256 = "1550b46e02e3a9ed340073541afad8ad5ff1c3e1d841bd3958da5b097d72fa70",
     strip_prefix = "rules_perl-366b6aa76b12056a9e0cc23364686f25dcc41702",
     url = "https://github.com/bazelbuild/rules_perl/archive/366b6aa76b12056a9e0cc23364686f25dcc41702.tar.gz",
-)
-
-http_archive(
-    name = "rules_proto",
-    sha256 = "66bfdf8782796239d3875d37e7de19b1d94301e8972b3cbd2446b332429b4df1",
-    strip_prefix = "rules_proto-4.0.0",
-    url = "https://github.com/bazelbuild/rules_proto/archive/refs/tags/4.0.0.tar.gz",
-)
-
-http_archive(
-    name = "rules_python",
-    sha256 = "0a8003b044294d7840ac7d9d73eef05d6ceb682d7516781a4ec62eeb34702578",
-    strip_prefix = "rules_python-0.24.0",
-    url = "https://github.com/bazelbuild/rules_python/archive/0.24.0.tar.gz",
 )
 
 http_archive(
@@ -267,18 +206,6 @@ load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 # Note: this needs to be defore proto rules: https://github.com/bazelbuild/bazel-gazelle/issues/1366
 gazelle_dependencies()
 
-load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
-
-rules_proto_dependencies()
-
-rules_proto_toolchains()
-
-load("@rules_java//java:repositories.bzl", "rules_java_dependencies", "rules_java_toolchains")
-
-rules_java_dependencies()
-
-rules_java_toolchains()
-
 load("@contrib_rules_jvm//:repositories.bzl", "contrib_rules_jvm_deps")
 
 contrib_rules_jvm_deps()
@@ -286,10 +213,6 @@ contrib_rules_jvm_deps()
 load("@contrib_rules_jvm//:setup.bzl", "contrib_rules_jvm_setup")
 
 contrib_rules_jvm_setup()
-
-load("@fmeum_rules_jni//jni:repositories.bzl", "rules_jni_dependencies")
-
-rules_jni_dependencies()
 
 load("@rules_python//python:repositories.bzl", "python_register_toolchains")
 
@@ -366,10 +289,6 @@ compat_repositories()
 load("@maven//:defs.bzl", "pinned_maven_install")
 
 pinned_maven_install()
-
-load("@rules_foreign_cc//foreign_cc:repositories.bzl", "rules_foreign_cc_dependencies")
-
-rules_foreign_cc_dependencies()
 
 load("@com_google_google_java_format_source//tools/bazel:def.bzl", "java_format")
 
@@ -458,14 +377,6 @@ load("@rules_perl//perl:deps.bzl", "perl_register_toolchains", "perl_rules_depen
 perl_rules_dependencies()
 
 perl_register_toolchains()
-
-load("@rules_kotlin//kotlin:repositories.bzl", "kotlin_repositories")
-
-kotlin_repositories()
-
-load("@rules_kotlin//kotlin:core.bzl", "kt_register_toolchains")
-
-kt_register_toolchains()
 
 load("@io_bazel_rules_docker//repositories:repositories.bzl", container_repositories = "repositories")
 
