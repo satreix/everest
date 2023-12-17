@@ -193,7 +193,7 @@ go_rules_dependencies()
 go_register_toolchains(
     nogo = "@//tools/nogo",
     # Update in lockstep with go.mod
-    version = "1.20.3",
+    version = "1.21.5",
 )
 
 load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
