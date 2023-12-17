@@ -1,7 +1,21 @@
 #!/bin/bash
 set -eufo pipefail
 
-bazel run @go_sdk//:bin/go -- mod tidy -e
+proto_packages=(
+    src/proto/bookstore/v1
+    src/proto/helloworld
+)
+
+for pkg in "${proto_packages[@]}"; do
+    echo "package $(basename "$pkg")" > "${pkg}/empty.go"
+done
+
+bazel run @go_sdk//:bin/go -- mod tidy
+
+for pkg in "${proto_packages[@]}"; do
+    rm -rf  "${pkg}/empty.go"
+done
+
 GO_DEPS_FILE="third_party/go/deps.bzl"
 bazel run //:gazelle -- update-repos \
     -build_file_proto_mode=disable_global \
