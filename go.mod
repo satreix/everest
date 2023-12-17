@@ -5,7 +5,7 @@ go 1.21
 require (
 	github.com/antlr4-go/antlr/v4 v4.13.0
 	github.com/bazelbuild/rules_go v0.43.0
-	github.com/google/cel-go v0.18.1
+	github.com/google/cel-go v0.18.2
 	github.com/google/go-cmp v0.6.0
 	github.com/google/go-github/v53 v53.2.0
 	github.com/gosuri/uiprogress v0.0.1
@@ -30,7 +30,6 @@ require (
 
 require (
 	github.com/ProtonMail/go-crypto v0.0.0-20230217124315-7d5c6f04bbb8 // indirect
-	github.com/antlr/antlr4/runtime/Go/antlr/v4 v4.0.0-20230305170008-8188dc5388df // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cenkalti/backoff/v4 v4.2.1 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect

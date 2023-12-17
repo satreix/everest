@@ -44,13 +44,6 @@ def go_dependencies():
         version = "v4.13.0",
     )
     go_repository(
-        name = "com_github_antlr_antlr4_runtime_go_antlr_v4",
-        build_file_proto_mode = "disable_global",
-        importpath = "github.com/antlr/antlr4/runtime/Go/antlr/v4",
-        sum = "h1:7RFfzj4SSt6nnvCPbCqijJi1nWCd+TqAT3bYCStRC18=",
-        version = "v4.0.0-20230305170008-8188dc5388df",
-    )
-    go_repository(
         name = "com_github_bazelbuild_rules_go",
         build_file_proto_mode = "disable_global",
         importpath = "github.com/bazelbuild/rules_go",
@@ -302,8 +295,8 @@ def go_dependencies():
         build_file_proto_mode = "disable_global",
         build_naming_convention = "go_default_library",
         importpath = "github.com/google/cel-go",
-        sum = "h1:V/lAXKq4C3BYLDy/ARzMtpkEEYfHQpZzVyzy69nEUjs=",
-        version = "v0.18.1",
+        sum = "h1:L0B6sNBSVmt0OyECi8v6VOS74KOc9W/tLiWKfZABvf4=",
+        version = "v0.18.2",
     )
     go_repository(
         name = "com_github_google_go_cmp",
