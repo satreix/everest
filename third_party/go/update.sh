@@ -7,13 +7,13 @@ proto_packages=(
 )
 
 for pkg in "${proto_packages[@]}"; do
-    echo "package $(basename "$pkg")" > "${pkg}/empty.go"
+    echo "package $(basename "$pkg")" >"${pkg}/empty.go"
 done
 
 bazel run @go_sdk//:bin/go -- mod tidy
 
 for pkg in "${proto_packages[@]}"; do
-    rm -rf  "${pkg}/empty.go"
+    rm -rf "${pkg}/empty.go"
 done
 
 GO_DEPS_FILE="third_party/go/deps.bzl"
