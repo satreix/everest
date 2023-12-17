@@ -51,14 +51,9 @@ http_archive(
 
 http_archive(
     name = "com_github_tnarg_rules_cue",
-    patch_args = ["-p1"],
-    patches = [
-        # Following bazel-gazelle https://github.com/bazelbuild/bazel-gazelle/commit/3e83644bd8b1ed373d322b898cf7c05927b39201#diff-c1403c382e16f440e9d5e59ebc70a6beb7f68f5ccefbcb5dd73e5cb9352e85a0
-        "//third_party:com_github_tnarg_rules_cue/0001-fix-load-env_execute.patch",
-    ],
-    sha256 = "593efead13e6606ead7cc5a37114a4338b3fbe3963e548ec56061641257d23b3",
-    strip_prefix = "rules_cue-c46c97d53444519c69b1764b387ef1c3f31b1b23",
-    url = "https://github.com/tnarg/rules_cue/archive/c46c97d53444519c69b1764b387ef1c3f31b1b23.zip",
+    sha256 = "c915e5cc20ea13aaec059b06df4e5b9ced7af7f64cb6c9425176e763d41e4e7f",
+    strip_prefix = "rules_cue-736f29d928e702eb36cb44d8297e8a24f826bed4",
+    url = "https://github.com/tnarg/rules_cue/archive/736f29d928e702eb36cb44d8297e8a24f826bed4.zip",
 )
 
 http_archive(
