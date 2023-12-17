@@ -295,8 +295,8 @@ def go_dependencies():
         name = "com_github_honeycombio_otel_config_go",
         build_file_proto_mode = "disable_global",
         importpath = "github.com/honeycombio/otel-config-go",
-        sum = "h1:AZNndCVEq94Rnc0zAMffm5lFKKr9codsaoHChDFZLP4=",
-        version = "v1.13.0",
+        sum = "h1:JYERH81ChVB4vH3Jmo8ifAkeKhVRD85uaaLLpm4MzY0=",
+        version = "v1.13.1",
     )
     go_repository(
         name = "com_github_jpillora_backoff",

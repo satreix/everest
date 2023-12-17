@@ -63,8 +63,8 @@ github.com/grpc-ecosystem/grpc-gateway/v2 v2.18.1 h1:6UKoz5ujsI55KNpsJH3UwCq3T8k
 github.com/grpc-ecosystem/grpc-gateway/v2 v2.18.1/go.mod h1:YvJ2f6MplWDhfxiUC3KpyTy76kYUZA4W3pTv/wdKQ9Y=
 github.com/honeycombio/honeycomb-opentelemetry-go v0.9.0 h1:bAGMaYq2ankgZz2sVlvNpmD78hJX4NcRL8zLa9ZpVbI=
 github.com/honeycombio/honeycomb-opentelemetry-go v0.9.0/go.mod h1:+Q3U4m5G1flxRUnAJ2FHIwuQ93mHu1881NpJ7pZLr30=
-github.com/honeycombio/otel-config-go v1.13.0 h1:AZNndCVEq94Rnc0zAMffm5lFKKr9codsaoHChDFZLP4=
-github.com/honeycombio/otel-config-go v1.13.0/go.mod h1:5hRpKBVO2cMXBaonDmr6KHYB2N/Q5AD3hr7+PVJQOx0=
+github.com/honeycombio/otel-config-go v1.13.1 h1:JYERH81ChVB4vH3Jmo8ifAkeKhVRD85uaaLLpm4MzY0=
+github.com/honeycombio/otel-config-go v1.13.1/go.mod h1:5hRpKBVO2cMXBaonDmr6KHYB2N/Q5AD3hr7+PVJQOx0=
 github.com/keybase/go-keychain v0.0.0-20231213204628-e32184a8f19f h1:7PS8wnkoEI0wGngmjHM4hhSLTDEYshZKrqGbFLTD9YA=
 github.com/keybase/go-keychain v0.0.0-20231213204628-e32184a8f19f/go.mod h1:n7RGNTwYsQydGrV4G5KijGld22EnMKZA7xPD/z3tzaM=
 github.com/kr/pretty v0.3.1 h1:flRD4NNwYAUpkphVc1HcthR4KEIFJ65n8Mw5qdRn3LE=
