@@ -209,20 +209,6 @@ load("@contrib_rules_jvm//:setup.bzl", "contrib_rules_jvm_setup")
 
 contrib_rules_jvm_setup()
 
-load("@rules_python//python:repositories.bzl", "python_register_toolchains")
-
-python_register_toolchains(
-    name = "python3_10_2",
-    python_version = "3.10.2",
-)
-
-load("@python3_10_2//:defs.bzl", "interpreter")
-load("//third_party/python:requirements.bzl", python_dependencies = "install_deps")
-
-python_dependencies(
-    python_interpreter_target = interpreter,
-)
-
 load("@rules_rust//rust:repositories.bzl", "rules_rust_dependencies", "rust_register_toolchains")
 
 rules_rust_dependencies()
