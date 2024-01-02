@@ -90,22 +90,9 @@ http_archive(
 )
 
 http_archive(
-    name = "io_bazel_rules_docker",
-    sha256 = "b1e80761a8a8243d03ebca8845e9cc1ba6c82ce7c5179ce2b295cd36f7e394bf",
-    url = "https://github.com/bazelbuild/rules_docker/releases/download/v0.25.0/rules_docker-v0.25.0.tar.gz",
-)
-
-http_archive(
     name = "io_bazel_rules_go",
     sha256 = "d6ab6b57e48c09523e93050f13698f708428cfd5e619252e369d377af6597707",
     url = "https://github.com/bazelbuild/rules_go/releases/download/v0.43.0/rules_go-v0.43.0.zip",
-)
-
-http_archive(
-    name = "io_bazel_rules_k8s",
-    sha256 = "ce5b9bc0926681e2e7f2147b49096f143e6cbc783e71bc1d4f36ca76b00e6f4a",
-    strip_prefix = "rules_k8s-0.7",
-    urls = ["https://github.com/bazelbuild/rules_k8s/archive/refs/tags/v0.7.tar.gz"],
 )
 
 http_archive(
@@ -337,28 +324,6 @@ load("@rules_perl//perl:deps.bzl", "perl_register_toolchains", "perl_rules_depen
 perl_rules_dependencies()
 
 perl_register_toolchains()
-
-load("@io_bazel_rules_docker//repositories:repositories.bzl", container_repositories = "repositories")
-
-container_repositories()
-
-load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
-
-container_deps()
-
-load("@io_bazel_rules_docker//go:image.bzl", _go_image_repos = "repositories")
-
-_go_image_repos()
-
-load("@io_bazel_rules_k8s//k8s:k8s.bzl", "k8s_defaults", "k8s_repositories")
-
-k8s_repositories()
-
-k8s_defaults(
-    name = "k8s_deploy",
-    cluster = "satreix",
-    kind = "deployment",
-)
 
 load("@com_google_googleapis//:repository_rules.bzl", "switched_rules_by_language")
 
