@@ -2,7 +2,7 @@
 set -eufo pipefail
 
 bazel build tools/pipenv
-PIPENV=bazel-out/darwin-fastbuild/bin/tools/pipenv/pipenv
+PIPENV="$(bazel cquery --output=files tools/pipenv | grep -v '\.py$')"
 
 $PIPENV install --dev
 $PIPENV clean
