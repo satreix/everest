@@ -12,7 +12,8 @@ bazel_dep(name = "rules_haskell", version = "0.18")
 haskell_toolchains = use_extension("@rules_haskell//extensions:haskell_toolchains.bzl", "haskell_toolchains")
 
 haskell_toolchains.bindists(
-    version = "8.10.7",
+    # Pick a version from https://www.haskell.org/ghc/download.html that matches the LTS snapshot below.
+    version = "9.6.3",
 )
 
 stack_snapshot = use_extension("@rules_haskell//extensions:stack_snapshot.bzl", "stack_snapshot")
@@ -23,7 +24,8 @@ use_repo(
 )
 
 stack_snapshot.snapshot(
-    name = "lts-18.18",
+    # Pick an LTS from https://www.stackage.org/snapshots
+    name = "lts-22.4",
 )
 
 [
