@@ -1,6 +1,6 @@
-load("@io_bazel_rules_docker//go:image.bzl", "go_image")
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library", "go_test")
-load("@k8s_deploy//:defaults.bzl", "k8s_deploy")
+load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
+load("@rules_oci//oci:defs.bzl", "oci_image")
 
 go_library(
     name = "echo_lib",
@@ -39,28 +39,14 @@ go_test(
     deps = ["@io_bazel_rules_go//go/tools/bazel:go_default_library"],
 )
 
-go_image(
+pkg_tar(
+    name = "echo_tar",
+    srcs = [":echo"],
+)
+
+oci_image(
     name = "echo_image",
-    embed = [":echo_lib"],
-    goarch = "amd64",
-    goos = "linux",
-    pure = "on",
-)
-
-k8s_deploy(
-    name = "dev",
-    images = {
-        "registry.satreix.com/satreix/echo:latest": ":echo_image",
-    },
-    template = ":deployment.yaml",
-)
-
-k8s_deploy(
-    name = "dev-service",
-    template = "service.yaml",
-)
-
-k8s_deploy(
-    name = "dev-ingress",
-    template = "ingress.yaml",
+    base = "@distroless_base",
+    tars = [":echo_tar"],
+    entrypoint = ["/echo"],
 )
