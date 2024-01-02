@@ -6,23 +6,19 @@ bazel_dep(name = "gflags", version = "2.2.2")
 bazel_dep(name = "googletest", version = "1.14.0")
 bazel_dep(name = "rules_cc", version = "0.0.9")
 bazel_dep(name = "rules_foreign_cc", version = "0.10.1")
-
 bazel_dep(name = "rules_haskell", version = "0.18")
 
 haskell_toolchains = use_extension("@rules_haskell//extensions:haskell_toolchains.bzl", "haskell_toolchains")
-
 haskell_toolchains.bindists(
     # Pick a version from https://www.haskell.org/ghc/download.html that matches the LTS snapshot below.
     version = "9.6.3",
 )
 
 stack_snapshot = use_extension("@rules_haskell//extensions:stack_snapshot.bzl", "stack_snapshot")
-
 use_repo(
     stack_snapshot,
     "stackage",
 )
-
 stack_snapshot.snapshot(
     # Pick an LTS from https://www.stackage.org/snapshots
     name = "lts-22.4",
@@ -42,11 +38,9 @@ stack_snapshot.snapshot(
 bazel_dep(name = "rules_java", version = "6.5.2")
 bazel_dep(name = "rules_jni", version = "0.9.1")
 bazel_dep(name = "rules_kotlin", version = "1.9.0")
-
 bazel_dep(name = "rules_oci", version = "1.5.1")
 
 oci = use_extension("@rules_oci//oci:extensions.bzl", "oci")
-
 oci.pull(
     name = "distroless_base",
     digest = "sha256:ccaef5ee2f1850270d453fdf700a5392534f8d1a8ca2acda391fbb6a06b81c86",
@@ -56,25 +50,21 @@ oci.pull(
         "linux/arm64",
     ],
 )
-
 use_repo(oci, "distroless_base")
 
 bazel_dep(name = "rules_pkg", version = "0.9.1")
 bazel_dep(name = "rules_proto", version = "5.3.0-21.7")
 bazel_dep(name = "rules_python", version = "0.27.1")
 
-python_version = "3.10"
+python_version = "3.12"
 
 python = use_extension("@rules_python//python/extensions:python.bzl", "python")
-
 python.toolchain(python_version = python_version)
 
 pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
-
 pip.parse(
     hub_name = "pip",
     python_version = python_version,
     requirements_lock = "//third_party/python:requirements_lock.txt",
 )
-
 use_repo(pip, "pip")
