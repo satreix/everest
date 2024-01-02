@@ -6,6 +6,37 @@ bazel_dep(name = "gflags", version = "2.2.2")
 bazel_dep(name = "googletest", version = "1.14.0")
 bazel_dep(name = "rules_cc", version = "0.0.9")
 bazel_dep(name = "rules_foreign_cc", version = "0.10.1")
+
+bazel_dep(name = "rules_haskell", version = "0.18")
+
+haskell_toolchains = use_extension("@rules_haskell//extensions:haskell_toolchains.bzl", "haskell_toolchains")
+
+haskell_toolchains.bindists(
+    version = "8.10.7",
+)
+
+stack_snapshot = use_extension("@rules_haskell//extensions:stack_snapshot.bzl", "stack_snapshot")
+
+use_repo(
+    stack_snapshot,
+    "stackage",
+)
+
+stack_snapshot.snapshot(
+    name = "lts-18.18",
+)
+
+[
+    stack_snapshot.package(
+        name = pkg,
+    )
+    for pkg in [
+        "base",
+        "HUnit",
+        "optparse-applicative",
+    ]
+]
+
 bazel_dep(name = "rules_java", version = "6.5.2")
 bazel_dep(name = "rules_jni", version = "0.9.1")
 bazel_dep(name = "rules_kotlin", version = "1.9.0")

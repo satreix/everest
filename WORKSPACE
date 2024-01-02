@@ -146,13 +146,6 @@ http_archive(
 )
 
 http_archive(
-    name = "rules_haskell",
-    sha256 = "298f6f0db23391274b4eca215daa01797d05699469048ef94540d5829b466377",
-    strip_prefix = "rules_haskell-0.17",
-    url = "https://github.com/tweag/rules_haskell/archive/refs/tags/v0.17.tar.gz",
-)
-
-http_archive(
     name = "rules_jvm_external",
     sha256 = "8ac1c5c2a8681c398883bb2cabc18f913337f165059f24e8c55714e05757761e",
     strip_prefix = "rules_jvm_external-5.3",
@@ -338,20 +331,6 @@ npm_install(
     package_json = "//:package.json",
     package_lock_json = "//:package-lock.json",
 )
-
-load("@rules_haskell//haskell:repositories.bzl", "rules_haskell_dependencies")
-
-rules_haskell_dependencies()
-
-load("@rules_haskell//haskell:toolchain.bzl", "rules_haskell_toolchains")
-
-rules_haskell_toolchains(
-    version = "8.10.7",
-)
-
-load("//third_party/haskell:stack_snapshot.bzl", "stack_snapshot")
-
-stack_snapshot()
 
 load("@rules_perl//perl:deps.bzl", "perl_register_toolchains", "perl_rules_dependencies")
 
