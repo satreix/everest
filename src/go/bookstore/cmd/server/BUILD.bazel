@@ -34,5 +34,6 @@ go_test(
         "//src/proto/bookstore/v1:bookstore",
         "@com_github_rs_zerolog//:zerolog",
         "@com_github_stretchr_testify//assert",
+        "@org_golang_google_protobuf//proto",
     ],
 )
