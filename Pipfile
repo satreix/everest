@@ -13,3 +13,15 @@ black = "*"
 isort = "*"
 pip-tools = "*"
 pipenv = "*"
+
+# The third_party/python/update.sh process is not really hermetic yet. This
+# means that in github action which it will use the host's python 3.10 [1].
+#
+# - black needs tomli and typing_extensions [2]
+# - pip-tools needs tomli [3]
+#
+# [1]: https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md
+# [2]: https://github.com/psf/black/blob/e11eaf2f44d3db5713fb99bdec966ba974b60c8c/pyproject.toml#L70
+# [3]: https://github.com/jazzband/pip-tools/blob/e02d186efc74bd2509b4a0f038b0184bdc106e42/pyproject.toml#L43
+tomli = "*"
+typing_extensions = "*"
