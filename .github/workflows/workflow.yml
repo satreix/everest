@@ -34,8 +34,6 @@ jobs:
       - name: "[Ruby] Install Ruby"
         uses: ruby/setup-ruby@v1.164.0
 
-      - uses: bazelbuild/setup-bazelisk@v2
-
       - name: Copy .bazelrc
         run: cp tools/ci/bazel.rc $HOME/.bazelrc
 
