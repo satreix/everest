@@ -6,13 +6,25 @@ syntax = "proto3";
 
 package bookstore.v1;
 
+import "google/api/field_behavior.proto";
+
 // A bookstore service to demo CEL filter and authentication filter.
 service Bookstore {
-  // RPC to showcase list filtering and authentication filtering
+  // RPC to showcase list filtering and authentication filtering.
   //
   // (-- api-linter: core::0127::http-annotation=disabled
   //     aip.dev/not-precedent: This is not a demo about HTTP gateway --)
   rpc ListBooks(ListBooksRequest) returns (ListBooksResponse) {}
+
+  // Create a new book.
+  //
+  // (-- api-linter: core::0127::http-annotation=disabled
+  //     aip.dev/not-precedent: This is not a demo about HTTP gateway --)
+  // (-- api-linter: core::0133::http-uri-parent=disabled
+  //     aip.dev/not-precedent: Books are root elements --)
+  // (-- api-linter: core::0133::method-signature=disabled
+  //     aip.dev/not-precedent: Books are root elements --)
+  rpc CreateBook(CreateBookRequest) returns (Book) {}
 }
 
 // Request message for `ListBooks` rpc.
@@ -34,6 +46,17 @@ message ListBooksResponse {
   repeated Book books = 1;
   // Standard pagination field.
   string next_page_token = 2;
+}
+
+// Request message for `CreateBook` rpc.
+//
+// (-- api-linter: core::0133::method-signature=disabled
+//     aip.dev/not-precedent: Books are root elements --)
+// (-- api-linter: core::0133::request-parent-required=disabled
+//     aip.dev/not-precedent: Books are root elements --)
+message CreateBookRequest {
+  // Book to create.
+  Book book = 1 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Book information.
