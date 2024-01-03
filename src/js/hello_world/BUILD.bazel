@@ -1,9 +1,9 @@
-load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
+load("@aspect_rules_js//js:defs.bzl", "js_binary")
 load("//tools/test/binary:binary.bzl", "binary_test")
 
-nodejs_binary(
+js_binary(
     name = "hello_world",
-    data = ["@npm//commander"],
+    data = ["//:node_modules/commander"],
     entry_point = "hello_world.js",
 )
 
