@@ -77,10 +77,10 @@ http_archive(
 )
 
 http_archive(
-    name = "com_google_googleapis",
-    sha256 = "d64c998b447232f4e21afa1e8ed759490590ac2200605a83a656e7436a17cf11",
-    strip_prefix = "googleapis-db5ce67d735d2ceb6fe925f3e317a3f30835cfd6",
-    url = "https://github.com/googleapis/googleapis/archive/db5ce67d735d2ceb6fe925f3e317a3f30835cfd6.zip",
+    name = "googleapis",
+    sha256 = "9d1a930e767c93c825398b8f8692eca3fe353b9aaadedfbcf1fca2282c85df88",
+    strip_prefix = "googleapis-64926d52febbf298cb82a8f472ade4a3969ba922",
+    url = "https://github.com/googleapis/googleapis/archive/64926d52febbf298cb82a8f472ade4a3969ba922.zip",
 )
 
 http_archive(
@@ -297,10 +297,8 @@ perl_rules_dependencies()
 
 perl_register_toolchains()
 
-load("@com_google_googleapis//:repository_rules.bzl", "switched_rules_by_language")
+load("@googleapis//:repository_rules.bzl", "switched_rules_by_language")
 
 switched_rules_by_language(
     name = "com_google_googleapis_imports",
-    go = True,
-    grpc = True,
 )

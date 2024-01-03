@@ -12,6 +12,9 @@ buildifier(
 
 # gazelle:resolve go google.golang.org/genproto/googleapis/api/expr/v1alpha1 @org_golang_google_genproto//googleapis/api/expr/v1alpha1:go_default_library
 
+# gazelle:resolve proto proto google/api/field_behavior.proto @googleapis//google/api:field_behavior_proto
+# gazelle:resolve proto go google/api/field_behavior.proto @org_golang_google_genproto_googleapis_api//annotations
+
 gazelle(
     name = "gazelle",
     mode = "fix",

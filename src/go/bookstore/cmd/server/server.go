@@ -4,6 +4,7 @@ import (
 	"context"
 	"flag"
 	"net"
+	"sync"
 
 	"github.com/google/cel-go/cel"
 	"github.com/google/cel-go/checker/decls"
@@ -46,6 +47,8 @@ func main() {
 		log.Fatal().Err(err).Msg("listen error")
 	}
 
+	log.Info().Str("addr", addr).Msg("Server listenning.")
+
 	if err := s.Serve(l); err != nil {
 		log.Fatal().Err(err).Msg("serve error")
 	}
@@ -53,7 +56,9 @@ func main() {
 
 type bookstoreService struct {
 	logger zerolog.Logger
-	data   []*pb.Book
+
+	dataLock sync.RWMutex
+	data     []*pb.Book
 }
 
 func newBookstoreService(logger zerolog.Logger) *bookstoreService {
@@ -117,6 +122,9 @@ func (s *bookstoreService) ListBooks(_ context.Context, in *pb.ListBooksRequest)
 		}
 	}
 
+	s.dataLock.RLock()
+	defer s.dataLock.RUnlock()
+
 	output := s.data
 	if internalFilter != nil {
 		output = internalFilter(output)
@@ -124,4 +132,12 @@ func (s *bookstoreService) ListBooks(_ context.Context, in *pb.ListBooksRequest)
 
 	// FIXME handle pagination
 	return &pb.ListBooksResponse{Books: output}, nil
+}
+
+func (s *bookstoreService) CreateBook(_ context.Context, in *pb.CreateBookRequest) (*pb.Book, error) {
+	s.dataLock.Lock()
+	defer s.dataLock.Unlock()
+
+	s.data = append(s.data, in.Book)
+	return in.Book, nil
 }

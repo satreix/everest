@@ -6,6 +6,7 @@ proto_library(
     name = "bookstore_v1_proto",
     srcs = ["bookstore.proto"],
     visibility = ["//visibility:public"],
+    deps = ["@googleapis//google/api:field_behavior_proto"],
 )
 
 go_proto_library(
@@ -14,6 +15,7 @@ go_proto_library(
     importpath = "github.com/satreix/everest/src/proto/bookstore/v1",
     proto = ":bookstore_v1_proto",
     visibility = ["//visibility:public"],
+    deps = ["@org_golang_google_genproto_googleapis_api//annotations"],
 )
 
 go_library(
