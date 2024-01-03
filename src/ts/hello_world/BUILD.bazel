@@ -1,22 +1,23 @@
-load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
-load("@npm//@bazel/typescript:index.bzl", "ts_project")
+load("@aspect_rules_js//js:defs.bzl", "js_binary")
+load("@aspect_rules_ts//ts:defs.bzl", "ts_project")
 load("//tools/test/binary:binary.bzl", "binary_test")
 
 ts_project(
-    name = "hello_world_lib",
-    srcs = ["hello_world.ts"],
-    tsconfig = {
-        "compilerOptions": {},
-    },
+    name = "hello_world_srcs",
+    srcs = [
+        "hello_world.ts",
+    ],
+    transpiler = "tsc",
+    tsconfig = {},
     deps = [
-        "@npm//commander",
+        "//:node_modules/commander",
     ],
 )
 
-nodejs_binary(
+js_binary(
     name = "hello_world",
-    data = [":hello_world_lib"],
-    entry_point = ":hello_world.ts",
+    data = [":hello_world_srcs"],
+    entry_point = ":hello_world_srcs",
 )
 
 binary_test(

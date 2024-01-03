@@ -9,12 +9,6 @@ http_archive(
 )
 
 http_archive(
-    name = "build_bazel_rules_nodejs",
-    sha256 = "709cc0dcb51cf9028dd57c268066e5bc8f03a119ded410a13b5c3925d6e43c48",
-    url = "https://github.com/bazelbuild/rules_nodejs/releases/download/5.8.4/rules_nodejs-5.8.4.tar.gz",
-)
-
-http_archive(
     name = "bazelruby_rules_ruby",
     patch_args = ["-p1"],
     patches = [
@@ -296,28 +290,6 @@ load("@com_github_tnarg_rules_cue//cue:deps.bzl", "cue_register_toolchains")
 cue_go_modules()
 
 cue_register_toolchains()
-
-load("@build_bazel_rules_nodejs//:repositories.bzl", "build_bazel_rules_nodejs_dependencies")
-
-build_bazel_rules_nodejs_dependencies()
-
-load("@rules_nodejs//nodejs:repositories.bzl", "nodejs_register_toolchains")
-
-_NODE_REPO = "nodejs"
-
-nodejs_register_toolchains(
-    name = _NODE_REPO,
-    node_version = "16.16.0",
-)
-
-load("@build_bazel_rules_nodejs//:index.bzl", "npm_install")
-
-npm_install(
-    name = "npm",
-    node_repository = _NODE_REPO,
-    package_json = "//:package.json",
-    package_lock_json = "//:package-lock.json",
-)
 
 load("@rules_perl//perl:deps.bzl", "perl_register_toolchains", "perl_rules_dependencies")
 
