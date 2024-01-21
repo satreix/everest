@@ -64,8 +64,8 @@ github.com/honeycombio/honeycomb-opentelemetry-go v0.9.0 h1:bAGMaYq2ankgZz2sVlvN
 github.com/honeycombio/honeycomb-opentelemetry-go v0.9.0/go.mod h1:+Q3U4m5G1flxRUnAJ2FHIwuQ93mHu1881NpJ7pZLr30=
 github.com/honeycombio/otel-config-go v1.13.1 h1:JYERH81ChVB4vH3Jmo8ifAkeKhVRD85uaaLLpm4MzY0=
 github.com/honeycombio/otel-config-go v1.13.1/go.mod h1:5hRpKBVO2cMXBaonDmr6KHYB2N/Q5AD3hr7+PVJQOx0=
-github.com/keybase/go-keychain v0.0.0-20231213204628-e32184a8f19f h1:7PS8wnkoEI0wGngmjHM4hhSLTDEYshZKrqGbFLTD9YA=
-github.com/keybase/go-keychain v0.0.0-20231213204628-e32184a8f19f/go.mod h1:n7RGNTwYsQydGrV4G5KijGld22EnMKZA7xPD/z3tzaM=
+github.com/keybase/go-keychain v0.0.0-20231219164618-57a3676c3af6 h1:IsMZxCuZqKuao2vNdfD82fjjgPLfyHLpR41Z88viRWs=
+github.com/keybase/go-keychain v0.0.0-20231219164618-57a3676c3af6/go.mod h1:3VeWNIJaW+O5xpRQbPp0Ybqu1vJd/pm7s2F473HRrkw=
 github.com/kr/pretty v0.3.1 h1:flRD4NNwYAUpkphVc1HcthR4KEIFJ65n8Mw5qdRn3LE=
 github.com/kr/pretty v0.3.1/go.mod h1:hoEshYVHaxMs3cyo3Yncou5ZscifuDolrwPKZanG3xk=
 github.com/kr/text v0.2.0 h1:5Nx0Ya0ZqY2ygV366QzturHI13Jq95ApcVaJBhpS+AY=
