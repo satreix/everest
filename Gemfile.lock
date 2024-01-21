@@ -4,7 +4,7 @@ GEM
     ast (2.4.2)
     cgi (0.3.6)
     diff-lcs (1.5.0)
-    erb (4.0.3)
+    erb (4.0.4)
       cgi (>= 0.3.3)
     haml (5.2.2)
       temple (>= 0.8.0)
