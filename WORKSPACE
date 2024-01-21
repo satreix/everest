@@ -279,7 +279,7 @@ load("@bazelruby_rules_ruby//ruby:defs.bzl", "ruby_bundle")
 
 ruby_bundle(
     name = "bundle",
-    bundler_version = "2.3.7",
+    bundler_version = "2.5.3",
     gemfile = "//:Gemfile",
     gemfile_lock = "//:Gemfile.lock",
 )
