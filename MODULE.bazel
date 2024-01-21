@@ -63,7 +63,7 @@ stack_snapshot.snapshot(
 bazel_dep(name = "rules_java", version = "6.5.2")
 bazel_dep(name = "rules_jni", version = "0.9.1")
 bazel_dep(name = "rules_kotlin", version = "1.9.0")
-bazel_dep(name = "rules_nodejs", version = "6.0.2")
+bazel_dep(name = "rules_nodejs", version = "6.0.3")
 
 node = use_extension("@rules_nodejs//nodejs:extensions.bzl", "node")
 node.toolchain(
