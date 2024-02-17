@@ -68,7 +68,7 @@ bazel_dep(name = "rules_nodejs", version = "6.0.3")
 node = use_extension("@rules_nodejs//nodejs:extensions.bzl", "node")
 node.toolchain(
     name = "nodejs",
-    node_version = "16.16.0",
+    node_version = "20.10.0",
 )
 
 bazel_dep(name = "rules_oci", version = "1.7.2")
