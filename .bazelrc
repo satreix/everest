@@ -1,5 +1,3 @@
-common --enable_bzlmod
-
 build --cxxopt='-std=c++17'
 
 # Ensure rules_haskell picks up the correct toolchain on Mac.
