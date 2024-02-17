@@ -105,8 +105,8 @@ def go_dependencies():
         importpath = "github.com/cloudflare/circl",
         patch_args = ["-p1"],
         patches = ["//third_party:com_github_cloudflare_circl/0001-fix-cgo.patch"],
-        sum = "h1:fE/Qz0QdIGqeWfnwq0RE0R7MI51s0M2E4Ga9kq5AEMs=",
-        version = "v1.3.3",
+        sum = "h1:qlCDlTPz2n9fu58M0Nh1J/JzcFpfgkFHHX3O35r5vcU=",
+        version = "v1.3.7",
     )
     go_repository(
         name = "com_github_cncf_udpa_go",
