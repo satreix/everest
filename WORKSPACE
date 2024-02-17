@@ -135,9 +135,9 @@ http_archive(
 
 http_archive(
     name = "rules_perl",
-    sha256 = "1550b46e02e3a9ed340073541afad8ad5ff1c3e1d841bd3958da5b097d72fa70",
-    strip_prefix = "rules_perl-366b6aa76b12056a9e0cc23364686f25dcc41702",
-    url = "https://github.com/bazelbuild/rules_perl/archive/366b6aa76b12056a9e0cc23364686f25dcc41702.tar.gz",
+    sha256 = "90a985070345477e1574059c17858a971a47bb97f4e0df50c62e9235ff1aa336",
+    strip_prefix = "rules_perl-acc374465709e522c421d48e86666ebd7b2a5196",
+    url = "https://github.com/bazelbuild/rules_perl/archive/acc374465709e522c421d48e86666ebd7b2a5196.tar.gz",
 )
 
 http_archive(
