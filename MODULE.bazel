@@ -31,12 +31,12 @@ bazel_dep(name = "gflags", version = "2.2.2")
 bazel_dep(name = "googletest", version = "1.14.0")
 bazel_dep(name = "rules_cc", version = "0.0.9")
 bazel_dep(name = "rules_foreign_cc", version = "0.10.1")
-bazel_dep(name = "rules_haskell", version = "0.18")
+bazel_dep(name = "rules_haskell", version = "0.19")
 
 haskell_toolchains = use_extension("@rules_haskell//extensions:haskell_toolchains.bzl", "haskell_toolchains")
 haskell_toolchains.bindists(
     # Pick a version from https://www.haskell.org/ghc/download.html that matches the LTS snapshot below.
-    version = "9.6.3",
+    version = "9.6.4",
 )
 
 stack_snapshot = use_extension("@rules_haskell//extensions:stack_snapshot.bzl", "stack_snapshot")
@@ -46,7 +46,7 @@ use_repo(
 )
 stack_snapshot.snapshot(
     # Pick an LTS from https://www.stackage.org/snapshots
-    name = "lts-22.4",
+    name = "lts-22.11",
 )
 
 [
