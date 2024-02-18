@@ -1,16 +1,12 @@
-const { program } = require('commander');
-
-program
-  .option('--name <string>');
-
-program.parse();
+const { Command } = require("commander");
 
 function greet(name) {
-    return 'Hello, ' + name + '!';
+    return "Hello, " + name + "!";
 }
 
 function main() {
-    program.option('-n, --name <string>', '', 'World');
+    const program = new Command();
+    program.option("-n, --name <string>", "", "World");
     program.parse();
     const options = program.opts();
     console.log(greet(options.name));

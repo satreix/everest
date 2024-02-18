@@ -3308,7 +3308,7 @@
         "accumulatedFileDigests": {
           "@@//:.npmrc": "d94d573d5aa644cdd09ff46d9b9c5e9b59185533420308c9a55ad5dc3176f22b",
           "@@rules_haskell~0.19//haskell/asterius/npm:pnpm-lock.yaml": "f8b2046e14435f36d8dca982e5ffe74e60dc20bd252658ac23c51468cae7bd89",
-          "@@//:pnpm-lock.yaml": "af395cf6af7b4e52e7c87887ccf2e3e2910572a4b274ef15286edd702def92e9",
+          "@@//:pnpm-lock.yaml": "16e6a8eba866d5f705c972e1b342e3a94f8d47093a3a84935cdea8c0f99c8ad7",
           "@@aspect_bazel_lib~1.40.0~toolchains~yq_darwin_amd64//:yq": "0fe604d3332cd1a0667b22b41bf404052da451cab35b502f17cb5023d2b8a98d"
         },
         "envVariables": {},
@@ -5459,6 +5459,36 @@
               ]
             }
           },
+          "npm__commander__12.0.0__links": {
+            "bzlFile": "@@aspect_rules_js~1.37.1//npm/private:npm_import.bzl",
+            "ruleClassName": "npm_import_links",
+            "attributes": {
+              "name": "aspect_rules_js~1.37.1~npm~npm__commander__12.0.0__links",
+              "package": "commander",
+              "version": "12.0.0",
+              "dev": false,
+              "root_package": "",
+              "link_packages": {
+                "": [
+                  "commander"
+                ]
+              },
+              "deps": {},
+              "transitive_closure": {
+                "commander": [
+                  "12.0.0"
+                ]
+              },
+              "lifecycle_build_target": false,
+              "lifecycle_hooks_env": [],
+              "lifecycle_hooks_execution_requirements": [],
+              "bins": {},
+              "npm_translate_lock_repo": "npm",
+              "package_visibility": [
+                "//visibility:public"
+              ]
+            }
+          },
           "rules_haskell_npm__commander__7.2.0__links": {
             "bzlFile": "@@aspect_rules_js~1.37.1//npm/private:npm_import.bzl",
             "ruleClassName": "npm_import_links",
@@ -5907,6 +5937,35 @@
               "generate_bzl_library_targets": false
             }
           },
+          "npm__commander__12.0.0": {
+            "bzlFile": "@@aspect_rules_js~1.37.1//npm/private:npm_import.bzl",
+            "ruleClassName": "npm_import_rule",
+            "attributes": {
+              "name": "aspect_rules_js~1.37.1~npm~npm__commander__12.0.0",
+              "package": "commander",
+              "version": "12.0.0",
+              "root_package": "",
+              "link_workspace": "",
+              "link_packages": {
+                "": [
+                  "commander"
+                ]
+              },
+              "integrity": "sha512-MwVNWlYjDTtOjX5PiD7o5pK0UrFU/OYgcJfjjK4RaHZETNtjJqrZa9Y9ds88+A+f+d5lv+561eZ+yCKoS3gbAA==",
+              "url": "https://registry.npmjs.org/commander/-/commander-12.0.0.tgz",
+              "commit": "",
+              "patch_args": [],
+              "patches": [],
+              "custom_postinstall": "",
+              "npm_auth": "",
+              "npm_auth_basic": "",
+              "npm_auth_username": "",
+              "npm_auth_password": "",
+              "lifecycle_hooks": [],
+              "extra_build_content": "",
+              "generate_bzl_library_targets": false
+            }
+          },
           "rules_haskell_npm__json-parse-even-better-errors__2.3.1": {
             "bzlFile": "@@aspect_rules_js~1.37.1//npm/private:npm_import.bzl",
             "ruleClassName": "npm_import_rule",
@@ -6112,35 +6171,6 @@
               "package_visibility": [
                 "//visibility:public"
               ]
-            }
-          },
-          "npm__commander__11.1.0": {
-            "bzlFile": "@@aspect_rules_js~1.37.1//npm/private:npm_import.bzl",
-            "ruleClassName": "npm_import_rule",
-            "attributes": {
-              "name": "aspect_rules_js~1.37.1~npm~npm__commander__11.1.0",
-              "package": "commander",
-              "version": "11.1.0",
-              "root_package": "",
-              "link_workspace": "",
-              "link_packages": {
-                "": [
-                  "commander"
-                ]
-              },
-              "integrity": "sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==",
-              "url": "https://registry.npmjs.org/commander/-/commander-11.1.0.tgz",
-              "commit": "",
-              "patch_args": [],
-              "patches": [],
-              "custom_postinstall": "",
-              "npm_auth": "",
-              "npm_auth_basic": "",
-              "npm_auth_username": "",
-              "npm_auth_password": "",
-              "lifecycle_hooks": [],
-              "extra_build_content": "",
-              "generate_bzl_library_targets": false
             }
           },
           "rules_haskell_npm__is-stream__2.0.1": {
@@ -6943,36 +6973,6 @@
               "lifecycle_hooks_execution_requirements": [],
               "bins": {},
               "npm_translate_lock_repo": "rules_haskell_npm",
-              "package_visibility": [
-                "//visibility:public"
-              ]
-            }
-          },
-          "npm__commander__11.1.0__links": {
-            "bzlFile": "@@aspect_rules_js~1.37.1//npm/private:npm_import.bzl",
-            "ruleClassName": "npm_import_links",
-            "attributes": {
-              "name": "aspect_rules_js~1.37.1~npm~npm__commander__11.1.0__links",
-              "package": "commander",
-              "version": "11.1.0",
-              "dev": false,
-              "root_package": "",
-              "link_packages": {
-                "": [
-                  "commander"
-                ]
-              },
-              "deps": {},
-              "transitive_closure": {
-                "commander": [
-                  "11.1.0"
-                ]
-              },
-              "lifecycle_build_target": false,
-              "lifecycle_hooks_env": [],
-              "lifecycle_hooks_execution_requirements": [],
-              "bins": {},
-              "npm_translate_lock_repo": "npm",
               "package_visibility": [
                 "//visibility:public"
               ]
