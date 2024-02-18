@@ -225,8 +225,8 @@ def go_dependencies():
         build_file_proto_mode = "disable_global",
         build_naming_convention = "go_default_library",
         importpath = "github.com/google/cel-go",
-        sum = "h1:L0B6sNBSVmt0OyECi8v6VOS74KOc9W/tLiWKfZABvf4=",
-        version = "v0.18.2",
+        sum = "h1:h4n6DOCppEMpWERzllyNkntl7JrDyxoE543KWS6BLpc=",
+        version = "v0.20.0",
     )
     go_repository(
         name = "com_github_google_go_cmp",
