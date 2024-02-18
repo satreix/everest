@@ -1,5 +1,5 @@
 {
-  "checksum": "e3d0d1452f87dfaf93257dbdef9c944c2cd7cb3ba0c1bbc04ea415dbd79516b4",
+  "checksum": "5957d9ea845ef3047637ef6d722564f5adf880218378597baf76b9e804605af2",
   "crates": {
     "android_system_properties 0.1.5": {
       "name": "android_system_properties",
@@ -4190,7 +4190,7 @@
               "target": "pyo3"
             },
             {
-              "id": "rayon 1.7.0",
+              "id": "rayon 1.8.1",
               "target": "rayon"
             }
           ],
@@ -6258,14 +6258,14 @@
       ],
       "license_file": null
     },
-    "rayon 1.7.0": {
+    "rayon 1.8.1": {
       "name": "rayon",
-      "version": "1.7.0",
+      "version": "1.8.1",
       "package_url": "https://github.com/rayon-rs/rayon",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/rayon/1.7.0/download",
-          "sha256": "1d2df5196e37bcc87abebc0053e20787d73847bb33134a69841207dd0a47f03b"
+          "url": "https://crates.io/api/v1/crates/rayon/1.8.1/download",
+          "sha256": "fa7237101a77a10773db45d62004a272517633fbcc3df19d96455ede1122e051"
         }
       },
       "targets": [
@@ -6291,14 +6291,14 @@
               "target": "either"
             },
             {
-              "id": "rayon-core 1.11.0",
+              "id": "rayon-core 1.12.1",
               "target": "rayon_core"
             }
           ],
           "selects": {}
         },
         "edition": "2021",
-        "version": "1.7.0"
+        "version": "1.8.1"
       },
       "license": "MIT OR Apache-2.0",
       "license_ids": [
@@ -6307,14 +6307,14 @@
       ],
       "license_file": null
     },
-    "rayon-core 1.11.0": {
+    "rayon-core 1.12.1": {
       "name": "rayon-core",
-      "version": "1.11.0",
+      "version": "1.12.1",
       "package_url": "https://github.com/rayon-rs/rayon",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/rayon-core/1.11.0/download",
-          "sha256": "4b8f95bd6966f5c87776639160a66bd8ab9895d9d4ab01ddba9fc60661aebe8d"
+          "url": "https://crates.io/api/v1/crates/rayon-core/1.12.1/download",
+          "sha256": "1465873a3dfdaa8ae7cb14b4383657caab0b3e8a0aa9ae8e04b044854c8dfce2"
         }
       },
       "targets": [
@@ -6345,10 +6345,6 @@
         "deps": {
           "common": [
             {
-              "id": "crossbeam-channel 0.5.6",
-              "target": "crossbeam_channel"
-            },
-            {
               "id": "crossbeam-deque 0.8.2",
               "target": "crossbeam_deque"
             },
@@ -6357,18 +6353,14 @@
               "target": "crossbeam_utils"
             },
             {
-              "id": "num_cpus 1.15.0",
-              "target": "num_cpus"
-            },
-            {
-              "id": "rayon-core 1.11.0",
+              "id": "rayon-core 1.12.1",
               "target": "build_script_build"
             }
           ],
           "selects": {}
         },
         "edition": "2021",
-        "version": "1.11.0"
+        "version": "1.12.1"
       },
       "build_script_attrs": {
         "data_glob": [
@@ -11595,7 +11587,7 @@
     "iron-slog 0.0.2",
     "pyo3 0.20.2",
     "pyo3-build-config 0.20.2",
-    "rayon 1.7.0",
+    "rayon 1.8.1",
     "router 0.6.0",
     "slog 2.7.0",
     "slog-async 2.7.0",

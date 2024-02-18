@@ -11,7 +11,7 @@ crate-type = ["cdylib"]
 pyo3-build-config = "*"
 
 [dependencies]
-rayon = "1.7.0"
+rayon = "1.8.1"
 
 [dependencies.pyo3]
 version = "0.20.2"
