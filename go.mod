@@ -2,8 +2,6 @@ module github.com/satreix/everest
 
 go 1.22.0
 
-toolchain go1.21.5
-
 require (
 	github.com/antlr4-go/antlr/v4 v4.13.0
 	github.com/bazelbuild/rules_go v0.46.0
