@@ -5,7 +5,7 @@ go 1.21
 require (
 	github.com/antlr4-go/antlr/v4 v4.13.0
 	github.com/bazelbuild/rules_go v0.43.0
-	github.com/google/cel-go v0.18.2
+	github.com/google/cel-go v0.20.0
 	github.com/google/go-cmp v0.6.0
 	github.com/google/go-github/v53 v53.2.0
 	github.com/gosuri/uiprogress v0.0.1
