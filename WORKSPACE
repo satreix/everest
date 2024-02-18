@@ -31,13 +31,6 @@ http_archive(
 )
 
 http_archive(
-    name = "com_github_tnarg_rules_cue",
-    sha256 = "1b8c4b7d07789f3784b77f24cbd6e362c2c6cbcb00f0eea77ba6234822433fe7",
-    strip_prefix = "rules_cue-918f252dad27f086d30236bbc7b6cb8e5335f5d6",
-    url = "https://github.com/tnarg/rules_cue/archive/918f252dad27f086d30236bbc7b6cb8e5335f5d6.zip",
-)
-
-http_archive(
     name = "com_google_google_java_format_source",
     sha256 = "0579aeff9f1127a9f18eb8167488de231c9a51279ec877ae8e047c56ac8b59b6",
     strip_prefix = "google-java-format-9701afbdf2b29acb0660d6af1ea478842ffe40bc",
@@ -236,13 +229,6 @@ ruby_bundle(
     gemfile = "//:Gemfile",
     gemfile_lock = "//:Gemfile.lock",
 )
-
-load("@com_github_tnarg_rules_cue//:go.bzl", cue_go_modules = "go_modules")
-load("@com_github_tnarg_rules_cue//cue:deps.bzl", "cue_register_toolchains")
-
-cue_go_modules()
-
-cue_register_toolchains()
 
 load("@googleapis//:repository_rules.bzl", "switched_rules_by_language")
 

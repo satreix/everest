@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "e867df2bdabc6da1a8e3760805c52f15a89cf2d77268aa13f80fcd59ac688652",
+  "moduleFileHash": "44c5864670519f720c1dfa30fe543f63cf4addc3e3a0b1e1e03e12b797bd72e2",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -95,7 +95,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 30,
+            "line": 31,
             "column": 23
           },
           "imports": {},
@@ -109,7 +109,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 31,
+                "line": 32,
                 "column": 16
               }
             },
@@ -121,7 +121,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 32,
+                "line": 33,
                 "column": 12
               }
             }
@@ -135,7 +135,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 34,
+            "line": 35,
             "column": 24
           },
           "imports": {
@@ -174,38 +174,38 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 35,
+                "line": 36,
                 "column": 18
               }
             },
             {
               "tagName": "module_override",
               "attributeValues": {
-                "path": "github.com/cloudflare/circl",
                 "patch_strip": 1,
                 "patches": [
                   "//third_party:com_github_cloudflare_circl/0001-fix-cgo.patch"
-                ]
+                ],
+                "path": "github.com/cloudflare/circl"
               },
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 36,
+                "line": 37,
                 "column": 24
               }
             },
             {
               "tagName": "gazelle_override",
               "attributeValues": {
-                "path": "github.com/google/cel-go",
                 "directives": [
                   "gazelle:go_naming_convention go_default_library"
-                ]
+                ],
+                "path": "github.com/google/cel-go"
               },
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 43,
+                "line": 44,
                 "column": 25
               }
             }
@@ -219,7 +219,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 79,
+            "line": 80,
             "column": 35
           },
           "imports": {},
@@ -233,7 +233,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 80,
+                "line": 81,
                 "column": 28
               }
             }
@@ -247,7 +247,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 85,
+            "line": 86,
             "column": 31
           },
           "imports": {
@@ -263,7 +263,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 87,
+                "line": 88,
                 "column": 24
               }
             },
@@ -275,7 +275,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 93,
+                "line": 94,
                 "column": 27
               }
             },
@@ -287,7 +287,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 93,
+                "line": 94,
                 "column": 27
               }
             },
@@ -299,7 +299,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 93,
+                "line": 94,
                 "column": 27
               }
             }
@@ -313,7 +313,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 108,
+            "line": 109,
             "column": 21
           },
           "imports": {},
@@ -328,7 +328,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 109,
+                "line": 110,
                 "column": 15
               }
             }
@@ -342,7 +342,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 116,
+            "line": 117,
             "column": 20
           },
           "imports": {
@@ -364,7 +364,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 117,
+                "line": 118,
                 "column": 9
               }
             }
@@ -378,7 +378,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 135,
+            "line": 136,
             "column": 23
           },
           "imports": {},
@@ -392,7 +392,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 136,
+                "line": 137,
                 "column": 17
               }
             }
@@ -406,7 +406,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 138,
+            "line": 139,
             "column": 20
           },
           "imports": {
@@ -424,7 +424,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 139,
+                "line": 140,
                 "column": 10
               }
             }
@@ -440,6 +440,7 @@
         "gflags": "gflags@2.2.2",
         "googletest": "googletest@1.14.0",
         "rules_cc": "rules_cc@0.0.9",
+        "rules_cue": "rules_cue@0.5.0",
         "rules_foreign_cc": "rules_foreign_cc@0.10.1",
         "io_bazel_rules_go": "rules_go@0.46.0",
         "bazel_gazelle": "gazelle@0.35.0",
@@ -768,6 +769,58 @@
             "https://bcr.bazel.build/modules/rules_cc/0.0.9/patches/module_dot_bazel_version.patch": "sha256-mM+qzOI0SgAdaJBlWOSMwMPKpaA9b7R37Hj/tp5bb4g="
           },
           "remote_patch_strip": 0
+        }
+      }
+    },
+    "rules_cue@0.5.0": {
+      "name": "rules_cue",
+      "version": "0.5.0",
+      "key": "rules_cue@0.5.0",
+      "repoName": "rules_cue",
+      "executionPlatformsToRegister": [],
+      "toolchainsToRegister": [
+        "@cue_tool_toolchains//:all"
+      ],
+      "extensionUsages": [
+        {
+          "extensionBzlFile": "@rules_cue//cue:extensions.bzl",
+          "extensionName": "cue",
+          "usingModule": "rules_cue@0.5.0",
+          "location": {
+            "file": "https://bcr.bazel.build/modules/rules_cue/0.5.0/MODULE.bazel",
+            "line": 10,
+            "column": 20
+          },
+          "imports": {
+            "cue_tool_toolchains": "cue_tool_toolchains"
+          },
+          "devImports": [],
+          "tags": [],
+          "hasDevUseExtension": false,
+          "hasNonDevUseExtension": true
+        }
+      ],
+      "deps": {
+        "bazel_skylib": "bazel_skylib@1.5.0",
+        "platforms": "platforms@0.0.8",
+        "rules_go": "rules_go@0.46.0",
+        "bazel_tools": "bazel_tools@_",
+        "local_config_platform": "local_config_platform@_"
+      },
+      "repoSpec": {
+        "bzlFile": "@bazel_tools//tools/build_defs/repo:http.bzl",
+        "ruleClassName": "http_archive",
+        "attributes": {
+          "name": "rules_cue~0.5.0",
+          "urls": [
+            "https://github.com/seh/rules_cue/releases/download/v0.5.0/vcs-archive-v0.5.0.tar.gz"
+          ],
+          "integrity": "sha256-fk77jcHpLAKWZlhCAi2BRotVACw3Q0cEq5VAYpI9NTg=",
+          "strip_prefix": "rules_cue-0.5.0",
+          "remote_patches": {
+            "https://bcr.bazel.build/modules/rules_cue/0.5.0/patches/module_dot_bazel_version.patch": "sha256-lcQEg6PgbBA9+rI2u31bfXR3OHKZL5IYk43lpPBpiKM="
+          },
+          "remote_patch_strip": 1
         }
       }
     },
@@ -14650,6 +14703,33 @@
             "bazel_tools"
           ]
         ]
+      }
+    },
+    "@@rules_cue~0.5.0//cue:extensions.bzl%cue": {
+      "general": {
+        "bzlTransitiveDigest": "B15Xec6xEeYLr1e6BrghkJKWfjhU44aKIrR+6VFRKtg=",
+        "accumulatedFileDigests": {},
+        "envVariables": {},
+        "generatedRepoSpecs": {
+          "cue_tool": {
+            "bzlFile": "@@rules_cue~0.5.0//cue/private/tools/cue:toolchain.bzl",
+            "ruleClassName": "_download_tool",
+            "attributes": {
+              "name": "rules_cue~0.5.0~cue~cue_tool",
+              "version": "v0.7.0"
+            }
+          },
+          "cue_tool_toolchains": {
+            "bzlFile": "@@rules_cue~0.5.0//cue/private/tools/cue:toolchain.bzl",
+            "ruleClassName": "_toolchains_repo",
+            "attributes": {
+              "name": "rules_cue~0.5.0~cue~cue_tool_toolchains",
+              "tool_repo": "cue_tool",
+              "version": "v0.7.0"
+            }
+          }
+        },
+        "recordedRepoMappingEntries": []
       }
     },
     "@@rules_foreign_cc~0.10.1//foreign_cc:extensions.bzl%tools": {
