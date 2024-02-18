@@ -3,12 +3,6 @@ workspace(name = "everest")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
-    name = "bazel_gazelle",
-    sha256 = "32938bda16e6700063035479063d9d24c60eda8d79fd4739563f50d331cb3209",
-    url = "https://github.com/bazelbuild/bazel-gazelle/releases/download/v0.35.0/bazel-gazelle-v0.35.0.tar.gz",
-)
-
-http_archive(
     name = "bazelruby_rules_ruby",
     patch_args = ["-p1"],
     patches = [
@@ -77,12 +71,6 @@ http_archive(
 )
 
 http_archive(
-    name = "io_bazel_rules_go",
-    sha256 = "80a98277ad1311dacd837f9b16db62887702e9f1d1c4c9f796d0121a46c8e184",
-    url = "https://github.com/bazelbuild/rules_go/releases/download/v0.46.0/rules_go-v0.46.0.zip",
-)
-
-http_archive(
     name = "io_grpc_grpc_java",
     sha256 = "4264560a4d0ed6053c88e202ba161e87edd4eb7ac4ea88d070b9b822041a3f2d",
     strip_prefix = "grpc-java-1.61.1",
@@ -139,27 +127,6 @@ http_archive(
     strip_prefix = "uncrustify-uncrustify-0.70.1",
     url = "https://github.com/uncrustify/uncrustify/archive/uncrustify-0.70.1.tar.gz",
 )
-
-load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
-
-# gazelle:repository go_repository name=io_bazel_rules_go importpath=github.com/bazelbuild/rules_go
-# gazelle:repository_macro third_party/go/deps.bzl%go_dependencies
-load("//third_party/go:deps.bzl", "go_dependencies")
-
-go_dependencies()
-
-go_rules_dependencies()
-
-go_register_toolchains(
-    nogo = "@//tools/nogo",
-    # Update in lockstep with go.mod
-    version = "1.21.5",
-)
-
-load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
-
-# Note: this needs to be defore proto rules: https://github.com/bazelbuild/bazel-gazelle/issues/1366
-gazelle_dependencies()
 
 load("@contrib_rules_jvm//:repositories.bzl", "contrib_rules_jvm_deps")
 
