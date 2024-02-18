@@ -20,7 +20,7 @@ jobs:
     name: check - (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       # https://github.com/tweag/rules_haskell/issues/704
       - name: "[Haskell] Install required packages"
