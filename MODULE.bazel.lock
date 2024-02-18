@@ -13024,9 +13024,9 @@
       "general": {
         "bzlTransitiveDigest": "zP01muRk4s4xWGK3gNPXOyDMQkOPsIhu99akeKWFFQ0=",
         "accumulatedFileDigests": {
-          "@@//:go.mod": "477624d3ed81f3a2b6dbfdefcaea7584badc35b10f552f12714e90055de60434",
+          "@@//:go.mod": "4a493afbf44deeb1793cfaa5b1a77d08b4ad750928a95895c907bbb20b70bd4a",
           "@@rules_go~0.46.0//:go.sum": "d56fdb19b21a5f12bcf625c49432371ac39c2def0f564098fbda107f7c080f40",
-          "@@//:go.sum": "659dd96785d0497c98e8eb0d9bfcc602183a5b344aa67121e25e063ba2082a23",
+          "@@//:go.sum": "5d494b439755f0f4d2b653aab999ee86826bcf88d4ae9fd53a1a4a4394f17c52",
           "@@gazelle~0.35.0//:go.mod": "48dc6e771c3028ee1c18b9ffc81e596fd5f6d7e0016c5ef280e30f2821f60473",
           "@@rules_go~0.46.0//:go.mod": "de22304b720f7f61350ec1c9739de6c0a1b1103fd22bfeb6e92c6c843ddc6d6e",
           "@@gazelle~0.35.0//:go.sum": "7c4460e8ecb5dd8691a51d4fa2e9e4751108b933636497ce46db499fc2e7a88d"
@@ -13060,9 +13060,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:2BGz0eBc2hdMDLnO/8n0jeB3oPrt2D08CekT0lneoxM=",
+              "sum": "h1:p5Cz0FNHo7SnWOmWmoRozVcjEp0bIVU8cV7OShpjL1k=",
               "replace": "",
-              "version": "v0.45.0"
+              "version": "v0.47.0"
             }
           },
           "com_github_fsnotify_fsnotify": {
@@ -13140,9 +13140,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:zTwKpTd2XuCqf8huc7Fo2iSy+4RHPd10s4KzeTnVr1c=",
+              "sum": "h1:aCL9BSgETF1k+blQaYUBx9hJ9LOGP3gAVemcZlf1Kpo=",
               "replace": "",
-              "version": "v0.19.0"
+              "version": "v0.20.0"
             }
           },
           "com_github_sethvargo_go_envconfig": {
@@ -13575,22 +13575,6 @@
               "sum": "h1:036IscGBfJsFIgJQzlui7nK1Ncm0tp2ktmPj8xO4N/0=",
               "replace": "",
               "version": "v0.0.0-20231016141302-07b5767bb0ed"
-            }
-          },
-          "com_github_matttproud_golang_protobuf_extensions_v2": {
-            "bzlFile": "@@gazelle~0.35.0//internal:go_repository.bzl",
-            "ruleClassName": "go_repository",
-            "attributes": {
-              "name": "gazelle~0.35.0~go_deps~com_github_matttproud_golang_protobuf_extensions_v2",
-              "importpath": "github.com/matttproud/golang_protobuf_extensions/v2",
-              "build_directives": [],
-              "build_file_generation": "auto",
-              "build_extra_args": [],
-              "patches": [],
-              "patch_args": [],
-              "sum": "h1:jWpvCLoY8Z/e3VKvlsiIGKtc+UG6U5vzxaoagmhXfyg=",
-              "replace": "",
-              "version": "v2.0.0"
             }
           },
           "io_opentelemetry_go_otel_exporters_otlp_otlpmetric_otlpmetrichttp": {
@@ -14396,7 +14380,6 @@
                 "com_github_lufia_plan9stats": "github.com/lufia/plan9stats",
                 "com_github_mattn_go_colorable": "github.com/mattn/go-colorable",
                 "com_github_mattn_go_isatty": "github.com/mattn/go-isatty",
-                "com_github_matttproud_golang_protobuf_extensions_v2": "github.com/matttproud/golang_protobuf_extensions/v2",
                 "com_github_pmezard_go_difflib": "github.com/pmezard/go-difflib",
                 "com_github_power_devops_perfstat": "github.com/power-devops/perfstat",
                 "com_github_prometheus_procfs": "github.com/prometheus/procfs",
@@ -14464,9 +14447,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:h48lPFYpsTvQJZF4EKyI4aLHaev3CxivZmv7yZig9pc=",
+              "sum": "h1:xWw16ngr6ZMtmxDyKyIgsE93KNKz5HKmMa3b8ALHidU=",
               "replace": "",
-              "version": "v0.15.0"
+              "version": "v0.16.0"
             }
           },
           "com_github_honeycombio_honeycomb_opentelemetry_go": {
