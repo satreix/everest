@@ -134,13 +134,6 @@ http_archive(
 )
 
 http_archive(
-    name = "rules_perl",
-    sha256 = "90a985070345477e1574059c17858a971a47bb97f4e0df50c62e9235ff1aa336",
-    strip_prefix = "rules_perl-acc374465709e522c421d48e86666ebd7b2a5196",
-    url = "https://github.com/bazelbuild/rules_perl/archive/acc374465709e522c421d48e86666ebd7b2a5196.tar.gz",
-)
-
-http_archive(
     name = "rules_rust",
     sha256 = "1ae45a413d0b9433987320df2ad410db6a15fafb6c88cf0fd1bf3baacbe826db",
     url = "https://github.com/bazelbuild/rules_rust/releases/download/0.39.0/rules_rust-v0.39.0.tar.gz",
@@ -290,12 +283,6 @@ load("@com_github_tnarg_rules_cue//cue:deps.bzl", "cue_register_toolchains")
 cue_go_modules()
 
 cue_register_toolchains()
-
-load("@rules_perl//perl:deps.bzl", "perl_register_toolchains", "perl_rules_dependencies")
-
-perl_rules_dependencies()
-
-perl_register_toolchains()
 
 load("@googleapis//:repository_rules.bzl", "switched_rules_by_language")
 
