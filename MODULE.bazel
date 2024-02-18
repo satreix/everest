@@ -27,6 +27,7 @@ rules_ts_ext = use_extension(
 rules_ts_ext.deps()
 use_repo(rules_ts_ext, "npm_typescript")
 
+bazel_dep(name = "buildifier_prebuilt", version = "6.4.0")
 bazel_dep(name = "gflags", version = "2.2.2")
 bazel_dep(name = "googletest", version = "1.14.0")
 bazel_dep(name = "rules_cc", version = "0.0.9")
