@@ -13024,9 +13024,9 @@
       "general": {
         "bzlTransitiveDigest": "zP01muRk4s4xWGK3gNPXOyDMQkOPsIhu99akeKWFFQ0=",
         "accumulatedFileDigests": {
-          "@@//:go.mod": "4a493afbf44deeb1793cfaa5b1a77d08b4ad750928a95895c907bbb20b70bd4a",
+          "@@//:go.mod": "1cfe5be52fa336b5a6d8174728e2e5163719d33217a7e1e2840e55434097391f",
           "@@rules_go~0.46.0//:go.sum": "d56fdb19b21a5f12bcf625c49432371ac39c2def0f564098fbda107f7c080f40",
-          "@@//:go.sum": "5d494b439755f0f4d2b653aab999ee86826bcf88d4ae9fd53a1a4a4394f17c52",
+          "@@//:go.sum": "9704ec60e5b84592013d5a06147a8f12efba67a0738d2d3be2ab38476497467e",
           "@@gazelle~0.35.0//:go.mod": "48dc6e771c3028ee1c18b9ffc81e596fd5f6d7e0016c5ef280e30f2821f60473",
           "@@rules_go~0.46.0//:go.mod": "de22304b720f7f61350ec1c9739de6c0a1b1103fd22bfeb6e92c6c843ddc6d6e",
           "@@gazelle~0.35.0//:go.sum": "7c4460e8ecb5dd8691a51d4fa2e9e4751108b933636497ce46db499fc2e7a88d"
@@ -13092,9 +13092,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:jF+Du6AlPIjs2BiUiQlKOX0rt3SujHxPnksPKZbaA40=",
+              "sum": "h1:fFA4WZxdEF4tXPZVKMLwD8oUnCTTo08duU7wxecdEvA=",
               "replace": "",
-              "version": "v0.1.12"
+              "version": "v0.1.13"
             }
           },
           "io_opentelemetry_go_proto_otlp": {
@@ -13652,9 +13652,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:SymVODrcRsaRaSInD9yQtKbtWqwsfoPcRff/oRXLj4c=",
+              "sum": "h1:keLypqrlIjaFsbmJOBdB/qvyF8KEtCWHwobLp5l/mQ0=",
               "replace": "",
-              "version": "v1.30.0"
+              "version": "v1.32.0"
             }
           },
           "cc_mvdan_sh": {
@@ -13814,9 +13814,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:yVuAays6BHfxijgZPzw+3Zlu5yQgKGP2/hcQbHb7S9Y=",
+              "sum": "h1:JITubQf0MOLdlGRuRq+jtsDlekdYPia9ZFsB8h/APPA=",
               "replace": "",
-              "version": "v0.0.14"
+              "version": "v0.0.19"
             }
           },
           "com_github_power_devops_perfstat": {
