@@ -23,7 +23,7 @@ require (
 	github.com/stretchr/testify v1.8.4
 	github.com/whilp/git-urls v1.0.0
 	github.com/zenazn/goji v1.0.1
-	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.46.1
+	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.48.0
 	golang.org/x/tools v0.15.0
 	google.golang.org/genproto/googleapis/api v0.0.0-20240102182953-50ed04b92917
 	google.golang.org/grpc v1.60.1
