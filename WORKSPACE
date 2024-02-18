@@ -29,13 +29,6 @@ http_archive(
 )
 
 http_archive(
-    name = "com_github_bazelbuild_buildtools",
-    sha256 = "05c3c3602d25aeda1e9dbc91d3b66e624c1f9fdadf273e5480b489e744ca7269",
-    strip_prefix = "buildtools-6.4.0",
-    url = "https://github.com/bazelbuild/buildtools/archive/v6.4.0.tar.gz",
-)
-
-http_archive(
     name = "com_github_swagger_api_swagger_petstore",
     build_file_content = """exports_files(["src/main/resources/openapi.yaml"])""",
     sha256 = "ae350c7aff7b99465ad4f679613685a92a4350796ae9fcd8ef36952592fe5dfe",
