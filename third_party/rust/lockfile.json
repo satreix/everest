@@ -1,5 +1,5 @@
 {
-  "checksum": "5957d9ea845ef3047637ef6d722564f5adf880218378597baf76b9e804605af2",
+  "checksum": "1a220158412d3286e1df61a7949c026e70e86e3c8085bd16428160a76a5dc965",
   "crates": {
     "android_system_properties 0.1.5": {
       "name": "android_system_properties",
@@ -7056,14 +7056,14 @@
       ],
       "license_file": null
     },
-    "slog-async 2.7.0": {
+    "slog-async 2.8.0": {
       "name": "slog-async",
-      "version": "2.7.0",
+      "version": "2.8.0",
       "package_url": "https://github.com/slog-rs/async",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/slog-async/2.7.0/download",
-          "sha256": "766c59b252e62a34651412870ff55d8c4e6d04df19b43eecb2703e417b097ffe"
+          "url": "https://crates.io/api/v1/crates/slog-async/2.8.0/download",
+          "sha256": "72c8038f898a2c79507940990f05386455b3a317d8f18d4caea7cbc3d5096b84"
         }
       },
       "targets": [
@@ -7108,7 +7108,7 @@
               "target": "slog"
             },
             {
-              "id": "slog-async 2.7.0",
+              "id": "slog-async 2.8.0",
               "target": "build_script_build"
             },
             {
@@ -7123,7 +7123,7 @@
           "selects": {}
         },
         "edition": "2015",
-        "version": "2.7.0"
+        "version": "2.8.0"
       },
       "build_script_attrs": {
         "data_glob": [
@@ -9287,7 +9287,7 @@
               "target": "slog"
             },
             {
-              "id": "slog-async 2.7.0",
+              "id": "slog-async 2.8.0",
               "target": "slog_async"
             },
             {
@@ -11590,7 +11590,7 @@
     "rayon 1.8.1",
     "router 0.6.0",
     "slog 2.7.0",
-    "slog-async 2.7.0",
+    "slog-async 2.8.0",
     "slog-term 2.9.0"
   ],
   "direct_dev_deps": [
