@@ -13024,9 +13024,9 @@
       "general": {
         "bzlTransitiveDigest": "zP01muRk4s4xWGK3gNPXOyDMQkOPsIhu99akeKWFFQ0=",
         "accumulatedFileDigests": {
-          "@@//:go.mod": "08e6eed6635e1fe7018dab59ec9ba1377ca04e607932692c3a336335500c2a3e",
+          "@@//:go.mod": "d97cef59df332f77ccf64df862be58497b76f9ff926fd5bbf83ea5bdf4e485d8",
           "@@rules_go~0.46.0//:go.sum": "d56fdb19b21a5f12bcf625c49432371ac39c2def0f564098fbda107f7c080f40",
-          "@@//:go.sum": "86042598ba8d36d21ac5ecc957e6b9480b41be192100ef8b729b9fee2e699602",
+          "@@//:go.sum": "d63f8a05e0e66318b76b17dabb04da8e63e9c504ae669a528bd95884ad9ddf6d",
           "@@gazelle~0.35.0//:go.mod": "48dc6e771c3028ee1c18b9ffc81e596fd5f6d7e0016c5ef280e30f2821f60473",
           "@@rules_go~0.46.0//:go.mod": "de22304b720f7f61350ec1c9739de6c0a1b1103fd22bfeb6e92c6c843ddc6d6e",
           "@@gazelle~0.35.0//:go.sum": "7c4460e8ecb5dd8691a51d4fa2e9e4751108b933636497ce46db499fc2e7a88d"
@@ -13140,9 +13140,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:aCL9BSgETF1k+blQaYUBx9hJ9LOGP3gAVemcZlf1Kpo=",
+              "sum": "h1:AQyQV4dYCvJ7vGmJyKki9+PBdyvhkSd8EIx/qb0AYv4=",
               "replace": "",
-              "version": "v0.20.0"
+              "version": "v0.21.0"
             }
           },
           "com_github_sethvargo_go_envconfig": {
@@ -13878,9 +13878,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:zdAyfUGbYmuVokhzVmghFl2ZJh5QhcfebBgmVPFYA+8=",
+              "sum": "h1:k8NLag8AGHnn+PHbl7g43CtqZAwG60vZkLqgyZgIHgQ=",
               "replace": "",
-              "version": "v0.15.0"
+              "version": "v0.18.0"
             }
           },
           "com_github_cenkalti_backoff_v4": {
@@ -14447,9 +14447,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:xWw16ngr6ZMtmxDyKyIgsE93KNKz5HKmMa3b8ALHidU=",
+              "sum": "h1:25cE3gD+tdBA7lp7QfhuV+rJiE9YXTcS3VG1SqssI/Y=",
               "replace": "",
-              "version": "v0.16.0"
+              "version": "v0.17.0"
             }
           },
           "com_github_honeycombio_honeycomb_opentelemetry_go": {
