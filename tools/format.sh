@@ -3,7 +3,8 @@ set -euo pipefail
 
 AUTOFLAKE="$(bazel run --run_under='echo' //tools/autoflake)"
 BLACK="$(bazel run --run_under='echo' //tools/black)"
-GOFMT="$(bazel run --run_under=echo @go_sdk//:bin/gofmt)"
+GOIMPORTS="$(bazel run --run_under=echo @org_golang_x_tools//cmd/goimports)"
+GOIMPORTSORT=$(bazel run --run_under=echo @com_github_aristanetworks_goarista//cmd/importsort)
 ISORT="$(bazel run --run_under='echo' //tools/isort)"
 JAVAFORMAT="$(bazel run --run_under='echo' @com_google_google_java_format//:google-java-format)"
 SHFMT="$(bazel run --run_under=echo @com_github_mvdan_sh//cmd/shfmt)"
@@ -19,7 +20,8 @@ for pattern in "${cpp_patterns[@]}"; do
 done
 
 # Go
-find . -type f -name '*.go' -print0 | xargs -0 "$GOFMT" -w
+find . -type f -name '*.go' -print0 | xargs -0 "$GOIMPORTS" -w
+find . -type f -name '*.go' -print0 | xargs -0 "$GOIMPORTSORT" -s UNDEFINED -w
 bazel run //:gazelle
 
 # Java

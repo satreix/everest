@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "7114a0c9df1e944ee5f72af1da746e09f86fe1b2cc11f7c8c6be66c5de2d3a08",
+  "moduleFileHash": "e4225cf231b8c3aa9f917ca7bc69facb243c1ffee2bf3d94beea1f4993914dad",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -140,6 +140,7 @@
           },
           "imports": {
             "com_github_antlr4_go_antlr_v4": "com_github_antlr4_go_antlr_v4",
+            "com_github_aristanetworks_goarista": "com_github_aristanetworks_goarista",
             "com_github_google_cel_go": "com_github_google_cel_go",
             "com_github_google_go_cmp": "com_github_google_go_cmp",
             "com_github_google_go_github_v59": "com_github_google_go_github_v59",
@@ -203,7 +204,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 73,
+            "line": 74,
             "column": 35
           },
           "imports": {},
@@ -217,7 +218,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 74,
+                "line": 75,
                 "column": 28
               }
             }
@@ -231,7 +232,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 79,
+            "line": 80,
             "column": 31
           },
           "imports": {
@@ -247,7 +248,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 81,
+                "line": 82,
                 "column": 24
               }
             },
@@ -259,7 +260,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 87,
+                "line": 88,
                 "column": 27
               }
             },
@@ -271,7 +272,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 87,
+                "line": 88,
                 "column": 27
               }
             },
@@ -283,7 +284,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 87,
+                "line": 88,
                 "column": 27
               }
             }
@@ -297,7 +298,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 102,
+            "line": 103,
             "column": 21
           },
           "imports": {},
@@ -312,7 +313,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 103,
+                "line": 104,
                 "column": 15
               }
             }
@@ -326,7 +327,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 110,
+            "line": 111,
             "column": 20
           },
           "imports": {
@@ -348,7 +349,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 111,
+                "line": 112,
                 "column": 9
               }
             }
@@ -362,7 +363,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 129,
+            "line": 130,
             "column": 23
           },
           "imports": {},
@@ -376,7 +377,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 130,
+                "line": 131,
                 "column": 17
               }
             }
@@ -390,7 +391,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 132,
+            "line": 133,
             "column": 20
           },
           "imports": {
@@ -408,7 +409,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 133,
+                "line": 134,
                 "column": 10
               }
             }
@@ -13024,9 +13025,9 @@
       "general": {
         "bzlTransitiveDigest": "zP01muRk4s4xWGK3gNPXOyDMQkOPsIhu99akeKWFFQ0=",
         "accumulatedFileDigests": {
-          "@@//:go.mod": "2594c575c3334e16b8cc4ee300b5e0c66b1c42fdff380c282d97f16d9a736f09",
+          "@@//:go.mod": "0878205dc23e971b98e542541e2a3014f6e9455adf15683cb3901ef13522b442",
           "@@rules_go~0.46.0//:go.sum": "d56fdb19b21a5f12bcf625c49432371ac39c2def0f564098fbda107f7c080f40",
-          "@@//:go.sum": "3f7f061324e295e25d4a8a3a0fdfd0031ce620fc3619235adaddef7aa4f4e802",
+          "@@//:go.sum": "31b3a0b253dbc249f6ce67d65283b898f33144d79eca2be5c31c67b98549b636",
           "@@gazelle~0.35.0//:go.mod": "48dc6e771c3028ee1c18b9ffc81e596fd5f6d7e0016c5ef280e30f2821f60473",
           "@@rules_go~0.46.0//:go.mod": "de22304b720f7f61350ec1c9739de6c0a1b1103fd22bfeb6e92c6c843ddc6d6e",
           "@@gazelle~0.35.0//:go.sum": "7c4460e8ecb5dd8691a51d4fa2e9e4751108b933636497ce46db499fc2e7a88d"
@@ -13124,9 +13125,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:MGwJjxBy0HJshjDNfLsYO8xppfqWlA5ZT9OhtUUhTNw=",
+              "sum": "h1:Q8/wZp0KX97QFTc2ywcOE0YRjZPVIx+MXInMzdvQqcA=",
               "replace": "",
-              "version": "v0.0.0-20230713183714-613f0c0eb8a1"
+              "version": "v0.0.0-20240119083558-1b970713d09a"
             }
           },
           "org_golang_x_net": {
@@ -13447,6 +13448,22 @@
               "sum": "h1:k1v3CzpSRUTrKMppY35TLwPvxHqBu0bYgxZzqGIgaos=",
               "replace": "",
               "version": "v0.6.0"
+            }
+          },
+          "com_github_aristanetworks_goarista": {
+            "bzlFile": "@@gazelle~0.35.0//internal:go_repository.bzl",
+            "ruleClassName": "go_repository",
+            "attributes": {
+              "name": "gazelle~0.35.0~go_deps~com_github_aristanetworks_goarista",
+              "importpath": "github.com/aristanetworks/goarista",
+              "build_directives": [],
+              "build_file_generation": "auto",
+              "build_extra_args": [],
+              "patches": [],
+              "patch_args": [],
+              "sum": "h1:wJDcabfzWzuchrEdtqwOlszPixPCo+6Yacmy/V6CSHA=",
+              "replace": "",
+              "version": "v0.0.0-20240213180907-919212b6ca63"
             }
           },
           "io_opentelemetry_go_contrib_instrumentation_host": {
@@ -13926,9 +13943,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:nz5NESFLZbJGPFxDT/HCn+V1mZ8JGNoY4nUpmW/Y2eg=",
+              "sum": "h1:ZL/Teoy/ZGnzyrqK/Optxxp2pmVh+fmJ97slxSRyzUg=",
               "replace": "",
-              "version": "v0.0.0-20240102182953-50ed04b92917"
+              "version": "v0.0.0-20240116215550-a9fa1716bcac"
             }
           },
           "com_github_gogo_protobuf": {
@@ -14074,9 +14091,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:6G8oQ016D88m1xAKljMlBOOGWDZkes4kMhgGFlf8WcQ=",
+              "sum": "h1:bQnxqljG/wqi4NTXu2+DJ3n7APcEA882QZ1JvhQAq9o=",
               "replace": "",
-              "version": "v0.0.0-20240102182953-50ed04b92917"
+              "version": "v0.0.0-20240125205218-1f4bbc51befe"
             }
           },
           "com_github_google_go_cmp": {
@@ -14342,6 +14359,7 @@
               "name": "gazelle~0.35.0~go_deps~bazel_gazelle_go_repository_config",
               "importpaths": {
                 "com_github_antlr4_go_antlr_v4": "github.com/antlr4-go/antlr/v4",
+                "com_github_aristanetworks_goarista": "github.com/aristanetworks/goarista",
                 "@rules_go~0.46.0": "github.com/bazelbuild/rules_go",
                 "com_github_google_cel_go": "github.com/google/cel-go",
                 "com_github_google_go_cmp": "github.com/google/go-cmp",
@@ -14411,6 +14429,7 @@
                 "org_golang_x_net": "golang.org/x/net",
                 "org_golang_x_sys": "golang.org/x/sys",
                 "org_golang_x_text": "golang.org/x/text",
+                "org_golang_x_tools_go_vcs": "golang.org/x/tools/go/vcs",
                 "org_golang_google_genproto": "google.golang.org/genproto",
                 "org_golang_google_genproto_googleapis_rpc": "google.golang.org/genproto/googleapis/rpc",
                 "in_gopkg_yaml_v2": "gopkg.in/yaml.v2",
@@ -14424,7 +14443,6 @@
                 "com_github_bmatcuk_doublestar_v4": "github.com/bmatcuk/doublestar/v4",
                 "com_github_fsnotify_fsnotify": "github.com/fsnotify/fsnotify",
                 "org_golang_x_sync": "golang.org/x/sync",
-                "org_golang_x_tools_go_vcs": "golang.org/x/tools/go/vcs",
                 "@gazelle~0.35.0": "github.com/bazelbuild/bazel-gazelle"
               },
               "module_names": {
@@ -14472,6 +14490,7 @@
         "moduleExtensionMetadata": {
           "explicitRootModuleDirectDeps": [
             "com_github_antlr4_go_antlr_v4",
+            "com_github_aristanetworks_goarista",
             "com_github_google_cel_go",
             "com_github_google_go_cmp",
             "com_github_google_go_github_v59",
