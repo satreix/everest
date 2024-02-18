@@ -1,23 +1,16 @@
-load("@com_github_tnarg_rules_cue//cue:cue.bzl", "cue_export", "cue_library")
 load("@io_bazel_rules_go//go:def.bzl", "go_test")
+load("@rules_cue//cue:cue.bzl", "cue_exported_standalone_files")
 
-cue_library(
+cue_exported_standalone_files(
     name = "foo",
     srcs = ["foo.cue"],
-    importpath = "github.com/satreix/everest/src/cue:foo",
+    #importpath = "github.com/satreix/everest/src/cue:foo",
     visibility = ["//visibility:public"],
-)
-
-cue_export(
-    name = "foo_export",
-    src = "foo_export.cue",
-    visibility = ["//visibility:public"],
-    deps = [":foo"],
 )
 
 go_test(
     name = "foo_test",
     size = "small",
     srcs = ["foo_test.go"],
-    data = [":foo_export"],
+    data = [":foo"],
 )

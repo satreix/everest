@@ -11,7 +11,7 @@ type Foo struct {
 }
 
 func TestCueExport(t *testing.T) {
-	f, err := os.Open("foo_export.json")
+	f, err := os.Open("foo.json")
 	if err != nil {
 		t.Fatalf("%s", err)
 	}

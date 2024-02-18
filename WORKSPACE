@@ -3,12 +3,6 @@ workspace(name = "everest")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
-    name = "bazel_gazelle",
-    sha256 = "32938bda16e6700063035479063d9d24c60eda8d79fd4739563f50d331cb3209",
-    url = "https://github.com/bazelbuild/bazel-gazelle/releases/download/v0.35.0/bazel-gazelle-v0.35.0.tar.gz",
-)
-
-http_archive(
     name = "bazelruby_rules_ruby",
     patch_args = ["-p1"],
     patches = [
@@ -34,13 +28,6 @@ http_archive(
     sha256 = "ae350c7aff7b99465ad4f679613685a92a4350796ae9fcd8ef36952592fe5dfe",
     strip_prefix = "swagger-petstore-swagger-petstore-v3-1.0.11",
     url = "https://github.com/swagger-api/swagger-petstore/archive/refs/tags/swagger-petstore-v3-1.0.11.tar.gz",
-)
-
-http_archive(
-    name = "com_github_tnarg_rules_cue",
-    sha256 = "1b8c4b7d07789f3784b77f24cbd6e362c2c6cbcb00f0eea77ba6234822433fe7",
-    strip_prefix = "rules_cue-918f252dad27f086d30236bbc7b6cb8e5335f5d6",
-    url = "https://github.com/tnarg/rules_cue/archive/918f252dad27f086d30236bbc7b6cb8e5335f5d6.zip",
 )
 
 http_archive(
@@ -74,12 +61,6 @@ http_archive(
     sha256 = "6c99e469d545e7891fedb2d7342af6989084e8188dd840ddaeecbe2223f7fb82",
     strip_prefix = "googleapis-87fc56b9c3b9afa9e78cfef5eba35c4f65d1b9d8",
     url = "https://github.com/googleapis/googleapis/archive/87fc56b9c3b9afa9e78cfef5eba35c4f65d1b9d8.zip",
-)
-
-http_archive(
-    name = "io_bazel_rules_go",
-    sha256 = "80a98277ad1311dacd837f9b16db62887702e9f1d1c4c9f796d0121a46c8e184",
-    url = "https://github.com/bazelbuild/rules_go/releases/download/v0.46.0/rules_go-v0.46.0.zip",
 )
 
 http_archive(
@@ -139,27 +120,6 @@ http_archive(
     strip_prefix = "uncrustify-uncrustify-0.70.1",
     url = "https://github.com/uncrustify/uncrustify/archive/uncrustify-0.70.1.tar.gz",
 )
-
-load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
-
-# gazelle:repository go_repository name=io_bazel_rules_go importpath=github.com/bazelbuild/rules_go
-# gazelle:repository_macro third_party/go/deps.bzl%go_dependencies
-load("//third_party/go:deps.bzl", "go_dependencies")
-
-go_dependencies()
-
-go_rules_dependencies()
-
-go_register_toolchains(
-    nogo = "@//tools/nogo",
-    # Update in lockstep with go.mod
-    version = "1.21.5",
-)
-
-load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
-
-# Note: this needs to be defore proto rules: https://github.com/bazelbuild/bazel-gazelle/issues/1366
-gazelle_dependencies()
 
 load("@contrib_rules_jvm//:repositories.bzl", "contrib_rules_jvm_deps")
 
@@ -269,13 +229,6 @@ ruby_bundle(
     gemfile = "//:Gemfile",
     gemfile_lock = "//:Gemfile.lock",
 )
-
-load("@com_github_tnarg_rules_cue//:go.bzl", cue_go_modules = "go_modules")
-load("@com_github_tnarg_rules_cue//cue:deps.bzl", "cue_register_toolchains")
-
-cue_go_modules()
-
-cue_register_toolchains()
 
 load("@googleapis//:repository_rules.bzl", "switched_rules_by_language")
 
