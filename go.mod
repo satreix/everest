@@ -1,10 +1,12 @@
 module github.com/satreix/everest
 
-go 1.21
+go 1.21.1
+
+toolchain go1.21.5
 
 require (
 	github.com/antlr4-go/antlr/v4 v4.13.0
-	github.com/bazelbuild/rules_go v0.43.0
+	github.com/bazelbuild/rules_go v0.46.0
 	github.com/google/cel-go v0.20.0
 	github.com/google/go-cmp v0.6.0
 	github.com/google/go-github/v53 v53.2.0
