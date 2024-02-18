@@ -1,8 +1,9 @@
 package bazel
 
 import (
-	"github.com/google/go-cmp/cmp"
 	"testing"
+
+	"github.com/google/go-cmp/cmp"
 )
 
 func TestHTTPArchive_String(t *testing.T) {
