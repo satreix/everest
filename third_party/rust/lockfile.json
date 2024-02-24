@@ -1,5 +1,5 @@
 {
-  "checksum": "abd16c77358d922d1f6025b874faaf7a4b2b70a3fb07c5e5bf5e28b89e34a687",
+  "checksum": "cc581fccceefced19059df7a1a12f465e88fde9a1c5d5aa1af08a678e4686eb0",
   "crates": {
     "android_system_properties 0.1.5": {
       "name": "android_system_properties",
@@ -513,64 +513,6 @@
       "license": "MIT OR Apache-2.0",
       "license_ids": [
         "Apache-2.0",
-        "MIT"
-      ],
-      "license_file": null
-    },
-    "atty 0.2.14": {
-      "name": "atty",
-      "version": "0.2.14",
-      "package_url": "https://github.com/softprops/atty",
-      "repository": {
-        "Http": {
-          "url": "https://crates.io/api/v1/crates/atty/0.2.14/download",
-          "sha256": "d9b39be18770d11421cdb1b9947a45dd3f37e93092cbf377614828a319d5fee8"
-        }
-      },
-      "targets": [
-        {
-          "Library": {
-            "crate_name": "atty",
-            "crate_root": "src/lib.rs",
-            "srcs": [
-              "**/*.rs"
-            ]
-          }
-        }
-      ],
-      "library_target_name": "atty",
-      "common_attrs": {
-        "compile_data_glob": [
-          "**"
-        ],
-        "deps": {
-          "common": [],
-          "selects": {
-            "cfg(target_os = \"hermit\")": [
-              {
-                "id": "hermit-abi 0.1.19",
-                "target": "hermit_abi"
-              }
-            ],
-            "cfg(unix)": [
-              {
-                "id": "libc 0.2.140",
-                "target": "libc"
-              }
-            ],
-            "cfg(windows)": [
-              {
-                "id": "winapi 0.3.9",
-                "target": "winapi"
-              }
-            ]
-          }
-        },
-        "edition": "2015",
-        "version": "0.2.14"
-      },
-      "license": "MIT",
-      "license_ids": [
         "MIT"
       ],
       "license_file": null
@@ -2308,51 +2250,6 @@
       "license_ids": [],
       "license_file": null
     },
-    "hermit-abi 0.1.19": {
-      "name": "hermit-abi",
-      "version": "0.1.19",
-      "package_url": "https://github.com/hermitcore/libhermit-rs",
-      "repository": {
-        "Http": {
-          "url": "https://crates.io/api/v1/crates/hermit-abi/0.1.19/download",
-          "sha256": "62b467343b94ba476dcb2500d242dadbb39557df889310ac77c5d99100aaac33"
-        }
-      },
-      "targets": [
-        {
-          "Library": {
-            "crate_name": "hermit_abi",
-            "crate_root": "src/lib.rs",
-            "srcs": [
-              "**/*.rs"
-            ]
-          }
-        }
-      ],
-      "library_target_name": "hermit_abi",
-      "common_attrs": {
-        "compile_data_glob": [
-          "**"
-        ],
-        "deps": {
-          "common": [
-            {
-              "id": "libc 0.2.140",
-              "target": "libc"
-            }
-          ],
-          "selects": {}
-        },
-        "edition": "2018",
-        "version": "0.1.19"
-      },
-      "license": "MIT/Apache-2.0",
-      "license_ids": [
-        "Apache-2.0",
-        "MIT"
-      ],
-      "license_file": null
-    },
     "hermit-abi 0.2.6": {
       "name": "hermit-abi",
       "version": "0.2.6",
@@ -2392,6 +2289,42 @@
         "version": "0.2.6"
       },
       "license": "MIT/Apache-2.0",
+      "license_ids": [
+        "Apache-2.0",
+        "MIT"
+      ],
+      "license_file": null
+    },
+    "hermit-abi 0.3.6": {
+      "name": "hermit-abi",
+      "version": "0.3.6",
+      "package_url": "https://github.com/hermitcore/hermit-rs",
+      "repository": {
+        "Http": {
+          "url": "https://crates.io/api/v1/crates/hermit-abi/0.3.6/download",
+          "sha256": "bd5256b483761cd23699d0da46cc6fd2ee3be420bbe6d020ae4a091e70b7e9fd"
+        }
+      },
+      "targets": [
+        {
+          "Library": {
+            "crate_name": "hermit_abi",
+            "crate_root": "src/lib.rs",
+            "srcs": [
+              "**/*.rs"
+            ]
+          }
+        }
+      ],
+      "library_target_name": "hermit_abi",
+      "common_attrs": {
+        "compile_data_glob": [
+          "**"
+        ],
+        "edition": "2021",
+        "version": "0.3.6"
+      },
+      "license": "MIT OR Apache-2.0",
       "license_ids": [
         "Apache-2.0",
         "MIT"
@@ -3028,6 +2961,64 @@
         },
         "edition": "2015",
         "version": "0.6.0"
+      },
+      "license": "MIT",
+      "license_ids": [
+        "MIT"
+      ],
+      "license_file": null
+    },
+    "is-terminal 0.4.12": {
+      "name": "is-terminal",
+      "version": "0.4.12",
+      "package_url": "https://github.com/sunfishcode/is-terminal",
+      "repository": {
+        "Http": {
+          "url": "https://crates.io/api/v1/crates/is-terminal/0.4.12/download",
+          "sha256": "f23ff5ef2b80d608d61efee834934d862cd92461afc0560dedf493e4c033738b"
+        }
+      },
+      "targets": [
+        {
+          "Library": {
+            "crate_name": "is_terminal",
+            "crate_root": "src/lib.rs",
+            "srcs": [
+              "**/*.rs"
+            ]
+          }
+        }
+      ],
+      "library_target_name": "is_terminal",
+      "common_attrs": {
+        "compile_data_glob": [
+          "**"
+        ],
+        "deps": {
+          "common": [],
+          "selects": {
+            "cfg(any(unix, target_os = \"wasi\"))": [
+              {
+                "id": "libc 0.2.140",
+                "target": "libc"
+              }
+            ],
+            "cfg(target_os = \"hermit\")": [
+              {
+                "id": "hermit-abi 0.3.6",
+                "target": "hermit_abi"
+              }
+            ],
+            "cfg(windows)": [
+              {
+                "id": "windows-sys 0.52.0",
+                "target": "windows_sys"
+              }
+            ]
+          }
+        },
+        "edition": "2018",
+        "version": "0.4.12"
       },
       "license": "MIT",
       "license_ids": [
@@ -4395,53 +4386,6 @@
         },
         "edition": "2015",
         "version": "1.15.0"
-      },
-      "license": "MIT OR Apache-2.0",
-      "license_ids": [
-        "Apache-2.0",
-        "MIT"
-      ],
-      "license_file": null
-    },
-    "num_threads 0.1.6": {
-      "name": "num_threads",
-      "version": "0.1.6",
-      "package_url": "https://github.com/jhpratt/num_threads",
-      "repository": {
-        "Http": {
-          "url": "https://crates.io/api/v1/crates/num_threads/0.1.6/download",
-          "sha256": "2819ce041d2ee131036f4fc9d6ae7ae125a3a40e97ba64d04fe799ad9dabbb44"
-        }
-      },
-      "targets": [
-        {
-          "Library": {
-            "crate_name": "num_threads",
-            "crate_root": "src/lib.rs",
-            "srcs": [
-              "**/*.rs"
-            ]
-          }
-        }
-      ],
-      "library_target_name": "num_threads",
-      "common_attrs": {
-        "compile_data_glob": [
-          "**"
-        ],
-        "deps": {
-          "common": [],
-          "selects": {
-            "cfg(any(target_os = \"macos\", target_os = \"ios\", target_os = \"freebsd\"))": [
-              {
-                "id": "libc 0.2.140",
-                "target": "libc"
-              }
-            ]
-          }
-        },
-        "edition": "2015",
-        "version": "0.1.6"
       },
       "license": "MIT OR Apache-2.0",
       "license_ids": [
@@ -7212,14 +7156,14 @@
       ],
       "license_file": null
     },
-    "slog-term 2.9.0": {
+    "slog-term 2.9.1": {
       "name": "slog-term",
-      "version": "2.9.0",
+      "version": "2.9.1",
       "package_url": "https://github.com/slog-rs/term",
       "repository": {
         "Http": {
-          "url": "https://crates.io/api/v1/crates/slog-term/2.9.0/download",
-          "sha256": "87d29185c55b7b258b4f120eab00f48557d4d9bc814f41713f449d35b0f8977c"
+          "url": "https://crates.io/api/v1/crates/slog-term/2.9.1/download",
+          "sha256": "b6e022d0b998abfe5c3782c1f03551a596269450ccd677ea51c56f8b214610e8"
         }
       },
       "targets": [
@@ -7241,8 +7185,8 @@
         "deps": {
           "common": [
             {
-              "id": "atty 0.2.14",
-              "target": "atty"
+              "id": "is-terminal 0.4.12",
+              "target": "is_terminal"
             },
             {
               "id": "slog 2.7.0",
@@ -7264,7 +7208,7 @@
           "selects": {}
         },
         "edition": "2018",
-        "version": "2.9.0"
+        "version": "2.9.1"
       },
       "license": "MPL-2.0 OR MIT OR Apache-2.0",
       "license_ids": [
@@ -7966,7 +7910,6 @@
           "common": [
             "alloc",
             "formatting",
-            "local-offset",
             "macros",
             "std"
           ],
@@ -7983,18 +7926,7 @@
               "target": "time_core"
             }
           ],
-          "selects": {
-            "cfg(target_family = \"unix\")": [
-              {
-                "id": "libc 0.2.140",
-                "target": "libc"
-              },
-              {
-                "id": "num_threads 0.1.6",
-                "target": "num_threads"
-              }
-            ]
-          }
+          "selects": {}
         },
         "edition": "2021",
         "proc_macro_deps": {
@@ -9365,7 +9297,7 @@
               "target": "slog_async"
             },
             {
-              "id": "slog-term 2.9.0",
+              "id": "slog-term 2.9.1",
               "target": "slog_term"
             }
           ],
@@ -9797,6 +9729,8 @@
           "common": [
             "Win32",
             "Win32_Foundation",
+            "Win32_Storage",
+            "Win32_Storage_FileSystem",
             "Win32_System",
             "Win32_System_Console",
             "default"
@@ -11417,15 +11351,32 @@
       "x86_64-apple-darwin",
       "x86_64-apple-ios"
     ],
-    "cfg(any(target_os = \"macos\", target_os = \"ios\", target_os = \"freebsd\"))": [
+    "cfg(any(unix, target_os = \"wasi\"))": [
       "aarch64-apple-darwin",
       "aarch64-apple-ios",
       "aarch64-apple-ios-sim",
+      "aarch64-fuchsia",
+      "aarch64-linux-android",
+      "aarch64-unknown-linux-gnu",
+      "aarch64-unknown-nixos-gnu",
+      "aarch64-unknown-nto-qnx710",
+      "arm-unknown-linux-gnueabi",
+      "armv7-linux-androideabi",
+      "armv7-unknown-linux-gnueabi",
       "i686-apple-darwin",
+      "i686-linux-android",
       "i686-unknown-freebsd",
+      "i686-unknown-linux-gnu",
+      "powerpc-unknown-linux-gnu",
+      "s390x-unknown-linux-gnu",
+      "wasm32-wasi",
       "x86_64-apple-darwin",
       "x86_64-apple-ios",
-      "x86_64-unknown-freebsd"
+      "x86_64-fuchsia",
+      "x86_64-linux-android",
+      "x86_64-unknown-freebsd",
+      "x86_64-unknown-linux-gnu",
+      "x86_64-unknown-nixos-gnu"
     ],
     "cfg(not(windows))": [
       "aarch64-apple-darwin",
@@ -11501,32 +11452,6 @@
       "wasm32-wasi"
     ],
     "cfg(target_env = \"sgx\")": [],
-    "cfg(target_family = \"unix\")": [
-      "aarch64-apple-darwin",
-      "aarch64-apple-ios",
-      "aarch64-apple-ios-sim",
-      "aarch64-fuchsia",
-      "aarch64-linux-android",
-      "aarch64-unknown-linux-gnu",
-      "aarch64-unknown-nixos-gnu",
-      "aarch64-unknown-nto-qnx710",
-      "arm-unknown-linux-gnueabi",
-      "armv7-linux-androideabi",
-      "armv7-unknown-linux-gnueabi",
-      "i686-apple-darwin",
-      "i686-linux-android",
-      "i686-unknown-freebsd",
-      "i686-unknown-linux-gnu",
-      "powerpc-unknown-linux-gnu",
-      "s390x-unknown-linux-gnu",
-      "x86_64-apple-darwin",
-      "x86_64-apple-ios",
-      "x86_64-fuchsia",
-      "x86_64-linux-android",
-      "x86_64-unknown-freebsd",
-      "x86_64-unknown-linux-gnu",
-      "x86_64-unknown-nixos-gnu"
-    ],
     "cfg(target_os = \"android\")": [
       "aarch64-linux-android",
       "armv7-linux-androideabi",
@@ -11665,7 +11590,7 @@
     "router 0.6.0",
     "slog 2.7.0",
     "slog-async 2.8.0",
-    "slog-term 2.9.0"
+    "slog-term 2.9.1"
   ],
   "direct_dev_deps": [
     "iron-test 0.6.0"
