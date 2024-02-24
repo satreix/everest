@@ -2,20 +2,17 @@ load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
 
 go_library(
     name = "bookstore",
-    srcs = [
-        "service.go",
-        "storage.go",
-    ],
+    srcs = ["service.go"],
     importpath = "github.com/satreix/everest/src/go/bookstore",
     visibility = ["//visibility:public"],
     deps = [
+        "//src/go/bookstore/storage",
         "//src/proto/bookstore/v1:bookstore",
-        "@com_github_google_cel_go//cel:go_default_library",
-        "@com_github_google_cel_go//checker/decls:go_default_library",
-        "@com_github_google_uuid//:uuid",
         "@com_github_rs_zerolog//:zerolog",
+        "@org_golang_google_genproto_googleapis_api//annotations",
         "@org_golang_google_grpc//codes",
         "@org_golang_google_grpc//status",
+        "@tech_einride_go_aip//fieldbehavior",
         "@tech_einride_go_aip//pagination",
     ],
 )
@@ -26,11 +23,12 @@ go_test(
     srcs = ["service_test.go"],
     embed = [":bookstore"],
     deps = [
+        "//src/go/bookstore/storage",
+        "//src/go/bookstore/storage/memory",
         "//src/proto/bookstore/v1:bookstore",
         "@com_github_google_go_cmp//cmp",
         "@com_github_rs_zerolog//:zerolog",
         "@com_github_stretchr_testify//assert",
-        "@org_golang_google_protobuf//proto",
         "@org_golang_google_protobuf//testing/protocmp",
     ],
 )
