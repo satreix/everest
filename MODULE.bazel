@@ -2,7 +2,7 @@ module(
     name = "everest",
 )
 
-bazel_dep(name = "aspect_rules_js", version = "1.37.1")
+bazel_dep(name = "aspect_rules_js", version = "1.38.0")
 
 npm = use_extension("@aspect_rules_js//npm:extensions.bzl", "npm", dev_dependency = True)
 npm.npm_translate_lock(
