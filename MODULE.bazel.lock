@@ -13279,9 +13279,9 @@
       "general": {
         "bzlTransitiveDigest": "zP01muRk4s4xWGK3gNPXOyDMQkOPsIhu99akeKWFFQ0=",
         "accumulatedFileDigests": {
-          "@@//:go.mod": "0ac51cd91b6b8572bd138ffbff3403dda490a5202f093fd45728d4f8d7aaf3a5",
+          "@@//:go.mod": "16308d5c134945bbcabd64e53c2657c1d1884324ae7c2f9c9e5e04aba1525109",
           "@@rules_go~0.46.0//:go.sum": "d56fdb19b21a5f12bcf625c49432371ac39c2def0f564098fbda107f7c080f40",
-          "@@//:go.sum": "d2f91869b8553bf8beaeea652032a172ab33cf074e704c6d0aa2c5ea6ab60406",
+          "@@//:go.sum": "07b5737adf72f4dd2272a1d592b9ba37304def1f27fbd31f48f5e87169b29641",
           "@@gazelle~0.35.0//:go.mod": "48dc6e771c3028ee1c18b9ffc81e596fd5f6d7e0016c5ef280e30f2821f60473",
           "@@rules_go~0.46.0//:go.mod": "de22304b720f7f61350ec1c9739de6c0a1b1103fd22bfeb6e92c6c843ddc6d6e",
           "@@gazelle~0.35.0//:go.sum": "7c4460e8ecb5dd8691a51d4fa2e9e4751108b933636497ce46db499fc2e7a88d"
@@ -13523,9 +13523,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:Df0pqjqExIywbMCMTxkAwzjLZtRf+bBKLbUcpxO2C9E=",
+              "sum": "h1:0LAOdjNmQeSTzGBzduGe/rU4tZhMwL5rWgtp9Ku5Jfo=",
               "replace": "",
-              "version": "v1.23.0"
+              "version": "v1.24.0"
             }
           },
           "io_opentelemetry_go_otel_exporters_otlp_otlpmetric_otlpmetricgrpc": {
@@ -14117,9 +14117,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:pazkx7ss4LFVVYSxYew7L5I6qvLXHA0Ap2pwV+9Cnpo=",
+              "sum": "h1:6EhoGWWK28x1fbpA4tYTOWBkPefTDQnb8WSGXlc88kI=",
               "replace": "",
-              "version": "v1.23.0"
+              "version": "v1.24.0"
             }
           },
           "com_github_davecgh_go_spew": {
@@ -14505,9 +14505,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:37Ik5Ib7xfYVb4V1UtnT97T1jI+AoIYkJyPkuL4iJgI=",
+              "sum": "h1:CsKnnL4dUAr/0llH9FKuc698G04IrpWV0MQA/Y1YELI=",
               "replace": "",
-              "version": "v1.23.0"
+              "version": "v1.24.0"
             }
           },
           "com_github_gosuri_uiprogress": {
@@ -14553,9 +14553,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:P+/g8GpuJGYbOp2tAdKrIPUX9JO02q8Q0YNlHolpibA=",
+              "sum": "h1:4Pp6oUg3+e/6M4C0A/3kJ2VYa++dsWVTtGgLVj5xtHg=",
               "replace": "",
-              "version": "v0.48.0"
+              "version": "v0.49.0"
             }
           },
           "com_github_whilp_git_urls": {
