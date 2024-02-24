@@ -6,7 +6,7 @@ test --verbose_failures
 test --test_output=errors
 
 # Until the lease service is ready, see https://github.com/bazelbuild/bazel/issues/17366.
-build --experimental_action_cache_store_output_metadata=false
+build --action_cache_store_output_metadata=false
 
 build --action_env=CC=clang
 build --announce_rc=yes
