@@ -1,0 +1,34 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "sql",
+    srcs = ["sql.go"],
+    importpath = "github.com/satreix/everest/src/go/bookstore/storage/sql",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//src/go/bookstore/storage",
+        "//src/proto/bookstore/v1:bookstore",
+        "@com_github_cockscomb_cel2sql//:cel2sql",
+        "@com_github_cockscomb_cel2sql//sqltypes",
+        "@com_github_google_cel_go//cel:go_default_library",
+        "@com_github_google_cel_go//checker/decls:go_default_library",
+        "@com_github_rs_zerolog//:zerolog",
+        "@io_gorm_driver_sqlite//:sqlite",
+        "@io_gorm_gorm//:gorm",
+        "@org_golang_google_grpc//codes",
+        "@org_golang_google_grpc//status",
+    ],
+)
+
+go_test(
+    name = "sql_test",
+    size = "medium",
+    timeout = "short",
+    srcs = ["sql_test.go"],
+    embed = [":sql"],
+    deps = [
+        "//src/go/bookstore/storage",
+        "@com_github_rs_zerolog//:zerolog",
+        "@com_github_stretchr_testify//assert",
+    ],
+)

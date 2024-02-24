@@ -1,0 +1,17 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "memory",
+    srcs = ["memory.go"],
+    importpath = "github.com/satreix/everest/src/go/bookstore/storage/memory",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//src/go/bookstore/storage",
+        "//src/proto/bookstore/v1:bookstore",
+        "@com_github_google_cel_go//cel:go_default_library",
+        "@com_github_google_cel_go//checker/decls:go_default_library",
+        "@com_github_google_uuid//:uuid",
+        "@org_golang_google_grpc//codes",
+        "@org_golang_google_grpc//status",
+    ],
+)

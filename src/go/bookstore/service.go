@@ -2,30 +2,30 @@ package bookstore
 
 import (
 	"context"
-	"fmt"
 
-	"github.com/google/cel-go/cel"
-	"github.com/google/cel-go/checker/decls"
 	"github.com/rs/zerolog"
+	"github.com/satreix/everest/src/go/bookstore/storage"
 	pb "github.com/satreix/everest/src/proto/bookstore/v1"
+	"go.einride.tech/aip/fieldbehavior"
 	"go.einride.tech/aip/pagination"
+	"google.golang.org/genproto/googleapis/api/annotations"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )
 
 type BookstoreService struct {
 	logger zerolog.Logger
-	store  *storage
+	store  storage.Store
 }
 
-func NewBookstoreService(logger zerolog.Logger) *BookstoreService {
+func NewBookstoreService(logger zerolog.Logger, store storage.Store) *BookstoreService {
 	return &BookstoreService{
 		logger: logger,
-		store:  new(storage),
+		store:  store,
 	}
 }
 
-func (s *BookstoreService) ListBooks(_ context.Context, req *pb.ListBooksRequest) (*pb.ListBooksResponse, error) {
+func (s *BookstoreService) ListBooks(ctx context.Context, req *pb.ListBooksRequest) (*pb.ListBooksResponse, error) {
 	const (
 		maxPageSize     = 1000
 		defaultPageSize = 100
@@ -44,107 +44,53 @@ func (s *BookstoreService) ListBooks(_ context.Context, req *pb.ListBooksRequest
 		return nil, status.Errorf(codes.InvalidArgument, "invalid page token")
 	}
 
-	data := s.store.ListBooks()
-	if req.Filter != "" {
-		env, err := cel.NewEnv(
-			cel.Types(
-				new(pb.Book),
-			),
-			cel.Declarations(
-				decls.NewConst("book", decls.NewObjectType("bookstore.v1.Book"), nil),
-			),
-		)
-		if err != nil {
-			return nil, status.Errorf(codes.Internal, "cel env creation error: %s", err)
-		}
-
-		ast, issues := env.Compile(req.Filter)
-		if issues != nil && issues.Err() != nil {
-			return nil, status.Errorf(codes.Internal, "compile error: %s", issues.Err())
-		}
-
-		program, err := env.Program(ast)
-		if err != nil {
-			return nil, status.Errorf(codes.Internal, "convert to load program: %s", err)
-		}
-
-		filterFunc := func(book *pb.Book) bool {
-			result, _, err := program.Eval(map[string]any{
-				"book": book,
-			})
-			if err != nil {
-				return false
-			}
-			val, ok := result.Value().(bool)
-			if !ok {
-				return false
-			}
-			return val
-		}
-
-		internalFilter := func(books []*pb.Book) []*pb.Book {
-			var out []*pb.Book
-			for _, book := range books {
-				if filterFunc(book) {
-					out = append(out, &pb.Book{
-						Title:     book.GetTitle(),
-						Author:    book.GetAuthor(),
-						PageCount: book.GetPageCount(),
-						Archived:  book.GetArchived(),
-					})
-				}
-			}
-			return out
-		}
-
-		data = internalFilter(data)
+	dbData, err := s.store.ListBooks(ctx, &storage.ListBooksRequest{
+		Filter:   req.GetFilter(),
+		Offset:   pageToken.Offset,
+		PageSize: req.GetPageSize(),
+	})
+	if err != nil {
+		return nil, status.Errorf(codes.Internal, "error reading data")
 	}
 
-	// ---
-
-	s.logger.Debug().
-		Str("pageToken", fmt.Sprintf("%#v", pageToken)).
-		Msg("pagination")
-
-	var hasNextPage bool
-	pageStart := int(pageToken.Offset)
-	pageEnd := pageStart + int(req.PageSize)
-	switch {
-	case pageStart >= len(data):
-		data = nil
-		hasNextPage = false
-
-	case pageEnd > len(data):
-		data = data[pageStart:]
-		hasNextPage = false
-
-	default:
-		data = data[pageStart:pageEnd]
-		hasNextPage = true
+	var data []*pb.Book
+	for _, b := range dbData.Books {
+		data = append(data, &pb.Book{
+			Id:        b.ID,
+			Title:     b.Title,
+			Author:    b.Author,
+			PageCount: int32(b.PageCount),
+			Archived:  b.Archived,
+		})
 	}
-
-	// ----
 
 	resp := &pb.ListBooksResponse{Books: data}
-	if hasNextPage {
+	if dbData.HasNextPage {
 		resp.NextPageToken = pageToken.Next(req).String()
 	}
-
-	var titles []string
-	for _, b := range data {
-		titles = append(titles, b.Title)
-	}
-	s.logger.Info().Strs("title", titles).Msg("rpc response")
 
 	return resp, nil
 }
 
-func (s *BookstoreService) CreateBook(_ context.Context, req *pb.CreateBookRequest) (*pb.Book, error) {
-	createdBook, err := s.store.CreateBook(req.Book)
+func (s *BookstoreService) CreateBook(ctx context.Context, req *pb.CreateBookRequest) (*pb.Book, error) {
+	fieldbehavior.ClearFields(req.GetBook(), annotations.FieldBehavior_OUTPUT_ONLY)
+
+	createdBook, err := s.store.CreateBook(ctx, &storage.Book{
+		Title:     req.Book.Title,
+		Author:    req.Book.Author,
+		PageCount: int(req.Book.PageCount),
+		Archived:  req.Book.Archived,
+	})
 	if err != nil {
 		s.logger.Error().Err(err).Msg("error creating book")
 		return nil, status.Error(codes.Internal, "error creating book")
 	}
 
-	return createdBook, nil
+	return &pb.Book{
+		Id:        createdBook.ID,
+		Title:     createdBook.Title,
+		Author:    createdBook.Author,
+		PageCount: int32(createdBook.PageCount),
+		Archived:  createdBook.Archived,
+	}, nil
 }

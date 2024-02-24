@@ -7,6 +7,9 @@ go_library(
     visibility = ["//visibility:private"],
     deps = [
         "//src/go/bookstore",
+        "//src/go/bookstore/storage",
+        "//src/go/bookstore/storage/memory",
+        "//src/go/bookstore/storage/sql",
         "//src/go/logging",
         "//src/proto/bookstore/v1:bookstore",
         "@com_github_rs_zerolog//log",

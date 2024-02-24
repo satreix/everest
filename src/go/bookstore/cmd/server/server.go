@@ -6,6 +6,9 @@ import (
 
 	"github.com/rs/zerolog/log"
 	"github.com/satreix/everest/src/go/bookstore"
+	"github.com/satreix/everest/src/go/bookstore/storage"
+	"github.com/satreix/everest/src/go/bookstore/storage/memory"
+	"github.com/satreix/everest/src/go/bookstore/storage/sql"
 	"github.com/satreix/everest/src/go/logging"
 	pb "github.com/satreix/everest/src/proto/bookstore/v1"
 	"google.golang.org/grpc"
@@ -14,7 +17,9 @@ import (
 
 func main() {
 	var addr string
+	var sqliteFile string
 	flag.StringVar(&addr, "addr", "localhost:50051", "grpc address")
+	flag.StringVar(&sqliteFile, "database", "", "sqlite database file")
 	debug := flag.Bool("debug", false, "sets log level to debug")
 	flag.Parse()
 
@@ -25,6 +30,16 @@ func main() {
 			Msg("Logger setup error")
 	}
 
+	var store storage.Store
+	if sqliteFile != "" {
+		store, err = sql.NewStore(logger, sqliteFile)
+		if err != nil {
+			log.Fatal().Err(err).Msg("error in database init")
+		}
+	} else {
+		store = memory.NewStore()
+	}
+
 	s := grpc.NewServer(
 		grpc.ChainUnaryInterceptor(
 			logging.UnaryServerInterceptor(logger),
@@ -33,7 +48,7 @@ func main() {
 			logging.StreamServerInterceptor(logger),
 		),
 	)
-	pb.RegisterBookstoreServer(s, bookstore.NewBookstoreService(logger))
+	pb.RegisterBookstoreServer(s, bookstore.NewBookstoreService(logger, store))
 	reflection.Register(s)
 
 	l, err := net.Listen("tcp", addr)
