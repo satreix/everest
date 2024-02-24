@@ -13025,9 +13025,9 @@
       "general": {
         "bzlTransitiveDigest": "zP01muRk4s4xWGK3gNPXOyDMQkOPsIhu99akeKWFFQ0=",
         "accumulatedFileDigests": {
-          "@@//:go.mod": "0878205dc23e971b98e542541e2a3014f6e9455adf15683cb3901ef13522b442",
+          "@@//:go.mod": "fdc617515685124367f473edb54514d78be56bbc53177e6de789a750e1a7cb03",
           "@@rules_go~0.46.0//:go.sum": "d56fdb19b21a5f12bcf625c49432371ac39c2def0f564098fbda107f7c080f40",
-          "@@//:go.sum": "31b3a0b253dbc249f6ce67d65283b898f33144d79eca2be5c31c67b98549b636",
+          "@@//:go.sum": "3a4bf9420b2e62ece66728a18d2ee3b80f1e10ec12fd7afb0811d5677d63a571",
           "@@gazelle~0.35.0//:go.mod": "48dc6e771c3028ee1c18b9ffc81e596fd5f6d7e0016c5ef280e30f2821f60473",
           "@@rules_go~0.46.0//:go.mod": "de22304b720f7f61350ec1c9739de6c0a1b1103fd22bfeb6e92c6c843ddc6d6e",
           "@@gazelle~0.35.0//:go.sum": "7c4460e8ecb5dd8691a51d4fa2e9e4751108b933636497ce46db499fc2e7a88d"
@@ -13317,9 +13317,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:rcS6EyEaoCO52hQDupoSfrxI3R6C2Tq741is7X8OvnM=",
+              "sum": "h1:9g7erC9qu44ks7UK4gDNlnk4kOxZG707xKm4jVniy6o=",
               "replace": "",
-              "version": "v0.0.0-20240102182953-50ed04b92917"
+              "version": "v0.0.0-20240221002015-b0ce06bbee7c"
             }
           },
           "org_golang_google_protobuf": {
@@ -13943,9 +13943,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:ZL/Teoy/ZGnzyrqK/Optxxp2pmVh+fmJ97slxSRyzUg=",
+              "sum": "h1:Zmyn5CV/jxzKnF+3d+xzbomACPwLQqVpLTpyXN5uTaQ=",
               "replace": "",
-              "version": "v0.0.0-20240116215550-a9fa1716bcac"
+              "version": "v0.0.0-20240221002015-b0ce06bbee7c"
             }
           },
           "com_github_gogo_protobuf": {
@@ -14091,9 +14091,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:bQnxqljG/wqi4NTXu2+DJ3n7APcEA882QZ1JvhQAq9o=",
+              "sum": "h1:hZB7eLIaYlW9qXRfCq/qDaPdbeY3757uARz5Vvfv+cY=",
               "replace": "",
-              "version": "v0.0.0-20240125205218-1f4bbc51befe"
+              "version": "v0.0.0-20240213162025-012b6fc9bca9"
             }
           },
           "com_github_google_go_cmp": {
