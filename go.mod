@@ -9,6 +9,7 @@ require (
 	github.com/google/cel-go v0.20.0
 	github.com/google/go-cmp v0.6.0
 	github.com/google/go-github/v59 v59.0.0
+	github.com/google/uuid v1.6.0
 	github.com/gosuri/uiprogress v0.0.1
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.0.1
 	github.com/honeycombio/honeycomb-opentelemetry-go v0.9.0
@@ -24,6 +25,7 @@ require (
 	github.com/stretchr/testify v1.8.4
 	github.com/whilp/git-urls v1.0.0
 	github.com/zenazn/goji v1.0.1
+	go.einride.tech/aip v0.66.0
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.49.0
 	golang.org/x/tools v0.18.0
 	google.golang.org/genproto/googleapis/api v0.0.0-20240221002015-b0ce06bbee7c

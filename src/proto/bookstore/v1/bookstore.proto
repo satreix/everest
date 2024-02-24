@@ -35,6 +35,8 @@ message ListBooksRequest {
   // User filter on retrieving the books.
   string filter = 1;
   // Standard pagination field.
+  // If unspecified, at most 100 books will be returned.
+  // The maximum value is 1000; values above 1000 will be coerced to 1000.
   int32 page_size = 2;
   // Standard pagination field.
   string page_token = 3;
@@ -61,12 +63,14 @@ message CreateBookRequest {
 
 // Book information.
 message Book {
+  // Book identifier.
+  string id = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
   // Title field.
-  string title = 1;
+  string title = 2;
   // Author field.
-  string author = 2;
+  string author = 3;
   // Number of pages.
-  int32 page_count = 3;
+  int32 page_count = 4;
   // Is the bool archived.
-  bool archived = 4;
+  bool archived = 5;
 }

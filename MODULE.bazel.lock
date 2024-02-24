@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "4a3c1975b4e9178d59dd7855b41bd55627ce113424b93281b44f32a3be1f5fe4",
+  "moduleFileHash": "9616b05e5f086420f60bc33424ba227b4f91197ec3301259278174b958271bcf",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -144,6 +144,7 @@
             "com_github_google_cel_go": "com_github_google_cel_go",
             "com_github_google_go_cmp": "com_github_google_go_cmp",
             "com_github_google_go_github_v59": "com_github_google_go_github_v59",
+            "com_github_google_uuid": "com_github_google_uuid",
             "com_github_gosuri_uiprogress": "com_github_gosuri_uiprogress",
             "com_github_grpc_ecosystem_go_grpc_middleware_v2": "com_github_grpc_ecosystem_go_grpc_middleware_v2",
             "com_github_honeycombio_honeycomb_opentelemetry_go": "com_github_honeycombio_honeycomb_opentelemetry_go",
@@ -163,7 +164,8 @@
             "org_golang_google_genproto_googleapis_api": "org_golang_google_genproto_googleapis_api",
             "org_golang_google_grpc": "org_golang_google_grpc",
             "org_golang_google_protobuf": "org_golang_google_protobuf",
-            "org_golang_x_tools": "org_golang_x_tools"
+            "org_golang_x_tools": "org_golang_x_tools",
+            "tech_einride_go_aip": "tech_einride_go_aip"
           },
           "devImports": [],
           "tags": [
@@ -204,7 +206,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 74,
+            "line": 76,
             "column": 35
           },
           "imports": {},
@@ -218,7 +220,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 75,
+                "line": 77,
                 "column": 28
               }
             }
@@ -232,7 +234,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 80,
+            "line": 82,
             "column": 31
           },
           "imports": {
@@ -248,7 +250,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 82,
+                "line": 84,
                 "column": 24
               }
             },
@@ -260,7 +262,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 88,
+                "line": 90,
                 "column": 27
               }
             },
@@ -272,7 +274,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 88,
+                "line": 90,
                 "column": 27
               }
             },
@@ -284,7 +286,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 88,
+                "line": 90,
                 "column": 27
               }
             }
@@ -298,7 +300,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 103,
+            "line": 105,
             "column": 21
           },
           "imports": {},
@@ -313,7 +315,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 104,
+                "line": 106,
                 "column": 15
               }
             }
@@ -327,7 +329,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 111,
+            "line": 113,
             "column": 20
           },
           "imports": {
@@ -349,7 +351,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 112,
+                "line": 114,
                 "column": 9
               }
             }
@@ -363,7 +365,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 130,
+            "line": 132,
             "column": 23
           },
           "imports": {},
@@ -377,7 +379,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 131,
+                "line": 133,
                 "column": 17
               }
             }
@@ -391,7 +393,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 133,
+            "line": 135,
             "column": 20
           },
           "imports": {
@@ -409,7 +411,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 134,
+                "line": 136,
                 "column": 10
               }
             }
@@ -13279,9 +13281,9 @@
       "general": {
         "bzlTransitiveDigest": "zP01muRk4s4xWGK3gNPXOyDMQkOPsIhu99akeKWFFQ0=",
         "accumulatedFileDigests": {
-          "@@//:go.mod": "23bdd7e481547c233efe0e9b5b03810755aae173a0233c55ef24c5c4c08f4de7",
+          "@@//:go.mod": "d7386b633e65797c1ba717a29dafa989d3439e74f834d4fae44a10ba28ea9ebb",
           "@@rules_go~0.46.0//:go.sum": "d56fdb19b21a5f12bcf625c49432371ac39c2def0f564098fbda107f7c080f40",
-          "@@//:go.sum": "e5f8696a475503181998132859d396462c07dac610230b61e8067f2bac094e88",
+          "@@//:go.sum": "41705739d0b226a9ac1d77ccde5643925d1a56c75579b4c484d4f2f1112d7768",
           "@@gazelle~0.35.0//:go.mod": "48dc6e771c3028ee1c18b9ffc81e596fd5f6d7e0016c5ef280e30f2821f60473",
           "@@rules_go~0.46.0//:go.mod": "de22304b720f7f61350ec1c9739de6c0a1b1103fd22bfeb6e92c6c843ddc6d6e",
           "@@gazelle~0.35.0//:go.sum": "7c4460e8ecb5dd8691a51d4fa2e9e4751108b933636497ce46db499fc2e7a88d"
@@ -14494,6 +14496,22 @@
               "version": "v1.21.0"
             }
           },
+          "com_github_google_uuid": {
+            "bzlFile": "@@gazelle~0.35.0//internal:go_repository.bzl",
+            "ruleClassName": "go_repository",
+            "attributes": {
+              "name": "gazelle~0.35.0~go_deps~com_github_google_uuid",
+              "importpath": "github.com/google/uuid",
+              "build_directives": [],
+              "build_file_generation": "auto",
+              "build_extra_args": [],
+              "patches": [],
+              "patch_args": [],
+              "sum": "h1:NIvaJDMOsjHA8n1jAhLSgzrAzy1Hgr+hNrb57e+94F0=",
+              "replace": "",
+              "version": "v1.6.0"
+            }
+          },
           "io_opentelemetry_go_otel_trace": {
             "bzlFile": "@@gazelle~0.35.0//internal:go_repository.bzl",
             "ruleClassName": "go_repository",
@@ -14524,6 +14542,22 @@
               "sum": "h1:0kpv/XY/qTmFWl/SkaJykZXrBBzwwadmW8fRb7RJSxw=",
               "replace": "",
               "version": "v0.0.1"
+            }
+          },
+          "tech_einride_go_aip": {
+            "bzlFile": "@@gazelle~0.35.0//internal:go_repository.bzl",
+            "ruleClassName": "go_repository",
+            "attributes": {
+              "name": "gazelle~0.35.0~go_deps~tech_einride_go_aip",
+              "importpath": "go.einride.tech/aip",
+              "build_directives": [],
+              "build_file_generation": "auto",
+              "build_extra_args": [],
+              "patches": [],
+              "patch_args": [],
+              "sum": "h1:XfV+NQX6L7EOYK11yoHHFtndeaWh3KbD9/cN/6iWEt8=",
+              "replace": "",
+              "version": "v0.66.0"
             }
           },
           "com_github_google_go_github_v59": {
@@ -14618,6 +14652,7 @@
                 "com_github_google_cel_go": "github.com/google/cel-go",
                 "com_github_google_go_cmp": "github.com/google/go-cmp",
                 "com_github_google_go_github_v59": "github.com/google/go-github/v59",
+                "com_github_google_uuid": "github.com/google/uuid",
                 "com_github_gosuri_uiprogress": "github.com/gosuri/uiprogress",
                 "com_github_grpc_ecosystem_go_grpc_middleware_v2": "github.com/grpc-ecosystem/go-grpc-middleware/v2",
                 "com_github_honeycombio_honeycomb_opentelemetry_go": "github.com/honeycombio/honeycomb-opentelemetry-go",
@@ -14633,6 +14668,7 @@
                 "com_github_stretchr_testify": "github.com/stretchr/testify",
                 "com_github_whilp_git_urls": "github.com/whilp/git-urls",
                 "com_github_zenazn_goji": "github.com/zenazn/goji",
+                "tech_einride_go_aip": "go.einride.tech/aip",
                 "io_opentelemetry_go_contrib_instrumentation_google_golang_org_grpc_otelgrpc": "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc",
                 "org_golang_x_tools": "golang.org/x/tools",
                 "org_golang_google_genproto_googleapis_api": "google.golang.org/genproto/googleapis/api",
@@ -14748,6 +14784,7 @@
             "com_github_google_cel_go",
             "com_github_google_go_cmp",
             "com_github_google_go_github_v59",
+            "com_github_google_uuid",
             "com_github_gosuri_uiprogress",
             "com_github_grpc_ecosystem_go_grpc_middleware_v2",
             "com_github_honeycombio_honeycomb_opentelemetry_go",
@@ -14763,6 +14800,7 @@
             "com_github_stretchr_testify",
             "com_github_whilp_git_urls",
             "com_github_zenazn_goji",
+            "tech_einride_go_aip",
             "io_opentelemetry_go_contrib_instrumentation_google_golang_org_grpc_otelgrpc",
             "org_golang_x_tools",
             "org_golang_google_genproto_googleapis_api",
