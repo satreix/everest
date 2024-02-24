@@ -13279,9 +13279,9 @@
       "general": {
         "bzlTransitiveDigest": "zP01muRk4s4xWGK3gNPXOyDMQkOPsIhu99akeKWFFQ0=",
         "accumulatedFileDigests": {
-          "@@//:go.mod": "16308d5c134945bbcabd64e53c2657c1d1884324ae7c2f9c9e5e04aba1525109",
+          "@@//:go.mod": "23bdd7e481547c233efe0e9b5b03810755aae173a0233c55ef24c5c4c08f4de7",
           "@@rules_go~0.46.0//:go.sum": "d56fdb19b21a5f12bcf625c49432371ac39c2def0f564098fbda107f7c080f40",
-          "@@//:go.sum": "07b5737adf72f4dd2272a1d592b9ba37304def1f27fbd31f48f5e87169b29641",
+          "@@//:go.sum": "e5f8696a475503181998132859d396462c07dac610230b61e8067f2bac094e88",
           "@@gazelle~0.35.0//:go.mod": "48dc6e771c3028ee1c18b9ffc81e596fd5f6d7e0016c5ef280e30f2821f60473",
           "@@rules_go~0.46.0//:go.mod": "de22304b720f7f61350ec1c9739de6c0a1b1103fd22bfeb6e92c6c843ddc6d6e",
           "@@gazelle~0.35.0//:go.sum": "7c4460e8ecb5dd8691a51d4fa2e9e4751108b933636497ce46db499fc2e7a88d"
@@ -14329,9 +14329,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:kLAiWrZs7YeDM6MumDe7m3y4aM6wacLzM1Y/wiLP9XY=",
+              "sum": "h1:HQKZ/fa1bXkX1oFOvSjmZEUL8wLSaZTjCcLAlmZRtdk=",
               "replace": "",
-              "version": "v1.61.1"
+              "version": "v1.62.0"
             }
           },
           "org_golang_google_genproto_googleapis_rpc": {
