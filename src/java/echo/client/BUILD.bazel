@@ -4,12 +4,12 @@ java_library(
     name = "client_lib",
     srcs = ["Client.java"],
     runtime_deps = [
-        "@io_grpc_grpc_java//netty",
+        "@grpc-java//netty",
     ],
     deps = [
         "//src/proto/helloworld:helloworld_java_grpc",
         "//src/proto/helloworld:helloworld_java_proto",
-        "@io_grpc_grpc_java//api",
+        "@grpc-java//api",
     ],
 )
 
