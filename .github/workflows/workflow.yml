@@ -30,9 +30,26 @@ jobs:
           sudo apt-get clean
         if: ${{ matrix.os == 'ubuntu-latest' }}
 
+      # This is required by recent rules_jvm_external versions.
+      # By default, ubuntu-latest is executed with JDK 8.
+      - name: "[Java] Install Java"
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
       # Ruby rules use host install still: https://github.com/bazelruby/rules_ruby/issues/112
       - name: "[Ruby] Install Ruby"
         uses: ruby/setup-ruby@v1.176.0
+
+      - name: Versions
+        run: |
+          echo "--> bazel"
+          bazel version
+          echo "--> java"
+          java --version
+          echo "--> ruby"
+          ruby --version
 
       - name: Copy .bazelrc
         run: cp tools/ci/bazel.rc $HOME/.bazelrc

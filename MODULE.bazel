@@ -4,11 +4,7 @@ module(
 
 bazel_dep(name = "aspect_rules_js", version = "1.40.1")
 
-npm = use_extension(
-    "@aspect_rules_js//npm:extensions.bzl",
-    "npm",
-    dev_dependency = True,
-)
+npm = use_extension("@aspect_rules_js//npm:extensions.bzl", "npm", dev_dependency = True)
 npm.npm_translate_lock(
     name = "npm",
     npmrc = "//:.npmrc",
@@ -19,11 +15,7 @@ use_repo(npm, "npm")
 
 bazel_dep(name = "aspect_rules_ts", version = "2.2.0")
 
-rules_ts_ext = use_extension(
-    "@aspect_rules_ts//ts:extensions.bzl",
-    "ext",
-    dev_dependency = True,
-)
+rules_ts_ext = use_extension("@aspect_rules_ts//ts:extensions.bzl", "ext", dev_dependency = True)
 rules_ts_ext.deps()
 use_repo(rules_ts_ext, "npm_typescript")
 
@@ -138,12 +130,12 @@ maven.install(
         "org.junit.vintage:junit-vintage-engine:" + JUNIT_VERSION,
     ],
     fail_if_repin_required = True,
+    lock_file = "//third_party/java:maven_install.json",
     repositories = [
         "https://jcenter.bintray.com/",
         "https://maven.google.com",
         "https://repo1.maven.org/maven2",
     ],
-    lock_file = "//third_party/java:maven_install.json",
 )
 use_repo(maven, "maven", "unpinned_maven")
 
