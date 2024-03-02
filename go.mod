@@ -14,7 +14,7 @@ require (
 	github.com/gosuri/uiprogress v0.0.1
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.0.1
 	github.com/honeycombio/honeycomb-opentelemetry-go v0.9.0
-	github.com/honeycombio/otel-config-go v1.13.1
+	github.com/honeycombio/otel-config-go v1.14.0
 	github.com/keybase/go-keychain v0.0.0-20231219164618-57a3676c3af6
 	github.com/mndrix/tap-go v0.0.0-20171203230836-629fa407e90b
 	github.com/mvdan/sh v2.6.4+incompatible
