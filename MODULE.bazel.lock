@@ -13268,9 +13268,9 @@
       "general": {
         "bzlTransitiveDigest": "zP01muRk4s4xWGK3gNPXOyDMQkOPsIhu99akeKWFFQ0=",
         "accumulatedFileDigests": {
-          "@@//:go.mod": "3ab763189f1d1755b7b5c9d3406c20264e9ddaf2edff9f5463f609145e26de38",
+          "@@//:go.mod": "7a22ba569669ee713063c020ba737101a25f6a2ada92d0460b0f37541d7c85f2",
           "@@rules_go~0.46.0//:go.sum": "d56fdb19b21a5f12bcf625c49432371ac39c2def0f564098fbda107f7c080f40",
-          "@@//:go.sum": "9074acf216ffe7bbca2d28193948a71d5646492fe118716a18050146e0fabef2",
+          "@@//:go.sum": "ac27c3180922766c1d4fca1e451cd90b4640378212a2a6c7f250e91af59652ef",
           "@@gazelle~0.35.0//:go.mod": "48dc6e771c3028ee1c18b9ffc81e596fd5f6d7e0016c5ef280e30f2821f60473",
           "@@rules_go~0.46.0//:go.mod": "de22304b720f7f61350ec1c9739de6c0a1b1103fd22bfeb6e92c6c843ddc6d6e",
           "@@gazelle~0.35.0//:go.sum": "7c4460e8ecb5dd8691a51d4fa2e9e4751108b933636497ce46db499fc2e7a88d"
@@ -13387,6 +13387,22 @@
               "sum": "h1:7WxZu8z/HUX/yMr7FPya17/K+27n44WHenldrZW1ZAk=",
               "replace": "",
               "version": "v0.0.0-20211204123659-c803dfd5c44c"
+            }
+          },
+          "com_google_cloud_go_bigquery": {
+            "bzlFile": "@@gazelle~0.35.0//internal:go_repository.bzl",
+            "ruleClassName": "go_repository",
+            "attributes": {
+              "name": "gazelle~0.35.0~go_deps~com_google_cloud_go_bigquery",
+              "importpath": "cloud.google.com/go/bigquery",
+              "build_directives": [],
+              "build_file_generation": "auto",
+              "build_extra_args": [],
+              "patches": [],
+              "patch_args": [],
+              "sum": "h1:CpT+/njKuKT3CEmswm6IbhNu9u35zt5dO4yPDLW+nG4=",
+              "replace": "",
+              "version": "v1.59.1"
             }
           },
           "org_golang_x_exp": {
@@ -13624,9 +13640,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:9g7erC9qu44ks7UK4gDNlnk4kOxZG707xKm4jVniy6o=",
+              "sum": "h1:RFiFrvy37/mpSpdySBDrUdipW/dHwsRwh3J3+A9VgT4=",
               "replace": "",
-              "version": "v0.0.0-20240221002015-b0ce06bbee7c"
+              "version": "v0.0.0-20240318140521-94a12d6c2237"
             }
           },
           "org_golang_google_protobuf": {
@@ -14400,9 +14416,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:HQKZ/fa1bXkX1oFOvSjmZEUL8wLSaZTjCcLAlmZRtdk=",
+              "sum": "h1:B4n+nfKzOICUXMgyrNd19h/I9oH0L1pizfk1d4zSgTk=",
               "replace": "",
-              "version": "v1.62.0"
+              "version": "v1.62.1"
             }
           },
           "io_gorm_driver_sqlite": {
@@ -14421,22 +14437,6 @@
               "version": "v1.5.5"
             }
           },
-          "com_github_apache_arrow_go_v14": {
-            "bzlFile": "@@gazelle~0.35.0//internal:go_repository.bzl",
-            "ruleClassName": "go_repository",
-            "attributes": {
-              "name": "gazelle~0.35.0~go_deps~com_github_apache_arrow_go_v14",
-              "importpath": "github.com/apache/arrow/go/v14",
-              "build_directives": [],
-              "build_file_generation": "auto",
-              "build_extra_args": [],
-              "patches": [],
-              "patch_args": [],
-              "sum": "h1:N8OkaJEOfI3mEZt07BIkvo4sC6XDbL+48MBPWO5IONw=",
-              "replace": "",
-              "version": "v14.0.2"
-            }
-          },
           "org_golang_google_genproto_googleapis_rpc": {
             "bzlFile": "@@gazelle~0.35.0//internal:go_repository.bzl",
             "ruleClassName": "go_repository",
@@ -14448,9 +14448,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:hZB7eLIaYlW9qXRfCq/qDaPdbeY3757uARz5Vvfv+cY=",
+              "sum": "h1:lfpJ/2rWPa/kJgxyyXM8PrNnfCzcmxJ265mADgwmvLI=",
               "replace": "",
-              "version": "v0.0.0-20240213162025-012b6fc9bca9"
+              "version": "v0.0.0-20240314234333-6e1732d8331c"
             }
           },
           "com_github_google_go_cmp": {
@@ -14778,7 +14778,7 @@
                 "org_golang_google_protobuf": "google.golang.org/protobuf",
                 "io_gorm_driver_sqlite": "gorm.io/driver/sqlite",
                 "io_gorm_gorm": "gorm.io/gorm",
-                "com_github_apache_arrow_go_v14": "github.com/apache/arrow/go/v14",
+                "com_google_cloud_go_bigquery": "cloud.google.com/go/bigquery",
                 "com_github_beorn7_perks": "github.com/beorn7/perks",
                 "com_github_cenkalti_backoff_v4": "github.com/cenkalti/backoff/v4",
                 "com_github_cespare_xxhash_v2": "github.com/cespare/xxhash/v2",
