@@ -13268,9 +13268,9 @@
       "general": {
         "bzlTransitiveDigest": "zP01muRk4s4xWGK3gNPXOyDMQkOPsIhu99akeKWFFQ0=",
         "accumulatedFileDigests": {
-          "@@//:go.mod": "a0d72efe8257e0a7bfeb71acb74c4b9d52bc5411676eabd4b6b1ebce6ab15f9b",
+          "@@//:go.mod": "31b668eeef2fcdb6ab1b115d1dc83944c311692cfbdaf71c54e8bdf65f785394",
           "@@rules_go~0.46.0//:go.sum": "d56fdb19b21a5f12bcf625c49432371ac39c2def0f564098fbda107f7c080f40",
-          "@@//:go.sum": "f69fd6c81dd6d86e642554a5a7251c0933b88dc71ea028d54bfa521f6dcf1262",
+          "@@//:go.sum": "06b2a041f820ffc848b881145f7a8547aceb50e191ac1437774d1578c4aa21f3",
           "@@gazelle~0.35.0//:go.mod": "48dc6e771c3028ee1c18b9ffc81e596fd5f6d7e0016c5ef280e30f2821f60473",
           "@@rules_go~0.46.0//:go.mod": "de22304b720f7f61350ec1c9739de6c0a1b1103fd22bfeb6e92c6c843ddc6d6e",
           "@@gazelle~0.35.0//:go.sum": "7c4460e8ecb5dd8691a51d4fa2e9e4751108b933636497ce46db499fc2e7a88d"
@@ -14576,9 +14576,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:HzFfmkOzH5Q8L8G+kSJKUx5dtG87sewO+FoDDqP5Tbk=",
+              "sum": "h1:ygXvpU1AoN1MhdzckN+PyD9QJOSD4x7kmXYlnfbA6JU=",
               "replace": "",
-              "version": "v1.18.0"
+              "version": "v1.19.0"
             }
           },
           "io_opentelemetry_go_otel_exporters_otlp_otlptrace_otlptracehttp": {
