@@ -13268,9 +13268,9 @@
       "general": {
         "bzlTransitiveDigest": "zP01muRk4s4xWGK3gNPXOyDMQkOPsIhu99akeKWFFQ0=",
         "accumulatedFileDigests": {
-          "@@//:go.mod": "7a22ba569669ee713063c020ba737101a25f6a2ada92d0460b0f37541d7c85f2",
+          "@@//:go.mod": "a0d72efe8257e0a7bfeb71acb74c4b9d52bc5411676eabd4b6b1ebce6ab15f9b",
           "@@rules_go~0.46.0//:go.sum": "d56fdb19b21a5f12bcf625c49432371ac39c2def0f564098fbda107f7c080f40",
-          "@@//:go.sum": "ac27c3180922766c1d4fca1e451cd90b4640378212a2a6c7f250e91af59652ef",
+          "@@//:go.sum": "f69fd6c81dd6d86e642554a5a7251c0933b88dc71ea028d54bfa521f6dcf1262",
           "@@gazelle~0.35.0//:go.mod": "48dc6e771c3028ee1c18b9ffc81e596fd5f6d7e0016c5ef280e30f2821f60473",
           "@@rules_go~0.46.0//:go.mod": "de22304b720f7f61350ec1c9739de6c0a1b1103fd22bfeb6e92c6c843ddc6d6e",
           "@@gazelle~0.35.0//:go.sum": "7c4460e8ecb5dd8691a51d4fa2e9e4751108b933636497ce46db499fc2e7a88d"
@@ -13368,9 +13368,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:T0TX0tmXU8a3CbNXzEKGeU5mIVOdf0oykP+u2lIVU/I=",
+              "sum": "h1:2Di21piLrCqJ3U3eXGCTPHE9R8Nh+0uglSnOyxikMeI=",
               "replace": "",
-              "version": "v1.0.0"
+              "version": "v1.1.0"
             }
           },
           "com_github_cockscomb_cel2sql": {
@@ -13818,9 +13818,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:JYERH81ChVB4vH3Jmo8ifAkeKhVRD85uaaLLpm4MzY0=",
+              "sum": "h1:Na1ERKYXKrnviORrFF3csdcIJhMVHu1kKUZwhhWMLjs=",
               "replace": "",
-              "version": "v1.13.1"
+              "version": "v1.14.0"
             }
           },
           "com_github_mndrix_tap_go": {
@@ -14156,9 +14156,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:6UKoz5ujsI55KNpsJH3UwCq3T8kKbZwNZBNPuTTje8U=",
+              "sum": "h1:Wqo399gCIufwto+VfwCSvsnfGpF/w5E9CNxSwbpD6No=",
               "replace": "",
-              "version": "v2.18.1"
+              "version": "v2.19.0"
             }
           },
           "com_github_mattn_go_isatty": {
