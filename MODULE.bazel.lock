@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "810a00559901b4e81ac8bb8ce8213973d00383cd5ce3296292091f4865da852b",
+  "moduleFileHash": "748fccffd7dd20a0ad146e820de404bf8e7ed520aba49147287d0138ead4bbfe",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -198,6 +198,21 @@
                 "line": 37,
                 "column": 25
               }
+            },
+            {
+              "tagName": "gazelle_override",
+              "attributeValues": {
+                "directives": [
+                  "gazelle:proto disable"
+                ],
+                "path": "google.golang.org/protobuf"
+              },
+              "devDependency": false,
+              "location": {
+                "file": "@@//:MODULE.bazel",
+                "line": 43,
+                "column": 25
+              }
             }
           ],
           "hasDevUseExtension": false,
@@ -209,7 +224,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 79,
+            "line": 87,
             "column": 35
           },
           "imports": {},
@@ -223,7 +238,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 80,
+                "line": 88,
                 "column": 28
               }
             }
@@ -237,7 +252,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 85,
+            "line": 93,
             "column": 31
           },
           "imports": {
@@ -253,7 +268,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 87,
+                "line": 95,
                 "column": 24
               }
             },
@@ -265,7 +280,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 93,
+                "line": 101,
                 "column": 27
               }
             },
@@ -277,7 +292,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 93,
+                "line": 101,
                 "column": 27
               }
             },
@@ -289,7 +304,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 93,
+                "line": 101,
                 "column": 27
               }
             }
@@ -303,7 +318,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 108,
+            "line": 116,
             "column": 21
           },
           "imports": {},
@@ -318,7 +333,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 109,
+                "line": 117,
                 "column": 15
               }
             }
@@ -332,7 +347,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 116,
+            "line": 124,
             "column": 20
           },
           "imports": {
@@ -354,7 +369,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 117,
+                "line": 125,
                 "column": 9
               }
             }
@@ -368,7 +383,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 135,
+            "line": 143,
             "column": 23
           },
           "imports": {},
@@ -382,7 +397,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 136,
+                "line": 144,
                 "column": 17
               }
             }
@@ -396,7 +411,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 138,
+            "line": 146,
             "column": 20
           },
           "imports": {
@@ -414,7 +429,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 139,
+                "line": 147,
                 "column": 10
               }
             }
@@ -13253,9 +13268,9 @@
       "general": {
         "bzlTransitiveDigest": "zP01muRk4s4xWGK3gNPXOyDMQkOPsIhu99akeKWFFQ0=",
         "accumulatedFileDigests": {
-          "@@//:go.mod": "2e15ab6284e556ea8c243daac41f7dc73506b74745d6e552591e05f89f25a9ed",
+          "@@//:go.mod": "3ab763189f1d1755b7b5c9d3406c20264e9ddaf2edff9f5463f609145e26de38",
           "@@rules_go~0.46.0//:go.sum": "d56fdb19b21a5f12bcf625c49432371ac39c2def0f564098fbda107f7c080f40",
-          "@@//:go.sum": "7a4f4846739df6e063d5b965e2ff716daebcc0f9cfdee496146cf581ea92497c",
+          "@@//:go.sum": "9074acf216ffe7bbca2d28193948a71d5646492fe118716a18050146e0fabef2",
           "@@gazelle~0.35.0//:go.mod": "48dc6e771c3028ee1c18b9ffc81e596fd5f6d7e0016c5ef280e30f2821f60473",
           "@@rules_go~0.46.0//:go.mod": "de22304b720f7f61350ec1c9739de6c0a1b1103fd22bfeb6e92c6c843ddc6d6e",
           "@@gazelle~0.35.0//:go.sum": "7c4460e8ecb5dd8691a51d4fa2e9e4751108b933636497ce46db499fc2e7a88d"
@@ -13620,14 +13635,16 @@
             "attributes": {
               "name": "gazelle~0.35.0~go_deps~org_golang_google_protobuf",
               "importpath": "google.golang.org/protobuf",
-              "build_directives": [],
+              "build_directives": [
+                "gazelle:proto disable"
+              ],
               "build_file_generation": "auto",
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:pPC6BG5ex8PDFnkbrGU3EixyhKcQ2aDuBS36lqK/C7I=",
+              "sum": "h1:uNO2rsAINq/JlFpSdYEKIZ0uKD/R9cpdv0T+yoGwGmI=",
               "replace": "",
-              "version": "v1.32.0"
+              "version": "v1.33.0"
             }
           },
           "com_github_go_ole_go_ole": {
