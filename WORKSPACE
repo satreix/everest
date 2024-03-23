@@ -9,9 +9,9 @@ http_archive(
         # A fix for https://github.com/bazelruby/rules_ruby/issues/79
         "//third_party:bazelruby_rules_ruby/0001-fix-rspec.patch",
     ],
-    sha256 = "b82cc58d032eceb2f202d788ff9742bd7faccd366c461f0558079420aaea7f16",
-    strip_prefix = "rules_ruby-9b3af8d89ddee27b51ca25908895a967229eed62",
-    url = "https://github.com/bazelruby/rules_ruby/archive/9b3af8d89ddee27b51ca25908895a967229eed62.tar.gz",
+    sha256 = "33217f27c7cc44355dc82bbe172d0ace09c6a73da387bbbcd66cff013d35e498",
+    strip_prefix = "rules_ruby-8a03f6c54f1bb3ecbbb82c8e2fdbf40e049a8115",
+    url = "https://github.com/bazelruby/rules_ruby/archive/8a03f6c54f1bb3ecbbb82c8e2fdbf40e049a8115.tar.gz",
 )
 
 http_archive(
