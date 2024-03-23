@@ -4,7 +4,7 @@ go 1.22.1
 
 require (
 	github.com/antlr4-go/antlr/v4 v4.13.0
-	github.com/aristanetworks/goarista v0.0.0-20240213180907-919212b6ca63
+	github.com/aristanetworks/goarista 5ccdcd6ef354
 	github.com/bazelbuild/rules_go v0.46.0
 	github.com/cockscomb/cel2sql v0.0.0-20211204123659-c803dfd5c44c
 	github.com/google/cel-go v0.20.1
