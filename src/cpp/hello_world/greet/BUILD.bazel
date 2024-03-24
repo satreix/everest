@@ -5,7 +5,7 @@ cc_library(
     srcs = ["greet.cc"],
     hdrs = ["greet.h"],
     visibility = ["//src/cpp/hello_world:__pkg__"],
-    deps = ["@fmtlib//:fmt"],
+    deps = ["@fmt"],
 )
 
 cc_test(

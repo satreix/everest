@@ -45,18 +45,6 @@ http_archive(
 )
 
 http_archive(
-    name = "fmtlib",
-    patch_cmds = [
-        "mv support/bazel/.bazelversion .bazelversion",
-        "mv support/bazel/BUILD.bazel BUILD.bazel",
-        "mv support/bazel/WORKSPACE.bazel WORKSPACE.bazel",
-    ],
-    sha256 = "1250e4cc58bf06ee631567523f48848dc4596133e163f02615c97f78bab6c811",
-    strip_prefix = "fmt-10.2.1",
-    url = "https://github.com/fmtlib/fmt/archive/refs/tags/10.2.1.tar.gz",
-)
-
-http_archive(
     name = "googleapis",
     sha256 = "01e1f66f14305dfddbe85b2c9773ad64c260cbcad35e0fbc5b7599cb6b9a5885",
     strip_prefix = "googleapis-1af32e6094f4d65fb53a01394ba030c495ece1bc",
