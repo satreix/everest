@@ -13016,10 +13016,10 @@
       "general": {
         "bzlTransitiveDigest": "D1+rhhbwX4ufoTmeUVxDpPg+Sknv3QzVXZnyK2zOjj4=",
         "recordedFileInputs": {
-          "@@//go.mod": "552918874c92f542fd11724f4f9631f0b6b3a8c05dcd8a8163af834a6318e30f",
+          "@@//go.mod": "5a9409a5347902434955e3a5d3749b683afbdc7c8707e6a2bd6120af4123bfc3",
           "@@rules_go~//go.mod": "de22304b720f7f61350ec1c9739de6c0a1b1103fd22bfeb6e92c6c843ddc6d6e",
           "@@gazelle~//go.sum": "7c4460e8ecb5dd8691a51d4fa2e9e4751108b933636497ce46db499fc2e7a88d",
-          "@@//go.sum": "1ce58cdc141496920159f69de785b12c5db768e2a76ce685d1758044bc9ff9ac",
+          "@@//go.sum": "d2b99e58fdef962ea3c093c34aff207597ee2b7af63002d80e12645d6d58b24e",
           "@@rules_go~//go.sum": "d56fdb19b21a5f12bcf625c49432371ac39c2def0f564098fbda107f7c080f40",
           "@@gazelle~//go.mod": "48dc6e771c3028ee1c18b9ffc81e596fd5f6d7e0016c5ef280e30f2821f60473"
         },
@@ -13835,9 +13835,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:h4n6DOCppEMpWERzllyNkntl7JrDyxoE543KWS6BLpc=",
+              "sum": "h1:nDx9r8S3L4pE61eDdt8igGj8rf5kjYR3ILxWIpWNi84=",
               "replace": "",
-              "version": "v0.20.0"
+              "version": "v0.20.1"
             }
           },
           "com_github_grpc_ecosystem_grpc_gateway_v2": {
