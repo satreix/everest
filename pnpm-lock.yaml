@@ -11,8 +11,8 @@ dependencies:
 
 devDependencies:
   typescript:
-    specifier: 5.3.3
-    version: 5.3.3
+    specifier: 5.4.4
+    version: 5.4.4
 
 packages:
 
@@ -21,8 +21,8 @@ packages:
     engines: {node: '>=18'}
     dev: false
 
-  /typescript@5.3.3:
-    resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
+  /typescript@5.4.4:
+    resolution: {integrity: sha512-dGE2Vv8cpVvw28v8HCPqyb08EzbBURxDpuhJvTrusShUfGnhHBafDsLdS1EhhxyL6BJQE+2cT3dDPAv+MQ6oLw==}
     engines: {node: '>=14.17'}
     hasBin: true
     dev: true
