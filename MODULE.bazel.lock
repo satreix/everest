@@ -13258,10 +13258,10 @@
       "general": {
         "bzlTransitiveDigest": "D1+rhhbwX4ufoTmeUVxDpPg+Sknv3QzVXZnyK2zOjj4=",
         "recordedFileInputs": {
-          "@@//go.mod": "5dda9c1d040828e9c4e0760837a2481d513e035c435f96e2524f384e5d4c44bc",
+          "@@//go.mod": "a07d2b40c0f651c996077a22c61a7e15fa76c15dde1060d363384e8790eae150",
           "@@rules_go~//go.mod": "de22304b720f7f61350ec1c9739de6c0a1b1103fd22bfeb6e92c6c843ddc6d6e",
           "@@gazelle~//go.sum": "7c4460e8ecb5dd8691a51d4fa2e9e4751108b933636497ce46db499fc2e7a88d",
-          "@@//go.sum": "92373acf5c3cb2d539ccdd58080a90418053bd5ca4b61d1a61d8ad788b36e8df",
+          "@@//go.sum": "4fb6fbb74c7b23435c5bf4214a3e6952454e04b342b4e4e4ecc9910f8c542654",
           "@@rules_go~//go.sum": "d56fdb19b21a5f12bcf625c49432371ac39c2def0f564098fbda107f7c080f40",
           "@@gazelle~//go.mod": "48dc6e771c3028ee1c18b9ffc81e596fd5f6d7e0016c5ef280e30f2821f60473"
         },
@@ -13608,9 +13608,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:RFiFrvy37/mpSpdySBDrUdipW/dHwsRwh3J3+A9VgT4=",
+              "sum": "h1:b6F6WIV4xHHD0FA4oIyzU6mHWg2WI2X1RBehwa5QN38=",
               "replace": "",
-              "version": "v0.0.0-20240318140521-94a12d6c2237"
+              "version": "v0.0.0-20240401170217-c3f982113cda"
             }
           },
           "org_golang_google_protobuf": {
@@ -14366,9 +14366,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:lfpJ/2rWPa/kJgxyyXM8PrNnfCzcmxJ265mADgwmvLI=",
+              "sum": "h1:RBgMaUMP+6soRkik4VoN8ojR2nex2TqZwjSSogic+eo=",
               "replace": "",
-              "version": "v0.0.0-20240314234333-6e1732d8331c"
+              "version": "v0.0.0-20240325203815-454cdb8f5daa"
             }
           },
           "com_github_google_go_cmp": {
