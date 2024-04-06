@@ -3438,7 +3438,7 @@
         "recordedFileInputs": {
           "@@aspect_bazel_lib~~toolchains~yq_darwin_amd64//yq": "0fe604d3332cd1a0667b22b41bf404052da451cab35b502f17cb5023d2b8a98d",
           "@@rules_haskell~//haskell/asterius/npm/pnpm-lock.yaml": "f8b2046e14435f36d8dca982e5ffe74e60dc20bd252658ac23c51468cae7bd89",
-          "@@//pnpm-lock.yaml": "16e6a8eba866d5f705c972e1b342e3a94f8d47093a3a84935cdea8c0f99c8ad7",
+          "@@//pnpm-lock.yaml": "832f19ddee45ba81572e0e9b0dc41d50e635859b4308bd68e981005cb3c6c3a2",
           "@@//.npmrc": "d94d573d5aa644cdd09ff46d9b9c5e9b59185533420308c9a55ad5dc3176f22b"
         },
         "recordedDirentsInputs": {},
@@ -3514,6 +3514,35 @@
                 "//visibility:public"
               ],
               "replace_package": ""
+            }
+          },
+          "npm__typescript__5.4.4": {
+            "bzlFile": "@@aspect_rules_js~//npm/private:npm_import.bzl",
+            "ruleClassName": "npm_import_rule",
+            "attributes": {
+              "package": "typescript",
+              "version": "5.4.4",
+              "root_package": "",
+              "link_workspace": "",
+              "link_packages": {
+                "": [
+                  "typescript"
+                ]
+              },
+              "integrity": "sha512-dGE2Vv8cpVvw28v8HCPqyb08EzbBURxDpuhJvTrusShUfGnhHBafDsLdS1EhhxyL6BJQE+2cT3dDPAv+MQ6oLw==",
+              "url": "https://registry.npmjs.org/typescript/-/typescript-5.4.4.tgz",
+              "commit": "",
+              "patch_args": [],
+              "patches": [],
+              "custom_postinstall": "",
+              "npm_auth": "",
+              "npm_auth_basic": "",
+              "npm_auth_username": "",
+              "npm_auth_password": "",
+              "lifecycle_hooks": [],
+              "extra_build_content": "",
+              "generate_bzl_library_targets": false,
+              "extract_full_archive": false
             }
           },
           "rules_haskell_npm__mimic-fn__2.1.0": {
@@ -4037,36 +4066,6 @@
               "replace_package": ""
             }
           },
-          "npm__typescript__5.3.3__links": {
-            "bzlFile": "@@aspect_rules_js~//npm/private:npm_import.bzl",
-            "ruleClassName": "npm_import_links",
-            "attributes": {
-              "package": "typescript",
-              "version": "5.3.3",
-              "dev": true,
-              "root_package": "",
-              "link_packages": {
-                "": [
-                  "typescript"
-                ]
-              },
-              "deps": {},
-              "transitive_closure": {
-                "typescript": [
-                  "5.3.3"
-                ]
-              },
-              "lifecycle_build_target": false,
-              "lifecycle_hooks_env": [],
-              "lifecycle_hooks_execution_requirements": [],
-              "lifecycle_hooks_use_default_shell_env": false,
-              "bins": {},
-              "package_visibility": [
-                "//visibility:public"
-              ],
-              "replace_package": ""
-            }
-          },
           "rules_haskell_npm__is-plain-object__2.0.4__links": {
             "bzlFile": "@@aspect_rules_js~//npm/private:npm_import.bzl",
             "ruleClassName": "npm_import_links",
@@ -4396,35 +4395,6 @@
               "link_packages": {},
               "integrity": "sha512-rrBujw+dJu32gYB7/Lup6UhdkPx9S9SnobZzRVL7VcBH9Bt9bCBLEuX/YXOOtBsOZ4NQrRykKhffRWHvigQvOA==",
               "url": "https://registry.npmjs.org/@webassemblyjs/wasm-parser/-/wasm-parser-1.11.1.tgz",
-              "commit": "",
-              "patch_args": [],
-              "patches": [],
-              "custom_postinstall": "",
-              "npm_auth": "",
-              "npm_auth_basic": "",
-              "npm_auth_username": "",
-              "npm_auth_password": "",
-              "lifecycle_hooks": [],
-              "extra_build_content": "",
-              "generate_bzl_library_targets": false,
-              "extract_full_archive": false
-            }
-          },
-          "npm__typescript__5.3.3": {
-            "bzlFile": "@@aspect_rules_js~//npm/private:npm_import.bzl",
-            "ruleClassName": "npm_import_rule",
-            "attributes": {
-              "package": "typescript",
-              "version": "5.3.3",
-              "root_package": "",
-              "link_workspace": "",
-              "link_packages": {
-                "": [
-                  "typescript"
-                ]
-              },
-              "integrity": "sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==",
-              "url": "https://registry.npmjs.org/typescript/-/typescript-5.3.3.tgz",
               "commit": "",
               "patch_args": [],
               "patches": [],
@@ -4892,6 +4862,36 @@
                 ],
                 "@types/json-schema": [
                   "7.0.9"
+                ]
+              },
+              "lifecycle_build_target": false,
+              "lifecycle_hooks_env": [],
+              "lifecycle_hooks_execution_requirements": [],
+              "lifecycle_hooks_use_default_shell_env": false,
+              "bins": {},
+              "package_visibility": [
+                "//visibility:public"
+              ],
+              "replace_package": ""
+            }
+          },
+          "npm__typescript__5.4.4__links": {
+            "bzlFile": "@@aspect_rules_js~//npm/private:npm_import.bzl",
+            "ruleClassName": "npm_import_links",
+            "attributes": {
+              "package": "typescript",
+              "version": "5.4.4",
+              "dev": true,
+              "root_package": "",
+              "link_packages": {
+                "": [
+                  "typescript"
+                ]
+              },
+              "deps": {},
+              "transitive_closure": {
+                "typescript": [
+                  "5.4.4"
                 ]
               },
               "lifecycle_build_target": false,
