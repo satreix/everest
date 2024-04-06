@@ -1,5 +1,5 @@
 {
-  "checksum": "4df563274697b2a57bc8ce9cc4c44c74b2ab635e0001c804a6fde9c1dd878850",
+  "checksum": "d61db4d5eaad397cf74aa625c70de18b1bb8f210bf633c54a9afb82f7493ee66",
   "crates": {
     "android_system_properties 0.1.5": {
       "name": "android_system_properties",
@@ -1031,14 +1031,14 @@
       ],
       "license_file": "LICENSE.txt"
     },
-    "clap 4.5.1": {
+    "clap 4.5.4": {
       "name": "clap",
-      "version": "4.5.1",
+      "version": "4.5.4",
       "package_url": "https://github.com/clap-rs/clap",
       "repository": {
         "Http": {
-          "url": "https://static.crates.io/crates/clap/4.5.1/download",
-          "sha256": "c918d541ef2913577a0f9566e9ce27cb35b6df072075769e0b26cb5a554520da"
+          "url": "https://static.crates.io/crates/clap/4.5.4/download",
+          "sha256": "90bc066a67923782aa8515dbaea16946c5bcc5addbd668bb80af688e53e548a0"
         }
       },
       "targets": [
@@ -1076,7 +1076,7 @@
         "deps": {
           "common": [
             {
-              "id": "clap_builder 4.5.1",
+              "id": "clap_builder 4.5.2",
               "target": "clap_builder"
             }
           ],
@@ -1086,13 +1086,13 @@
         "proc_macro_deps": {
           "common": [
             {
-              "id": "clap_derive 4.5.0",
+              "id": "clap_derive 4.5.4",
               "target": "clap_derive"
             }
           ],
           "selects": {}
         },
-        "version": "4.5.1"
+        "version": "4.5.4"
       },
       "license": "MIT OR Apache-2.0",
       "license_ids": [
@@ -1101,14 +1101,14 @@
       ],
       "license_file": "LICENSE-APACHE"
     },
-    "clap_builder 4.5.1": {
+    "clap_builder 4.5.2": {
       "name": "clap_builder",
-      "version": "4.5.1",
+      "version": "4.5.2",
       "package_url": "https://github.com/clap-rs/clap",
       "repository": {
         "Http": {
-          "url": "https://static.crates.io/crates/clap_builder/4.5.1/download",
-          "sha256": "9f3e7391dad68afb0c2ede1bf619f579a3dc9c2ec67f089baa397123a2f3d1eb"
+          "url": "https://static.crates.io/crates/clap_builder/4.5.2/download",
+          "sha256": "ae129e2e766ae0ec03484e609954119f123cc1fe650337e155d03b022f24f7b4"
         }
       },
       "targets": [
@@ -1163,7 +1163,7 @@
           "selects": {}
         },
         "edition": "2021",
-        "version": "4.5.1"
+        "version": "4.5.2"
       },
       "license": "MIT OR Apache-2.0",
       "license_ids": [
@@ -1172,14 +1172,14 @@
       ],
       "license_file": "LICENSE-APACHE"
     },
-    "clap_derive 4.5.0": {
+    "clap_derive 4.5.4": {
       "name": "clap_derive",
-      "version": "4.5.0",
+      "version": "4.5.4",
       "package_url": "https://github.com/clap-rs/clap/tree/master/clap_derive",
       "repository": {
         "Http": {
-          "url": "https://static.crates.io/crates/clap_derive/4.5.0/download",
-          "sha256": "307bc0538d5f0f83b8248db3087aa92fe504e4691294d0c96c0eabc33f47ba47"
+          "url": "https://static.crates.io/crates/clap_derive/4.5.4/download",
+          "sha256": "528131438037fd55894f62d6e9f068b8f45ac57ffa77517819645d10aed04f64"
         }
       },
       "targets": [
@@ -1210,7 +1210,7 @@
         "deps": {
           "common": [
             {
-              "id": "heck 0.4.1",
+              "id": "heck 0.5.0",
               "target": "heck"
             },
             {
@@ -1229,7 +1229,7 @@
           "selects": {}
         },
         "edition": "2021",
-        "version": "4.5.0"
+        "version": "4.5.4"
       },
       "license": "MIT OR Apache-2.0",
       "license_ids": [
@@ -2358,6 +2358,45 @@
       ],
       "license_file": "LICENSE-APACHE"
     },
+    "heck 0.5.0": {
+      "name": "heck",
+      "version": "0.5.0",
+      "package_url": "https://github.com/withoutboats/heck",
+      "repository": {
+        "Http": {
+          "url": "https://static.crates.io/crates/heck/0.5.0/download",
+          "sha256": "2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea"
+        }
+      },
+      "targets": [
+        {
+          "Library": {
+            "crate_name": "heck",
+            "crate_root": "src/lib.rs",
+            "srcs": {
+              "allow_empty": false,
+              "include": [
+                "**/*.rs"
+              ]
+            }
+          }
+        }
+      ],
+      "library_target_name": "heck",
+      "common_attrs": {
+        "compile_data_glob": [
+          "**"
+        ],
+        "edition": "2021",
+        "version": "0.5.0"
+      },
+      "license": "MIT OR Apache-2.0",
+      "license_ids": [
+        "Apache-2.0",
+        "MIT"
+      ],
+      "license_file": "LICENSE-APACHE"
+    },
     "hello_world 0.1.0": {
       "name": "hello_world",
       "version": "0.1.0",
@@ -2372,7 +2411,7 @@
         "deps": {
           "common": [
             {
-              "id": "clap 4.5.1",
+              "id": "clap 4.5.4",
               "target": "clap"
             }
           ],
@@ -12364,7 +12403,7 @@
   },
   "direct_deps": [
     "askama 0.12.1",
-    "clap 4.5.1",
+    "clap 4.5.4",
     "iron 0.6.1",
     "iron-slog 0.0.2",
     "pyo3 0.20.3",
