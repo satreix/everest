@@ -1,6 +1,6 @@
 module github.com/satreix/everest
 
-go 1.22.1
+go 1.22.2
 
 require (
 	github.com/antlr4-go/antlr/v4 v4.13.0
