@@ -5798,7 +5798,7 @@
     },
     "@@rules_python~//python/extensions:pip.bzl%pip": {
       "os:osx,arch:x86_64": {
-        "bzlTransitiveDigest": "j8/O4HA/vlrEYh/pBg/1mDdk1ruFOkE/2yqUr3zRT88=",
+        "bzlTransitiveDigest": "Mif6d8Zxesp1dMk0pl39+UKzsqVxS0+vH1EQVgV1vs4=",
         "recordedFileInputs": {
           "@@//third_party/python/requirements_lock.txt": "27f50b560d0afad671bb6038ce434f78fa99f9c41394eb231d0d11ed4f319bbe"
         },
