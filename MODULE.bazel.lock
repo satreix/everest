@@ -5798,9 +5798,9 @@
     },
     "@@rules_python~//python/extensions:pip.bzl%pip": {
       "os:osx,arch:x86_64": {
-        "bzlTransitiveDigest": "j8/O4HA/vlrEYh/pBg/1mDdk1ruFOkE/2yqUr3zRT88=",
+        "bzlTransitiveDigest": "Mif6d8Zxesp1dMk0pl39+UKzsqVxS0+vH1EQVgV1vs4=",
         "recordedFileInputs": {
-          "@@//third_party/python/requirements_lock.txt": "27f50b560d0afad671bb6038ce434f78fa99f9c41394eb231d0d11ed4f319bbe"
+          "@@//third_party/python/requirements_lock.txt": "c33a9b65279cbfd0002e9757c9d5b87f347064dd57b1065d8d7e453f39f4aa1b"
         },
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -5833,7 +5833,7 @@
             "bzlFile": "@@rules_python~//python/pip_install:pip_repository.bzl",
             "ruleClassName": "whl_library",
             "attributes": {
-              "requirement": "jinja2==3.1.3 ; python_version >= \"3.7\"     --hash=sha256:7d6d50dd97d52cbc355597bd845fabfbac3f551e1f99619e39a35ce8c370b5fa     --hash=sha256:ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90",
+              "requirement": "jinja2==3.1.4 ; python_version >= \"3.7\"     --hash=sha256:4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369     --hash=sha256:bc5dd2abb727a5319567b7a813e6a2e7318c39f4f487cfe6c89c6f9c7d25197d",
               "repo": "pip_312",
               "repo_prefix": "pip_312_",
               "whl_patches": {},
@@ -5881,7 +5881,7 @@
             "bzlFile": "@@rules_python~//python/pip_install:pip_repository.bzl",
             "ruleClassName": "whl_library",
             "attributes": {
-              "requirement": "wheel==0.42.0 ; python_version >= \"3.7\"     --hash=sha256:177f9c9b0d45c47873b619f5b650346d632cdc35fb5e4d25058e09c9e581433d     --hash=sha256:c45be39f7882c9d34243236f2d63cbd58039e360f85d0913425fbd7ceea617a8",
+              "requirement": "wheel==0.43.0 ; python_version >= \"3.8\"     --hash=sha256:465ef92c69fa5c5da2d1cf8ac40559a8c940886afcef87dcf14b9470862f1d85     --hash=sha256:55c570405f142630c6b9f72fe09d9b67cf1477fcf543ae5b8dcb1f5b7377da81",
               "repo": "pip_312",
               "repo_prefix": "pip_312_",
               "whl_patches": {},
@@ -5905,7 +5905,7 @@
             "bzlFile": "@@rules_python~//python/pip_install:pip_repository.bzl",
             "ruleClassName": "whl_library",
             "attributes": {
-              "requirement": "filelock==3.13.1 ; python_version >= \"3.8\"     --hash=sha256:521f5f56c50f8426f5e03ad3b281b490a87ef15bc6c526f168290f0c7148d44e     --hash=sha256:57dbda9b35157b05fb3e58ee91448612eb674172fab98ee235ccb0b5bee19a1c",
+              "requirement": "filelock==3.14.0 ; python_version >= \"3.8\"     --hash=sha256:43339835842f110ca7ae60f1e1c160714c5a6afd15a2873419ab185334975c0f     --hash=sha256:6ea72da3be9b8c82afd3edcf99f2fffbb5076335a5ae4d03248bb5b6c3eae78a",
               "repo": "pip_312",
               "repo_prefix": "pip_312_",
               "whl_patches": {},
@@ -5953,7 +5953,7 @@
             "bzlFile": "@@rules_python~//python/pip_install:pip_repository.bzl",
             "ruleClassName": "whl_library",
             "attributes": {
-              "requirement": "black==24.2.0 ; python_version >= \"3.8\"     --hash=sha256:057c3dc602eaa6fdc451069bd027a1b2635028b575a6c3acfd63193ced20d9c8     --hash=sha256:08654d0797e65f2423f850fc8e16a0ce50925f9337fb4a4a176a7aa4026e63f8     --hash=sha256:163baf4ef40e6897a2a9b83890e59141cc8c2a98f2dda5080dc15c00ee1e62cd     --hash=sha256:1e08fb9a15c914b81dd734ddd7fb10513016e5ce7e6704bdd5e1251ceee51ac9     --hash=sha256:4dd76e9468d5536abd40ffbc7a247f83b2324f0c050556d9c371c2b9a9a95e31     --hash=sha256:4f9de21bafcba9683853f6c96c2d515e364aee631b178eaa5145fc1c61a3cc92     --hash=sha256:61a0391772490ddfb8a693c067df1ef5227257e72b0e4108482b8d41b5aee13f     --hash=sha256:6981eae48b3b33399c8757036c7f5d48a535b962a7c2310d19361edeef64ce29     --hash=sha256:7e53a8c630f71db01b28cd9602a1ada68c937cbf2c333e6ed041390d6968faf4     --hash=sha256:810d445ae6069ce64030c78ff6127cd9cd178a9ac3361435708b907d8a04c693     --hash=sha256:93601c2deb321b4bad8f95df408e3fb3943d85012dddb6121336b8e24a0d1218     --hash=sha256:992e451b04667116680cb88f63449267c13e1ad134f30087dec8527242e9862a     --hash=sha256:9db528bccb9e8e20c08e716b3b09c6bdd64da0dd129b11e160bf082d4642ac23     --hash=sha256:a0057f800de6acc4407fe75bb147b0c2b5cbb7c3ed110d3e5999cd01184d53b0     --hash=sha256:ba15742a13de85e9b8f3239c8f807723991fbfae24bad92d34a2b12e81904982     --hash=sha256:bce4f25c27c3435e4dace4815bcb2008b87e167e3bf4ee47ccdc5ce906eb4894     --hash=sha256:ca610d29415ee1a30a3f30fab7a8f4144e9d34c89a235d81292a1edb2b55f540     --hash=sha256:d533d5e3259720fdbc1b37444491b024003e012c5173f7d06825a77508085430     --hash=sha256:d84f29eb3ee44859052073b7636533ec995bd0f64e2fb43aeceefc70090e752b     --hash=sha256:e37c99f89929af50ffaf912454b3e3b47fd64109659026b678c091a4cd450fb2     --hash=sha256:e8a6ae970537e67830776488bca52000eaa37fa63b9988e8c487458d9cd5ace6     --hash=sha256:faf2ee02e6612577ba0181f4347bcbcf591eb122f7841ae5ba233d12c39dcb4d",
+              "requirement": "black==24.4.2 ; python_version >= \"3.8\"     --hash=sha256:257d724c2c9b1660f353b36c802ccece186a30accc7742c176d29c146df6e474     --hash=sha256:37aae07b029fa0174d39daf02748b379399b909652a806e5708199bd93899da1     --hash=sha256:415e686e87dbbe6f4cd5ef0fbf764af7b89f9057b97c908742b6008cc554b9c0     --hash=sha256:48a85f2cb5e6799a9ef05347b476cce6c182d6c71ee36925a6c194d074336ef8     --hash=sha256:7768a0dbf16a39aa5e9a3ded568bb545c8c2727396d063bbaf847df05b08cd96     --hash=sha256:7e122b1c4fb252fd85df3ca93578732b4749d9be076593076ef4d07a0233c3e1     --hash=sha256:88c57dc656038f1ab9f92b3eb5335ee9b021412feaa46330d5eba4e51fe49b04     --hash=sha256:8e537d281831ad0e71007dcdcbe50a71470b978c453fa41ce77186bbe0ed6021     --hash=sha256:98e123f1d5cfd42f886624d84464f7756f60ff6eab89ae845210631714f6db94     --hash=sha256:accf49e151c8ed2c0cdc528691838afd217c50412534e876a19270fea1e28e2d     --hash=sha256:b1530ae42e9d6d5b670a34db49a94115a64596bc77710b1d05e9801e62ca0a7c     --hash=sha256:b9176b9832e84308818a99a561e90aa479e73c523b3f77afd07913380ae2eab7     --hash=sha256:bdde6f877a18f24844e381d45e9947a49e97933573ac9d4345399be37621e26c     --hash=sha256:be8bef99eb46d5021bf053114442914baeb3649a89dc5f3a555c88737e5e98fc     --hash=sha256:bf10f7310db693bb62692609b397e8d67257c55f949abde4c67f9cc574492cc7     --hash=sha256:c872b53057f000085da66a19c55d68f6f8ddcac2642392ad3a355878406fbd4d     --hash=sha256:d36ed1124bb81b32f8614555b34cc4259c3fbc7eec17870e8ff8ded335b58d8c     --hash=sha256:da33a1a5e49c4122ccdfd56cd021ff1ebc4a1ec4e2d01594fef9b6f267a9e741     --hash=sha256:dd1b5a14e417189db4c7b64a6540f31730713d173f0b63e55fabd52d61d8fdce     --hash=sha256:e151054aa00bad1f4e1f04919542885f89f5f7d086b8a59e5000e6c616896ffb     --hash=sha256:eaea3008c281f1038edb473c1aa8ed8143a5535ff18f978a318f10302b254063     --hash=sha256:ef703f83fc32e131e9bcc0a5094cfe85599e7109f896fe8bc96cc402f3eb4b6e",
               "repo": "pip_312",
               "repo_prefix": "pip_312_",
               "whl_patches": {},
@@ -6001,7 +6001,7 @@
             "bzlFile": "@@rules_python~//python/pip_install:pip_repository.bzl",
             "ruleClassName": "whl_library",
             "attributes": {
-              "requirement": "urllib3==2.2.0 ; python_version >= \"3.8\"     --hash=sha256:051d961ad0c62a94e50ecf1af379c3aba230c66c710493493560c0c223c49f20     --hash=sha256:ce3711610ddce217e6d113a2732fafad960a03fd0318c91faa79481e35c11224",
+              "requirement": "urllib3==2.2.1 ; python_version >= \"3.8\"     --hash=sha256:450b20ec296a467077128bff42b73080516e71b56ff59a60a02bef2232c4fa9d     --hash=sha256:d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19",
               "repo": "pip_312",
               "repo_prefix": "pip_312_",
               "whl_patches": {},
@@ -6033,7 +6033,7 @@
             "bzlFile": "@@rules_python~//python/pip_install:pip_repository.bzl",
             "ruleClassName": "whl_library",
             "attributes": {
-              "requirement": "autoflake==2.2.1 ; python_version >= \"3.8\"     --hash=sha256:265cde0a43c1f44ecfb4f30d95b0437796759d07be7706a2f70e4719234c0f79     --hash=sha256:62b7b6449a692c3c9b0c916919bbc21648da7281e8506bcf8d3f8280e431ebc1",
+              "requirement": "autoflake==2.3.1 ; python_version >= \"3.8\"     --hash=sha256:3ae7495db9084b7b32818b4140e6dc4fc280b712fb414f5b8fe57b0a8e85a840     --hash=sha256:c98b75dc5b0a86459c4f01a1d32ac7eb4338ec4317a4469515ff1e687ecd909e",
               "repo": "pip_312",
               "repo_prefix": "pip_312_",
               "whl_patches": {},
@@ -6081,7 +6081,7 @@
             "bzlFile": "@@rules_python~//python/pip_install:pip_repository.bzl",
             "ruleClassName": "whl_library",
             "attributes": {
-              "requirement": "packaging==23.2 ; python_version >= \"3.7\"     --hash=sha256:048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5     --hash=sha256:8c491190033a9af7e1d931d0b5dacc2ef47509b34dd0de67ed209b5203fc88c7",
+              "requirement": "packaging==24.0 ; python_version >= \"3.7\"     --hash=sha256:2ddfb553fdf02fb784c234c7ba6ccc288296ceabec964ad2eae3777778130bc5     --hash=sha256:eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9",
               "repo": "pip_312",
               "repo_prefix": "pip_312_",
               "whl_patches": {},
@@ -6105,7 +6105,7 @@
             "bzlFile": "@@rules_python~//python/pip_install:pip_repository.bzl",
             "ruleClassName": "whl_library",
             "attributes": {
-              "requirement": "pip-tools==7.4.0 ; python_version >= \"3.8\"     --hash=sha256:a92a6ddfa86ff389fe6ace381d463bc436e2c705bd71d52117c25af5ce867bb7     --hash=sha256:b67432fd0759ed834c5367f9e0ce8c95441acecfec9c8e24b41aca166757adf0",
+              "requirement": "pip-tools==7.4.1 ; python_version >= \"3.8\"     --hash=sha256:4c690e5fbae2f21e87843e89c26191f0d9454f362d8acdbd695716493ec8b3a9     --hash=sha256:864826f5073864450e24dbeeb85ce3920cdfb09848a3d69ebf537b521f14bcc9",
               "repo": "pip_312",
               "repo_prefix": "pip_312_",
               "whl_patches": {},
@@ -6394,7 +6394,7 @@
             "bzlFile": "@@rules_python~//python/pip_install:pip_repository.bzl",
             "ruleClassName": "whl_library",
             "attributes": {
-              "requirement": "zipp==3.17.0 ; python_version >= \"3.8\"     --hash=sha256:0e923e726174922dce09c53c59ad483ff7bbb8e572e00c7f7c46b88556409f31     --hash=sha256:84e64a1c28cf7e91ed2078bb8cc8c259cb19b76942096c8d7b84947690cabaf0",
+              "requirement": "zipp==3.18.1 ; python_version >= \"3.8\"     --hash=sha256:206f5a15f2af3dbaee80769fb7dc6f249695e940acca08dfb2a4769fe61e538b     --hash=sha256:2884ed22e7d8961de1c9a05142eb69a247f120291bc0206a00a7642f09b5b715",
               "repo": "pip_312",
               "repo_prefix": "pip_312_",
               "whl_patches": {},
@@ -6466,7 +6466,7 @@
             "bzlFile": "@@rules_python~//python/pip_install:pip_repository.bzl",
             "ruleClassName": "whl_library",
             "attributes": {
-              "requirement": "typing-extensions==4.9.0 ; python_version < \"3.11\"     --hash=sha256:23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783     --hash=sha256:af72aea155e91adfc61c3ae9e0e342dbc0cba726d6cba4b6c72c1f34e47291cd",
+              "requirement": "typing-extensions==4.11.0 ; python_version < \"3.11\"     --hash=sha256:83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0     --hash=sha256:c1f94d72897edaf4ce775bb7558d5b79d8126906a14ea5ed1635921406c0387a",
               "repo": "pip_312",
               "repo_prefix": "pip_312_",
               "whl_patches": {},
@@ -6514,7 +6514,7 @@
             "bzlFile": "@@rules_python~//python/pip_install:pip_repository.bzl",
             "ruleClassName": "whl_library",
             "attributes": {
-              "requirement": "importlib-metadata==7.0.1 ; python_version < \"3.10\"     --hash=sha256:4805911c3a4ec7c3966410053e9ec6a1fecd629117df5adee56dfc9432a1081e     --hash=sha256:f238736bb06590ae52ac1fab06a3a9ef1d8dce2b7a35b5ab329371d6c8f5d2cc",
+              "requirement": "importlib-metadata==7.1.0 ; python_full_version < \"3.10.2\"     --hash=sha256:30962b96c0c223483ed6cc7280e7f0199feb01a0e40cfae4d4450fc6fab1f570     --hash=sha256:b78938b926ee8d5f020fc4772d487045805a55ddbad2ecf21c6d60938dc7fcd2",
               "repo": "pip_312",
               "repo_prefix": "pip_312_",
               "whl_patches": {},
@@ -6538,7 +6538,7 @@
             "bzlFile": "@@rules_python~//python/pip_install:pip_repository.bzl",
             "ruleClassName": "whl_library",
             "attributes": {
-              "requirement": "virtualenv==20.25.0 ; python_version >= \"3.7\"     --hash=sha256:4238949c5ffe6876362d9c0180fc6c3a824a7b12b80604eeb8085f2ed7460de3     --hash=sha256:bf51c0d9c7dd63ea8e44086fa1e4fb1093a31e963b86959257378aef020e1f1b",
+              "requirement": "virtualenv==20.26.1 ; python_version >= \"3.7\"     --hash=sha256:604bfdceaeece392802e6ae48e69cec49168b9c5f4a44e483963f9242eb0e78b     --hash=sha256:7aa9982a728ae5892558bff6a2839c00b9ed145523ece2274fad6f414690ae75",
               "repo": "pip_312",
               "repo_prefix": "pip_312_",
               "whl_patches": {},
@@ -6562,7 +6562,7 @@
             "bzlFile": "@@rules_python~//python/pip_install:pip_repository.bzl",
             "ruleClassName": "whl_library",
             "attributes": {
-              "requirement": "build==1.0.3 ; python_version >= \"3.7\"     --hash=sha256:538aab1b64f9828977f84bc63ae570b060a8ed1be419e7870b8b4fc5e6ea553b     --hash=sha256:589bf99a67df7c9cf07ec0ac0e5e2ea5d4b37ac63301c4986d1acb126aa83f8f",
+              "requirement": "build==1.2.1 ; python_version >= \"3.8\"     --hash=sha256:526263f4870c26f26c433545579475377b2b7588b6f1eac76a001e873ae3e19d     --hash=sha256:75e10f767a433d9a86e50d83f418e83efc18ede923ee5ff7df93b6cb0306c5d4",
               "repo": "pip_312",
               "repo_prefix": "pip_312_",
               "whl_patches": {},
@@ -6586,7 +6586,7 @@
             "bzlFile": "@@rules_python~//python/pip_install:pip_repository.bzl",
             "ruleClassName": "whl_library",
             "attributes": {
-              "requirement": "platformdirs==4.2.0 ; python_version >= \"3.8\"     --hash=sha256:0614df2a2f37e1a662acbd8e2b25b92ccf8632929bc6d43467e17fe89c75e068     --hash=sha256:ef0cc731df711022c174543cb70a9b5bd22e5a9337c8624ef2c2ceb8ddad8768",
+              "requirement": "platformdirs==4.2.1 ; python_version >= \"3.8\"     --hash=sha256:031cd18d4ec63ec53e82dceaac0417d218a6863f7745dfcc9efe7793b7039bdf     --hash=sha256:17d5a1161b3fd67b390023cb2d3b026bbd40abde6fdb052dfbd3a29c3ba22ee1",
               "repo": "pip_312",
               "repo_prefix": "pip_312_",
               "whl_patches": {},
@@ -6610,7 +6610,7 @@
             "bzlFile": "@@rules_python~//python/pip_install:pip_repository.bzl",
             "ruleClassName": "whl_library",
             "attributes": {
-              "requirement": "setuptools==69.1.0 ; python_version >= \"3.8\"     --hash=sha256:850894c4195f09c4ed30dba56213bf7c3f21d86ed6bdaafb5df5972593bfc401     --hash=sha256:c054629b81b946d63a9c6e732bc8b2513a7c3ea645f11d0139a2191d735c60c6",
+              "requirement": "setuptools==69.5.1 ; python_version >= \"3.8\"     --hash=sha256:6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987     --hash=sha256:c636ac361bc47580504644275c9ad802c50415c7522212252c033bd15f301f32",
               "repo": "pip_312",
               "repo_prefix": "pip_312_",
               "whl_patches": {},
@@ -6658,7 +6658,7 @@
             "bzlFile": "@@rules_python~//python/pip_install:pip_repository.bzl",
             "ruleClassName": "whl_library",
             "attributes": {
-              "requirement": "babel==2.14.0 ; python_version >= \"3.7\"     --hash=sha256:6919867db036398ba21eb5c7a0f6b28ab8cbc3ae7a73a44ebe34ae74a4e7d363     --hash=sha256:efb1a25b7118e67ce3a259bed20545c29cb68be8ad2c784c83689981b7a57287",
+              "requirement": "babel==2.15.0 ; python_version >= \"3.8\"     --hash=sha256:08706bdad8d0a3413266ab61bd6c34d0c28d6e1e7badf40a2cebe67644e2e1fb     --hash=sha256:8daf0e265d05768bc6c7a314cf1321e9a123afc328cc635c18622a2f30a04413",
               "repo": "pip_312",
               "repo_prefix": "pip_312_",
               "whl_patches": {},
@@ -6682,7 +6682,7 @@
             "bzlFile": "@@rules_python~//python/pip_install:pip_repository.bzl",
             "ruleClassName": "whl_library",
             "attributes": {
-              "requirement": "idna==3.6 ; python_version >= \"3.5\"     --hash=sha256:9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca     --hash=sha256:c05567e9c24a6b9faaa835c4821bad0590fbb9d5779e7caa6e1cc4978e7eb24f",
+              "requirement": "idna==3.7 ; python_version >= \"3.5\"     --hash=sha256:028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc     --hash=sha256:82fee1fc78add43492d3a1898bfa6d8a904cc97d8427f683ed8e798d07761aa0",
               "repo": "pip_312",
               "repo_prefix": "pip_312_",
               "whl_patches": {},
@@ -6706,7 +6706,7 @@
             "bzlFile": "@@rules_python~//python/pip_install:pip_repository.bzl",
             "ruleClassName": "whl_library",
             "attributes": {
-              "requirement": "python-dateutil==2.8.2 ; python_version >= \"2.7\" and python_version not in \"3.0, 3.1, 3.2, 3.3\"     --hash=sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86     --hash=sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9",
+              "requirement": "python-dateutil==2.9.0.post0 ; python_version >= \"2.7\" and python_version not in \"3.0, 3.1, 3.2, 3.3\"     --hash=sha256:37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3     --hash=sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427",
               "repo": "pip_312",
               "repo_prefix": "pip_312_",
               "whl_patches": {},
@@ -6778,7 +6778,7 @@
             "bzlFile": "@@rules_python~//python/pip_install:pip_repository.bzl",
             "ruleClassName": "whl_library",
             "attributes": {
-              "requirement": "pyproject-hooks==1.0.0 ; python_version >= \"3.7\"     --hash=sha256:283c11acd6b928d2f6a7c73fa0d01cb2bdc5f07c57a2eeb6e83d5e56b97976f8     --hash=sha256:f271b298b97f5955d53fb12b72c1fb1948c22c1a6b70b315c54cedaca0264ef5",
+              "requirement": "pyproject-hooks==1.1.0 ; python_version >= \"3.7\"     --hash=sha256:4b37730834edbd6bd37f26ece6b44802fb1c1ee2ece0e54ddff8bfc06db86965     --hash=sha256:7ceeefe9aec63a1064c18d939bdc3adf2d8aa1988a510afec15151578b232aa2",
               "repo": "pip_312",
               "repo_prefix": "pip_312_",
               "whl_patches": {},
