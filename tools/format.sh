@@ -36,7 +36,7 @@ find . -type f -iname '*.py' -print0 | xargs -0 "$BLACK"
 # FIXME rubocop does not work in Bazel yet
 bundle install
 pushd src/ruby
-bundle exec rubocop --auto-correct-all
+bundle exec rubocop --autocorrect-all
 popd
 
 # Rust

@@ -10,7 +10,7 @@ EXPECTED_OUTPUT = "=== ERB ===
 <h1>Hello, Slim!</h1>
 "
 
-RSpec.describe 'template', 'main' do
+RSpec.describe 'template', 'main' do # rubocop:disable RSpec/DescribeClass, RSpec/DescribeMethod
   it 'renders templates' do
     expect { system %(./src/ruby/template/template) }
       .to output(EXPECTED_OUTPUT)
