@@ -52,13 +52,6 @@ http_archive(
 )
 
 http_archive(
-    name = "io_grpc_grpc_java",
-    sha256 = "30cfc954c2174493822601a74b876837986c444d9b9e917082994b5e34348f34",
-    strip_prefix = "grpc-java-1.62.2",
-    url = "https://github.com/grpc/grpc-java/archive/v1.62.2.tar.gz",
-)
-
-http_archive(
     name = "jq",
     build_file = "//tools/jq:jq.BUILD.bazel",
     sha256 = "998c41babeb57b4304e65b4eb73094279b3ab1e63801b6b4bddd487ce009b39d",
@@ -86,13 +79,6 @@ http_archive(
     sha256 = "26e6a83c665cf6c1093b628b3a749071322f0f70305d12ede30909695ed85591",
     strip_prefix = "rules_antlr-0.5.0",
     url = "https://github.com/marcohu/rules_antlr/archive/0.5.0.tar.gz",
-)
-
-http_archive(
-    name = "rules_jvm_external",
-    sha256 = "a566f1c84dbc09c19b3086bdfe9ffc2e02058675067a8286fb11a604508a4a09",
-    strip_prefix = "rules_jvm_external-6.0",
-    url = "https://github.com/bazelbuild/rules_jvm_external/archive/6.0.tar.gz",
 )
 
 http_archive(
@@ -162,22 +148,6 @@ crates_repository(
 load("@crate_index//:defs.bzl", "crate_repositories")
 
 crate_repositories()
-
-load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
-
-grpc_java_repositories()
-
-load("//third_party/java:maven_install.bzl", "maven_install")
-
-maven_install()
-
-load("@maven//:compat.bzl", "compat_repositories")
-
-compat_repositories()
-
-load("@maven//:defs.bzl", "pinned_maven_install")
-
-pinned_maven_install()
 
 load("@com_google_google_java_format_source//tools/bazel:def.bzl", "java_format")
 
