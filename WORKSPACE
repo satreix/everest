@@ -97,8 +97,8 @@ http_archive(
 
 http_archive(
     name = "rules_rust",
-    sha256 = "c30dfdf1e86fd50650a76ea645b3a45f2f00667b06187a685e9554e167ca97ee",
-    url = "https://github.com/bazelbuild/rules_rust/releases/download/0.40.0/rules_rust-v0.40.0.tar.gz",
+    sha256 = "24b378ed97006f1f7012be498a26f81ddb9901318b88380aee8522fdfbe8b735",
+    url = "https://github.com/bazelbuild/rules_rust/releases/download/0.42.1/rules_rust-v0.42.1.tar.gz",
 )
 
 http_archive(
