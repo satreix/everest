@@ -45,13 +45,6 @@ http_archive(
 )
 
 http_archive(
-    name = "googleapis",
-    sha256 = "6ae2f6da15d59f438e6b46fc4ba130cb5f109c7cb25baf6bcf81abd40c8275fb",
-    strip_prefix = "googleapis-e0677a395947c2f3f3411d7202a6868a7b069a41",
-    url = "https://github.com/googleapis/googleapis/archive/e0677a395947c2f3f3411d7202a6868a7b069a41.zip",
-)
-
-http_archive(
     name = "jq",
     build_file = "//tools/jq:jq.BUILD.bazel",
     sha256 = "998c41babeb57b4304e65b4eb73094279b3ab1e63801b6b4bddd487ce009b39d",
@@ -186,10 +179,4 @@ ruby_bundle(
     bundler_version = "2.5.3",
     gemfile = "//:Gemfile",
     gemfile_lock = "//:Gemfile.lock",
-)
-
-load("@googleapis//:repository_rules.bzl", "switched_rules_by_language")
-
-switched_rules_by_language(
-    name = "com_google_googleapis_imports",
 )
