@@ -10,7 +10,6 @@ LANGUAGES=(
     haskell
     java
     python
-    rust
 )
 
 export REPIN=1
