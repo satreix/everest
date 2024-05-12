@@ -13,7 +13,7 @@ require (
 	github.com/google/uuid v1.6.0
 	github.com/gosuri/uiprogress v0.0.1
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.1.0
-	github.com/honeycombio/honeycomb-opentelemetry-go v0.10.0
+	github.com/honeycombio/honeycomb-opentelemetry-go v0.11.0
 	github.com/honeycombio/otel-config-go v1.15.0
 	github.com/keybase/go-keychain v0.0.0-20231219164618-57a3676c3af6
 	github.com/mndrix/tap-go v0.0.0-20171203230836-629fa407e90b
@@ -66,6 +66,7 @@ require (
 	github.com/yusufpapurcu/wmi v1.2.4 // indirect
 	go.opentelemetry.io/contrib/instrumentation/host v0.51.0 // indirect
 	go.opentelemetry.io/contrib/instrumentation/runtime v0.51.0 // indirect
+	go.opentelemetry.io/contrib/processors/baggage/baggagetrace v0.0.0-20240508140322-077e60990642 // indirect
 	go.opentelemetry.io/contrib/propagators/b3 v1.26.0 // indirect
 	go.opentelemetry.io/contrib/propagators/ot v1.26.0 // indirect
 	go.opentelemetry.io/otel v1.26.0 // indirect
