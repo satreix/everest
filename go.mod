@@ -9,7 +9,7 @@ require (
 	github.com/cockscomb/cel2sql v0.0.0-20211204123659-c803dfd5c44c
 	github.com/google/cel-go v0.20.1
 	github.com/google/go-cmp v0.6.0
-	github.com/google/go-github/v59 v59.0.0
+	github.com/google/go-github/v62 v62.0.0
 	github.com/google/uuid v1.6.0
 	github.com/gosuri/uiprogress v0.0.1
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.1.0
