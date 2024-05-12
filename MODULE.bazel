@@ -116,7 +116,7 @@ stack_snapshot.stack_snapshot_json(
 
 bazel_dep(name = "rules_java", version = "7.5.0")
 bazel_dep(name = "rules_jni", version = "0.9.1")
-bazel_dep(name = "rules_jvm_external", version = "6.0")
+bazel_dep(name = "rules_jvm_external", version = "6.1")
 bazel_dep(name = "grpc-java", version = "1.62.2")
 
 JUNIT_VERSION = "5.8.1"
