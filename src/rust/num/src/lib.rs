@@ -107,7 +107,7 @@ impl Array {
 }
 
 #[pymodule]
-fn num(_py: Python, m: &PyModule) -> PyResult<()> {
+fn num(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_class::<Array>()?;
     Ok(())
 }
