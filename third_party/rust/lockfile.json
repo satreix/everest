@@ -1,5 +1,5 @@
 {
-  "checksum": "0c33f15ea7a1b31c86c7777889e6cd58e7b4d11f719ac0d1e7153e12ce4a0a7c",
+  "checksum": "e8056ff6a4c3df72b3a7b9ec56340b31102f4eada545bb1dc9e4e6c4dd232bc2",
   "crates": {
     "android_system_properties 0.1.5": {
       "name": "android_system_properties",
@@ -4490,7 +4490,7 @@
               "target": "pyo3"
             },
             {
-              "id": "rayon 1.8.1",
+              "id": "rayon 1.10.0",
               "target": "rayon"
             }
           ],
@@ -6808,14 +6808,14 @@
       ],
       "license_file": "LICENSE-APACHE"
     },
-    "rayon 1.8.1": {
+    "rayon 1.10.0": {
       "name": "rayon",
-      "version": "1.8.1",
+      "version": "1.10.0",
       "package_url": "https://github.com/rayon-rs/rayon",
       "repository": {
         "Http": {
-          "url": "https://static.crates.io/crates/rayon/1.8.1/download",
-          "sha256": "fa7237101a77a10773db45d62004a272517633fbcc3df19d96455ede1122e051"
+          "url": "https://static.crates.io/crates/rayon/1.10.0/download",
+          "sha256": "b418a60154510ca1a002a752ca9714984e21e4241e804d32555251faf8b78ffa"
         }
       },
       "targets": [
@@ -6851,7 +6851,7 @@
           "selects": {}
         },
         "edition": "2021",
-        "version": "1.8.1"
+        "version": "1.10.0"
       },
       "license": "MIT OR Apache-2.0",
       "license_ids": [
@@ -12496,7 +12496,7 @@
     "iron-slog 0.0.2",
     "pyo3 0.21.2",
     "pyo3-build-config 0.20.3",
-    "rayon 1.8.1",
+    "rayon 1.10.0",
     "router 0.6.0",
     "slog 2.7.0",
     "slog-async 2.8.0",
