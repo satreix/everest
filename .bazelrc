@@ -1,5 +1,9 @@
 build --cxxopt='-std=c++17'
 
+# On macOS with an installed oppenssl, this prevent Bazel from looking in /usr/local/include and failing the boringssl compile.
+# This does on the other hand brak the python interpreter in rules_python
+# build --sandbox_block_path=/usr/local
+
 # Ensure rules_haskell picks up the correct toolchain on Mac.
 build --action_env=BAZEL_USE_CPP_ONLY_TOOLCHAIN=1
 

@@ -166,10 +166,6 @@ load("@bazelruby_rules_ruby//ruby:deps.bzl", "rules_ruby_dependencies", "rules_r
 
 rules_ruby_dependencies()
 
-load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
-
-bazel_skylib_workspace()
-
 rules_ruby_select_sdk()
 
 load("@bazelruby_rules_ruby//ruby:defs.bzl", "ruby_bundle")
