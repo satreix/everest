@@ -58,13 +58,6 @@ http_archive(
     url = "https://github.com/OpenAPITools/openapi-generator-bazel/releases/download/v0.1.6/openapi-tools-generator-bazel-0.1.6.tar.gz",
 )
 
-# Used by rules_rust
-http_archive(
-    name = "platforms",
-    sha256 = "218efe8ee736d26a3572663b374a253c012b716d8af0c07e842e82f238a0a7ee",
-    url = "https://github.com/bazelbuild/platforms/releases/download/0.0.10/platforms-0.0.10.tar.gz",
-)
-
 http_archive(
     name = "rules_antlr",
     patch_args = ["-p1"],
