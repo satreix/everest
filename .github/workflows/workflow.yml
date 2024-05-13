@@ -6,7 +6,7 @@ on:
       - main
       - release-*
     tags:
-      - '*.*.*'
+      - "*.*.*"
   pull_request:
 
 jobs:
@@ -35,8 +35,8 @@ jobs:
       - name: "[Java] Install Java"
         uses: actions/setup-java@v4
         with:
-          distribution: 'zulu'
-          java-version: '17'
+          distribution: "zulu"
+          java-version: "21"
 
       # Ruby rules use host install still: https://github.com/bazelruby/rules_ruby/issues/112
       - name: "[Ruby] Install Ruby"
