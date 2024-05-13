@@ -7,7 +7,7 @@ http_archive(
     patch_args = ["-p1"],
     patches = [
         # A fix for https://github.com/bazelruby/rules_ruby/issues/79
-        "//third_party:bazelruby_rules_ruby/0001-fix-rspec.patch",
+        "//third_party/bazelruby_rules_ruby:0001-fix-rspec.patch",
     ],
     sha256 = "33217f27c7cc44355dc82bbe172d0ace09c6a73da387bbbcd66cff013d35e498",
     strip_prefix = "rules_ruby-8a03f6c54f1bb3ecbbb82c8e2fdbf40e049a8115",
@@ -61,16 +61,10 @@ http_archive(
 http_archive(
     name = "rules_antlr",
     patch_args = ["-p1"],
-    patches = ["//third_party:rules_antlr/add_antlr_4.13.0.patch"],
+    patches = ["//third_party/rules_antlr:add_antlr_4.13.0.patch"],
     sha256 = "26e6a83c665cf6c1093b628b3a749071322f0f70305d12ede30909695ed85591",
     strip_prefix = "rules_antlr-0.5.0",
     url = "https://github.com/marcohu/rules_antlr/archive/0.5.0.tar.gz",
-)
-
-http_archive(
-    name = "rules_rust",
-    sha256 = "24b378ed97006f1f7012be498a26f81ddb9901318b88380aee8522fdfbe8b735",
-    url = "https://github.com/bazelbuild/rules_rust/releases/download/0.42.1/rules_rust-v0.42.1.tar.gz",
 )
 
 http_archive(
@@ -88,52 +82,6 @@ contrib_rules_jvm_deps()
 load("@contrib_rules_jvm//:setup.bzl", "contrib_rules_jvm_setup")
 
 contrib_rules_jvm_setup()
-
-load("@rules_rust//rust:repositories.bzl", "rules_rust_dependencies", "rust_register_toolchains")
-
-rules_rust_dependencies()
-
-_RUST_VERSION = "1.75.0"
-
-rust_register_toolchains(
-    edition = "2021",
-    versions = [_RUST_VERSION],
-)
-
-load("@rules_rust//proto/protobuf:repositories.bzl", "rust_proto_protobuf_dependencies", "rust_proto_protobuf_register_toolchains")
-
-rust_proto_protobuf_dependencies()
-
-rust_proto_protobuf_register_toolchains()
-
-load("@rules_rust//proto/protobuf:transitive_repositories.bzl", "rust_proto_protobuf_transitive_repositories")
-
-rust_proto_protobuf_transitive_repositories()
-
-load("@rules_rust//crate_universe:repositories.bzl", "crate_universe_dependencies")
-
-crate_universe_dependencies()
-
-load("@rules_rust//crate_universe:defs.bzl", "crates_repository")
-
-crates_repository(
-    name = "crate_index",
-    cargo_lockfile = "//:Cargo.lock",
-    lockfile = "//third_party/rust:lockfile.json",
-    manifests = [
-        "//:Cargo.toml",
-        "//src/rust/grpc_server:Cargo.toml",
-        "//src/rust/hello_world:Cargo.toml",
-        "//src/rust/luhn:Cargo.toml",
-        "//src/rust/num:Cargo.toml",
-        "//src/rust/web:Cargo.toml",
-    ],
-    rust_version = _RUST_VERSION,
-)
-
-load("@crate_index//:defs.bzl", "crate_repositories")
-
-crate_repositories()
 
 load("@com_google_google_java_format_source//tools/bazel:def.bzl", "java_format")
 
@@ -158,10 +106,6 @@ openapi_tools_generator_bazel_repositories(
 load("@bazelruby_rules_ruby//ruby:deps.bzl", "rules_ruby_dependencies", "rules_ruby_select_sdk")
 
 rules_ruby_dependencies()
-
-load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
-
-bazel_skylib_workspace()
 
 rules_ruby_select_sdk()
 

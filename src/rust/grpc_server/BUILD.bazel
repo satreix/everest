@@ -7,9 +7,9 @@ rust_binary(
     srcs = ["src/main.rs"],
     # We use the grpc crate from rules_rust instead of cargo to use the same
     # version as the code which generated the rust code from protobuf.
-    deps = GRPC_COMPILE_DEPS + [
+    deps = [
         "//src/proto/helloworld:helloworld_rust_grpc",
-    ],
+    ] + GRPC_COMPILE_DEPS,
 )
 
 build_test(
