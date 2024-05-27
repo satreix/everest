@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "6ea97a47c0ec83d971d787bbadafee54661a59e70d5a29a054396635e461137a",
+  "moduleFileHash": "19ea6cca03ca175ecf04cd9465c91672b2c7b4e9f211b678ac36d1d0ba318c79",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -572,7 +572,7 @@
       ],
       "deps": {
         "aspect_rules_js": "aspect_rules_js@1.42.3",
-        "aspect_rules_ts": "aspect_rules_ts@2.3.0",
+        "aspect_rules_ts": "aspect_rules_ts@2.4.1",
         "bazel_skylib": "bazel_skylib@1.6.1",
         "buildifier_prebuilt": "buildifier_prebuilt@6.4.0",
         "fmt": "fmt@10.2.1.bcr.1",
@@ -728,10 +728,10 @@
         }
       }
     },
-    "aspect_rules_ts@2.3.0": {
+    "aspect_rules_ts@2.4.1": {
       "name": "aspect_rules_ts",
-      "version": "2.3.0",
-      "key": "aspect_rules_ts@2.3.0",
+      "version": "2.4.1",
+      "key": "aspect_rules_ts@2.4.1",
       "repoName": "aspect_rules_ts",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [],
@@ -751,12 +751,12 @@
         "ruleClassName": "http_archive",
         "attributes": {
           "urls": [
-            "https://github.com/aspect-build/rules_ts/releases/download/v2.3.0/rules_ts-v2.3.0.tar.gz"
+            "https://github.com/aspect-build/rules_ts/releases/download/v2.4.1/rules_ts-v2.4.1.tar.gz"
           ],
-          "integrity": "sha256-sR9b1ZmDpYgmhCApuZJA/Q7rbxKR1xDbEPdEsydwFkY=",
-          "strip_prefix": "rules_ts-2.3.0",
+          "integrity": "sha256-2mYgaDqywoAU6cguio/btyTNZ/ah0nMX9CqM6xQEi5s=",
+          "strip_prefix": "rules_ts-2.4.1",
           "remote_patches": {
-            "https://bcr.bazel.build/modules/aspect_rules_ts/2.3.0/patches/module_dot_bazel_version.patch": "sha256-+Q8vxEaJePTvDm+Bhx2OWmARc4xbHeK44oT72e6W+Ds="
+            "https://bcr.bazel.build/modules/aspect_rules_ts/2.4.1/patches/module_dot_bazel_version.patch": "sha256-/0LQrHEAG5dWOF5vyBdwh1R6AsRtxRixo3/VtAyyNmo="
           },
           "remote_patch_strip": 1
         }
@@ -5017,7 +5017,7 @@
     },
     "@@aspect_rules_ts~//ts:extensions.bzl%ext": {
       "general": {
-        "bzlTransitiveDigest": "EELzrvIGWqarwBPWI83+zs4utDNNmZxg8YNdDKH36To=",
+        "bzlTransitiveDigest": "MpKM9q0T5ZkBnTjSC16lSlTTnE126owC7pWxfzRx2Fk=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
