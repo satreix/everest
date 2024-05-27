@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "b42692ee39570e0f4c4119d8a010cfe9aadbbbd194529ba0d80e1c0844bda045",
+  "moduleFileHash": "6823807c80f776c24399fd2ad4bfbda48c25292f9d5b7a67c5eec0cea99a4d28",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -589,7 +589,7 @@
         "bazel_gazelle": "gazelle@0.36.0",
         "rules_haskell": "rules_haskell@0.19",
         "rules_java": "rules_java@7.6.1",
-        "rules_jni": "rules_jni@0.9.1",
+        "rules_jni": "rules_jni@0.10.1",
         "rules_jvm_external": "rules_jvm_external@6.1",
         "rules_kotlin": "rules_kotlin@1.9.5",
         "rules_nodejs": "rules_nodejs@6.1.0",
@@ -2723,20 +2723,20 @@
         }
       }
     },
-    "rules_jni@0.9.1": {
+    "rules_jni@0.10.1": {
       "name": "rules_jni",
-      "version": "0.9.1",
-      "key": "rules_jni@0.9.1",
+      "version": "0.10.1",
+      "key": "rules_jni@0.10.1",
       "repoName": "rules_jni",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [],
       "extensionUsages": [
         {
-          "extensionBzlFile": "@rules_jni//bzlmod:extensions.bzl",
+          "extensionBzlFile": "@rules_jni//jni/private/extensions:download_jdk_deps.bzl",
           "extensionName": "download_jdk_deps",
-          "usingModule": "rules_jni@0.9.1",
+          "usingModule": "rules_jni@0.10.1",
           "location": {
-            "file": "https://bcr.bazel.build/modules/rules_jni/0.9.1/MODULE.bazel",
+            "file": "https://bcr.bazel.build/modules/rules_jni/0.10.1/MODULE.bazel",
             "line": 11,
             "column": 34
           },
@@ -2764,14 +2764,14 @@
         "ruleClassName": "http_archive",
         "attributes": {
           "urls": [
-            "https://github.com/fmeum/rules_jni/releases/download/v0.9.1/rules_jni-v0.9.1.tar.gz"
+            "https://github.com/fmeum/rules_jni/releases/download/v0.10.1/rules_jni-v0.10.1.tar.gz"
           ],
-          "integrity": "sha256-nuWkbCxx8YVyswfEEwA4Rw027FI8Yvb6QDMpmIEt2Nc=",
+          "integrity": "sha256-UCOTjZh7yhaT65DtDD8awV/qcrRMerYvTLeS9nuh97k=",
           "strip_prefix": "",
           "remote_patches": {
-            "https://bcr.bazel.build/modules/rules_jni/0.9.1/patches/module_dot_bazel_version.patch": "sha256-3ly05FYpgaR8OicB0HvqUJyn8TA1Rz+QBBrjA/Bvk40="
+            "https://bcr.bazel.build/modules/rules_jni/0.10.1/patches/module_dot_bazel_version.patch": "sha256-LYrXMnTaopGjxd0UdiJA9QZUu86XZk65hdK1nb/r8jk="
           },
-          "remote_patch_strip": 0
+          "remote_patch_strip": 1
         }
       }
     },
@@ -6749,71 +6749,6 @@
             "rules_haskell~",
             "rules_nodejs",
             "rules_nodejs~"
-          ]
-        ]
-      }
-    },
-    "@@rules_jni~//bzlmod:extensions.bzl%download_jdk_deps": {
-      "general": {
-        "bzlTransitiveDigest": "N54FFp/L6Xq7yrCZTEhT2Mh52JUZTuH4/5a1LAUafk0=",
-        "recordedFileInputs": {},
-        "recordedDirentsInputs": {},
-        "envVariables": {},
-        "generatedRepoSpecs": {
-          "com_github_openjdk_jdk_unix_jni_md_h": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "downloaded_file_path": "jni_md.h",
-              "sha256": "88cb5c33e306900dd35a78d5a439087123b8e91b0986bb5acb42cc9bd2fcc42e",
-              "urls": [
-                "https://raw.githubusercontent.com/openjdk/jdk/jdk-22%2B12/src/java.base/unix/native/include/jni_md.h"
-              ]
-            }
-          },
-          "com_github_openjdk_jdk_license": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "downloaded_file_path": "LICENSE",
-              "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726",
-              "urls": [
-                "https://raw.githubusercontent.com/openjdk/jdk/jdk-22%2B12/LICENSE"
-              ]
-            }
-          },
-          "com_github_openjdk_jdk_jni_h": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "downloaded_file_path": "jni.h",
-              "sha256": "99e64ebbe749e6df284f852f11b3c73f6ea97baf15120428f40f887fe0616e61",
-              "urls": [
-                "https://raw.githubusercontent.com/openjdk/jdk/jdk-22%2B12/src/java.base/share/native/include/jni.h"
-              ]
-            }
-          },
-          "com_github_openjdk_jdk_windows_jni_md_h": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "downloaded_file_path": "jni_md.h",
-              "sha256": "3cacac1e4802ec246ea7c0c6772d4ac40c9f7255d4df095cfffe601137689771",
-              "urls": [
-                "https://raw.githubusercontent.com/openjdk/jdk/jdk-22%2B12/src/java.base/windows/native/include/jni_md.h"
-              ]
-            }
-          }
-        },
-        "moduleExtensionMetadata": {
-          "useAllRepos": "REGULAR",
-          "reproducible": false
-        },
-        "recordedRepoMappingEntries": [
-          [
-            "rules_jni~",
-            "bazel_tools",
-            "bazel_tools"
           ]
         ]
       }
@@ -12036,7 +11971,7 @@
     },
     "@@rules_python~//python/extensions:pip.bzl%pip": {
       "os:osx,arch:x86_64": {
-        "bzlTransitiveDigest": "XWtuZiWNe1Pc5+yo6qxJnA1sAIgr5HriXloNyGFzrgQ=",
+        "bzlTransitiveDigest": "IMPhksUJM8syaa8Bt+l5XMdlIsZhB2iB/nzeaYBJt3A=",
         "recordedFileInputs": {
           "@@//third_party/python/requirements_lock.txt": "8a06d8936a5bd5d994e3c51e17048a34fb099d9f94030f7ab919425d14775306",
           "@@grpc~//requirements.bazel.txt": "e1ff02183531d3f5ff87078adea3f4ed3c3f874681a4913ae961ed94f6c832dd"
