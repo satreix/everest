@@ -3,7 +3,7 @@ module github.com/satreix/everest
 go 1.22.2
 
 require (
-	github.com/antlr4-go/antlr/v4 v4.13.0
+	github.com/antlr4-go/antlr/v4 v4.13.1
 	github.com/aristanetworks/goarista v0.0.0-20240430094517-e1401db4eb86
 	github.com/bazelbuild/rules_go v0.47.1
 	github.com/cockscomb/cel2sql v0.0.0-20211204123659-c803dfd5c44c
@@ -82,7 +82,7 @@ require (
 	go.opentelemetry.io/otel/trace v1.26.0 // indirect
 	go.opentelemetry.io/proto/otlp v1.2.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
-	golang.org/x/exp v0.0.0-20240222234643-814bf88cf225 // indirect
+	golang.org/x/exp v0.0.0-20240506185415-9bf2ced13842 // indirect
 	golang.org/x/net v0.25.0 // indirect
 	golang.org/x/sys v0.20.0 // indirect
 	golang.org/x/text v0.15.0 // indirect
