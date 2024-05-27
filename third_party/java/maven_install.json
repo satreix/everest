@@ -723,5 +723,27 @@
       "org.ow2.asm:asm"
     ]
   },
+  "services": {
+    "com.google.errorprone:javac-shaded": {
+      "com.sun.tools.javac.platform.PlatformProvider": [
+        "com.sun.tools.javac.platform.JDKPlatformProvider"
+      ]
+    },
+    "org.junit.jupiter:junit-jupiter-engine": {
+      "org.junit.platform.engine.TestEngine": [
+        "org.junit.jupiter.engine.JupiterTestEngine"
+      ]
+    },
+    "org.junit.platform:junit-platform-launcher": {
+      "org.junit.platform.launcher.TestExecutionListener": [
+        "org.junit.platform.launcher.listeners.UniqueIdTrackingListener"
+      ]
+    },
+    "org.junit.vintage:junit-vintage-engine": {
+      "org.junit.platform.engine.TestEngine": [
+        "org.junit.vintage.engine.VintageTestEngine"
+      ]
+    }
+  },
   "version": "2"
 }
