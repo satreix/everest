@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "613c195acd89a52292025ef508fa08870d2c42004a49102e2e13c3edcbf6344c",
+  "moduleFileHash": "c95b30911891f5602ec80ee890373c86a3f8ea990b0714a53f6c16069d33d5ee",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -97,7 +97,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 42,
+            "line": 46,
             "column": 21
           },
           "imports": {
@@ -116,7 +116,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 43,
+                "line": 47,
                 "column": 15
               }
             }
@@ -130,7 +130,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 51,
+            "line": 55,
             "column": 22
           },
           "imports": {
@@ -155,7 +155,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 52,
+                "line": 56,
                 "column": 17
               }
             }
@@ -169,7 +169,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 68,
+            "line": 72,
             "column": 23
           },
           "imports": {},
@@ -183,7 +183,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 69,
+                "line": 73,
                 "column": 16
               }
             },
@@ -195,7 +195,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 70,
+                "line": 74,
                 "column": 12
               }
             }
@@ -209,7 +209,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 72,
+            "line": 76,
             "column": 24
           },
           "imports": {
@@ -254,7 +254,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 73,
+                "line": 77,
                 "column": 18
               }
             },
@@ -269,7 +269,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 74,
+                "line": 78,
                 "column": 25
               }
             },
@@ -284,7 +284,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 80,
+                "line": 84,
                 "column": 25
               }
             }
@@ -298,7 +298,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 124,
+            "line": 128,
             "column": 35
           },
           "imports": {},
@@ -312,7 +312,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 125,
+                "line": 129,
                 "column": 28
               }
             }
@@ -326,7 +326,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 130,
+            "line": 134,
             "column": 31
           },
           "imports": {
@@ -342,7 +342,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 132,
+                "line": 136,
                 "column": 24
               }
             },
@@ -354,7 +354,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 138,
+                "line": 142,
                 "column": 27
               }
             },
@@ -366,7 +366,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 138,
+                "line": 142,
                 "column": 27
               }
             },
@@ -378,7 +378,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 138,
+                "line": 142,
                 "column": 27
               }
             },
@@ -390,7 +390,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 148,
+                "line": 152,
                 "column": 35
               }
             }
@@ -404,7 +404,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 160,
+            "line": 164,
             "column": 22
           },
           "imports": {
@@ -436,7 +436,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 161,
+                "line": 165,
                 "column": 14
               }
             }
@@ -450,7 +450,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 184,
+            "line": 188,
             "column": 21
           },
           "imports": {},
@@ -465,7 +465,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 185,
+                "line": 189,
                 "column": 15
               }
             }
@@ -479,7 +479,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 192,
+            "line": 196,
             "column": 20
           },
           "imports": {
@@ -501,7 +501,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 193,
+                "line": 197,
                 "column": 9
               }
             }
@@ -515,7 +515,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 211,
+            "line": 215,
             "column": 23
           },
           "imports": {},
@@ -529,7 +529,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 212,
+                "line": 216,
                 "column": 17
               }
             }
@@ -543,7 +543,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 214,
+            "line": 218,
             "column": 20
           },
           "imports": {
@@ -561,7 +561,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 215,
+                "line": 219,
                 "column": 10
               }
             }
@@ -585,7 +585,7 @@
         "rules_cue": "rules_cue@0.5.0",
         "rules_foreign_cc": "rules_foreign_cc@0.10.1",
         "io_bazel_rules_go": "rules_go@0.47.1",
-        "rules_rust": "rules_rust@0.44.0",
+        "rules_rust": "rules_rust@0.45.1",
         "bazel_gazelle": "gazelle@0.36.0",
         "rules_haskell": "rules_haskell@0.19",
         "rules_java": "rules_java@7.6.1",
@@ -2060,10 +2060,10 @@
         }
       }
     },
-    "rules_rust@0.44.0": {
+    "rules_rust@0.45.1": {
       "name": "rules_rust",
-      "version": "0.44.0",
-      "key": "rules_rust@0.44.0",
+      "version": "0.45.1",
+      "key": "rules_rust@0.45.1",
       "repoName": "rules_rust",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [
@@ -2076,9 +2076,9 @@
         {
           "extensionBzlFile": "@rules_rust//rust/private:extensions.bzl",
           "extensionName": "i",
-          "usingModule": "rules_rust@0.44.0",
+          "usingModule": "rules_rust@0.45.1",
           "location": {
-            "file": "https://bcr.bazel.build/modules/rules_rust/0.44.0/MODULE.bazel",
+            "file": "https://bcr.bazel.build/modules/rules_rust/0.45.1/MODULE.bazel",
             "line": 58,
             "column": 30
           },
@@ -2186,9 +2186,9 @@
         {
           "extensionBzlFile": "@rules_rust//rust:extensions.bzl",
           "extensionName": "rust",
-          "usingModule": "rules_rust@0.44.0",
+          "usingModule": "rules_rust@0.45.1",
           "location": {
-            "file": "https://bcr.bazel.build/modules/rules_rust/0.44.0/MODULE.bazel",
+            "file": "https://bcr.bazel.build/modules/rules_rust/0.45.1/MODULE.bazel",
             "line": 157,
             "column": 21
           },
@@ -2204,7 +2204,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "https://bcr.bazel.build/modules/rules_rust/0.44.0/MODULE.bazel",
+                "file": "https://bcr.bazel.build/modules/rules_rust/0.45.1/MODULE.bazel",
                 "line": 158,
                 "column": 15
               }
@@ -2216,9 +2216,9 @@
         {
           "extensionBzlFile": "@rules_rust//rust:extensions.bzl",
           "extensionName": "rust_host_tools",
-          "usingModule": "rules_rust@0.44.0",
+          "usingModule": "rules_rust@0.45.1",
           "location": {
-            "file": "https://bcr.bazel.build/modules/rules_rust/0.44.0/MODULE.bazel",
+            "file": "https://bcr.bazel.build/modules/rules_rust/0.45.1/MODULE.bazel",
             "line": 177,
             "column": 32
           },
@@ -2233,9 +2233,9 @@
         {
           "extensionBzlFile": "@rules_rust//crate_universe/private/module_extensions:cargo_bazel_bootstrap.bzl",
           "extensionName": "cargo_bazel_bootstrap",
-          "usingModule": "rules_rust@0.44.0",
+          "usingModule": "rules_rust@0.45.1",
           "location": {
-            "file": "https://bcr.bazel.build/modules/rules_rust/0.44.0/MODULE.bazel",
+            "file": "https://bcr.bazel.build/modules/rules_rust/0.45.1/MODULE.bazel",
             "line": 180,
             "column": 38
           },
@@ -2266,9 +2266,9 @@
         "ruleClassName": "http_archive",
         "attributes": {
           "urls": [
-            "https://github.com/bazelbuild/rules_rust/releases/download/0.44.0/rules_rust-v0.44.0.tar.gz"
+            "https://github.com/bazelbuild/rules_rust/releases/download/0.45.1/rules_rust-v0.45.1.tar.gz"
           ],
-          "integrity": "sha256-pt9MIrs/tDVzpMQIjvbQ+v44oOzQ+FrSH/2IiAAzcDA=",
+          "integrity": "sha256-+bWb47wg0VchIADaHt6L5Dma2Gn+Q589nz/MKcTi+lo=",
           "strip_prefix": "",
           "remote_patches": {},
           "remote_patch_strip": 0
@@ -16544,96 +16544,9 @@
         ]
       }
     },
-    "@@rules_rust~//crate_universe/private/module_extensions:cargo_bazel_bootstrap.bzl%cargo_bazel_bootstrap": {
-      "general": {
-        "bzlTransitiveDigest": "JBBZg0UR5lo0Yvf1HMVwR2H1FphpfEKqr5Tz2Eqqtjc=",
-        "recordedFileInputs": {},
-        "recordedDirentsInputs": {},
-        "envVariables": {},
-        "generatedRepoSpecs": {
-          "cargo_bazel_bootstrap": {
-            "bzlFile": "@@rules_rust~//cargo/private:cargo_bootstrap.bzl",
-            "ruleClassName": "cargo_bootstrap_repository",
-            "attributes": {
-              "srcs": [
-                "@@rules_rust~//crate_universe:src/api.rs",
-                "@@rules_rust~//crate_universe:src/api/lockfile.rs",
-                "@@rules_rust~//crate_universe:src/cli.rs",
-                "@@rules_rust~//crate_universe:src/cli/generate.rs",
-                "@@rules_rust~//crate_universe:src/cli/query.rs",
-                "@@rules_rust~//crate_universe:src/cli/splice.rs",
-                "@@rules_rust~//crate_universe:src/cli/vendor.rs",
-                "@@rules_rust~//crate_universe:src/config.rs",
-                "@@rules_rust~//crate_universe:src/context.rs",
-                "@@rules_rust~//crate_universe:src/context/crate_context.rs",
-                "@@rules_rust~//crate_universe:src/context/platforms.rs",
-                "@@rules_rust~//crate_universe:src/lib.rs",
-                "@@rules_rust~//crate_universe:src/lockfile.rs",
-                "@@rules_rust~//crate_universe:src/main.rs",
-                "@@rules_rust~//crate_universe:src/metadata.rs",
-                "@@rules_rust~//crate_universe:src/metadata/dependency.rs",
-                "@@rules_rust~//crate_universe:src/metadata/metadata_annotation.rs",
-                "@@rules_rust~//crate_universe:src/rendering.rs",
-                "@@rules_rust~//crate_universe:src/rendering/template_engine.rs",
-                "@@rules_rust~//crate_universe:src/rendering/templates/module_bzl.j2",
-                "@@rules_rust~//crate_universe:src/rendering/templates/partials/header.j2",
-                "@@rules_rust~//crate_universe:src/rendering/templates/partials/module/aliases_map.j2",
-                "@@rules_rust~//crate_universe:src/rendering/templates/partials/module/deps_map.j2",
-                "@@rules_rust~//crate_universe:src/rendering/templates/partials/module/repo_git.j2",
-                "@@rules_rust~//crate_universe:src/rendering/templates/partials/module/repo_http.j2",
-                "@@rules_rust~//crate_universe:src/rendering/templates/vendor_module.j2",
-                "@@rules_rust~//crate_universe:src/rendering/verbatim/alias_rules.bzl",
-                "@@rules_rust~//crate_universe:src/select.rs",
-                "@@rules_rust~//crate_universe:src/splicing.rs",
-                "@@rules_rust~//crate_universe:src/splicing/cargo_config.rs",
-                "@@rules_rust~//crate_universe:src/splicing/crate_index_lookup.rs",
-                "@@rules_rust~//crate_universe:src/splicing/splicer.rs",
-                "@@rules_rust~//crate_universe:src/test.rs",
-                "@@rules_rust~//crate_universe:src/utils.rs",
-                "@@rules_rust~//crate_universe:src/utils/starlark.rs",
-                "@@rules_rust~//crate_universe:src/utils/starlark/glob.rs",
-                "@@rules_rust~//crate_universe:src/utils/starlark/label.rs",
-                "@@rules_rust~//crate_universe:src/utils/starlark/select.rs",
-                "@@rules_rust~//crate_universe:src/utils/starlark/select_dict.rs",
-                "@@rules_rust~//crate_universe:src/utils/starlark/select_list.rs",
-                "@@rules_rust~//crate_universe:src/utils/starlark/select_scalar.rs",
-                "@@rules_rust~//crate_universe:src/utils/starlark/select_set.rs",
-                "@@rules_rust~//crate_universe:src/utils/starlark/serialize.rs",
-                "@@rules_rust~//crate_universe:src/utils/starlark/target_compatible_with.rs",
-                "@@rules_rust~//crate_universe:src/utils/target_triple.rs"
-              ],
-              "binary": "cargo-bazel",
-              "cargo_lockfile": "@@rules_rust~//crate_universe:Cargo.lock",
-              "cargo_toml": "@@rules_rust~//crate_universe:Cargo.toml",
-              "version": "1.78.0",
-              "timeout": 900,
-              "rust_toolchain_cargo_template": "@rust_host_tools//:bin/{tool}",
-              "rust_toolchain_rustc_template": "@rust_host_tools//:bin/{tool}"
-            }
-          }
-        },
-        "recordedRepoMappingEntries": [
-          [
-            "rules_rust~",
-            "bazel_skylib",
-            "bazel_skylib~"
-          ],
-          [
-            "rules_rust~",
-            "bazel_tools",
-            "bazel_tools"
-          ],
-          [
-            "rules_rust~",
-            "rules_rust",
-            "rules_rust~"
-          ]
-        ]
-      }
-    },
     "@@rules_rust~//rust:extensions.bzl%rust": {
       "general": {
-        "bzlTransitiveDigest": "BKUnQlxllZrpg2BCeDuBfaAhavNaz2CwTHKnwup0hoc=",
+        "bzlTransitiveDigest": "0H2DgiEzvlSLFxydv+NmaNnJjOhIoUVPs2SQ9pP+92M=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -18219,7 +18132,7 @@
     },
     "@@rules_rust~//rust/private:extensions.bzl%i": {
       "general": {
-        "bzlTransitiveDigest": "vIUj9pL1US5k7j1fND34qcezW70zDgjBZN9wZcC9u3k=",
+        "bzlTransitiveDigest": "mfltOUsNdFuiJF+n+Ov2PC1pXEZakLs10OObdEvepqs=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
