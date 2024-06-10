@@ -29,7 +29,7 @@ require (
 	go.einride.tech/aip v0.67.1
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.51.0
 	golang.org/x/tools v0.21.0
-	google.golang.org/genproto/googleapis/api v0.0.0-20240521202816-d264139d666e
+	google.golang.org/genproto/googleapis/api a8a62080eff3
 	google.golang.org/grpc v1.64.0
 	google.golang.org/protobuf v1.34.1
 	gorm.io/driver/sqlite v1.5.5
