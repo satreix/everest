@@ -157,15 +157,15 @@ bazel_dep(name = "rules_java", version = "7.6.3")
 bazel_dep(name = "rules_jni", version = "0.10.1")
 bazel_dep(name = "rules_jvm_external", version = "6.1")
 
-JUNIT_VERSION = "5.8.1"
+JUNIT_VERSION = "5.10.2"
 
-JUNIT_PLATFORM_VERSION = "1.8.1"
+JUNIT_PLATFORM_VERSION = "1.10.2"
 
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 maven.install(
     artifacts = [
-        "com.google.googlejavaformat:google-java-format:1.7",
-        "commons-cli:commons-cli:1.4",
+        "com.google.googlejavaformat:google-java-format:1.22.0",
+        "commons-cli:commons-cli:1.8.0",
         "org.junit.jupiter:junit-jupiter-api:" + JUNIT_VERSION,
         "org.junit.jupiter:junit-jupiter-engine:" + JUNIT_VERSION,
         "org.junit.platform:junit-platform-launcher:" + JUNIT_PLATFORM_VERSION,
