@@ -208,8 +208,8 @@
     "https://bcr.bazel.build/modules/rules_python/0.33.1/MODULE.bazel": "b6767735ae876488ca4210ae315709a10ed97a2ff791d7b185cb241fae4ba3f1",
     "https://bcr.bazel.build/modules/rules_python/0.33.1/source.json": "b3108745305a93436ed2727af9ddfb31c8471e9bdd40017ca0b805e70cf28d27",
     "https://bcr.bazel.build/modules/rules_python/0.4.0/MODULE.bazel": "9208ee05fd48bf09ac60ed269791cf17fb343db56c8226a720fbb1cdf467166c",
-    "https://bcr.bazel.build/modules/rules_rust/0.45.1/MODULE.bazel": "a69d0db3a958fab2c6520961e1b2287afcc8b36690fd31bbc4f6f7391397150d",
-    "https://bcr.bazel.build/modules/rules_rust/0.45.1/source.json": "28a181c6bc9d037bd2a8f2875908d821027def05f87af51b79277395c7b50c71",
+    "https://bcr.bazel.build/modules/rules_rust/0.46.0/MODULE.bazel": "9bc9cd48a10ec306399f2864988e94f3bf1227b4f239cb4e15145f76cec5a99a",
+    "https://bcr.bazel.build/modules/rules_rust/0.46.0/source.json": "1fe88a22bc1b24dbba44076ca82ced427a751d2df22f927494fdbc53e75c4bf8",
     "https://bcr.bazel.build/modules/rules_sh/0.4.0/MODULE.bazel": "1e1f124fafde047e65d614930e1f344dbbc47204865c8c7aae484ee0de2d60ac",
     "https://bcr.bazel.build/modules/rules_sh/0.4.0/source.json": "2d2bb2ff9bfc8becd036bbe5c5f7ecddeac92be95dc02170bfb7173759e3ff1f",
     "https://bcr.bazel.build/modules/rules_swift/1.18.0/MODULE.bazel": "a6aba73625d0dc64c7b4a1e831549b6e375fbddb9d2dde9d80c9de6ec45b24c9",
@@ -9639,8 +9639,8 @@
     },
     "@@rules_rust~//rust:extensions.bzl%rust": {
       "general": {
-        "bzlTransitiveDigest": "IZ4WCuKl+CIlgVbvKQ2SuuXhgAgxULsd58QDD8GZbto=",
-        "usagesDigest": "0m2+GRQ2AG8hAj1BxIksIRBOiXshNYTxJorGvJLYeTw=",
+        "bzlTransitiveDigest": "l3H5iT1dcFt2xx9pZHhu/36yaPLQK4zAI70cfindUfI=",
+        "usagesDigest": "U1i7hP2vA6bRvsOyewpPEXf6ctHZB1YxY6O0mOP7sWc=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -11226,8 +11226,8 @@
     },
     "@@rules_rust~//rust/private:extensions.bzl%i": {
       "general": {
-        "bzlTransitiveDigest": "9tQqGPJMZBZ4lukWUBcLwHHzUV1U1fG2s2Pi6c1Sgsg=",
-        "usagesDigest": "fqDWBjyvTMnFoo/6Tcjme7I9DTZI905vdoxqzGPh/Tc=",
+        "bzlTransitiveDigest": "gGnyuFoMcQNI8F12H+SliYEBliEpM2ZdeEypMCUfxjA=",
+        "usagesDigest": "/H7IcoHwXn42bCp+sLtEVBoZodYCPKf25DeNQcgSA5I=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -18433,15 +18433,6 @@
               "build_file": "@@rules_rust~//crate_universe/3rdparty/crates:BUILD.gix-protocol-0.40.0.bazel"
             }
           },
-          "bazelci_rules": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_archive",
-            "attributes": {
-              "sha256": "eca21884e6f66a88c358e580fd67a6b148d30ab57b1680f62a96c00f9bc6a07e",
-              "strip_prefix": "bazelci_rules-1.0.0",
-              "url": "https://github.com/bazelbuild/continuous-integration/releases/download/rules-1.0.0/bazelci_rules-1.0.0.tar.gz"
-            }
-          },
           "rules_rust_wasm_bindgen__doc-comment-0.3.3": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
@@ -21589,8 +21580,7 @@
             "generated_inputs_in_external_repo",
             "libc",
             "rules_rust_toolchain_test_target_json",
-            "com_google_googleapis",
-            "bazelci_rules"
+            "com_google_googleapis"
           ],
           "explicitRootModuleDirectDevDeps": [],
           "useAllRepos": "NO",
@@ -21786,6 +21776,11 @@
             "rules_rust~",
             "rrra__serde_json-1.0.102",
             "rules_rust~~i~rrra__serde_json-1.0.102"
+          ],
+          [
+            "rules_rust~",
+            "rules_cc",
+            "rules_cc~"
           ],
           [
             "rules_rust~",
