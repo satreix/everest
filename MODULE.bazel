@@ -21,6 +21,7 @@ use_repo(rules_ts_ext, "npm_typescript")
 
 bazel_dep(name = "bazel_skylib", version = "1.7.1")
 bazel_dep(name = "buildifier_prebuilt", version = "6.4.0")
+bazel_dep(name = "contrib_rules_jvm", version = "0.27.0")
 bazel_dep(name = "fmt", version = "10.2.1.bcr.1")
 bazel_dep(name = "gflags", version = "2.2.2")
 bazel_dep(name = "googleapis", version = "0.0.0-20240326-1c8d509c5")
