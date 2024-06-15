@@ -48,9 +48,9 @@ cel-python==0.1.5 ; python_version >= "3.7" and python_version < "4" \
     --hash=sha256:ac81fab8ba08b633700a45d84905be2863529c6a32935c9da7ef53fc06844f1a \
     --hash=sha256:d3911bb046bc3ed12792bd88ab453f72d98c66923b72a2fa016bcdffd96e2f98
     # via -r third_party/python/requirements.txt
-certifi==2024.2.2 ; python_version >= "3.6" \
-    --hash=sha256:0569859f95fc761b18b45ef421b1290a0f65f147e92a1e5eb3e635f9a5e4e66f \
-    --hash=sha256:dc383c07b76109f368f6106eee2b593b04a011ea4d55f652c6ca24a754d1cdd1
+certifi==2024.6.2 ; python_version >= "3.6" \
+    --hash=sha256:3cd43f1c6fa7dedc5899d69d3ad0398fd018ad1a17fba83ddaf78aa46c747516 \
+    --hash=sha256:ddc6c8ce995e6987e7faf5e3f1b02b302836a0e5d98ece18392cb1a36c72ad56
     # via
     #   -r third_party/python/requirements.txt
     #   pipenv
@@ -162,9 +162,9 @@ distlib==0.3.8 \
     # via
     #   -r third_party/python/requirements.txt
     #   virtualenv
-filelock==3.14.0 ; python_version >= "3.8" \
-    --hash=sha256:43339835842f110ca7ae60f1e1c160714c5a6afd15a2873419ab185334975c0f \
-    --hash=sha256:6ea72da3be9b8c82afd3edcf99f2fffbb5076335a5ae4d03248bb5b6c3eae78a
+filelock==3.15.1 ; python_version >= "3.8" \
+    --hash=sha256:58a2549afdf9e02e10720eaa4d4470f56386d7a6f72edd7d0596337af8ed7ad8 \
+    --hash=sha256:71b3102950e91dfc1bb4209b64be4dc8854f40e5f534428d8684f953ac847fac
     # via
     #   -r third_party/python/requirements.txt
     #   virtualenv
@@ -270,9 +270,9 @@ mypy-extensions==1.0.0 ; python_version >= "3.5" \
     # via
     #   -r third_party/python/requirements.txt
     #   black
-packaging==24.0 ; python_version >= "3.7" \
-    --hash=sha256:2ddfb553fdf02fb784c234c7ba6ccc288296ceabec964ad2eae3777778130bc5 \
-    --hash=sha256:eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9
+packaging==24.1 ; python_version >= "3.8" \
+    --hash=sha256:026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002 \
+    --hash=sha256:5b8f2217dbdbd2f7f384c41c628544e6d52f2d0f53c6d0c3ea61aa5d1d7ff124
     # via
     #   -r third_party/python/requirements.txt
     #   black
@@ -287,9 +287,9 @@ pip-tools==7.4.1 ; python_version >= "3.8" \
     --hash=sha256:4c690e5fbae2f21e87843e89c26191f0d9454f362d8acdbd695716493ec8b3a9 \
     --hash=sha256:864826f5073864450e24dbeeb85ce3920cdfb09848a3d69ebf537b521f14bcc9
     # via -r third_party/python/requirements.txt
-pipenv==2023.12.1 ; python_version >= "3.8" \
-    --hash=sha256:4aea73e23944e464ad2b849328e780ad121c5336e1c24a7ac15aa493c41c2341 \
-    --hash=sha256:96c8af7c36691fbc648959f3f631954212398246c8cfcfa529ec09bc5d0bfd01
+pipenv==2024.0.1 ; python_version >= "3.8" \
+    --hash=sha256:5360835c613837423a99b8c94952b139b777b3eaabb42cb9edb34556245b4c25 \
+    --hash=sha256:ae5a83fa5b66065cebd2bd8f73f0b281b3bd202a13d58cc644f0b9765128c990
     # via -r third_party/python/requirements.txt
 platformdirs==4.2.2 ; python_version >= "3.8" \
     --hash=sha256:2d7a1657e36a80ea911db832a8a6ece5ee53d8de21edd5cc5879af6530b1bfee \
@@ -371,9 +371,9 @@ pyyaml==6.0.1 ; python_version >= "3.6" \
     # via
     #   -r third_party/python/requirements.txt
     #   cel-python
-requests==2.32.2 ; python_version >= "3.8" \
-    --hash=sha256:dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289 \
-    --hash=sha256:fc06670dd0ed212426dfeb94fc1b983d917c4f9847c863f313c9dfaaffb7c23c
+requests==2.32.3 ; python_version >= "3.8" \
+    --hash=sha256:55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760 \
+    --hash=sha256:70761cfe03c773ceb22aa2f671b4757976145175cdfca038c02654d061d6dcc6
     # via
     #   -r third_party/python/requirements.txt
     #   cel-python
@@ -392,9 +392,9 @@ tomli==2.0.1 ; python_version < "3.11" \
     #   black
     #   build
     #   pip-tools
-typing-extensions==4.12.0 ; python_version < "3.11" \
-    --hash=sha256:8cbcdc8606ebcb0d95453ad7dc5065e6237b6aa230a31e81d0f440c30fed5fd8 \
-    --hash=sha256:b349c66bea9016ac22978d800cfff206d5f9816951f12a7d0ec5578b0a819594
+typing-extensions==4.12.2 ; python_version < "3.11" \
+    --hash=sha256:04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d \
+    --hash=sha256:1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8
     # via
     #   -r third_party/python/requirements.txt
     #   black
@@ -417,9 +417,9 @@ wheel==0.43.0 ; python_version >= "3.8" \
     # via
     #   -r third_party/python/requirements.txt
     #   pip-tools
-zipp==3.19.0 ; python_version >= "3.8" \
-    --hash=sha256:952df858fb3164426c976d9338d3961e8e8b3758e2e059e0f754b8c4262625ee \
-    --hash=sha256:96dc6ad62f1441bcaccef23b274ec471518daf4fbbc580341204936a5a3dddec
+zipp==3.19.2 ; python_version >= "3.8" \
+    --hash=sha256:bf1dcf6450f873a13e952a29504887c89e6de7506209e5b1bcc3460135d4de19 \
+    --hash=sha256:f091755f667055f2d02b32c53771a7a6c8b47e1fdbc4b72a8b9072b3eef8015c
     # via
     #   -r third_party/python/requirements.txt
     #   importlib-metadata
