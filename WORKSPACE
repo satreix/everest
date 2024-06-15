@@ -38,13 +38,6 @@ http_archive(
 )
 
 http_archive(
-    name = "contrib_rules_jvm",
-    sha256 = "e6cd8f54b7491fb3caea1e78c2c740b88c73c7a43150ec8a826ae347cc332fc7",
-    strip_prefix = "rules_jvm-0.27.0",
-    url = "https://github.com/bazel-contrib/rules_jvm/archive/refs/tags/v0.27.0.tar.gz",
-)
-
-http_archive(
     name = "jq",
     build_file = "//tools/jq:jq.BUILD.bazel",
     sha256 = "998c41babeb57b4304e65b4eb73094279b3ab1e63801b6b4bddd487ce009b39d",
@@ -74,14 +67,6 @@ http_archive(
     strip_prefix = "uncrustify-uncrustify-0.70.1",
     url = "https://github.com/uncrustify/uncrustify/archive/uncrustify-0.70.1.tar.gz",
 )
-
-load("@contrib_rules_jvm//:repositories.bzl", "contrib_rules_jvm_deps")
-
-contrib_rules_jvm_deps()
-
-load("@contrib_rules_jvm//:setup.bzl", "contrib_rules_jvm_setup")
-
-contrib_rules_jvm_setup()
 
 load("@com_google_google_java_format_source//tools/bazel:def.bzl", "java_format")
 
