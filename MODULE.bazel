@@ -66,7 +66,7 @@ crate.from_cargo(
 )
 use_repo(crate, "crates")
 
-bazel_dep(name = "gazelle", version = "0.36.0", repo_name = "bazel_gazelle")
+bazel_dep(name = "gazelle", version = "0.37.0", repo_name = "bazel_gazelle")
 
 go_sdk = use_extension("@io_bazel_rules_go//go:extensions.bzl", "go_sdk")
 go_sdk.download(version = "1.22.2")

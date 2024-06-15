@@ -13,7 +13,7 @@ go_library(
         "//src/go/logging",
         "//src/proto/bookstore/v1:bookstore",
         "@com_github_rs_zerolog//log",
-        "@org_golang_google_grpc//:go_default_library",
+        "@org_golang_google_grpc//:grpc",
         "@org_golang_google_grpc//reflection",
     ],
 )
