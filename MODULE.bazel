@@ -19,7 +19,7 @@ rules_ts_ext = use_extension("@aspect_rules_ts//ts:extensions.bzl", "ext", dev_d
 rules_ts_ext.deps()
 use_repo(rules_ts_ext, "npm_typescript")
 
-bazel_dep(name = "bazel_skylib", version = "1.6.1")
+bazel_dep(name = "bazel_skylib", version = "1.7.1")
 bazel_dep(name = "buildifier_prebuilt", version = "6.4.0")
 bazel_dep(name = "fmt", version = "10.2.1.bcr.1")
 bazel_dep(name = "gflags", version = "2.2.2")
