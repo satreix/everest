@@ -209,6 +209,8 @@
     "https://bcr.bazel.build/modules/rules_python/0.33.2/MODULE.bazel": "3e036c4ad8d804a4dad897d333d8dce200d943df4827cb849840055be8d2e937",
     "https://bcr.bazel.build/modules/rules_python/0.33.2/source.json": "e539592cd3aae4492032cecea510e46ca16eeb972271560b922cae9893944e2f",
     "https://bcr.bazel.build/modules/rules_python/0.4.0/MODULE.bazel": "9208ee05fd48bf09ac60ed269791cf17fb343db56c8226a720fbb1cdf467166c",
+    "https://bcr.bazel.build/modules/rules_ruby/0.11.0/MODULE.bazel": "4090c6ba0d07e08953c3c9b5387be429094ad9a3f4b3e24bd669401c88f6c252",
+    "https://bcr.bazel.build/modules/rules_ruby/0.11.0/source.json": "5c94d36a4618c175b764e3b42a673bf216d065c4a1d0a344a00a242fcd2817a7",
     "https://bcr.bazel.build/modules/rules_rust/0.46.0/MODULE.bazel": "9bc9cd48a10ec306399f2864988e94f3bf1227b4f239cb4e15145f76cec5a99a",
     "https://bcr.bazel.build/modules/rules_rust/0.46.0/source.json": "1fe88a22bc1b24dbba44076ca82ced427a751d2df22f927494fdbc53e75c4bf8",
     "https://bcr.bazel.build/modules/rules_sh/0.4.0/MODULE.bazel": "1e1f124fafde047e65d614930e1f344dbbc47204865c8c7aae484ee0de2d60ac",
@@ -9672,6 +9674,57 @@
             "rules_perl~",
             "rules_perl",
             "rules_perl~"
+          ]
+        ]
+      }
+    },
+    "@@rules_ruby~//ruby:extensions.bzl%ruby": {
+      "general": {
+        "bzlTransitiveDigest": "j8Z4sRl//8oTbAI/GgSSNRDJQErEPVfHpzHmEOm6cZ4=",
+        "usagesDigest": "hS045LWHQ/dxRwZo9IECayvBapb+wokSHnUgmucCRjE=",
+        "recordedFileInputs": {},
+        "recordedDirentsInputs": {},
+        "envVariables": {},
+        "generatedRepoSpecs": {
+          "ruby_toolchains": {
+            "bzlFile": "@@rules_ruby~//ruby/private/toolchain:repository_proxy.bzl",
+            "ruleClassName": "rb_toolchain_repository_proxy",
+            "attributes": {
+              "toolchain": "@ruby//:toolchain",
+              "toolchain_type": "@rules_ruby//ruby:toolchain_type"
+            }
+          },
+          "bundle": {
+            "bzlFile": "@@rules_ruby~//ruby/private:bundle_fetch.bzl",
+            "ruleClassName": "rb_bundle_fetch",
+            "attributes": {
+              "srcs": [],
+              "env": {},
+              "gemfile": "@@//:Gemfile",
+              "gemfile_lock": "@@//:Gemfile.lock",
+              "gem_checksums": {},
+              "bundler_remote": "https://rubygems.org/",
+              "bundler_checksums": {}
+            }
+          },
+          "ruby": {
+            "bzlFile": "@@rules_ruby~//ruby/private:download.bzl",
+            "ruleClassName": "rb_download",
+            "attributes": {
+              "version": "",
+              "version_file": "@@//:.ruby-version",
+              "msys2_packages": [
+                "libyaml"
+              ],
+              "ruby_build_version": "20240612"
+            }
+          }
+        },
+        "recordedRepoMappingEntries": [
+          [
+            "rules_ruby~",
+            "bazel_skylib",
+            "bazel_skylib~"
           ]
         ]
       }
