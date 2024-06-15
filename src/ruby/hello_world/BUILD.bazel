@@ -1,18 +1,31 @@
-load("@bazelruby_rules_ruby//ruby:defs.bzl", "ruby_binary", "ruby_rspec")
+load("@rules_ruby//ruby:defs.bzl", "rb_binary", "rb_test")
 load("//tools/test/binary:binary.bzl", "binary_test")
 
-ruby_binary(
+rb_binary(
     name = "hello_world",
     srcs = ["hello_world.rb"],
+    main = "hello_world.rb",
     deps = [
         "//src/ruby/hello_world/lib:hello",
     ],
 )
 
-ruby_rspec(
-    name = "hello_spec_test",
-    specs = ["//src/ruby/hello_world:spec/hello_spec.rb"],
-    deps = ["//src/ruby/hello_world/lib:hello"],
+rb_test(
+    name = "rubocop_test",
+    timeout = "short",
+    args = [
+        "src/ruby/hello_world/",
+        "src/ruby/hello_world/lib/",
+        "src/ruby/hello_world/spec/",
+    ],
+    main = "@bundle//bin:rubocop",
+    tags = ["no-sandbox"],
+    deps = [
+        ":hello_world",
+        "//src/ruby/hello_world/lib:hello",
+        "//src/ruby/hello_world/spec:hello_test",
+        "@bundle",
+    ],
 )
 
 binary_test(

@@ -1,0 +1,14 @@
+load("@rules_ruby//ruby:defs.bzl", "rb_test")
+
+rb_test(
+    name = "template_test",
+    timeout = "short",
+    srcs = ["template_spec.rb"],
+    args = ["src/ruby/template/spec/"],
+    data = ["//src/ruby/template"],
+    main = "@bundle//bin:rspec",
+    visibility = ["//src/ruby/template:__subpackages__"],
+    deps = [
+        "@bundle",
+    ],
+)

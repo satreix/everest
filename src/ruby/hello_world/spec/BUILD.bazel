@@ -1,0 +1,14 @@
+load("@rules_ruby//ruby:defs.bzl", "rb_test")
+
+rb_test(
+    name = "hello_test",
+    timeout = "short",
+    srcs = ["hello_spec.rb"],
+    args = ["src/ruby/hello_world/spec/"],
+    main = "@bundle//bin:rspec",
+    visibility = ["//src/ruby/hello_world:__subpackages__"],
+    deps = [
+        "//src/ruby/hello_world/lib:hello",
+        "@bundle",
+    ],
+)

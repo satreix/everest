@@ -3,18 +3,6 @@ workspace(name = "everest")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
-    name = "bazelruby_rules_ruby",
-    patch_args = ["-p1"],
-    patches = [
-        # A fix for https://github.com/bazelruby/rules_ruby/issues/79
-        "//third_party/bazelruby_rules_ruby:0001-fix-rspec.patch",
-    ],
-    sha256 = "33217f27c7cc44355dc82bbe172d0ace09c6a73da387bbbcd66cff013d35e498",
-    strip_prefix = "rules_ruby-8a03f6c54f1bb3ecbbb82c8e2fdbf40e049a8115",
-    url = "https://github.com/bazelruby/rules_ruby/archive/8a03f6c54f1bb3ecbbb82c8e2fdbf40e049a8115.tar.gz",
-)
-
-http_archive(
     name = "com_github_antlr_grammars_v4",
     build_file_content = """exports_files(glob(["**/*.g4"]), visibility = ["//visibility:public"])""",
     sha256 = "28497554fc00817cf1e40b55724e5c034dd5d815bca5f3152e429c6c550d406e",
@@ -86,19 +74,4 @@ load("@openapi_tools_generator_bazel//:defs.bzl", "openapi_tools_generator_bazel
 openapi_tools_generator_bazel_repositories(
     openapi_generator_cli_version = "5.4.0",
     sha256 = "f3ed312310e390324b33ba2ffff290ce812935207a1493ec5c098d0a441be51c",
-)
-
-load("@bazelruby_rules_ruby//ruby:deps.bzl", "rules_ruby_dependencies", "rules_ruby_select_sdk")
-
-rules_ruby_dependencies()
-
-rules_ruby_select_sdk()
-
-load("@bazelruby_rules_ruby//ruby:defs.bzl", "ruby_bundle")
-
-ruby_bundle(
-    name = "bundle",
-    bundler_version = "2.5.3",
-    gemfile = "//:Gemfile",
-    gemfile_lock = "//:Gemfile.lock",
 )
