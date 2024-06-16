@@ -1,5 +1,7 @@
 [workspace]
+resolver = "2"
 members = [
+    "src/rust/cel",
     "src/rust/grpc_server",
     "src/rust/hello_world",
     "src/rust/num",
