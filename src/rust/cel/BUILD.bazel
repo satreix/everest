@@ -1,0 +1,15 @@
+load("@rules_rust//rust:defs.bzl", "rust_binary", "rust_test")
+load("@crates//:defs.bzl", "aliases", "all_crate_deps")
+
+rust_binary(
+    name = "cel",
+    srcs = ["src/main.rs"],
+    visibility = ["//visibility:public"],
+    deps = all_crate_deps(),
+)
+
+rust_test(
+    name = "cel_test",
+    size = "small",
+    crate = ":cel",
+)
