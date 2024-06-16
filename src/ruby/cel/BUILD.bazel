@@ -1,0 +1,10 @@
+load("@rules_ruby//ruby:defs.bzl", "rb_binary", "rb_test")
+
+rb_binary(
+    name = "cel",
+    srcs = ["cel.rb"],
+    main = "cel.rb",
+    deps = [
+        "@bundle",
+    ],
+)
