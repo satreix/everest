@@ -10,10 +10,10 @@ go_library(
     deps = [
         "//src/go/logging",
         "//src/proto/helloworld",
-        "@com_github_honeycombio_honeycomb_opentelemetry_go//:honeycomb-opentelemetry-go",
         "@com_github_honeycombio_otel_config_go//otelconfig",
         "@com_github_rs_zerolog//log",
         "@io_opentelemetry_go_contrib_instrumentation_google_golang_org_grpc_otelgrpc//:otelgrpc",
+        "@io_opentelemetry_go_contrib_processors_baggage_baggagetrace//:baggagetrace",
         "@org_golang_google_grpc//:grpc",
         "@org_golang_google_grpc//codes",
         "@org_golang_google_grpc//reflection",

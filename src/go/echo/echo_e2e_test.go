@@ -3,13 +3,13 @@ package main_test
 import (
 	"bytes"
 	"fmt"
-	"log"
 	"net"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"reflect"
 	"runtime"
+	"strconv"
 	"strings"
 	"testing"
 
@@ -31,7 +31,10 @@ func TestEnd2End(t *testing.T) {
 	}
 	t.Log("server: " + serverBin)
 
-	serverCmd := exec.Command(serverBin, fmt.Sprintf("-addr=%s:%d", iface, port))
+	var serverStdout, serverStderr bytes.Buffer
+	serverCmd := exec.Command(serverBin, fmt.Sprintf("-addr=%s", net.JoinHostPort(iface, strconv.Itoa(port))))
+	serverCmd.Stdout = &serverStdout
+	serverCmd.Stderr = &serverStderr
 	if err := serverCmd.Start(); err != nil {
 		t.Fatalf("error starting server: %s", err)
 	}
@@ -43,18 +46,20 @@ func TestEnd2End(t *testing.T) {
 	}
 	t.Log("client: " + clientBin)
 
-	var stdout, stderr bytes.Buffer
+	var clientStdout, clientStderr bytes.Buffer
 	clientCmd := exec.Command(clientBin, fmt.Sprintf("127.0.0.1:%d", port), "Java")
-	clientCmd.Stdout = &stdout
-	clientCmd.Stderr = &stderr
+	clientCmd.Stdout = &clientStdout
+	clientCmd.Stderr = &clientStderr
 
 	if err := clientCmd.Run(); err != nil {
-		t.Errorf("client out: %s", stdout.String())
-		t.Errorf("client err: %s", stderr.String())
+		t.Errorf("server out: %s", serverStdout.String())
+		t.Errorf("server err: %s", serverStderr.String())
+		t.Errorf("client out: %s", clientStdout.String())
+		t.Errorf("client err: %s", clientStderr.String())
 		t.Fatalf("error running client: %s", err)
 	}
 
-	actual := strings.TrimSpace(stdout.String())
+	actual := strings.TrimSpace(clientStdout.String())
 
 	expected := "Hello Java"
 
@@ -74,12 +79,10 @@ func findBinary(pkg, name string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	for idx, rf := range rfs {
+	for _, rf := range rfs {
 		if rf.ShortPath == filepath.Join(pkg, name) {
 			return rf.Path, nil
 		}
-
-		log.Printf("%d. %#v", idx, rf)
 	}
 
 	bin, found := bazel.FindBinary(pkg, name)
