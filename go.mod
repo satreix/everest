@@ -27,7 +27,6 @@ require (
 	github.com/zenazn/goji v1.0.1
 	go.einride.tech/aip v0.67.1
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.52.0
-	go.opentelemetry.io/contrib/processors/baggage/baggagetrace v0.0.1
 	golang.org/x/tools v0.22.0
 	google.golang.org/genproto/googleapis/api v0.0.0-20240624140628-dc46fd24d27d
 	google.golang.org/grpc v1.64.0

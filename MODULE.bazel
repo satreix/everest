@@ -115,7 +115,6 @@ use_repo(
     "com_github_zenazn_goji",
     "io_gorm_driver_sqlite",
     "io_gorm_gorm",
-    "io_opentelemetry_go_contrib_processors_baggage_baggagetrace",
     "io_opentelemetry_go_contrib_instrumentation_google_golang_org_grpc_otelgrpc",
     "org_golang_google_genproto_googleapis_api",
     "org_golang_google_grpc",
