@@ -7,7 +7,6 @@ import (
 	"strings"
 	"time"
 
-	honeycomb "github.com/honeycombio/honeycomb-opentelemetry-go"
 	"github.com/honeycombio/otel-config-go/otelconfig"
 	"github.com/rs/zerolog/log"
 	"github.com/satreix/everest/src/go/logging"
@@ -48,7 +47,7 @@ func main() {
 	}
 
 	otelShutdown, err := otelconfig.ConfigureOpenTelemetry(
-		otelconfig.WithSpanProcessor(honeycomb.NewBaggageSpanProcessor()),
+		otelconfig.WithLogLevel("debug"),
 	)
 	if err != nil {
 		log.Fatal().Err(err).Msg("error setting up OTel SDK")
@@ -58,12 +57,11 @@ func main() {
 	s := grpc.NewServer(
 		grpc.ChainUnaryInterceptor(
 			logging.UnaryServerInterceptor(logger),
-			otelgrpc.UnaryServerInterceptor(),
 		),
 		grpc.ChainStreamInterceptor(
 			logging.StreamServerInterceptor(logger),
-			otelgrpc.StreamServerInterceptor(),
 		),
+		grpc.StatsHandler(otelgrpc.NewServerHandler()),
 	)
 
 	pb.RegisterGreeterServer(s, new(server))
