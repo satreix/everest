@@ -1,24 +1,28 @@
-load("@bazelruby_rules_ruby//ruby:defs.bzl", "ruby_binary", "ruby_library", "ruby_rspec")
+load("@rules_ruby//ruby:defs.bzl", "rb_binary", "rb_test")
 
-ruby_binary(
+rb_binary(
     name = "template",
     srcs = ["template.rb"],
     data = glob(["templates/**"]),
+    main = "template.rb",
+    visibility = ["//src/ruby/template/spec:__pkg__"],
     deps = [
-        "@bundle//:erb",
-        "@bundle//:haml",
-        "@bundle//:slim",
+        "@bundle",
     ],
 )
 
-ruby_library(
-    name = "empty",
-    srcs = ["empty.rb"],
-)
-
-ruby_rspec(
-    name = "template_spec_test",
-    data = [":template"],
-    specs = ["//src/ruby/template:spec/template_spec.rb"],
-    deps = [":empty"],  # hack to make rspec happy, not used
+rb_test(
+    name = "rubocop_test",
+    timeout = "short",
+    args = [
+        "src/ruby/template/",
+        "src/ruby/template/spec/",
+    ],
+    main = "@bundle//bin:rubocop",
+    tags = ["no-sandbox"],
+    deps = [
+        ":template",
+        "//src/ruby/template/spec:template_test",
+        "@bundle",
+    ],
 )
