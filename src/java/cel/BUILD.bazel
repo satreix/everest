@@ -1,0 +1,30 @@
+load("@rules_java//java:defs.bzl", "java_binary", "java_library", "java_test")
+load("@contrib_rules_jvm//java:defs.bzl", "JUNIT5_DEPS", "java_test_suite")
+
+java_library(
+    name = "cel",
+    srcs = ["Cel.java"],
+    deps = [
+        "@maven//:dev_cel_cel",
+    ],
+)
+
+java_binary(
+    name = "Cel",
+    main_class = "cel.Cel",
+    runtime_deps = [":cel"],
+)
+
+java_test_suite(
+    name = "cel_tests",
+    size = "small",
+    srcs = [
+        "CelTest.java",
+    ],
+    package = "cel",
+    runner = "junit5",
+    deps = [
+        "@maven//:dev_cel_cel",
+        "@maven//:org_junit_jupiter_junit_jupiter_api",
+    ] + JUNIT5_DEPS,
+)
