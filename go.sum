@@ -64,8 +64,8 @@ github.com/antlr4-go/antlr/v4 v4.13.1 h1:SqQKkuVZ+zWkMMNkjy5FZe5mr5WURWnlpmOuzYW
 github.com/antlr4-go/antlr/v4 v4.13.1/go.mod h1:GKmUxMtwp6ZgGwZSva4eWPC5mS6vUAmOABFgjdkM7Nw=
 github.com/apache/arrow/go/v14 v14.0.2 h1:N8OkaJEOfI3mEZt07BIkvo4sC6XDbL+48MBPWO5IONw=
 github.com/apache/arrow/go/v14 v14.0.2/go.mod h1:u3fgh3EdgN/YQ8cVQRguVW3R+seMybFg8QBQ5LU+eBY=
-github.com/aristanetworks/goarista v0.0.0-20240607234826-d1fc144831de h1:7RFb4e1q9/2URnfCrCQIPXyssFOC2OB+ugLUtUpoAOo=
-github.com/aristanetworks/goarista v0.0.0-20240607234826-d1fc144831de/go.mod h1:ZByIPEU55eAJZcG4up17gIOuTvhIYvxMogSgbTz0PdI=
+github.com/aristanetworks/goarista v0.0.0-20240608002320-7fba55eb78dd h1:1RojovbO4EpgGRFE3GsZDcoeK482nE6xQAyb9+/1HNg=
+github.com/aristanetworks/goarista v0.0.0-20240608002320-7fba55eb78dd/go.mod h1:ZByIPEU55eAJZcG4up17gIOuTvhIYvxMogSgbTz0PdI=
 github.com/bazelbuild/rules_go v0.48.0 h1:fZgo6mCUKeL/+GQiMWy5/QU1FjNXGPnTd5bAeao1pbg=
 github.com/bazelbuild/rules_go v0.48.0/go.mod h1:Dhcz716Kqg1RHNWos+N6MlXNkjNP2EwZQ0LukRKJfMs=
 github.com/beorn7/perks v1.0.1 h1:VlbKKnNfV8bJzeqoa4cOKqO6bYr3WgKZxO8Z16+hsOM=
