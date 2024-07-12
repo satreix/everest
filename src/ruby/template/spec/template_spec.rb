@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative '../template'
-
 EXPECTED_OUTPUT = "=== ERB ===
 <h1>Hello, ERB!</h1>
 === Haml ===
@@ -12,7 +10,7 @@ EXPECTED_OUTPUT = "=== ERB ===
 
 RSpec.describe 'template', 'main' do # rubocop:disable RSpec/DescribeClass, RSpec/DescribeMethod
   it 'renders templates' do
-    expect { system %(./src/ruby/template/template) }
+    expect { system %(./src/ruby/template/template.sh) }
       .to output(EXPECTED_OUTPUT)
       .to_stdout_from_any_process
   end
