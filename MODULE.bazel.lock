@@ -659,7 +659,7 @@
     },
     "@@aspect_rules_js~//npm:extensions.bzl%pnpm": {
       "general": {
-        "bzlTransitiveDigest": "zKUin5z9ygbW+UBiB/IcY7TwPb4UDoGuYj7H3s1Vc9c=",
+        "bzlTransitiveDigest": "JrHZt3UsD5W9GVZYIHzghpb53dWDtZfeO5D9VgN9qM8=",
         "usagesDigest": "03JjegAYiYMi5wJokhB1cebZ6EQaQmBcCZC0tMNzKYg=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -9678,7 +9678,7 @@
     },
     "@@rules_rust~//rust:extensions.bzl%rust": {
       "general": {
-        "bzlTransitiveDigest": "l3H5iT1dcFt2xx9pZHhu/36yaPLQK4zAI70cfindUfI=",
+        "bzlTransitiveDigest": "gXxZOTT2Jg71v8BtYIQGAN93UKzr8M5D1hi4u7RMERQ=",
         "usagesDigest": "U1i7hP2vA6bRvsOyewpPEXf6ctHZB1YxY6O0mOP7sWc=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
