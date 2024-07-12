@@ -1,5 +1,5 @@
-load("@rules_java//java:defs.bzl", "java_binary", "java_library", "java_test")
 load("@contrib_rules_jvm//java:defs.bzl", "JUNIT5_DEPS", "java_test_suite")
+load("@rules_java//java:defs.bzl", "java_binary", "java_library", "java_test")
 
 java_library(
     name = "cel",
