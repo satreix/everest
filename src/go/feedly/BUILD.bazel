@@ -1,4 +1,4 @@
-load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
 
 go_library(
     name = "feedly_lib",
@@ -15,10 +15,10 @@ go_library(
         "@com_github_gosuri_uiprogress//:uiprogress",
         "@com_github_pkg_browser//:browser",
     ] + select({
-        "@io_bazel_rules_go//go/platform:darwin": [
+        "@rules_go//go/platform:darwin": [
             "@com_github_keybase_go_keychain//:go-keychain",
         ],
-        "@io_bazel_rules_go//go/platform:ios": [
+        "@rules_go//go/platform:ios": [
             "@com_github_keybase_go_keychain//:go-keychain",
         ],
         "//conditions:default": [],

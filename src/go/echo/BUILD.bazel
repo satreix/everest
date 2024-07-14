@@ -1,4 +1,4 @@
-load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library", "go_test")
+load("@rules_go//go:def.bzl", "go_binary", "go_library", "go_test")
 load("@rules_oci//oci:defs.bzl", "oci_image")
 load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
 
@@ -35,7 +35,7 @@ go_test(
         ":echo",
         "//src/java/echo/client",
     ],
-    deps = ["@io_bazel_rules_go//go/tools/bazel:go_default_library"],
+    deps = ["@rules_go//go/tools/bazel:go_default_library"],
 )
 
 pkg_tar(
