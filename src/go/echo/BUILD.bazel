@@ -9,7 +9,7 @@ go_library(
     visibility = ["//visibility:private"],
     deps = [
         "//src/go/logging",
-        "//src/proto/helloworld",
+        "//src/proto/helloworld:helloworld_go_proto",
         "@com_github_honeycombio_otel_config_go//otelconfig",
         "@com_github_rs_zerolog//log",
         "@io_opentelemetry_go_contrib_instrumentation_google_golang_org_grpc_otelgrpc//:otelgrpc",

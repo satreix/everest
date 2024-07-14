@@ -11,7 +11,7 @@ go_library(
         "//src/go/bookstore/storage/memory",
         "//src/go/bookstore/storage/sql",
         "//src/go/logging",
-        "//src/proto/bookstore/v1:bookstore",
+        "//src/proto/bookstore/v1:bookstore_v1_go_proto",
         "@com_github_rs_zerolog//log",
         "@org_golang_google_grpc//:grpc",
         "@org_golang_google_grpc//reflection",

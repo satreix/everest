@@ -1,5 +1,5 @@
-load("@rules_go//go:def.bzl", "go_test")
 load("@rules_cue//cue:cue.bzl", "cue_exported_standalone_files")
+load("@rules_go//go:def.bzl", "go_test")
 
 cue_exported_standalone_files(
     name = "foo",
