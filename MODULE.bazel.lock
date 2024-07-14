@@ -189,8 +189,8 @@
     "https://bcr.bazel.build/modules/rules_nodejs/5.8.3/MODULE.bazel": "9fac1897d2067a37693e47f48e11cdb386a455902313c85e9e46fe0aaaa2e4e1",
     "https://bcr.bazel.build/modules/rules_nodejs/6.2.0/MODULE.bazel": "ec27907f55eb34705adb4e8257952162a2d4c3ed0f0b3b4c3c1aad1fac7be35e",
     "https://bcr.bazel.build/modules/rules_nodejs/6.2.0/source.json": "a77c307175a82982f0847fd6a8660db5b21440d8a9d073642cb4afa7a18612ff",
-    "https://bcr.bazel.build/modules/rules_oci/1.7.6/MODULE.bazel": "cf097afc862b7995314708f8026409ec8a91d440e94ee996b92b09518da564f2",
-    "https://bcr.bazel.build/modules/rules_oci/1.7.6/source.json": "d560c3e3ce9b4dc27755a13a8c274c83003d155041a98d21f1bc06ae4d8809c2",
+    "https://bcr.bazel.build/modules/rules_oci/1.8.0/MODULE.bazel": "a4d656f6a0e7c7c1a73b9e394e37c8f9bbc237143ce9e19deba7a532fe189552",
+    "https://bcr.bazel.build/modules/rules_oci/1.8.0/source.json": "c14770a5dfba2980d8f1ebeaac0bfa4848ffb7febfca84ac2a7fd7e8f4d9e1e3",
     "https://bcr.bazel.build/modules/rules_perl/0.2.0/MODULE.bazel": "4dbdd06e59c5c2fc02f37abf9bc3c354f62458db84278afc1c7193b424b9531d",
     "https://bcr.bazel.build/modules/rules_perl/0.2.0/source.json": "98a0e6e20b5479560099b23da1bbade7ee9cf0588de9a39d91cf48ec7bdfa7bb",
     "https://bcr.bazel.build/modules/rules_pkg/0.10.1/MODULE.bazel": "d6e593e048db5f1028f1f05ceb64b123aa6f1c2d43cba049c036443ab2cc2044",
@@ -292,7 +292,7 @@
     "@@aspect_bazel_lib~//lib:extensions.bzl%toolchains": {
       "general": {
         "bzlTransitiveDigest": "8nOJg27GcPiWVkXpWgDkgaCgm6+5A/NOXdBNqOhiFHc=",
-        "usagesDigest": "SrmVKJVO2LNU34w7Uv4cl9rswWAh48QWznStEUT1Pfk=",
+        "usagesDigest": "e3N7ALgb76f8sv5AcjI6d43pOf+KymgD/qpkfnKSjxw=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -2323,8 +2323,8 @@
     },
     "@@rules_oci~//oci:extensions.bzl%oci": {
       "general": {
-        "bzlTransitiveDigest": "ZwdBefLsrR8XFvSFDlnTca+YMrXxdziSNbrzcpgXhuQ=",
-        "usagesDigest": "BxqRUFvgeceFjzGvHekhW8cMpe7Zv2C7OskkF41cbVM=",
+        "bzlTransitiveDigest": "XcCjcWjC4vUIwmAIXFe57WwNAoYqoq99i3gpXvamvb8=",
+        "usagesDigest": "ZHdkrN/6PEXwwKANQjXklXhk4YfEjbkyzoiqf7Mm0uU=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -2511,7 +2511,8 @@
               "repository": "distroless/base",
               "identifier": "sha256:ccaef5ee2f1850270d453fdf700a5392534f8d1a8ca2acda391fbb6a06b81c86",
               "platform": "linux/amd64",
-              "target_name": "distroless_base_linux_amd64"
+              "target_name": "distroless_base_linux_amd64",
+              "bazel_tags": []
             }
           },
           "jq_darwin_arm64": {
@@ -2647,7 +2648,8 @@
               "repository": "distroless/base",
               "identifier": "sha256:ccaef5ee2f1850270d453fdf700a5392534f8d1a8ca2acda391fbb6a06b81c86",
               "platform": "linux/arm64",
-              "target_name": "distroless_base_linux_arm64"
+              "target_name": "distroless_base_linux_arm64",
+              "bazel_tags": []
             }
           },
           "coreutils_windows_amd64": {
