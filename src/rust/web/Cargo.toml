@@ -8,12 +8,9 @@ edition = "2021"
 
 [dependencies]
 askama = "0.12.1"
-iron = "0.6.1"
-iron-slog = "0.0.2"
-router = "0.6.0"
+askama_warp = "0.13.0"
 slog = "2.7.0"
 slog-async = "2.8.0"
 slog-term = "2.9.1"
-
-[dev-dependencies]
-iron-test = "0.6.0"
+tokio = { version = "1", features = ["full"] }
+warp = "0.3.7"
