@@ -15,6 +15,6 @@ set -eufo pipefail
 # So we call the non hermetic one first.
 go mod tidy
 
-bazel run @io_bazel_rules_go//go -- mod tidy -v
+bazel run @rules_go//go -- mod tidy -v
 
 find src/proto -name empty.go -delete

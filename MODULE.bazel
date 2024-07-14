@@ -23,6 +23,57 @@ bazel_dep(name = "bazel_skylib", version = "1.7.1")
 bazel_dep(name = "buildifier_prebuilt", version = "6.4.0")
 bazel_dep(name = "contrib_rules_jvm", version = "0.27.0")
 bazel_dep(name = "fmt", version = "10.2.1.bcr.1")
+bazel_dep(name = "gazelle", version = "0.37.0", repo_name = "bazel_gazelle")
+
+go_deps = use_extension("@bazel_gazelle//:extensions.bzl", "go_deps")
+go_deps.from_file(go_mod = "//:go.mod")
+go_deps.gazelle_override(
+    directives = [
+        "gazelle:go_naming_convention go_default_library",
+    ],
+    path = "github.com/google/cel-go",
+)
+go_deps.gazelle_override(
+    directives = [
+        # The following should not be required after the next gazelle release given
+        # https://github.com/bazelbuild/bazel-gazelle/commit/b3cddc07edbede6dd7a5c311aac7ac06660aecf0
+        "gazelle:proto disable",
+    ],
+    path = "google.golang.org/protobuf",
+)
+use_repo(
+    go_deps,
+    "com_github_antlr4_go_antlr_v4",
+    "com_github_aristanetworks_goarista",
+    "com_github_cockscomb_cel2sql",
+    "com_github_google_cel_go",
+    "com_github_google_go_cmp",
+    "com_github_google_go_github_v62",
+    "com_github_google_uuid",
+    "com_github_gosuri_uiprogress",
+    "com_github_grpc_ecosystem_go_grpc_middleware_v2",
+    "com_github_honeycombio_otel_config_go",
+    "com_github_keybase_go_keychain",
+    "com_github_mndrix_tap_go",
+    "com_github_mvdan_sh",
+    "com_github_pkg_browser",
+    "com_github_prometheus_client_golang",
+    "com_github_prometheus_client_model",
+    "com_github_prometheus_common",
+    "com_github_rs_zerolog",
+    "com_github_stretchr_testify",
+    "com_github_whilp_git_urls",
+    "com_github_zenazn_goji",
+    "io_gorm_driver_sqlite",
+    "io_gorm_gorm",
+    "io_opentelemetry_go_contrib_instrumentation_google_golang_org_grpc_otelgrpc",
+    "org_golang_google_genproto_googleapis_api",
+    "org_golang_google_grpc",
+    "org_golang_google_protobuf",
+    "org_golang_x_tools",
+    "tech_einride_go_aip",
+)
+
 bazel_dep(name = "gflags", version = "2.2.2")
 bazel_dep(name = "googleapis", version = "0.0.0-20240326-1c8d509c5")
 bazel_dep(name = "googletest", version = "1.14.0.bcr.1")
@@ -31,7 +82,12 @@ bazel_dep(name = "grpc-java", version = "1.64.0")
 bazel_dep(name = "rules_cc", version = "0.0.9")
 bazel_dep(name = "rules_cue", version = "0.7.0")
 bazel_dep(name = "rules_foreign_cc", version = "0.11.1")
-bazel_dep(name = "rules_go", version = "0.48.1", repo_name = "io_bazel_rules_go")
+bazel_dep(name = "rules_go", version = "0.49.0")
+
+go_sdk = use_extension("@rules_go//go:extensions.bzl", "go_sdk")
+go_sdk.download(version = "1.22.2")
+go_sdk.nogo(nogo = "@//tools/nogo")
+
 bazel_dep(name = "rules_ruby", version = "0.11.0")
 
 ruby = use_extension("@rules_ruby//ruby:extensions.bzl", "ruby")
@@ -119,61 +175,6 @@ crate.from_cargo(
     ],
 )
 use_repo(crate, "crates")
-
-bazel_dep(name = "gazelle", version = "0.37.0", repo_name = "bazel_gazelle")
-
-go_sdk = use_extension("@io_bazel_rules_go//go:extensions.bzl", "go_sdk")
-go_sdk.download(version = "1.22.2")
-go_sdk.nogo(nogo = "@//tools/nogo")
-
-go_deps = use_extension("@bazel_gazelle//:extensions.bzl", "go_deps")
-go_deps.from_file(go_mod = "//:go.mod")
-go_deps.gazelle_override(
-    directives = [
-        "gazelle:go_naming_convention go_default_library",
-    ],
-    path = "github.com/google/cel-go",
-)
-go_deps.gazelle_override(
-    directives = [
-        # The following should not be required after the next gazelle release given
-        # https://github.com/bazelbuild/bazel-gazelle/commit/b3cddc07edbede6dd7a5c311aac7ac06660aecf0
-        "gazelle:proto disable",
-    ],
-    path = "google.golang.org/protobuf",
-)
-use_repo(
-    go_deps,
-    "com_github_antlr4_go_antlr_v4",
-    "com_github_aristanetworks_goarista",
-    "com_github_cockscomb_cel2sql",
-    "com_github_google_cel_go",
-    "com_github_google_go_cmp",
-    "com_github_google_go_github_v62",
-    "com_github_google_uuid",
-    "com_github_gosuri_uiprogress",
-    "com_github_grpc_ecosystem_go_grpc_middleware_v2",
-    "com_github_honeycombio_otel_config_go",
-    "com_github_keybase_go_keychain",
-    "com_github_mndrix_tap_go",
-    "com_github_mvdan_sh",
-    "com_github_pkg_browser",
-    "com_github_prometheus_client_golang",
-    "com_github_prometheus_client_model",
-    "com_github_prometheus_common",
-    "com_github_rs_zerolog",
-    "com_github_stretchr_testify",
-    "com_github_whilp_git_urls",
-    "com_github_zenazn_goji",
-    "io_gorm_driver_sqlite",
-    "io_gorm_gorm",
-    "io_opentelemetry_go_contrib_instrumentation_google_golang_org_grpc_otelgrpc",
-    "org_golang_google_genproto_googleapis_api",
-    "org_golang_google_grpc",
-    "org_golang_google_protobuf",
-    "org_golang_x_tools",
-    "tech_einride_go_aip",
-)
 
 bazel_dep(name = "rules_haskell", version = "0.19")
 
