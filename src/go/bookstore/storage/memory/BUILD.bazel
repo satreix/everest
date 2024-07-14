@@ -7,7 +7,7 @@ go_library(
     visibility = ["//visibility:public"],
     deps = [
         "//src/go/bookstore/storage",
-        "//src/proto/bookstore/v1:bookstore",
+        "//src/proto/bookstore/v1:bookstore_v1_go_proto",
         "@com_github_google_cel_go//cel:go_default_library",
         "@com_github_google_cel_go//checker/decls:go_default_library",
         "@com_github_google_uuid//:uuid",

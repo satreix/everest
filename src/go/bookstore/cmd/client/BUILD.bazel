@@ -6,7 +6,7 @@ go_library(
     importpath = "github.com/satreix/everest/src/go/bookstore/cmd/client",
     visibility = ["//visibility:private"],
     deps = [
-        "//src/proto/bookstore/v1:bookstore",
+        "//src/proto/bookstore/v1:bookstore_v1_go_proto",
         "@org_golang_google_grpc//:grpc",
         "@org_golang_google_grpc//credentials/insecure",
     ],

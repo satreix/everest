@@ -1,5 +1,5 @@
-load("@rules_go//go:def.bzl", "go_library", "go_test")
 load("@rules_antlr//antlr:antlr4.bzl", "antlr")
+load("@rules_go//go:def.bzl", "go_library", "go_test")
 
 antlr(
     name = "morsecode_go",
