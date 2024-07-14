@@ -1,89 +1,67 @@
-extern crate iron;
-extern crate iron_slog;
-extern crate router;
 #[macro_use]
 extern crate slog;
 extern crate slog_async;
 extern crate slog_term;
 
-use askama::Template;
-use iron::headers::ContentType;
-use iron::prelude::*;
-use iron::status;
-use iron_slog::{DefaultLogFormatter, LoggerMiddleware};
-use router::Router;
+use askama_warp::Template;
 use slog::{Drain, Logger};
+use std::net::SocketAddr;
+use warp::Filter;
 
 #[derive(Template)]
 #[template(path = "hello.html")]
-struct HelloTemplate<'a> {
-    name: &'a str,
+struct HelloTemplate {
+    name: String,
 }
 
-fn hello(req: &mut Request) -> IronResult<Response> {
-    let name = req
-        .extensions
-        .get::<Router>()
-        .unwrap()
-        .find("name")
-        .unwrap_or("World");
-    let hello = HelloTemplate { name };
+fn setup_route() -> impl Filter<Extract = impl warp::Reply, Error = warp::Rejection> + Clone {
+    let hello_world = warp::path!("greet").map(|| HelloTemplate {
+        name: "World".to_string(),
+    });
+    let hello = warp::path!("greet" / String).map(|name| HelloTemplate { name });
 
-    Ok(Response::with((
-        ContentType::html().0,
-        status::Ok,
-        hello.render().unwrap(),
-    )))
+    warp::get().and(hello_world.or(hello))
 }
 
-fn app_router() -> Router {
-    let mut router = Router::new();
-    router.get("/", hello, "hello");
-    router.get("/:name", hello, "hello_name");
-    router
-}
-
-fn main() {
-    let addr = "localhost:3000";
+#[tokio::main]
+async fn main() {
+    let addr_str = "127.0.0.1:3000";
+    let addr: SocketAddr = addr_str.parse().expect("Unable to parse socket address");
 
     let decorator = slog_term::TermDecorator::new().build();
     let drain = slog_term::CompactFormat::new(decorator).build().fuse();
     let drain = slog_async::Async::new(drain).build().fuse();
     let logger = Logger::root(drain, o!());
 
-    let formatter = DefaultLogFormatter;
+    info!(logger, "server listening"; "addr" => format!("http://{}", addr_str));
 
-    info!(logger, "server listening"; "addr" => format!("http://{}", addr));
-    let handler = LoggerMiddleware::new(app_router(), logger, formatter);
-
-    Iron::new(handler).http(addr).unwrap();
+    let routes = setup_route();
+    warp::serve(routes).run(addr).await;
 }
 
 #[cfg(test)]
-extern crate iron_test;
-
-#[cfg(test)]
 mod tests {
-    use super::app_router;
-    use iron::Headers;
-    use iron_test::{request, response};
-    use std::str;
+    use super::*;
+    use warp::http::StatusCode;
 
-    #[test]
-    fn test_hello() {
-        let response = request::get("http://localhost:3000/", Headers::new(), &app_router());
-        let result_body = response::extract_body_to_bytes(response.unwrap());
-        assert!(str::from_utf8(&result_body)
-            .unwrap()
-            .contains("Hello, World!"));
+    #[tokio::test]
+    async fn test_hello() {
+        let routes = setup_route();
+        let res = warp::test::request().path("/greet").reply(&routes).await;
+        assert_eq!(res.status(), StatusCode::OK);
+        let body = std::str::from_utf8(res.body()).expect("response was not valid UTF-8");
+        assert!(body.contains("Hello, World!"));
     }
 
-    #[test]
-    fn test_hello_handler() {
-        let response = request::get("http://localhost:3000/rust", Headers::new(), &app_router());
-        let result_body = response::extract_body_to_bytes(response.unwrap());
-        assert!(str::from_utf8(&result_body)
-            .unwrap()
-            .contains("Hello, rust!"));
+    #[tokio::test]
+    async fn test_hello_handler() {
+        let routes = setup_route();
+        let res = warp::test::request()
+            .path("/greet/rust")
+            .reply(&routes)
+            .await;
+        assert_eq!(res.status(), StatusCode::OK);
+        let body = std::str::from_utf8(res.body()).expect("response was not valid UTF-8");
+        assert!(body.contains("Hello, rust!"));
     }
 }
