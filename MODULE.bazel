@@ -140,7 +140,7 @@ use_repo(ruby, "bundle", "ruby_toolchains")
 
 register_toolchains("@ruby_toolchains//:all")
 
-bazel_dep(name = "rules_rust", version = "0.46.0")
+bazel_dep(name = "rules_rust", version = "0.47.1")
 
 # rules_rust 0.45.1 does not work with protobuf 23.1 and this breaks `bazel test src/rust/...`
 #
