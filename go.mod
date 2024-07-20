@@ -25,7 +25,7 @@ require (
 	github.com/stretchr/testify v1.9.0
 	github.com/whilp/git-urls v1.0.0
 	github.com/zenazn/goji v1.0.1
-	go.einride.tech/aip v0.67.1
+	go.einride.tech/aip v0.68.0
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.53.0
 	golang.org/x/tools v0.23.0
 	google.golang.org/genproto/googleapis/api v0.0.0-20240711142825-46eb208f015d
