@@ -4,7 +4,7 @@ go 1.22.2
 
 require (
 	github.com/antlr4-go/antlr/v4 v4.13.1
-	github.com/aristanetworks/goarista 2aeaac4f6e93
+	github.com/aristanetworks/goarista v0.0.0-20240806160631-2aeaac4f6e93
 	github.com/bazelbuild/rules_go v0.49.0
 	github.com/cockscomb/cel2sql v0.0.0-20211204123659-c803dfd5c44c
 	github.com/google/cel-go v0.20.1
@@ -86,7 +86,7 @@ require (
 	golang.org/x/text v0.16.0 // indirect
 	golang.org/x/tools/go/vcs v0.1.0-deprecated // indirect
 	google.golang.org/genproto v0.0.0-20240125205218-1f4bbc51befe // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20240701130421-f6361c86f094 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20240730163845-b1a4ccb954bf // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	mvdan.cc/sh v2.6.4+incompatible // indirect
