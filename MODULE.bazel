@@ -20,7 +20,7 @@ rules_ts_ext.deps()
 use_repo(rules_ts_ext, "npm_typescript")
 
 bazel_dep(name = "bazel_skylib", version = "1.7.1")
-bazel_dep(name = "buildifier_prebuilt", version = "6.4.0")
+bazel_dep(name = "buildifier_prebuilt", version = "7.3.1")
 bazel_dep(name = "contrib_rules_jvm", version = "0.27.0")
 bazel_dep(name = "fmt", version = "11.0.2")
 bazel_dep(name = "gazelle", version = "0.38.0", repo_name = "bazel_gazelle")
