@@ -139,8 +139,8 @@
     "https://bcr.bazel.build/modules/rules_cc/0.0.8/MODULE.bazel": "964c85c82cfeb6f3855e6a07054fdb159aced38e99a5eecf7bce9d53990afa3e",
     "https://bcr.bazel.build/modules/rules_cc/0.0.9/MODULE.bazel": "836e76439f354b89afe6a911a7adf59a6b2518fafb174483ad78a2a2fde7b1c5",
     "https://bcr.bazel.build/modules/rules_cc/0.0.9/source.json": "1f1ba6fea244b616de4a554a0f4983c91a9301640c8fe0dd1d410254115c8430",
-    "https://bcr.bazel.build/modules/rules_cue/0.7.0/MODULE.bazel": "7362ff978a4fabf8e97a78a966707afaf0f93319a871cddb6a42f1572faf2489",
-    "https://bcr.bazel.build/modules/rules_cue/0.7.0/source.json": "b5978fed8ab91d970cb7b0b9043bab9830ba71ce2193976c20e71bd3df3bc1c0",
+    "https://bcr.bazel.build/modules/rules_cue/0.8.1/MODULE.bazel": "4d6a64d54712826e970533029eec3aa9be4390d61b1ad3da16eaaaacad1a4565",
+    "https://bcr.bazel.build/modules/rules_cue/0.8.1/source.json": "d96d438407a5d76e280d29e5b1f75bf1f23d76ba2ada2af812dcc7120e72531c",
     "https://bcr.bazel.build/modules/rules_foreign_cc/0.10.1/MODULE.bazel": "b9527010e5fef060af92b6724edb3691970a5b1f76f74b21d39f7d433641be60",
     "https://bcr.bazel.build/modules/rules_foreign_cc/0.11.1/MODULE.bazel": "beeb0dd8d488d3cff57fa12ab3378051a7299aa9de2476d61c1d46f664d6398d",
     "https://bcr.bazel.build/modules/rules_foreign_cc/0.11.1/source.json": "be2106be697115c10c03c6505a07bd4e259719c6608f08a61d600a560b8cf172",
@@ -1241,8 +1241,8 @@
     },
     "@@rules_cue~//cue:extensions.bzl%cue": {
       "general": {
-        "bzlTransitiveDigest": "K01CgV4xAFf6MwLKkVavyuWF5ccOR9UoSXI3Q/unopw=",
-        "usagesDigest": "hvYe5DWDgRQ2URT1si1rXzcYkSNOVWybFnomz7YhlUQ=",
+        "bzlTransitiveDigest": "oo25Pi5cj2wwmpLovOj0lhSsZJ/QWwQ494RSi3sDqBY=",
+        "usagesDigest": "HMFEQyDYc6f40SNd3GlvAtCwx3uyQSzMq6rPp6xiQzY=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -1251,7 +1251,7 @@
             "bzlFile": "@@rules_cue~//cue/private/tools/cue:toolchain.bzl",
             "ruleClassName": "_download_tool",
             "attributes": {
-              "version": "v0.8.2"
+              "version": "v0.10.0"
             }
           },
           "cue_tool_toolchains": {
@@ -1259,7 +1259,7 @@
             "ruleClassName": "_toolchains_repo",
             "attributes": {
               "tool_repo": "cue_tool",
-              "version": "v0.8.2"
+              "version": "v0.10.0"
             }
           }
         },
