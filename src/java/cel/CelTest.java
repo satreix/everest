@@ -21,18 +21,17 @@ public class CelTest {
 
     @BeforeAll
     public static void setUp() {
-        celCompiler = CelCompilerFactory.standardCelCompilerBuilder()
-            .addVar("my_var", SimpleType.STRING)
-            .build();
+        celCompiler =
+                CelCompilerFactory.standardCelCompilerBuilder()
+                        .addVar("my_var", SimpleType.STRING)
+                        .build();
         celRuntime = CelRuntimeFactory.standardCelRuntimeBuilder().build();
     }
 
     @Test
     public void testCelCompilationAndEvaluation()
-        throws CelValidationException, CelEvaluationException {
-        CelAbstractSyntaxTree ast = celCompiler
-            .compile("my_var + '!'")
-            .getAst();
+            throws CelValidationException, CelEvaluationException {
+        CelAbstractSyntaxTree ast = celCompiler.compile("my_var + '!'").getAst();
         CelRuntime.Program program = celRuntime.createProgram(ast);
         String result = (String) program.eval(Map.of("my_var", "Hello World"));
 

@@ -245,7 +245,7 @@ node.toolchain(
     node_version = "20.10.0",
 )
 
-bazel_dep(name = "rules_oci", version = "1.8.0")
+bazel_dep(name = "rules_oci", version = "2.0.0-rc0")
 
 oci = use_extension("@rules_oci//oci:extensions.bzl", "oci")
 oci.pull(
