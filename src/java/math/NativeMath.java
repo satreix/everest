@@ -1,6 +1,7 @@
 package math;
 
 import com.github.fmeum.rules_jni.RulesJni;
+
 import java.lang.annotation.Native;
 
 public class NativeMath {
