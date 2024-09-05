@@ -1,12 +1,24 @@
-load("@rules_perl//perl:perl.bzl", "perl_binary")
+load("@rules_perl//perl:perl.bzl", "perl_binary", "perl_library", "perl_test")
 load("//tools/test/binary:binary.bzl", "binary_test")
+
+perl_library(
+    name = "hello_world_lib",
+    srcs = ["hello_world.pl"],
+)
 
 perl_binary(
     name = "hello_world",
     srcs = ["hello_world.pl"],
 )
 
-binary_test(
+perl_test(
     name = "hello_world_test",
+    size = "small",
+    srcs = ["hello_world_test.pl"],
+    deps = [":hello_world_lib"],
+)
+
+binary_test(
+    name = "hello_world_binary_test",
     binary = ":hello_world",
 )
