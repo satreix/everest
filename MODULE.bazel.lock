@@ -196,8 +196,8 @@
     "https://bcr.bazel.build/modules/rules_nodejs/6.2.0/source.json": "a77c307175a82982f0847fd6a8660db5b21440d8a9d073642cb4afa7a18612ff",
     "https://bcr.bazel.build/modules/rules_oci/2.0.0-rc0/MODULE.bazel": "64a68d0e6c7da5849e0e057f5a9a4e97d445945460895475cb764d83ee8b2495",
     "https://bcr.bazel.build/modules/rules_oci/2.0.0-rc0/source.json": "c0d979721e41485d863fea1ac6ebdaa22db8ec8479310cf0150a4084d0583cca",
-    "https://bcr.bazel.build/modules/rules_perl/0.2.0/MODULE.bazel": "4dbdd06e59c5c2fc02f37abf9bc3c354f62458db84278afc1c7193b424b9531d",
-    "https://bcr.bazel.build/modules/rules_perl/0.2.0/source.json": "98a0e6e20b5479560099b23da1bbade7ee9cf0588de9a39d91cf48ec7bdfa7bb",
+    "https://bcr.bazel.build/modules/rules_perl/0.2.3.bcr.1/MODULE.bazel": "a63404587e4eaa13154ccab943505a46870cc95cfd5b68f81e0224768c9cc7ed",
+    "https://bcr.bazel.build/modules/rules_perl/0.2.3.bcr.1/source.json": "b77d53132255d7c22478de6f14cc2c490c43bbce3b45a13baf5afc8266d06d4f",
     "https://bcr.bazel.build/modules/rules_pkg/0.7.0/MODULE.bazel": "df99f03fc7934a4737122518bb87e667e62d780b610910f0447665a7e2be62dc",
     "https://bcr.bazel.build/modules/rules_pkg/1.0.1/MODULE.bazel": "5b1df97dbc29623bccdf2b0dcd0f5cb08e2f2c9050aab1092fd39a41e82686ff",
     "https://bcr.bazel.build/modules/rules_pkg/1.0.1/source.json": "bd82e5d7b9ce2d31e380dd9f50c111d678c3bdaca190cb76b0e1c71b05e1ba8a",
@@ -2852,8 +2852,8 @@
     },
     "@@rules_perl~//perl:extensions.bzl%perl_repositories": {
       "general": {
-        "bzlTransitiveDigest": "UFiGL1pGBg87aouOgi2BAafq9I2tWsgb8Fh8vCwaXSo=",
-        "usagesDigest": "S54Jyv7XoxGXM/vuJYlHmQ1Ozn7pJ/rQI6WecZnkkL8=",
+        "bzlTransitiveDigest": "5md20yq7OaxK6fvw1H8U5R34snaMbyVUvAIKW8HK/xo=",
+        "usagesDigest": "H+8WIy56KsPPJHzkvKxxA49jWe21JsRJw6Oe4mnj2sQ=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},

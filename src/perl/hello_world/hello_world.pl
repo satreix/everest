@@ -1,9 +1,15 @@
 #!/usr/bin/perl
+use strict;
 use warnings;
 
 use Getopt::Long;
 
-my $name = 'World';
-GetOptions( 'name=s' => \$name );
+sub greet {
+    my ($name) = @_;
+    return "Hello, $name!\n";
+}
 
-print("Hello, $name!\n");
+my $name = 'World';
+GetOptions('name=s' => \$name);
+
+print greet($name);
