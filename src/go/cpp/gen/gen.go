@@ -39,13 +39,13 @@ func main() {
 
 		introducedIn, err := parseStandard(row[1])
 		if err != nil {
-			log.Fatalf(err.Error())
+			log.Fatalf("%s", err.Error())
 		}
 		fmt.Printf("\t\"%s\": {introducedIn: %s", row[0], introducedIn)
 		if row[2] != "" {
 			removedIn, err := parseStandard(row[2])
 			if err != nil {
-				log.Fatalf(err.Error())
+				log.Fatalf("%s", err.Error())
 			}
 			fmt.Printf(", removedIn: removed(%s)", removedIn)
 		}
