@@ -7,7 +7,7 @@ require (
 	github.com/aristanetworks/goarista v0.0.0-20240903103537-5c43403566da
 	github.com/bazelbuild/rules_go v0.50.0
 	github.com/cockscomb/cel2sql v0.0.0-20211204123659-c803dfd5c44c
-	github.com/google/cel-go v0.20.1
+	github.com/google/cel-go v0.21.0
 	github.com/google/go-cmp v0.6.0
 	github.com/google/go-github/v64 v64.0.0
 	github.com/google/uuid v1.6.0
