@@ -9,8 +9,9 @@ GEM
       cgi (>= 0.3.3)
     erb (4.0.4-java)
       cgi (>= 0.3.3)
-    haml (5.2.2)
-      temple (>= 0.8.0)
+    haml (6.3.0)
+      temple (>= 0.8.2)
+      thor
       tilt
     json (2.7.2)
     json (2.7.2-java)
@@ -58,7 +59,8 @@ GEM
       temple (~> 0.10.0)
       tilt (>= 2.1.0)
     temple (0.10.3)
-    tilt (2.3.0)
+    thor (1.3.2)
+    tilt (2.4.0)
     unicode-display_width (2.5.0)
 
 PLATFORMS
@@ -72,7 +74,7 @@ PLATFORMS
 
 DEPENDENCIES
   erb (~> 4.0)
-  haml (~> 5.2)
+  haml (~> 6.0)
   rspec (~> 3.13.0)
   rspec-its
   rubocop
