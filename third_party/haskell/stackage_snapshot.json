@@ -1,6 +1,6 @@
 {
-  "__GENERATED_FILE_DO_NOT_MODIFY_MANUALLY": 186955823,
-  "all-cabal-hashes": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-hashes/f2f3522a71f675fec5ec53635482129ec6a6e48b",
+  "__GENERATED_FILE_DO_NOT_MODIFY_MANUALLY": 896764075,
+  "all-cabal-hashes": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-hashes/2fcc7385c142aa453a29568a4594caab9bc87e35",
   "resolved": {
     "HUnit": {"dependencies":["base","call-stack","deepseq"],"location":{"type":"hackage","url":"https://hackage.haskell.org/package/HUnit-1.6.2.0/HUnit-1.6.2.0.tar.gz"},"name":"HUnit","pinned":{"cabal-sha256":"1a79174e8af616117ad39464cac9de205ca923da6582825e97c10786fda933a4","sha256":"b0b7538871ffc058486fc00740886d2f3172f8fa6869936bfe83a5e10bd744ab","url":["https://hackage.haskell.org/package/HUnit-1.6.2.0/HUnit-1.6.2.0.tar.gz","https://s3.amazonaws.com/hackage.fpcomplete.com/package/HUnit-1.6.2.0.tar.gz"]},"version":"1.6.2.0"},
     "ansi-terminal": {"dependencies":["ansi-terminal-types","base","colour"],"location":{"type":"hackage","url":"https://hackage.haskell.org/package/ansi-terminal-1.0.2/ansi-terminal-1.0.2.tar.gz"},"name":"ansi-terminal","pinned":{"cabal-sha256":"1f90bb88e670ce63fbf2c9216d50857f2419582f1c6791e542c3eab97ecfd364","sha256":"46e516cbf66c7807940ba9896c2d71ba5ffdaa35a4fb80dea9313703efa8d834","url":["https://hackage.haskell.org/package/ansi-terminal-1.0.2/ansi-terminal-1.0.2.tar.gz","https://s3.amazonaws.com/hackage.fpcomplete.com/package/ansi-terminal-1.0.2.tar.gz"]},"version":"1.0.2"},
