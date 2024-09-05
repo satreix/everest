@@ -2,11 +2,10 @@
 startup --host_jvm_args=-Xmx2500m
 startup --host_jvm_args=-Xms2500m
 
-test --verbose_failures
-test --test_output=errors
-
-# Until the lease service is ready, see https://github.com/bazelbuild/bazel/issues/17366.
-build --action_cache_store_output_metadata=false
+common --experimental_profile_include_primary_output
+common --experimental_profile_include_target_label
+common --nolegacy_important_outputs
+common --noslim_profile
 
 build --action_env=CC=clang
 build --announce_rc=yes
@@ -17,6 +16,10 @@ build --build_metadata=ROLE=CI
 build --curses=no
 build --experimental_remote_cache_async
 build --experimental_remote_cache_compression
+build --experimental_remote_cache_compression_threshold=100
 build --remote_cache=grpcs://remote.buildbuddy.io
 build --remote_download_minimal
 build --remote_timeout=3600
+
+test --test_output=errors
+test --verbose_failures
