@@ -6,7 +6,7 @@ BLACK="$(bazel run --run_under='echo' //tools/black)"
 GOIMPORTS="$(bazel run --run_under=echo @org_golang_x_tools//cmd/goimports)"
 GOIMPORTSORT=$(bazel run --run_under=echo @com_github_aristanetworks_goarista//cmd/importsort)
 ISORT="$(bazel run --run_under='echo' //tools/isort)"
-JAVAFORMAT="$(bazel run --run_under='echo' @com_google_google_java_format//:google-java-format)"
+JAVAFORMAT="$(bazel run --run_under='echo' //tools/google-java-format)"
 SHFMT="$(bazel run --run_under=echo @com_github_mvdan_sh//cmd/shfmt)"
 
 # We cannot use run_under here because of https://github.com/bazelbuild/rules_foreign_cc/issues/582
