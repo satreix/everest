@@ -255,7 +255,7 @@ oci.pull(
         "linux/arm64",
     ],
 )
-use_repo(oci, "distroless_base")
+use_repo(oci, "distroless_base", "distroless_base_linux_amd64", "distroless_base_linux_arm64")
 
 bazel_dep(name = "rules_perl", version = "0.2.3.bcr.1")
 bazel_dep(name = "rules_pkg", version = "1.0.1")
