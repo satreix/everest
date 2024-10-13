@@ -226,9 +226,9 @@ stack_snapshot.stack_snapshot_json(
     label = "//third_party/haskell:stackage_snapshot.json",
 )
 
-bazel_dep(name = "rules_java", version = "7.10.0")
+bazel_dep(name = "rules_java", version = "7.11.1")
 bazel_dep(name = "rules_jni", version = "0.10.1")
-bazel_dep(name = "rules_jvm_external", version = "6.2")
+bazel_dep(name = "rules_jvm_external", version = "6.3")
 
 JUNIT_VERSION = "5.10.2"
 
@@ -257,7 +257,7 @@ maven.install(
 use_repo(maven, "maven", "unpinned_maven")
 
 bazel_dep(name = "rules_kotlin", version = "1.9.6")
-bazel_dep(name = "rules_nodejs", version = "6.2.0")
+bazel_dep(name = "rules_nodejs", version = "6.3.0")
 
 node = use_extension("@rules_nodejs//nodejs:extensions.bzl", "node")
 node.toolchain(
