@@ -1,4 +1,4 @@
-load("@crates//:defs.bzl", "aliases", "all_crate_deps")
+load("@everest_crates//:defs.bzl", "aliases", "all_crate_deps")
 load("@rules_python//python:defs.bzl", "py_library")
 load("@rules_rust//rust:defs.bzl", "rust_shared_library")
 
