@@ -69,8 +69,8 @@ github.com/apache/arrow/go/v15 v15.0.2 h1:60IliRbiyTWCWjERBCkO1W4Qun9svcYoZrSLcy
 github.com/apache/arrow/go/v15 v15.0.2/go.mod h1:DGXsR3ajT524njufqf95822i+KTh+yea1jass9YXgjA=
 github.com/aristanetworks/goarista v0.0.0-20240903103537-5c43403566da h1:TdGxVEF0PL/dyO/o/jpmdE4Wq64dQ3Yu8DPI3oIdNqo=
 github.com/aristanetworks/goarista v0.0.0-20240903103537-5c43403566da/go.mod h1:C+YeQrhbMvCPh5wG6iqGiCD/zcITTpt4YQ1v4K0g5Vc=
-github.com/bazelbuild/rules_go v0.50.0 h1:aT3n2K7rYxIUYKfyZtS3GZPwb12rv5LmAKXnmQXUaWg=
-github.com/bazelbuild/rules_go v0.50.0/go.mod h1:Dhcz716Kqg1RHNWos+N6MlXNkjNP2EwZQ0LukRKJfMs=
+github.com/bazelbuild/rules_go v0.50.1 h1:/BUvuaB8MEiUA2oLPPCGtuw5V+doAYyiGTFyoSWlkrw=
+github.com/bazelbuild/rules_go v0.50.1/go.mod h1:Dhcz716Kqg1RHNWos+N6MlXNkjNP2EwZQ0LukRKJfMs=
 github.com/beorn7/perks v1.0.1 h1:VlbKKnNfV8bJzeqoa4cOKqO6bYr3WgKZxO8Z16+hsOM=
 github.com/beorn7/perks v1.0.1/go.mod h1:G2ZrVWU2WbWT9wwq4/hrbKbnv/1ERSJQ0ibhJ6rlkpw=
 github.com/cenkalti/backoff/v4 v4.3.0 h1:MyRJ/UdXutAwSAT+s3wNd7MfTIcy71VQueUuFK343L8=
