@@ -138,28 +138,7 @@ use_repo(ruby, "bundle", "ruby_toolchains")
 
 register_toolchains("@ruby_toolchains//:all")
 
-bazel_dep(name = "rules_rust", version = "0.47.1")
-single_version_override(
-    module_name = "rules_rust",
-    patch_strip = 1,
-    patches = [
-        # rules_rust and modern protoc collide on protoc-gen-rust and create
-        # the following error message:
-        #
-        # --rust_out: helloworld/helloworld.proto: The Rust codegen is highly experimental.
-        # Future versions will break existing code. Use at your own risk. You can opt-in
-        # by passing 'experimental-codegen=enabled' to '--rust_out'.
-        #
-        # This error message is also metionned in https://github.com/protocolbuffers/protobuf/issues/13346.
-        #
-        # Instead we rename the rules_rust protoc proto and grpc plugin to
-        # denote rules_rust wants its own code ran, not the experiemental
-        # code from the protobuf repository.
-        #
-        # All this is reported upstream in https://github.com/bazelbuild/rules_rust/issues/2837.
-        "//third_party/rules_rust:0001-rust-proto-experimental.patch",
-    ],
-)
+bazel_dep(name = "rules_rust", version = "0.52.2")
 
 # Use a more modern version of protobuf to work around rules_rust using
 # an old one and grpc-java needed a modern one. See:
