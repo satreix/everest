@@ -1,0 +1,25 @@
+diff --git a/proto/protobuf/toolchain.bzl b/proto/protobuf/toolchain.bzl
+index d03268b4..20bfb397 100644
+--- a/proto/protobuf/toolchain.bzl
++++ b/proto/protobuf/toolchain.bzl
+@@ -84,15 +84,16 @@ def rust_generate_proto(
+         args.add_all([
+             "--",
+             proto_toolchain.protoc,
+-            "--plugin=protoc-gen-grpc-rust=" + proto_toolchain.grpc_plugin.path,
+-            "--grpc-rust_out=" + output_directory,
++            "--plugin=protoc-gen-grpc-rules-rust=" + proto_toolchain.grpc_plugin.path,
++            "--grpc-rules-rust_out=" + output_directory,
+         ])
+         executable = ctx.executable._optional_output_wrapper
+ 
+     args.add_all([
+-        "--plugin=protoc-gen-rust=" + proto_toolchain.proto_plugin.path,
+-        "--rust_out=" + output_directory,
++        "--plugin=protoc-gen-rules-rust=" + proto_toolchain.proto_plugin.path,
++        "--rules-rust_out=" + output_directory,
+     ])
++    # experimental-codegen=enabled,kernel=cpp:
+ 
+     args.add_joined(
+         transitive_descriptor_sets,
