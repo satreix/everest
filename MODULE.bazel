@@ -228,7 +228,7 @@ stack_snapshot.stack_snapshot_json(
 
 bazel_dep(name = "rules_java", version = "7.12.1")
 bazel_dep(name = "rules_jni", version = "0.10.1")
-bazel_dep(name = "rules_jvm_external", version = "6.3")
+bazel_dep(name = "rules_jvm_external", version = "6.4")
 
 JUNIT_VERSION = "5.10.2"
 
