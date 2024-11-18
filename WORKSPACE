@@ -5,9 +5,9 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 http_archive(
     name = "com_github_antlr_grammars_v4",
     build_file_content = """exports_files(glob(["**/*.g4"]), visibility = ["//visibility:public"])""",
-    sha256 = "f1ac0ae28e977069b32a8b570b83e3d753d93ffbf4e95040705dd16e81ce9c23",
-    strip_prefix = "grammars-v4-c82c128d980f4ce46fb3536f87b06b45b9619922",
-    url = "https://github.com/antlr/grammars-v4/archive/c82c128d980f4ce46fb3536f87b06b45b9619922.tar.gz",
+    sha256 = "f279448c854fa320bed2fa42586ccf98e7462f31f5f461c7b1bde04e802bb19f",
+    strip_prefix = "grammars-v4-97bd28855acf37204623a71eb9d5ce3f9f62f80a",
+    url = "https://github.com/antlr/grammars-v4/archive/97bd28855acf37204623a71eb9d5ce3f9f62f80a.tar.gz",
 )
 
 http_archive(
