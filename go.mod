@@ -28,9 +28,9 @@ require (
 	go.einride.tech/aip v0.68.0
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.54.0
 	golang.org/x/tools v0.26.0
-	google.golang.org/genproto/googleapis/api v0.0.0-20240903143218-8af14fe29dc1
-	google.golang.org/grpc v1.66.0
-	google.golang.org/protobuf v1.34.2
+	google.golang.org/genproto/googleapis/api v0.0.0-20241113202542-65e8d215514f
+	google.golang.org/grpc v1.67.1
+	google.golang.org/protobuf v1.35.1
 	gorm.io/driver/sqlite v1.5.6
 	gorm.io/gorm v1.25.12
 )
@@ -90,7 +90,7 @@ require (
 	golang.org/x/text v0.19.0 // indirect
 	golang.org/x/tools/go/vcs v0.1.0-deprecated // indirect
 	google.golang.org/api v0.187.0 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20240827150818-7e3bb234dfed // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20241104194629-dd2ea8efbc28 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	mvdan.cc/sh v2.6.4+incompatible // indirect
