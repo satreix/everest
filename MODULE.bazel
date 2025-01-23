@@ -138,7 +138,7 @@ use_repo(ruby, "bundle", "ruby_toolchains")
 
 register_toolchains("@ruby_toolchains//:all")
 
-bazel_dep(name = "rules_rust", version = "0.47.1")
+bazel_dep(name = "rules_rust", version = "0.57.1")
 single_version_override(
     module_name = "rules_rust",
     patch_strip = 1,
