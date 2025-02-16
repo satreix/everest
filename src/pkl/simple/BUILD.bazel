@@ -1,0 +1,19 @@
+load("@bazel_skylib//rules:build_test.bzl", "build_test")
+load("@rules_pkl//pkl:defs.bzl", "pkl_eval", "pkl_library")
+
+pkl_library(
+    name = "Car",
+    srcs = ["Car.pkl"],
+)
+
+pkl_eval(
+    name = "cars_json",
+    srcs = ["cars.pkl"],
+    format = "json",
+    deps = [":Car"],
+)
+
+build_test(
+    name = "build_test",
+    targets = [":cars_json"],
+)

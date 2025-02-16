@@ -1,0 +1,14 @@
+import ".../src/pkl/simple/Car.pkl"
+
+cars: Listing<Car> = new {
+    new {
+        model = "m1"
+        year = 2021
+        color = "blue"
+    }
+    new {
+        model = "m2"
+        year = 2023
+        color = "red"
+    }
+}
