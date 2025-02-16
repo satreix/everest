@@ -167,8 +167,8 @@
     "https://bcr.bazel.build/modules/rules_go/0.49.0/MODULE.bazel": "61cfc1ba17123356d1b12b6c50f6e0162b2cc7fd6f51753c12471e973a0f72a5",
     "https://bcr.bazel.build/modules/rules_go/0.50.1/MODULE.bazel": "b91a308dc5782bb0a8021ad4330c81fea5bda77f96b9e4c117b9b9c8f6665ee0",
     "https://bcr.bazel.build/modules/rules_go/0.50.1/source.json": "205765fd30216c70321f84c9a967267684bdc74350af3f3c46c857d9f80a4fa2",
-    "https://bcr.bazel.build/modules/rules_haskell/0.19/MODULE.bazel": "7c3f59fd02135a4ec8b6ecd47bc77e443cf590e26921017c7eb255afbdddd4e3",
-    "https://bcr.bazel.build/modules/rules_haskell/0.19/source.json": "bf0f8c5817272341bde3194bc2e56bbe4a9ee571fb43a59dee29510509eb0e4c",
+    "https://bcr.bazel.build/modules/rules_haskell/1.0/MODULE.bazel": "49b531ff82404fe5dd7be526a652ba799e732a83abbdf265ecce89fcbb45804c",
+    "https://bcr.bazel.build/modules/rules_haskell/1.0/source.json": "ab1c0d0b5e7c399333f6804771b0b663cdaee9e55980894f86d9395c87cc296f",
     "https://bcr.bazel.build/modules/rules_java/4.0.0/MODULE.bazel": "5a78a7ae82cd1a33cef56dc578c7d2a46ed0dca12643ee45edbb8417899e6f74",
     "https://bcr.bazel.build/modules/rules_java/5.1.0/MODULE.bazel": "324b6478b0343a3ce7a9add8586ad75d24076d6d43d2f622990b9c1cfd8a1b15",
     "https://bcr.bazel.build/modules/rules_java/5.3.5/MODULE.bazel": "a4ec4f2db570171e3e5eb753276ee4b389bae16b96207e9d3230895c99644b86",
@@ -1570,8 +1570,8 @@
     },
     "@@rules_haskell~//extensions:ghc_version.bzl%ghc_default_version": {
       "general": {
-        "bzlTransitiveDigest": "9hLRxfSg8CAlJTp8P2eiMh3IQKGKdfnjpyGViCOupv4=",
-        "usagesDigest": "NDc9EfK2dKZ1rv3M+HQzIYgzpl4eT3WeyieExeYGlOw=",
+        "bzlTransitiveDigest": "1T6mg5oKStVxecF1dN7Hi3uVP//MQOPlL0uQBcpO3bw=",
+        "usagesDigest": "I8HWac/HOxoJJQjRlVyrrlt0E5uAb9atD/c2sINVwus=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -1593,10 +1593,10 @@
     },
     "@@rules_haskell~//extensions:haskell_toolchains.bzl%haskell_toolchains": {
       "general": {
-        "bzlTransitiveDigest": "jmmCVLXMo3Jh3pPq44h7BndHqSOg1DyqNz++LNS7wq4=",
-        "usagesDigest": "c1EDjiWVi5o1JEXj2czjFBqh/5yYc0RBTpjEFWcnAik=",
+        "bzlTransitiveDigest": "4Gb81roel66/j16a43ysWkgCex2beMKvwR0GoEXre1g=",
+        "usagesDigest": "sQ6x+XgdZZrc+AM34qSh9IiXR1hscHIgDjMaqLKtN2E=",
         "recordedFileInputs": {
-          "@@rules_haskell~//haskell/private/ghc_bindist_generated.json": "c22e9c4334138637b5b4a9de9eeaa819595f08f6e403326cd48a411834c234a8"
+          "@@rules_haskell~//haskell/private/ghc_bindist_generated.json": "0be7e35cb98d664beef98aef76b3278597ea9bc14d7e2e0c212be82379ecb5aa"
         },
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -1783,8 +1783,8 @@
     },
     "@@rules_haskell~//extensions:rules_haskell_dependencies.bzl%rules_haskell_dependencies": {
       "general": {
-        "bzlTransitiveDigest": "bRSriWYaE4yfMZxCueDeuww9tARdvs+1JNkGt4zfA9U=",
-        "usagesDigest": "HQArXDInvSQjo/7GeTRBPfieJmwolK1utTJFN2xKvlA=",
+        "bzlTransitiveDigest": "3F+O7+OiTGbbXgeGu+3sxAsYHJ+Fd1CjROlCLUcD2wA=",
+        "usagesDigest": "+YkgTrqm3VGr41/QlmunHpNs530+M/EVfn+AlUb8LiI=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -1820,7 +1820,7 @@
               "stack_update": "@@rules_haskell~~rules_haskell_dependencies~rules_haskell_stack_update//:stack_update",
               "vendored_packages": {},
               "snapshot": "",
-              "local_snapshot": "@@rules_haskell~//:stackage_snapshot_9.2.8.yaml",
+              "local_snapshot": "@@rules_haskell~//:stackage_snapshot_9.4.6.yaml",
               "packages": [
                 "base",
                 "bytestring",
@@ -1851,7 +1851,7 @@
               "extra_deps": {},
               "vendored_packages": {},
               "snapshot": "",
-              "local_snapshot": "@@rules_haskell~//:stackage_snapshot_9.2.8.yaml",
+              "local_snapshot": "@@rules_haskell~//:stackage_snapshot_9.4.6.yaml",
               "packages": [
                 "base",
                 "bytestring",
@@ -1899,11 +1899,11 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "build_file_content": "\nload(\"@rules_haskell//haskell:cabal.bzl\", \"haskell_cabal_library\")\nhaskell_cabal_library(\n    name = \"Cabal\",\n    srcs = glob([\"Cabal/**\"]),\n    verbose = False,\n    version = \"3.6.3.0\",\n    visibility = [\"//visibility:public\"],\n)\n",
-              "sha256": "f69b46cb897edab3aa8d5a4bd7b8690b76cd6f0b320521afd01ddd20601d1356",
-              "strip_prefix": "cabal-gg-8220-with-3630",
+              "build_file_content": "\nload(\"@rules_haskell//haskell:cabal.bzl\", \"haskell_cabal_library\")\nhaskell_cabal_library(\n    name = \"Cabal\",\n    srcs = glob([\"Cabal/**\"]),\n    verbose = False,\n    version = \"3.8.1.0\",\n    visibility = [\"//visibility:public\"],\n)\n",
+              "sha256": "b697b558558f351d2704e520e7dcb1f300cd77fea5677d4b2ee71d0b965a4fe9",
+              "strip_prefix": "cabal-ghc-9.4-paths-module-relocatable",
               "urls": [
-                "https://github.com/tweag/cabal/archive/refs/heads/gg/8220-with-3630.zip"
+                "https://github.com/tweag/cabal/archive/refs/heads/ghc-9.4-paths-module-relocatable.zip"
               ]
             }
           }
@@ -1959,8 +1959,8 @@
     },
     "@@rules_haskell~//extensions:stack_snapshot.bzl%stack_snapshot": {
       "general": {
-        "bzlTransitiveDigest": "z/ND9NbidapNhzKNMgL4szaSy6X9UXrWqXXBIyIHBx4=",
-        "usagesDigest": "MlnA2Pw2o8DTkvbEn60JmIOUFDUDULmz7GT0iAt6XO8=",
+        "bzlTransitiveDigest": "1JosbHC11VyKue7Dt3xTxUYJ6TSPu001CMYJa3hpgaM=",
+        "usagesDigest": "MHu2kKNZGpbC4gEmfAgHVEbMF7uIIRb/qIqI8NsKoKA=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -2150,7 +2150,7 @@
     "@@rules_nodejs~//nodejs:extensions.bzl%node": {
       "general": {
         "bzlTransitiveDigest": "zoR8uH43szfSgJIAteIPRe+BOtQWP3snOnfezJAcg7E=",
-        "usagesDigest": "bR15FjNpY2iYNB0g5fwDItySdY+BrZKVSMYLY9y6ghM=",
+        "usagesDigest": "LNXJhDP65mGTjJNoFD6qRhs+zsiaagvk1RU53gb0ePM=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},

@@ -196,7 +196,7 @@ crate.from_cargo(
 )
 use_repo(crate, "everest_crates")
 
-bazel_dep(name = "rules_haskell", version = "0.19")
+bazel_dep(name = "rules_haskell", version = "1.0")
 
 haskell_toolchains = use_extension("@rules_haskell//extensions:haskell_toolchains.bzl", "haskell_toolchains")
 haskell_toolchains.bindists(
