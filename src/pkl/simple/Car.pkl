@@ -1,0 +1,3 @@
+model: String
+year: Int
+color: "blue" | "red"
