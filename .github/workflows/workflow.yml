@@ -15,8 +15,8 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - macos-latest
-          - ubuntu-latest
+          - macos-14
+          - ubuntu-22.04
     name: check - (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     steps:
@@ -28,7 +28,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install --no-install-recommends -yy libtinfo5
           sudo apt-get clean
-        if: ${{ matrix.os == 'ubuntu-latest' }}
+        if: ${{ runner.os == 'Linux' }}
 
       # This is required by recent rules_jvm_external versions.
       # By default, ubuntu-latest is executed with JDK 8.
