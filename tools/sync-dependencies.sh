@@ -13,7 +13,6 @@ TOOLCHAINS=(
 )
 
 selected_toolchains=()
-
 for toolchain in "$@"; do
     if [[ " ${TOOLCHAINS[@]} " =~ " ${toolchain} " ]]; then
         selected_toolchains+=("$toolchain")
@@ -23,6 +22,9 @@ for toolchain in "$@"; do
         exit 1
     fi
 done
+if [[ ${#selected_toolchains[@]} -eq 0 ]]; then
+    selected_toolchains=("${TOOLCHAINS[@]}")
+fi
 
 export REPIN=1
 
