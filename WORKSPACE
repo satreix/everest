@@ -3,14 +3,6 @@ workspace(name = "everest")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
-    name = "com_github_antlr_grammars_v4",
-    build_file_content = """exports_files(glob(["**/*.g4"]), visibility = ["//visibility:public"])""",
-    sha256 = "f279448c854fa320bed2fa42586ccf98e7462f31f5f461c7b1bde04e802bb19f",
-    strip_prefix = "grammars-v4-97bd28855acf37204623a71eb9d5ce3f9f62f80a",
-    url = "https://github.com/antlr/grammars-v4/archive/97bd28855acf37204623a71eb9d5ce3f9f62f80a.tar.gz",
-)
-
-http_archive(
     name = "com_github_swagger_api_swagger_petstore",
     build_file_content = """exports_files(["src/main/resources/openapi.yaml"])""",
     sha256 = "ae350c7aff7b99465ad4f679613685a92a4350796ae9fcd8ef36952592fe5dfe",

@@ -3,7 +3,7 @@ load("@rules_go//go:def.bzl", "go_library", "go_test")
 
 antlr(
     name = "morsecode_go",
-    srcs = ["@com_github_antlr_grammars_v4//:morsecode/morsecode.g4"],
+    srcs = ["@antlr_grammars_v4//:morsecode/morsecode.g4"],
     language = "Go",
     package = "morsecode",
 )
