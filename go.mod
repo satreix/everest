@@ -30,7 +30,7 @@ require (
 	golang.org/x/tools v0.26.0
 	google.golang.org/genproto/googleapis/api v0.0.0-20241113202542-65e8d215514f
 	google.golang.org/grpc v1.67.3
-	google.golang.org/protobuf v1.36.3
+	google.golang.org/protobuf v1.36.5
 	gorm.io/driver/sqlite v1.5.6
 	gorm.io/gorm v1.25.12
 )
