@@ -243,7 +243,7 @@ stack_snapshot.stack_snapshot_json(
     label = "//third_party/haskell:stackage_snapshot.json",
 )
 
-bazel_dep(name = "rules_java", version = "7.12.2")
+bazel_dep(name = "rules_java", version = "7.12.5")
 bazel_dep(name = "rules_jni", version = "0.10.1")
 bazel_dep(name = "rules_jvm_external", version = "6.4")
 
