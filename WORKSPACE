@@ -19,12 +19,6 @@ http_archive(
 )
 
 http_archive(
-    name = "openapi_tools_generator_bazel",
-    sha256 = "ada94694b10f2503c52a48427bd8589323bff5910bd1a7e5212ce34702d0af65",
-    url = "https://github.com/OpenAPITools/openapi-generator-bazel/releases/download/v0.1.6/openapi-tools-generator-bazel-0.1.6.tar.gz",
-)
-
-http_archive(
     name = "rules_antlr",
     patch_args = ["-p1"],
     patches = ["//third_party/rules_antlr:add_antlr_4.13.0.patch"],
@@ -44,10 +38,3 @@ http_archive(
 load("@rules_antlr//antlr:repositories.bzl", "rules_antlr_dependencies")
 
 rules_antlr_dependencies("4.13.0")
-
-load("@openapi_tools_generator_bazel//:defs.bzl", "openapi_tools_generator_bazel_repositories")
-
-openapi_tools_generator_bazel_repositories(
-    openapi_generator_cli_version = "5.4.0",
-    sha256 = "f3ed312310e390324b33ba2ffff290ce812935207a1493ec5c098d0a441be51c",
-)

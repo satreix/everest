@@ -136,6 +136,8 @@
     "https://bcr.bazel.build/modules/nlohmann_json/3.11.3/MODULE.bazel": "87023db2f55fc3a9949c7b08dc711fae4d4be339a80a99d04453c4bb3998eefc",
     "https://bcr.bazel.build/modules/nlohmann_json/3.11.3/source.json": "296c63a90c6813e53b3812d24245711981fc7e563d98fe15625f55181494488a",
     "https://bcr.bazel.build/modules/nlohmann_json/3.6.1/MODULE.bazel": "6f7b417dcc794d9add9e556673ad25cb3ba835224290f4f848f8e2db1e1fca74",
+    "https://bcr.bazel.build/modules/openapi_tools_generator_bazel/0.2.0/MODULE.bazel": "b6af887b3d7602b09b8bdea92ea2db00a86a250d0586e11057a9ff709c22a396",
+    "https://bcr.bazel.build/modules/openapi_tools_generator_bazel/0.2.0/source.json": "8b00ec2c5ea3cd2f9f123fa927a0984617f879f61ea5d0396b28b99d32f925c2",
     "https://bcr.bazel.build/modules/opencensus-cpp/0.0.0-20230502-50eb5de/MODULE.bazel": "02201d2921dadb4ec90c4980eca4b2a02904eddcf6fa02f3da7594fb7b0d821c",
     "https://bcr.bazel.build/modules/opencensus-cpp/0.0.0-20230502-50eb5de/source.json": "f50efc07822f5425bd1d3e40e977484f9c0142463052717d40ec85cd6744243e",
     "https://bcr.bazel.build/modules/opencensus-proto/0.4.1/MODULE.bazel": "4a2e8b4d0b544002502474d611a5a183aa282251e14f6a01afe841c0c1b10372",
@@ -726,6 +728,41 @@
           }
         },
         "recordedRepoMappingEntries": []
+      }
+    },
+    "@@openapi_tools_generator_bazel~//:extension.bzl%openapi_gen": {
+      "general": {
+        "bzlTransitiveDigest": "47Cw3TjNUR3ewo7/OKoqGfMf0jc0ca1N2x4LmHjtlto=",
+        "usagesDigest": "gbt/lhXl1hqGV6+Q9uC7Aqr99WnLIh9UDGFPnVdt2qA=",
+        "recordedFileInputs": {},
+        "recordedDirentsInputs": {},
+        "envVariables": {},
+        "generatedRepoSpecs": {
+          "openapi_tools_generator_bazel_cli": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:jvm.bzl",
+            "ruleClassName": "jvm_import_external",
+            "attributes": {
+              "generated_rule_name": "openapi_tools_generator_bazel_cli",
+              "artifact_urls": [
+                "https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.4.0/openapi-generator-cli-5.4.0.jar"
+              ],
+              "srcjar_urls": [],
+              "canonical_id": "org.openapitools:openapi-generator-cli:5.4.0",
+              "rule_name": "java_import",
+              "tags": [
+                "maven_coordinates=org.openapitools:openapi-generator-cli:5.4.0"
+              ],
+              "artifact_sha256": "f3ed312310e390324b33ba2ffff290ce812935207a1493ec5c098d0a441be51c"
+            }
+          }
+        },
+        "recordedRepoMappingEntries": [
+          [
+            "openapi_tools_generator_bazel~",
+            "bazel_tools",
+            "bazel_tools"
+          ]
+        ]
       }
     },
     "@@platforms//host:extension.bzl%host_platform": {
