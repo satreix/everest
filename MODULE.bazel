@@ -4,9 +4,11 @@ module(
 
 bazel_dep(name = "aspect_rules_js", version = "2.1.3")
 bazel_dep(name = "openapi_tools_generator_bazel", version = "0.2.0")
-bazel_dep(name = "protobuf", version = "29.0-rc1", repo_name = "com_google_protobuf")
+bazel_dep(name = "protobuf", version = "29.0", repo_name = "com_google_protobuf")
 bazel_dep(name = "rules_pkl", version = "0.4.0")
-bazel_dep(name = "rules_proto", version = "7.0.2")
+bazel_dep(name = "rules_proto", version = "6.0.2")
+single_version_override(module_name = "rules_proto", version = "6.0.2")
+bazel_dep(name = "toolchains_protoc", version = "0.3.1")
 
 http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
@@ -154,38 +156,7 @@ use_repo(ruby, "bundle", "ruby_toolchains")
 
 register_toolchains("@ruby_toolchains//:all")
 
-bazel_dep(name = "rules_rust", version = "0.47.1")
-single_version_override(
-    module_name = "rules_rust",
-    patch_strip = 1,
-    patches = [
-        # rules_rust and modern protoc collide on protoc-gen-rust and create
-        # the following error message:
-        #
-        # --rust_out: helloworld/helloworld.proto: The Rust codegen is highly experimental.
-        # Future versions will break existing code. Use at your own risk. You can opt-in
-        # by passing 'experimental-codegen=enabled' to '--rust_out'.
-        #
-        # This error message is also metionned in https://github.com/protocolbuffers/protobuf/issues/13346.
-        #
-        # Instead we rename the rules_rust protoc proto and grpc plugin to
-        # denote rules_rust wants its own code ran, not the experiemental
-        # code from the protobuf repository.
-        #
-        # All this is reported upstream in https://github.com/bazelbuild/rules_rust/issues/2837.
-        "//third_party/rules_rust:0001-rust-proto-experimental.patch",
-    ],
-)
-
-# Use a more modern version of protobuf to work around rules_rust using
-# an old one and grpc-java needed a modern one. See:
-#
-# - https://github.com/bazelbuild/rules_rust/issues/302
-# - https://github.com/grpc/grpc-java/issues/11015
-single_version_override(
-    module_name = "protobuf",
-    version = "29.0-rc1",
-)
+bazel_dep(name = "rules_rust", version = "0.48.0")
 
 rust = use_extension("@rules_rust//rust:extensions.bzl", "rust")
 rust.toolchain(
@@ -195,8 +166,20 @@ rust.toolchain(
 use_repo(rust, "rust_toolchains")
 
 register_toolchains("@rust_toolchains//:all")
+register_toolchains("@rules_rust//proto/protobuf:default-proto-toolchain")
+register_toolchains("//src/rust:prost_toolchain")
 
 crate = use_extension("@rules_rust//crate_universe:extension.bzl", "crate")
+crate.annotation(
+    crate = "protoc-gen-prost",
+    gen_binaries = ["protoc-gen-prost"],
+    repositories = ["everest_crates"],
+)
+crate.annotation(
+    crate = "protoc-gen-tonic",
+    gen_binaries = ["protoc-gen-tonic"],
+    repositories = ["everest_crates"],
+)
 crate.from_cargo(
     name = "everest_crates",  # FIXME protobuf uses the name "crates", so we namespace ours
     cargo_lockfile = "//:Cargo.lock",

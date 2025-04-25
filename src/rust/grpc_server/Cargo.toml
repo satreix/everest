@@ -6,3 +6,11 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+prost = "=0.12"
+prost-types = { version = "=0.12", default-features = false }
+tonic = { version = "=0.11.0", features = ["transport"] }
+tokio = { version = "=1.38", default-features = false, features = ["macros", "net", "rt-multi-thread", "signal"] }
+
+[build-dependencies]
+protoc-gen-prost = "=0.3.1"
+protoc-gen-tonic = "=0.4.0"
