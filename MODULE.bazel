@@ -7,7 +7,11 @@ bazel_dep(name = "openapi_tools_generator_bazel", version = "0.2.0")
 bazel_dep(name = "protobuf", version = "29.0", repo_name = "com_google_protobuf")
 bazel_dep(name = "rules_pkl", version = "0.4.0")
 bazel_dep(name = "rules_proto", version = "6.0.2")
-single_version_override(module_name = "rules_proto", version = "6.0.2")
+single_version_override(
+    module_name = "rules_proto",
+    version = "6.0.2",
+)
+
 bazel_dep(name = "toolchains_protoc", version = "0.3.1")
 
 http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
@@ -166,7 +170,9 @@ rust.toolchain(
 use_repo(rust, "rust_toolchains")
 
 register_toolchains("@rust_toolchains//:all")
+
 register_toolchains("@rules_rust//proto/protobuf:default-proto-toolchain")
+
 register_toolchains("//src/rust:prost_toolchain")
 
 crate = use_extension("@rules_rust//crate_universe:extension.bzl", "crate")

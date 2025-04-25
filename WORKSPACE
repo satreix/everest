@@ -11,14 +11,6 @@ http_archive(
 )
 
 http_archive(
-    name = "jq",
-    build_file = "//tools/jq:jq.BUILD.bazel",
-    sha256 = "998c41babeb57b4304e65b4eb73094279b3ab1e63801b6b4bddd487ce009b39d",
-    strip_prefix = "jq-1.4",
-    url = "https://github.com/stedolan/jq/releases/download/jq-1.4/jq-1.4.tar.gz",
-)
-
-http_archive(
     name = "rules_antlr",
     patch_args = ["-p1"],
     patches = ["//third_party/rules_antlr:add_antlr_4.13.0.patch"],
