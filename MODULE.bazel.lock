@@ -7217,7 +7217,7 @@
     "@@rules_rust~//rust:extensions.bzl%rust": {
       "general": {
         "bzlTransitiveDigest": "P0R3gCeXyAs+mSFwr0KCYUlRwn0QQyAbEDjisRVE2XY=",
-        "usagesDigest": "YjLsHVPfgZkfQdEgywhU+HMODHyERCH/twx/8+PGIoQ=",
+        "usagesDigest": "E5jNfbvwUsJK83jWKZ0gVzeR9YEMIRXX9oi8jqKz1QI=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
