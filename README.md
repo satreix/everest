@@ -23,11 +23,11 @@ $ ./tools/format.sh
 ## Update dependencies
 
 There is a couple of per-language to Bazel binding. When you change the
-dependencies in Pipenv, Cargo, go mod or other, run the following command to
+dependencies in uv, Cargo, go mod or other, run the following command to
 sync those bindings:
 
 ```console
-$ ./tools/update-dependencies.sh
+$ ./tools/sync-dependencies.sh
 ```
 
 [bazel]: https://bazel.build
