@@ -1,17 +1,12 @@
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
-
-[tool.poetry]
+[project]
 name = "everest"
 version = "0.1.0"
 description = ""
-authors = []
-
-[tool.poetry.dependencies]
-autoflake = "^2.3.1"
-black = "^24.4.2"
-cel-python = "^0.1.5"
-isort = "^5.13.2"
-jinja2 = "^3.1.4"
-python = "^3.12"
+requires-python = ">=3.12"
+dependencies = [
+    "autoflake>=2.3.1",
+    "black>=25.1.0",
+    "cel-python>=0.2.0",
+    "isort>=6.0.1",
+    "jinja2>=3.1.6",
+]
