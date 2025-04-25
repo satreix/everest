@@ -4,15 +4,10 @@ module(
 
 bazel_dep(name = "aspect_rules_js", version = "2.1.3")
 bazel_dep(name = "openapi_tools_generator_bazel", version = "0.2.0")
-bazel_dep(name = "protobuf", version = "29.0", repo_name = "com_google_protobuf")
+bazel_dep(name = "protobuf", version = "29.1", repo_name = "com_google_protobuf")
 bazel_dep(name = "rules_pkl", version = "0.4.0")
-bazel_dep(name = "rules_proto", version = "6.0.2")
-single_version_override(
-    module_name = "rules_proto",
-    version = "6.0.2",
-)
-
-bazel_dep(name = "toolchains_protoc", version = "0.3.1")
+bazel_dep(name = "rules_proto", version = "7.0.2")
+bazel_dep(name = "toolchains_protoc", version = "0.4.0")
 
 http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
@@ -160,18 +155,17 @@ use_repo(ruby, "bundle", "ruby_toolchains")
 
 register_toolchains("@ruby_toolchains//:all")
 
-bazel_dep(name = "rules_rust", version = "0.54.1")
+bazel_dep(name = "rules_rust", version = "0.57.0")
+bazel_dep(name = "rules_rust_prost", version = "0.57.0")
 
 rust = use_extension("@rules_rust//rust:extensions.bzl", "rust")
 rust.toolchain(
     edition = "2021",
-    versions = ["1.82.0"],
+    versions = ["1.84.0"],
 )
 use_repo(rust, "rust_toolchains")
 
 register_toolchains("@rust_toolchains//:all")
-
-register_toolchains("@rules_rust//proto/protobuf:default-proto-toolchain")
 
 register_toolchains("//src/rust:prost_toolchain")
 
