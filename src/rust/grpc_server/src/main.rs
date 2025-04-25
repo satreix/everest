@@ -1,41 +1,40 @@
-extern crate grpc;
+use helloworld_proto::helloworld::greeter_server::{Greeter, GreeterServer};
+use helloworld_proto::helloworld::{HelloReply, HelloRequest};
+use tonic::{transport::Server, Request, Response, Status};
 
-extern crate helloworld_rust_grpc;
+#[derive(Default)]
+struct GreeterImpl {}
 
-use std::thread;
-
-use helloworld_rust_grpc::*;
-
-struct GreeterImpl;
-
+#[tonic::async_trait]
 impl Greeter for GreeterImpl {
-    fn say_hello(
+    async fn say_hello(
         &self,
-        _m: grpc::RequestOptions,
-        req: HelloRequest,
-    ) -> grpc::SingleResponse<HelloReply> {
-        let mut r = HelloReply::new();
-        let name = if req.get_name().is_empty() {
-            "world"
+        request: Request<HelloRequest>,
+    ) -> Result<Response<HelloReply>, Status> {
+        let name = request.into_inner().name;
+        let name = if name.trim().is_empty() {
+            "World"
         } else {
-            req.get_name()
+            &name
         };
-        println!("greeting request from {}", name);
-        r.set_message(format!("Hello {}", name));
-        grpc::SingleResponse::completed(r)
+
+        Ok(Response::new(HelloReply {
+            message: format!("Hello, {}!", name),
+        }))
     }
 }
 
-fn main() {
-    let mut server = grpc::ServerBuilder::new_plain();
-    server.http.set_port(50051);
-    server.add_service(GreeterServer::new_service_def(GreeterImpl));
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let addr = "[::1]:50051".parse()?;
+    let greeter = GreeterImpl::default();
 
-    let server = server.build().expect("server");
-    let port = server.local_addr().port().unwrap();
-    println!("greeter server started on port {}", port);
+    println!("GreeterServer listening on {}", addr);
 
-    loop {
-        thread::park();
-    }
+    Server::builder()
+        .add_service(GreeterServer::new(greeter))
+        .serve(addr)
+        .await?;
+
+    Ok(())
 }

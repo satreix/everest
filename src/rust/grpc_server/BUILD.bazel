@@ -1,5 +1,7 @@
 load("@bazel_skylib//rules:build_test.bzl", "build_test")
-load("@rules_rust//proto/protobuf:toolchain.bzl", "GRPC_COMPILE_DEPS")
+load("@everest_crates//:defs.bzl", "all_crate_deps")
+
+#load("@rules_rust//proto/protobuf:toolchain.bzl", "GRPC_COMPILE_DEPS")
 load("@rules_rust//rust:defs.bzl", "rust_binary")
 
 rust_binary(
@@ -8,8 +10,8 @@ rust_binary(
     # We use the grpc crate from rules_rust instead of cargo to use the same
     # version as the code which generated the rust code from protobuf.
     deps = [
-        "//src/proto/helloworld:helloworld_rust_grpc",
-    ] + GRPC_COMPILE_DEPS,
+        "//src/proto/helloworld:helloworld_rust_proto",
+    ] + all_crate_deps(),
 )
 
 build_test(
