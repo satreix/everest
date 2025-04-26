@@ -1,0 +1,27 @@
+haskell_toolchains = use_extension("@rules_haskell//extensions:haskell_toolchains.bzl", "haskell_toolchains")
+haskell_toolchains.bindists(
+    # Pick a version from https://www.haskell.org/ghc/download.html that matches the LTS snapshot below.
+    version = "9.6.4",
+)
+
+stack_snapshot = use_extension("@rules_haskell//extensions:stack_snapshot.bzl", "stack_snapshot")
+use_repo(stack_snapshot, "stackage")
+stack_snapshot.snapshot(
+    # Pick an LTS from https://www.stackage.org/snapshots
+    name = "lts-22.11",
+)
+
+[
+    stack_snapshot.package(
+        name = pkg,
+    )
+    for pkg in [
+        "base",
+        "HUnit",
+        "optparse-applicative",
+    ]
+]
+
+stack_snapshot.stack_snapshot_json(
+    label = "//third_party/haskell:stackage_snapshot.json",
+)

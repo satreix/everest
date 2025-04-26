@@ -2651,7 +2651,7 @@
           "@@//src/rust/luhn/Cargo.toml": "281d893686b22780065ca10b7c83f13316801c8b5b2ddde6540dde7462006c58",
           "@@//Cargo.lock": "780983f82e0041bd4bb8b46e97ee3dbae68f5cf0b21859d0af5e692eabf54544",
           "@@//src/rust/grpc_server/Cargo.toml": "1e722a6402cbe818d399b440bb150df97e9fd62fd96e1089d7b8039b777cc78d",
-          "@@//MODULE.bazel": "84a1cffeafbf19191e1876020ad29a2a866cd061440842c768c7ce870bf42907",
+          "@@//MODULE.bazel": "686c3b5db6ad08ce76302b34aded9d4cd52fac2533ddcb54d78f95bc4d9c2fc5",
           "@@//src/rust/num/Cargo.toml": "f7c3ac55fb2dfbc6a6bb5e87250a509791b94c2da58b5f6ddbf13b2d3ee873af",
           "@@rules_rust~~rust_host_tools~rust_host_tools//bin/cargo": "e965b26fe813ee4d726c00cf33fc5953922abcd6879998a89480f116f3784c7e"
         },

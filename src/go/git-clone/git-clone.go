@@ -32,7 +32,7 @@ func main() {
 	cloneDir := filepath.Join(cloneDirBase, name)
 
 	if _, err := os.Stat(cloneDir); err != nil {
-		if err := os.MkdirAll(filepath.Dir(cloneDir), 0755); err != nil {
+		if err := os.MkdirAll(filepath.Dir(cloneDir), 0o755); err != nil {
 			log.Fatalf("error creating directory: %s", err)
 		}
 

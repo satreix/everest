@@ -1,0 +1,25 @@
+JUNIT_VERSION = "5.10.2"
+
+JUNIT_PLATFORM_VERSION = "1.10.2"
+
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+maven.install(
+    artifacts = [
+        "com.google.googlejavaformat:google-java-format:1.24.0",
+        "commons-cli:commons-cli:1.9.0",
+        "dev.cel:cel:0.9.1",
+        "org.junit.jupiter:junit-jupiter-api:" + JUNIT_VERSION,
+        "org.junit.jupiter:junit-jupiter-engine:" + JUNIT_VERSION,
+        "org.junit.platform:junit-platform-launcher:" + JUNIT_PLATFORM_VERSION,
+        "org.junit.platform:junit-platform-reporting:" + JUNIT_PLATFORM_VERSION,
+        "org.junit.vintage:junit-vintage-engine:" + JUNIT_VERSION,
+    ],
+    fail_if_repin_required = True,
+    lock_file = "//third_party/java:maven_install.json",
+    repositories = [
+        "https://jcenter.bintray.com/",
+        "https://maven.google.com",
+        "https://repo1.maven.org/maven2",
+    ],
+)
+use_repo(maven, "maven", "unpinned_maven")
