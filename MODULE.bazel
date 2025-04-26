@@ -238,7 +238,7 @@ maven.install(
     artifacts = [
         "com.google.googlejavaformat:google-java-format:1.24.0",
         "commons-cli:commons-cli:1.9.0",
-        "dev.cel:cel:0.9.1-proto3",
+        "dev.cel:cel:0.9.1",
         "org.junit.jupiter:junit-jupiter-api:" + JUNIT_VERSION,
         "org.junit.jupiter:junit-jupiter-engine:" + JUNIT_VERSION,
         "org.junit.platform:junit-platform-launcher:" + JUNIT_PLATFORM_VERSION,
