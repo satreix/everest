@@ -16,7 +16,7 @@ require (
 	github.com/gosuri/uiprogress v0.0.1
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.1.0
 	github.com/honeycombio/otel-config-go v1.17.0
-	github.com/keybase/go-keychain v0.0.0-20250124001843-7f41edfa9689
+	github.com/keybase/go-keychain v0.0.1
 	github.com/mndrix/tap-go v0.0.0-20171203230836-629fa407e90b
 	github.com/mvdan/sh v2.6.4+incompatible
 	github.com/pkg/browser v0.0.0-20240102092130-5ac0b6a4141c
