@@ -1,0 +1,36 @@
+rust = use_extension("@rules_rust//rust:extensions.bzl", "rust")
+rust.toolchain(
+    edition = "2021",
+    versions = ["1.84.0"],
+)
+use_repo(rust, "rust_toolchains")
+
+register_toolchains("@rust_toolchains//:all")
+
+register_toolchains("//src/rust:prost_toolchain")
+
+crate = use_extension("@rules_rust//crate_universe:extension.bzl", "crate")
+crate.annotation(
+    crate = "protoc-gen-prost",
+    gen_binaries = ["protoc-gen-prost"],
+    repositories = ["everest_crates"],
+)
+crate.annotation(
+    crate = "protoc-gen-tonic",
+    gen_binaries = ["protoc-gen-tonic"],
+    repositories = ["everest_crates"],
+)
+crate.from_cargo(
+    name = "everest_crates",  # FIXME protobuf uses the name "crates", so we namespace ours
+    cargo_lockfile = "//:Cargo.lock",
+    manifests = [
+        "//:Cargo.toml",
+        "//src/rust/cel:Cargo.toml",
+        "//src/rust/grpc_server:Cargo.toml",
+        "//src/rust/hello_world:Cargo.toml",
+        "//src/rust/luhn:Cargo.toml",
+        "//src/rust/num:Cargo.toml",
+        "//src/rust/web:Cargo.toml",
+    ],
+)
+use_repo(crate, "everest_crates")
