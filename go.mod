@@ -6,7 +6,7 @@ toolchain go1.24.2
 
 require (
 	github.com/antlr4-go/antlr/v4 v4.13.1
-	github.com/aristanetworks/goarista v0.0.0-20241101122619-a6d58bf1ed81
+	github.com/aristanetworks/goarista 1dabcdab0654
 	github.com/bazelbuild/rules_go v0.53.0
 	github.com/cockscomb/cel2sql v0.0.0-20211204123659-c803dfd5c44c
 	github.com/google/cel-go v0.21.0
