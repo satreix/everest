@@ -256,7 +256,7 @@ maven.install(
 use_repo(maven, "maven", "unpinned_maven")
 
 bazel_dep(name = "rules_kotlin", version = "1.9.6")
-bazel_dep(name = "rules_nodejs", version = "6.3.3")
+bazel_dep(name = "rules_nodejs", version = "6.3.5")
 
 node = use_extension("@rules_nodejs//nodejs:extensions.bzl", "node")
 node.toolchain(
