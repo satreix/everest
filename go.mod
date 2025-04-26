@@ -29,9 +29,9 @@ require (
 	go.einride.tech/aip v0.69.1
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.54.0
 	golang.org/x/tools v0.32.0
-	google.golang.org/genproto/googleapis/api 7b384671a197
-	google.golang.org/grpc v1.67.3
-	google.golang.org/protobuf v1.36.5
+	google.golang.org/genproto/googleapis/api v0.0.0-20250425173222-7b384671a197
+	google.golang.org/grpc v1.71.0
+	google.golang.org/protobuf v1.36.6
 	gorm.io/driver/sqlite v1.5.7
 	gorm.io/gorm v1.25.12
 	mvdan.cc/gofumpt v0.8.0
@@ -72,20 +72,21 @@ require (
 	github.com/tklauser/go-sysconf v0.3.14 // indirect
 	github.com/tklauser/numcpus v0.8.0 // indirect
 	github.com/yusufpapurcu/wmi v1.2.4 // indirect
+	go.opentelemetry.io/auto/sdk v1.1.0 // indirect
 	go.opentelemetry.io/contrib/instrumentation/host v0.53.0 // indirect
 	go.opentelemetry.io/contrib/instrumentation/runtime v0.53.0 // indirect
 	go.opentelemetry.io/contrib/propagators/b3 v1.28.0 // indirect
 	go.opentelemetry.io/contrib/propagators/ot v1.28.0 // indirect
-	go.opentelemetry.io/otel v1.29.0 // indirect
+	go.opentelemetry.io/otel v1.34.0 // indirect
 	go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetricgrpc v1.28.0 // indirect
 	go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetrichttp v1.28.0 // indirect
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.28.0 // indirect
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc v1.28.0 // indirect
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp v1.28.0 // indirect
-	go.opentelemetry.io/otel/metric v1.29.0 // indirect
-	go.opentelemetry.io/otel/sdk v1.28.0 // indirect
-	go.opentelemetry.io/otel/sdk/metric v1.28.0 // indirect
-	go.opentelemetry.io/otel/trace v1.29.0 // indirect
+	go.opentelemetry.io/otel/metric v1.34.0 // indirect
+	go.opentelemetry.io/otel/sdk v1.34.0 // indirect
+	go.opentelemetry.io/otel/sdk/metric v1.34.0 // indirect
+	go.opentelemetry.io/otel/trace v1.34.0 // indirect
 	go.opentelemetry.io/proto/otlp v1.3.1 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/exp v0.0.0-20240531132922-fd00a4e0eefc // indirect
@@ -96,7 +97,7 @@ require (
 	golang.org/x/text v0.24.0 // indirect
 	golang.org/x/time v0.6.0 // indirect
 	google.golang.org/api v0.187.0 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20250124145028-65684f501c47 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20250414145226-207652e42e2e // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	mvdan.cc/sh v2.6.4+incompatible // indirect
