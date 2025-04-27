@@ -232,8 +232,8 @@
     "https://bcr.bazel.build/modules/rules_cc/0.0.9/MODULE.bazel": "836e76439f354b89afe6a911a7adf59a6b2518fafb174483ad78a2a2fde7b1c5",
     "https://bcr.bazel.build/modules/rules_cc/0.1.1/MODULE.bazel": "2f0222a6f229f0bf44cd711dc13c858dad98c62d52bd51d8fc3a764a83125513",
     "https://bcr.bazel.build/modules/rules_cc/0.1.1/source.json": "d61627377bd7dd1da4652063e368d9366fc9a73920bfa396798ad92172cf645c",
-    "https://bcr.bazel.build/modules/rules_cue/0.8.1/MODULE.bazel": "4d6a64d54712826e970533029eec3aa9be4390d61b1ad3da16eaaaacad1a4565",
-    "https://bcr.bazel.build/modules/rules_cue/0.8.1/source.json": "d96d438407a5d76e280d29e5b1f75bf1f23d76ba2ada2af812dcc7120e72531c",
+    "https://bcr.bazel.build/modules/rules_cue/0.11.0/MODULE.bazel": "a61fdcf5b0fd99010ff2ae6aa0eecc6377b6148c542b9c24fcc8b0c78f672aa8",
+    "https://bcr.bazel.build/modules/rules_cue/0.11.0/source.json": "34f3bd27cb734b591fc2a6330e7c1ab1b3e73361adfd89e47b382c7ee513ff0f",
     "https://bcr.bazel.build/modules/rules_foreign_cc/0.10.1/MODULE.bazel": "b9527010e5fef060af92b6724edb3691970a5b1f76f74b21d39f7d433641be60",
     "https://bcr.bazel.build/modules/rules_foreign_cc/0.12.0/MODULE.bazel": "d850fab025ce79a845077035861034393f1cc1efc1d9d58d766272a26ba67def",
     "https://bcr.bazel.build/modules/rules_foreign_cc/0.12.0/source.json": "c97ddc022179fe30d1a9b94425d1e56d0a633f72332c55463e584a52ce1b38ac",
@@ -248,7 +248,6 @@
     "https://bcr.bazel.build/modules/rules_go/0.45.1/MODULE.bazel": "6d7884f0edf890024eba8ab31a621faa98714df0ec9d512389519f0edff0281a",
     "https://bcr.bazel.build/modules/rules_go/0.46.0/MODULE.bazel": "3477df8bdcc49e698b9d25f734c4f3a9f5931ff34ee48a2c662be168f5f2d3fd",
     "https://bcr.bazel.build/modules/rules_go/0.48.0/MODULE.bazel": "d00ebcae0908ee3f5e6d53f68677a303d6d59a77beef879598700049c3980a03",
-    "https://bcr.bazel.build/modules/rules_go/0.49.0/MODULE.bazel": "61cfc1ba17123356d1b12b6c50f6e0162b2cc7fd6f51753c12471e973a0f72a5",
     "https://bcr.bazel.build/modules/rules_go/0.50.1/MODULE.bazel": "b91a308dc5782bb0a8021ad4330c81fea5bda77f96b9e4c117b9b9c8f6665ee0",
     "https://bcr.bazel.build/modules/rules_go/0.52.0/MODULE.bazel": "0cf080a2706aa8fc9abf64286cee60fdf0238db37b7f1793b0f7d550d59ea3ae",
     "https://bcr.bazel.build/modules/rules_go/0.53.0/MODULE.bazel": "a4ed760d3ac0dbc0d7b967631a9a3fd9100d28f7d9fcf214b4df87d4bfff5f9a",
@@ -615,7 +614,7 @@
     "@@googleapis~//:extensions.bzl%switched_rules": {
       "general": {
         "bzlTransitiveDigest": "vG6fuTzXD8MMvHWZEQud0MMH7eoC4GXY0va7VrFFh04=",
-        "usagesDigest": "68jJMCmBaDKEkdCi3AW+hsxXZAahVMLuP2/RnxEAqec=",
+        "usagesDigest": "x5plvezi9iAX1jS3PeuOAAGmfEJRcGfGc6Ag0aVwjvw=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -783,7 +782,7 @@
     "@@openapi_tools_generator_bazel~//:extension.bzl%openapi_gen": {
       "general": {
         "bzlTransitiveDigest": "47Cw3TjNUR3ewo7/OKoqGfMf0jc0ca1N2x4LmHjtlto=",
-        "usagesDigest": "gbt/lhXl1hqGV6+Q9uC7Aqr99WnLIh9UDGFPnVdt2qA=",
+        "usagesDigest": "PHf8IOOm0b0V54HHUs+QmbdvNcg7dB2+gL7A0/vnoew=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -794,15 +793,15 @@
             "attributes": {
               "generated_rule_name": "openapi_tools_generator_bazel_cli",
               "artifact_urls": [
-                "https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.4.0/openapi-generator-cli-5.4.0.jar"
+                "https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.12.0/openapi-generator-cli-7.12.0.jar"
               ],
               "srcjar_urls": [],
-              "canonical_id": "org.openapitools:openapi-generator-cli:5.4.0",
+              "canonical_id": "org.openapitools:openapi-generator-cli:7.12.0",
               "rule_name": "java_import",
               "tags": [
-                "maven_coordinates=org.openapitools:openapi-generator-cli:5.4.0"
+                "maven_coordinates=org.openapitools:openapi-generator-cli:7.12.0"
               ],
-              "artifact_sha256": "f3ed312310e390324b33ba2ffff290ce812935207a1493ec5c098d0a441be51c"
+              "artifact_sha256": "33e7dfa7a1f04d58405ee12ae19e2c6fc2a91497cf2e56fa68f1875a95cbf220"
             }
           }
         },
@@ -817,8 +816,8 @@
     },
     "@@rules_cue~//cue:extensions.bzl%cue": {
       "general": {
-        "bzlTransitiveDigest": "oo25Pi5cj2wwmpLovOj0lhSsZJ/QWwQ494RSi3sDqBY=",
-        "usagesDigest": "aUcDMFSXFBe5uoA3sdf0qanZpmZDKgLsVXe+DHtb0Ic=",
+        "bzlTransitiveDigest": "oGsASXOnzt5xgVRy+OtjMZjOYAidSNxAA9UQa0pr8lk=",
+        "usagesDigest": "NXqNZ2r9wos8pJU7Y34I4S3/AbHPoRQ8jhI0SHFDUog=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -827,7 +826,7 @@
             "bzlFile": "@@rules_cue~//cue/private/tools/cue:toolchain.bzl",
             "ruleClassName": "_download_tool",
             "attributes": {
-              "version": "v0.10.0"
+              "version": "v0.12.0"
             }
           },
           "cue_tool_toolchains": {
@@ -835,7 +834,7 @@
             "ruleClassName": "_toolchains_repo",
             "attributes": {
               "tool_repo": "cue_tool",
-              "version": "v0.10.0"
+              "version": "v0.12.0"
             }
           }
         },
@@ -2691,7 +2690,7 @@
           "@@//src/rust/luhn/Cargo.toml": "281d893686b22780065ca10b7c83f13316801c8b5b2ddde6540dde7462006c58",
           "@@//Cargo.lock": "a51972fc168316e9cecda0ecc51a842e214867c3578cb64293c52da0ec1c95ae",
           "@@//src/rust/grpc_server/Cargo.toml": "1e722a6402cbe818d399b440bb150df97e9fd62fd96e1089d7b8039b777cc78d",
-          "@@//MODULE.bazel": "66359a3d06e423e4220b0ca1506365d8af4b828ae814030cfa4f1d91451046db",
+          "@@//MODULE.bazel": "55a5a08798a74b87bb24f2bf39bef9b3afc651e72459bc71dd402053378a997c",
           "@@//src/rust/num/Cargo.toml": "f7c3ac55fb2dfbc6a6bb5e87250a509791b94c2da58b5f6ddbf13b2d3ee873af",
           "@@rules_rust~~rust_host_tools~rust_host_tools//bin/cargo": "e965b26fe813ee4d726c00cf33fc5953922abcd6879998a89480f116f3784c7e"
         },

@@ -19,6 +19,7 @@ for pattern in "${cpp_patterns[@]}"; do
 done
 
 # Go
+./src/go/petstore/server/api/petstore/regen.sh
 find . -type f -name '*.go' -print0 | xargs -0 "$GOFUMPT" -w
 bazel run //:gazelle
 

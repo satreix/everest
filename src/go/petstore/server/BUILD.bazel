@@ -1,7 +1,27 @@
 load("@openapi_tools_generator_bazel//:defs.bzl", "openapi_generator")
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
 
 openapi_generator(
     name = "petstore_server",
     generator = "go-server",
     spec = "@com_github_swagger_api_swagger_petstore//:src/main/resources/openapi.yaml",
+    system_properties = {
+        "onlyInterfaces": "True",
+        "outputAsLibrary": "True",
+        "packageName": "petstore_v1",
+    },
+)
+
+go_library(
+    name = "server_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/satreix/everest/src/go/petstore/server",
+    visibility = ["//visibility:private"],
+    deps = ["//src/go/petstore/server/api/petstore/v1:petstore"],
+)
+
+go_binary(
+    name = "server",
+    embed = [":server_lib"],
+    visibility = ["//visibility:public"],
 )

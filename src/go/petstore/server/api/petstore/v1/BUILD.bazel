@@ -1,0 +1,27 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "petstore",
+    srcs = [
+        "api.go",
+        "api_pet.go",
+        "api_store.go",
+        "api_user.go",
+        "error.go",
+        "helpers.go",
+        "impl.go",
+        "logger.go",
+        "model_address.go",
+        "model_api_response.go",
+        "model_category.go",
+        "model_customer.go",
+        "model_order.go",
+        "model_pet.go",
+        "model_tag.go",
+        "model_user.go",
+        "routers.go",
+    ],
+    importpath = "github.com/satreix/everest/src/go/petstore/server/api/petstore/v1",
+    visibility = ["//visibility:public"],
+    deps = ["@com_github_gorilla_mux//:mux"],
+)

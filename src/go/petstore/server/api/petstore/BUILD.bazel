@@ -1,0 +1,12 @@
+load("@openapi_tools_generator_bazel//:defs.bzl", "openapi_generator")
+
+openapi_generator(
+    name = "v1_sources",
+    generator = "go-server",
+    spec = "@com_github_swagger_api_swagger_petstore//:src/main/resources/openapi.yaml",
+    system_properties = {
+        "onlyInterfaces": "True",
+        "outputAsLibrary": "True",
+        "packageName": "petstore_v1",
+    },
+)
