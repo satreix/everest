@@ -35,7 +35,7 @@ go_test(
         ":echo",
         "//src/java/echo/client",
     ],
-    deps = ["@rules_go//go/tools/bazel:go_default_library"],
+    deps = ["@rules_go//go/tools/bazel"],
 )
 
 pkg_tar(
