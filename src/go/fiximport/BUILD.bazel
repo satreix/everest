@@ -1,0 +1,14 @@
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "fiximport_lib",
+    srcs = ["fiximport.go"],
+    importpath = "github.com/satreix/everest/src/go/fiximport",
+    visibility = ["//visibility:private"],
+)
+
+go_binary(
+    name = "fiximport",
+    embed = [":fiximport_lib"],
+    visibility = ["//visibility:public"],
+)

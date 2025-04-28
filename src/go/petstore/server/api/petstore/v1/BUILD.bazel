@@ -1,0 +1,118 @@
+load("@bazel_skylib//rules:build_test.bzl", "build_test")
+load("@openapi_tools_generator_bazel//:defs.bzl", "openapi_generator")
+load("@rules_go//go:def.bzl", "go_library")
+load("@rules_python//python:defs.bzl", "py_test")
+
+_OUPUT_FILES = [
+    "api.go",
+    "api_pet.go",
+    "api_store.go",
+    "api_user.go",
+    "error.go",
+    "helpers.go",
+    "impl.go",
+    "logger.go",
+    "model_address.go",
+    "model_api_response.go",
+    "model_category.go",
+    "model_customer.go",
+    "model_order.go",
+    "model_pet.go",
+    "model_tag.go",
+    "model_user.go",
+    "routers.go",
+]
+
+# The generated code does not to compile, due to missing imports "io" and "errors".
+# https://github.com/OpenAPITools/openapi-generator/issues/19237
+_REWORKS = {
+    "api.go": "-remove reflect",
+    "api_pet.go": "-add errors,io -remove reflect",
+    "api_store.go": "-add errors,io",
+    "api_user.go": "-add errors,io",
+}
+
+openapi_generator(
+    name = "v1_sources",
+    generator = "go-server",
+    spec = "@com_github_swagger_api_swagger_petstore//:src/main/resources/openapi.yaml",
+    system_properties = {
+        "onlyInterfaces": "True",
+        "outputAsLibrary": "True",
+        "packageName": "petstore_v1",
+    },
+)
+
+# Given we need to manually maintain the _OUPUT_FILES above,
+# this test ensure that its still current.
+py_test(
+    name = "v1_test",
+    size = "small",
+    srcs = ["v1_test.py"],
+    args = [
+        "--build-file=$(location BUILD.bazel)",
+        "--target-name=v1",
+        "$(location :v1_sources)/go",
+    ] + _OUPUT_FILES,
+    data = [
+        "BUILD.bazel",
+        ":v1_sources",
+    ],
+)
+
+# A library cannot depend directly on the generated code.
+# We manually extract a list of know files we want.
+# https://github.com/OpenAPITools/openapi-generator-bazel/issues/22
+[
+    genrule(
+        name = "clean_" + f,
+        srcs = [":v1_sources"],
+        outs = [f],
+        cmd = """
+rework="{rework}"
+cp "$(location :v1_sources)/go/{f}" "{f}"
+chmod 755 "{f}"
+if [ -n "$$rework" ]; then
+    $(location //src/go/fiximport) -file "{f}" $$rework
+fi
+mv "{f}" $@
+""".format(
+            f = f,
+            rework = _REWORKS[f] if f in _REWORKS else "",
+        ),
+        tools = ["//src/go/fiximport"],
+    )
+    for f in _OUPUT_FILES
+]
+
+# keep
+go_library(
+    name = "v1",
+    srcs = [
+        "api.go",
+        "api_pet.go",
+        "api_store.go",
+        "api_user.go",
+        "error.go",
+        "helpers.go",
+        "impl.go",
+        "logger.go",
+        "model_address.go",
+        "model_api_response.go",
+        "model_category.go",
+        "model_customer.go",
+        "model_order.go",
+        "model_pet.go",
+        "model_tag.go",
+        "model_user.go",
+        "routers.go",
+    ],
+    importpath = "github.com/satreix/everest/src/go/petstore/server/api/petstore/v1",
+    visibility = ["//visibility:public"],
+    deps = ["@com_github_gorilla_mux//:mux"],
+)
+
+build_test(
+    name = "v1_build_test",
+    targets = [":v1"],
+)
