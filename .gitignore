@@ -2,3 +2,4 @@ __pycache__/
 *.py[cod]
 /node_modules
 /target
+/MODULE.bazel.lock
