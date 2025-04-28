@@ -2,11 +2,11 @@ package main
 
 import (
 	"context"
+	"errors"
 	"flag"
+	"fmt"
 	"log"
 	"net/http"
-	"errors"
-	"fmt"
 	"os"
 	"sync"
 
@@ -151,7 +151,7 @@ func main() {
 
 	router := petstore_v1.NewRouter(
 		petstore_v1.NewPetAPIController(s),
-	 	// petstore_v1.NewStoreAPIController(s),
+		// petstore_v1.NewStoreAPIController(s),
 		// petstore_v1.NewUserAPIController(s),
 	)
 

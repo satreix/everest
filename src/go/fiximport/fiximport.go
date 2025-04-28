@@ -14,8 +14,8 @@ import (
 
 func main() {
 	var (
-		filePath     = flag.String("file", "", "Path to the Go file")
-		addImports   = flag.String("add", "", "Comma-separated imports to add (e.g., \"fmt,errors\")")
+		filePath      = flag.String("file", "", "Path to the Go file")
+		addImports    = flag.String("add", "", "Comma-separated imports to add (e.g., \"fmt,errors\")")
 		removeImports = flag.String("remove", "", "Comma-separated imports to remove (e.g., \"fmt,errors\")")
 	)
 	flag.Parse()
@@ -49,7 +49,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	if err := os.WriteFile(*filePath, buf.Bytes(), 0644); err != nil {
+	if err := os.WriteFile(*filePath, buf.Bytes(), 0o644); err != nil {
 		fmt.Fprintf(os.Stderr, "failed to write file: %v\n", err)
 		os.Exit(1)
 	}

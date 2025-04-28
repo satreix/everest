@@ -17,7 +17,7 @@ go_library(
     srcs = ["main.go"],
     importpath = "github.com/satreix/everest/src/go/petstore/server",
     visibility = ["//visibility:private"],
-    deps = ["//src/go/petstore/server/api/petstore/v1:petstore"],
+    deps = ["//src/go/petstore/server/api/petstore/v1"],
 )
 
 go_binary(

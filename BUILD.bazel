@@ -17,5 +17,6 @@ buildifier(
 
 gazelle(
     name = "gazelle",
+    external = "static",
     mode = "fix",
 )

@@ -6,7 +6,7 @@ toolchain go1.24.2
 
 require (
 	github.com/antlr4-go/antlr/v4 v4.13.1
-	github.com/bazelbuild/rules_go v0.53.0
+	github.com/bazelbuild/rules_go v0.54.0
 	github.com/cockscomb/cel2sql v0.0.0-20211204123659-c803dfd5c44c
 	github.com/google/cel-go v0.21.0
 	github.com/google/go-cmp v0.6.0
@@ -39,9 +39,9 @@ require (
 )
 
 require (
-	cloud.google.com/go v0.115.0 // indirect
-	cloud.google.com/go/bigquery v1.61.0 // indirect
-	cloud.google.com/go/iam v1.1.10 // indirect
+	cloud.google.com/go v0.118.0 // indirect
+	cloud.google.com/go/bigquery v1.65.0 // indirect
+	cloud.google.com/go/iam v1.3.1 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cenkalti/backoff/v4 v4.3.0 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
@@ -50,7 +50,6 @@ require (
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-ole/go-ole v1.3.0 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
-	github.com/googleapis/gax-go/v2 v2.12.5 // indirect
 	github.com/gosuri/uilive v0.0.4 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.20.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
@@ -96,8 +95,7 @@ require (
 	golang.org/x/sync v0.13.0 // indirect
 	golang.org/x/sys v0.32.0 // indirect
 	golang.org/x/text v0.24.0 // indirect
-	golang.org/x/time v0.6.0 // indirect
-	google.golang.org/api v0.187.0 // indirect
+	google.golang.org/api v0.214.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20250414145226-207652e42e2e // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
