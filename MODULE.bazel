@@ -36,7 +36,7 @@ bazel_dep(name = "rules_python", version = "0.40.0")
 bazel_dep(name = "rules_ruby", version = "0.13.0")
 bazel_dep(name = "rules_rust", version = "0.57.0")
 bazel_dep(name = "rules_rust_prost", version = "0.57.0")
-bazel_dep(name = "toolchains_protoc", version = "0.4.0")
+bazel_dep(name = "toolchains_protoc", version = "0.4.1")
 
 http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
