@@ -184,7 +184,7 @@ dependencies = [
  "bitflags 1.3.2",
  "bytes",
  "futures-util",
- "http 0.2.12",
+ "http",
  "http-body",
  "hyper",
  "itoa",
@@ -210,7 +210,7 @@ dependencies = [
  "async-trait",
  "bytes",
  "futures-util",
- "http 0.2.12",
+ "http",
  "http-body",
  "mime",
  "rustversion",
@@ -283,12 +283,6 @@ checksum = "3078c7629b62d3f0439517fa394996acacc5cbc91c5a20d8c658e77abd503a71"
 dependencies = [
  "generic-array",
 ]
-
-[[package]]
-name = "byteorder"
-version = "1.4.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "14c189c53d098945499cdfa7ecc63567cf3886b3332b312a5b4585d8d3a6a610"
 
 [[package]]
 name = "bytes"
@@ -465,12 +459,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "data-encoding"
-version = "2.6.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e8566979429cf69b49a5c740c60791108e86440e8be149bbea4fe54d2c32d6e2"
-
-[[package]]
 name = "diff"
 version = "0.1.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -520,15 +508,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3d248bdd43ce613d87415282f69b9bb99d947d290b10962dd6c56233312c2ad5"
 dependencies = [
  "log",
-]
-
-[[package]]
-name = "encoding_rs"
-version = "0.8.34"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b45de904aa0b010bce2ab45264d0631681847fa7b6f2eaa7dab7619943bc4f59"
-dependencies = [
- "cfg-if",
 ]
 
 [[package]]
@@ -613,7 +592,6 @@ dependencies = [
  "futures-task",
  "pin-project-lite",
  "pin-utils",
- "slab",
 ]
 
 [[package]]
@@ -666,7 +644,7 @@ dependencies = [
  "futures-core",
  "futures-sink",
  "futures-util",
- "http 0.2.12",
+ "http",
  "indexmap 2.2.6",
  "slab",
  "tokio",
@@ -695,7 +673,7 @@ dependencies = [
  "base64",
  "bytes",
  "headers-core",
- "http 0.2.12",
+ "http",
  "httpdate",
  "mime",
  "sha1",
@@ -707,7 +685,7 @@ version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e7f66481bfee273957b1f20485a4ff3362987f85b2c236580d81b4eb7a326429"
 dependencies = [
- "http 0.2.12",
+ "http",
 ]
 
 [[package]]
@@ -756,24 +734,13 @@ dependencies = [
 ]
 
 [[package]]
-name = "http"
-version = "1.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "21b9ddb458710bc376481b842f5da65cdf31522de232c1ca8146abce2a358258"
-dependencies = [
- "bytes",
- "fnv",
- "itoa",
-]
-
-[[package]]
 name = "http-body"
 version = "0.4.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7ceab25649e9960c0311ea418d17bee82c0dcec1bd053b5f9a66e265a693bed2"
 dependencies = [
  "bytes",
- "http 0.2.12",
+ "http",
  "pin-project-lite",
 ]
 
@@ -809,7 +776,7 @@ dependencies = [
  "futures-core",
  "futures-util",
  "h2",
- "http 0.2.12",
+ "http",
  "http-body",
  "httparse",
  "httpdate",
@@ -832,16 +799,6 @@ dependencies = [
  "pin-project-lite",
  "tokio",
  "tokio-io-timeout",
-]
-
-[[package]]
-name = "idna"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e14ddfc70884202db2244c223200c204c2bda1bc6e0998d11b5e024d657209e6"
-dependencies = [
- "unicode-bidi",
- "unicode-normalization",
 ]
 
 [[package]]
@@ -1034,24 +991,6 @@ dependencies = [
  "libc",
  "wasi",
  "windows-sys 0.48.0",
-]
-
-[[package]]
-name = "multer"
-version = "2.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "01acbdc23469fd8fe07ab135923371d5f5a422fbf9c522158677c8eb15bc51c2"
-dependencies = [
- "bytes",
- "encoding_rs",
- "futures-util",
- "http 0.2.12",
- "httparse",
- "log",
- "memchr",
- "mime",
- "spin",
- "version_check",
 ]
 
 [[package]]
@@ -1671,12 +1610,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "spin"
-version = "0.9.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6980e8d7511241f8acf4aebddbb1ff938df5eebe98691418c4468d0b72a96a67"
-
-[[package]]
 name = "string_cache"
 version = "0.8.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1825,21 +1758,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "tinyvec"
-version = "1.6.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "87cc5ceb3875bb20c2890005a4e226a4651264a5c75edb2421b52861a0a0cb50"
-dependencies = [
- "tinyvec_macros",
-]
-
-[[package]]
-name = "tinyvec_macros"
-version = "0.1.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1f3ccbac311fea05f86f61904b462b55fb3df8837a366dfc601a0161d0532f20"
-
-[[package]]
 name = "tokio"
 version = "1.38.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1850,7 +1768,6 @@ dependencies = [
  "libc",
  "mio",
  "num_cpus",
- "parking_lot",
  "pin-project-lite",
  "signal-hook-registry",
  "socket2",
@@ -1891,18 +1808,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "tokio-tungstenite"
-version = "0.21.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c83b561d025642014097b66e6c1bb422783339e0909e4429cde4749d1990bc38"
-dependencies = [
- "futures-util",
- "log",
- "tokio",
- "tungstenite",
-]
-
-[[package]]
 name = "tokio-util"
 version = "0.7.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1927,7 +1832,7 @@ dependencies = [
  "base64",
  "bytes",
  "h2",
- "http 0.2.12",
+ "http",
  "http-body",
  "hyper",
  "hyper-timeout",
@@ -2026,25 +1931,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e421abadd41a4225275504ea4d6566923418b7f05506fbc9c0fe86ba7396114b"
 
 [[package]]
-name = "tungstenite"
-version = "0.21.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9ef1a641ea34f399a848dea702823bbecfb4c486f911735368f1f137cb8257e1"
-dependencies = [
- "byteorder",
- "bytes",
- "data-encoding",
- "http 1.1.0",
- "httparse",
- "log",
- "rand",
- "sha1",
- "thiserror",
- "url",
- "utf-8",
-]
-
-[[package]]
 name = "typenum"
 version = "1.17.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2060,25 +1946,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "unicode-bidi"
-version = "0.3.10"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d54675592c1dbefd78cbd98db9bacd89886e1ca50692a0692baefffdeb92dd58"
-
-[[package]]
 name = "unicode-ident"
 version = "1.0.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "84a22b9f218b40614adcb3f4ff08b703773ad44fa9423e4e0d346d5db86e4ebc"
-
-[[package]]
-name = "unicode-normalization"
-version = "0.1.22"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5c5713f0fc4b5db668a2ac63cdb7bb4469d8c9fed047b1d0292cc7b0ce2ba921"
-dependencies = [
- "tinyvec",
-]
 
 [[package]]
 name = "unicode-xid"
@@ -2091,23 +1962,6 @@ name = "unindent"
 version = "0.2.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c7de7d73e1754487cb58364ee906a499937a0dfabd86bcb980fa99ec8c8fa2ce"
-
-[[package]]
-name = "url"
-version = "2.3.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0d68c799ae75762b8c3fe375feb6600ef5602c883c5d21eb51c09f22b83c4643"
-dependencies = [
- "form_urlencoded",
- "idna",
- "percent-encoding",
-]
-
-[[package]]
-name = "utf-8"
-version = "0.7.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "09cc8ee72d2a9becf2f2febe0205bbed8fc6615b7cb429ad062dc7b7ddd036a9"
 
 [[package]]
 name = "utf8parse"
@@ -2140,12 +1994,11 @@ dependencies = [
  "futures-channel",
  "futures-util",
  "headers",
- "http 0.2.12",
+ "http",
  "hyper",
  "log",
  "mime",
  "mime_guess",
- "multer",
  "percent-encoding",
  "pin-project",
  "scoped-tls",
@@ -2153,7 +2006,6 @@ dependencies = [
  "serde_json",
  "serde_urlencoded",
  "tokio",
- "tokio-tungstenite",
  "tokio-util",
  "tower-service",
  "tracing",
