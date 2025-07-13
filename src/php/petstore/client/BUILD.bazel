@@ -3,5 +3,5 @@ load("@openapi_tools_generator_bazel//:defs.bzl", "openapi_generator")
 openapi_generator(
     name = "petstore_client",
     generator = "php",
-    spec = "@com_github_swagger_api_swagger_petstore//:src/main/resources/openapi.yaml",
+    spec = "@petstore//:src/main/resources/openapi.yaml",
 )

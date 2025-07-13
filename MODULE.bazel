@@ -14,6 +14,7 @@ bazel_dep(name = "googleapis", version = "0.0.0-20250604-de157ca3")
 bazel_dep(name = "googletest", version = "1.17.0")
 bazel_dep(name = "grpc", version = "1.73.1")
 bazel_dep(name = "grpc-java", version = "1.71.0")
+bazel_dep(name = "rules_antlr")
 bazel_dep(name = "openapi_tools_generator_bazel", version = "0.2.0")
 bazel_dep(name = "protobuf", version = "30.0", repo_name = "com_google_protobuf")
 bazel_dep(name = "protoc-gen-validate", version = "1.2.1.bcr.1")
@@ -38,7 +39,26 @@ bazel_dep(name = "rules_rust", version = "0.62.0")
 bazel_dep(name = "rules_rust_prost", version = "0.62.0")
 bazel_dep(name = "toolchains_protoc", version = "0.4.1")
 
+git_override(
+    module_name = "rules_antlr",
+    commit = "89a29cca479363a5aee53e203719510bdc6be6ff",
+    init_submodules = True,
+    patches = [
+        "//third_party/rules_antlr:0001-add-antlr-4.13.0.patch",
+        "//third_party/rules_antlr:0002-bzlmod.patch",
+    ],
+    remote = "https://github.com/marcohu/rules_antlr.git",
+)
+
 http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
+    name = "petstore",
+    build_file_content = """exports_files(["src/main/resources/openapi.yaml"])""",
+    sha256 = "ae350c7aff7b99465ad4f679613685a92a4350796ae9fcd8ef36952592fe5dfe",
+    strip_prefix = "swagger-petstore-swagger-petstore-v3-1.0.11",
+    url = "https://github.com/swagger-api/swagger-petstore/archive/refs/tags/swagger-petstore-v3-1.0.11.tar.gz",
+)
 
 http_archive(
     name = "antlr_grammars_v4",
@@ -48,7 +68,18 @@ http_archive(
     url = "https://github.com/antlr/grammars-v4/archive/63d037bbb084b2a5692ef09957c5bf7e647eee97.tar.gz",
 )
 
+http_archive(
+    name = "uncrustify",
+    build_file_content = """filegroup(name = "all", srcs = glob(["**"]), visibility = ["//visibility:public"])""",
+    sha256 = "ad0a7b1f68aa3527d1b89d177d192385fe41b830d46167bde3c3b578e9b0ed06",
+    strip_prefix = "uncrustify-uncrustify-0.70.1",
+    url = "https://github.com/uncrustify/uncrustify/archive/uncrustify-0.70.1.tar.gz",
+)
+
 ##
+
+antlr = use_extension("@rules_antlr//antlr:extensions.bzl", "antlr")
+antlr.download(version = "4.13.0")
 
 include("//third_party/go:go.MODULE.bazel")
 

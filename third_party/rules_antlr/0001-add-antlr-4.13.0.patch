@@ -1,7 +1,7 @@
-diff --git a/antlr/repositories.bzl b/antlr/repositories.bzl
+diff --git antlr/repositories.bzl antlr/repositories.bzl
 index e2525ab..875ed13 100644
---- a/antlr/repositories.bzl
-+++ b/antlr/repositories.bzl
+--- antlr/repositories.bzl
++++ antlr/repositories.bzl
 @@ -3,13 +3,18 @@
  load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_jar")
  load(":lang.bzl", "C", "CPP", "GO", "JAVA", "OBJC", "PYTHON", "PYTHON2", "PYTHON3", supportedLanguages = "supported")
