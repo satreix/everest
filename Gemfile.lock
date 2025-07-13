@@ -2,8 +2,8 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.3)
-    cgi (0.3.6)
-    cgi (0.3.6-java)
+    cgi (0.3.7)
+    cgi (0.3.7-java)
     diff-lcs (1.5.1)
     erb (4.0.4)
       cgi (>= 0.3.3)
