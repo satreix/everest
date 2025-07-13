@@ -1,5 +1,5 @@
 load("@buildifier_prebuilt//:rules.bzl", "buildifier")
-load("@gazelle//:def.bzl", "gazelle")
+load("@gazelle//:def.bzl", "gazelle", "gazelle_binary")
 load("@npm//:defs.bzl", "npm_link_all_packages")
 
 npm_link_all_packages()
@@ -13,11 +13,24 @@ buildifier(
 # gazelle:go_proto_compilers @rules_go//proto:go_proto
 # gazelle:go_grpc_compilers @rules_go//proto:go_grpc_v2
 
+# gazelle:resolve cc gflags/gflags.h @gflags
+# gazelle:resolve cc gtest/gtest.h @googletest//:gtest_main
+
 # gazelle:resolve proto proto google/api/field_behavior.proto @googleapis//google/api:field_behavior_proto
 # gazelle:resolve proto go google/api/field_behavior.proto @org_golang_google_genproto_googleapis_api//annotations
 
 gazelle(
     name = "gazelle",
     external = "static",
+    gazelle = ":gazelle_bin",
     mode = "fix",
+)
+
+gazelle_binary(
+    name = "gazelle_bin",
+    languages = [
+        "@gazelle//language/proto",
+        "@gazelle//language/go",
+        "@gazelle_cc//language/cc",
+    ],
 )
