@@ -4,6 +4,7 @@ cc_library(
     name = "luhn",
     srcs = ["luhn.cc"],
     hdrs = ["luhn.h"],
+    visibility = ["//visibility:public"],
 )
 
 cc_test(

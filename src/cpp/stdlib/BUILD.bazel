@@ -1,4 +1,0 @@
-exports_files(
-    ["headers.csv"],
-    visibility = ["//src/go/cpp:__pkg__"],
-)
