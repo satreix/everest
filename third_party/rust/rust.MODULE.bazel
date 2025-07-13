@@ -32,5 +32,11 @@ crate.from_cargo(
         "//src/rust/num:Cargo.toml",
         "//src/rust/web:Cargo.toml",
     ],
+    supported_platform_triples = [
+        "aarch64-apple-darwin",
+        "aarch64-unknown-linux-gnu",
+        "x86_64-apple-darwin",
+        "x86_64-unknown-linux-gnu",
+    ],
 )
 use_repo(crate, "everest_crates")
