@@ -1,3 +1,4 @@
+load("@bazel_skylib//rules:build_test.bzl", "build_test")
 load("@com_google_protobuf//bazel:java_proto_library.bzl", "java_proto_library")
 load("@grpc-java//:java_grpc_library.bzl", "java_grpc_library")
 load("@rules_go//proto:def.bzl", "go_proto_library")
@@ -38,4 +39,15 @@ rust_prost_library(
     name = "helloworld_rust_proto",
     proto = ":helloworld_proto",
     visibility = ["//src/rust:__subpackages__"],
+)
+
+build_test(
+    name = "build_test",
+    targets = [
+        ":helloworld_proto",
+        ":helloworld_go_proto",
+        ":helloworld_java_proto",
+        ":helloworld_java_grpc",
+        ":helloworld_rust_proto",
+    ],
 )
