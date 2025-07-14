@@ -9,7 +9,7 @@ bazel_dep(name = "buildifier_prebuilt", version = "8.2.0.2")
 bazel_dep(name = "contrib_rules_jvm", version = "0.29.0")
 bazel_dep(name = "fmt", version = "11.2.0")
 bazel_dep(name = "gazelle", version = "0.44.0")
-bazel_dep(name = "gazelle_cc", version = "0.1.0")
+bazel_dep(name = "gazelle_cc")
 bazel_dep(name = "gflags", version = "2.2.2")
 bazel_dep(name = "googleapis", version = "0.0.0-20250703-f9d6fe4a")
 bazel_dep(name = "googletest", version = "1.17.0")
@@ -39,6 +39,12 @@ bazel_dep(name = "rules_ruby", version = "0.20.1")
 bazel_dep(name = "rules_rust", version = "0.62.0")
 bazel_dep(name = "rules_rust_prost", version = "0.62.0")
 bazel_dep(name = "toolchains_protoc", version = "0.4.3")
+
+git_override(
+    module_name = "gazelle_cc",
+    commit = "17c478bfef53ced060b191d647437ef067052f67",
+    remote = "https://github.com/EngFlow/gazelle_cc.git",
+)
 
 git_override(
     module_name = "rules_antlr",

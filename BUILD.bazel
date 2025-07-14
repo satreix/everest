@@ -19,6 +19,8 @@ buildifier(
 # gazelle:resolve proto proto google/api/field_behavior.proto @googleapis//google/api:field_behavior_proto
 # gazelle:resolve proto go google/api/field_behavior.proto @org_golang_google_genproto_googleapis_api//annotations
 
+# gazelle:go_grpc_compilers @rules_go//proto:go_grpc
+
 gazelle(
     name = "gazelle",
     external = "static",
@@ -30,7 +32,7 @@ gazelle_binary(
     name = "gazelle_bin",
     languages = [
         "@gazelle//language/proto",
-        "@gazelle//language/go",
         "@gazelle_cc//language/cc",
+        "@gazelle//language/go",
     ],
 )

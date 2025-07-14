@@ -4,8 +4,8 @@ cc_library(
     name = "greet",
     srcs = ["greet.cc"],
     hdrs = ["greet.h"],
+    implementation_deps = ["@fmt"],
     visibility = ["//src/cpp/hello_world:__pkg__"],
-    deps = ["@fmt"],
 )
 
 cc_test(
