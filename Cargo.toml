@@ -7,3 +7,22 @@ members = [
     "src/rust/num",
     "src/rust/web",
 ]
+
+[workspace.dependencies]
+askama = "0.12.1"
+askama_warp = "0.13.0"
+cel-interpreter = "0.8.1"
+clap = "4.5.16"
+prost = "=0.12"
+prost-types = { version = "=0.12", default-features = false }
+protoc-gen-prost = "=0.3.1"
+protoc-gen-tonic = "=0.4.0"
+pyo3 = "0.24.1"
+pyo3-build-config = "*"
+rayon = "1.8.1"
+slog = "2.7.0"
+slog-async = "2.8.0"
+slog-term = "2.9.1"
+tokio = { version = "=1.38", default-features = false }
+tonic = "=0.11.0"
+warp = { version = "0.3.7", default-features = false }
