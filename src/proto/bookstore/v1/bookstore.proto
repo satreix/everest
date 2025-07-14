@@ -1,7 +1,3 @@
-// (-- api-linter: core::0191::java-multiple-files=disabled
-//     api-linter: core::0191::java-outer-classname=disabled
-//     api-linter: core::0191::java-package=disabled
-//     aip.dev/not-precedent: This is not a Java. --)
 syntax = "proto3";
 
 package bookstore.v1;
