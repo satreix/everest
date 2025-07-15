@@ -1,7 +1,0 @@
-load("@openapi_tools_generator_bazel//:defs.bzl", "openapi_generator")
-
-openapi_generator(
-    name = "petstore_server",
-    generator = "haskell",
-    spec = "@petstore//:src/main/resources/openapi.yaml",
-)
