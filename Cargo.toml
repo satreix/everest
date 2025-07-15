@@ -11,7 +11,7 @@ members = [
 [workspace.dependencies]
 askama = "0.12.1"
 askama_warp = "0.13.0"
-cel-interpreter = "0.8.1"
+cel-interpreter = "0.9.0"
 clap = "4.5.16"
 prost = "=0.12"
 prost-types = { version = "=0.12", default-features = false }
