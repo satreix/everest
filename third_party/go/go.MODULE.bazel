@@ -21,7 +21,7 @@ use_repo(
     "com_github_cockscomb_cel2sql",
     "com_github_google_cel_go",
     "com_github_google_go_cmp",
-    "com_github_google_go_github_v64",
+    "com_github_google_go_github_v73",
     "com_github_google_uuid",
     "com_github_gorilla_mux",
     "com_github_gosuri_uiprogress",
