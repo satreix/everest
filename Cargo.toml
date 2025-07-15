@@ -17,7 +17,7 @@ prost = "=0.12"
 prost-types = { version = "=0.12", default-features = false }
 protoc-gen-prost = "=0.3.1"
 protoc-gen-tonic = "=0.4.0"
-pyo3 = "0.24.1"
+pyo3 = "0.25.0"
 pyo3-build-config = "*"
 rayon = "1.8.1"
 slog = "2.7.0"
