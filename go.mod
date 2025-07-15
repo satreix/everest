@@ -28,7 +28,7 @@ require (
 	github.com/whilp/git-urls v1.0.0
 	github.com/zenazn/goji v1.0.1
 	go.einride.tech/aip v0.69.1
-	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.54.0
+	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.62.0
 	golang.org/x/tools v0.32.0
 	google.golang.org/genproto/googleapis/api v0.0.0-20250707201910-8d1bb00bc6a7
 	google.golang.org/grpc v1.71.0
