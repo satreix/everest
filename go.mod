@@ -10,7 +10,7 @@ require (
 	github.com/cockscomb/cel2sql v0.0.0-20211204123659-c803dfd5c44c
 	github.com/google/cel-go v0.21.0
 	github.com/google/go-cmp v0.6.0
-	github.com/google/go-github/v64 v64.0.0
+	github.com/google/go-github/v73 v73.0.0
 	github.com/google/uuid v1.6.0
 	github.com/gorilla/mux v1.8.1
 	github.com/gosuri/uiprogress v0.0.1
