@@ -1,5 +1,5 @@
-load("@bazel_gazelle//:def.bzl", "gazelle")
 load("@buildifier_prebuilt//:rules.bzl", "buildifier")
+load("@gazelle//:def.bzl", "gazelle")
 load("@npm//:defs.bzl", "npm_link_all_packages")
 
 npm_link_all_packages()
@@ -10,7 +10,8 @@ buildifier(
     lint_warnings = ["all"],
 )
 
-# gazelle:resolve go google.golang.org/genproto/googleapis/api/expr/v1alpha1 @org_golang_google_genproto//googleapis/api/expr/v1alpha1:go_default_library
+# gazelle:go_proto_compilers @rules_go//proto:go_proto
+# gazelle:go_grpc_compilers @rules_go//proto:go_grpc_v2
 
 # gazelle:resolve proto proto google/api/field_behavior.proto @googleapis//google/api:field_behavior_proto
 # gazelle:resolve proto go google/api/field_behavior.proto @org_golang_google_genproto_googleapis_api//annotations
