@@ -12,7 +12,10 @@ proto_library(
 
 go_proto_library(
     name = "bookstore_v1_go_proto",
-    compilers = ["@rules_go//proto:go_grpc"],
+    compilers = [
+        "@rules_go//proto:go_proto",
+        "@rules_go//proto:go_grpc_v2",
+    ],
     importpath = "github.com/satreix/everest/src/proto/bookstore/v1",
     proto = ":bookstore_v1_proto",
     visibility = ["//visibility:public"],
