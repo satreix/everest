@@ -6,7 +6,7 @@ toolchain go1.24.5
 
 require (
 	github.com/antlr4-go/antlr/v4 v4.13.1
-	github.com/bazelbuild/rules_go v0.54.0
+	github.com/bazelbuild/rules_go v0.55.1
 	github.com/cockscomb/cel2sql v0.0.0-20211204123659-c803dfd5c44c
 	github.com/google/cel-go v0.21.0
 	github.com/google/go-cmp v0.6.0
