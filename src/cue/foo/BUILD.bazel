@@ -4,7 +4,6 @@ load("@rules_go//go:def.bzl", "go_test")
 cue_exported_standalone_files(
     name = "foo",
     srcs = ["foo.cue"],
-    #importpath = "github.com/satreix/everest/src/cue:foo",
     visibility = ["//visibility:public"],
 )
 
