@@ -2,7 +2,7 @@
   "name": "everest",
   "private": true,
   "dependencies": {
-    "commander": "12.1.0"
+    "commander": "14.0.0"
   },
   "devDependencies": {
     "typescript": "5.8.3"
