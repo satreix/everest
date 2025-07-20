@@ -101,6 +101,7 @@ go_sdk.download(version = "1.24.5")
 go_sdk.nogo(nogo = "@//tools/nogo")
 
 include("//third_party/go:go.MODULE.bazel")
+
 include("//third_party/java:java.MODULE.bazel")
 
 node = use_extension("@rules_nodejs//nodejs:extensions.bzl", "node")
@@ -160,4 +161,5 @@ pip.parse(
 use_repo(pip, "pip")
 
 include("//third_party/ruby:ruby.MODULE.bazel")
+
 include("//third_party/rust:rust.MODULE.bazel")
