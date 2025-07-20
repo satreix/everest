@@ -8,7 +8,7 @@ require (
 	github.com/antlr4-go/antlr/v4 v4.13.1
 	github.com/bazelbuild/rules_go v0.55.1
 	github.com/cockscomb/cel2sql v0.0.0-20211204123659-c803dfd5c44c
-	github.com/google/cel-go v0.21.0
+	github.com/google/cel-go v0.26.0
 	github.com/google/go-cmp v0.7.0
 	github.com/google/go-github/v73 v73.0.0
 	github.com/google/uuid v1.6.0
@@ -39,6 +39,7 @@ require (
 )
 
 require (
+	cel.dev/expr v0.24.0 // indirect
 	cloud.google.com/go v0.118.0 // indirect
 	cloud.google.com/go/bigquery v1.65.0 // indirect
 	cloud.google.com/go/iam v1.3.1 // indirect

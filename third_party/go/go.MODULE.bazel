@@ -1,13 +1,7 @@
-go_sdk = use_extension("@rules_go//go:extensions.bzl", "go_sdk")
-go_sdk.download(version = "1.24.5")
-go_sdk.nogo(nogo = "@//tools/nogo")
-
 go_deps = use_extension("@gazelle//:extensions.bzl", "go_deps")
 go_deps.from_file(go_mod = "//:go.mod")
 go_deps.gazelle_override(
-    directives = [
-        "gazelle:go_naming_convention go_default_library",
-    ],
+    build_file_generation = "clean",
     path = "github.com/google/cel-go",
 )
 go_deps.gazelle_override(
