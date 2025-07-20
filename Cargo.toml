@@ -10,7 +10,6 @@ members = [
 
 [workspace.dependencies]
 askama = "0.14.0"
-askama_warp = "0.13.0"
 cel-interpreter = "0.9.0"
 clap = "4.5.16"
 prost = "=0.12"
