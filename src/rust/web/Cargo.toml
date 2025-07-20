@@ -6,7 +6,6 @@ edition = "2021"
 
 [dependencies]
 askama = { workspace = true }
-askama_warp = { workspace = true }
 slog = { workspace = true }
 slog-async = { workspace = true }
 slog-term = { workspace = true }

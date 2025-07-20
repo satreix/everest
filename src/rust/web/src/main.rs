@@ -3,10 +3,11 @@ extern crate slog;
 extern crate slog_async;
 extern crate slog_term;
 
-use askama_warp::Template;
+use askama::Template;
 use slog::{Drain, Logger};
 use std::net::SocketAddr;
 use warp::Filter;
+ use warp::Reply;
 
 #[derive(Template)]
 #[template(path = "hello.html")]
@@ -14,11 +15,21 @@ struct HelloTemplate {
     name: String,
 }
 
+fn greet(name: String) -> impl warp::Reply {
+    let template = HelloTemplate { name };
+    match template.render() {
+        Ok(html) => warp::reply::html(html).into_response(),
+        Err(_) => warp::reply::with_status(
+            "Template rendering error",
+            warp::http::StatusCode::INTERNAL_SERVER_ERROR,
+        )
+        .into_response(),
+    }
+}
+
 fn setup_route() -> impl Filter<Extract = impl warp::Reply, Error = warp::Rejection> + Clone {
-    let hello_world = warp::path!("greet").map(|| HelloTemplate {
-        name: "World".to_string(),
-    });
-    let hello = warp::path!("greet" / String).map(|name| HelloTemplate { name });
+    let hello_world = warp::path!("greet").map(|| greet("World".to_string()));
+    let hello = warp::path!("greet" / String).map(greet);
 
     warp::get().and(hello_world.or(hello))
 }
