@@ -1,14 +1,3 @@
-rust = use_extension("@rules_rust//rust:extensions.bzl", "rust")
-rust.toolchain(
-    edition = "2021",
-    versions = ["1.84.0"],
-)
-use_repo(rust, "rust_toolchains")
-
-register_toolchains("@rust_toolchains//:all")
-
-register_toolchains("//src/rust:prost_toolchain")
-
 crate = use_extension("@rules_rust//crate_universe:extension.bzl", "crate")
 crate.annotation(
     crate = "protoc-gen-prost",

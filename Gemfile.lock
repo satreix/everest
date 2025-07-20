@@ -2,13 +2,8 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.3)
-    cgi (0.3.7)
-    cgi (0.3.7-java)
     diff-lcs (1.6.2)
-    erb (4.0.4)
-      cgi (>= 0.3.3)
-    erb (4.0.4-java)
-      cgi (>= 0.3.3)
+    erb (5.0.2)
     haml (6.3.0)
       temple (>= 0.8.2)
       thor
@@ -79,7 +74,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  erb (~> 4.0)
+  erb (~> 5.0)
   haml (~> 6.0)
   rspec (~> 3.13.0)
   rspec-its
@@ -88,4 +83,4 @@ DEPENDENCIES
   slim (~> 5.0)
 
 BUNDLED WITH
-   2.5.3
+   2.7.0
