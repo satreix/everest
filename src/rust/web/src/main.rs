@@ -7,7 +7,7 @@ use askama::Template;
 use slog::{Drain, Logger};
 use std::net::SocketAddr;
 use warp::Filter;
- use warp::Reply;
+use warp::Reply;
 
 #[derive(Template)]
 #[template(path = "hello.html")]

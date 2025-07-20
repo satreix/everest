@@ -1,5 +1,7 @@
+load("@rules_shell//shell:sh_test.bzl", "sh_test")
+
 def binary_test(name, binary, opt_style = "long", *args, **kwargs):
-    native.sh_test(
+    sh_test(
         name = name,
         size = "small",
         srcs = ["//tools/test/binary:hello_world_test.sh"],
