@@ -8,7 +8,7 @@ bazel_dep(name = "bazel_skylib", version = "1.8.1")
 bazel_dep(name = "buildifier_prebuilt", version = "8.2.0.2")
 bazel_dep(name = "contrib_rules_jvm", version = "0.29.0")
 bazel_dep(name = "fmt", version = "11.2.0")
-bazel_dep(name = "gazelle", version = "0.44.0")
+bazel_dep(name = "gazelle")
 bazel_dep(name = "gazelle_cc")
 bazel_dep(name = "gflags", version = "2.2.2")
 bazel_dep(name = "googleapis", version = "0.0.0-20250703-f9d6fe4a")
@@ -41,8 +41,14 @@ bazel_dep(name = "rules_rust_prost", version = "0.62.0")
 bazel_dep(name = "toolchains_protoc", version = "0.4.3")
 
 git_override(
+    module_name = "gazelle",
+    commit = "db0834047b08125b96417c28869d7e060f0d219c",  # https://github.com/bazel-contrib/bazel-gazelle/pull/2143
+    remote = "https://github.com/bazel-contrib/bazel-gazelle.git",
+)
+
+git_override(
     module_name = "gazelle_cc",
-    commit = "b13e29f48cddaf305a7d6209bd4663ad92d4f22b",
+    commit = "187929f75321e10e20cf7c09ea2c066764b57123",  # https://github.com/EngFlow/gazelle_cc/pull/80
     remote = "https://github.com/EngFlow/gazelle_cc.git",
 )
 

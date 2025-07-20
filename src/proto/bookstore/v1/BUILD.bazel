@@ -3,6 +3,12 @@ load("@com_google_protobuf//bazel:cc_proto_library.bzl", "cc_proto_library")
 load("@rules_go//proto:def.bzl", "go_proto_library")
 load("@rules_proto//proto:defs.bzl", "proto_library")
 
+# Placeholder to avoid gazelle-go generating a go_library target.
+filegroup(
+    name = "bookstore",
+    visibility = ["//visibility:private"],
+)
+
 proto_library(
     name = "bookstore_v1_proto",
     srcs = ["bookstore.proto"],
@@ -19,10 +25,7 @@ cc_proto_library(
 
 go_proto_library(
     name = "bookstore_v1_go_proto",
-    compilers = [
-        "@rules_go//proto:go_proto",
-        "@rules_go//proto:go_grpc_v2",
-    ],
+    compilers = ["@rules_go//proto:go_grpc"],
     importpath = "github.com/satreix/everest/src/proto/bookstore/v1",
     proto = ":bookstore_v1_proto",
     visibility = ["//visibility:public"],
