@@ -1,7 +1,7 @@
 package echo.client;
 
-import com.example.helloworld.GreeterGrpc;
-import com.example.helloworld.HelloRequest;
+import com.satreix.everest.helloworld.GreeterGrpc;
+import com.satreix.everest.helloworld.HelloRequest;
 
 import io.grpc.Channel;
 import io.grpc.ManagedChannel;
