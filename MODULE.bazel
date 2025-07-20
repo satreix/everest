@@ -96,6 +96,7 @@ antlr = use_extension("@rules_antlr//antlr:extensions.bzl", "antlr")
 antlr.download(version = "4.13.0")
 
 include("//third_party/go:go.MODULE.bazel")
+
 include("//third_party/java:java.MODULE.bazel")
 
 node = use_extension("@rules_nodejs//nodejs:extensions.bzl", "node")
@@ -155,4 +156,5 @@ pip.parse(
 use_repo(pip, "pip")
 
 include("//third_party/ruby:ruby.MODULE.bazel")
+
 include("//third_party/rust:rust.MODULE.bazel")
