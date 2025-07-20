@@ -96,6 +96,7 @@ antlr = use_extension("@rules_antlr//antlr:extensions.bzl", "antlr")
 antlr.download(version = "4.13.0")
 
 include("//third_party/go:go.MODULE.bazel")
+
 include("//third_party/java:java.MODULE.bazel")
 
 node = use_extension("@rules_nodejs//nodejs:extensions.bzl", "node")
@@ -154,5 +155,27 @@ pip.parse(
 )
 use_repo(pip, "pip")
 
+ruby = use_extension("@rules_ruby//ruby:extensions.bzl", "ruby")
+ruby.toolchain(
+    name = "ruby",
+    version_file = "//:.ruby-version",
+)
+use_repo(ruby, "ruby")
+
+register_toolchains("@ruby_toolchains//:all")
+
 include("//third_party/ruby:ruby.MODULE.bazel")
+
+rust = use_extension("@rules_rust//rust:extensions.bzl", "rust")
+rust.toolchain(
+    edition = "2021",
+    versions = ["1.84.0"],
+)
+use_repo(rust, "rust_toolchains")
+
+register_toolchains(
+    "@rust_toolchains//:all",
+    "//src/rust:prost_toolchain",
+)
+
 include("//third_party/rust:rust.MODULE.bazel")
