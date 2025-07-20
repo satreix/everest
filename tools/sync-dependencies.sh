@@ -7,7 +7,6 @@ section() {
 
 TOOLCHAINS=(
     go
-    haskell
     java
     python
 )
