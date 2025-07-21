@@ -147,7 +147,7 @@ openapi_gen.client(
 )
 use_repo(openapi_gen, "openapi_tools_generator_bazel_cli")
 
-python_version = "3.12"
+python_version = "3.13"
 
 python = use_extension("@rules_python//python/extensions:python.bzl", "python")
 python.toolchain(python_version = python_version)
