@@ -15,6 +15,7 @@ buildifier(
 
 # gazelle:resolve cc gflags/gflags.h @gflags
 # gazelle:resolve cc gtest/gtest.h @googletest//:gtest_main
+# gazelle:resolve cc math_NativeMath.h //src/java/math:math.hdrs
 
 # gazelle:resolve proto proto google/api/field_behavior.proto @googleapis//google/api:field_behavior_proto
 # gazelle:resolve proto go google/api/field_behavior.proto @org_golang_google_genproto_googleapis_api//annotations
