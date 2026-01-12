@@ -10,6 +10,12 @@ register_toolchains("@rust_toolchains//:all")
 register_toolchains("//src/rust:prost_toolchain")
 
 crate = use_extension("@rules_rust//crate_universe:extension.bzl", "crate")
+
+inject_repo(
+    crate,
+    "rules_rust_pyo3",
+)
+
 crate.annotation(
     crate = "protoc-gen-prost",
     gen_binaries = ["protoc-gen-prost"],
@@ -20,18 +26,38 @@ crate.annotation(
     gen_binaries = ["protoc-gen-tonic"],
     repositories = ["everest_crates"],
 )
+crate.annotation(
+    build_script_data = ["@rules_rust_pyo3//:current_pyo3_toolchain"],
+    build_script_env = {
+        "PYO3_CROSS": "$(PYO3_CROSS)",
+        "PYO3_CROSS_LIB_DIR": "$(PYO3_CROSS_LIB_DIR)",
+        "PYO3_CROSS_PYTHON_IMPLEMENTATION": "$(PYO3_CROSS_PYTHON_IMPLEMENTATION)",
+        "PYO3_CROSS_PYTHON_VERSION": "$(PYO3_CROSS_PYTHON_VERSION)",
+        "PYO3_NO_PYTHON": "$(PYO3_NO_PYTHON)",
+        "PYO3_PYTHON": "$(PYO3_PYTHON)",
+    },
+    build_script_toolchains = ["@rules_rust_pyo3//:current_pyo3_toolchain"],
+    crate = "pyo3-build-config",
+    repositories = ["everest_crates"],
+)
+crate.annotation(
+    build_script_data = ["@rules_rust_pyo3//:current_pyo3_toolchain"],
+    build_script_env = {
+        "PYO3_CROSS": "$(PYO3_CROSS)",
+        "PYO3_CROSS_LIB_DIR": "$(PYO3_CROSS_LIB_DIR)",
+        "PYO3_CROSS_PYTHON_IMPLEMENTATION": "$(PYO3_CROSS_PYTHON_IMPLEMENTATION)",
+        "PYO3_CROSS_PYTHON_VERSION": "$(PYO3_CROSS_PYTHON_VERSION)",
+        "PYO3_NO_PYTHON": "$(PYO3_NO_PYTHON)",
+        "PYO3_PYTHON": "$(PYO3_PYTHON)",
+    },
+    build_script_toolchains = ["@rules_rust_pyo3//:current_pyo3_toolchain"],
+    crate = "pyo3-ffi",
+    repositories = ["everest_crates"],
+)
 crate.from_cargo(
     name = "everest_crates",  # FIXME protobuf uses the name "crates", so we namespace ours
     cargo_lockfile = "//:Cargo.lock",
-    manifests = [
-        "//:Cargo.toml",
-        "//src/rust/cel:Cargo.toml",
-        "//src/rust/grpc_server:Cargo.toml",
-        "//src/rust/hello_world:Cargo.toml",
-        "//src/rust/luhn:Cargo.toml",
-        "//src/rust/num:Cargo.toml",
-        "//src/rust/web:Cargo.toml",
-    ],
+    manifests = ["//:Cargo.toml"],
     supported_platform_triples = [
         "aarch64-apple-darwin",
         "aarch64-unknown-linux-gnu",

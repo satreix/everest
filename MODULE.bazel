@@ -4,13 +4,13 @@ module(
 
 bazel_dep(name = "aspect_rules_js", version = "2.4.0")
 bazel_dep(name = "aspect_rules_ts", version = "3.6.3")
-bazel_dep(name = "bazel_skylib", version = "1.8.1")
+bazel_dep(name = "bazel_skylib", version = "1.8.2")
 bazel_dep(name = "buildifier_prebuilt", version = "8.2.0.2")
 bazel_dep(name = "cel-spec", version = "0.24.0")
 bazel_dep(name = "contrib_rules_jvm", version = "0.29.0")
 bazel_dep(name = "fmt", version = "11.2.0")
-bazel_dep(name = "gazelle")
-bazel_dep(name = "gazelle_cc")
+bazel_dep(name = "gazelle", version = "0.46.0")
+bazel_dep(name = "gazelle_cc", version = "0.4.0")
 bazel_dep(name = "gflags", version = "2.2.2")
 bazel_dep(name = "googleapis", version = "0.0.0-20250703-f9d6fe4a")
 bazel_dep(name = "googletest", version = "1.17.0")
@@ -21,10 +21,10 @@ bazel_dep(name = "platforms", version = "1.0.0")
 bazel_dep(name = "protobuf", version = "31.1", repo_name = "com_google_protobuf")
 bazel_dep(name = "protoc-gen-validate", version = "1.2.1.bcr.1")
 bazel_dep(name = "rules_antlr")
-bazel_dep(name = "rules_cc", version = "0.1.1")
+bazel_dep(name = "rules_cc", version = "0.2.4")
 bazel_dep(name = "rules_cue", version = "0.13.2")
 bazel_dep(name = "rules_foreign_cc", version = "0.15.0")
-bazel_dep(name = "rules_go", version = "0.55.1")
+bazel_dep(name = "rules_go", version = "0.59.0")
 bazel_dep(name = "rules_java", version = "8.13.0")
 bazel_dep(name = "rules_jni", version = "0.11.1")
 bazel_dep(name = "rules_jvm_external", version = "6.8")
@@ -35,24 +35,13 @@ bazel_dep(name = "rules_perl", version = "0.4.2")
 bazel_dep(name = "rules_pkg", version = "1.1.0")
 bazel_dep(name = "rules_pkl", version = "0.9.0")
 bazel_dep(name = "rules_proto", version = "7.1.0")
-bazel_dep(name = "rules_python", version = "1.5.1")
+bazel_dep(name = "rules_python", version = "1.6.3")
 bazel_dep(name = "rules_ruby", version = "0.20.1")
-bazel_dep(name = "rules_rust", version = "0.62.0")
-bazel_dep(name = "rules_rust_prost", version = "0.62.0")
+bazel_dep(name = "rules_rust", version = "0.66.0")
+bazel_dep(name = "rules_rust_prost", version = "0.66.0")
+bazel_dep(name = "rules_rust_pyo3", version = "0.66.0")
 bazel_dep(name = "rules_shell", version = "0.5.0")
 bazel_dep(name = "toolchains_protoc", version = "0.4.3")
-
-git_override(
-    module_name = "gazelle",
-    commit = "db0834047b08125b96417c28869d7e060f0d219c",  # https://github.com/bazel-contrib/bazel-gazelle/pull/2143
-    remote = "https://github.com/bazel-contrib/bazel-gazelle.git",
-)
-
-git_override(
-    module_name = "gazelle_cc",
-    commit = "187929f75321e10e20cf7c09ea2c066764b57123",  # https://github.com/EngFlow/gazelle_cc/pull/80
-    remote = "https://github.com/EngFlow/gazelle_cc.git",
-)
 
 git_override(
     module_name = "rules_antlr",
@@ -163,3 +152,8 @@ use_repo(pip, "pip")
 include("//third_party/ruby:ruby.MODULE.bazel")
 
 include("//third_party/rust:rust.MODULE.bazel")
+
+register_toolchains(
+    "@rules_rust_pyo3//toolchains:toolchain",
+    "@rules_rust_pyo3//toolchains:rust_toolchain",
+)
