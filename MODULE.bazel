@@ -50,7 +50,7 @@ git_override(
 
 git_override(
     module_name = "gazelle_cc",
-    commit = "187929f75321e10e20cf7c09ea2c066764b57123",  # https://github.com/EngFlow/gazelle_cc/pull/80
+    commit = "50dbcbcfd9199c19a50522695c568b9380caabe5",  # https://github.com/EngFlow/gazelle_cc/pull/80
     remote = "https://github.com/EngFlow/gazelle_cc.git",
 )
 
