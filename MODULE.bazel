@@ -44,7 +44,7 @@ bazel_dep(name = "toolchains_protoc", version = "0.4.3")
 
 git_override(
     module_name = "gazelle",
-    commit = "db0834047b08125b96417c28869d7e060f0d219c",  # https://github.com/bazel-contrib/bazel-gazelle/pull/2143
+    commit = "6b575b681f2a05257f04e98c02e83b92c1fb766f",  # https://github.com/bazel-contrib/bazel-gazelle/pull/2143
     remote = "https://github.com/bazel-contrib/bazel-gazelle.git",
 )
 
